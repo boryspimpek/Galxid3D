@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://c0rjf6bfsduht"]
+
+[ext_resource type="PackedScene" uid="uid://b3116sqmxjbqe" path="res://scenes/planets/EarthPlanet.tscn" id="1_aukl3"]
+[ext_resource type="Script" uid="uid://cmxovjxejqgik" path="res://scenes/planets/PlanetSpawner.gd" id="1_uc6tr"]
+[ext_resource type="Script" uid="uid://dqfm1fllu6cek" path="res://scenes/planets/planet_rotate.gd" id="2_e1y25"]
+[ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="4_n40md"]
+
+[sub_resource type="Environment" id="Environment_vshm1"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.34735268, 0.16065416, 0.99999994, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_aukl3"]
+emission_shape = 3
+emission_box_extents = Vector3(15, 0, 0)
+direction = Vector3(0, 0, 0)
+spread = 0.0
+initial_velocity_min = 0.5
+initial_velocity_max = 0.5
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vshm1"]
+shading_mode = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_aukl3"]
+material = SubResource("StandardMaterial3D_vshm1")
+size = Vector2(0.08, 0.08)
+orientation = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uc6tr"]
+emission_shape = 3
+emission_box_extents = Vector3(15, 0, 0)
+direction = Vector3(0, 0, 0)
+spread = 0.0
+initial_velocity_min = 1.5
+initial_velocity_max = 1.5
+gravity = Vector3(0, 0, 0)
+
+[node name="Game" type="Node3D" unique_id=616589222]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2090551855]
+environment = SubResource("Environment_vshm1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1804465455]
+transform = Transform3D(0.34202012, 0.4698463, -0.81379765, 0, 0.8660254, 0.5, 0.9396925, -0.17101008, 0.29619813, 8, 15, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1430056658]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 20, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=213520349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15, -27)
+amount = 200
+lifetime = 192.0
+preprocess = 192.0
+process_material = SubResource("ParticleProcessMaterial_aukl3")
+draw_pass_1 = SubResource("QuadMesh_aukl3")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=1897043367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15, -27)
+amount = 100
+lifetime = 96.0
+preprocess = 96.0
+process_material = SubResource("ParticleProcessMaterial_uc6tr")
+draw_pass_1 = SubResource("QuadMesh_aukl3")
+
+[node name="PlanetSpawner" type="Node3D" parent="." unique_id=943200131]
+script = ExtResource("1_uc6tr")
+spawn_interval = 6.0
+speed_max = 2.0
+preprocess_time = 25.0
+
+[node name="EarthPlanet" parent="." unique_id=975989011 instance=ExtResource("1_aukl3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -17, -17)
+script = ExtResource("2_e1y25")
+spin_speed = 0.1
+speed = 1.0
+
+[node name="Player" parent="." unique_id=1811810025 instance=ExtResource("4_n40md")]
+max_bound_x = 8.5
+max_bound_z = 14.5

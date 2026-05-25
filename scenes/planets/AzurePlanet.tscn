@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bahnjjjpr7ru0"]
+
+[ext_resource type="PackedScene" uid="uid://dm8c61dfq511q" path="res://assets/planets/azure planet/Meshy_AI_Azure_Ringed_World_0520072106_texture.glb" id="1_xoqjd"]
+[ext_resource type="Texture2D" uid="uid://cyijj37qo8kqv" path="res://assets/planets/azure planet/Meshy_AI_Azure_Ringed_World_0520072106_texture_Image_0.jpg" id="3_caomk"]
+[ext_resource type="Script" uid="uid://dqfm1fllu6cek" path="res://scenes/planets/planet_rotate.gd" id="3_snfas"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trrbf"]
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+albedo_texture = ExtResource("3_caomk")
+roughness = 0.0
+clearcoat_enabled = true
+clearcoat_roughness = 1.0
+
+[node name="AzurePlanet" unique_id=991034481 instance=ExtResource("1_xoqjd")]
+script = ExtResource("3_snfas")
+
+[node name="Mesh_0" parent="." index="0" unique_id=2105334228]
+transform = Transform3D(0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_trrbf")

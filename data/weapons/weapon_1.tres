@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://b4jqk5h3n8kxy"]
+
+[ext_resource type="Script" path="res://scripts/resources/WeaponData.gd" id="1_abcde"]
+
+[resource]
+script = ExtResource("1_abcde")
+weapon_index = 1
+weapon_name = "Basic Cannon"
+damage = 10
+velocity = Vector3(0, 0, -50)
+fire_rate = 0.2
+shot_graphic = 0
+sound = 0
+power_use = 10

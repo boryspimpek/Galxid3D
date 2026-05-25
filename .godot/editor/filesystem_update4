@@ -1,0 +1,17 @@
+res://3dworld.tscn
+res://scenes/planets/PlanetSpawner.gd
+res://scenes/planets/AzurePlanet.tscn
+res://scenes/planets/CrimsonPlanet.tscn
+res://scenes/planets/EmeraldPlanet.tscn
+res://scenes/planets/GreenPlanet.tscn
+res://scenes/planets/PlanetSaturn.tscn
+res://scenes/planets/SilverPlanet.tscn
+res://scenes/player/Player.tscn
+res://scenes/player/Player.gd
+res://scenes/player/DamageSystem.gd
+res://scenes/player/ShieldSystem.gd
+res://scenes/player/WeaponSystem.gd
+res://scenes/player/PlayerModel.tscn
+res://scenes/projectile/projectile.gd
+res://scenes/projectile/Projectile.tscn
+res://scripts/core/DataManager.gd

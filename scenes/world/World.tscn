@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://d3vnnnd2fe8u"]
+
+[ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="1_c6gwx"]
+[ext_resource type="PackedScene" path="res://scenes/planets/AzurePlanet3D.tscn" id="2_i1jm3"]
+[ext_resource type="Script" uid="uid://dsj7d5ivh3g" path="res://scenes/world/LevelManager.gd" id="3_level_manager"]
+[ext_resource type="PackedScene" path="res://scenes/planets/CrimsonPlanet3D.tscn" id="5_252at"]
+[ext_resource type="PackedScene" path="res://scenes/planets/EarthPlanet3D.tscn" id="8_qh0kd"]
+[ext_resource type="Script" path="res://scenes/world/StarTwinkle.gd" id="8_twinkle"]
+[ext_resource type="PackedScene" path="res://scenes/planets/EmeraldPlanet3D.tscn" id="9_yr1n6"]
+[ext_resource type="PackedScene" path="res://scenes/planets/GreenPlanet3D.tscn" id="10_l5ull"]
+[ext_resource type="PackedScene" path="res://scenes/planets/PlanetSaturn3D.tscn" id="11_16fjv"]
+[ext_resource type="PackedScene" path="res://scenes/planets/SilverPlanet3D.tscn" id="13_8xm5o"]
+[ext_resource type="Script" uid="uid://cjwf83wntumr8" path="res://scenes/world/LevelRuler.gd" id="14_ruler"]
+[ext_resource type="Script" uid="uid://cmxovjxejqgik" path="res://scenes/planets/PlanetSpawner.gd" id="17_0duuj"]
+[ext_resource type="Script" uid="uid://bu0acx8r015fx" path="res://scenes/world/AsteroidSpawner.gd" id="19_i08rc"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_252at"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -5, 0)
+emission_shape = 3
+emission_box_extents = Vector3(540, 1, 1)
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, 0, 0)
+scale_min = 3.0
+scale_max = 5.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i1jm3"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -5, 0)
+emission_shape = 3
+emission_box_extents = Vector3(540, 1, 1)
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+gravity = Vector3(0, 0, 0)
+scale_min = 5.0
+scale_max = 8.0
+
+[node name="World" type="Node2D" unique_id=1364436952]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1139871068]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=378036916]
+z_index = -200
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LevelMap" type="Node2D" parent="." unique_id=2089491049]
+script = ExtResource("3_level_manager")
+scroll_speed = 150
+
+[node name="LevelRuler" type="Node2D" parent="LevelMap" unique_id=111111111]
+script = ExtResource("14_ruler")
+
+[node name="Player" parent="." unique_id=1834704228 instance=ExtResource("1_c6gwx")]
+position = Vector2(559, 1649)
+
+[node name="BackgroundLayer" type="Node2D" parent="." unique_id=860926202]
+modulate = Color(0.29201096, 0.52643704, 1, 1)
+
+[node name="FarStars" type="GPUParticles2D" parent="BackgroundLayer" unique_id=245978833]
+z_index = -100
+position = Vector2(540, 0)
+amount = 100
+lifetime = 192.0
+preprocess = 192.0
+trail_lifetime = 0.1
+trail_sections = 4
+trail_section_subdivisions = 1
+process_material = SubResource("ParticleProcessMaterial_252at")
+script = ExtResource("8_twinkle")
+
+[node name="MiddleStars" type="GPUParticles2D" parent="BackgroundLayer" unique_id=1488518254]
+z_index = -100
+position = Vector2(540, 0)
+amount = 100
+lifetime = 96.0
+preprocess = 96.0
+process_material = SubResource("ParticleProcessMaterial_i1jm3")
+script = ExtResource("8_twinkle")
+
+[node name="AzurePlanet3D" parent="BackgroundLayer" unique_id=1161141368 instance=ExtResource("2_i1jm3")]
+visible = false
+position = Vector2(237, -889)
+
+[node name="CrimsonPlanet3d" parent="BackgroundLayer" unique_id=944956452 instance=ExtResource("5_252at")]
+visible = false
+position = Vector2(243, 1322)
+move_speed = 40.0
+
+[node name="EarthPlanet3D" parent="BackgroundLayer" unique_id=1843616213 instance=ExtResource("8_qh0kd")]
+position = Vector2(523, 354)
+move_speed = 20.0
+
+[node name="EmeraldPlanet3D" parent="BackgroundLayer" unique_id=287911735 instance=ExtResource("9_yr1n6")]
+visible = false
+position = Vector2(827.00006, 128.99998)
+move_speed = 40.0
+
+[node name="GreenPlanet3D" parent="BackgroundLayer" unique_id=1430243515 instance=ExtResource("10_l5ull")]
+visible = false
+position = Vector2(702, -1821)
+move_speed = 40.0
+
+[node name="PlanetSaturn3D" parent="BackgroundLayer" unique_id=2055306021 instance=ExtResource("11_16fjv")]
+visible = false
+position = Vector2(273, -3114.9998)
+move_speed = 40.0
+
+[node name="SilverPlanet3D" parent="BackgroundLayer" unique_id=1166699980 instance=ExtResource("13_8xm5o")]
+visible = false
+position = Vector2(545, -2961)
+move_speed = 40.0
+
+[node name="PlanetSpawner" type="Node2D" parent="BackgroundLayer" unique_id=1401204115]
+script = ExtResource("17_0duuj")
+spawn_interval = 15.0
+speed_min = 40.0
+speed_max = 50.0
+preprocess_time = 30.0
+
+[node name="AsteroidSpawner" type="Node2D" parent="." unique_id=1147152386]
+script = ExtResource("19_i08rc")
+spawn_interval = 10.0
+speed_min = 40.0
+speed_max = 600.0
+armor_override = 200

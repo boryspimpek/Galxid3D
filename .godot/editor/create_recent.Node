@@ -1,0 +1,15 @@
+Sprite3D
+CollisionShape3D
+VisibleOnScreenNotifier3D
+Area3D
+Marker3D
+Node
+CharacterBody3D
+Node3D
+GPUParticles3D
+Camera3D
+DirectionalLight3D
+WorldEnvironment
+CollisionPolygon2D
+SubViewport
+MeshInstance3D
