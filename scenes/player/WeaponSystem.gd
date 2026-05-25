@@ -65,17 +65,8 @@ func shoot():
 
 func create_projectile(damage: int, velocity: Vector3):
 	var projectile_scene = GameConstants.player_projectile_scene
-	
 	var projectile = projectile_scene.instantiate()
-	
-	# --- 1. NAJPIERW DODAJEMY POCISK DO SCENY ŚWIATA ---
 	get_tree().current_scene.add_child(projectile)
-	
-	# --- 2. TERAZ MOŻEMY BEZPIECZNIE USTAWIAĆ POZYCJĘ GLOBALNĄ ---
 	projectile.global_position = muzzle.global_position
-	
-	# Ustaw velocity
 	projectile.velocity = velocity
-	
-	# Ustaw damage
 	projectile.damage = damage
