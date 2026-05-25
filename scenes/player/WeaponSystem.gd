@@ -32,7 +32,7 @@ func _physics_process(delta: float):
 		shoot()
 
 func load_weapon_config():
-	current_weapon_index = PlayerSetup.front_weapon_index
+	current_weapon_index = player.front_weapon_index
 	
 	# Pobierz dane broni z resources (uproszczone)
 	weapon_data = DataManager.get_weapon_by_id(current_weapon_index)
@@ -55,16 +55,15 @@ func shoot():
 	# Proste parametry z weapon_data
 	var damage = weapon_data.damage
 	var velocity = weapon_data.velocity  # do przodu (-Z)
-	var sg = weapon_data.shot_graphic
 
 	# Stwórz projectile
-	create_projectile(damage, velocity, sg)
+	create_projectile(damage, velocity)
 	
 	SoundManager.play_weapon_sound(weapon_data.sound)
 
 	fire_timer = weapon_data.fire_rate
 
-func create_projectile(damage: int, velocity: Vector3, sg: int):
+func create_projectile(damage: int, velocity: Vector3):
 	var projectile_scene = GameConstants.player_projectile_scene
 	
 	var projectile = projectile_scene.instantiate()
@@ -77,8 +76,6 @@ func create_projectile(damage: int, velocity: Vector3, sg: int):
 	
 	# Ustaw velocity
 	projectile.velocity = velocity
-		
-	projectile.damage = damage
 	
-	# Ustaw shot graphic (sg)
-	projectile.shot_graphic = sg
+	# Ustaw damage
+	projectile.damage = damage

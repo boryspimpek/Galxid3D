@@ -9,6 +9,6 @@ weapon_name = "Fast Blaster"
 damage = 5
 velocity = Vector3(0, 0, -80)
 fire_rate = 0.1
-shot_graphic = 1
+
 sound = 1
 power_use = 15

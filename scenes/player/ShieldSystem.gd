@@ -14,14 +14,14 @@ func _ready():
 	load_shield_config()
 
 func load_shield_config():
-	var shield_data = DataManager.get_shield_by_id(PlayerSetup.shield_id)
+	var shield_data = DataManager.get_shield_by_id(player.shield_id)
 	if shield_data:
 		shield_t   = shield_data.generator_needed * 20
 		shield     = float(shield_data.protection)
 		shield_max = float(shield_data.protection * 2)
 		print("ShieldSystem: shield=", shield, "/", shield_max, " shield_t=", shield_t, " (power/pkt)")
 	else:
-		push_warning("ShieldSystem: brak danych tarczy (shield_id=%d)" % PlayerSetup.shield_id)
+		push_warning("ShieldSystem: brak danych tarczy (shield_id=%d)" % player.shield_id)
 
 func _physics_process(delta: float):
 	if _wait_timer > 0.0:

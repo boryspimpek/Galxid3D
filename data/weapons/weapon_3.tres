@@ -9,6 +9,6 @@ weapon_name = "Heavy Cannon"
 damage = 25
 velocity = Vector3(0, 0, -30)
 fire_rate = 0.5
-shot_graphic = 2
+
 sound = 2
 power_use = 25

@@ -1,20 +1,18 @@
 extends Node
 
 # ============================================================================
-# PLAYER SETUP - REJESTR EKWIPUNKU (Zainspirowany tyrian2.c)
+# PLAYER SETUP - REJESTR EKWIPUNKU (uproszczona wersja 3D)
 # ============================================================================
 
 # --- KADŁUB (SHIP) ---
-@export var ship_id: int = 1
+@export var ship_id: int = 2
 
 # --- BROŃ PRZEDNIA (FRONT WEAPON) ---
-@export var front_weapon_index: int = 1
-@export var front_weapon_mode: int = 1
+@export var front_weapon_index: int = 2
 @export var front_power_level: int = 1
 
 # --- BROŃ TYLNA (REAR WEAPON) ---
 @export var rear_weapon_index: int = 1
-@export var rear_weapon_mode: int = 1
 @export var rear_power_level: int = 1
 
 # --- POMOCNICY (SIDEKICKS) ---
@@ -29,8 +27,3 @@ extends Node
 # --- ZASOBY (RESOURCES) ---
 @export var credits: int = 1000
 @export var score: int = 0
-@export var lives: int = 3
-
-# --- SPECJALNE / DODATKI ---
-@export var special_item_id: int = 0
-@export var color_scheme: int = 1

@@ -1,12 +1,29 @@
 extends CharacterBody3D  # 1. Zmiana na 3D
 
 # --- Loadout (konfiguracja w inspektorze) ---
-@export var ship_id: int = 1
-@export var front_weapon_index: int = 1
-@export var front_weapon_mode: int = 1
+# --- KADŁUB (SHIP) ---
+@export var ship_id: int = 2
+
+# --- BROŃ PRZEDNIA (FRONT WEAPON) ---
+@export var front_weapon_index: int = 2
 @export var front_power_level: int = 1
+
+# --- BROŃ TYLNA (REAR WEAPON) ---
+@export var rear_weapon_index: int = 1
+@export var rear_power_level: int = 1
+
+# --- SYSTEMY ENERGII ---
 @export var generator_id: int = 1
 @export var shield_id: int = 1
+
+# --- POMOCNICY (SIDEKICKS) ---
+@export var left_sidekick_id: int = 0
+@export var right_sidekick_id: int = 0
+@export var sidekick_level: int = 1
+
+# --- ZASOBY (RESOURCES) ---
+@export var credits: int = 1000
+@export var score: int = 0
 
 # --- Zmienne dynamiczne ---
 var armor: int = 0
@@ -39,14 +56,6 @@ var main_camera: Camera3D
 # 1. INICJALIZACJA
 # ============================================================================
 
-func _enter_tree():
-	PlayerSetup.ship_id             = ship_id
-	PlayerSetup.front_weapon_index  = front_weapon_index
-	PlayerSetup.front_weapon_mode   = front_weapon_mode
-	PlayerSetup.front_power_level   = front_power_level
-	PlayerSetup.generator_id        = generator_id
-	PlayerSetup.shield_id           = shield_id
-
 func _ready():
 	add_to_group("player")
 	# W 3D używamy collision_layer/mask jako bitów (np. 1 dla gracza)
@@ -61,7 +70,7 @@ func _ready():
 	init_power_regeneration()
 	
 func load_ship_data():
-	var s_id = PlayerSetup.ship_id
+	var s_id = ship_id
 	ship_data = DataManager.get_ship_by_id(s_id)
 	if ship_data:
 		print("Player: Statek załadowany: ", ship_data.ship_name)
@@ -74,9 +83,9 @@ func apply_ship_stats():
 	print("Player: Ship → armor=", armor)
 
 func init_power_regeneration():
-	var generator_power = DataManager.get_generator_power(PlayerSetup.generator_id)
+	var generator_power = DataManager.get_generator_power(generator_id)
 	power_add = generator_power
-	print("Player: Generator ID=", PlayerSetup.generator_id, " power=", generator_power, " → power_add=", power_add)
+	print("Player: Generator ID=", generator_id, " power=", generator_power, " → power_add=", power_add)
 
 # ============================================================================
 # 2. RUCH I INPUT
@@ -136,6 +145,6 @@ func _get_mouse_world_position() -> Vector3:
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_home"):
 		print("Player: --- DEBUG GRACZA ---")
-		print("Player: Statek ID: ", PlayerSetup.ship_id)
+		print("Player: Statek ID: ", ship_id)
 		print("Player: Pozycja 3D: ", global_position)
 		print("Player: Pancerz: ", armor, "/", max_armor)

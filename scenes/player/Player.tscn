@@ -12,6 +12,8 @@ height = 1.4691162
 
 [node name="Player" type="CharacterBody3D" unique_id=1811810025]
 script = ExtResource("1_onrkg")
+max_bound_x = 8.5
+max_bound_z = 14.5
 
 [node name="PlayerModel" parent="." unique_id=476255480 instance=ExtResource("2_c3xxp")]
 
