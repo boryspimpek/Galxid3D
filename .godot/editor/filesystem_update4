@@ -1,5 +1,0 @@
-res://scripts/core/PlayerSetup.gd
-res://scenes/player/Player.tscn
-res://scenes/player/Player.gd
-res://scenes/player/ShieldSystem.gd
-res://scenes/player/WeaponSystem.gd
