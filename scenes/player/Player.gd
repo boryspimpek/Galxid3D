@@ -112,8 +112,8 @@ func _physics_process(delta: float):
 
 func _update_tilt(dx: float, delta: float) -> void:
 	# W 3D ruch lewo/prawo to X, więc obracamy wokół osi Z (roll), aby samolot kładł się na skrzydło
-	var target: float = clampf(-dx * 0.5, -0.5, 0.5) # Zmieniony mnożnik, bo wartości 3D są mniejsze niż piksele
-	ship_model.rotation.z = lerpf(ship_model.rotation.z, target, delta * 8.0)
+	var target: float = clampf(-dx * 1.5, -0.8, 0.8)
+	ship_model.rotation.z = lerpf(ship_model.rotation.z, target, delta * 10.0) 
 
 func _clamp_to_screen():
 	# Blokujemy pozycję w granicach świata 3D

@@ -8,7 +8,6 @@ weapon_index = 1
 weapon_name = "Basic Cannon"
 damage = 5
 velocity = Vector3(0, 0, -80)
-fire_rate = 0.1
-
+fire_rate = 0.8
 sound = 1
 power_use = 15
