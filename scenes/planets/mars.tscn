@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cwebpewdly2yt"]
+
+[ext_resource type="PackedScene" uid="uid://bvdm4vxqco8gf" path="res://scenes/planets/simple_planet.tscn" id="1_m15u1"]
+[ext_resource type="Texture2D" uid="uid://bqciobvqwe0to" path="res://assets/planets/textures/mars.png" id="2_as5al"]
+[ext_resource type="Texture2D" uid="uid://droo5e32n3i7x" path="res://assets/planets/textures/Meshy_AI_Azure_Ringed_World_0520072106_texture_Image_0.jpg" id="3_m15u1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m15u1"]
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+albedo_texture = ExtResource("2_as5al")
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_as5al"]
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+albedo_texture = ExtResource("3_m15u1")
+roughness = 0.0
+
+[node name="mars" unique_id=334651136 instance=ExtResource("1_m15u1")]
+
+[node name="SimplePlanet" parent="." index="0" unique_id=2060572171]
+transform = Transform3D(0.96592575, -0.258819, 0, 0.258819, 0.96592575, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Planet" parent="SimplePlanet" index="0" unique_id=981439615]
+surface_material_override/0 = SubResource("StandardMaterial3D_m15u1")
+
+[node name="Ring" parent="SimplePlanet" index="1" unique_id=1816427818]
+surface_material_override/0 = SubResource("StandardMaterial3D_as5al")
+
+[editable path="SimplePlanet"]

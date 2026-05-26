@@ -1,12 +1,9 @@
 extends Node3D
 
 const PLANET_SCENES = [
-	"res://scenes/planets/AzurePlanet.tscn",
-	"res://scenes/planets/CrimsonPlanet.tscn",
-	"res://scenes/planets/EmeraldPlanet.tscn",
-	"res://scenes/planets/GreenPlanet.tscn",
-	"res://scenes/planets/PlanetSaturn.tscn",
-	"res://scenes/planets/SilverPlanet.tscn",
+	"res://scenes/planets/mars.tscn",
+	"res://scenes/planets/venus.tscn",
+	"res://scenes/planets/saturn.tscn",
 ]
 
 @export var spawn_interval: float = 3.0

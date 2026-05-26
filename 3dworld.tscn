@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://c0rjf6bfsduht"]
 
-[ext_resource type="PackedScene" uid="uid://b3116sqmxjbqe" path="res://scenes/planets/EarthPlanet.tscn" id="1_aukl3"]
 [ext_resource type="Script" uid="uid://cmxovjxejqgik" path="res://scenes/planets/PlanetSpawner.gd" id="1_uc6tr"]
-[ext_resource type="Script" uid="uid://dqfm1fllu6cek" path="res://scenes/planets/planet_rotate.gd" id="2_e1y25"]
 [ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="4_n40md"]
 [ext_resource type="PackedScene" uid="uid://ceb36gc6o5uvc" path="res://scenes/enemies/starfighter.tscn" id="5_lp3by"]
 
@@ -51,7 +49,7 @@ orientation = 1
 environment = SubResource("Environment_vshm1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1804465455]
-transform = Transform3D(0.34202012, 0.4698463, -0.81379765, 0, 0.8660254, 0.5, 0.9396925, -0.17101008, 0.29619813, 8, 15, 0)
+transform = Transform3D(0.3420201, 0.46984628, -0.81379753, 0, 0.8660253, 0.4999999, 0.93969244, -0.17101006, 0.29619807, 0, 15, 0)
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1430056658]
@@ -73,21 +71,14 @@ preprocess = 96.0
 process_material = SubResource("ParticleProcessMaterial_uc6tr")
 draw_pass_1 = SubResource("QuadMesh_lp3by")
 
-[node name="PlanetSpawner" type="Node3D" parent="." unique_id=943200131]
-script = ExtResource("1_uc6tr")
-spawn_interval = 6.0
-speed_max = 2.0
-preprocess_time = 25.0
-
-[node name="EarthPlanet" parent="." unique_id=975989011 instance=ExtResource("1_aukl3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -17, -17)
-script = ExtResource("2_e1y25")
-spin_speed = 0.1
-speed = 1.0
-
 [node name="Player" parent="." unique_id=1811810025 instance=ExtResource("4_n40md")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.01, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 11.035)
 
 [node name="Starfighter" parent="." unique_id=1897743314 instance=ExtResource("5_lp3by")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
 xmove = 7
+
+[node name="PlanetSpawner" type="Node3D" parent="." unique_id=690017726]
+script = ExtResource("1_uc6tr")
+spawn_interval = 7.0
+speed_max = 2.0

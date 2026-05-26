@@ -1,2 +1,9 @@
 res://3dworld.tscn
 res://scenes/projectile/Projectile.gdshader
+res://scenes/planets/simple_planet.tscn
+res://scenes/planets/planet_mars.tscn
+res://scenes/planets/PlanetSpawner.gd
+res://scenes/planets/venus.tscn
+res://scenes/planets/mars.tscn
+res://scenes/planets/saturn.tscn
+res://default_bus_layout.tres

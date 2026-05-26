@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bvdm4vxqco8gf"]
+
+[ext_resource type="PackedScene" uid="uid://bijnd66y5px5b" path="res://assets/simple planet/SimplePlanet.glb" id="1_4mivk"]
+[ext_resource type="Script" uid="uid://dqfm1fllu6cek" path="res://scenes/planets/planet_rotate.gd" id="2_qqodq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qqodq"]
+
+[node name="Simple Planet" type="Node3D" unique_id=334651136]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+script = ExtResource("2_qqodq")
+spin_speed = 0.7
+speed = 0.0
+
+[node name="SimplePlanet" parent="." unique_id=2060572171 instance=ExtResource("1_4mivk")]
+
+[node name="Planet" parent="SimplePlanet" index="0" unique_id=981439615]
+surface_material_override/0 = SubResource("StandardMaterial3D_qqodq")
+
+[editable path="SimplePlanet"]

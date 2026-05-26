@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://biy8f34381epq"]
+
+[ext_resource type="PackedScene" uid="uid://bvdm4vxqco8gf" path="res://scenes/planets/simple_planet.tscn" id="1_dvlhj"]
+[ext_resource type="Texture2D" uid="uid://d37r53htsjgf6" path="res://assets/planets/textures/saturn.png" id="2_cyfv8"]
+[ext_resource type="Texture2D" uid="uid://dvtacomnolo8s" path="res://assets/planets/textures/Meshy_AI_Sunset_Saturn_0519154148_texture_1.jpg" id="3_dvlhj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cyfv8"]
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+albedo_texture = ExtResource("2_cyfv8")
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l17rv"]
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+albedo_texture = ExtResource("3_dvlhj")
+roughness = 0.0
+
+[node name="saturn" unique_id=334651136 instance=ExtResource("1_dvlhj")]
+
+[node name="SimplePlanet" parent="." index="0" unique_id=2060572171]
+transform = Transform3D(0.96592563, -0.25881898, 0, 0.25881898, 0.96592563, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Planet" parent="SimplePlanet" index="0" unique_id=981439615]
+material_override = SubResource("StandardMaterial3D_cyfv8")
+
+[node name="Ring" parent="SimplePlanet" index="1" unique_id=1816427818]
+material_override = SubResource("StandardMaterial3D_l17rv")
+
+[editable path="SimplePlanet"]
