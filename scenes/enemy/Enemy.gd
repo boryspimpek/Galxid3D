@@ -56,7 +56,7 @@ func _process(delta: float) -> void:
 # --- METODY PRYWATNE / POMOCNICZE ---
 
 func _update_tilt(dx: float, delta: float) -> void:
-	var target: float = clampf(-dx * 1.5, -0.8, 0.8)
+	var target: float = clampf(-dx * 5, -0.8, 0.8)
 	ship_model.rotation.z = lerpf(ship_model.rotation.z, target, delta * 10.0)
 
 

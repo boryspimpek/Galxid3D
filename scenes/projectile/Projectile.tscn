@@ -7,7 +7,7 @@ radius = 0.10058594
 height = 0.49856567
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nskuf"]
-albedo_color = Color(2, 0, 0, 1)
+albedo_color = Color(4, 0, 0, 1)
 metallic = 0.89
 metallic_specular = 1.0
 roughness = 0.26
