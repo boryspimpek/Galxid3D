@@ -40,6 +40,11 @@ initial_velocity_min = 1.5
 initial_velocity_max = 1.5
 gravity = Vector3(0, 0, 0)
 
+[sub_resource type="QuadMesh" id="QuadMesh_lp3by"]
+material = SubResource("StandardMaterial3D_vshm1")
+size = Vector2(0.2, 0.2)
+orientation = 1
+
 [node name="Game" type="Node3D" unique_id=616589222]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2090551855]
@@ -66,7 +71,7 @@ amount = 100
 lifetime = 96.0
 preprocess = 96.0
 process_material = SubResource("ParticleProcessMaterial_uc6tr")
-draw_pass_1 = SubResource("QuadMesh_aukl3")
+draw_pass_1 = SubResource("QuadMesh_lp3by")
 
 [node name="PlanetSpawner" type="Node3D" parent="." unique_id=943200131]
 script = ExtResource("1_uc6tr")
@@ -81,8 +86,8 @@ spin_speed = 0.1
 speed = 1.0
 
 [node name="Player" parent="." unique_id=1811810025 instance=ExtResource("4_n40md")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.01, 0, 0)
 
 [node name="Starfighter" parent="." unique_id=1897743314 instance=ExtResource("5_lp3by")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.93, 0, -3.795)
-xmove = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
+xmove = 7

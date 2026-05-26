@@ -40,24 +40,11 @@ func _ready() -> void:
 	is_firing = true
 
 func _process(delta: float) -> void:
-	# Obsługa strzelania
 	fire_timer = max(0.0, fire_timer - delta)
 	if is_firing and fire_timer <= 0.0:
 		shoot()
 
-	# Aktualizacja pozycji i wyliczenie delty ruchu dla pochylenia
-	var prev_x: float = global_position.x
-	position += enemy_velocity * delta
-	
-	var dx: float = global_position.x - prev_x
-	_update_tilt(dx, delta)
-
-
-# --- METODY PRYWATNE / POMOCNICZE ---
-
-func _update_tilt(dx: float, delta: float) -> void:
-	var target: float = clampf(-dx * 5, -0.8, 0.8)
-	ship_model.rotation.z = lerpf(ship_model.rotation.z, target, delta * 10.0)
+	global_position += enemy_velocity * delta
 
 
 # --- METODY PUBLICZNE (API ENEMY) ---
