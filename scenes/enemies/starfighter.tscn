@@ -17,3 +17,6 @@ shape = SubResource("CapsuleShape3D_3ym5w")
 
 [node name="Muzzle" type="Marker3D" parent="." index="2" unique_id=69809237]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.7519847)
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." index="3" unique_id=35774775]
+aabb = AABB(-1, -0.4744031, -1, 2, 0.9488062, 2)

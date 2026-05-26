@@ -18,7 +18,6 @@ extends Area3D
 # --- REFERENCJE WĘZŁÓW (@ONREADY) ---
 @onready var ship_model: Node3D = $EnemyModel
 @onready var muzzle: Marker3D = $Muzzle
-@onready var visible_notifier: VisibleOnScreenNotifier3D = $VisibleOnScreenNotifier3D
 
 # --- ZMIENNE WEWNĘTRZNE (LOGIKA) ---
 var enemy_velocity: Vector3
@@ -35,7 +34,8 @@ func _ready() -> void:
 	
 	enemy_velocity = Vector3(float(xmove), float(ymove), float(zmove))
 	
-	visible_notifier.screen_exited.connect(_on_screen_exited)
+	if has_node("VisibleOnScreenNotifier3D"):
+		$VisibleOnScreenNotifier3D.screen_exited.connect(_on_screen_exited)
 
 	is_firing = true
 
