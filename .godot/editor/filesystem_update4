@@ -3,3 +3,7 @@ res://scenes/projectile/Projectile.gdshader
 res://3dworld.tscn
 res://data/weapons/weapon_1.tres
 res://scenes/enemy/Enemy.gd
+res://scenes/player/WeaponSystem.gd
+res://scenes/enemy/Enemy.tscn
+res://scenes/enemies/starfighter_3d.tscn
+res://scenes/enemies/starfighter.tscn

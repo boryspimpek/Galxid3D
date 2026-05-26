@@ -1,8 +1,21 @@
 [gd_scene format=3 uid="uid://ceb36gc6o5uvc"]
 
+[ext_resource type="PackedScene" uid="uid://b72pvnswg7eaa" path="res://scenes/enemy/Enemy.tscn" id="1_3ym5w"]
 [ext_resource type="PackedScene" uid="uid://eyku5nilalp" path="res://assets/enemies/starfighter/Meshy_AI_S_01_Starfighter_0522180707_texture.glb" id="1_ije4n"]
 
-[node name="Starfighter" unique_id=1322169304 instance=ExtResource("1_ije4n")]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3ym5w"]
+radius = 0.671875
 
-[node name="Mesh_0" parent="." index="0" unique_id=196635194]
-transform = Transform3D(-2.8412401e-08, 0, 0.65, 0, 0.65, 0, -0.65, 0, -2.8412401e-08, 0, 0, 0)
+[node name="Starfighter" unique_id=1897743314 instance=ExtResource("1_3ym5w")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0" unique_id=1028847670]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Meshy_AI_S_01_Starfighter_0522180707_texture" parent="MeshInstance3D" index="0" unique_id=1322169304 instance=ExtResource("1_ije4n")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=1319990428]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_3ym5w")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." index="2" unique_id=529569718]
+aabb = AABB(-1, -0.4521496, -0.96288335, 2, 0.9042992, 1.9257667)
