@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cyijj37qo8kqv"
 path.s3tc="res://.godot/imported/Meshy_AI_Azure_Ringed_World_0520072106_texture_Image_0.jpg-ad52699d556bb18d117acbd740852025.s3tc.ctex"
+path.etc2="res://.godot/imported/Meshy_AI_Azure_Ringed_World_0520072106_texture_Image_0.jpg-ad52699d556bb18d117acbd740852025.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/planets/azure planet/Meshy_AI_Azure_Ringed_World_0520072106_texture_Image_0.jpg"
-dest_files=["res://.godot/imported/Meshy_AI_Azure_Ringed_World_0520072106_texture_Image_0.jpg-ad52699d556bb18d117acbd740852025.s3tc.ctex"]
+dest_files=["res://.godot/imported/Meshy_AI_Azure_Ringed_World_0520072106_texture_Image_0.jpg-ad52699d556bb18d117acbd740852025.s3tc.ctex", "res://.godot/imported/Meshy_AI_Azure_Ringed_World_0520072106_texture_Image_0.jpg-ad52699d556bb18d117acbd740852025.etc2.ctex"]
 
 [params]
 

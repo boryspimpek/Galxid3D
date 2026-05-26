@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d5r4mlgcai8h"
 path.s3tc="res://.godot/imported/Meshy_AI_Aurora_Sky_Helicopter_0522180831_texture_Image_3.jpg-2cb4b651b6518ed1074a5aad062103aa.s3tc.ctex"
+path.etc2="res://.godot/imported/Meshy_AI_Aurora_Sky_Helicopter_0522180831_texture_Image_3.jpg-2cb4b651b6518ed1074a5aad062103aa.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/enemies/heli gold/Meshy_AI_Aurora_Sky_Helicopter_0522180831_texture_Image_3.jpg"
-dest_files=["res://.godot/imported/Meshy_AI_Aurora_Sky_Helicopter_0522180831_texture_Image_3.jpg-2cb4b651b6518ed1074a5aad062103aa.s3tc.ctex"]
+dest_files=["res://.godot/imported/Meshy_AI_Aurora_Sky_Helicopter_0522180831_texture_Image_3.jpg-2cb4b651b6518ed1074a5aad062103aa.s3tc.ctex", "res://.godot/imported/Meshy_AI_Aurora_Sky_Helicopter_0522180831_texture_Image_3.jpg-2cb4b651b6518ed1074a5aad062103aa.etc2.ctex"]
 
 [params]
 

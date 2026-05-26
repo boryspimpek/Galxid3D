@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ce6d4nvgl6rek"
 path.s3tc="res://.godot/imported/Meshy_AI_Cartoon_anime_style__0519154112_texture_1.jpg-4745e52e16ce1a1229c3490ce928afb8.s3tc.ctex"
+path.etc2="res://.godot/imported/Meshy_AI_Cartoon_anime_style__0519154112_texture_1.jpg-4745e52e16ce1a1229c3490ce928afb8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/planets/earth/Meshy_AI_Cartoon_anime_style__0519154112_texture_1.jpg"
-dest_files=["res://.godot/imported/Meshy_AI_Cartoon_anime_style__0519154112_texture_1.jpg-4745e52e16ce1a1229c3490ce928afb8.s3tc.ctex"]
+dest_files=["res://.godot/imported/Meshy_AI_Cartoon_anime_style__0519154112_texture_1.jpg-4745e52e16ce1a1229c3490ce928afb8.s3tc.ctex", "res://.godot/imported/Meshy_AI_Cartoon_anime_style__0519154112_texture_1.jpg-4745e52e16ce1a1229c3490ce928afb8.etc2.ctex"]
 
 [params]
 

@@ -11,6 +11,7 @@ var _wait_timer: float = 0.0
 
 func _ready():
 	player = get_parent()
+	await get_tree().process_frame
 	load_shield_config()
 
 func load_shield_config():

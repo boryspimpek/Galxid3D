@@ -34,6 +34,11 @@ window/size/always_on_top=true
 window/size/window_width_override=600
 window/size/window_height_override=800
 window/stretch/mode="canvas_items"
+window/handheld/orientation=1
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [physics]
 
@@ -43,4 +48,5 @@ common/physics_interpolation=true
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true
 anti_aliasing/quality/msaa_3d=2

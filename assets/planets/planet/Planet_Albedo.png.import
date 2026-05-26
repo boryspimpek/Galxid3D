@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2qpkppa4h00y"
 path.s3tc="res://.godot/imported/Planet_Albedo.png-0a4cd7aa8a7f9fcf72ca1048187aa5c0.s3tc.ctex"
+path.etc2="res://.godot/imported/Planet_Albedo.png-0a4cd7aa8a7f9fcf72ca1048187aa5c0.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/planets/planet/Planet_Albedo.png"
-dest_files=["res://.godot/imported/Planet_Albedo.png-0a4cd7aa8a7f9fcf72ca1048187aa5c0.s3tc.ctex"]
+dest_files=["res://.godot/imported/Planet_Albedo.png-0a4cd7aa8a7f9fcf72ca1048187aa5c0.s3tc.ctex", "res://.godot/imported/Planet_Albedo.png-0a4cd7aa8a7f9fcf72ca1048187aa5c0.etc2.ctex"]
 
 [params]
 

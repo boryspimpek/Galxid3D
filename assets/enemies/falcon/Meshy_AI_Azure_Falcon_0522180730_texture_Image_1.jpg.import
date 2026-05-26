@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1n7c0ue0ddsh"
 path.s3tc="res://.godot/imported/Meshy_AI_Azure_Falcon_0522180730_texture_Image_1.jpg-48c99658c8ed19e85b0d54616e5c2afd.s3tc.ctex"
+path.etc2="res://.godot/imported/Meshy_AI_Azure_Falcon_0522180730_texture_Image_1.jpg-48c99658c8ed19e85b0d54616e5c2afd.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/enemies/falcon/Meshy_AI_Azure_Falcon_0522180730_texture_Image_1.jpg"
-dest_files=["res://.godot/imported/Meshy_AI_Azure_Falcon_0522180730_texture_Image_1.jpg-48c99658c8ed19e85b0d54616e5c2afd.s3tc.ctex"]
+dest_files=["res://.godot/imported/Meshy_AI_Azure_Falcon_0522180730_texture_Image_1.jpg-48c99658c8ed19e85b0d54616e5c2afd.s3tc.ctex", "res://.godot/imported/Meshy_AI_Azure_Falcon_0522180730_texture_Image_1.jpg-48c99658c8ed19e85b0d54616e5c2afd.etc2.ctex"]
 
 [params]
 

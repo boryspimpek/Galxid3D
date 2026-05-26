@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpc3pmffih74e"
 path.s3tc="res://.godot/imported/Meshy_AI_S_01_Starfighter_0522180707_texture_normal.png-7f0d304350ddbc112cebbf7723f1739d.s3tc.ctex"
+path.etc2="res://.godot/imported/Meshy_AI_S_01_Starfighter_0522180707_texture_normal.png-7f0d304350ddbc112cebbf7723f1739d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/enemies/starfighter/Meshy_AI_S_01_Starfighter_0522180707_texture_normal.png"
-dest_files=["res://.godot/imported/Meshy_AI_S_01_Starfighter_0522180707_texture_normal.png-7f0d304350ddbc112cebbf7723f1739d.s3tc.ctex"]
+dest_files=["res://.godot/imported/Meshy_AI_S_01_Starfighter_0522180707_texture_normal.png-7f0d304350ddbc112cebbf7723f1739d.s3tc.ctex", "res://.godot/imported/Meshy_AI_S_01_Starfighter_0522180707_texture_normal.png-7f0d304350ddbc112cebbf7723f1739d.etc2.ctex"]
 
 [params]
 

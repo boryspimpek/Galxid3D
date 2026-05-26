@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2u4lacemsum2"
 path.s3tc="res://.godot/imported/Meshy_AI_Emerald_Saturn_0520072056_texture_Image_0.jpg-7c4f553aeff0be528e0d5157ab190225.s3tc.ctex"
+path.etc2="res://.godot/imported/Meshy_AI_Emerald_Saturn_0520072056_texture_Image_0.jpg-7c4f553aeff0be528e0d5157ab190225.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/planets/emerald planet/Meshy_AI_Emerald_Saturn_0520072056_texture_Image_0.jpg"
-dest_files=["res://.godot/imported/Meshy_AI_Emerald_Saturn_0520072056_texture_Image_0.jpg-7c4f553aeff0be528e0d5157ab190225.s3tc.ctex"]
+dest_files=["res://.godot/imported/Meshy_AI_Emerald_Saturn_0520072056_texture_Image_0.jpg-7c4f553aeff0be528e0d5157ab190225.s3tc.ctex", "res://.godot/imported/Meshy_AI_Emerald_Saturn_0520072056_texture_Image_0.jpg-7c4f553aeff0be528e0d5157ab190225.etc2.ctex"]
 
 [params]
 
