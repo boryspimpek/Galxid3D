@@ -16,4 +16,7 @@ speed = 0.0
 [node name="Planet" parent="SimplePlanet" index="0" unique_id=981439615]
 surface_material_override/0 = SubResource("StandardMaterial3D_qqodq")
 
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=443823876]
+aabb = AABB(-2, -2, -2, 4, 4, 4)
+
 [editable path="SimplePlanet"]
