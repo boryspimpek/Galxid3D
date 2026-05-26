@@ -55,5 +55,5 @@ res://scenes/player/WeaponSystem.tscn::b51032d79b00ea281868efda9e151ad5::1779131
 res://scenes/projectile/Projectile.tscn::5847b9a578abbc8b6e50454dff0fbe53::1779807641::res://.godot/exported/133200997/export-d51b6ad9e18066cc7ea8055c0639a43b-Projectile.scn
 res://scenes/world/World.tscn::93a602d3604336151ababc817bc9503a::1779720958::res://.godot/exported/133200997/export-c7db8001466bdbc36a923010fa5ea39c-World.scn
 res://trailmesh/example/ExampleScene.tscn::60e2796d4979f30ebe5c21950737f8bc::1779793320::res://.godot/exported/133200997/export-d1112f1d2c7c929b9c04e0ca681e4dae-ExampleScene.scn
-res://3dworld.tscn::465b5ab210bd53808e76ffe78cf1b09c::1779806812::res://.godot/exported/133200997/export-37e875acfa77dccf473348a8829cfa46-3dworld.scn
+res://3dworld.tscn::46ffc002f7988ca5ce9fa374b10deae2::1779814091::res://.godot/exported/133200997/export-37e875acfa77dccf473348a8829cfa46-3dworld.scn
 res://default_bus_layout.tres::c84049d37775bd78a7b03448df418b73::1779792047::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res

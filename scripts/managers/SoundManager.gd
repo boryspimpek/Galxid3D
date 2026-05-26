@@ -17,19 +17,39 @@ func _ready():
 	_scan_sounds()
 
 func _scan_sounds():
-	var dir = DirAccess.open(SOUND_DIR)
-	if not dir:
-		push_error("SoundManager: nie można otworzyć ", SOUND_DIR)
-		return
-	dir.list_dir_begin()
-	var file_name = dir.get_next()
-	while file_name != "":
-		if file_name.ends_with(".wav"):
-			var id = file_name.left(3).to_int()
-			if id > 0:
-				_path_map[id] = SOUND_DIR + file_name
-		file_name = dir.get_next()
-	dir.list_dir_end()
+	# Pre-defined sound paths for better Android compatibility
+	_path_map = {
+		1: SOUND_DIR + "001_S_WEAPON_1.wav",
+		2: SOUND_DIR + "002_S_WEAPON_2.wav",
+		3: SOUND_DIR + "003_S_ENEMY_HIT.wav",
+		4: SOUND_DIR + "004_S_EXPLOSION_4.wav",
+		5: SOUND_DIR + "005_S_WEAPON_5.wav",
+		6: SOUND_DIR + "006_S_WEAPON_6.wav",
+		7: SOUND_DIR + "007_S_WEAPON_7.wav",
+		8: SOUND_DIR + "008_S_SELECT_EXPLOSION_8.wav",
+		9: SOUND_DIR + "009_S_EXPLOSION_9.wav",
+		10: SOUND_DIR + "010_S_WEAPON_10.wav",
+		11: SOUND_DIR + "011_S_EXPLOSION_11.wav",
+		12: SOUND_DIR + "012_S_EXPLOSION_12.wav",
+		13: SOUND_DIR + "013_S_WEAPON_13.wav",
+		14: SOUND_DIR + "014_S_WEAPON_14.wav",
+		15: SOUND_DIR + "015_S_WEAPON_15.wav",
+		16: SOUND_DIR + "016_S_SPRING.wav",
+		17: SOUND_DIR + "017_S_WARNING.wav",
+		18: SOUND_DIR + "018_S_ITEM.wav",
+		19: SOUND_DIR + "019_S_HULL_HIT.wav",
+		20: SOUND_DIR + "020_S_MACHINE_GUN.wav",
+		21: SOUND_DIR + "021_S_SOUL_OF_ZINGLON.wav",
+		22: SOUND_DIR + "022_S_EXPLOSION_22.wav",
+		23: SOUND_DIR + "023_S_CLINK.wav",
+		24: SOUND_DIR + "024_S_CLICK.wav",
+		25: SOUND_DIR + "025_S_WEAPON_25.wav",
+		26: SOUND_DIR + "026_S_WEAPON_26.wav",
+		27: SOUND_DIR + "027_S_SHIELD_HIT.wav",
+		28: SOUND_DIR + "028_S_CURSOR.wav",
+		29: SOUND_DIR + "029_S_POWERUP.wav",
+	}
+	print("SoundManager: Załadowano ", _path_map.size(), " ścieżek dźwiękowych")
 
 func play_weapon_sound(sound_id: int) -> void:
 	_play_on(_weapon_player, sound_id)

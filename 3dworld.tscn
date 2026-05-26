@@ -85,4 +85,4 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="Starfighter" parent="." unique_id=1897743314 instance=ExtResource("5_lp3by")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.93, 0, -3.795)
-xmove = 7
+xmove = 2

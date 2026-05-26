@@ -21,9 +21,19 @@ func _load_all():
 
 	# --- STATKI --- dodawaj kolejne jeśli masz więcej plików
 	var ship_files = [
-		"res://data/ships/ship_1.tres",
-		"res://data/ships/ship_2.tres",
-		"res://data/ships/ship_3.tres",
+		"res://data/ships/ship_001.tres",
+		"res://data/ships/ship_002.tres",
+		"res://data/ships/ship_003.tres",
+		"res://data/ships/ship_004.tres",
+		"res://data/ships/ship_005.tres",
+		"res://data/ships/ship_006.tres",
+		"res://data/ships/ship_007.tres",
+		"res://data/ships/ship_008.tres",
+		"res://data/ships/ship_009.tres",
+		"res://data/ships/ship_010.tres",
+		"res://data/ships/ship_011.tres",
+		"res://data/ships/ship_012.tres",
+		"res://data/ships/ship_013.tres",
 	]
 	for path in ship_files:
 		if ResourceLoader.exists(path):
@@ -49,8 +59,16 @@ func _load_all():
 
 	# --- TARCZE ---
 	var shield_files = [
-		"res://data/shields/shield_1.tres",
-		"res://data/shields/shield_2.tres",
+		"res://data/shields/shield_001.tres",
+		"res://data/shields/shield_002.tres",
+		"res://data/shields/shield_003.tres",
+		"res://data/shields/shield_004.tres",
+		"res://data/shields/shield_005.tres",
+		"res://data/shields/shield_006.tres",
+		"res://data/shields/shield_007.tres",
+		"res://data/shields/shield_008.tres",
+		"res://data/shields/shield_009.tres",
+		"res://data/shields/shield_010.tres",
 	]
 	for path in shield_files:
 		if ResourceLoader.exists(path):
@@ -62,8 +80,12 @@ func _load_all():
 
 	# --- GENERATORY ---
 	var generator_files = [
-		"res://data/generators/generator_1.tres",
-		"res://data/generators/generator_2.tres",
+		"res://data/generators/generator_001.tres",
+		"res://data/generators/generator_002.tres",
+		"res://data/generators/generator_003.tres",
+		"res://data/generators/generator_004.tres",
+		"res://data/generators/generator_005.tres",
+		"res://data/generators/generator_006.tres",
 	]
 	for path in generator_files:
 		if ResourceLoader.exists(path):
