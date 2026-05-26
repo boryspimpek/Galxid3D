@@ -6,3 +6,5 @@
 script = ExtResource("1_enemy")
 
 [node name="EnemyModel" type="MeshInstance3D" parent="." unique_id=634598779]
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1117249180]

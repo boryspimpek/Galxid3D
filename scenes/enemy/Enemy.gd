@@ -1,12 +1,14 @@
 extends Area3D
 
-# --- KLASY I ZASOBY ---
-const EnemyWeaponDataClass = preload("res://scripts/resources/EnemyWeaponData.gd")
-
 # --- ZMIENNE EKSPORTOWANE (@EXPORT) ---
 @export_group("Statystyki")
 @export var armor: int = 1
-@export var weapon_index: int = 1
+@export var damage: int = 1
+@export var fire_rate: float = 2.0
+@export var projectile_velocity: Vector3 = Vector3(0, 0, 60)
+@export var aim: int = 0
+@export var sound: int = 1
+@export var esize: int = 1
 
 @export_group("Ruch Bazowy")
 @export var xmove: int = 0
@@ -16,11 +18,10 @@ const EnemyWeaponDataClass = preload("res://scripts/resources/EnemyWeaponData.gd
 # --- REFERENCJE WĘZŁÓW (@ONREADY) ---
 @onready var ship_model: Node3D = $EnemyModel
 @onready var muzzle: Marker3D = $Muzzle
+@onready var visible_notifier: VisibleOnScreenNotifier3D = $VisibleOnScreenNotifier3D
 
 # --- ZMIENNE WEWNĘTRZNE (LOGIKA) ---
-var enemy_weapon_data: EnemyWeaponDataClass
 var enemy_velocity: Vector3
-
 var fire_timer: float = 0.0
 var is_firing: bool = false
 
@@ -33,8 +34,10 @@ func _ready() -> void:
 	collision_mask = 5
 	
 	enemy_velocity = Vector3(float(xmove), float(ymove), float(zmove))
-	load_weapon_config()
+	
+	visible_notifier.screen_exited.connect(_on_screen_exited)
 
+	is_firing = true
 
 func _process(delta: float) -> void:
 	# Obsługa strzelania
@@ -57,32 +60,51 @@ func _update_tilt(dx: float, delta: float) -> void:
 	ship_model.rotation.z = lerpf(ship_model.rotation.z, target, delta * 10.0)
 
 
-func load_weapon_config() -> void:
-	var weapon_path: String = "res://data/enemy_weapons/weapon_%d.tres" % weapon_index
-	enemy_weapon_data = load(weapon_path) as EnemyWeaponDataClass
-
-
-# --- METODY PUBLICZNE (API) ---
+# --- METODY PUBLICZNE (API ENEMY) ---
 
 func set_firing(firing: bool) -> void:
 	is_firing = firing
 
 
+func take_damage(amount: int) -> void:
+	armor -= amount
+	if armor <= 0:
+		die()
+	else:
+		SoundManager.play_sound(3)
+
+
+func die() -> void:
+	SoundManager.play_sound(9 if esize == 1 else 8)
+	queue_free()
+
+
+# --- OBSŁUGA STRZELANIA ---
+
 func shoot() -> void:
-	var damage = enemy_weapon_data.damage
-	var velocity = enemy_weapon_data.velocity
+	create_projectile(damage, projectile_velocity)
+	SoundManager.play_weapon_sound(sound)
 
-	create_projectile(damage, velocity)
-	SoundManager.play_weapon_sound(enemy_weapon_data.sound)
-
-	fire_timer = enemy_weapon_data.fire_rate
+	fire_timer = fire_rate
 
 
-func create_projectile(damage: int, velocity: Vector3) -> void:
+func create_projectile(dmg: int, proj_velocity: Vector3) -> void:
 	var projectile_scene = GameConstants.enemy_projectile_scene
 	var projectile = projectile_scene.instantiate()
 	
 	get_tree().current_scene.add_child(projectile)
 	projectile.global_position = muzzle.global_position
-	projectile.velocity = velocity
-	projectile.damage = damage
+	projectile.velocity = proj_velocity
+	projectile.damage = dmg
+
+
+# --- OBSŁUGA SYGNAŁÓW (SIGNALS) ---
+
+func _on_screen_exited() -> void:
+	queue_free()
+
+
+func _on_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		body.take_damage(armor)
+		die()

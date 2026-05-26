@@ -2,18 +2,20 @@
 
 [ext_resource type="Script" uid="uid://drtojasqrdy7m" path="res://scenes/enemy_projectile/EnemyProjectile.gd" id="1_enemy_proj"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_enemy"]
-radius = 3.0
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qvcrk"]
 
-[node name="EnemyProjectile" type="Area2D" unique_id=2033990016]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qvcrk"]
+
+[node name="EnemyProjectile" type="Area3D" unique_id=783238135]
 script = ExtResource("1_enemy_proj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=41003676]
-scale = Vector2(4, 4)
-shape = SubResource("CircleShape2D_enemy")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=154651942]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_qvcrk")
 
-[node name="Visual" type="Sprite2D" parent="." unique_id=1971292679]
-scale = Vector2(4, 4)
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=493736527]
+aabb = AABB(-1, -0.5070118, -1, 2, 1.0140235, 2)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=14250491]
-rect = Rect2(-16, -16, 32, 32)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=686331195]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_qvcrk")

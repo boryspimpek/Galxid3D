@@ -6,7 +6,8 @@
 script = ExtResource("1")
 weapon_index = 1
 damage = 5
-velocity = Vector3(0, 0, -60)
+velocity = Vector3(0, 0, 60)
 aim = 0
-fire_rate = 0.2
+fire_rate = 2
 sound = 1
+esize = 1

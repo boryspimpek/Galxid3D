@@ -142,6 +142,16 @@ func _get_mouse_world_position() -> Vector3:
 # 3. DEBUG
 # ============================================================================
 
+func take_damage(amount: int) -> void:
+	armor -= amount
+	if armor <= 0:
+		die()
+	else:
+		SoundManager.play_sound(3)
+
+func die() -> void:
+	queue_free()
+
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_home"):
 		print("Player: --- DEBUG GRACZA ---")
