@@ -1,6 +1,6 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1779827529
-3dworld.tscn::PackedScene::6563213892080481897::1779827702::0::1::::<><><>0<>0<><>::uid://cmxovjxejqgik::::res://scenes/planets/PlanetSpawner.gd<>uid://biy8f34381epq::::res://scenes/planets/saturn.tscn<>uid://bte7ofi7pgn5b::::res://scenes/player/Player.tscn<>uid://dujl72368trjv::::res://scenes/planets/venus.tscn<>uid://ceb36gc6o5uvc::::res://scenes/enemies/starfighter.tscn
+::res://::1779828342
+3dworld.tscn::PackedScene::6563213892080481897::1779827880::0::1::::<><><>0<>0<><>::uid://cmxovjxejqgik::::res://scenes/planets/PlanetSpawner.gd<>uid://bte7ofi7pgn5b::::res://scenes/player/Player.tscn<>uid://ceb36gc6o5uvc::::res://scenes/enemies/starfighter.tscn
 default_bus_layout.tres::AudioBusLayout::2099548917964122130::1779824653::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile::-1::1779810743::0::1::::<><><>0<>0<><>::
 ::res://assets/::1779823789
@@ -51,7 +51,7 @@ boom3.png::CompressedTexture2D::7300363357798207764::1779131092::1779131092::1::
 boom4.png::CompressedTexture2D::6776662002216919928::1779131092::1779131092::1::::<><><>0<>0<>303cb0e645fa4517da757b8b3e025f3c<>res://.godot/imported/boom4.png-327d5d40ec561476f6e977760f6afda8.ctex::
 boom.png::CompressedTexture2D::323097929366084747::1779131092::1779131092::1::::<><><>0<>0<>ea0fa12816f0a8ea272e6c099323ac25<>res://.godot/imported/boom.png-94d28117d22b8726a6414b218877c926.ctex::
 ::res://assets/planets/::1779823760
-::res://assets/planets/textures/::1779827236
+::res://assets/planets/textures/::1779827721
 mars.png::CompressedTexture2D::3514081760187334840::1779821955::1779823636::1::::<><><>0<>0<>0c9cbfd0d7d28251ac88e5c2748d08f3<>res://.godot/imported/mars.png-003ee0a0f8b4c2685519c95a477b8eef.s3tc.ctex<*>res://.godot/imported/mars.png-003ee0a0f8b4c2685519c95a477b8eef.etc2.ctex::
 Meshy_AI_Azure_Ringed_World_0520072106_texture_Image_0.jpg::CompressedTexture2D::8382277547791731847::1779261762::1779823583::1::::<><><>0<>0<>d6ae43608828b25483edc2511b28a04f<>res://.godot/imported/Meshy_AI_Azure_Ringed_World_0520072106_texture_Image_0.jpg-6f9d24107fb32494e40384f3df13b512.s3tc.ctex<*>res://.godot/imported/Meshy_AI_Azure_Ringed_World_0520072106_texture_Image_0.jpg-6f9d24107fb32494e40384f3df13b512.etc2.ctex::
 Meshy_AI_Azure_Ringed_World_0520072106_texture_Image_1.jpg::CompressedTexture2D::178418865232489763::1779261764::1779827721::1::::<><><>0<>0<>8e4884913db754509b30d43a95a4ebed<>res://.godot/imported/Meshy_AI_Azure_Ringed_World_0520072106_texture_Image_1.jpg-11a72f0e6217fba5f1fb91efcad38944.s3tc.ctex<*>res://.godot/imported/Meshy_AI_Azure_Ringed_World_0520072106_texture_Image_1.jpg-11a72f0e6217fba5f1fb91efcad38944.etc2.ctex::
@@ -192,13 +192,13 @@ engine.tscn::PackedScene::3426126746478426575::1779131093::0::1::::<><><>0<>0<><
 ::res://scenes/explosions/::1779790787
 Explode.gd::GDScript::1665927852935783370::1779134304::0::1::::<>Node2D<><>0<>0<><>::
 explode.tscn::PackedScene::7603591559635084427::1779377106::0::1::::<><><>0<>0<><>::uid://eurm1kga3iy2::::res://assets/explode/boom.png<>uid://xy8uaehufuuk::::res://scenes/explosions/Explode.gd
-::res://scenes/planets/::1779827469
-PlanetSpawner.gd::GDScript::5663476227391756546::1779824496::0::1::::<>Node3D<><>0<>0<><>::
-planet_rotate.gd::GDScript::8293380752750181618::1779720937::0::1::::<>Node3D<><>0<>0<><>::
-mars.tscn::PackedScene::6325341186571572607::1779826734::0::1::::<><><>0<>0<><>::uid://bvdm4vxqco8gf::::res://scenes/planets/simple_planet.tscn<>uid://bqciobvqwe0to::::res://assets/planets/textures/mars.png<>uid://droo5e32n3i7x::::res://assets/planets/textures/Meshy_AI_Azure_Ringed_World_0520072106_texture_Image_0.jpg
-venus.tscn::PackedScene::8582344818790218131::1779826747::0::1::::<><><>0<>0<><>::uid://bvdm4vxqco8gf::::res://scenes/planets/simple_planet.tscn<>uid://d6ufagn3ivxr::::res://assets/planets/textures/venus.png<>uid://ha5tqaj7mcfx::::res://assets/planets/textures/Meshy_AI_Silvery_Ringed_Planet_0520072027_texture_Image_0.jpg
+::res://scenes/planets/::1779828003
+mars.tscn::PackedScene::6325341186571572607::1779827855::0::1::::<><><>0<>0<><>::uid://bvdm4vxqco8gf::::res://scenes/planets/simple_planet.tscn<>uid://bqciobvqwe0to::::res://assets/planets/textures/mars.png<>uid://droo5e32n3i7x::::res://assets/planets/textures/Meshy_AI_Azure_Ringed_World_0520072106_texture_Image_0.jpg
+PlanetSpawner.gd::GDScript::5663476227391756546::1779828180::0::1::::<>Node3D<><>0<>0<><>::
+planet_rotate.gd::GDScript::8293380752750181618::1779828178::0::1::::<>Node3D<><>0<>0<><>::
 saturn.tscn::PackedScene::2999490605396062654::1779827698::0::1::::<><><>0<>0<><>::uid://bvdm4vxqco8gf::::res://scenes/planets/simple_planet.tscn<>uid://d37r53htsjgf6::::res://assets/planets/textures/saturn.png<>uid://dvtacomnolo8s::::res://assets/planets/textures/Meshy_AI_Sunset_Saturn_0519154148_texture_1.jpg
-simple_planet.tscn::PackedScene::3867361064541482661::1779826970::0::1::::<><><>0<>0<><>::uid://bijnd66y5px5b::::res://assets/simple planet/SimplePlanet.glb<>uid://dqfm1fllu6cek::::res://scenes/planets/planet_rotate.gd
+simple_planet.tscn::PackedScene::3867361064541482661::1779828003::0::1::::<><><>0<>0<><>::uid://bijnd66y5px5b::::res://assets/simple planet/SimplePlanet.glb<>uid://dqfm1fllu6cek::::res://scenes/planets/planet_rotate.gd
+venus.tscn::PackedScene::8582344818790218131::1779827785::0::1::::<><><>0<>0<><>::uid://bvdm4vxqco8gf::::res://scenes/planets/simple_planet.tscn<>uid://d6ufagn3ivxr::::res://assets/planets/textures/venus.png<>uid://cgej60c4p6fl7::::res://assets/planets/textures/Meshy_AI_Crimson_Ringed_Planet_0520072115_texture_Image_0.jpg
 ::res://scenes/player/::1779811387
 DamageSystem.gd::GDScript::2289176751178949268::1779724021::0::1::::<>Node<><>0<>0<><>::
 DamageSystem.tscn::PackedScene::-1::1779131093::0::1::::<><><>0<>0<><>::res://scenes/player/DamageSystem.gd
@@ -238,7 +238,7 @@ trailmesh.gdextension::GDExtension::8020490264137839201::1779793320::0::1::::<><
 ::res://trailmesh/bin/linux/::1779793320
 ::res://trailmesh/bin/macos/::1779793320
 ::res://trailmesh/bin/macos/macos.framework/::1779793320
-::res://trailmesh/bin/windows/::1779820530
+::res://trailmesh/bin/windows/::1779828340
 ::res://trailmesh/example/::1779793320
 albedo.png::CompressedTexture2D::117215708539975444::1779793320::1779793320::1::::<><><>0<>0<>b23a40921eea09668ac99f9cc7237a6c<>res://.godot/imported/albedo.png-296ffd37ac24545f2ded3e452355f4e6.ctex::
 Camera.gd::GDScript::144620971606581968::1779793320::0::1::::<>Camera3D<><>0<>0<><>::
