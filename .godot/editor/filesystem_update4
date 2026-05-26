@@ -7,3 +7,4 @@ res://scenes/planets/venus.tscn
 res://scenes/planets/mars.tscn
 res://scenes/planets/saturn.tscn
 res://default_bus_layout.tres
+res://scenes/planets/planet_rotate.gd

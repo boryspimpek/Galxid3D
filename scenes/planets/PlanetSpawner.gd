@@ -55,15 +55,4 @@ func spawn_random_planet() -> void:
 	# --- 2. TERAZ MOŻEMY BEZPIECZNIE UŻYĆ GLOBAL_POSITION ---
 	planet.global_position = Vector3(random_x, 0.0, spawn_z)
 
-	# --- 3. PRZYPISANIE PRĘDKOŚCI (z zachowaniem bezpiecznego szukania) ---
-	if "speed" in planet:
-		planet.speed = random_speed
-	else:
-		var found_script = false
-		for child in planet.get_children():
-			if "speed" in child:
-				child.speed = random_speed
-				found_script = true
-				break
-		if not found_script:
-			push_error("BŁĄD: Brak zmiennej 'speed' w scenie: " + scene_path)
+	planet.speed = random_speed
