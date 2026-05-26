@@ -7,3 +7,4 @@ res://scenes/player/WeaponSystem.gd
 res://scenes/enemy/Enemy.tscn
 res://scenes/enemies/starfighter_3d.tscn
 res://scenes/enemies/starfighter.tscn
+res://scenes/player/Player.gd

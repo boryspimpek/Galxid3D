@@ -46,7 +46,7 @@ var ship_data: ShipData = null
 @onready var damage_system: Node = $DamageSystem
 @onready var shield_system: Node = $ShieldSystem
 
-# 3. Model jest teraz bezpośrednim dzieckiem Node3D, bez SubViewportu!
+# 3. Model jest teraz bezpośrednim dzieckiem Node3D
 @onready var ship_model: Node3D = $PlayerModel
 
 # Do sterowania myszką potrzebujemy dostępu do aktywnej kamery
