@@ -2,3 +2,4 @@ res://scenes/projectile/Projectile.tscn
 res://scenes/projectile/Projectile.gdshader
 res://3dworld.tscn
 res://data/weapons/weapon_1.tres
+res://scenes/enemy/Enemy.gd

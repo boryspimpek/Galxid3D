@@ -1,7 +1,7 @@
 extends Node
 
 # ============================================================================
-# WEAPON SYSTEM - Logika strzelania (uproszczona wersja 3D)
+# WEAPON SYSTEM - Logika strzelania
 # ============================================================================
 
 # Preload resource class
@@ -34,7 +34,7 @@ func _physics_process(delta: float):
 func load_weapon_config():
 	current_weapon_index = player.front_weapon_index
 	
-	# Pobierz dane broni z resources (uproszczone)
+	# Pobierz dane broni z resources 
 	weapon_data = DataManager.get_weapon_by_id(current_weapon_index)
 	
 	if weapon_data == null:
