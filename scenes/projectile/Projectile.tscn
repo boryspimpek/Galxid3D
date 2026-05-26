@@ -1,35 +1,50 @@
 [gd_scene format=3 uid="uid://bx4ikphqjjb3p"]
 
 [ext_resource type="Script" uid="uid://cxso55pxdnnn3" path="res://scenes/projectile/projectile.gd" id="1_qxf0c"]
-[ext_resource type="Shader" uid="uid://biinth3awf6a6" path="res://scenes/projectile/Projectile.gdshader" id="2_cm8q0"]
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nskuf"]
-direction = Vector3(0, 0, 1)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nskuf"]
+radius = 0.10058594
+height = 0.49856567
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bneoo"]
-render_priority = 0
-shader = ExtResource("2_cm8q0")
-shader_parameter/core_color = Color(1, 0, 0, 1)
-shader_parameter/fire_color = Color(1, 0.3, 0, 1)
-shader_parameter/smoke_color = Color(0.4, 0, 0, 1)
-shader_parameter/speed = 3.4710001173725002
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nskuf"]
+albedo_color = Color(2, 0, 0, 1)
+metallic = 0.89
+metallic_specular = 1.0
+roughness = 0.26
+grow_amount = -0.182
 
-[sub_resource type="SphereMesh" id="SphereMesh_nskuf"]
-material = SubResource("ShaderMaterial_bneoo")
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cm8q0"]
+material = SubResource("StandardMaterial3D_nskuf")
+radius = 0.1
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cm8q0"]
+albedo_color = Color(4, 4, 0, 1)
+emission_enabled = true
+
+[sub_resource type="Curve" id="Curve_bneoo"]
+_limits = [0.0, 1.0, 0.0, 0.02]
+_data = [Vector2(0, 0.71648943), 0.0, 0.0, 0, 0, Vector2(0.0049591283, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Projectile" type="Area3D" unique_id=1517421005]
 script = ExtResource("1_qxf0c")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1719570957]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.2672634e-11, -0.000289917)
+shape = SubResource("CapsuleShape3D_nskuf")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1682580241]
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=547188648]
-amount = 1
-lifetime = 0.3
-local_coords = true
-process_material = SubResource("ParticleProcessMaterial_nskuf")
-draw_pass_1 = SubResource("SphereMesh_nskuf")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1002288102]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_cm8q0")
+
+[node name="TrailEmitter" type="TrailEmitter" parent="." unique_id=1095901068]
+material = SubResource("StandardMaterial3D_cm8q0")
+curve = SubResource("Curve_bneoo")
+geometry_nodepath = NodePath("../MeshInstance3D")
+size = 0.3
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
