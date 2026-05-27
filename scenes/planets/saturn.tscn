@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://biy8f34381epq"]
+
+[ext_resource type="PackedScene" uid="uid://hq602uu7kt7m" path="res://scenes/planets/simple_planet.tscn" id="1_mlpop"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fpsqh"]
+load_path = "res://.godot/imported/2k_saturn.jpg-8495e80f809146e26fce2cb619659783.s3tc.ctex"
+
+[node name="saturn" unique_id=95632487 instance=ExtResource("1_mlpop")]
+transform = Transform3D(0.010476687, 0.0077645774, -0.027017375, 0.009950863, -0.027990377, -0.004185391, 0.026290817, 0.007500007, 0.0123503655, 0, 0, 0)
+albedo_texture = SubResource("CompressedTexture2D_fpsqh")

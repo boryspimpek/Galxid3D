@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cpwck5pptf7hx"]
+
+[ext_resource type="PackedScene" uid="uid://hq602uu7kt7m" path="res://scenes/planets/simple_planet.tscn" id="1_hd1me"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5hhm1"]
+load_path = "res://.godot/imported/2k_neptune.jpg-b041fbf06c1b7a59a5ea05a7a75f1b51.s3tc.ctex"
+
+[node name="neptune" unique_id=95632487 instance=ExtResource("1_hd1me")]
+transform = Transform3D(0.013513511, 0.0077645727, -0.025633631, 0.01036603, -0.027990391, -0.0030135696, 0.024696501, 0.0074999514, 0.015291208, 0, 0, 0)
+albedo_texture = SubResource("CompressedTexture2D_5hhm1")

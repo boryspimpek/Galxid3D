@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cvoer2h7noaji"]
+
+[ext_resource type="PackedScene" uid="uid://hq602uu7kt7m" path="res://scenes/planets/simple_planet.tscn" id="1_recc1"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hqfxl"]
+load_path = "res://.godot/imported/2k_mercury.jpg-a6dd2c9c255eb2227dea93243471afa4.s3tc.ctex"
+
+[node name="mercury" unique_id=95632487 instance=ExtResource("1_recc1")]
+transform = Transform3D(-0.028840689, 0.0077645765, 0.002813215, -0.008218321, -0.027990378, -0.0069997176, -0.00081308687, 0.0075000017, -0.029035786, 0, 0, 0)
+albedo_texture = SubResource("CompressedTexture2D_hqfxl")

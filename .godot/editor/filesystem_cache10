@@ -1,6 +1,6 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1779893556
-3dworld.tscn::PackedScene::6563213892080481897::1779893579::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://simple_planet.tscn<>uid://bte7ofi7pgn5b::::res://scenes/player/Player.tscn
+::res://::1779895328
+3dworld.tscn::PackedScene::6563213892080481897::1779895213::0::1::::<><><>0<>0<><>::uid://cmxovjxejqgik::::res://scenes/planets/PlanetSpawner.gd<>uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn<>uid://bte7ofi7pgn5b::::res://scenes/player/Player.tscn
 default_bus_layout.tres::AudioBusLayout::2099548917964122130::1779824653::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile::-1::1779810743::0::1::::<><><>0<>0<><>::
 ::res://assets/::1779823789
@@ -86,7 +86,8 @@ Planet_Albedo.png::CompressedTexture2D::9002898118819555822::1779131092::1779893
 Ring_Albedo.png::CompressedTexture2D::8267289449196778104::1779131092::1779893142::1::::<><><>0<>0<>f9216cc441e62943e4e40d2d47479ec1<>res://.godot/imported/Ring_Albedo.png-6c85dc529ec2b10a3b94d7adc67142ae.ctex::
 saturn.png::CompressedTexture2D::9191697006123422441::1779823376::1779893190::1::::<><><>0<>0<>67934bb92ab54465d4e838f3ebc6850f<>res://.godot/imported/saturn.png-8878591897427be0206c26c458195284.s3tc.ctex<*>res://.godot/imported/saturn.png-8878591897427be0206c26c458195284.etc2.ctex::
 venus.png::CompressedTexture2D::275785520012047891::1779823376::1779893190::1::::<><><>0<>0<>f7639f4fa0241928be9226346fa21d94<>res://.godot/imported/venus.png-4d792c7d2c6a94e28352aea7d8b7f419.s3tc.ctex<*>res://.godot/imported/venus.png-4d792c7d2c6a94e28352aea7d8b7f419.etc2.ctex::
-::res://assets/planets/textures/solar system/::1779893413
+::res://assets/planets/textures/solar system/::1779895322
+2k_earth_daymap.jpg::CompressedTexture2D::4541173257449297455::1779895297::1779895322::1::::<><><>0<>0<>12b9c88fe3fb835778b726fccecfdfa4<>res://.godot/imported/2k_earth_daymap.jpg-d2d55985c01bdecba82cbac7d78fa0e0.s3tc.ctex<*>res://.godot/imported/2k_earth_daymap.jpg-d2d55985c01bdecba82cbac7d78fa0e0.etc2.ctex::
 2k_jupiter.jpg::CompressedTexture2D::2497257232761840594::1779893206::1779893221::1::::<><><>0<>0<>c9dc302d09e978cd57c21ac52d772df0<>res://.godot/imported/2k_jupiter.jpg-bf98b86ba5038ec915a44ce1a3aea360.s3tc.ctex<*>res://.godot/imported/2k_jupiter.jpg-bf98b86ba5038ec915a44ce1a3aea360.etc2.ctex::
 2k_mars.jpg::CompressedTexture2D::6730297766563565988::1779878775::1779893176::1::::<><><>0<>0<>cb7be2945f89a1bdd86bc7e4e5f6d79a<>res://.godot/imported/2k_mars.jpg-50382d3fd03e9e4d7418e19b7fd3cdda.s3tc.ctex<*>res://.godot/imported/2k_mars.jpg-50382d3fd03e9e4d7418e19b7fd3cdda.etc2.ctex::
 2k_mercury.jpg::CompressedTexture2D::6298036883402599414::1779893206::1779893262::1::::<><><>0<>0<>03eff515848e1522348da9d3782239a7<>res://.godot/imported/2k_mercury.jpg-a6dd2c9c255eb2227dea93243471afa4.s3tc.ctex<*>res://.godot/imported/2k_mercury.jpg-a6dd2c9c255eb2227dea93243471afa4.etc2.ctex::
@@ -202,11 +203,20 @@ engine.tscn::PackedScene::3426126746478426575::1779131093::0::1::::<><><>0<>0<><
 ::res://scenes/explosions/::1779790787
 Explode.gd::GDScript::1665927852935783370::1779134304::0::1::::<>Node2D<><>0<>0<><>::
 explode.tscn::PackedScene::7603591559635084427::1779377106::0::1::::<><><>0<>0<><>::uid://eurm1kga3iy2::::res://assets/explode/boom.png<>uid://xy8uaehufuuk::::res://scenes/explosions/Explode.gd
-::res://scenes/planets/::1779878410
-PlanetSpawner.gd::GDScript::5663476227391756546::1779828180::0::1::::<>Node3D<><>0<>0<><>::
+::res://scenes/planets/::1779895211
+jupiter.tscn::PackedScene::6560753609083324030::1779894733::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn
+mars.tscn::PackedScene::6325341186571572607::1779894765::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn
+mercury.tscn::PackedScene::6275983029225109434::1779894765::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn
+neptune.tscn::PackedScene::5871231224050310909::1779894765::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn
+planet.gdshader::Shader::7774145487081512526::1779895211::0::1::::<><><>0<>0<><>::
+PlanetSpawner.gd::GDScript::5663476227391756546::1779894864::0::1::::<>Node3D<><>0<>0<><>::
+planet_base.gd::GDScript::3455933010980879115::1779895061::0::1::::<>MeshInstance3D<><>0<>1<><>::
 planet_rotate.gd::GDScript::8293380752750181618::1779828178::0::1::::<>Node3D<><>0<>0<><>::
-planet.gdshader::Shader::7774145487081512526::1779891295::0::1::::<><><>0<>0<><>::
-simple_planet.tscn::PackedScene::526280271132995432::1779893579::0::1::::<><><>0<>0<><>::uid://di04bmwek8try::::res://planet.gdshader<>uid://c25hayfydlmbk::::res://assets/planets/textures/solar system/2k_mars.jpg<>uid://dqfm1fllu6cek::::res://scenes/planets/planet_rotate.gd
+earth.tscn::PackedScene::5742485976417380980::1779895349::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader<>uid://b5x1pv330wf72::::res://assets/planets/textures/solar system/2k_earth_daymap.jpg
+saturn.tscn::PackedScene::2999490605396062654::1779894765::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn
+simple_planet.tscn::PackedScene::526280271132995432::1779895211::0::1::::<><><>0<>0<><>::uid://di04bmwek8try::::res://scenes/planets/planet.gdshader<>uid://bpicyg2rrp4qp::::res://scenes/planets/planet_base.gd
+uranus.tscn::PackedScene::6816480709904786975::1779894814::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn
+venus.tscn::PackedScene::8582344818790218131::1779894805::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn<>uid://3787wj2faykh::::res://assets/planets/textures/solar system/2k_venus_surface.jpg
 ::res://scenes/player/::1779811387
 DamageSystem.gd::GDScript::2289176751178949268::1779724021::0::1::::<>Node<><>0<>0<><>::
 DamageSystem.tscn::PackedScene::-1::1779131093::0::1::::<><><>0<>0<><>::res://scenes/player/DamageSystem.gd
@@ -246,7 +256,7 @@ trailmesh.gdextension::GDExtension::8020490264137839201::1779793320::0::1::::<><
 ::res://trailmesh/bin/linux/::1779793320
 ::res://trailmesh/bin/macos/::1779793320
 ::res://trailmesh/bin/macos/macos.framework/::1779793320
-::res://trailmesh/bin/windows/::1779878368
+::res://trailmesh/bin/windows/::1779894921
 ::res://trailmesh/example/::1779793320
 albedo.png::CompressedTexture2D::117215708539975444::1779793320::1779793320::1::::<><><>0<>0<>b23a40921eea09668ac99f9cc7237a6c<>res://.godot/imported/albedo.png-296ffd37ac24545f2ded3e452355f4e6.ctex::
 Camera.gd::GDScript::144620971606581968::1779793320::0::1::::<>Camera3D<><>0<>0<><>::

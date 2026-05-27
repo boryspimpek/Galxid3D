@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cn2x51h30a36w"]
+
+[ext_resource type="PackedScene" uid="uid://hq602uu7kt7m" path="res://scenes/planets/simple_planet.tscn" id="1_2bhor"]
+[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="2_5i67w"]
+[ext_resource type="Texture2D" uid="uid://b5x1pv330wf72" path="res://assets/planets/textures/solar system/2k_earth_daymap.jpg" id="3_trc54"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6k2di"]
+cull_mode = 1
+grow = true
+grow_amount = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wpllb"]
+render_priority = 0
+next_pass = SubResource("StandardMaterial3D_6k2di")
+shader = ExtResource("2_5i67w")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = ExtResource("3_trc54")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/metallic = 0.4150000197125
+shader_parameter/clearcoat = 1.0
+shader_parameter/clearcoat_roughness = 0.44400002109
+shader_parameter/shadow_threshold = 0.18000000855
+shader_parameter/shadow_softness = 0.0
+shader_parameter/ambient_fill = 0.034000001615
+
+[node name="earth" unique_id=95632487 instance=ExtResource("1_2bhor")]
+transform = Transform3D(-0.029998366, 0, 0, 0, 0.029999997, -2.6225402e-09, 0, 2.6226832e-09, 0.029998362, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_wpllb")
+albedo_texture = ExtResource("3_trc54")

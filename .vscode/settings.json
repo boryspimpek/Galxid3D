@@ -1,9 +1,11 @@
 {
   "explorer.autoReveal": false,
   "files.exclude": {
+    "**/*.uid": true,
     "**/*.import": true
   },
   "search.exclude": {
+    "**/*.uid": true,
     "**/*.import": true
   }
 }

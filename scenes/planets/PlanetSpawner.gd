@@ -4,6 +4,10 @@ const PLANET_SCENES = [
 	"res://scenes/planets/mars.tscn",
 	"res://scenes/planets/venus.tscn",
 	"res://scenes/planets/saturn.tscn",
+	"res://scenes/planets/mercury.tscn",
+	"res://scenes/planets/jupiter.tscn",
+	"res://scenes/planets/neptune.tscn",
+	"res://scenes/planets/uranus.tscn",
 ]
 
 @export var spawn_interval: float = 3.0

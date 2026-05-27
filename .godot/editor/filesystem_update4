@@ -1,6 +1,7 @@
+res://scenes/planets/planet_base.gd
+res://scenes/planets/simple_planet.tscn
+res://scenes/planets/planet.gdshader
 res://3dworld.tscn
-res://scenes/projectile/Projectile.gdshader
-res://planet.gdshader
-res://simple_planet.tscn
-res://simple_planet2.tscn
-res://assets/shaders/toon.gdshader
+res://earth.tscn
+res://scenes/planets/earth.tscn
+res://scenes/projectile/Projectile.tscn

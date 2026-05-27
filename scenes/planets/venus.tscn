@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dujl72368trjv"]
+
+[ext_resource type="PackedScene" uid="uid://hq602uu7kt7m" path="res://scenes/planets/simple_planet.tscn" id="1_bwd8r"]
+[ext_resource type="Texture2D" uid="uid://3787wj2faykh" path="res://assets/planets/textures/solar system/2k_venus_surface.jpg" id="2_b354m"]
+
+[node name="venus" unique_id=95632487 instance=ExtResource("1_bwd8r")]
+transform = Transform3D(0.028752089, 0.0077645704, -0.0036078007, 0.008408294, -0.027990388, 0.0067703, 0.0016138413, 0.0074999738, 0.02900231, 0, 0, 0)
+albedo_texture = ExtResource("2_b354m")

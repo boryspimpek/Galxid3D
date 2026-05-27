@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://c0rjf6bfsduht"]
 
+[ext_resource type="Script" uid="uid://cmxovjxejqgik" path="res://scenes/planets/PlanetSpawner.gd" id="1_uc6tr"]
+[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="3_lp3by"]
 [ext_resource type="PackedScene" uid="uid://hq602uu7kt7m" path="res://scenes/planets/simple_planet.tscn" id="3_uc6tr"]
 [ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="4_n40md"]
+[ext_resource type="PackedScene" uid="uid://cn2x51h30a36w" path="res://scenes/planets/earth.tscn" id="5_3vxff"]
 
 [sub_resource type="Environment" id="Environment_vshm1"]
 background_mode = 1
@@ -42,6 +45,28 @@ material = SubResource("StandardMaterial3D_vshm1")
 size = Vector2(0.2, 0.2)
 orientation = 1
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dba1v"]
+cull_mode = 1
+grow = true
+grow_amount = 0.3
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mqevj"]
+load_path = "res://.godot/imported/Gemini_Generated_Image_9vs8tr9vs8tr9vs8.png-fd37f1decb37f29423fc84efa0ac1795.s3tc.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pnv6h"]
+render_priority = 0
+next_pass = SubResource("StandardMaterial3D_dba1v")
+shader = ExtResource("3_lp3by")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = SubResource("CompressedTexture2D_mqevj")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/metallic = 0.4150000197125
+shader_parameter/clearcoat = 1.0
+shader_parameter/clearcoat_roughness = 0.44400002109
+shader_parameter/shadow_threshold = 0.18000000855
+shader_parameter/shadow_softness = 0.0
+shader_parameter/ambient_fill = 0.034000001615
+
 [node name="Game" type="Node3D" unique_id=616589222]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2090551855]
@@ -74,5 +99,15 @@ draw_pass_1 = SubResource("QuadMesh_lp3by")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 5.605)
 
 [node name="Simple Planet" parent="." unique_id=95632487 instance=ExtResource("3_uc6tr")]
-transform = Transform3D(-0.06278518, 0.01682324, 2.5068586e-10, -0.016250001, -0.060645822, -0.01682324, 0.0043541747, 0.016250001, -0.06278518, 0, 1.427, 0.075)
-speed = 0.0
+transform = Transform3D(-0.028560428, 0.0077645686, -0.0048743775, -0.0060858503, -0.02799038, -0.008914304, 0.006855176, 0.0075000017, -0.028222708, 0, -16.968, 0.075)
+material_override = SubResource("ShaderMaterial_pnv6h")
+
+[node name="PlanetSpawner" type="Node3D" parent="." unique_id=143857554]
+script = ExtResource("1_uc6tr")
+spawn_interval = 8.0
+speed_max = 2.0
+
+[node name="earth" parent="." unique_id=1944613414 instance=ExtResource("5_3vxff")]
+transform = Transform3D(0.155, 0, 0, 0, 0.155, 0, 0, 0, 0.155, 6.97, -7.8119664, -10.43)
+spin_speed = 0.1
+speed = 0.6

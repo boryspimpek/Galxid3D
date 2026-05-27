@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c0qcwhlmvillm"]
+
+[ext_resource type="PackedScene" uid="uid://hq602uu7kt7m" path="res://scenes/planets/simple_planet.tscn" id="1_k0muh"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rid86"]
+load_path = "res://.godot/imported/2k_jupiter.jpg-bf98b86ba5038ec915a44ce1a3aea360.s3tc.ctex"
+
+[node name="jupiter" unique_id=95632487 instance=ExtResource("1_k0muh")]
+transform = Transform3D(-0.021189839, 0.0077645686, -0.019765843, -0.0001880526, -0.02799037, -0.0107936105, 0.021235382, 0.0075000473, -0.019819064, 0, 0, 0)
+albedo_texture = SubResource("CompressedTexture2D_rid86")

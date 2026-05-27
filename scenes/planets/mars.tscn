@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cwebpewdly2yt"]
+
+[ext_resource type="PackedScene" uid="uid://hq602uu7kt7m" path="res://scenes/planets/simple_planet.tscn" id="1_ujig8"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4u6dv"]
+load_path = "res://.godot/imported/2k_mars.jpg-50382d3fd03e9e4d7418e19b7fd3cdda.s3tc.ctex"
+
+[node name="mars" unique_id=95632487 instance=ExtResource("1_ujig8")]
+transform = Transform3D(0.025610782, 0.007764582, 0.013556791, 0.0029960447, -0.027990382, 0.010371146, -0.015332915, 0.0074999854, 0.024670606, 0, 0, 0)
+albedo_texture = SubResource("CompressedTexture2D_4u6dv")
