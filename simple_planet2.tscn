@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bbv5inr14qxuo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5j6wr"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(1, 0, 1, 1)
+metallic = 0.95
+roughness = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_5j6wr"]
+material = SubResource("StandardMaterial3D_5j6wr")
+radius = 50.0
+height = 100.0
+
+[node name="Node3D" type="MeshInstance3D" unique_id=2047406711]
+mesh = SubResource("SphereMesh_5j6wr")

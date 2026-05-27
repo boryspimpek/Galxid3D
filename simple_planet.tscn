@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://hq602uu7kt7m"]
+
+[ext_resource type="Shader" uid="uid://d2n2rvjcvwag1" path="res://assets/shaders/toon.gdshader" id="1_ujyuc"]
+[ext_resource type="Texture2D" uid="uid://c25hayfydlmbk" path="res://assets/planets/textures/2k mars/2k_mars.jpg" id="2_ujyuc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uh3v6"]
+render_priority = 0
+shader = ExtResource("1_ujyuc")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = ExtResource("2_ujyuc")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.8630000409925
+shader_parameter/specular = 0.40400001919
+shader_parameter/shadow_threshold = 0.2400000114
+shader_parameter/shadow_softness = 0.0
+shader_parameter/rim_enabled = false
+shader_parameter/rim_width = 0.3
+shader_parameter/rim_threshold = 0.1
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_uh3v6"]
+lightmap_size_hint = Vector2i(1572, 787)
+material = SubResource("ShaderMaterial_uh3v6")
+radius = 50.0
+height = 99.999
+radial_segments = 96
+
+[node name="Simple Planet" type="MeshInstance3D" unique_id=95632487]
+mesh = SubResource("SphereMesh_uh3v6")

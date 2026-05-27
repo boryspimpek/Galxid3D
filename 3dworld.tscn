@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c0rjf6bfsduht"]
 
-[ext_resource type="Script" uid="uid://cmxovjxejqgik" path="res://scenes/planets/PlanetSpawner.gd" id="1_uc6tr"]
+[ext_resource type="PackedScene" uid="uid://hq602uu7kt7m" path="res://simple_planet.tscn" id="3_uc6tr"]
+[ext_resource type="PackedScene" uid="uid://bbv5inr14qxuo" path="res://simple_planet2.tscn" id="4_lp3by"]
 [ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="4_n40md"]
 [ext_resource type="PackedScene" uid="uid://ceb36gc6o5uvc" path="res://scenes/enemies/starfighter.tscn" id="5_lp3by"]
 
@@ -49,7 +50,7 @@ orientation = 1
 environment = SubResource("Environment_vshm1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1804465455]
-transform = Transform3D(0.3420201, 0.46984628, -0.81379753, 0, 0.8660253, 0.4999999, 0.93969244, -0.17101006, 0.29619807, 0, 15, 0)
+transform = Transform3D(-4.371138e-08, 0.70710665, -0.7071066, 0, 0.70710665, 0.7071066, 0.9999998, 3.0908613e-08, -3.0908613e-08, 0, 15, 0)
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1430056658]
@@ -72,13 +73,14 @@ process_material = SubResource("ParticleProcessMaterial_uc6tr")
 draw_pass_1 = SubResource("QuadMesh_lp3by")
 
 [node name="Player" parent="." unique_id=1811810025 instance=ExtResource("4_n40md")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 11.035)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 5.605)
 
 [node name="Starfighter" parent="." unique_id=1897743314 instance=ExtResource("5_lp3by")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
 xmove = 7
 
-[node name="PlanetSpawner" type="Node3D" parent="." unique_id=690017726]
-script = ExtResource("1_uc6tr")
-spawn_interval = 7.0
-speed_max = 2.0
+[node name="Simple Planet" parent="." unique_id=95632487 instance=ExtResource("3_uc6tr")]
+transform = Transform3D(0.06278518, -0.016823238, 0, 0.01625, 0.060645822, 0.016823238, -0.0043541742, -0.01625, 0.06278518, 0, 1.4268931, 0)
+
+[node name="Node3D" parent="." unique_id=2047406711 instance=ExtResource("4_lp3by")]
+transform = Transform3D(-0.07, 0, 0, 0, -0.07, 0, 0, 0, -0.07, -0.03, 1.5120797, -3.76)
