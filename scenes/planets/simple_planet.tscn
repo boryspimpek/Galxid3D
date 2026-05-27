@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://hq602uu7kt7m"]
+
+[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="1_yrxqc"]
+[ext_resource type="Texture2D" uid="uid://c25hayfydlmbk" path="res://assets/planets/textures/solar system/2k_mars.jpg" id="2_uh3v6"]
+[ext_resource type="Script" uid="uid://dqfm1fllu6cek" path="res://scenes/planets/planet_rotate.gd" id="3_uh3v6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ujyuc"]
+cull_mode = 1
+grow = true
+grow_amount = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ujyuc"]
+render_priority = 0
+next_pass = SubResource("StandardMaterial3D_ujyuc")
+shader = ExtResource("1_yrxqc")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = ExtResource("2_uh3v6")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/metallic = 0.4150000197125
+shader_parameter/clearcoat = 1.0
+shader_parameter/clearcoat_roughness = 0.44400002109
+shader_parameter/shadow_threshold = 0.18000000855
+shader_parameter/shadow_softness = 0.0
+shader_parameter/ambient_fill = 0.034000001615
+
+[sub_resource type="SphereMesh" id="SphereMesh_uh3v6"]
+lightmap_size_hint = Vector2i(1572, 787)
+material = SubResource("ShaderMaterial_ujyuc")
+radius = 50.0
+height = 99.999
+radial_segments = 96
+
+[node name="Simple Planet" type="MeshInstance3D" unique_id=95632487]
+transform = Transform3D(0.9659258, -0.25881904, 0, 0.25, 0.93301266, 0.25881904, -0.0669873, -0.25, 0.9659258, 0, 0, 0)
+mesh = SubResource("SphereMesh_uh3v6")
+script = ExtResource("3_uh3v6")

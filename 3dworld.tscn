@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://c0rjf6bfsduht"]
 
-[ext_resource type="PackedScene" uid="uid://hq602uu7kt7m" path="res://simple_planet.tscn" id="3_uc6tr"]
-[ext_resource type="PackedScene" uid="uid://bbv5inr14qxuo" path="res://simple_planet2.tscn" id="4_lp3by"]
+[ext_resource type="PackedScene" uid="uid://hq602uu7kt7m" path="res://scenes/planets/simple_planet.tscn" id="3_uc6tr"]
 [ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="4_n40md"]
-[ext_resource type="PackedScene" uid="uid://ceb36gc6o5uvc" path="res://scenes/enemies/starfighter.tscn" id="5_lp3by"]
 
 [sub_resource type="Environment" id="Environment_vshm1"]
 background_mode = 1
@@ -50,7 +48,7 @@ orientation = 1
 environment = SubResource("Environment_vshm1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1804465455]
-transform = Transform3D(-4.371138e-08, 0.70710665, -0.7071066, 0, 0.70710665, 0.7071066, 0.9999998, 3.0908613e-08, -3.0908613e-08, 0, 15, 0)
+transform = Transform3D(-0.21814321, 0.69007725, -0.6900771, 0, 0.70710665, 0.70710653, 0.97591656, 0.15425055, -0.15425052, 0, 15, 0)
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1430056658]
@@ -75,12 +73,6 @@ draw_pass_1 = SubResource("QuadMesh_lp3by")
 [node name="Player" parent="." unique_id=1811810025 instance=ExtResource("4_n40md")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 5.605)
 
-[node name="Starfighter" parent="." unique_id=1897743314 instance=ExtResource("5_lp3by")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.6)
-xmove = 7
-
 [node name="Simple Planet" parent="." unique_id=95632487 instance=ExtResource("3_uc6tr")]
-transform = Transform3D(0.06278518, -0.016823238, 0, 0.01625, 0.060645822, 0.016823238, -0.0043541742, -0.01625, 0.06278518, 0, 1.4268931, 0)
-
-[node name="Node3D" parent="." unique_id=2047406711 instance=ExtResource("4_lp3by")]
-transform = Transform3D(-0.07, 0, 0, 0, -0.07, 0, 0, 0, -0.07, -0.03, 1.5120797, -3.76)
+transform = Transform3D(-0.06278518, 0.01682324, 2.5068586e-10, -0.016250001, -0.060645822, -0.01682324, 0.0043541747, 0.016250001, -0.06278518, 0, 1.427, 0.075)
+speed = 0.0
