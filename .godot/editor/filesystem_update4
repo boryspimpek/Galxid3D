@@ -1,15 +1,3 @@
-res://scenes/planets/jupiter.tscn
+res://scenes/explosions/explode_3d.tscn
 res://scenes/planets/planet.gdshader
-res://scenes/planets/mars.tscn
-res://scenes/planets/mercury.tscn
-res://scenes/planets/neptune.tscn
-res://scenes/planets/saturn.tscn
-res://scenes/planets/simple_planet.tscn
-res://scenes/planets/uranus.tscn
-res://scenes/planets/venus.tscn
 res://3dworld.tscn
-res://scenes/planets/PlanetSpawner.gd
-res://scenes/projectile/Projectile.tscn
-res://default_bus_layout.tres
-res://data/weapons/weapon_1.tres
-res://scenes/player/Player.gd

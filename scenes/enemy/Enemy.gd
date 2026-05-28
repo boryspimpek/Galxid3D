@@ -63,6 +63,13 @@ func take_damage(amount: int) -> void:
 
 func die() -> void:
 	SoundManager.play_sound(9 if esize == 1 else 8)
+	if GameConstants.explosion_scene:
+		var explosion := GameConstants.explosion_scene.instantiate()
+		get_tree().current_scene.add_child(explosion)
+		if explosion is Node3D:
+			explosion.global_position = global_position
+			var s := 1.0 if esize == 1 else 2.0
+			explosion.scale = Vector3.ONE * s
 	queue_free()
 
 
