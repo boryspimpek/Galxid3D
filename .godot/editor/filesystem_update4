@@ -1,3 +1,6 @@
 res://scenes/explosions/explode_3d.tscn
 res://scenes/planets/planet.gdshader
 res://3dworld.tscn
+res://scenes/explosions/explode_3d2.tscn
+res://scripts/core/GameConstants.gd
+res://scenes/explosions/Explode3D.gd

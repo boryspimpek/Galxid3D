@@ -69,5 +69,13 @@ speed = 0.6
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.675, 0, 0)
 armor = 5
 fire_rate = 100.0
-xmove = 3
-zmove = 3
+
+[node name="Starfighter2" parent="." unique_id=1742888400 instance=ExtResource("4_lp3by")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.895, 0, 0)
+armor = 5
+fire_rate = 100.0
+
+[node name="Starfighter3" parent="." unique_id=1780056736 instance=ExtResource("4_lp3by")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.56, 0, 0)
+armor = 5
+fire_rate = 100.0
