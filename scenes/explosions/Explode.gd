@@ -4,5 +4,5 @@ extends Node3D
 
 func _ready() -> void:
 	anim.animation_finished.connect(func(_name): queue_free())
-	anim.play("explode2")
+	anim.play("explode")
 

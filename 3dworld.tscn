@@ -30,6 +30,14 @@ material = SubResource("StandardMaterial3D_vshm1")
 size = Vector2(0.4, 0.4)
 orientation = 1
 
+[sub_resource type="Curve3D" id="Curve3D_n40md"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -19.057, -36.492294, -41.55945, 0, 0, 0, 0, 0, 0, 21.592644, -37.108208, -47.36621, 0, 0, 0, 0, 0, 0, 18.465075, 0, -24.073517, 0, 0, 0, 0, 0, 0, -28.952291, 0, -11.761642, 0, 0, 0, 0, 0, 0, -30.116934, -3.241455, -19.41495),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
 [node name="Game" type="Node3D" unique_id=616589222]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2090551855]
@@ -51,7 +59,7 @@ process_material = SubResource("ParticleProcessMaterial_uc6tr")
 draw_pass_1 = SubResource("QuadMesh_lp3by")
 
 [node name="Player" parent="." unique_id=1811810025 instance=ExtResource("4_n40md")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 5.605)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 7.94)
 
 [node name="PlanetSpawner" type="Node3D" parent="." unique_id=143857554]
 script = ExtResource("1_uc6tr")
@@ -62,20 +70,28 @@ preprocess_time = 360.0
 
 [node name="earth" parent="." unique_id=1944613414 instance=ExtResource("5_3vxff")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 30.385, -61.414845, -32.355)
-spin_speed = 0.1
+spin_speed = -0.1
 speed = 0.6
 
 [node name="Starfighter" parent="." unique_id=1897743314 instance=ExtResource("4_lp3by")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.675, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015, 0, -4.97)
 armor = 5
 fire_rate = 100.0
+esize = 2
 
 [node name="Starfighter2" parent="." unique_id=1742888400 instance=ExtResource("4_lp3by")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.895, 0, 0)
 armor = 5
 fire_rate = 100.0
 
-[node name="Starfighter3" parent="." unique_id=1780056736 instance=ExtResource("4_lp3by")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.56, 0, 0)
+[node name="Path3D" type="Path3D" parent="." unique_id=2035440635]
+curve = SubResource("Curve3D_n40md")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1667017580]
+transform = Transform3D(0.14141332, 0.014847083, -0.9898393, 0, 0.9998875, 0.014997801, 0.98995066, -0.0021208888, 0.14139742, -19.057, -36.492294, -41.55945)
+
+[node name="Starfighter3" parent="Path3D/PathFollow3D" unique_id=1780056736 instance=ExtResource("4_lp3by")]
+transform = Transform3D(0.14141333, 0, 0.98995066, 0.014847083, 0.9998875, -0.0021208888, -0.9898393, 0.014997802, 0.14139742, 44.48156, 36.75069, -16.953331)
 armor = 5
 fire_rate = 100.0
+esize = 3

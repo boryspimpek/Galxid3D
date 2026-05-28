@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://eyku5nilalp" path="res://assets/enemies/starfighter/Meshy_AI_S_01_Starfighter_0522180707_texture.glb" id="1_ije4n"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3ym5w"]
-radius = 0.671875
+radius = 0.78759766
 
 [node name="Starfighter" unique_id=1897743314 instance=ExtResource("1_3ym5w")]
 
@@ -19,4 +19,5 @@ shape = SubResource("CapsuleShape3D_3ym5w")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.7519847)
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." index="3" unique_id=35774775]
+visible = false
 aabb = AABB(-1, -0.4744031, -1, 2, 0.9488062, 2)

@@ -1,7 +1,9 @@
-[gd_scene format=3 uid="uid://dm127wa1ff7mu"]
+[gd_scene format=3 uid="uid://c4jv1o5v0f2m1"]
 
-[ext_resource type="Script" uid="uid://b0080ed2yyg10" path="res://scenes/explosions/Explode3D.gd" id="1_lkeaj"]
-[ext_resource type="Texture2D" uid="uid://dcal6hdnrc6ay" path="res://assets/explode/boom3.png" id="2_lkeaj"]
+[ext_resource type="Script" uid="uid://b0080ed2yyg10" path="res://scenes/explosions/Explode.gd" id="2_explode3d"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5jnvr"]
+load_path = "res://.godot/imported/boom.png-94d28117d22b8726a6414b218877c926.s3tc.ctex"
 
 [sub_resource type="Animation" id="Animation_reset"]
 length = 0.001
@@ -35,39 +37,20 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5]
 }
 
-[sub_resource type="Animation" id="Animation_lkeaj"]
-resource_name = "explode2"
-length = 0.4
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_main"]
 _data = {
 &"RESET": SubResource("Animation_reset"),
-&"explode": SubResource("Animation_explode"),
-&"explode2": SubResource("Animation_lkeaj")
+&"explode": SubResource("Animation_explode")
 }
 
 [node name="explode_3d" type="Node3D" unique_id=986596960]
-script = ExtResource("1_lkeaj")
+script = ExtResource("2_explode3d")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1169635179]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 billboard = 1
-texture = ExtResource("2_lkeaj")
-hframes = 4
-vframes = 2
+texture = SubResource("CompressedTexture2D_5jnvr")
+hframes = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1618128187]
 libraries/ = SubResource("AnimationLibrary_main")

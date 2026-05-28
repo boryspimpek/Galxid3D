@@ -1,9 +1,7 @@
-[gd_scene format=3 uid="uid://c4jv1o5v0f2m1"]
+[gd_scene format=3 uid="uid://beo4e5xo66b43"]
 
-[ext_resource type="Script" uid="uid://b0080ed2yyg10" path="res://scenes/explosions/Explode3D.gd" id="2_explode3d"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5jnvr"]
-load_path = "res://.godot/imported/boom.png-94d28117d22b8726a6414b218877c926.s3tc.ctex"
+[ext_resource type="Script" uid="uid://b0080ed2yyg10" path="res://scenes/explosions/Explode.gd" id="1_cy1li"]
+[ext_resource type="Texture2D" uid="uid://dqr1qpgfvwr08" path="res://assets/explode/explode5.png" id="2_1xjs6"]
 
 [sub_resource type="Animation" id="Animation_reset"]
 length = 0.001
@@ -37,20 +35,39 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5]
 }
 
+[sub_resource type="Animation" id="Animation_vrnv8"]
+resource_name = "explode3"
+length = 0.8333333
+step = 0.083333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.083333336, 0.16666667, 0.25, 0.33333334, 0.4166667, 0.5, 0.5833334, 0.6666667, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_main"]
 _data = {
 &"RESET": SubResource("Animation_reset"),
-&"explode": SubResource("Animation_explode")
+&"explode": SubResource("Animation_explode"),
+&"explode3": SubResource("Animation_vrnv8")
 }
 
 [node name="explode_3d" type="Node3D" unique_id=986596960]
-script = ExtResource("2_explode3d")
+script = ExtResource("1_cy1li")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1169635179]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 billboard = 1
-texture = SubResource("CompressedTexture2D_5jnvr")
-hframes = 6
+texture = ExtResource("2_1xjs6")
+hframes = 5
+vframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1618128187]
 libraries/ = SubResource("AnimationLibrary_main")

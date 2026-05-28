@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3swvr4ebnaq7"
-path.s3tc="res://.godot/imported/boom4.png-327d5d40ec561476f6e977760f6afda8.s3tc.ctex"
-path.etc2="res://.godot/imported/boom4.png-327d5d40ec561476f6e977760f6afda8.etc2.ctex"
+uid="uid://dqr1qpgfvwr08"
+path.s3tc="res://.godot/imported/explode5.png-e8f19fdae615e55e3068f2fdeafa647b.s3tc.ctex"
+path.etc2="res://.godot/imported/explode5.png-e8f19fdae615e55e3068f2fdeafa647b.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/explode/boom4.png"
-dest_files=["res://.godot/imported/boom4.png-327d5d40ec561476f6e977760f6afda8.s3tc.ctex", "res://.godot/imported/boom4.png-327d5d40ec561476f6e977760f6afda8.etc2.ctex"]
+source_file="res://assets/explode/explode5.png"
+dest_files=["res://.godot/imported/explode5.png-e8f19fdae615e55e3068f2fdeafa647b.s3tc.ctex", "res://.godot/imported/explode5.png-e8f19fdae615e55e3068f2fdeafa647b.etc2.ctex"]
 
 [params]
 
