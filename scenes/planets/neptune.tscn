@@ -1,10 +1,31 @@
 [gd_scene format=3 uid="uid://cpwck5pptf7hx"]
 
 [ext_resource type="PackedScene" uid="uid://hq602uu7kt7m" path="res://scenes/planets/simple_planet.tscn" id="1_hd1me"]
+[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="2_5hhm1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c043r"]
+cull_mode = 1
+grow = true
+grow_amount = 0.3
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5hhm1"]
 load_path = "res://.godot/imported/2k_neptune.jpg-b041fbf06c1b7a59a5ea05a7a75f1b51.s3tc.ctex"
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hlqks"]
+render_priority = 0
+next_pass = SubResource("StandardMaterial3D_c043r")
+shader = ExtResource("2_5hhm1")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = SubResource("CompressedTexture2D_5hhm1")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/metallic = 0.4150000197125
+shader_parameter/clearcoat = 1.0
+shader_parameter/clearcoat_roughness = 0.44400002109
+shader_parameter/shadow_threshold = 0.18000000855
+shader_parameter/shadow_softness = 0.0
+shader_parameter/ambient_fill = 0.034000001615
+
 [node name="neptune" unique_id=95632487 instance=ExtResource("1_hd1me")]
-transform = Transform3D(0.013513511, 0.0077645727, -0.025633631, 0.01036603, -0.027990391, -0.0030135696, 0.024696501, 0.0074999514, 0.015291208, 0, 0, 0)
+transform = Transform3D(-0.018018147, -0.0103527615, 0.034178454, -0.013821472, 0.037320524, 0.0040181214, -0.03292891, -0.009999937, -0.020388428, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_hlqks")
 albedo_texture = SubResource("CompressedTexture2D_5hhm1")

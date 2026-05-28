@@ -1,10 +1,31 @@
 [gd_scene format=3 uid="uid://biy8f34381epq"]
 
 [ext_resource type="PackedScene" uid="uid://hq602uu7kt7m" path="res://scenes/planets/simple_planet.tscn" id="1_mlpop"]
+[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="2_fpsqh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dvlhj"]
+cull_mode = 1
+grow = true
+grow_amount = 0.3
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fpsqh"]
 load_path = "res://.godot/imported/2k_saturn.jpg-8495e80f809146e26fce2cb619659783.s3tc.ctex"
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cyfv8"]
+render_priority = 0
+next_pass = SubResource("StandardMaterial3D_dvlhj")
+shader = ExtResource("2_fpsqh")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = SubResource("CompressedTexture2D_fpsqh")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/metallic = 0.4150000197125
+shader_parameter/clearcoat = 1.0
+shader_parameter/clearcoat_roughness = 0.44400002109
+shader_parameter/shadow_threshold = 0.18000000855
+shader_parameter/shadow_softness = 0.0
+shader_parameter/ambient_fill = 0.034000001615
+
 [node name="saturn" unique_id=95632487 instance=ExtResource("1_mlpop")]
-transform = Transform3D(0.010476687, 0.0077645774, -0.027017375, 0.009950863, -0.027990377, -0.004185391, 0.026290817, 0.007500007, 0.0123503655, 0, 0, 0)
+transform = Transform3D(-0.013969013, -0.010352773, 0.03602342, -0.013267908, 0.037320502, 0.005580567, -0.03505466, -0.010000009, -0.016467255, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_cyfv8")
 albedo_texture = SubResource("CompressedTexture2D_fpsqh")

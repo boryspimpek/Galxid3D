@@ -1,10 +1,31 @@
 [gd_scene format=3 uid="uid://cvoer2h7noaji"]
 
 [ext_resource type="PackedScene" uid="uid://hq602uu7kt7m" path="res://scenes/planets/simple_planet.tscn" id="1_recc1"]
+[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="2_hqfxl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42d1q"]
+cull_mode = 1
+grow = true
+grow_amount = 0.3
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hqfxl"]
 load_path = "res://.godot/imported/2k_mercury.jpg-a6dd2c9c255eb2227dea93243471afa4.s3tc.ctex"
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d8y16"]
+render_priority = 0
+next_pass = SubResource("StandardMaterial3D_42d1q")
+shader = ExtResource("2_hqfxl")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = SubResource("CompressedTexture2D_hqfxl")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/metallic = 0.4150000197125
+shader_parameter/clearcoat = 1.0
+shader_parameter/clearcoat_roughness = 0.44400002109
+shader_parameter/shadow_threshold = 0.18000000855
+shader_parameter/shadow_softness = 0.0
+shader_parameter/ambient_fill = 0.034000001615
+
 [node name="mercury" unique_id=95632487 instance=ExtResource("1_recc1")]
-transform = Transform3D(-0.028840689, 0.0077645765, 0.002813215, -0.008218321, -0.027990378, -0.0069997176, -0.00081308687, 0.0075000017, -0.029035786, 0, 0, 0)
+transform = Transform3D(0.03845452, -0.010352773, -0.003750962, 0.010957842, 0.037320502, 0.0093330415, 0.0010841233, -0.0100000035, 0.038714655, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_d8y16")
 albedo_texture = SubResource("CompressedTexture2D_hqfxl")

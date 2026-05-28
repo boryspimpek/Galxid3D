@@ -1,10 +1,31 @@
 [gd_scene format=3 uid="uid://c4d7paip2idnj"]
 
 [ext_resource type="PackedScene" uid="uid://hq602uu7kt7m" path="res://scenes/planets/simple_planet.tscn" id="1_xvt3g"]
+[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="2_nvkmq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qgu2"]
+cull_mode = 1
+grow = true
+grow_amount = 0.3
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nvkmq"]
 load_path = "res://.godot/imported/2k_uranus.jpg-5bc2e60e360487297c8cec4e7a16ba78.s3tc.ctex"
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wkw54"]
+render_priority = 0
+next_pass = SubResource("StandardMaterial3D_5qgu2")
+shader = ExtResource("2_nvkmq")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = SubResource("CompressedTexture2D_nvkmq")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/metallic = 0.4150000197125
+shader_parameter/clearcoat = 1.0
+shader_parameter/clearcoat_roughness = 0.44400002109
+shader_parameter/shadow_threshold = 0.18000000855
+shader_parameter/shadow_softness = 0.0
+shader_parameter/ambient_fill = 0.034000001615
+
 [node name="uranus" unique_id=95632487 instance=ExtResource("1_xvt3g")]
-transform = Transform3D(0.023661865, 0.0077645783, -0.016727723, 0.010606321, -0.027990384, 0.0020106996, 0.01508678, 0.0074999765, 0.024821937, 0, 0, 0)
+transform = Transform3D(-0.031549346, -0.010352775, 0.02230378, -0.01414185, 0.03732051, -0.002680947, -0.020115834, -0.009999972, -0.033096127, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_wkw54")
 albedo_texture = SubResource("CompressedTexture2D_nvkmq")

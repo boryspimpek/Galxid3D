@@ -1,8 +1,29 @@
 [gd_scene format=3 uid="uid://dujl72368trjv"]
 
 [ext_resource type="PackedScene" uid="uid://hq602uu7kt7m" path="res://scenes/planets/simple_planet.tscn" id="1_bwd8r"]
+[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="2_4c51u"]
 [ext_resource type="Texture2D" uid="uid://3787wj2faykh" path="res://assets/planets/textures/solar system/2k_venus_surface.jpg" id="2_b354m"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v54x1"]
+cull_mode = 1
+grow = true
+grow_amount = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tr2xp"]
+render_priority = 0
+next_pass = SubResource("StandardMaterial3D_v54x1")
+shader = ExtResource("2_4c51u")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = ExtResource("2_b354m")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/metallic = 0.4150000197125
+shader_parameter/clearcoat = 1.0
+shader_parameter/clearcoat_roughness = 0.44400002109
+shader_parameter/shadow_threshold = 0.18000000855
+shader_parameter/shadow_softness = 0.0
+shader_parameter/ambient_fill = 0.034000001615
+
 [node name="venus" unique_id=95632487 instance=ExtResource("1_bwd8r")]
-transform = Transform3D(0.028752089, 0.0077645704, -0.0036078007, 0.008408294, -0.027990388, 0.0067703, 0.0016138413, 0.0074999738, 0.02900231, 0, 0, 0)
+transform = Transform3D(-0.038336404, -0.010352764, 0.0048104385, -0.011211145, 0.037320517, -0.009027138, -0.0021518054, -0.009999963, -0.03867002, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_tr2xp")
 albedo_texture = ExtResource("2_b354m")

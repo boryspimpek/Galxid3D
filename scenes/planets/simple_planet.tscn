@@ -52,7 +52,7 @@ height = 99.999
 radial_segments = 96
 
 [node name="Simple Planet" type="MeshInstance3D" unique_id=95632487]
-transform = Transform3D(0.021843508, 0.00014940172, -0.020560658, 0.0074995914, -0.027990378, 0.007764147, 0.019144693, 0.010794269, 0.020417616, 0, 0, 0)
+transform = Transform3D(-0.029126264, -0.00019920169, 0.02741571, -0.01, 0.037320506, -0.010352762, -0.025527649, -0.014392359, -0.027224975, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_a34da")
 mesh = SubResource("SphereMesh_uh3v6")
 script = ExtResource("3_k4q7n")

@@ -1,10 +1,31 @@
 [gd_scene format=3 uid="uid://c0qcwhlmvillm"]
 
 [ext_resource type="PackedScene" uid="uid://hq602uu7kt7m" path="res://scenes/planets/simple_planet.tscn" id="1_k0muh"]
+[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="2_k0muh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5hhn"]
+cull_mode = 1
+grow = true
+grow_amount = 0.3
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rid86"]
 load_path = "res://.godot/imported/2k_jupiter.jpg-bf98b86ba5038ec915a44ce1a3aea360.s3tc.ctex"
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c88h4"]
+render_priority = 0
+next_pass = SubResource("StandardMaterial3D_d5hhn")
+shader = ExtResource("2_k0muh")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = SubResource("CompressedTexture2D_rid86")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/metallic = 0.4150000197125
+shader_parameter/clearcoat = 1.0
+shader_parameter/clearcoat_roughness = 0.44400002109
+shader_parameter/shadow_threshold = 0.18000000855
+shader_parameter/shadow_softness = 0.0
+shader_parameter/ambient_fill = 0.034000001615
+
 [node name="jupiter" unique_id=95632487 instance=ExtResource("1_k0muh")]
-transform = Transform3D(-0.021189839, 0.0077645686, -0.019765843, -0.0001880526, -0.02799037, -0.0107936105, 0.021235382, 0.0075000473, -0.019819064, 0, 0, 0)
+transform = Transform3D(0.028253343, -0.010352757, 0.02635468, 0.0002507387, 0.03732049, 0.014391593, -0.028314054, -0.01000006, 0.026425611, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_c88h4")
 albedo_texture = SubResource("CompressedTexture2D_rid86")

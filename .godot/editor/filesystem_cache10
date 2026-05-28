@@ -1,6 +1,6 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1779895328
-3dworld.tscn::PackedScene::6563213892080481897::1779895213::0::1::::<><><>0<>0<><>::uid://cmxovjxejqgik::::res://scenes/planets/PlanetSpawner.gd<>uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn<>uid://bte7ofi7pgn5b::::res://scenes/player/Player.tscn
+::res://::1779970040
+3dworld.tscn::PackedScene::6563213892080481897::1779969856::0::1::::<><><>0<>0<><>::uid://cmxovjxejqgik::::res://scenes/planets/PlanetSpawner.gd<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader<>uid://cwebpewdly2yt::::res://scenes/planets/mars.tscn<>uid://bte7ofi7pgn5b::::res://scenes/player/Player.tscn<>uid://cn2x51h30a36w::::res://scenes/planets/earth.tscn<>uid://c0qcwhlmvillm::::res://scenes/planets/jupiter.tscn
 default_bus_layout.tres::AudioBusLayout::2099548917964122130::1779824653::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile::-1::1779810743::0::1::::<><><>0<>0<><>::
 ::res://assets/::1779823789
@@ -203,18 +203,18 @@ engine.tscn::PackedScene::3426126746478426575::1779131093::0::1::::<><><>0<>0<><
 ::res://scenes/explosions/::1779790787
 Explode.gd::GDScript::1665927852935783370::1779134304::0::1::::<>Node2D<><>0<>0<><>::
 explode.tscn::PackedScene::7603591559635084427::1779377106::0::1::::<><><>0<>0<><>::uid://eurm1kga3iy2::::res://assets/explode/boom.png<>uid://xy8uaehufuuk::::res://scenes/explosions/Explode.gd
-::res://scenes/planets/::1779895211
+::res://scenes/planets/::1779969289
+earth.tscn::PackedScene::5742485976417380980::1779895834::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader<>uid://b5x1pv330wf72::::res://assets/planets/textures/solar system/2k_earth_daymap.jpg
 jupiter.tscn::PackedScene::6560753609083324030::1779894733::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn
 mars.tscn::PackedScene::6325341186571572607::1779894765::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn
 mercury.tscn::PackedScene::6275983029225109434::1779894765::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn
 neptune.tscn::PackedScene::5871231224050310909::1779894765::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn
-planet.gdshader::Shader::7774145487081512526::1779895211::0::1::::<><><>0<>0<><>::
-PlanetSpawner.gd::GDScript::5663476227391756546::1779894864::0::1::::<>Node3D<><>0<>0<><>::
-planet_base.gd::GDScript::3455933010980879115::1779895061::0::1::::<>MeshInstance3D<><>0<>1<><>::
+planet.gdshader::Shader::7774145487081512526::1779968850::0::1::::<><><>0<>0<><>::
+PlanetSpawner.gd::GDScript::5663476227391756546::1779969968::0::1::::<>Node3D<><>0<>0<><>::
+planet_base.gd::GDScript::3455933010980879115::1779895678::0::1::::<>MeshInstance3D<><>0<>1<><>::
 planet_rotate.gd::GDScript::8293380752750181618::1779828178::0::1::::<>Node3D<><>0<>0<><>::
-earth.tscn::PackedScene::5742485976417380980::1779895349::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader<>uid://b5x1pv330wf72::::res://assets/planets/textures/solar system/2k_earth_daymap.jpg
 saturn.tscn::PackedScene::2999490605396062654::1779894765::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn
-simple_planet.tscn::PackedScene::526280271132995432::1779895211::0::1::::<><><>0<>0<><>::uid://di04bmwek8try::::res://scenes/planets/planet.gdshader<>uid://bpicyg2rrp4qp::::res://scenes/planets/planet_base.gd
+simple_planet.tscn::PackedScene::526280271132995432::1779969289::0::1::::<><><>0<>0<><>::uid://di04bmwek8try::::res://scenes/planets/planet.gdshader<>uid://bpicyg2rrp4qp::::res://scenes/planets/planet_base.gd
 uranus.tscn::PackedScene::6816480709904786975::1779894814::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn
 venus.tscn::PackedScene::8582344818790218131::1779894805::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn<>uid://3787wj2faykh::::res://assets/planets/textures/solar system/2k_venus_surface.jpg
 ::res://scenes/player/::1779811387
@@ -227,10 +227,10 @@ ShieldSystem.gd::GDScript::6108081646694897207::1779813039::0::1::::<>Node<><>0<
 ShieldSystem.tscn::PackedScene::-1::1779131093::0::1::::<><><>0<>0<><>::res://scenes/player/ShieldSystem.gd
 WeaponSystem.gd::GDScript::123355593652037597::1779813348::0::1::::<>Node<><>0<>0<><>::
 WeaponSystem.tscn::PackedScene::-1::1779131093::0::1::::<><><>0<>0<><>::res://scenes/player/WeaponSystem.gd
-::res://scenes/projectile/::1779878529
+::res://scenes/projectile/::1779896061
 projectile.gd::GDScript::6425248782272021058::1779731762::0::1::::<>Area3D<><>0<>0<><>::
 Projectile.gdshader::Shader::2965270116767601827::1779878529::0::1::::<><><>0<>0<><>::
-Projectile.tscn::PackedScene::4061135435519992803::1779807641::0::1::::<><><>0<>0<><>::uid://cxso55pxdnnn3::::res://scenes/projectile/projectile.gd
+Projectile.tscn::PackedScene::4061135435519992803::1779896061::0::1::::<><><>0<>0<><>::uid://cxso55pxdnnn3::::res://scenes/projectile/projectile.gd
 ::res://scenes/world/::1779790787
 AsteroidSpawner.gd::GDScript::3841811831715519353::1779387175::0::1::::<>Node2D<><>0<>0<><>::
 LevelManager.gd::GDScript::7303798033325442::1779308826::0::1::::<>Node2D<><>0<>0<><>::
@@ -256,7 +256,7 @@ trailmesh.gdextension::GDExtension::8020490264137839201::1779793320::0::1::::<><
 ::res://trailmesh/bin/linux/::1779793320
 ::res://trailmesh/bin/macos/::1779793320
 ::res://trailmesh/bin/macos/macos.framework/::1779793320
-::res://trailmesh/bin/windows/::1779894921
+::res://trailmesh/bin/windows/::1779970037
 ::res://trailmesh/example/::1779793320
 albedo.png::CompressedTexture2D::117215708539975444::1779793320::1779793320::1::::<><><>0<>0<>b23a40921eea09668ac99f9cc7237a6c<>res://.godot/imported/albedo.png-296ffd37ac24545f2ded3e452355f4e6.ctex::
 Camera.gd::GDScript::144620971606581968::1779793320::0::1::::<>Camera3D<><>0<>0<><>::

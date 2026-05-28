@@ -1,10 +1,31 @@
 [gd_scene format=3 uid="uid://cwebpewdly2yt"]
 
 [ext_resource type="PackedScene" uid="uid://hq602uu7kt7m" path="res://scenes/planets/simple_planet.tscn" id="1_ujig8"]
+[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="2_ujig8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m15u1"]
+cull_mode = 1
+grow = true
+grow_amount = 0.3
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4u6dv"]
 load_path = "res://.godot/imported/2k_mars.jpg-50382d3fd03e9e4d7418e19b7fd3cdda.s3tc.ctex"
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_as5al"]
+render_priority = 0
+next_pass = SubResource("StandardMaterial3D_m15u1")
+shader = ExtResource("2_ujig8")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = SubResource("CompressedTexture2D_4u6dv")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/metallic = 0.4150000197125
+shader_parameter/clearcoat = 1.0
+shader_parameter/clearcoat_roughness = 0.44400002109
+shader_parameter/shadow_threshold = 0.18000000855
+shader_parameter/shadow_softness = 0.0
+shader_parameter/ambient_fill = 0.034000001615
+
 [node name="mars" unique_id=95632487 instance=ExtResource("1_ujig8")]
-transform = Transform3D(0.025610782, 0.007764582, 0.013556791, 0.0029960447, -0.027990382, 0.010371146, -0.015332915, 0.0074999854, 0.024670606, 0, 0, 0)
+transform = Transform3D(-0.034147963, -0.010352775, -0.018075861, -0.0039947554, 0.03732051, -0.013828283, 0.020444037, -0.009999976, -0.032894403, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_as5al")
 albedo_texture = SubResource("CompressedTexture2D_4u6dv")

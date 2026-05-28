@@ -48,7 +48,7 @@ func spawn_random_planet() -> void:
 
 	var world_width = 17.0
 	var margin = world_width * 0.1
-	var spawn_z = -25.0 
+	var spawn_z = -100.0 
 
 	var random_x = randf_range(-world_width/2 + margin, world_width/2 - margin)
 	var random_speed = randf_range(speed_min, speed_max)
@@ -57,6 +57,6 @@ func spawn_random_planet() -> void:
 	add_child(planet)
 
 	# --- 2. TERAZ MOŻEMY BEZPIECZNIE UŻYĆ GLOBAL_POSITION ---
-	planet.global_position = Vector3(random_x, 0.0, spawn_z)
+	planet.global_position = Vector3(random_x, -10.0, spawn_z)
 
 	planet.speed = random_speed
