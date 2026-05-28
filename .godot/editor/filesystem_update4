@@ -9,3 +9,4 @@ res://scenes/enemy/Enemy.gd
 res://scenes/enemies/starfighter.tscn
 res://scenes/projectile/Projectile.tscn
 res://scenes/explosions/explode3.tscn
+res://scenes/enemy/EnemyPath.gd
