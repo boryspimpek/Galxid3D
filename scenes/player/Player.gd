@@ -117,7 +117,7 @@ func _physics_process(delta: float):
 		global_position.z = touch_target.z
 
 	_clamp_to_screen()
-	weapon_system.set_firing(true)
+	weapon_system.set_firing(is_firing)
 	_update_tilt(global_position.x - prev_x, delta)
 
 func _update_tilt(dx: float, delta: float) -> void:

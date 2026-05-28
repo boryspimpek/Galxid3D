@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c0rjf6bfsduht"]
 
 [ext_resource type="Script" uid="uid://cmxovjxejqgik" path="res://scenes/planets/PlanetSpawner.gd" id="1_uc6tr"]
+[ext_resource type="PackedScene" uid="uid://ceb36gc6o5uvc" path="res://scenes/enemies/starfighter.tscn" id="4_lp3by"]
 [ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="4_n40md"]
 [ext_resource type="PackedScene" uid="uid://cn2x51h30a36w" path="res://scenes/planets/earth.tscn" id="5_3vxff"]
 
@@ -63,3 +64,8 @@ preprocess_time = 360.0
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 30.385, -61.414845, -32.355)
 spin_speed = 0.1
 speed = 0.6
+
+[node name="Starfighter" parent="." unique_id=1897743314 instance=ExtResource("4_lp3by")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.675, 0, 0)
+armor = 10
+fire_rate = 100.0

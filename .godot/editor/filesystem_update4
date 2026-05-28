@@ -12,3 +12,4 @@ res://scenes/planets/PlanetSpawner.gd
 res://scenes/projectile/Projectile.tscn
 res://default_bus_layout.tres
 res://data/weapons/weapon_1.tres
+res://scenes/player/Player.gd
