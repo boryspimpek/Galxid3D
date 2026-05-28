@@ -88,7 +88,7 @@ armor = 5
 fire_rate = 60.0
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Path3D" unique_id=615095667]
-transform = Transform3D(-0.19260365, 0.53446823, 0.82285976, 0.014368604, 0.84000456, -0.5422471, -0.98109376, -0.09262197, -0.16948138, 0.81678134, -92.066055, -46.205677)
+transform = Transform3D(-0.19260365, 0.53446823, 0.82285976, 0.014368603, 0.84000456, -0.5422471, -0.9810937, -0.09262197, -0.16948138, 0.81678134, -92.066055, -46.205677)
 progress = 5.0
 script = ExtResource("5_lp3by")
 
@@ -96,9 +96,10 @@ script = ExtResource("5_lp3by")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 armor = 5
 fire_rate = 60.0
+esize = 2
 
 [node name="PathFollow3D3" type="PathFollow3D" parent="Path3D" unique_id=1937354844]
-transform = Transform3D(-0.21258712, 0.5874392, 0.78075075, 0.028552322, 0.8024068, -0.59596556, -0.97664684, -0.10440974, -0.18736945, -3.19889, -89.22492, -45.31504)
+transform = Transform3D(-0.21258713, 0.5874392, 0.78075075, 0.028552324, 0.8024068, -0.59596556, -0.9766469, -0.10440974, -0.18736944, -3.19889, -89.22492, -45.31504)
 progress = 10.0
 script = ExtResource("5_lp3by")
 
@@ -106,9 +107,10 @@ script = ExtResource("5_lp3by")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 armor = 5
 fire_rate = 60.0
+esize = 3
 
 [node name="PathFollow3D4" type="PathFollow3D" parent="Path3D" unique_id=1281420047]
-transform = Transform3D(-0.23967908, 0.659254, 0.71259165, 0.051496755, 0.74158585, -0.66876477, -0.96940684, -0.12360148, -0.21170937, -6.9493084, -86.07451, -44.321217)
+transform = Transform3D(-0.23967907, 0.659254, 0.71259165, 0.05149675, 0.74158585, -0.66876477, -0.9694068, -0.12360148, -0.21170937, -6.9493084, -86.07451, -44.321217)
 progress = 15.0
 script = ExtResource("5_lp3by")
 
@@ -118,7 +120,7 @@ armor = 5
 fire_rate = 60.0
 
 [node name="PathFollow3D5" type="PathFollow3D" parent="Path3D" unique_id=1867648764]
-transform = Transform3D(-0.33294615, 0.8820068, 0.3332496, 0.1943414, 0.41002247, -0.891047, -0.92261887, -0.23192285, -0.3079511, -14.542901, -73.95016, -40.324825)
+transform = Transform3D(-0.33294615, 0.8820068, 0.3332496, 0.1943414, 0.41002247, -0.89104694, -0.92261887, -0.23192285, -0.3079511, -14.542901, -73.95016, -40.324825)
 progress = 30.0
 script = ExtResource("5_lp3by")
 
@@ -126,6 +128,7 @@ script = ExtResource("5_lp3by")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 armor = 5
 fire_rate = 60.0
+esize = 2
 
 [node name="PlayAreaFrame" parent="." unique_id=143925964 instance=ExtResource("6_3vxff")]
 max_bound_x = 8.7

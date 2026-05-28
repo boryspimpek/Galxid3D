@@ -38,6 +38,7 @@ func _ready() -> void:
 		$VisibleOnScreenNotifier3D.screen_exited.connect(_on_screen_exited)
 
 	is_firing = true
+	fire_timer = fire_rate
 
 func _process(delta: float) -> void:
 	fire_timer = max(0.0, fire_timer - delta)
