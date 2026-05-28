@@ -10,3 +10,5 @@ res://scenes/enemies/starfighter.tscn
 res://scenes/projectile/Projectile.tscn
 res://scenes/explosions/explode3.tscn
 res://scenes/enemy/EnemyPath.gd
+res://scenes/player/Player.gd
+res://scenes/player/Player.tscn

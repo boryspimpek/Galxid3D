@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://bq7playareaframe"]
+
+[ext_resource type="Script" path="res://scenes/debug/PlayAreaFrame.gd" id="1_frame"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_edge"]
+size = Vector3(1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_frame"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.2, 1, 0.35, 0.85)
+disable_receive_shadows = true
+
+[node name="PlayAreaFrame" type="Node3D"]
+script = ExtResource("1_frame")
+max_bound_x = 8.5
+max_bound_z = 14.5
+border_thickness = 0.15
+border_height = 0.05
+y_offset = 0.02
+
+[node name="EdgePosZ" type="MeshInstance3D" parent="."]
+transform = Transform3D(17, 0, 0, 0, 0.05, 0, 0, 0, 0.15, 0, 0.02, 14.425)
+mesh = SubResource("BoxMesh_edge")
+surface_material_override/0 = SubResource("StandardMaterial3D_frame")
+
+[node name="EdgeNegZ" type="MeshInstance3D" parent="."]
+transform = Transform3D(17, 0, 0, 0, 0.05, 0, 0, 0, 0.15, 0, 0.02, -14.425)
+mesh = SubResource("BoxMesh_edge")
+surface_material_override/0 = SubResource("StandardMaterial3D_frame")
+
+[node name="EdgeNegX" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.15, 0, 0, 0, 0.05, 0, 0, 0, 29, -8.425, 0.02, 0)
+mesh = SubResource("BoxMesh_edge")
+surface_material_override/0 = SubResource("StandardMaterial3D_frame")
+
+[node name="EdgePosX" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.15, 0, 0, 0, 0.05, 0, 0, 0, 29, 8.425, 0.02, 0)
+mesh = SubResource("BoxMesh_edge")
+surface_material_override/0 = SubResource("StandardMaterial3D_frame")

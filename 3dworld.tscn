@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="4_n40md"]
 [ext_resource type="PackedScene" uid="uid://cn2x51h30a36w" path="res://scenes/planets/earth.tscn" id="5_3vxff"]
 [ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyPath.gd" id="5_lp3by"]
+[ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="6_3vxff"]
 
 [sub_resource type="Environment" id="Environment_vshm1"]
 background_mode = 1
@@ -34,10 +35,10 @@ orientation = 1
 [sub_resource type="Curve3D" id="Curve3D_n40md"]
 closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.001383245, 0, 0.0008299403, 0, 0, 0, 0, 0, 0, 9.263472, 0, -0.09960676, 0, 0, 0, 0, 0, 0, 7.8487244, 0, -26.549158, 0, 0, 0, 0, 0, 0, -13.581703, 0, -19.997179, 0, 0, 0, 0, 0, 0, -12.524429, 0, 9.577509, 0, 0, 0, 0, 0, 0, 8.693436, 0, 16.944813),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 5.0214844, -94.6472, -47.00987, 4.304343, -6.485199, -2.0761452, -4.304343, 6.485199, 2.0761452, -10.590942, -81.91239, -42.996582, 0.6271572, -8.917931, -3.1578941, -0.6271572, 8.917931, 3.1578941, -18.226563, -56.68979, -34.23921, -0.97349644, -6.4711304, -2.090065, 0.97349644, 6.4711304, 2.090065, -16.206177, -27.713808, -24.393404, -1.1480713, -3.1873496, -1.2629156, 1.1480713, 3.1873496, 1.2629156, -12.463989, -6.3705034, -16.709429, 0, 0, 0, 0, 0, 0, -9.134888, 0.0021972656, -14.38521, -2.2003746, 0, -2.754074, 2.2003746, 0, 2.754074, 3.5848079, 0.09134102, -8.2667055, 2.0277061, 0, -2.1790285, -2.0277061, 0, 2.1790285, 4.8263054, 0.00061035156, 11.9815645, 2.149168, 0, 2.0138025, -2.149168, 0, -2.0138025, -3.6779585, 0, 11.890772, 0.8616147, 0, 5.0678654, -0.8616147, 0, -5.0678654, -6.1089773, -4.7683716e-07, -5.2800784, 0, 0, 0, 0, 0, 0, -7.5495605, -14.559032, -12.69865, 0.021440506, 5.7835846, 2.6428242, -0.021440506, -5.7835846, -2.6428242, -10.499782, -64.82057, -29.676514, -3.564642, 5.6071014, 3.2359352, 3.564642, -5.6071014, -3.2359352, -4.9959164, -82.72259, -36.97046),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 6
+point_count = 13
 
 [node name="Game" type="Node3D" unique_id=616589222]
 
@@ -74,26 +75,75 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 30.385, -61.414845, -32
 spin_speed = -0.1
 speed = 0.6
 
-[node name="Starfighter" parent="." unique_id=1897743314 instance=ExtResource("4_lp3by")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015, 0, -4.97)
-armor = 5
-fire_rate = 100.0
-esize = 2
-
-[node name="Starfighter2" parent="." unique_id=1742888400 instance=ExtResource("4_lp3by")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.895, 0, 0)
-armor = 5
-fire_rate = 100.0
-
 [node name="Path3D" type="Path3D" parent="." unique_id=2035440635]
 curve = SubResource("Curve3D_n40md")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1667017580]
-transform = Transform3D(0.010843066, 0, -0.99993616, 0, 0.9999866, 0, 0.9999343, 0, 0.010843085, 0.001383245, 0, 0.0008299403)
+transform = Transform3D(-0.16883358, 0.47145814, 0.8654905, -1.490003e-08, 0.8780929, -0.4783285, -0.9855673, -0.08076361, -0.1482637, 5.0214844, -94.6472, -47.00987)
 script = ExtResource("5_lp3by")
-speed = 5.0
 
-[node name="Starfighter3" parent="Path3D/PathFollow3D" unique_id=1780056736 instance=ExtResource("4_lp3by")]
+[node name="Starfighter2" parent="Path3D/PathFollow3D" unique_id=1742888400 instance=ExtResource("4_lp3by")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 armor = 5
-fire_rate = 100.0
+fire_rate = 60.0
+
+[node name="PathFollow3D2" type="PathFollow3D" parent="Path3D" unique_id=615095667]
+transform = Transform3D(-0.19260365, 0.53446823, 0.82285976, 0.014368604, 0.84000456, -0.5422471, -0.98109376, -0.09262197, -0.16948138, 0.81678134, -92.066055, -46.205677)
+progress = 5.0
+script = ExtResource("5_lp3by")
+
+[node name="Starfighter2" parent="Path3D/PathFollow3D2" unique_id=1897743314 instance=ExtResource("4_lp3by")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+armor = 5
+fire_rate = 60.0
+
+[node name="PathFollow3D3" type="PathFollow3D" parent="Path3D" unique_id=1937354844]
+transform = Transform3D(-0.21258712, 0.5874392, 0.78075075, 0.028552322, 0.8024068, -0.59596556, -0.97664684, -0.10440974, -0.18736945, -3.19889, -89.22492, -45.31504)
+progress = 10.0
+script = ExtResource("5_lp3by")
+
+[node name="Starfighter2" parent="Path3D/PathFollow3D3" unique_id=138942753 instance=ExtResource("4_lp3by")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+armor = 5
+fire_rate = 60.0
+
+[node name="PathFollow3D4" type="PathFollow3D" parent="Path3D" unique_id=1281420047]
+transform = Transform3D(-0.23967908, 0.659254, 0.71259165, 0.051496755, 0.74158585, -0.66876477, -0.96940684, -0.12360148, -0.21170937, -6.9493084, -86.07451, -44.321217)
+progress = 15.0
+script = ExtResource("5_lp3by")
+
+[node name="Starfighter2" parent="Path3D/PathFollow3D4" unique_id=997292375 instance=ExtResource("4_lp3by")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+armor = 5
+fire_rate = 60.0
+
+[node name="PathFollow3D5" type="PathFollow3D" parent="Path3D" unique_id=1867648764]
+transform = Transform3D(-0.33294615, 0.8820068, 0.3332496, 0.1943414, 0.41002247, -0.891047, -0.92261887, -0.23192285, -0.3079511, -14.542901, -73.95016, -40.324825)
+progress = 30.0
+script = ExtResource("5_lp3by")
+
+[node name="Starfighter2" parent="Path3D/PathFollow3D5" unique_id=809695120 instance=ExtResource("4_lp3by")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+armor = 5
+fire_rate = 60.0
+
+[node name="PlayAreaFrame" parent="." unique_id=143925964 instance=ExtResource("6_3vxff")]
+max_bound_x = 8.7
+max_bound_z = 15.25
+
+[node name="Starfighter" parent="." unique_id=799568515 instance=ExtResource("4_lp3by")]
+transform = Transform3D(0.35836798, 0, 0.9335804, 0, 1, 0, -0.9335804, 0, 0.35836798, -4.072467, 0, -12.534987)
+armor = 5
+fire_rate = 600.0
+
+[node name="Starfighter2" parent="." unique_id=936473790 instance=ExtResource("4_lp3by")]
+transform = Transform3D(0.9914449, 0, 0.1305262, 0, 1, 0, -0.1305262, 0, 0.9914449, 5.409036, 0, -1.6711531)
+armor = 5
+fire_rate = 600.0
+esize = 2
+
+[node name="Starfighter3" parent="." unique_id=140431693 instance=ExtResource("4_lp3by")]
+transform = Transform3D(-0.9832549, 0, -0.18223558, 0, 1, 0, 0.18223558, 0, -0.9832549, -4.828712, 0, 8.934107)
+armor = 5
+fire_rate = 600.0
 esize = 3
