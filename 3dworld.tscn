@@ -67,5 +67,7 @@ speed = 0.6
 
 [node name="Starfighter" parent="." unique_id=1897743314 instance=ExtResource("4_lp3by")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.675, 0, 0)
-armor = 10
+armor = 5
 fire_rate = 100.0
+xmove = 3
+zmove = 3

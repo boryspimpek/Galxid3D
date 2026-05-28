@@ -42,10 +42,10 @@ _data = {
 }
 
 [node name="explode_3d" type="Node3D" unique_id=986596960]
-transform = Transform3D(5.39, 0, 0, 0, 5.39, 0, 0, 0, 5.39, 0, 0, 0)
 script = ExtResource("2_explode3d")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1169635179]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 billboard = 1
 texture = ExtResource("1_boom")
 hframes = 6
