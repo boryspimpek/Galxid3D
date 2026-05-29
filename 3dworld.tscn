@@ -35,10 +35,10 @@ orientation = 1
 
 [sub_resource type="Curve3D" id="Curve3D_dba1v"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.027261734, 0, 0.000872612, 0, 0, 0, 0, 0, 0, -0.007255554, 0, 1.6065321, -5.6336823, 0, -3.1911058, 5.6336823, 0, 3.1911058, 13.462109, 0, 6.6102667, 0, 0, 0, 0, 0, 0, 21.146828, 0, 18.69815),
-"tilts": PackedFloat32Array(0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.027261734, 0, 0.000872612, 0, 0, 0, 0, 0, 0, -0.007255554, 0, 1.6065321, -5.6336823, 0, -3.1911058, 5.6336823, 0, 3.1911058, 13.462109, 0, 6.6102667, 0, 0, 0, 0, 0, 0, 21.146828, 0, 18.69815, 0, 0, 0, 0, 0, 0, 11.692746, 0, 12.406804, 0, 0, 0, 0, 0, 0, 5.4287195, 0, 7.75803, 0, 0, 0, 0, 0, 0, -3.908227, 0, 5.827607),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 4
+point_count = 7
 
 [node name="Game" type="Node3D" unique_id=616589222]
 
@@ -83,16 +83,19 @@ max_bound_z = 15.45
 script = ExtResource("7_scroll")
 
 [node name="Starfighter" parent="LevelScroll" unique_id=1897743314 instance=ExtResource("4_lp3by")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20515537, 0, -19.712534)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20515537, 0, -27.985777)
 zmove = 5
 
 [node name="Path3D" type="Path3D" parent="LevelScroll" unique_id=259643811]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.084911, 0, -17.965576)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.72194, 0, -18.989883)
 curve = SubResource("Curve3D_dba1v")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/Path3D" unique_id=1558846438]
 transform = Transform3D(-0.9999076, 0, -0.012458684, 0, 1, 0, 0.012458684, 0, -0.9999076, -0.027261734, 0, 0.000872612)
 script = ExtResource("5_lp3by")
+speed = 10.0
 
 [node name="Starfighter" parent="LevelScroll/Path3D/PathFollow3D" unique_id=1777684227 instance=ExtResource("4_lp3by")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+activate_on_screen = false
+activation_bounds_mode = 1
