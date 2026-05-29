@@ -83,11 +83,11 @@ max_bound_z = 15.45
 script = ExtResource("7_scroll")
 
 [node name="Starfighter" parent="LevelScroll" unique_id=1897743314 instance=ExtResource("4_lp3by")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20515537, 0, -27.985777)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20515537, 0, -18.7411)
 zmove = 5
 
 [node name="Path3D" type="Path3D" parent="LevelScroll" unique_id=259643811]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.72194, 0, -18.989883)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.584084, 0, -20.276539)
 curve = SubResource("Curve3D_dba1v")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/Path3D" unique_id=1558846438]
@@ -97,5 +97,3 @@ speed = 10.0
 
 [node name="Starfighter" parent="LevelScroll/Path3D/PathFollow3D" unique_id=1777684227 instance=ExtResource("4_lp3by")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-activate_on_screen = false
-activation_bounds_mode = 1

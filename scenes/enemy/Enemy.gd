@@ -28,8 +28,6 @@ var _is_active: bool = false
 @export_group("Aktywacja")
 @export var activate_on_screen: bool = true
 @export var despawn_off_screen: bool = true
-## Po pierwszej aktywacji nie wyłączaj (np. wrogowie na Path3D).
-@export var lock_activation_once: bool = false
 
 enum ActivationBoundsMode {
 	PLAY_AREA,    ## prostokąt planszy + notifier (wrogowie prosto w dół)
@@ -48,7 +46,6 @@ enum ActivationBoundsMode {
 @export var scroll_activation_z: float = -17.0
 
 var _screen_notifier: VisibleOnScreenNotifier3D
-var _activation_locked: bool = false
 
 signal combat_activated
 signal combat_deactivated
@@ -64,7 +61,6 @@ func _ready() -> void:
 	enemy_velocity = Vector3(float(xmove), float(ymove), float(zmove))
 
 	if get_parent() is PathFollow3D:
-		lock_activation_once = true
 		activation_bounds_mode = ActivationBoundsMode.SCROLL_LINE
 	
 	_screen_notifier = get_node_or_null("VisibleOnScreenNotifier3D") as VisibleOnScreenNotifier3D
@@ -150,12 +146,8 @@ func create_projectile(dmg: int, proj_velocity: Vector3) -> void:
 # --- AKTYWACJA (VisibleOnScreenNotifier3D + granice planszy) ---
 
 func _refresh_activation() -> void:
-	if _activation_locked:
-		return
 	if _should_be_active():
 		_activate()
-		if lock_activation_once:
-			_activation_locked = true
 	else:
 		_deactivate()
 
