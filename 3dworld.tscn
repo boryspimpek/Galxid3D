@@ -35,7 +35,7 @@ orientation = 1
 
 [sub_resource type="Curve3D" id="Curve3D_dba1v"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.027261734, 0, 0.000872612, 0.22975922, 0, -11.993464, -0.22975922, 0, 11.993464, 11.395284, 0, 12.295759, 0, 0, 0, 0, 0, 0, -6.0205135, 0, 22.359241),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.027261734, 0, 0.000872612, 5.1283827, 0, -9.847151, -5.1283827, 0, 9.847151, -0.07277298, 0, 15.791826, 0, 0, 0, 0, 0, 0, -15.310596, 0, 24.490175),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
@@ -83,19 +83,17 @@ max_bound_z = 15.45
 script = ExtResource("7_scroll")
 
 [node name="Starfighter" parent="LevelScroll" unique_id=1897743314 instance=ExtResource("4_lp3by")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8161287, 0, -18.579985)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8278723, 0, -21.61351)
 zmove = 5
-activation_bounds_mode = 1
 
 [node name="Path3D" type="Path3D" parent="LevelScroll" unique_id=259643811]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.510484, 0, -18.851807)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.984895, 0, -17.972794)
 curve = SubResource("Curve3D_dba1v")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/Path3D" unique_id=1558846438]
-transform = Transform3D(-0.025858913, 0, -0.9996476, 0, 1.0000005, 0, 0.9996476, 0, -0.025858913, -0.027261734, 0, 0.000872612)
+transform = Transform3D(-0.7599862, 0, -0.649906, 0, 1.0000005, 0, 0.649906, 0, -0.7599862, -0.027261734, 0, 0.000872612)
 script = ExtResource("5_lp3by")
 speed = 10.0
 
 [node name="Starfighter" parent="LevelScroll/Path3D/PathFollow3D" unique_id=1777684227 instance=ExtResource("4_lp3by")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-activation_bounds_mode = 1

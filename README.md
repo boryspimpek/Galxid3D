@@ -57,8 +57,7 @@ Plik: `scenes/enemy/Enemy.gd`.
 ## Przewijanie poziomu i aktywacja wrogów
 
 - **`LevelScroll`** (`scenes/world/LevelScroll3D.gd`): przesuwa dzieci wzdłuż **+Z** (`scroll_speed`). Pod nim trzymaj Path3D, planety, tło — gracz i kamera zostają na root sceny.
-- **Wrogowie prosto w dół** (`PLAY_AREA`): aktywacja w prostokącie planszy + notifier.
-- **Wrogowie na Path3D** (`SCROLL_LINE`): aktywacja gdy `global_position.z` dojdzie do `scroll_activation_z` (górna krawędź kadru, np. `-15.45`). Ustaw wroga na `z = scroll_activation_z - odległość` (np. `-65.45` = 50 jednostek nad linią). Czas do startu ≈ `odległość / scroll_speed`.
+- **Wszyscy wrogowie**: aktywacja gdy `global_position.z >= scroll_activation_z` (górna krawędź kadru). Pozycja startowa: `z = scroll_activation_z - odległość`. Czas do startu ≈ `odległość / scroll_speed`.
 - **`EnemyPath.gd`**: start ścieżki po sygnale `combat_activated` z wroga.
 
 ## Notatki dla pracy z AI (żeby szybciej startować rozmowy)

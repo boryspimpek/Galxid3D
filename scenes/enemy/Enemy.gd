@@ -26,23 +26,10 @@ var is_firing: bool = false
 var _is_active: bool = false
 
 @export_group("Aktywacja")
-@export var activate_on_screen: bool = true
+@export var activate_on_scroll_line: bool = true
 @export var despawn_off_screen: bool = true
-
-enum ActivationBoundsMode {
-	PLAY_AREA,    ## prostokąt planszy + notifier (wrogowie prosto w dół)
-	SCROLL_LINE,  ## linia Z u góry kadru — jak linijka 2D (wrogowie na Path3D)
-	SCREEN_ONLY,  ## tylko VisibleOnScreenNotifier3D
-}
-@export var activation_bounds_mode: ActivationBoundsMode = ActivationBoundsMode.PLAY_AREA
-
-@export_group("Granice — Play Area")
-@export var play_area_max_x: float = 10.0
-@export var play_area_max_z: float = 17.0
-
-@export_group("Granice — Scroll Line")
 ## Górna krawędź kadru. Wróg aktywuje się gdy global_position.z >= tej wartości.
-## Ustaw na minus max_bound_z z PlayAreaFrame.
+## Ustaw na minus max_bound_z z PlayAreaFrame (np. -17.0).
 @export var scroll_activation_z: float = -17.0
 
 var _screen_notifier: VisibleOnScreenNotifier3D
@@ -57,19 +44,15 @@ func _ready() -> void:
 	add_to_group("enemies")
 	collision_layer = 2
 	collision_mask = 5
-	
+
 	enemy_velocity = Vector3(float(xmove), float(ymove), float(zmove))
 
-	if get_parent() is PathFollow3D:
-		activation_bounds_mode = ActivationBoundsMode.SCROLL_LINE
-	
 	_screen_notifier = get_node_or_null("VisibleOnScreenNotifier3D") as VisibleOnScreenNotifier3D
 	if _screen_notifier:
-		# Notifier musi mieć visible=true — inaczej Godot nie emituje sygnałów.
 		_screen_notifier.visible = true
 		_screen_notifier.screen_exited.connect(_on_screen_exited)
 
-	if activate_on_screen:
+	if activate_on_scroll_line:
 		_deactivate()
 		set_process(true)
 	else:
@@ -77,7 +60,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if activate_on_screen:
+	if activate_on_scroll_line:
 		_refresh_activation()
 
 	if not _is_active:
@@ -136,42 +119,20 @@ func shoot() -> void:
 func create_projectile(dmg: int, proj_velocity: Vector3) -> void:
 	var projectile_scene = GameConstants.enemy_projectile_scene
 	var projectile = projectile_scene.instantiate()
-	
+
 	get_tree().current_scene.add_child(projectile)
 	projectile.global_position = muzzle.global_position
 	projectile.velocity = proj_velocity
 	projectile.damage = dmg
 
 
-# --- AKTYWACJA (VisibleOnScreenNotifier3D + granice planszy) ---
+# --- AKTYWACJA (linia scrolla) ---
 
 func _refresh_activation() -> void:
-	if _should_be_active():
+	if global_position.z >= scroll_activation_z:
 		_activate()
 	else:
 		_deactivate()
-
-
-func _should_be_active() -> bool:
-	match activation_bounds_mode:
-		ActivationBoundsMode.SCROLL_LINE:
-			return global_position.z >= scroll_activation_z
-		ActivationBoundsMode.PLAY_AREA:
-			if _screen_notifier and not _screen_notifier.is_on_screen():
-				return false
-			return _is_in_play_area()
-		ActivationBoundsMode.SCREEN_ONLY:
-			if _screen_notifier:
-				return _screen_notifier.is_on_screen()
-			return true
-	return true
-
-
-func _is_in_play_area() -> bool:
-	return (
-		absf(global_position.x) <= play_area_max_x
-		and absf(global_position.z) <= play_area_max_z
-	)
 
 
 func _activate() -> void:
