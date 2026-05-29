@@ -5,3 +5,5 @@ res://scenes/enemy/EnemyPath.gd
 res://scenes/world/LevelScroll3D.gd
 res://scenes/player/Player.tscn
 res://scenes/player/Player.gd
+res://scenes/enemies/starfighter.tscn
+res://scenes/enemies/blaze.tscn

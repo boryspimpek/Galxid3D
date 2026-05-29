@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyPath.gd" id="5_lp3by"]
 [ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="6_3vxff"]
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="7_scroll"]
+[ext_resource type="PackedScene" uid="uid://cxkgum8ut6na2" path="res://scenes/enemies/blaze.tscn" id="8_pnv6h"]
 
 [sub_resource type="Environment" id="Environment_vshm1"]
 background_mode = 1
@@ -83,7 +84,7 @@ max_bound_z = 15.45
 script = ExtResource("7_scroll")
 
 [node name="Starfighter" parent="LevelScroll" unique_id=1897743314 instance=ExtResource("4_lp3by")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8278723, 0, -21.61351)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50257397, 0, -12.124365)
 zmove = 5
 
 [node name="Path3D" type="Path3D" parent="LevelScroll" unique_id=259643811]
@@ -97,3 +98,6 @@ speed = 10.0
 
 [node name="Starfighter" parent="LevelScroll/Path3D/PathFollow3D" unique_id=1777684227 instance=ExtResource("4_lp3by")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Starfighter2" parent="LevelScroll" unique_id=1119025642 instance=ExtResource("8_pnv6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.96867, 0, -12.139744)
