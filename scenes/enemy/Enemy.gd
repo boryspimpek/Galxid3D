@@ -28,12 +28,30 @@ var _is_active: bool = false
 @export_group("Aktywacja")
 @export var activate_on_screen: bool = true
 @export var despawn_off_screen: bool = true
-## Ogranicza aktywację do prostokąta gry (jak PlayAreaFrame), nie całego frustum kamery.
-@export var use_play_area_bounds: bool = true
-@export var play_area_max_x: float = 10.0
-@export var play_area_max_z: float = 17.0
+## Po pierwszej aktywacji nie wyłączaj (np. wrogowie na Path3D).
+@export var lock_activation_once: bool = false
+
+enum ActivationBoundsMode {
+	PLAY_AREA,    ## prostokąt planszy + notifier (wrogowie prosto w dół)
+	SCROLL_LINE,  ## linia Z u góry kadru — jak linijka 2D (wrogowie na Path3D)
+	SCREEN_ONLY,  ## tylko VisibleOnScreenNotifier3D
+}
+@export var activation_bounds_mode: ActivationBoundsMode = ActivationBoundsMode.PLAY_AREA
+
+@export_group("Granice — Play Area")
+@export var play_area_max_x: float = 8.75
+@export var play_area_max_z: float = 15.45
+
+@export_group("Granice — Scroll Line")
+## Górna krawędź kadru. Wróg aktywuje się gdy global_position.z >= tej wartości.
+## Ustaw na minus max_bound_z z PlayAreaFrame (np. -15.45).
+@export var scroll_activation_z: float = -15.45
 
 var _screen_notifier: VisibleOnScreenNotifier3D
+var _activation_locked: bool = false
+
+signal combat_activated
+signal combat_deactivated
 
 
 # --- METODY WBUDOWANE (LIFECYCLE) ---
@@ -44,6 +62,10 @@ func _ready() -> void:
 	collision_mask = 5
 	
 	enemy_velocity = Vector3(float(xmove), float(ymove), float(zmove))
+
+	if get_parent() is PathFollow3D:
+		lock_activation_once = true
+		activation_bounds_mode = ActivationBoundsMode.SCROLL_LINE
 	
 	_screen_notifier = get_node_or_null("VisibleOnScreenNotifier3D") as VisibleOnScreenNotifier3D
 	if _screen_notifier:
@@ -76,6 +98,15 @@ func _process(delta: float) -> void:
 
 func set_firing(firing: bool) -> void:
 	is_firing = firing
+
+
+func is_combat_active() -> bool:
+	return _is_active
+
+
+## Ile jednostek brakuje do linii aktywacji (0 = właśnie teraz).
+func get_scroll_distance_remaining() -> float:
+	return scroll_activation_z - global_position.z
 
 
 func take_damage(amount: int) -> void:
@@ -119,19 +150,28 @@ func create_projectile(dmg: int, proj_velocity: Vector3) -> void:
 # --- AKTYWACJA (VisibleOnScreenNotifier3D + granice planszy) ---
 
 func _refresh_activation() -> void:
+	if _activation_locked:
+		return
 	if _should_be_active():
 		_activate()
+		if lock_activation_once:
+			_activation_locked = true
 	else:
 		_deactivate()
 
 
 func _should_be_active() -> bool:
-	if _screen_notifier == null:
-		return true
-	if not _screen_notifier.is_on_screen():
-		return false
-	if use_play_area_bounds:
-		return _is_in_play_area()
+	match activation_bounds_mode:
+		ActivationBoundsMode.SCROLL_LINE:
+			return global_position.z >= scroll_activation_z
+		ActivationBoundsMode.PLAY_AREA:
+			if _screen_notifier and not _screen_notifier.is_on_screen():
+				return false
+			return _is_in_play_area()
+		ActivationBoundsMode.SCREEN_ONLY:
+			if _screen_notifier:
+				return _screen_notifier.is_on_screen()
+			return true
 	return true
 
 
@@ -148,11 +188,15 @@ func _activate() -> void:
 	_is_active = true
 	is_firing = true
 	fire_timer = fire_rate
+	combat_activated.emit()
 
 
 func _deactivate() -> void:
+	if not _is_active:
+		return
 	_is_active = false
 	is_firing = false
+	combat_deactivated.emit()
 
 
 # --- OBSŁUGA SYGNAŁÓW (SIGNALS) ---

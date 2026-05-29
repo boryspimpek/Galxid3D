@@ -10,49 +10,38 @@ var _path_active: bool = false
 
 func _ready() -> void:
 	if not wait_for_screen:
-		_path_active = true
+		_start_path()
 		return
 
 	_path_active = false
 	set_process(false)
 
-	var notifier := _find_screen_notifier()
-	if notifier == null:
-		_path_active = true
-		set_process(true)
+	var enemy := _find_enemy()
+	if enemy == null:
+		_start_path()
 		return
 
-	notifier.screen_entered.connect(_on_screen_entered)
-	if notifier.is_on_screen():
-		_on_screen_entered()
+	if enemy.is_combat_active():
+		_start_path()
+	else:
+		enemy.combat_activated.connect(_start_path, CONNECT_ONE_SHOT)
 
 
-func _find_screen_notifier() -> VisibleOnScreenNotifier3D:
+func _find_enemy() -> Node:
 	for child in get_children():
-		var found := _find_screen_notifier_in(child)
-		if found:
-			return found
+		if child.is_in_group("enemies"):
+			return child
 	return null
 
 
-func _find_screen_notifier_in(node: Node) -> VisibleOnScreenNotifier3D:
-	if node is VisibleOnScreenNotifier3D:
-		return node
-	for child in node.get_children():
-		var found := _find_screen_notifier_in(child)
-		if found:
-			return found
-	return null
-
-
-func _on_screen_entered() -> void:
+func _start_path() -> void:
 	if _path_active:
 		return
 	_path_active = true
 	set_process(true)
 
 
-func _process(delta: float):
+func _process(delta: float) -> void:
 	if not _path_active:
 		return
 
@@ -67,6 +56,7 @@ func _process(delta: float):
 	if face_movement:
 		# obrót zgodnie z tangentem ścieżki (w Godot 4 wystarczy włączyć też `rotation_mode` w Inspectorze)
 		rotation_mode = PathFollow3D.ROTATION_ORIENTED
+
 
 func get_baked_length_safe() -> float:
 	var p := get_parent()
