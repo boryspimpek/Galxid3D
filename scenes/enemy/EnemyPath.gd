@@ -2,16 +2,16 @@ extends PathFollow3D
 
 @export var speed: float = 5.0 # jednostki 3D na sekundę wzdłuż krzywej
 # @export var loop_path: bool = true
-@export var face_movement: bool = true
-@export var wait_for_screen: bool = true
+# @export var face_movement: bool = true
+# @export var wait_for_screen: bool = true
 
 var _path_active: bool = false
 
 
 func _ready() -> void:
-	if not wait_for_screen:
-		_start_path()
-		return
+	# if not wait_for_screen:
+	# 	_start_path()
+	# 	return
 
 	_path_active = false
 	set_process(false)
@@ -50,9 +50,9 @@ func _process(delta: float) -> void:
 
 	progress = clamp(progress, 0.0, get_baked_length_safe())
 
-	if face_movement:
-		# obrót zgodnie z tangentem ścieżki (w Godot 4 wystarczy włączyć też `rotation_mode` w Inspectorze)
-		rotation_mode = PathFollow3D.ROTATION_ORIENTED
+	# if face_movement:
+	# 	# obrót zgodnie z tangentem ścieżki (w Godot 4 wystarczy włączyć też `rotation_mode` w Inspectorze)
+	rotation_mode = PathFollow3D.ROTATION_ORIENTED
 
 
 func get_baked_length_safe() -> float:
