@@ -7,17 +7,7 @@
 [ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyPath.gd" id="5_lp3by"]
 [ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="6_3vxff"]
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="7_scroll"]
-[ext_resource type="PackedScene" uid="uid://cxkgum8ut6na2" path="res://scenes/enemies/blaze1.tscn" id="8_y8ijg"]
-[ext_resource type="PackedScene" uid="uid://di06kw5xu2r3y" path="res://scenes/enemies/blaze2.tscn" id="9_fjwqu"]
-[ext_resource type="PackedScene" uid="uid://di06kx5xu2r3y" path="res://scenes/enemies/blaze3.tscn" id="10_fql1y"]
-[ext_resource type="PackedScene" uid="uid://di06ky5xu2r3y" path="res://scenes/enemies/blaze4.tscn" id="11_sgee4"]
-[ext_resource type="PackedScene" uid="uid://di06k05xu2r3y" path="res://scenes/enemies/blaze5.tscn" id="12_h5joq"]
-[ext_resource type="PackedScene" uid="uid://bbfxw5jn154i3" path="res://scenes/enemies/falcon.tscn" id="13_sgee4"]
-[ext_resource type="PackedScene" uid="uid://bxtskf50xtemi" path="res://scenes/enemies/heli_crimson.tscn" id="14_h5joq"]
-[ext_resource type="PackedScene" uid="uid://cheligold0001" path="res://scenes/enemies/heli_gold.tscn" id="15_a283u"]
-[ext_resource type="PackedScene" path="res://scenes/enemies/sky_tank.tscn" id="16_njda1"]
-[ext_resource type="PackedScene" path="res://scenes/enemies/voyager.tscn" id="17_a02db"]
-[ext_resource type="PackedScene" path="res://scenes/enemies/z_drone.tscn" id="18_sq30x"]
+[ext_resource type="Script" uid="uid://c83dieo1civ4w" path="res://scenes/enemies/EnemySpawner.gd" id="23_5ipoo"]
 
 [sub_resource type="Environment" id="Environment_vshm1"]
 background_mode = 1
@@ -78,6 +68,10 @@ speed_min = 1.0
 speed_max = 1.0
 preprocess_time = 360.0
 
+[node name="EnemySpawner" type="Node3D" parent="." unique_id=1578792440]
+script = ExtResource("23_5ipoo")
+speed_max = 2.0
+
 [node name="earth" parent="." unique_id=1944613414 instance=ExtResource("5_3vxff")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 30.385, -61.414845, -32.355)
 spin_speed = -0.1
@@ -93,10 +87,6 @@ max_bound_z = 15.45
 [node name="LevelScroll" type="Node3D" parent="." unique_id=1395802397]
 script = ExtResource("7_scroll")
 
-[node name="Starfighter" parent="LevelScroll" unique_id=1897743314 instance=ExtResource("4_lp3by")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32888365, 0, -12.124365)
-zmove = 5
-
 [node name="Path3D" type="Path3D" parent="LevelScroll" unique_id=259643811]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.984895, 0, -17.972794)
 curve = SubResource("Curve3D_dba1v")
@@ -108,36 +98,5 @@ speed = 10.0
 
 [node name="Starfighter" parent="LevelScroll/Path3D/PathFollow3D" unique_id=1777684227 instance=ExtResource("4_lp3by")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-
-[node name="blaze1" parent="LevelScroll" unique_id=1719673657 instance=ExtResource("8_y8ijg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5698595, 0, -12.11)
-
-[node name="blaze2" parent="LevelScroll" unique_id=1218240408 instance=ExtResource("9_fjwqu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4277382, 0, -12.11)
-
-[node name="blaze3" parent="LevelScroll" unique_id=1673055758 instance=ExtResource("10_fql1y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8208036, 0, -12.11)
-
-[node name="blaze4" parent="LevelScroll" unique_id=1829539000 instance=ExtResource("11_sgee4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.855819, 0, -12.11)
-
-[node name="blaze5" parent="LevelScroll" unique_id=364312134 instance=ExtResource("12_h5joq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.015792, 0, -12.11)
-
-[node name="falcon" parent="LevelScroll" unique_id=1308366422 instance=ExtResource("13_sgee4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.973692, 0, -8.68979)
-
-[node name="heli_crimson" parent="LevelScroll" unique_id=390178606 instance=ExtResource("14_h5joq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.165205, 0, -6.905573)
-
-[node name="heli_gold" parent="LevelScroll" unique_id=720479447 instance=ExtResource("15_a283u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.105857, 0, -8.326338)
-
-[node name="sky_tank" parent="LevelScroll" unique_id=863360980 instance=ExtResource("16_njda1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028326988, 0, -4.107468)
-
-[node name="voyager" parent="LevelScroll" unique_id=1994718102 instance=ExtResource("17_a02db")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9743738, 0, -4.928963)
-
-[node name="z_drone" parent="LevelScroll" unique_id=1890379163 instance=ExtResource("18_sq30x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4644814, 0, -6.1470404)
+armor = 1
+fire_rate = 2.0

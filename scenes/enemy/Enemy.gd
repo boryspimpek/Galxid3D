@@ -15,6 +15,14 @@ extends Area3D
 @export var ymove: int = 0
 @export var zmove: int = 0
 
+## Prędkość w osi Z (używana m.in. przez EnemySpawner); synchronizuje się z zmove.
+var speed: float:
+	get:
+		return enemy_velocity.z
+	set(value):
+		zmove = int(value)
+		enemy_velocity.z = value
+
 # --- REFERENCJE WĘZŁÓW (@ONREADY) ---
 @onready var ship_model: Node3D = $EnemyModel
 @onready var muzzle: Marker3D = $Muzzle

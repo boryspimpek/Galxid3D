@@ -13,3 +13,4 @@ res://scenes/enemies/comet.tscn
 res://scenes/enemies/satelite1.tscn
 res://scenes/enemies/satelite2.tscn
 res://scenes/enemy/Enemy.tscn
+res://scenes/enemies/EnemySpawner.gd

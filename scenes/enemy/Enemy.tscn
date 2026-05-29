@@ -4,6 +4,7 @@
 
 [node name="Enemy" type="Area3D" unique_id=1897743314]
 script = ExtResource("1_enemy")
+armor = 5
 fire_rate = 60.0
 
 [node name="EnemyModel" type="MeshInstance3D" parent="." unique_id=634598779]
