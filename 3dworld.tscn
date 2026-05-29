@@ -84,28 +84,25 @@ script = ExtResource("5_lp3by")
 
 [node name="Starfighter2" parent="Path3D/PathFollow3D" unique_id=1742888400 instance=ExtResource("4_lp3by")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-armor = 5
 fire_rate = 60.0
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Path3D" unique_id=615095667]
-transform = Transform3D(-0.19260365, 0.53446823, 0.82285976, 0.014368603, 0.84000456, -0.5422471, -0.9810937, -0.09262197, -0.16948138, 0.81678134, -92.066055, -46.205677)
+transform = Transform3D(-0.19260363, 0.53446823, 0.82285976, 0.014368602, 0.84000456, -0.5422471, -0.98109365, -0.09262197, -0.16948138, 0.81678134, -92.066055, -46.205677)
 progress = 5.0
 script = ExtResource("5_lp3by")
 
 [node name="Starfighter2" parent="Path3D/PathFollow3D2" unique_id=1897743314 instance=ExtResource("4_lp3by")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-armor = 5
 fire_rate = 60.0
 esize = 2
 
 [node name="PathFollow3D3" type="PathFollow3D" parent="Path3D" unique_id=1937354844]
-transform = Transform3D(-0.21258713, 0.5874392, 0.78075075, 0.028552324, 0.8024068, -0.59596556, -0.9766469, -0.10440974, -0.18736944, -3.19889, -89.22492, -45.31504)
+transform = Transform3D(-0.21258715, 0.5874392, 0.78075075, 0.028552325, 0.8024068, -0.59596556, -0.97664696, -0.10440974, -0.18736944, -3.19889, -89.22492, -45.31504)
 progress = 10.0
 script = ExtResource("5_lp3by")
 
 [node name="Starfighter2" parent="Path3D/PathFollow3D3" unique_id=138942753 instance=ExtResource("4_lp3by")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-armor = 5
 fire_rate = 60.0
 esize = 3
 
@@ -116,37 +113,18 @@ script = ExtResource("5_lp3by")
 
 [node name="Starfighter2" parent="Path3D/PathFollow3D4" unique_id=997292375 instance=ExtResource("4_lp3by")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-armor = 5
 fire_rate = 60.0
 
 [node name="PathFollow3D5" type="PathFollow3D" parent="Path3D" unique_id=1867648764]
-transform = Transform3D(-0.33294615, 0.8820068, 0.3332496, 0.1943414, 0.41002247, -0.89104694, -0.92261887, -0.23192285, -0.3079511, -14.542901, -73.95016, -40.324825)
+transform = Transform3D(-0.33294615, 0.8820068, 0.33324957, 0.1943414, 0.41002247, -0.89104694, -0.92261887, -0.23192285, -0.30795106, -14.542901, -73.95016, -40.324825)
 progress = 30.0
 script = ExtResource("5_lp3by")
 
 [node name="Starfighter2" parent="Path3D/PathFollow3D5" unique_id=809695120 instance=ExtResource("4_lp3by")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-armor = 5
 fire_rate = 60.0
 esize = 2
 
 [node name="PlayAreaFrame" parent="." unique_id=143925964 instance=ExtResource("6_3vxff")]
 max_bound_x = 8.7
 max_bound_z = 15.25
-
-[node name="Starfighter" parent="." unique_id=799568515 instance=ExtResource("4_lp3by")]
-transform = Transform3D(0.35836798, 0, 0.9335804, 0, 1, 0, -0.9335804, 0, 0.35836798, -4.072467, 0, -12.534987)
-armor = 5
-fire_rate = 600.0
-
-[node name="Starfighter2" parent="." unique_id=936473790 instance=ExtResource("4_lp3by")]
-transform = Transform3D(0.9914449, 0, 0.1305262, 0, 1, 0, -0.1305262, 0, 0.9914449, 5.409036, 0, -1.6711531)
-armor = 5
-fire_rate = 600.0
-esize = 2
-
-[node name="Starfighter3" parent="." unique_id=140431693 instance=ExtResource("4_lp3by")]
-transform = Transform3D(-0.9832549, 0, -0.18223558, 0, 1, 0, 0.18223558, 0, -0.9832549, -4.828712, 0, 8.934107)
-armor = 5
-fire_rate = 600.0
-esize = 3
