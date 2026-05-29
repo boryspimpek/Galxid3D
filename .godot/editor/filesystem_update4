@@ -1,2 +1,7 @@
 res://3dworld.tscn
 res://scenes/planets/planet.gdshader
+res://scenes/enemy/Enemy.gd
+res://scenes/enemy/EnemyPath.gd
+res://scenes/world/LevelScroll3D.gd
+res://scenes/player/Player.tscn
+res://scenes/player/Player.gd

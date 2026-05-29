@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://ceb36gc6o5uvc" path="res://scenes/enemies/starfighter.tscn" id="4_lp3by"]
 [ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="4_n40md"]
 [ext_resource type="PackedScene" uid="uid://cn2x51h30a36w" path="res://scenes/planets/earth.tscn" id="5_3vxff"]
-[ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyPath.gd" id="5_lp3by"]
 [ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="6_3vxff"]
+[ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="7_scroll"]
 
 [sub_resource type="Environment" id="Environment_vshm1"]
 background_mode = 1
@@ -32,14 +32,6 @@ material = SubResource("StandardMaterial3D_vshm1")
 size = Vector2(0.4, 0.4)
 orientation = 1
 
-[sub_resource type="Curve3D" id="Curve3D_n40md"]
-closed = true
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 5.0214844, -94.6472, -47.00987, 4.304343, -6.485199, -2.0761452, -4.304343, 6.485199, 2.0761452, -10.590942, -81.91239, -42.996582, 0.6271572, -8.917931, -3.1578941, -0.6271572, 8.917931, 3.1578941, -18.226563, -56.68979, -34.23921, -0.97349644, -6.4711304, -2.090065, 0.97349644, 6.4711304, 2.090065, -16.206177, -27.713808, -24.393404, -1.1480713, -3.1873496, -1.2629156, 1.1480713, 3.1873496, 1.2629156, -12.463989, -6.3705034, -16.709429, 0, 0, 0, 0, 0, 0, -9.134888, 0.0021972656, -14.38521, -2.2003746, 0, -2.754074, 2.2003746, 0, 2.754074, 3.5848079, 0.09134102, -8.2667055, 2.0277061, 0, -2.1790285, -2.0277061, 0, 2.1790285, 4.8263054, 0.00061035156, 11.9815645, 2.149168, 0, 2.0138025, -2.149168, 0, -2.0138025, -3.6779585, 0, 11.890772, 0.8616147, 0, 5.0678654, -0.8616147, 0, -5.0678654, -6.1089773, -4.7683716e-07, -5.2800784, 0, 0, 0, 0, 0, 0, -7.5495605, -14.559032, -12.69865, 0.021440506, 5.7835846, 2.6428242, -0.021440506, -5.7835846, -2.6428242, -10.499782, -64.82057, -29.676514, -3.564642, 5.6071014, 3.2359352, 3.564642, -5.6071014, -3.2359352, -4.9959164, -82.72259, -36.97046),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-}
-point_count = 13
-
 [node name="Game" type="Node3D" unique_id=616589222]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2090551855]
@@ -60,9 +52,6 @@ preprocess = 140.0
 process_material = SubResource("ParticleProcessMaterial_uc6tr")
 draw_pass_1 = SubResource("QuadMesh_lp3by")
 
-[node name="Player" parent="." unique_id=1811810025 instance=ExtResource("4_n40md")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 7.94)
-
 [node name="PlanetSpawner" type="Node3D" parent="." unique_id=143857554]
 script = ExtResource("1_uc6tr")
 spawn_interval = 30.0
@@ -75,56 +64,15 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 30.385, -61.414845, -32
 spin_speed = -0.1
 speed = 0.6
 
-[node name="Path3D" type="Path3D" parent="." unique_id=2035440635]
-curve = SubResource("Curve3D_n40md")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1667017580]
-transform = Transform3D(-0.16883358, 0.47145814, 0.8654905, -1.490003e-08, 0.8780929, -0.4783285, -0.9855673, -0.08076361, -0.1482637, 5.0214844, -94.6472, -47.00987)
-script = ExtResource("5_lp3by")
-
-[node name="Starfighter2" parent="Path3D/PathFollow3D" unique_id=1742888400 instance=ExtResource("4_lp3by")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-fire_rate = 60.0
-
-[node name="PathFollow3D2" type="PathFollow3D" parent="Path3D" unique_id=615095667]
-transform = Transform3D(-0.19260363, 0.53446823, 0.82285976, 0.014368602, 0.84000456, -0.5422471, -0.98109365, -0.09262197, -0.16948138, 0.81678134, -92.066055, -46.205677)
-progress = 5.0
-script = ExtResource("5_lp3by")
-
-[node name="Starfighter2" parent="Path3D/PathFollow3D2" unique_id=1897743314 instance=ExtResource("4_lp3by")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-fire_rate = 60.0
-esize = 2
-
-[node name="PathFollow3D3" type="PathFollow3D" parent="Path3D" unique_id=1937354844]
-transform = Transform3D(-0.21258715, 0.5874392, 0.78075075, 0.028552325, 0.8024068, -0.59596556, -0.97664696, -0.10440974, -0.18736944, -3.19889, -89.22492, -45.31504)
-progress = 10.0
-script = ExtResource("5_lp3by")
-
-[node name="Starfighter2" parent="Path3D/PathFollow3D3" unique_id=138942753 instance=ExtResource("4_lp3by")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-fire_rate = 60.0
-esize = 3
-
-[node name="PathFollow3D4" type="PathFollow3D" parent="Path3D" unique_id=1281420047]
-transform = Transform3D(-0.23967907, 0.659254, 0.71259165, 0.05149675, 0.74158585, -0.66876477, -0.9694068, -0.12360148, -0.21170937, -6.9493084, -86.07451, -44.321217)
-progress = 15.0
-script = ExtResource("5_lp3by")
-
-[node name="Starfighter2" parent="Path3D/PathFollow3D4" unique_id=997292375 instance=ExtResource("4_lp3by")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-fire_rate = 60.0
-
-[node name="PathFollow3D5" type="PathFollow3D" parent="Path3D" unique_id=1867648764]
-transform = Transform3D(-0.33294615, 0.8820068, 0.33324957, 0.1943414, 0.41002247, -0.89104694, -0.92261887, -0.23192285, -0.30795106, -14.542901, -73.95016, -40.324825)
-progress = 30.0
-script = ExtResource("5_lp3by")
-
-[node name="Starfighter2" parent="Path3D/PathFollow3D5" unique_id=809695120 instance=ExtResource("4_lp3by")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-fire_rate = 60.0
-esize = 2
+[node name="Player" parent="." unique_id=1811810025 instance=ExtResource("4_n40md")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 7.94)
 
 [node name="PlayAreaFrame" parent="." unique_id=143925964 instance=ExtResource("6_3vxff")]
-max_bound_x = 8.7
-max_bound_z = 15.25
+max_bound_x = 8.75
+max_bound_z = 15.45
+
+[node name="LevelScroll" type="Node3D" parent="." unique_id=1395802397]
+script = ExtResource("7_scroll")
+
+[node name="Starfighter" parent="LevelScroll" unique_id=1897743314 instance=ExtResource("4_lp3by")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.153925, 0, -20.672483)

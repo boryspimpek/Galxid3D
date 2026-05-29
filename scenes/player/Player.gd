@@ -21,8 +21,8 @@ var power_max: float = 900.0
 var power_add: float = 0.0
 var ship_data: ShipData = null
 
-@export var max_bound_x: float = 8.5
-@export var max_bound_z: float = 14.5
+@export var max_bound_x: float = 8.7
+@export var max_bound_z: float = 15.25
 
 @onready var weapon_system: Node = $WeaponSystem
 @onready var damage_system: Node = $DamageSystem

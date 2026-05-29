@@ -23,6 +23,17 @@ extends Area3D
 var enemy_velocity: Vector3
 var fire_timer: float = 0.0
 var is_firing: bool = false
+var _is_active: bool = false
+
+@export_group("Aktywacja")
+@export var activate_on_screen: bool = true
+@export var despawn_off_screen: bool = true
+## Ogranicza aktywację do prostokąta gry (jak PlayAreaFrame), nie całego frustum kamery.
+@export var use_play_area_bounds: bool = true
+@export var play_area_max_x: float = 10.0
+@export var play_area_max_z: float = 17.0
+
+var _screen_notifier: VisibleOnScreenNotifier3D
 
 
 # --- METODY WBUDOWANE (LIFECYCLE) ---
@@ -34,13 +45,26 @@ func _ready() -> void:
 	
 	enemy_velocity = Vector3(float(xmove), float(ymove), float(zmove))
 	
-	if has_node("VisibleOnScreenNotifier3D"):
-		$VisibleOnScreenNotifier3D.screen_exited.connect(_on_screen_exited)
+	_screen_notifier = get_node_or_null("VisibleOnScreenNotifier3D") as VisibleOnScreenNotifier3D
+	if _screen_notifier:
+		# Notifier musi mieć visible=true — inaczej Godot nie emituje sygnałów.
+		_screen_notifier.visible = true
+		_screen_notifier.screen_exited.connect(_on_screen_exited)
 
-	is_firing = true
-	fire_timer = fire_rate
+	if activate_on_screen:
+		_deactivate()
+		set_process(true)
+	else:
+		_activate()
+
 
 func _process(delta: float) -> void:
+	if activate_on_screen:
+		_refresh_activation()
+
+	if not _is_active:
+		return
+
 	fire_timer = max(0.0, fire_timer - delta)
 	if is_firing and fire_timer <= 0.0:
 		shoot()
@@ -92,10 +116,51 @@ func create_projectile(dmg: int, proj_velocity: Vector3) -> void:
 	projectile.damage = dmg
 
 
+# --- AKTYWACJA (VisibleOnScreenNotifier3D + granice planszy) ---
+
+func _refresh_activation() -> void:
+	if _should_be_active():
+		_activate()
+	else:
+		_deactivate()
+
+
+func _should_be_active() -> bool:
+	if _screen_notifier == null:
+		return true
+	if not _screen_notifier.is_on_screen():
+		return false
+	if use_play_area_bounds:
+		return _is_in_play_area()
+	return true
+
+
+func _is_in_play_area() -> bool:
+	return (
+		absf(global_position.x) <= play_area_max_x
+		and absf(global_position.z) <= play_area_max_z
+	)
+
+
+func _activate() -> void:
+	if _is_active:
+		return
+	_is_active = true
+	is_firing = true
+	fire_timer = fire_rate
+
+
+func _deactivate() -> void:
+	_is_active = false
+	is_firing = false
+
+
 # --- OBSŁUGA SYGNAŁÓW (SIGNALS) ---
 
 func _on_screen_exited() -> void:
-	queue_free()
+	_deactivate()
+	if despawn_off_screen:
+		queue_free()
 
 
 func _on_body_entered(body: Node3D) -> void:
