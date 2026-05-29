@@ -85,6 +85,7 @@ script = ExtResource("7_scroll")
 [node name="Starfighter" parent="LevelScroll" unique_id=1897743314 instance=ExtResource("4_lp3by")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8161287, 0, -18.579985)
 zmove = 5
+activation_bounds_mode = 1
 
 [node name="Path3D" type="Path3D" parent="LevelScroll" unique_id=259643811]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.510484, 0, -18.851807)
