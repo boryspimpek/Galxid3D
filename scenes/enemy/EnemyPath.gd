@@ -1,6 +1,6 @@
 extends PathFollow3D
 
-@export var speed: float = 10.0 # jednostki 3D na sekundę wzdłuż krzywej
+@export var speed: float = 5.0 # jednostki 3D na sekundę wzdłuż krzywej
 @export var loop_path: bool = true
 @export var face_movement: bool = true
 @export var wait_for_screen: bool = true

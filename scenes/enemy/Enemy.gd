@@ -39,13 +39,13 @@ enum ActivationBoundsMode {
 @export var activation_bounds_mode: ActivationBoundsMode = ActivationBoundsMode.PLAY_AREA
 
 @export_group("Granice — Play Area")
-@export var play_area_max_x: float = 8.75
-@export var play_area_max_z: float = 15.45
+@export var play_area_max_x: float = 10.0
+@export var play_area_max_z: float = 17.0
 
 @export_group("Granice — Scroll Line")
 ## Górna krawędź kadru. Wróg aktywuje się gdy global_position.z >= tej wartości.
-## Ustaw na minus max_bound_z z PlayAreaFrame (np. -15.45).
-@export var scroll_activation_z: float = -15.45
+## Ustaw na minus max_bound_z z PlayAreaFrame.
+@export var scroll_activation_z: float = -17.0
 
 var _screen_notifier: VisibleOnScreenNotifier3D
 var _activation_locked: bool = false
