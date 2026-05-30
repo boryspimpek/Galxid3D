@@ -74,12 +74,17 @@ speed_max = 2.0
 
 [node name="AsteroidSpawner" type="Node3D" parent="." unique_id=1227067656]
 script = ExtResource("8_pnv6h")
-preprocess_time = 60.0
+spawn_interval_1 = 10.0
+asteroid_speed_1 = 5.0
+spawn_interval_2 = 20.0
+asteroid_speed_2 = 3.0
+y_3 = -100.0
+spawn_interval_3 = 10.0
+preprocess_time = 360.0
 
 [node name="earth" parent="." unique_id=1944613414 instance=ExtResource("5_3vxff")]
-transform = Transform3D(-0.029998366, 0, 0, 0, -0.029999997, 0, 0, 0, -0.029998362, 20.054167, -3.3478165, -5.391945)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -150, 10)
 spin_speed = -0.1
-speed = 0.6
 
 [node name="Player" parent="." unique_id=1811810025 instance=ExtResource("4_n40md")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.94)

@@ -4,32 +4,84 @@ const ASTEROID_SCENES = [
 	"res://scenes/asteroids/asteroid.tscn",
 ]
 
-@export var spawn_interval: float = 3.0
-@export var asteroid_speed: float = 2.0
-@export var y_max: float = -10.0
-@export var y_min: float = -50.0
+const LEVEL_COUNT := 3
+
+@export_group("Poziom 1")
+@export var y_1: float = -10.0
+@export var spawn_interval_1: float = 3.0
+@export var asteroid_speed_1: float = 2.0
+
+@export_group("Poziom 2")
+@export var y_2: float = -30.0
+@export var spawn_interval_2: float = 3.0
+@export var asteroid_speed_2: float = 2.0
+
+@export_group("Poziom 3")
+@export var y_3: float = -50.0
+@export var spawn_interval_3: float = 3.0
+@export var asteroid_speed_3: float = 2.0
+
 @export var preprocess_time: float = 20.0
 
-var spawn_timer: float = 0.0
+var _spawn_timers: Array[float] = []
+
 
 func _ready() -> void:
-	spawn_timer = spawn_interval
+	_spawn_timers = [
+		spawn_interval_1,
+		spawn_interval_2,
+		spawn_interval_3,
+	]
 	_preprocess(preprocess_time)
 
+
 func _process(delta: float) -> void:
-	spawn_timer -= delta
-	if spawn_timer <= 0:
-		spawn_random_asteroid()
-		spawn_timer = spawn_interval
+	_tick_spawn_timers(delta)
+
 
 func _preprocess(time: float) -> void:
 	var elapsed := 0.0
+	const STEP := 0.05
 	while elapsed < time:
-		elapsed += spawn_interval
-		spawn_random_asteroid()
-		var last = get_child(get_child_count() - 1)
-		# W 3D ruch do przodu/tyłu odbywa się na osi Z (zgodnie z Twoim skryptem planety)
-		last.global_position.z += last.speed * (time - elapsed)
+		var dt := minf(STEP, time - elapsed)
+		for i in LEVEL_COUNT:
+			_spawn_timers[i] -= dt
+			if _spawn_timers[i] <= 0.0:
+				_spawn_at_level(i)
+				_spawn_timers[i] += _get_interval(i)
+				var last := get_child(get_child_count() - 1)
+				last.global_position.z += _get_speed(i) * (time - elapsed - dt)
+		elapsed += dt
+
+
+func _tick_spawn_timers(delta: float) -> void:
+	for i in LEVEL_COUNT:
+		_spawn_timers[i] -= delta
+		if _spawn_timers[i] <= 0.0:
+			_spawn_at_level(i)
+			_spawn_timers[i] += _get_interval(i)
+
+
+func _get_y(level: int) -> float:
+	match level:
+		0: return y_1
+		1: return y_2
+		_: return y_3
+
+
+func _get_interval(level: int) -> float:
+	match level:
+		0: return spawn_interval_1
+		1: return spawn_interval_2
+		_: return spawn_interval_3
+
+
+func _get_speed(level: int) -> float:
+	match level:
+		0: return asteroid_speed_1
+		1: return asteroid_speed_2
+		_: return asteroid_speed_3
+
 
 func _visible_x_range_at_y(spawn_y: float) -> Vector2:
 	var cam := get_viewport().get_camera_3d()
@@ -67,7 +119,7 @@ func _visible_x_range_at_y(spawn_y: float) -> Vector2:
 	return Vector2(min_x, max_x)
 
 
-func spawn_random_asteroid() -> void:
+func _spawn_at_level(level: int) -> void:
 	var scene_path = ASTEROID_SCENES[randi() % ASTEROID_SCENES.size()]
 	var asteroid_scene = load(scene_path)
 	if asteroid_scene == null:
@@ -75,13 +127,12 @@ func spawn_random_asteroid() -> void:
 		return
 
 	var asteroid = asteroid_scene.instantiate()
-
-	var spawn_z = -100.0
-	var random_y = randf_range(y_max, y_min)
-	var x_range := _visible_x_range_at_y(random_y)
+	var spawn_y := _get_y(level)
+	var spawn_z := -100.0
+	var x_range := _visible_x_range_at_y(spawn_y)
 	var margin := (x_range.y - x_range.x) * 0.01
-	var random_x = randf_range(x_range.x + margin, x_range.y - margin)
+	var random_x := randf_range(x_range.x + margin, x_range.y - margin)
 
 	add_child(asteroid)
-	asteroid.global_position = Vector3(random_x, random_y, spawn_z)
-	asteroid.speed = asteroid_speed
+	asteroid.global_position = Vector3(random_x, spawn_y, spawn_z)
+	asteroid.speed = _get_speed(level)
