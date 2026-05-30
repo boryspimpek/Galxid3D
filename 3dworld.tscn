@@ -123,5 +123,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.781742, -21.094387, 1.0113
 
 [node name="AsteroidSpawner" type="Node3D" parent="." unique_id=1227067656]
 script = ExtResource("8_pnv6h")
-speed_max = 2.0
 preprocess_time = 60.0

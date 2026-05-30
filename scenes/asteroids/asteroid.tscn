@@ -21,3 +21,6 @@ script = ExtResource("3_xn8ob")
 
 [node name="rock_001" parent="." index="0" unique_id=372857877]
 surface_material_override/0 = SubResource("ShaderMaterial_xn8ob")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." index="1" unique_id=1415141526]
+aabb = AABB(-1.7902122, -1.8929836, -1.9924396, 3.5804243, 3.785967, 3.9848793)
