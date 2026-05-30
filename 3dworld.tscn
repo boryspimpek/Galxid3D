@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="4_n40md"]
 [ext_resource type="PackedScene" uid="uid://cn2x51h30a36w" path="res://scenes/planets/earth.tscn" id="5_3vxff"]
 [ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="6_3vxff"]
-[ext_resource type="PackedScene" uid="uid://jgvbkuyntum0" path="res://scenes/asteroids/asteroid.tscn" id="7_dba1v"]
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="7_scroll"]
+[ext_resource type="PackedScene" uid="uid://c0qcwhlmvillm" path="res://scenes/planets/jupiter.tscn" id="8_2gg5g"]
 [ext_resource type="Script" uid="uid://1pup6o17egip" path="res://scenes/asteroids/AsteroidSpawner.gd" id="8_pnv6h"]
 [ext_resource type="Script" uid="uid://c83dieo1civ4w" path="res://scenes/enemies/EnemySpawner.gd" id="23_5ipoo"]
 
@@ -18,7 +18,7 @@ volumetric_fog_emission_energy = 0.0
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uc6tr"]
 emission_shape = 3
-emission_box_extents = Vector3(55, 0, 0)
+emission_box_extents = Vector3(100, 0, 0)
 direction = Vector3(0, 0, 0)
 spread = 0.0
 initial_velocity_min = 1.5
@@ -46,81 +46,47 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 20, 0)
 
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=1897043367]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -100, -90)
-amount = 100
-lifetime = 140.0
-preprocess = 140.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -200, -170)
+amount = 200
+lifetime = 360.0
+preprocess = 360.0
 process_material = SubResource("ParticleProcessMaterial_uc6tr")
 draw_pass_1 = SubResource("QuadMesh_lp3by")
+
+[node name="PlayAreaFrame" parent="." unique_id=143925964 instance=ExtResource("6_3vxff")]
+max_bound_x = 8.75
+max_bound_z = 15.45
 
 [node name="PlanetSpawner" type="Node3D" parent="." unique_id=143857554]
 visible = false
 script = ExtResource("1_uc6tr")
 spawn_interval = 30.0
-speed_min = 1.0
-speed_max = 1.0
+speed_min = 3.0
+speed_max = 3.0
+y_max = -160.0
+y_min = -160.0
 preprocess_time = 360.0
 
 [node name="EnemySpawner" type="Node3D" parent="." unique_id=1578792440]
-visible = false
 script = ExtResource("23_5ipoo")
+spawn_interval = 10.0
 speed_max = 2.0
 
+[node name="AsteroidSpawner" type="Node3D" parent="." unique_id=1227067656]
+script = ExtResource("8_pnv6h")
+preprocess_time = 60.0
+
 [node name="earth" parent="." unique_id=1944613414 instance=ExtResource("5_3vxff")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 30.385, -61.414845, -32.355)
-visible = false
+transform = Transform3D(-0.029998366, 0, 0, 0, -0.029999997, 0, 0, 0, -0.029998362, 20.054167, -3.3478165, -5.391945)
 spin_speed = -0.1
 speed = 0.6
 
 [node name="Player" parent="." unique_id=1811810025 instance=ExtResource("4_n40md")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.94)
 
-[node name="PlayAreaFrame" parent="." unique_id=143925964 instance=ExtResource("6_3vxff")]
-max_bound_x = 8.75
-max_bound_z = 15.45
-
 [node name="LevelScroll" type="Node3D" parent="." unique_id=1395802397]
 script = ExtResource("7_scroll")
 
-[node name="Asteroids" type="Node3D" parent="." unique_id=2003337634]
+[node name="jupiter" parent="." unique_id=95632487 instance=ExtResource("8_2gg5g")]
+transform = Transform3D(0.14126675, -0.051763773, 0.13177338, 0.0012536936, 0.18660246, 0.07195796, -0.14157026, -0.05000031, 0.13212809, -33.19, -158.583, -70.309)
 visible = false
-
-[node name="asteroid" parent="Asteroids" unique_id=1391333777 instance=ExtResource("7_dba1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.486929, -5, 0.21986985)
-
-[node name="asteroid2" parent="Asteroids" unique_id=855136663 instance=ExtResource("7_dba1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.509724, -9.448647, -10.380094)
-
-[node name="asteroid3" parent="Asteroids" unique_id=595140022 instance=ExtResource("7_dba1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9348431, -10.202655, -6.596423)
-
-[node name="asteroid4" parent="Asteroids" unique_id=1089338414 instance=ExtResource("7_dba1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.86969, -10.730459, 13.590061)
-
-[node name="asteroid5" parent="Asteroids" unique_id=1532089634 instance=ExtResource("7_dba1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.508112, -19.213047, -13.799006)
-
-[node name="asteroid6" parent="Asteroids" unique_id=1115512225 instance=ExtResource("7_dba1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.573269, -16.565094, -5.8045316)
-
-[node name="asteroid7" parent="Asteroids" unique_id=1456953912 instance=ExtResource("7_dba1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.465752, -25.799576, 1.4951055)
-
-[node name="asteroid8" parent="Asteroids" unique_id=339624908 instance=ExtResource("7_dba1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3420048, -16.43317, 6.508117)
-
-[node name="asteroid9" parent="Asteroids" unique_id=1633818808 instance=ExtResource("7_dba1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1872902, -23.908707, -15.126967)
-
-[node name="asteroid10" parent="Asteroids" unique_id=1692074491 instance=ExtResource("7_dba1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.882696, -21.973864, 13.983649)
-
-[node name="asteroid11" parent="Asteroids" unique_id=1615177463 instance=ExtResource("7_dba1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -16.565092, 19.52434)
-
-[node name="asteroid12" parent="Asteroids" unique_id=1059638957 instance=ExtResource("7_dba1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.781742, -21.094387, 1.0113959)
-
-[node name="AsteroidSpawner" type="Node3D" parent="." unique_id=1227067656]
-script = ExtResource("8_pnv6h")
-preprocess_time = 60.0

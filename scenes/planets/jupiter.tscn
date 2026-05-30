@@ -26,6 +26,6 @@ shader_parameter/shadow_softness = 0.0
 shader_parameter/ambient_fill = 0.034000001615
 
 [node name="jupiter" unique_id=95632487 instance=ExtResource("1_k0muh")]
-transform = Transform3D(0.028253343, -0.010352757, 0.02635468, 0.0002507387, 0.03732049, 0.014391593, -0.028314054, -0.01000006, 0.026425611, 0, 0, 0)
+transform = Transform3D(0.14126673, -0.05176377, 0.13177338, 0.0012536936, 0.18660244, 0.07195797, -0.14157026, -0.050000306, 0.13212809, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_c88h4")
 albedo_texture = SubResource("CompressedTexture2D_rid86")

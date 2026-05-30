@@ -12,3 +12,12 @@ res://scenes/asteroids/asteroid.tscn
 res://scenes/planets/planet_base.gd
 res://scenes/asteroids/asteroid_base.gd
 res://scenes/asteroids/AsteroidSpawner.gd
+res://scenes/planets/PlanetSpawner.gd
+res://scenes/planets/simple_planet.tscn
+res://scenes/planets/jupiter.tscn
+res://scenes/planets/uranus.tscn
+res://scenes/planets/venus.tscn
+res://scenes/planets/saturn.tscn
+res://scenes/planets/neptune.tscn
+res://scenes/planets/mercury.tscn
+res://scenes/planets/mars.tscn

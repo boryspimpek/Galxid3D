@@ -18,7 +18,7 @@ shader = ExtResource("2_nvkmq")
 shader_parameter/albedo_color = Color(1, 1, 1, 1)
 shader_parameter/albedo_texture = SubResource("CompressedTexture2D_nvkmq")
 shader_parameter/line_color = Color(0, 0, 0, 1)
-shader_parameter/metallic = 0.4150000197125
+shader_parameter/metallic = 0.438000020805
 shader_parameter/clearcoat = 1.0
 shader_parameter/clearcoat_roughness = 0.44400002109
 shader_parameter/shadow_threshold = 0.18000000855
@@ -26,6 +26,6 @@ shader_parameter/shadow_softness = 0.0
 shader_parameter/ambient_fill = 0.034000001615
 
 [node name="uranus" unique_id=95632487 instance=ExtResource("1_xvt3g")]
-transform = Transform3D(-0.031549346, -0.010352775, 0.02230378, -0.01414185, 0.03732051, -0.002680947, -0.020115834, -0.009999972, -0.033096127, 0, 0, 0)
+transform = Transform3D(-0.15774673, -0.05176389, 0.11151892, -0.07070927, 0.18660255, -0.013404731, -0.10057917, -0.04999986, -0.16548066, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_wkw54")
 albedo_texture = SubResource("CompressedTexture2D_nvkmq")

@@ -26,6 +26,6 @@ shader_parameter/shadow_softness = 0.0
 shader_parameter/ambient_fill = 0.034000001615
 
 [node name="mars" unique_id=95632487 instance=ExtResource("1_ujig8")]
-transform = Transform3D(-0.034147963, -0.010352775, -0.018075861, -0.0039947554, 0.03732051, -0.013828283, 0.020444037, -0.009999976, -0.032894403, 0, 0, 0)
+transform = Transform3D(-0.17073983, -0.051763877, -0.09037932, -0.019973783, 0.18660256, -0.06914142, 0.1022202, -0.04999987, -0.16447203, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_as5al")
 albedo_texture = SubResource("CompressedTexture2D_4u6dv")

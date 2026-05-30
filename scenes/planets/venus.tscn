@@ -24,6 +24,6 @@ shader_parameter/shadow_softness = 0.0
 shader_parameter/ambient_fill = 0.034000001615
 
 [node name="venus" unique_id=95632487 instance=ExtResource("1_bwd8r")]
-transform = Transform3D(-0.038336404, -0.010352764, 0.0048104385, -0.011211145, 0.037320517, -0.009027138, -0.0021518054, -0.009999963, -0.03867002, 0, 0, 0)
+transform = Transform3D(-0.19168204, -0.051763818, 0.024052195, -0.05605573, 0.18660258, -0.045135688, -0.010759031, -0.049999807, -0.19335012, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_tr2xp")
 albedo_texture = ExtResource("2_b354m")
