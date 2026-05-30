@@ -54,6 +54,7 @@ process_material = SubResource("ParticleProcessMaterial_uc6tr")
 draw_pass_1 = SubResource("QuadMesh_lp3by")
 
 [node name="PlanetSpawner" type="Node3D" parent="." unique_id=143857554]
+visible = false
 script = ExtResource("1_uc6tr")
 spawn_interval = 30.0
 speed_min = 1.0
@@ -67,6 +68,7 @@ speed_max = 2.0
 
 [node name="earth" parent="." unique_id=1944613414 instance=ExtResource("5_3vxff")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 30.385, -61.414845, -32.355)
+visible = false
 spin_speed = -0.1
 speed = 0.6
 
@@ -121,3 +123,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.781742, -21.094387, 1.0113
 
 [node name="AsteroidSpawner" type="Node3D" parent="." unique_id=1227067656]
 script = ExtResource("8_pnv6h")
+speed_max = 2.0
+preprocess_time = 60.0

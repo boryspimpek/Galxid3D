@@ -5,9 +5,10 @@ const ASTEROID_SCENES = [
 ]
 
 @export var spawn_interval: float = 3.0
-# Jednostki 3D są znacznie mniejsze niż piksele (np. 1 jednostka = ~1 metr w świecie gry)
 @export var speed_min: float = 2.0
 @export var speed_max: float = 6.0
+@export var y_max: float = -10.0
+@export var y_min: float = -50.0
 @export var preprocess_time: float = 20.0
 
 var spawn_timer: float = 0.0
@@ -45,12 +46,13 @@ func spawn_random_asteroid() -> void:
 	var spawn_z = -100.0 
 
 	var random_x = randf_range(-world_width/2 + margin, world_width/2 - margin)
+	var random_y = randf_range(y_max, y_min)
 	var random_speed = randf_range(speed_min, speed_max)
 
 	# --- 1. NAJPIERW DODAJEMY DO DRZEWA ---
 	add_child(asteroid)
 
 	# --- 2. TERAZ MOŻEMY BEZPIECZNIE UŻYĆ GLOBAL_POSITION ---
-	asteroid.global_position = Vector3(random_x, -10.0, spawn_z)
+	asteroid.global_position = Vector3(random_x, random_y, spawn_z)
 
 	asteroid.speed = random_speed

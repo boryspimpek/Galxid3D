@@ -11,3 +11,4 @@ res://scenes/enemies/sky_tank.tscn
 res://scenes/asteroids/asteroid.tscn
 res://scenes/planets/planet_base.gd
 res://scenes/asteroids/asteroid_base.gd
+res://scenes/asteroids/AsteroidSpawner.gd
