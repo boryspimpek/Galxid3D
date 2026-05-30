@@ -68,8 +68,9 @@ preprocess_time = 360.0
 
 [node name="EnemySpawner" type="Node3D" parent="." unique_id=1578792440]
 script = ExtResource("23_5ipoo")
-spawn_interval = 10.0
-speed_max = 2.0
+spawn_interval = 5.0
+speed_min = 5.0
+speed_max = 10.0
 
 [node name="AsteroidSpawner" type="Node3D" parent="." unique_id=1227067656]
 script = ExtResource("8_pnv6h")
@@ -81,6 +82,8 @@ spawn_interval_2 = 10.0
 asteroid_speed_2 = 3.0
 scale_2 = 1.0
 y_3 = -20.0
+spawn_interval_3 = 5.0
+asteroid_speed_3 = 1.0
 scale_3 = 0.5
 preprocess_time = 360.0
 

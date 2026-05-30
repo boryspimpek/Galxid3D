@@ -25,3 +25,4 @@ res://scenes/planets/earth.tscn
 res://scenes/enemy/Enemy.tscn
 res://scenes/asteroids/asteroid_2.tscn
 res://scenes/asteroids/asteroid_3.tscn
+res://scenes/asteroids/simple_asteroid.tscn
