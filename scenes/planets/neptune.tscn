@@ -26,6 +26,6 @@ shader_parameter/shadow_softness = 0.0
 shader_parameter/ambient_fill = 0.034000001615
 
 [node name="neptune" unique_id=95632487 instance=ExtResource("1_hd1me")]
-transform = Transform3D(-0.090090744, -0.051763806, 0.17089228, -0.06910737, 0.18660262, 0.020090608, -0.16464458, -0.049999684, -0.10194215, 0, 0, 0)
+transform = Transform3D(-0.14563133, -0.0009960025, 0.13707855, -0.049999997, 0.18660252, -0.051763818, -0.12763825, -0.07196179, -0.13612488, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_hlqks")
 albedo_texture = SubResource("CompressedTexture2D_5hhm1")

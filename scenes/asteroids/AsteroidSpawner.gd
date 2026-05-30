@@ -2,6 +2,8 @@ extends Node3D
 
 const ASTEROID_SCENES = [
 	"res://scenes/asteroids/asteroid.tscn",
+	"res://scenes/asteroids/asteroid_2.tscn",
+	"res://scenes/asteroids/asteroid_3.tscn",
 ]
 
 const LEVEL_COUNT := 3
@@ -10,16 +12,19 @@ const LEVEL_COUNT := 3
 @export var y_1: float = -10.0
 @export var spawn_interval_1: float = 3.0
 @export var asteroid_speed_1: float = 2.0
+@export_range(0.05, 2.0, 0.01) var scale_1: float = 1.0
 
 @export_group("Poziom 2")
 @export var y_2: float = -30.0
 @export var spawn_interval_2: float = 3.0
 @export var asteroid_speed_2: float = 2.0
+@export_range(0.05, 2.0, 0.01) var scale_2: float = 0.65
 
 @export_group("Poziom 3")
 @export var y_3: float = -50.0
 @export var spawn_interval_3: float = 3.0
 @export var asteroid_speed_3: float = 2.0
+@export_range(0.05, 2.0, 0.01) var scale_3: float = 0.35
 
 @export var preprocess_time: float = 20.0
 
@@ -83,6 +88,13 @@ func _get_speed(level: int) -> float:
 		_: return asteroid_speed_3
 
 
+func _get_scale(level: int) -> float:
+	match level:
+		0: return scale_1
+		1: return scale_2
+		_: return scale_3
+
+
 func _visible_x_range_at_y(spawn_y: float) -> Vector2:
 	var cam := get_viewport().get_camera_3d()
 	if cam == null:
@@ -134,5 +146,7 @@ func _spawn_at_level(level: int) -> void:
 	var random_x := randf_range(x_range.x + margin, x_range.y - margin)
 
 	add_child(asteroid)
+	var level_scale := _get_scale(level)
+	asteroid.scale = Vector3.ONE * level_scale
 	asteroid.global_position = Vector3(random_x, spawn_y, spawn_z)
 	asteroid.speed = _get_speed(level)

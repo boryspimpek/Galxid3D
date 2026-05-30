@@ -83,7 +83,7 @@ func spawn_random_planet() -> void:
 
 	var planet = planet_scene.instantiate()
 
-	var spawn_z = -100.0
+	var spawn_z = -150.0
 	var random_y = randf_range(y_max, y_min)
 	var x_range := _visible_x_range_at_y(random_y)
 	var margin := (x_range.y - x_range.x) * 0.01

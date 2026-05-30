@@ -11,9 +11,9 @@ shader_parameter/albedo_color = Color(0.37413925, 0.37413928, 0.37413922, 1)
 shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/metallic = 0.0
 shader_parameter/clearcoat = 0.0
-shader_parameter/clearcoat_roughness = 0.2
+shader_parameter/clearcoat_roughness = 0.0
 shader_parameter/shadow_threshold = 0.5
-shader_parameter/shadow_softness = 0.02
+shader_parameter/shadow_softness = 0.0
 shader_parameter/ambient_fill = 0.0
 
 [node name="asteroid" unique_id=1391333777 instance=ExtResource("1_ujvpl")]

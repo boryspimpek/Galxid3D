@@ -21,3 +21,7 @@ res://scenes/planets/saturn.tscn
 res://scenes/planets/neptune.tscn
 res://scenes/planets/mercury.tscn
 res://scenes/planets/mars.tscn
+res://scenes/planets/earth.tscn
+res://scenes/enemy/Enemy.tscn
+res://scenes/asteroids/asteroid_2.tscn
+res://scenes/asteroids/asteroid_3.tscn

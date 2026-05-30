@@ -26,6 +26,6 @@ shader_parameter/shadow_softness = 0.0
 shader_parameter/ambient_fill = 0.034000001615
 
 [node name="saturn" unique_id=95632487 instance=ExtResource("1_mlpop")]
-transform = Transform3D(-0.069845065, -0.05176386, 0.18011712, -0.066339545, 0.1866025, 0.027902838, -0.17527333, -0.050000045, -0.08233628, 0, 0, 0)
+transform = Transform3D(-0.14563133, -0.0009960025, 0.13707855, -0.049999997, 0.18660252, -0.051763818, -0.12763825, -0.07196179, -0.13612488, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_cyfv8")
 albedo_texture = SubResource("CompressedTexture2D_fpsqh")

@@ -2,6 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="1_yrxqc"]
 [ext_resource type="Script" uid="uid://bpicyg2rrp4qp" path="res://scenes/planets/planet_base.gd" id="3_k4q7n"]
+[ext_resource type="Texture2D" uid="uid://droo5e32n3i7x" path="res://assets/planets/textures/meshy/Meshy_AI_Azure_Ringed_World_0520072106_texture_Image_0.jpg" id="3_mqevj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqevj"]
 cull_mode = 1
@@ -51,11 +52,22 @@ radius = 50.0
 height = 99.999
 radial_segments = 96
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a34da"]
+albedo_texture = ExtResource("3_mqevj")
+
+[sub_resource type="TorusMesh" id="TorusMesh_j7knq"]
+material = SubResource("StandardMaterial3D_a34da")
+inner_radius = 60.337
+outer_radius = 103.434
+
 [node name="Simple Planet" type="MeshInstance3D" unique_id=95632487]
-transform = Transform3D(-0.14563133, -0.0009960085, 0.13707855, -0.05, 0.18660253, -0.051763814, -0.12763825, -0.0719618, -0.13612488, 0, 0, 0)
+transform = Transform3D(-0.14563133, -0.0009960114, 0.13707855, -0.050000004, 0.18660252, -0.051763814, -0.12763825, -0.07196179, -0.13612488, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_a34da")
 mesh = SubResource("SphereMesh_uh3v6")
 script = ExtResource("3_k4q7n")
 albedo_texture = SubResource("CompressedTexture2D_mqevj")
 spin_speed = 0.7
 speed = 0.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=708650782]
+mesh = SubResource("TorusMesh_j7knq")
