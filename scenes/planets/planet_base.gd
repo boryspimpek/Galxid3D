@@ -27,10 +27,6 @@ func _ensure_unique_material() -> void:
 		return
 	_runtime_material_initialized = true
 
-	# IMPORTANT:
-	# Do NOT mutate mesh.material here because the Mesh resource can be shared
-	# across instances/scenes, which would make texture changes affect all planets.
-	# Use per-node material_override instead.
 	var source: Material = material_override
 	if source == null and mesh != null:
 		source = mesh.material

@@ -1,11 +1,12 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1780063517
-3dworld.tscn::PackedScene::6563213892080481897::1780063517::0::1::::<><><>0<>0<><>::uid://cmxovjxejqgik::::res://scenes/planets/PlanetSpawner.gd<>uid://ceb36gc6o5uvc::::res://scenes/enemies/starfighter.tscn<>uid://bte7ofi7pgn5b::::res://scenes/player/Player.tscn<>uid://cn2x51h30a36w::::res://scenes/planets/earth.tscn<>uid://de0wqltyclsk0::::res://scenes/enemy/EnemyPath.gd<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn<>uid://ci6qjvw4jlabt::::res://scenes/world/LevelScroll3D.gd<>uid://cxkgum8ut6na2::::res://scenes/enemies/blaze1.tscn<>uid://di06kw5xu2r3y::::res://scenes/enemies/blaze2.tscn<>uid://di06kx5xu2r3y::::res://scenes/enemies/blaze3.tscn<>uid://di06ky5xu2r3y::::res://scenes/enemies/blaze4.tscn<>uid://di06k05xu2r3y::::res://scenes/enemies/blaze5.tscn<>uid://bbfxw5jn154i3::::res://scenes/enemies/falcon.tscn<>uid://bxtskf50xtemi::::res://scenes/enemies/heli_crimson.tscn<>uid://cheligold0001::::res://scenes/enemies/heli_gold.tscn<>res://scenes/enemies/sky_tank.tscn<>res://scenes/enemies/voyager.tscn<>res://scenes/enemies/z_drone.tscn
+::res://::1780147004
+3dworld.tscn::PackedScene::6563213892080481897::1780147004::0::1::::<><><>0<>0<><>::uid://cmxovjxejqgik::::res://scenes/planets/PlanetSpawner.gd<>uid://bte7ofi7pgn5b::::res://scenes/player/Player.tscn<>uid://cn2x51h30a36w::::res://scenes/planets/earth.tscn<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn<>uid://ci6qjvw4jlabt::::res://scenes/world/LevelScroll3D.gd<>uid://c83dieo1civ4w::::res://scenes/enemies/EnemySpawner.gd
 default_bus_layout.tres::AudioBusLayout::2099548917964122130::1779971560::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile::-1::1779810743::0::1::::<><><>0<>0<><>::
-README.md::TextFile::-1::1780059776::0::1::::<><><>0<>0<><>::
+README.md::TextFile::-1::1780064537::0::1::::<><><>0<>0<><>::
 ::res://assets/::1779823789
-::res://assets/asteroids/::1779790777
+::res://assets/asteroids/::1780147268
+asteroid.glb::PackedScene::5792833192112153509::1780147268::1780147269::1::::<><><>0<>0<>ed51588db79cf2df86edfe2e8f11f420<>res://.godot/imported/asteroid.glb-00c76dddf5b23f39dc4aadeee9fd1921.scn::
 asteroid.png::CompressedTexture2D::4323376313774097394::1779131092::1779131092::1::::<><><>0<>0<>91da95153161b7e9720c03cb35c44b37<>res://.godot/imported/asteroid.png-4fb497846de1c69c33f33f2fca7fa424.ctex::
 ::res://assets/enemies/::1780063724
 icon.svg::CompressedTexture2D::292374000686953482::1779131092::1779131092::1::::<><><>0<>0<>bafd5b98a8cb027debb26df03fe3f38f<>res://.godot/imported/icon.svg-b7e93496a5a853f0ffff915d0f5dd25a.ctex::
@@ -40,7 +41,7 @@ Meshy_AI_Emerald_Void_Intercep_0529133902_texture_0.jpg::CompressedTexture2D::15
 Meshy_AI_Emerald_Void_Intercep_0529133902_texture_1.jpg::CompressedTexture2D::3471327234686566896::1780062043::1780063338::1::::<><><>0<>0<>c7a16c80eb1f33db61f196206e9e5295<>res://.godot/imported/Meshy_AI_Emerald_Void_Intercep_0529133902_texture_1.jpg-9b35f08798cd4849a7e1055f27b34b04.s3tc.ctex<*>res://.godot/imported/Meshy_AI_Emerald_Void_Intercep_0529133902_texture_1.jpg-9b35f08798cd4849a7e1055f27b34b04.etc2.ctex::
 Meshy_AI_Emerald_Void_Intercep_0529133902_texture_2.jpg::CompressedTexture2D::2923771526259743280::1780062045::1780063339::1::::<><><>0<>0<>cbd35dadcb749c994484fdfbebeae199<>res://.godot/imported/Meshy_AI_Emerald_Void_Intercep_0529133902_texture_2.jpg-23f45a1e0983b493afa74d2f493410e9.s3tc.ctex<*>res://.godot/imported/Meshy_AI_Emerald_Void_Intercep_0529133902_texture_2.jpg-23f45a1e0983b493afa74d2f493410e9.etc2.ctex::
 Meshy_AI_Emerald_Void_Intercep_0529133902_texture_3.jpg::CompressedTexture2D::1483103638274138420::1780062049::1780063338::1::::<><><>0<>0<>70bed15a43df9e87de0a87e660260797<>res://.godot/imported/Meshy_AI_Emerald_Void_Intercep_0529133902_texture_3.jpg-b22bb8b3efb717c72ff2a2163147914e.s3tc.ctex<*>res://.godot/imported/Meshy_AI_Emerald_Void_Intercep_0529133902_texture_3.jpg-b22bb8b3efb717c72ff2a2163147914e.etc2.ctex::
-::res://assets/enemies/comet/::1780063799
+::res://assets/enemies/comet/::1780063806
 Meshy_AI_Azure_Comet_0529140657_texture.glb::PackedScene::6050932832328064308::1780063799::1780063805::1::::<><><>0<>0<>e09b773af201b8ddae22c3c76bec1d2b<>res://.godot/imported/Meshy_AI_Azure_Comet_0529140657_texture.glb-c66669ea30e9bdb51424d4ec12a3986e.scn::uid://b4jq33j3q1nxy::::res://assets/enemies/comet/Meshy_AI_Azure_Comet_0529140657_texture_0.jpg<>uid://dmtc35sp45vtx::::res://assets/enemies/comet/Meshy_AI_Azure_Comet_0529140657_texture_1.jpg<>uid://c5rsbvhc5dqm2::::res://assets/enemies/comet/Meshy_AI_Azure_Comet_0529140657_texture_3.jpg<>uid://bybhnuljhv3lp::::res://assets/enemies/comet/Meshy_AI_Azure_Comet_0529140657_texture_2.jpg
 Meshy_AI_Azure_Comet_0529140657_texture_0.jpg::CompressedTexture2D::4441499508947833450::1780063800::1780063806::1::::<><><>0<>0<>2775b6251c07b12bab65a3c31e04ca23<>res://.godot/imported/Meshy_AI_Azure_Comet_0529140657_texture_0.jpg-51c04b0cb6dc8666bfdfce3b7598a12c.s3tc.ctex<*>res://.godot/imported/Meshy_AI_Azure_Comet_0529140657_texture_0.jpg-51c04b0cb6dc8666bfdfce3b7598a12c.etc2.ctex::
 Meshy_AI_Azure_Comet_0529140657_texture_1.jpg::CompressedTexture2D::8040924392506170513::1780063801::1780063806::1::::<><><>0<>0<>de4db947e6e3eba9575ec98678280416<>res://.godot/imported/Meshy_AI_Azure_Comet_0529140657_texture_1.jpg-0b40e30326ec1213686bce61a03e5e96.s3tc.ctex<*>res://.godot/imported/Meshy_AI_Azure_Comet_0529140657_texture_1.jpg-0b40e30326ec1213686bce61a03e5e96.etc2.ctex::
@@ -72,10 +73,10 @@ Meshy_AI_Orange_Comet_Rocket_0529140747_texture_2.jpg::CompressedTexture2D::7832
 Meshy_AI_Orange_Comet_Rocket_0529140747_texture_3.jpg::CompressedTexture2D::884343142361376612::1780063752::1780063753::1::::<><><>0<>0<>8783835bdd6508a2be2cc507886942b5<>res://.godot/imported/Meshy_AI_Orange_Comet_Rocket_0529140747_texture_3.jpg-ea0aad1464270674276b80ca1c580fe6.s3tc.ctex<*>res://.godot/imported/Meshy_AI_Orange_Comet_Rocket_0529140747_texture_3.jpg-ea0aad1464270674276b80ca1c580fe6.etc2.ctex::
 ::res://assets/enemies/satelite1/::1780063779
 Meshy_AI_Blue_Solar_Satellite_0529140730_texture.glb::PackedScene::2551608515745794632::1780063762::1780063777::1::::<><><>0<>0<>1974200407e33babbd453ec555db5a0a<>res://.godot/imported/Meshy_AI_Blue_Solar_Satellite_0529140730_texture.glb-1269f7485e8a5eb8d6073b9a3245e3e7.scn::uid://b0fmibs4srbk5::::res://assets/enemies/satelite1/Meshy_AI_Blue_Solar_Satellite_0529140730_texture_Image_0.jpg<>uid://j44mhjpqydhn::::res://assets/enemies/satelite1/Meshy_AI_Blue_Solar_Satellite_0529140730_texture_Image_1.jpg<>uid://bwtio6q48omtw::::res://assets/enemies/satelite1/Meshy_AI_Blue_Solar_Satellite_0529140730_texture_Image_3.jpg<>uid://cap4o4ypahwd0::::res://assets/enemies/satelite1/Meshy_AI_Blue_Solar_Satellite_0529140730_texture_normal.png
-Meshy_AI_Blue_Solar_Satellite_0529140730_texture_Image_3.jpg::CompressedTexture2D::3970310812416765804::1780063763::1780063778::1::::<><><>0<>0<>56b8d029523204699adc26b8360b8db4<>res://.godot/imported/Meshy_AI_Blue_Solar_Satellite_0529140730_texture_Image_3.jpg-ae99e46f3d611e0d323d8249721382e8.s3tc.ctex<*>res://.godot/imported/Meshy_AI_Blue_Solar_Satellite_0529140730_texture_Image_3.jpg-ae99e46f3d611e0d323d8249721382e8.etc2.ctex::
-Meshy_AI_Blue_Solar_Satellite_0529140730_texture_normal.png::CompressedTexture2D::4805594388536286959::1780063763::1780063779::1::::<><><>0<>0<>b67f51490ded0c20542405143e7efe9c<>res://.godot/imported/Meshy_AI_Blue_Solar_Satellite_0529140730_texture_normal.png-b3d0d96ee7b2e87a12ec56405b282c64.s3tc.ctex<*>res://.godot/imported/Meshy_AI_Blue_Solar_Satellite_0529140730_texture_normal.png-b3d0d96ee7b2e87a12ec56405b282c64.etc2.ctex::
 Meshy_AI_Blue_Solar_Satellite_0529140730_texture_Image_0.jpg::CompressedTexture2D::4152206635350826942::1780063769::1780063779::1::::<><><>0<>0<>1f77d38511a22a3255c709b62b60e078<>res://.godot/imported/Meshy_AI_Blue_Solar_Satellite_0529140730_texture_Image_0.jpg-b63b221df896ecc568720ffafacd2bd4.s3tc.ctex<*>res://.godot/imported/Meshy_AI_Blue_Solar_Satellite_0529140730_texture_Image_0.jpg-b63b221df896ecc568720ffafacd2bd4.etc2.ctex::
 Meshy_AI_Blue_Solar_Satellite_0529140730_texture_Image_1.jpg::CompressedTexture2D::693349152197661671::1780063776::1780063778::1::::<><><>0<>0<>ead5b6d025d70a7288065a71064e6f8f<>res://.godot/imported/Meshy_AI_Blue_Solar_Satellite_0529140730_texture_Image_1.jpg-b6079e872d7fff123e1ce83476124d09.s3tc.ctex<*>res://.godot/imported/Meshy_AI_Blue_Solar_Satellite_0529140730_texture_Image_1.jpg-b6079e872d7fff123e1ce83476124d09.etc2.ctex::
+Meshy_AI_Blue_Solar_Satellite_0529140730_texture_Image_3.jpg::CompressedTexture2D::3970310812416765804::1780063763::1780063778::1::::<><><>0<>0<>56b8d029523204699adc26b8360b8db4<>res://.godot/imported/Meshy_AI_Blue_Solar_Satellite_0529140730_texture_Image_3.jpg-ae99e46f3d611e0d323d8249721382e8.s3tc.ctex<*>res://.godot/imported/Meshy_AI_Blue_Solar_Satellite_0529140730_texture_Image_3.jpg-ae99e46f3d611e0d323d8249721382e8.etc2.ctex::
+Meshy_AI_Blue_Solar_Satellite_0529140730_texture_normal.png::CompressedTexture2D::4805594388536286959::1780063763::1780063779::1::::<><><>0<>0<>b67f51490ded0c20542405143e7efe9c<>res://.godot/imported/Meshy_AI_Blue_Solar_Satellite_0529140730_texture_normal.png-b3d0d96ee7b2e87a12ec56405b282c64.s3tc.ctex<*>res://.godot/imported/Meshy_AI_Blue_Solar_Satellite_0529140730_texture_normal.png-b3d0d96ee7b2e87a12ec56405b282c64.etc2.ctex::
 ::res://assets/enemies/satelite2/::1780063796
 Meshy_AI_Blue_Parabolic_Satell_0529140713_texture.glb::PackedScene::7840362565476298648::1780063783::1780063795::1::::<><><>0<>0<>f59a6fb5f639a9fbaa1561912d57b180<>res://.godot/imported/Meshy_AI_Blue_Parabolic_Satell_0529140713_texture.glb-2bd097bcaa91bca73f5faacd85fd4e45.scn::uid://bgkdgihselpac::::res://assets/enemies/satelite2/Meshy_AI_Blue_Parabolic_Satell_0529140713_texture_0.jpg<>uid://cd5ee45ycan3e::::res://assets/enemies/satelite2/Meshy_AI_Blue_Parabolic_Satell_0529140713_texture_1.jpg<>uid://qn6swdaanj7e::::res://assets/enemies/satelite2/Meshy_AI_Blue_Parabolic_Satell_0529140713_texture_3.jpg<>uid://wek272sdui6f::::res://assets/enemies/satelite2/Meshy_AI_Blue_Parabolic_Satell_0529140713_texture_2.jpg
 Meshy_AI_Blue_Parabolic_Satell_0529140713_texture_0.jpg::CompressedTexture2D::2828390820627686614::1780063784::1780063795::1::::<><><>0<>0<>d71f7edd2a8f6cf4c1b321e2748e6e10<>res://.godot/imported/Meshy_AI_Blue_Parabolic_Satell_0529140713_texture_0.jpg-7f9f504638fe67af935734fa338e8526.s3tc.ctex<*>res://.godot/imported/Meshy_AI_Blue_Parabolic_Satell_0529140713_texture_0.jpg-7f9f504638fe67af935734fa338e8526.etc2.ctex::
@@ -250,27 +251,29 @@ weapon_1.tres::Resource/WeaponData::4441467466610899430::1779973549::0::1::::<><
 weapon_2.tres::Resource/WeaponData::6914264255484810257::1779730015::0::1::::<><><>0<>0<><>::res://scripts/resources/WeaponData.gd
 weapon_3.tres::Resource/WeaponData::219819297725230475::1779730025::0::1::::<><><>0<>0<><>::res://scripts/resources/WeaponData.gd
 ::res://scenes/::1779980422
-::res://scenes/asteroids/::1779790787
-asteroid.tscn::PackedScene::645363259146833385::1779377062::0::1::::<><><>0<>0<><>::uid://b72pvnswg7eaa::::res://scenes/enemy/Enemy.tscn<>uid://b2ujm16r68c15::::res://assets/asteroids/asteroid.png
+::res://scenes/asteroids/::1780146993
 ::res://scenes/debug/::1779980467
 PlayAreaFrame.gd::GDScript::9020902000404816243::1779980435::0::1::::<>Node3D<><>0<>1<><>::
 PlayAreaFrame.tscn::PackedScene::3921225294876459380::1779980427::0::1::::<><><>0<>0<><>::res://scenes/debug/PlayAreaFrame.gd
-::res://scenes/enemies/::1780063591
+::res://scenes/enemies/::1780145472
 blaze1.tscn::PackedScene::6408229248630321207::1780062760::0::1::::<><><>0<>0<><>::uid://b72pvnswg7eaa::::res://scenes/enemy/Enemy.tscn<>uid://dolawyjb77dno::::res://assets/enemies/blaze/blaze1/Meshy_AI_Blaze_Starfighter_0529133509_texture.glb
 blaze2.tscn::PackedScene::7774283531680524940::1780062760::0::1::::<><><>0<>0<><>::uid://b72pvnswg7eaa::::res://scenes/enemy/Enemy.tscn<>uid://cp877lvmukhc8::::res://assets/enemies/blaze/blaze2/Meshy_AI_Emerald_Void_Intercep_0529133813_texture.glb
 blaze3.tscn::PackedScene::7774283584203875084::1780062760::0::1::::<><><>0<>0<><>::uid://b72pvnswg7eaa::::res://scenes/enemy/Enemy.tscn<>uid://dglhtcywe25fm::::res://assets/enemies/blaze/blaze3/Meshy_AI_Emerald_Void_Intercep_0529133821_texture.glb
 blaze4.tscn::PackedScene::7774283636727225228::1780062760::0::1::::<><><>0<>0<><>::uid://b72pvnswg7eaa::::res://scenes/enemy/Enemy.tscn<>uid://biuiifr02ycoj::::res://assets/enemies/blaze/blaze4/Meshy_AI_Emerald_Void_Intercep_0529133831_texture.glb
 blaze5.tscn::PackedScene::7774283689250575372::1780062760::0::1::::<><><>0<>0<><>::uid://b72pvnswg7eaa::::res://scenes/enemy/Enemy.tscn<>uid://bjurnxeuroe0j::::res://assets/enemies/blaze/blaze5/Meshy_AI_Emerald_Void_Intercep_0529133902_texture.glb
-falcon.tscn::PackedScene::2468368784631330960::1780063099::0::1::::<><><>0<>0<><>::uid://b72pvnswg7eaa::::res://scenes/enemy/Enemy.tscn<>uid://cheryw6ar8d1i::::res://assets/enemies/falcon/Meshy_AI_Azure_Falcon_0522180730_texture.glb
-heli_crimson.tscn::PackedScene::4041098338632083288::1780063099::0::1::::<><><>0<>0<><>::uid://b72pvnswg7eaa::::res://scenes/enemy/Enemy.tscn<>uid://d2u3wpina7kws::::res://assets/enemies/heli crimson/Meshy_AI_Crimson_Sky_Enforcer_0522180820_texture.glb
-heli_gold.tscn::PackedScene::5273103294412511912::1780063099::0::1::::<><><>0<>0<><>::uid://b72pvnswg7eaa::::res://scenes/enemy/Enemy.tscn<>uid://byn0rjm2al73x::::res://assets/enemies/heli gold/Meshy_AI_Aurora_Sky_Helicopter_0522180831_texture.glb
-sky_tank.tscn::PackedScene::-1::1780063479::0::1::::<><><>0<>0<><>::
+EnemySpawner.gd::GDScript::7147072454789478884::1780144978::0::1::::<>Node3D<><>0<>0<><>::
+heli_crimson.tscn::PackedScene::4041098338632083288::1780145038::0::1::::<><><>0<>0<><>::uid://b72pvnswg7eaa::::res://scenes/enemy/Enemy.tscn<>uid://d2u3wpina7kws::::res://assets/enemies/heli crimson/Meshy_AI_Crimson_Sky_Enforcer_0522180820_texture.glb
+heli_gold.tscn::PackedScene::5273103294412511912::1780145040::0::1::::<><><>0<>0<><>::uid://b72pvnswg7eaa::::res://scenes/enemy/Enemy.tscn<>uid://byn0rjm2al73x::::res://assets/enemies/heli gold/Meshy_AI_Aurora_Sky_Helicopter_0522180831_texture.glb
+rocket.tscn::PackedScene::3712679488234522802::1780063915::0::1::::<><><>0<>0<><>::uid://b72pvnswg7eaa::::res://scenes/enemy/Enemy.tscn<>uid://d0ntvm2iwqkav::::res://assets/enemies/rocket/Meshy_AI_Orange_Comet_Rocket_0529140747_texture.glb
+satelite1.tscn::PackedScene::6037401909893924416::1780145341::0::1::::<><><>0<>0<><>::uid://b72pvnswg7eaa::::res://scenes/enemy/Enemy.tscn<>uid://bcmavcdiip2iu::::res://assets/enemies/satelite1/Meshy_AI_Blue_Solar_Satellite_0529140730_texture.glb
+satelite2.tscn::PackedScene::6037401909893963720::1780145298::0::1::::<><><>0<>0<><>::uid://b72pvnswg7eaa::::res://scenes/enemy/Enemy.tscn<>uid://djx6vju2w41tc::::res://assets/enemies/satelite2/Meshy_AI_Blue_Parabolic_Satell_0529140713_texture.glb
+sky_tank.tscn::PackedScene::7774606267905715628::1780145472::0::1::::<><><>0<>0<><>::uid://b72pvnswg7eaa::::res://scenes/enemy/Enemy.tscn<>uid://3xpectyp8fdo::::res://assets/enemies/sky tank/Meshy_AI_Green_Sky_Tank_0529140100_texture.glb
 starfighter.tscn::PackedScene::5057416874759023692::1780062287::0::1::::<><><>0<>0<><>::uid://b72pvnswg7eaa::::res://scenes/enemy/Enemy.tscn<>uid://eyku5nilalp::::res://assets/enemies/starfighter/Meshy_AI_S_01_Starfighter_0522180707_texture.glb
-voyager.tscn::PackedScene::-1::1780063479::0::1::::<><><>0<>0<><>::
-z_drone.tscn::PackedScene::8549842006147110571::1780063591::0::1::::<><><>0<>0<><>::uid://b72pvnswg7eaa::::res://scenes/enemy/Enemy.tscn<>uid://3a3cwie0mvv2::::res://assets/enemies/z drone/Meshy_AI_Z_Drone_Voyager_0529140046_texture.glb
-::res://scenes/enemy/::1779806986
-Enemy.gd::GDScript::4605400125416299353::1780059771::0::1::::<>Area3D<><>0<>0<><>::
-Enemy.tscn::PackedScene::4689150847652142128::1779806986::0::1::::<><><>0<>0<><>::uid://b6u5jc5l8dstd::::res://scenes/enemy/Enemy.gd
+voyager.tscn::PackedScene::2322388619788314055::1780145080::0::1::::<><><>0<>0<><>::uid://b72pvnswg7eaa::::res://scenes/enemy/Enemy.tscn<>uid://qbdkbnujc3rn::::res://assets/enemies/voyager/Meshy_AI_Neon_Voyager_0529140031_texture.glb
+z_drone.tscn::PackedScene::8549842006147110571::1780145411::0::1::::<><><>0<>0<><>::uid://b72pvnswg7eaa::::res://scenes/enemy/Enemy.tscn<>uid://3a3cwie0mvv2::::res://assets/enemies/z drone/Meshy_AI_Z_Drone_Voyager_0529140046_texture.glb
+::res://scenes/enemy/::1780064426
+Enemy.gd::GDScript::4605400125416299353::1780065265::0::1::::<>Area3D<><>0<>0<><>::
+Enemy.tscn::PackedScene::4689150847652142128::1780064426::0::1::::<><><>0<>0<><>::uid://b6u5jc5l8dstd::::res://scenes/enemy/Enemy.gd
 EnemyPath.gd::GDScript::7492991824227979501::1780059196::0::1::::<>PathFollow3D<><>0<>0<><>::
 ::res://scenes/enemy_projectile/::1779805864
 EnemyProjectile.gd::GDScript::8392561708853174740::1779805864::0::1::::<>Area3D<><>0<>0<><>::
@@ -283,13 +286,13 @@ explode2.tscn::PackedScene::8056899657252836964::1779976073::0::1::::<><><>0<>0<
 explode3.tscn::PackedScene::2697846894677663330::1779978610::0::1::::<><><>0<>0<><>::uid://b0080ed2yyg10::::res://scenes/explosions/Explode.gd<>uid://dqr1qpgfvwr08::::res://assets/explode/explode5.png
 Explode.gd::GDScript::4194799740091914245::1779976238::0::1::::<>Node3D<><>0<>0<><>::
 explode.tscn::PackedScene::6828219502824117238::1779976073::0::1::::<><><>0<>0<><>::uid://b0080ed2yyg10::::res://scenes/explosions/Explode.gd
-::res://scenes/planets/::1780051099
+::res://scenes/planets/::1780144425
 earth.tscn::PackedScene::5742485976417380980::1779895834::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader<>uid://b5x1pv330wf72::::res://assets/planets/textures/solar system/2k_earth_daymap.jpg
 jupiter.tscn::PackedScene::6560753609083324030::1779971179::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader
 mars.tscn::PackedScene::6325341186571572607::1779971158::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader
 mercury.tscn::PackedScene::6275983029225109434::1779971163::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader
 neptune.tscn::PackedScene::5871231224050310909::1779971166::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader
-planet.gdshader::Shader::7774145487081512526::1780051099::0::1::::<><><>0<>0<><>::
+planet.gdshader::Shader::7774145487081512526::1780144425::0::1::::<><><>0<>0<><>::
 PlanetSpawner.gd::GDScript::5663476227391756546::1779970754::0::1::::<>Node3D<><>0<>0<><>::
 planet_base.gd::GDScript::3455933010980879115::1779895678::0::1::::<>MeshInstance3D<><>0<>1<><>::
 planet_rotate.gd::GDScript::8293380752750181618::1779828178::0::1::::<>Node3D<><>0<>0<><>::
@@ -337,7 +340,7 @@ trailmesh.gdextension::GDExtension::8020490264137839201::1779793320::0::1::::<><
 ::res://trailmesh/bin/linux/::1779793320
 ::res://trailmesh/bin/macos/::1779793320
 ::res://trailmesh/bin/macos/macos.framework/::1779793320
-::res://trailmesh/bin/windows/::1780050204
+::res://trailmesh/bin/windows/::1780144352
 ::res://trailmesh/example/::1779793320
 albedo.png::CompressedTexture2D::117215708539975444::1779793320::1779793320::1::::<><><>0<>0<>b23a40921eea09668ac99f9cc7237a6c<>res://.godot/imported/albedo.png-296ffd37ac24545f2ded3e452355f4e6.ctex::
 Camera.gd::GDScript::144620971606581968::1779793320::0::1::::<>Camera3D<><>0<>0<><>::

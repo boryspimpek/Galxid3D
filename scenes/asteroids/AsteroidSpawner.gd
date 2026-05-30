@@ -1,20 +1,7 @@
 extends Node3D
 
-const DEFAULT_ENEMY_SCENES: Array[String] = [
-	"res://scenes/enemies/starfighter.tscn",
-	"res://scenes/enemies/blaze1.tscn",
-	"res://scenes/enemies/blaze2.tscn",
-	"res://scenes/enemies/blaze3.tscn",
-	"res://scenes/enemies/blaze4.tscn",
-	"res://scenes/enemies/blaze5.tscn",
-	"res://scenes/enemies/heli_crimson.tscn",
-	"res://scenes/enemies/heli_gold.tscn",
-	"res://scenes/enemies/sky_tank.tscn",
-	"res://scenes/enemies/voyager.tscn",
-	"res://scenes/enemies/z_drone.tscn",
-	"res://scenes/enemies/satelite1.tscn",
-	"res://scenes/enemies/satelite2.tscn",
-	"res://scenes/enemies/rocket.tscn",
+const ASTEROID_SCENES = [
+	"res://scenes/asteroids/asteroid.tscn",
 ]
 
 @export var spawn_interval: float = 3.0
@@ -32,38 +19,38 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	spawn_timer -= delta
 	if spawn_timer <= 0:
-		spawn_random_enemy()
+		spawn_random_asteroid()
 		spawn_timer = spawn_interval
 
 func _preprocess(time: float) -> void:
 	var elapsed := 0.0
 	while elapsed < time:
 		elapsed += spawn_interval
-		spawn_random_enemy()
+		spawn_random_asteroid()
 		var last = get_child(get_child_count() - 1)
 		# W 3D ruch do przodu/tyłu odbywa się na osi Z (zgodnie z Twoim skryptem planety)
 		last.global_position.z += last.speed * (time - elapsed)
 
-func spawn_random_enemy() -> void:
-	var scene_path = DEFAULT_ENEMY_SCENES[randi() % DEFAULT_ENEMY_SCENES.size()]
-	var enemy_scene = load(scene_path)
-	if enemy_scene == null:
+func spawn_random_asteroid() -> void:
+	var scene_path = ASTEROID_SCENES[randi() % ASTEROID_SCENES.size()]
+	var asteroid_scene = load(scene_path)
+	if asteroid_scene == null:
 		push_error("Nie udało się załadować sceny: " + scene_path)
 		return
 
-	var enemy = enemy_scene.instantiate()
+	var asteroid = asteroid_scene.instantiate()
 
 	var world_width = 17.0
 	var margin = world_width * 0.1
-	var spawn_z = -15.0
+	var spawn_z = -100.0 
 
 	var random_x = randf_range(-world_width/2 + margin, world_width/2 - margin)
 	var random_speed = randf_range(speed_min, speed_max)
 
 	# --- 1. NAJPIERW DODAJEMY DO DRZEWA ---
-	add_child(enemy)
+	add_child(asteroid)
 
 	# --- 2. TERAZ MOŻEMY BEZPIECZNIE UŻYĆ GLOBAL_POSITION ---
-	enemy.global_position = Vector3(random_x, 0.0, spawn_z)
+	asteroid.global_position = Vector3(random_x, -10.0, spawn_z)
 
-	enemy.speed = random_speed
+	asteroid.speed = random_speed

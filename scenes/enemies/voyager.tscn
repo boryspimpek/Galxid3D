@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cvoyager00001"]
+[gd_scene format=3 uid="uid://8c8nv4h1pe1l"]
 
 [ext_resource type="PackedScene" uid="uid://b72pvnswg7eaa" path="res://scenes/enemy/Enemy.tscn" id="1_enemy"]
 [ext_resource type="PackedScene" uid="uid://qbdkbnujc3rn" path="res://assets/enemies/voyager/Meshy_AI_Neon_Voyager_0529140031_texture.glb" id="2_model"]
@@ -6,17 +6,18 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_enemy"]
 radius = 0.78759766
 
-[node name="voyager" instance=ExtResource("1_enemy")]
+[node name="voyager" unique_id=718793839 instance=ExtResource("1_enemy")]
+transform = Transform3D(2, 0, 0, 0, 1.9923894, 0.17431147, 0, -0.17431147, 1.9923894, 0, 0, 0)
 
-[node name="Meshy_AI_Neon_Voyager_0529140031_texture" parent="EnemyModel" index="0" instance=ExtResource("2_model")]
+[node name="Meshy_AI_Neon_Voyager_0529140031_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=981776243 instance=ExtResource("2_model")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=746115985]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_enemy")
 
-[node name="Muzzle" type="Marker3D" parent="." index="2"]
+[node name="Muzzle" type="Marker3D" parent="." index="2" unique_id=1731164510]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.7519847)
 
-[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." index="3"]
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." index="3" unique_id=1512394199]
 aabb = AABB(-1, -0.4744031, -1, 2, 0.9488062, 2)

@@ -1,20 +1,23 @@
 [gd_scene format=3 uid="uid://jgvbkuyntum0"]
 
-[ext_resource type="PackedScene" uid="uid://b72pvnswg7eaa" path="res://scenes/enemy/Enemy.tscn" id="1_nxpf8"]
-[ext_resource type="Texture2D" uid="uid://b2ujm16r68c15" path="res://assets/asteroids/asteroid.png" id="2_xn8ob"]
+[ext_resource type="PackedScene" uid="uid://cosdd7qiyt1mn" path="res://assets/asteroids/asteroid.glb" id="1_ujvpl"]
+[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="2_nxpf8"]
+[ext_resource type="Script" uid="uid://bmg7sodgwe78s" path="res://scenes/asteroids/asteroid_base.gd" id="3_xn8ob"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xn8ob"]
-radius = 55.081757
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xn8ob"]
+render_priority = 0
+shader = ExtResource("2_nxpf8")
+shader_parameter/albedo_color = Color(0.37413925, 0.37413928, 0.37413922, 1)
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/clearcoat = 0.0
+shader_parameter/clearcoat_roughness = 0.2
+shader_parameter/shadow_threshold = 0.5
+shader_parameter/shadow_softness = 0.02
+shader_parameter/ambient_fill = 0.0
 
-[node name="asteroid" unique_id=119960324 instance=ExtResource("1_nxpf8")]
-z_index = 90
+[node name="asteroid" unique_id=1391333777 instance=ExtResource("1_ujvpl")]
+script = ExtResource("3_xn8ob")
 
-[node name="Visual" parent="." index="0" unique_id=1405638014]
-scale = Vector2(0.355, 0.355)
-texture = ExtResource("2_xn8ob")
-
-[node name="VisibleOnScreenNotifier2D" parent="." index="1" unique_id=291847561]
-rect = Rect2(-56, -53, 112, 97)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2" unique_id=1706541983]
-shape = SubResource("CircleShape2D_xn8ob")
+[node name="rock_001" parent="." index="0" unique_id=372857877]
+surface_material_override/0 = SubResource("ShaderMaterial_xn8ob")

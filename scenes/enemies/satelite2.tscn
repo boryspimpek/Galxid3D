@@ -6,17 +6,17 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_enemy"]
 radius = 0.78759766
 
-[node name="satelite2" instance=ExtResource("1_enemy")]
+[node name="satelite2" unique_id=18884357 instance=ExtResource("1_enemy")]
 
-[node name="Meshy_AI_Blue_Parabolic_Satell_0529140713_texture" parent="EnemyModel" index="0" instance=ExtResource("2_model")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+[node name="Meshy_AI_Blue_Parabolic_Satell_0529140713_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1322360424 instance=ExtResource("2_model")]
+transform = Transform3D(0.19826686, -0.16636571, -0.9659258, -0.7399421, 0.6208852, -0.25881904, 0.64278764, 0.76604444, -4.222196e-08, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=990090616]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_enemy")
 
-[node name="Muzzle" type="Marker3D" parent="." index="2"]
+[node name="Muzzle" type="Marker3D" parent="." index="2" unique_id=1343422638]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.7519847)
 
-[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." index="3"]
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." index="3" unique_id=1368226402]
 aabb = AABB(-1, -0.4744031, -1, 2, 0.9488062, 2)
