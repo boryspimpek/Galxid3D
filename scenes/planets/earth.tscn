@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c1pq466qvcqtm"]
 
+[ext_resource type="Script" uid="uid://blylchano3pbx" path="res://scenes/planets/earth_base.gd" id="1_cwnmv"]
 [ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="2_5i67w"]
 [ext_resource type="Texture2D" uid="uid://b5x1pv330wf72" path="res://assets/planets/textures/solar system/2k_earth_daymap.jpg" id="3_trc54"]
 
@@ -25,6 +26,9 @@ shader_parameter/shadow_softness = 0.0
 shader_parameter/ambient_fill = 0.034000001615
 
 [node name="earth" type="Node3D" unique_id=1975713936]
+script = ExtResource("1_cwnmv")
+spin_speed = 0.1
+speed = 0.2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1264017003]
 mesh = SubResource("SphereMesh_cwnmv")

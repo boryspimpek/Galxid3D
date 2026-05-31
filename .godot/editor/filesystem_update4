@@ -1,11 +1,3 @@
-res://scenes/enemy/Enemy.tscn
+res://scenes/enemies/blaze.tscn
 res://scenes/planets/planet.gdshader
 res://3dworld.tscn
-res://scenes/asteroids/AsteroidSpawner.gd
-res://scenes/asteroids/asteroid_7.tscn
-res://scenes/asteroids/asteroid_4.tscn
-res://scenes/asteroids/asteroid_5.tscn
-res://scenes/asteroids/asteroid_6.tscn
-res://scenes/asteroids/asteroid_2.tscn
-res://scenes/asteroids/asteroid_3.tscn
-res://scenes/asteroids/asteroid.tscn
