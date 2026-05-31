@@ -8,7 +8,7 @@
 script = ExtResource("1_enemy")
 armor = 5
 
-[node name="EnemyModel" type="MeshInstance3D" parent="." unique_id=634598779]
+[node name="EnemyModel" type="Node3D" parent="." unique_id=634598779]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=324662688]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
@@ -17,3 +17,5 @@ shape = SubResource("CapsuleShape3D_sjakr")
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1484925388]
 
 [node name="Muzzle" type="Marker3D" parent="." unique_id=1704985833]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
