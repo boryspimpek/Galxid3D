@@ -1,10 +1,19 @@
-[gd_scene format=3 uid="uid://b72pvnswg7eaa"]
+[gd_scene format=3 uid="uid://c3de3aei70kw1"]
 
 [ext_resource type="Script" uid="uid://b6u5jc5l8dstd" path="res://scenes/enemy/Enemy.gd" id="1_enemy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sjakr"]
 
 [node name="Enemy" type="Area3D" unique_id=1897743314]
 script = ExtResource("1_enemy")
 armor = 5
-fire_rate = 360.0
 
 [node name="EnemyModel" type="MeshInstance3D" parent="." unique_id=634598779]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=324662688]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_sjakr")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1484925388]
+
+[node name="Muzzle" type="Marker3D" parent="." unique_id=1704985833]

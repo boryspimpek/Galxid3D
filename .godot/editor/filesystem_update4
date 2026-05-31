@@ -1,3 +1,6 @@
 res://scenes/enemies/blaze.tscn
 res://scenes/planets/planet.gdshader
 res://3dworld.tscn
+res://scenes/enemies/blaze_2.tscn
+res://scenes/enemy/Enemy.gd
+res://scenes/enemy/Enemy.tscn

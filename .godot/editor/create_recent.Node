@@ -1,6 +1,6 @@
-CollisionShape3D
-VisibleOnScreenNotifier3D
 Marker3D
+VisibleOnScreenNotifier3D
+CollisionShape3D
 Area3D
 VisibleOnScreenEnabler3D
 MeshInstance3D
