@@ -36,8 +36,6 @@ orientation = 1
 
 [node name="Game" type="Node3D" unique_id=616589222]
 
-[node name="MeshInstance3D2" parent="." unique_id=697593384 instance=ExtResource("1_pnv6h")]
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2090551855]
 environment = SubResource("Environment_vshm1")
 
@@ -93,6 +91,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.94)
 
 [node name="LevelScroll" type="Node3D" parent="." unique_id=1395802397]
 script = ExtResource("7_scroll")
+
+[node name="NoiseBackground" parent="LevelScroll" unique_id=697593384 instance=ExtResource("1_pnv6h")]
 
 [node name="Blaze" parent="." unique_id=923947193 instance=ExtResource("9_2gg5g")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.195, 0, 0)

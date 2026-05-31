@@ -5,7 +5,7 @@ extends MeshInstance3D
 ## Czas płynnej zmiany między paletami (sekundy).
 @export var transition_duration: float = 4.0
 ## Amplituda oscylacji offset.z szumu (im mniejsza, tym subtelniej).
-@export var noise_z_amplitude: float = 8.0
+@export var noise_z_amplitude: float = 50.0
 ## Czas pełnego cyklu oscylacji offset.z (sekundy).
 @export var noise_z_period: float = 120.0
 ## Co ile sekund odświeżać teksturę po zmianie offsetu (niższe = płynniej, wyższe obciążenie GPU).
