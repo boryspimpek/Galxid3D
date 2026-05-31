@@ -8,6 +8,10 @@
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="7_scroll"]
 [ext_resource type="Script" uid="uid://1pup6o17egip" path="res://scenes/asteroids/AsteroidSpawner.gd" id="8_pnv6h"]
 [ext_resource type="PackedScene" uid="uid://cxkgum8ut6na2" path="res://scenes/enemies/blaze.tscn" id="9_2gg5g"]
+[ext_resource type="PackedScene" uid="uid://b47pkgi0u300c" path="res://scenes/enemies/blaze_2.tscn" id="9_rpljx"]
+[ext_resource type="PackedScene" uid="uid://cxoxhipdefe5m" path="res://scenes/enemies/blaze_3.tscn" id="10_y8ijg"]
+[ext_resource type="PackedScene" uid="uid://bgg0um4kjhgkp" path="res://scenes/enemies/blaze_4.tscn" id="11_fjwqu"]
+[ext_resource type="PackedScene" uid="uid://bh3x5gquu3djc" path="res://scenes/enemies/blaze_5.tscn" id="12_fql1y"]
 
 [sub_resource type="Environment" id="Environment_vshm1"]
 background_mode = 1
@@ -46,8 +50,11 @@ shadow_enabled = true
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1430056658]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 20, 0)
 
+[node name="NoiseBackground" parent="." unique_id=697593384 instance=ExtResource("1_pnv6h")]
+
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=1897043367]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -9)
+visible = false
 amount = 5
 lifetime = 1.5999999999999999
 preprocess = 60.0
@@ -84,7 +91,7 @@ scale_3 = 0.3
 preprocess_time = 600.0
 
 [node name="earth" parent="." unique_id=1944613414 instance=ExtResource("5_3vxff")]
-transform = Transform3D(0.725, 0, 0, 0, 0.47754985, 0.5455009, 0, -0.5455009, 0.47754985, 25, -80, -18)
+transform = Transform3D(0.725, 0, 0, 0, 0.47754982, 0.5455009, 0, -0.5455009, 0.47754982, 25, -80, -18)
 
 [node name="Player" parent="." unique_id=1811810025 instance=ExtResource("4_n40md")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.94)
@@ -92,7 +99,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.94)
 [node name="LevelScroll" type="Node3D" parent="." unique_id=1395802397]
 script = ExtResource("7_scroll")
 
-[node name="NoiseBackground" parent="LevelScroll" unique_id=697593384 instance=ExtResource("1_pnv6h")]
+[node name="blaze" parent="LevelScroll" unique_id=1897743314 instance=ExtResource("9_2gg5g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4057617, 0, -20.101467)
+armor = 5
 
-[node name="Blaze" parent="." unique_id=923947193 instance=ExtResource("9_2gg5g")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.195, 0, 0)
+[node name="blaze 2" parent="LevelScroll" unique_id=362677531 instance=ExtResource("9_rpljx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4057617, 0, -23.565744)
+armor = 5
+
+[node name="blaze 3" parent="LevelScroll" unique_id=173564782 instance=ExtResource("10_y8ijg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8631964, 0, -23.634235)
+
+[node name="blaze 4" parent="LevelScroll" unique_id=62020161 instance=ExtResource("11_fjwqu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84025526, 0, -20.101467)
+
+[node name="blaze 5" parent="LevelScroll" unique_id=558700872 instance=ExtResource("12_fql1y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7483033, 0, -17.363482)

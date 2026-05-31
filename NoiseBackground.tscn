@@ -30,4 +30,4 @@ size = Vector2(165, 290)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -170, 0)
 mesh = SubResource("PlaneMesh_hq8co")
 script = ExtResource("1_script")
-noise_z_amplitude = 50.0
+noise_y_scroll_speed = -3.0

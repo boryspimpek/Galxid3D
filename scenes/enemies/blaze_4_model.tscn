@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cwvq0f2rhywoe"]
+
+[ext_resource type="PackedScene" uid="uid://biuiifr02ycoj" path="res://assets/enemies/blaze/blaze4/Meshy_AI_Emerald_Void_Intercep_0529133831_texture.glb" id="1_nvcbm"]
+[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="2_iy0st"]
+[ext_resource type="Texture2D" uid="uid://d3lcey64bd47c" path="res://assets/enemies/blaze/blaze4/Meshy_AI_Emerald_Void_Intercep_0529133831_texture_0.jpg" id="3_hmx7s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iy0st"]
+cull_mode = 1
+grow = true
+grow_amount = 0.02
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4b2hx"]
+render_priority = 0
+next_pass = SubResource("StandardMaterial3D_iy0st")
+shader = ExtResource("2_iy0st")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = ExtResource("3_hmx7s")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/clearcoat = 1.0
+shader_parameter/clearcoat_roughness = 0.750000035625
+shader_parameter/shadow_threshold = 0.400000019
+shader_parameter/shadow_softness = 0.0
+shader_parameter/ambient_fill = 0.0250000011875
+
+[node name="Blaze 4" unique_id=37309149 instance=ExtResource("1_nvcbm")]
+
+[node name="Mesh" parent="." index="0" unique_id=371003866]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_4b2hx")

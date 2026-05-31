@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cxoxhipdefe5m"]
+
+[ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemy/Enemy.tscn" id="1_yw4ty"]
+[ext_resource type="PackedScene" uid="uid://jv2relxx74s2" path="res://scenes/enemies/blaze_3_model.tscn" id="2_ruhlo"]
+
+[node name="blaze 3" unique_id=1897743314 instance=ExtResource("1_yw4ty")]
+
+[node name="Blaze 3" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1872777153 instance=ExtResource("2_ruhlo")]
+
+[node name="CollisionShape3D" parent="." index="1" unique_id=324662688]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 0, 0, 0)

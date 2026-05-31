@@ -6,7 +6,6 @@
 
 [node name="Enemy" type="Area3D" unique_id=1897743314]
 script = ExtResource("1_enemy")
-armor = 5
 
 [node name="EnemyModel" type="Node3D" parent="." unique_id=634598779]
 

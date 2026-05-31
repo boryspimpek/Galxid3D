@@ -10,6 +10,12 @@ extends MeshInstance3D
 @export var noise_z_period: float = 120.0
 ## Co ile sekund odświeżać teksturę po zmianie offsetu (niższe = płynniej, wyższe obciążenie GPU).
 @export var noise_offset_refresh_interval: float = 0.12
+## Stały przesuw warstw szumu (offset.y w FastNoiseLite). Ujemne = w dół, jak w edytorze.
+@export var noise_y_scroll_speed: float = -0.6
+## Po jakim zakresie offset.y wraca (zapętlenie bez narastania liczb).
+@export var noise_y_wrap_range: float = 220.0
+## Dodatkowy mnożnik prędkości, gdy rodzic to LevelScroll (0 = ignoruj scroll poziomu).
+@export var level_scroll_y_factor: float = 0.0
 
 # Każda paleta = 4 kolory (zgodnie z punktami gradientu w scenie).
 const PALETTES: Array = [
@@ -103,25 +109,41 @@ var _gradient: Gradient
 var _noise_texture: NoiseTexture2D
 var _fast_noise: FastNoiseLite
 var _noise_z_base: float
+var _noise_y_base: float
+var _noise_y_scroll: float = 0.0
 var _noise_z_phase: float = 0.0
 var _noise_offset_refresh_timer: float = 0.0
+var _level_scroll: Node3D
 var _palette_index: int = 0
 var _texture_refresh_queued: bool = false
 
 
 func _ready() -> void:
+	_level_scroll = get_parent() as Node3D
 	_setup_runtime_material()
 	set_process(true)
 	_run_color_cycle()
 
 
 func _process(delta: float) -> void:
-	if _fast_noise == null or noise_z_period <= 0.0:
+	if _fast_noise == null:
 		return
 
-	_noise_z_phase += (TAU / noise_z_period) * delta
+	var y_speed := noise_y_scroll_speed
+	if level_scroll_y_factor != 0.0 and _level_scroll != null:
+		var scroll_speed = _level_scroll.get("scroll_speed")
+		if scroll_speed != null:
+			y_speed += -float(scroll_speed) * level_scroll_y_factor
+
+	_noise_y_scroll += y_speed * delta
+	if noise_y_wrap_range > 0.0:
+		_noise_y_scroll = fposmod(_noise_y_scroll, noise_y_wrap_range)
+
 	var offset := _fast_noise.offset
-	offset.z = _noise_z_base + sin(_noise_z_phase) * noise_z_amplitude
+	if noise_z_period > 0.0:
+		_noise_z_phase += (TAU / noise_z_period) * delta
+		offset.z = _noise_z_base + sin(_noise_z_phase) * noise_z_amplitude
+	offset.y = _noise_y_base + _noise_y_scroll
 	_fast_noise.offset = offset
 
 	_noise_offset_refresh_timer += delta
@@ -138,6 +160,7 @@ func _setup_runtime_material() -> void:
 	_gradient = (_noise_texture.color_ramp as Gradient).duplicate(true) as Gradient
 	_fast_noise = (_noise_texture.noise as FastNoiseLite).duplicate(true) as FastNoiseLite
 	_noise_z_base = _fast_noise.offset.z
+	_noise_y_base = _fast_noise.offset.y
 
 	_noise_texture.color_ramp = _gradient
 	_noise_texture.noise = _fast_noise
