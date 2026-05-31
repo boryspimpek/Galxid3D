@@ -2,10 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://cosdd7qiyt1mn" path="res://assets/asteroids/asteroid.glb" id="1_ujvpl"]
 [ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="2_nxpf8"]
-[ext_resource type="Script" uid="uid://bmg7sodgwe78s" path="res://scenes/asteroids/asteroid_base.gd" id="3_xn8ob"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxpf8"]
+cull_mode = 1
+grow = true
+grow_amount = 0.02
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xn8ob"]
 render_priority = 0
+next_pass = SubResource("StandardMaterial3D_nxpf8")
 shader = ExtResource("2_nxpf8")
 shader_parameter/albedo_color = Color(0.37413925, 0.37413928, 0.37413922, 1)
 shader_parameter/line_color = Color(0, 0, 0, 1)
@@ -17,9 +22,8 @@ shader_parameter/shadow_softness = 0.0
 shader_parameter/ambient_fill = 0.0
 
 [node name="asteroid" unique_id=1391333777 instance=ExtResource("1_ujvpl")]
-script = ExtResource("3_xn8ob")
 
-[node name="rock_001" parent="." index="0" unique_id=372857877]
+[node name="rock_001" parent="." index="0" unique_id=664947977]
 surface_material_override/0 = SubResource("ShaderMaterial_xn8ob")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." index="1" unique_id=1415141526]

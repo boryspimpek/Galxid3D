@@ -58,6 +58,7 @@ max_bound_x = 8.75
 max_bound_z = 15.45
 
 [node name="PlanetSpawner" type="Node3D" parent="." unique_id=143857554]
+visible = false
 script = ExtResource("1_uc6tr")
 spawn_interval = 30.0
 speed_min = 3.0
@@ -67,6 +68,7 @@ y_min = -140.0
 preprocess_time = 360.0
 
 [node name="EnemySpawner" type="Node3D" parent="." unique_id=1578792440]
+visible = false
 script = ExtResource("23_5ipoo")
 spawn_interval = 5.0
 speed_min = 5.0
@@ -78,14 +80,14 @@ spawn_interval_1 = 12.0
 asteroid_speed_1 = 8.0
 scale_1 = 1.5
 y_2 = -15.0
-spawn_interval_2 = 10.0
-asteroid_speed_2 = 3.0
-scale_2 = 1.0
+spawn_interval_2 = 7.0
+asteroid_speed_2 = 1.5
+scale_2 = 0.8
 y_3 = -20.0
-spawn_interval_3 = 5.0
-asteroid_speed_3 = 1.0
-scale_3 = 0.5
-preprocess_time = 360.0
+spawn_interval_3 = 17.0
+asteroid_speed_3 = 0.5
+scale_3 = 0.3
+preprocess_time = 600.0
 
 [node name="earth" parent="." unique_id=1944613414 instance=ExtResource("5_3vxff")]
 transform = Transform3D(0.9848077, 0.17364816, 0, -0.17364818, 0.98480767, 0, 0, 0, 1, 25, -80, -18)

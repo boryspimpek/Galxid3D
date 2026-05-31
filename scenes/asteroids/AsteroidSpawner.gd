@@ -4,26 +4,38 @@ const ASTEROID_SCENES = [
 	"res://scenes/asteroids/asteroid.tscn",
 	"res://scenes/asteroids/asteroid_2.tscn",
 	"res://scenes/asteroids/asteroid_3.tscn",
+	"res://scenes/asteroids/asteroid_4.tscn",
+	"res://scenes/asteroids/asteroid_5.tscn",
+	"res://scenes/asteroids/asteroid_6.tscn",
+	"res://scenes/asteroids/asteroid_7.tscn",
 ]
 
 const LEVEL_COUNT := 3
+const ASTEROID_META := "asteroid"
+
+@export_group("Obrót")
+@export var randomize_spin: bool = true
+@export var despawn_off_screen: bool = true
 
 @export_group("Poziom 1")
 @export var y_1: float = -10.0
 @export var spawn_interval_1: float = 3.0
 @export var asteroid_speed_1: float = 2.0
+@export var spin_speed_1: float = 2.0
 @export_range(0.05, 2.0, 0.01) var scale_1: float = 1.0
 
 @export_group("Poziom 2")
 @export var y_2: float = -30.0
 @export var spawn_interval_2: float = 3.0
 @export var asteroid_speed_2: float = 2.0
+@export var spin_speed_2: float = 1.5
 @export_range(0.05, 2.0, 0.01) var scale_2: float = 0.65
 
 @export_group("Poziom 3")
 @export var y_3: float = -50.0
 @export var spawn_interval_3: float = 3.0
 @export var asteroid_speed_3: float = 2.0
+@export var spin_speed_3: float = 1.0
 @export_range(0.05, 2.0, 0.01) var scale_3: float = 0.35
 
 @export var preprocess_time: float = 20.0
@@ -42,6 +54,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	_tick_spawn_timers(delta)
+	_update_asteroids(delta)
 
 
 func _preprocess(time: float) -> void:
@@ -65,6 +78,44 @@ func _tick_spawn_timers(delta: float) -> void:
 		if _spawn_timers[i] <= 0.0:
 			_spawn_at_level(i)
 			_spawn_timers[i] += _get_interval(i)
+
+
+func _update_asteroids(delta: float) -> void:
+	for child in get_children():
+		if not child.get_meta(ASTEROID_META, false):
+			continue
+
+		child.global_position.z += child.get_meta("speed") * delta
+
+		if randomize_spin:
+			child.rotation += child.get_meta("angular_velocity") * delta
+		else:
+			child.transform = child.transform.rotated_local(
+				Vector3.UP, child.get_meta("spin_speed") * delta
+			)
+
+
+func _setup_asteroid(asteroid: Node3D, level: int) -> void:
+	asteroid.set_meta(ASTEROID_META, true)
+	asteroid.set_meta("speed", _get_speed(level))
+	var spin_speed := _get_spin_speed(level)
+	asteroid.set_meta("spin_speed", spin_speed)
+
+	if randomize_spin:
+		asteroid.rotation = Vector3(
+			randf_range(0.0, TAU),
+			randf_range(0.0, TAU),
+			randf_range(0.0, TAU),
+		)
+		asteroid.set_meta("angular_velocity", Vector3(
+			randf_range(-1.0, 1.0) * spin_speed,
+			randf_range(-1.0, 1.0) * spin_speed,
+			randf_range(-1.0, 1.0) * spin_speed,
+		))
+
+	var notifier := asteroid.get_node_or_null("VisibleOnScreenNotifier3D") as VisibleOnScreenNotifier3D
+	if notifier and despawn_off_screen:
+		notifier.screen_exited.connect(asteroid.queue_free)
 
 
 func _get_y(level: int) -> float:
@@ -93,6 +144,13 @@ func _get_scale(level: int) -> float:
 		0: return scale_1
 		1: return scale_2
 		_: return scale_3
+
+
+func _get_spin_speed(level: int) -> float:
+	match level:
+		0: return spin_speed_1
+		1: return spin_speed_2
+		_: return spin_speed_3
 
 
 func _visible_x_range_at_y(spawn_y: float) -> Vector2:
@@ -149,4 +207,4 @@ func _spawn_at_level(level: int) -> void:
 	var level_scale := _get_scale(level)
 	asteroid.scale = Vector3.ONE * level_scale
 	asteroid.global_position = Vector3(random_x, spawn_y, spawn_z)
-	asteroid.speed = _get_speed(level)
+	_setup_asteroid(asteroid, level)

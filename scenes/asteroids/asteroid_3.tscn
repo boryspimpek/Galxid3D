@@ -2,12 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://cppansjihwaer" path="res://assets/asteroids/asteroid3.glb" id="1_hdniq"]
 [ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="2_noybi"]
-[ext_resource type="Script" uid="uid://bmg7sodgwe78s" path="res://scenes/asteroids/asteroid_base.gd" id="3_f51fe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d4yss"]
+cull_mode = 1
+grow = true
+grow_amount = 0.02
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pb5si"]
 render_priority = 0
+next_pass = SubResource("StandardMaterial3D_d4yss")
 shader = ExtResource("2_noybi")
-shader_parameter/albedo_color = Color(0.5503944, 0.4778769, 0.37651974, 1)
+shader_parameter/albedo_color = Color(0.3779188, 0.37791887, 0.37791884, 1)
 shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/metallic = 0.0
 shader_parameter/clearcoat = 0.0
@@ -17,7 +22,9 @@ shader_parameter/shadow_softness = 0.0
 shader_parameter/ambient_fill = 0.0
 
 [node name="asteroid3" unique_id=760847430 instance=ExtResource("1_hdniq")]
-script = ExtResource("3_f51fe")
 
-[node name="rock_014" parent="." index="0" unique_id=784955859]
+[node name="rock_014" parent="." index="0" unique_id=2070812522]
 surface_material_override/0 = SubResource("ShaderMaterial_pb5si")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." index="1" unique_id=194426468]
+aabb = AABB(-2.105157, -1.7537448, -1.7202878, 4.210314, 3.5074897, 3.4405756)

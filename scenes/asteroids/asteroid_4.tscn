@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://du2cmbt2ajvcx"]
+
+[ext_resource type="PackedScene" uid="uid://dsswkcnp3gb6p" path="res://assets/asteroids/asteroid4.glb" id="1_chdtm"]
+[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="2_rxu4f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chdtm"]
+cull_mode = 1
+grow = true
+grow_amount = 0.02
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pokn7"]
+render_priority = 0
+next_pass = SubResource("StandardMaterial3D_chdtm")
+shader = ExtResource("2_rxu4f")
+shader_parameter/albedo_color = Color(0.39688927, 0.39688927, 0.39688924, 1)
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/clearcoat = 0.0
+shader_parameter/clearcoat_roughness = 0.2
+shader_parameter/shadow_threshold = 0.5
+shader_parameter/shadow_softness = 0.02
+shader_parameter/ambient_fill = 0.0
+
+[node name="asteroid4" unique_id=1938320443 instance=ExtResource("1_chdtm")]
+
+[node name="rock" parent="." index="0" unique_id=825025000]
+surface_material_override/0 = SubResource("ShaderMaterial_pokn7")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." index="1" unique_id=1973536924]
+aabb = AABB(-1.7, -1.8, -1.5, 3.6, 3.7, 3.6)

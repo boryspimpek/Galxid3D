@@ -1,5 +1,6 @@
-MeshInstance3D
 VisibleOnScreenNotifier3D
+VisibleOnScreenEnabler3D
+MeshInstance3D
 Area3D
 Node3D
 PathFollow3D
@@ -11,4 +12,3 @@ FogVolume
 GPUParticles3D
 Sprite3D
 Node
-CharacterBody3D
