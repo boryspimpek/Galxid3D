@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://blylchano3pbx" path="res://scenes/planets/earth_base.gd" id="1_cwnmv"]
 [ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="2_5i67w"]
 [ext_resource type="Texture2D" uid="uid://b5x1pv330wf72" path="res://assets/planets/textures/solar system/2k_earth_daymap.jpg" id="3_trc54"]
+[ext_resource type="Texture2D" uid="uid://dldpelql0fhfb" path="res://assets/planets/textures/solar system/2k_neptune.jpg" id="4_xbhfj"]
+[ext_resource type="Texture2D" uid="uid://d6ufagn3ivxr" path="res://assets/planets/textures/meshy/venus.png" id="5_fnp8i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1umni"]
 albedo_texture = ExtResource("3_trc54")
@@ -12,18 +14,41 @@ material = SubResource("StandardMaterial3D_1umni")
 radius = 50.0
 height = 100.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cwnmv"]
+cull_mode = 1
+grow = true
+grow_amount = 0.07
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pa0cx"]
+render_priority = 0
+next_pass = SubResource("StandardMaterial3D_cwnmv")
+shader = ExtResource("2_5i67w")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = ExtResource("4_xbhfj")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/metallic = 0.8330000395675
+shader_parameter/clearcoat = 0.2530000120175
+shader_parameter/clearcoat_roughness = 0.0
+shader_parameter/shadow_threshold = 0.58800002793
+shader_parameter/shadow_softness = 0.0
+shader_parameter/ambient_fill = 0.018000000855
+
+[sub_resource type="TorusMesh" id="TorusMesh_xbhfj"]
+inner_radius = 97.564
+outer_radius = 59.456
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fnp8i"]
 render_priority = 0
 shader = ExtResource("2_5i67w")
 shader_parameter/albedo_color = Color(1, 1, 1, 1)
-shader_parameter/albedo_texture = ExtResource("3_trc54")
+shader_parameter/albedo_texture = ExtResource("5_fnp8i")
 shader_parameter/line_color = Color(0, 0, 0, 1)
-shader_parameter/metallic = 0.4150000197125
-shader_parameter/clearcoat = 1.0
-shader_parameter/clearcoat_roughness = 0.44400002109
-shader_parameter/shadow_threshold = 0.18000000855
+shader_parameter/metallic = 0.98800004693
+shader_parameter/clearcoat = 0.4890000232275
+shader_parameter/clearcoat_roughness = 0.9650000458375
+shader_parameter/shadow_threshold = 0.6090000289275
 shader_parameter/shadow_softness = 0.0
-shader_parameter/ambient_fill = 0.034000001615
+shader_parameter/ambient_fill = 0.010000000475
 
 [node name="earth" type="Node3D" unique_id=1975713936]
 script = ExtResource("1_cwnmv")
@@ -33,3 +58,8 @@ speed = 0.2
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1264017003]
 mesh = SubResource("SphereMesh_cwnmv")
 surface_material_override/0 = SubResource("ShaderMaterial_pa0cx")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=539177]
+transform = Transform3D(1, 0, 0, 0, 0.05, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_xbhfj")
+surface_material_override/0 = SubResource("ShaderMaterial_fnp8i")

@@ -15,6 +15,31 @@ ambient_light_color = Color(1, 1, 1, 1)
 volumetric_fog_density = 0.0
 volumetric_fog_emission_energy = 0.0
 
+[sub_resource type="Gradient" id="Gradient_dba1v"]
+offsets = PackedFloat32Array(0.21967213, 0.41967213, 0.6262295, 0.80655736)
+colors = PackedColorArray(0.22745098, 0, 0.1254902, 1, 0.4375038, 0.36667654, 0, 1, 0, 0.06666667, 0.60784316, 1, 0.18084261, 1.5792902e-07, 3.008172e-08, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_pnv6h"]
+seed = 4
+frequency = 0.0125
+offset = Vector3(-660.19, -233.01, 0)
+fractal_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2gg5g"]
+noise = SubResource("FastNoiseLite_pnv6h")
+color_ramp = SubResource("Gradient_dba1v")
+in_3d_space = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rpljx"]
+albedo_texture = SubResource("NoiseTexture2D_2gg5g")
+metallic = 0.44
+metallic_specular = 0.0
+roughness = 0.94
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_m2xqg"]
+material = SubResource("StandardMaterial3D_rpljx")
+size = Vector2(150, 275)
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uc6tr"]
 emission_shape = 3
 emission_box_extents = Vector3(70, 0, 0)
@@ -44,8 +69,13 @@ shadow_enabled = true
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1430056658]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 20, 0)
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=501644394]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -170, 0)
+mesh = SubResource("PlaneMesh_m2xqg")
+
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=1897043367]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -150, -130)
+visible = false
 amount = 200
 lifetime = 360.0
 preprocess = 360.0
@@ -72,18 +102,17 @@ spawn_interval_1 = 12.0
 asteroid_speed_1 = 8.0
 scale_1 = 1.5
 y_2 = -15.0
-spawn_interval_2 = 7.0
-asteroid_speed_2 = 1.5
+spawn_interval_2 = 4.0
+asteroid_speed_2 = 3.0
 scale_2 = 0.8
 y_3 = -20.0
-spawn_interval_3 = 17.0
+spawn_interval_3 = 12.0
 asteroid_speed_3 = 0.5
 scale_3 = 0.3
 preprocess_time = 600.0
 
 [node name="earth" parent="." unique_id=1944613414 instance=ExtResource("5_3vxff")]
-transform = Transform3D(0.9848077, 0.17364816, 0, -0.17364818, 0.98480767, 0, 0, 0, 1, 25, -80, -18)
-script = null
+transform = Transform3D(0.725, 0, 0, 0, 0.47754985, 0.5455009, 0, -0.5455009, 0.47754985, 25, -80, -18)
 
 [node name="Player" parent="." unique_id=1811810025 instance=ExtResource("4_n40md")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.94)

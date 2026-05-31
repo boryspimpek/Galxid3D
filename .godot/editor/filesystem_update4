@@ -1,2 +1,3 @@
-res://3dworld.tscn
+res://scenes/planets/earth.tscn
 res://scenes/planets/planet.gdshader
+res://3dworld.tscn
