@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c0rjf6bfsduht"]
 
+[ext_resource type="PackedScene" uid="uid://dcg8vcl7rmst4" path="res://NoiseBackground.tscn" id="1_pnv6h"]
 [ext_resource type="Script" uid="uid://cmxovjxejqgik" path="res://scenes/planets/PlanetSpawner.gd" id="1_uc6tr"]
 [ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="4_n40md"]
 [ext_resource type="PackedScene" uid="uid://c1pq466qvcqtm" path="res://scenes/planets/earth.tscn" id="5_3vxff"]
@@ -15,49 +16,27 @@ ambient_light_color = Color(1, 1, 1, 1)
 volumetric_fog_density = 0.0
 volumetric_fog_emission_energy = 0.0
 
-[sub_resource type="Gradient" id="Gradient_dba1v"]
-offsets = PackedFloat32Array(0.21967213, 0.41967213, 0.6262295, 0.80655736)
-colors = PackedColorArray(0.22745098, 0, 0.1254902, 1, 0.4375038, 0.36667654, 0, 1, 0, 0.06666667, 0.60784316, 1, 0.18084261, 1.5792902e-07, 3.008172e-08, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_pnv6h"]
-seed = 4
-frequency = 0.0125
-offset = Vector3(-660.19, -233.01, 0)
-fractal_type = 0
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2gg5g"]
-noise = SubResource("FastNoiseLite_pnv6h")
-color_ramp = SubResource("Gradient_dba1v")
-in_3d_space = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rpljx"]
-albedo_texture = SubResource("NoiseTexture2D_2gg5g")
-metallic = 0.44
-metallic_specular = 0.0
-roughness = 0.94
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_m2xqg"]
-material = SubResource("StandardMaterial3D_rpljx")
-size = Vector2(150, 275)
-
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uc6tr"]
 emission_shape = 3
-emission_box_extents = Vector3(70, 0, 0)
+emission_box_extents = Vector3(9, 0, 0)
 direction = Vector3(0, 0, 0)
 spread = 0.0
-initial_velocity_min = 1.5
-initial_velocity_max = 1.5
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
 gravity = Vector3(0, 0, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vshm1"]
 shading_mode = 0
+albedo_color = Color(1, 1, 0, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_lp3by"]
 material = SubResource("StandardMaterial3D_vshm1")
-size = Vector2(0.4, 0.4)
+size = Vector2(0.02, 0.4)
 orientation = 1
 
 [node name="Game" type="Node3D" unique_id=616589222]
+
+[node name="MeshInstance3D2" parent="." unique_id=697593384 instance=ExtResource("1_pnv6h")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2090551855]
 environment = SubResource("Environment_vshm1")
@@ -69,16 +48,11 @@ shadow_enabled = true
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1430056658]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 20, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=501644394]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -170, 0)
-mesh = SubResource("PlaneMesh_m2xqg")
-
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=1897043367]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -150, -130)
-visible = false
-amount = 200
-lifetime = 360.0
-preprocess = 360.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -9)
+amount = 5
+lifetime = 1.5999999999999999
+preprocess = 60.0
 process_material = SubResource("ParticleProcessMaterial_uc6tr")
 draw_pass_1 = SubResource("QuadMesh_lp3by")
 
