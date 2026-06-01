@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyPath.gd" id="13_fjwqu"]
 [ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="14_ruler"]
 [ext_resource type="Script" uid="uid://dt670oushtj6" path="res://scenes/world/HorizontalViewShift.gd" id="15_viewshift"]
-[ext_resource type="PackedScene" uid="uid://bqx7galaxidhud" path="res://scenes/ui/Hud.tscn" id="16_hud"]
+[ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="16_hud"]
 
 [sub_resource type="Environment" id="Environment_vshm1"]
 background_mode = 1
@@ -109,7 +109,7 @@ transform = Transform3D(0.725, 0, 0, 0, 0.47754982, 0.5455009, 0, -0.5455009, 0.
 [node name="Player" parent="." unique_id=1811810025 instance=ExtResource("4_n40md")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.94)
 
-[node name="Hud" parent="." instance=ExtResource("16_hud")]
+[node name="Hud" parent="." unique_id=1969495067 instance=ExtResource("16_hud")]
 
 [node name="LevelScroll" type="Node3D" parent="." unique_id=1395802397]
 script = ExtResource("7_scroll")

@@ -43,8 +43,8 @@ res://scenes/player/ShieldSystem.tscn::e3444b212e6f63c1480335d8f3e23070::1779131
 res://scenes/player/WeaponSystem.tscn::b51032d79b00ea281868efda9e151ad5::1779131093::res://.godot/exported/133200997/export-eef44eb320987654286e1653e7352728-WeaponSystem.scn
 res://scenes/projectile/Projectile.tscn::9f3034634814d731462cbed1ac71fcfd::1779977138::res://.godot/exported/133200997/export-d51b6ad9e18066cc7ea8055c0639a43b-Projectile.scn
 res://trailmesh/example/ExampleScene.tscn::60e2796d4979f30ebe5c21950737f8bc::1779793320::res://.godot/exported/133200997/export-d1112f1d2c7c929b9c04e0ca681e4dae-ExampleScene.scn
-res://3dworld.tscn::a8579a499e2b093fe3238ccf0adeb18b::1780330450::res://.godot/exported/133200997/export-37e875acfa77dccf473348a8829cfa46-3dworld.scn
-res://default_bus_layout.tres::1397cd65f4efa7e0d547c0ec248d0b16::1780318004::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
+res://3dworld.tscn::e26a57d53f58f71181805e289b08ce04::1780332288::res://.godot/exported/133200997/export-37e875acfa77dccf473348a8829cfa46-3dworld.scn
+res://default_bus_layout.tres::d952f500c5b09ada98b47117cf4ba97f::1780332280::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
 res://scenes/debug/PlayAreaFrame.tscn::8a84de7f631e07005d6e70671dfb452c::1779980427::res://.godot/exported/133200997/export-60f130f43cd0a34daf493c6300271137-PlayAreaFrame.scn
 res://scenes/explosions/explode2.tscn::6cc6b50b315faf9b7010184f62b86045::1779976073::res://.godot/exported/133200997/export-6155def951c17524d84e46b9fcc8525b-explode2.scn
 res://scenes/explosions/explode3.tscn::01b40693ab10c06640d6698ae790c995::1779978610::res://.godot/exported/133200997/export-bc0e9ba178e3addb9da326f496411226-explode3.scn
@@ -66,7 +66,7 @@ res://scenes/asteroids/asteroid_7.tscn::b57c4a8278d6cd1ad11d1e1ad039db43::178020
 res://scenes/asteroids/simple_asteroid.tscn::3b7f64af62a2974460e274d8e5c573b6::1780162223::res://.godot/exported/133200997/export-2123c1a15f5e34abd1eba047294d9a59-simple_asteroid.scn
 res://scenes/enemies/blaze.tscn::f9caf05b67074997eb41a527a39f8510::1780238091::res://.godot/exported/133200997/export-fe4152ee334bf5f5cc59c009bc2cfa81-blaze.scn
 res://scenes/enemies/blaze_model.tscn::55ab8e6cd4dc41a315e64486a2ba83db::1780236774::res://.godot/exported/133200997/export-a6c738122699ad6c4634eb9e51be35f1-blaze_model.scn
-res://scenes/enemies/blaze_2_model.tscn::b6683fe1bf6eb59cff1cd37de8e89789::1780237777::res://.godot/exported/133200997/export-0853798cb50c4342e9c5e25d8fbd6541-blaze_2_model.scn
+res://scenes/enemies/blaze_2_model.tscn::b44d23de0a29b9901076019ff5f57e68::1780332156::res://.godot/exported/133200997/export-0853798cb50c4342e9c5e25d8fbd6541-blaze_2_model.scn
 res://scenes/enemies/blaze_2.tscn::17451e2744833666e78d3d85822b1a94::1780330524::res://.godot/exported/133200997/export-5a36f7e6d130c03c739fdd3caec0cf1b-blaze_2.scn
 res://NoiseBackground.tscn::8d091f9bcf74c1e939019037a5e0b7ea::1780234976::res://.godot/exported/133200997/export-b15bc41f9a1723af9799c1ac614ff0f1-NoiseBackground.scn
 res://scenes/enemies/blaze_3_model.tscn::2bec8d0ecc571b281be8941711b56691::1780238062::res://.godot/exported/133200997/export-8eebec598be4f023fd6f14b7debd2643-blaze_3_model.scn
@@ -78,3 +78,4 @@ res://scenes/enemies/blaze_5.tscn::48323b90f3ec1beeeb6e1e05b23136d9::1780238755:
 res://scenes/debug/LevelScrollRuler.tscn::4b25ed213d5d0f52fa43d6e1f73d7061::1780315708::res://.godot/exported/133200997/export-1aff1a6b87ec0f04014eb9e4a36dc494-LevelScrollRuler.scn
 res://scenes/enemies/starfighter.tscn::6e1d6dbc61a04b01011c2ee6401625b2::1780330486::res://.godot/exported/133200997/export-37d2be0f4f33b8edf030c5098b276fc3-starfighter.scn
 res://scenes/enemies/starfighter_model.tscn::48ebe24798cc8f0d0cd71757672abdf2::1780320394::res://.godot/exported/133200997/export-3dccb5c1cd6df211938c55b054403a4a-starfighter_model.scn
+res://scenes/ui/Hud.tscn::ef59a3e958c9c1c66e26e0bfd3239637::1780331602::res://.godot/exported/133200997/export-238d2d95588b0f33aac9dbb4f6518388-Hud.scn

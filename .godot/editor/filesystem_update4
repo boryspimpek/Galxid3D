@@ -9,3 +9,5 @@ res://scenes/enemy/Enemy.gd
 res://scenes/enemy/EnemyPath.gd
 res://scenes/world/LevelScroll3D.gd
 res://scenes/ui/Hud.gd
+res://scenes/enemies/blaze_2_model.tscn
+res://default_bus_layout.tres
