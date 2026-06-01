@@ -8,3 +8,4 @@ res://scenes/enemies/blaze_2.tscn
 res://scenes/enemy/Enemy.gd
 res://scenes/enemy/EnemyPath.gd
 res://scenes/world/LevelScroll3D.gd
+res://scenes/ui/Hud.gd

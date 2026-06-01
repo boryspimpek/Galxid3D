@@ -1,0 +1,166 @@
+[gd_scene load_steps=8 format=3 uid="uid://bqx7galaxidhud"]
+
+[ext_resource type="Script" path="res://scenes/ui/Hud.gd" id="1_hud"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_track"]
+bg_color = Color(0.05, 0.08, 0.14, 0.75)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.35, 0.55, 0.85, 0.5)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_health"]
+bg_color = Color(0.15, 0.85, 0.35, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_energy"]
+bg_color = Color(0.25, 0.75, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shield"]
+bg_color = Color(0.72, 0.45, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_title"]
+font_size = 22
+font_color = Color(0.85, 0.92, 1, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 0.85)
+
+[sub_resource type="LabelSettings" id="LabelSettings_value"]
+font_size = 18
+font_color = Color(0.9, 0.95, 1, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 0.8)
+
+[node name="Hud" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_hud")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TopBar" type="MarginContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 162.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 36
+
+[node name="Bars" type="VBoxContainer" parent="Root/TopBar"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HealthRow" type="HBoxContainer" parent="Root/TopBar/Bars"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HealthTitle" type="Label" parent="Root/TopBar/Bars/HealthRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+text = "Życie"
+label_settings = SubResource("LabelSettings_title")
+
+[node name="HealthBar" type="ProgressBar" parent="Root/TopBar/Bars/HealthRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_track")
+theme_override_styles/fill = SubResource("StyleBoxFlat_health")
+max_value = 10.0
+value = 10.0
+show_percentage = false
+
+[node name="HealthValue" type="Label" parent="Root/TopBar/Bars/HealthRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "10 / 10"
+label_settings = SubResource("LabelSettings_value")
+horizontal_alignment = 2
+
+[node name="ShieldRow" type="HBoxContainer" parent="Root/TopBar/Bars"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ShieldTitle" type="Label" parent="Root/TopBar/Bars/ShieldRow"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+text = "Tarcza"
+label_settings = SubResource("LabelSettings_title")
+
+[node name="ShieldBar" type="ProgressBar" parent="Root/TopBar/Bars/ShieldRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_track")
+theme_override_styles/fill = SubResource("StyleBoxFlat_shield")
+max_value = 100.0
+value = 100.0
+show_percentage = false
+
+[node name="ShieldValue" type="Label" parent="Root/TopBar/Bars/ShieldRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "0 / 0"
+label_settings = SubResource("LabelSettings_value")
+horizontal_alignment = 2
+
+[node name="EnergyRow" type="HBoxContainer" parent="Root/TopBar/Bars"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="EnergyTitle" type="Label" parent="Root/TopBar/Bars/EnergyRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+text = "Energia"
+label_settings = SubResource("LabelSettings_title")
+
+[node name="EnergyBar" type="ProgressBar" parent="Root/TopBar/Bars/EnergyRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_track")
+theme_override_styles/fill = SubResource("StyleBoxFlat_energy")
+max_value = 900.0
+value = 900.0
+show_percentage = false
+
+[node name="EnergyValue" type="Label" parent="Root/TopBar/Bars/EnergyRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "900 / 900"
+label_settings = SubResource("LabelSettings_value")
+horizontal_alignment = 2
