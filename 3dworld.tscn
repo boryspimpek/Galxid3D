@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ceb36gc6o5uvc" path="res://scenes/enemies/starfighter.tscn" id="10_rpljx"]
 [ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyPath.gd" id="13_fjwqu"]
 [ext_resource type="PackedScene" path="res://scenes/debug/LevelScrollRuler.tscn" id="14_ruler"]
+[ext_resource type="Script" path="res://scenes/world/HorizontalViewShift.gd" id="15_viewshift"]
 
 [sub_resource type="Environment" id="Environment_vshm1"]
 background_mode = 1
@@ -1501,16 +1502,342 @@ shading_mode = 0
 albedo_color = Color(0.5, 0.85, 1, 0.9)
 disable_receive_shadows = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yi6uw"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.35, 0.75, 1, 0.75)
+disable_receive_shadows = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_xl2te"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8j6rx"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.2, 1, 0.4, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53ot6"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0.95, 0.5, 0.95)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gha05"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u77t7"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_utst2"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4cv2x"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sk0ql"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0.95, 0.5, 0.95)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ki74f"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_da8u7"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2pkmn"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ai7yc"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4hh16"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0.95, 0.5, 0.95)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_biklt"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jwo0v"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jt64r"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ewfn1"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qsoqm"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0.95, 0.5, 0.95)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xiym3"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uh2uf"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mgtpe"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sox2u"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b184d"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0.95, 0.5, 0.95)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qmbka"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obtaw"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l6tw4"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgn7r"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q2f4h"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0.95, 0.5, 0.95)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ft7xb"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_84h06"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ibppx"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7gn7n"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4qq8k"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0.95, 0.5, 0.95)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fl6ji"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ebptp"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4mrrw"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mjowa"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_frh0w"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0.95, 0.5, 0.95)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npgkv"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fc7n4"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_acb7l"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xt11o"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ms852"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0.95, 0.5, 0.95)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_55vsj"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70mu4"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gtlgh"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btm4f"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7oiq"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0.95, 0.5, 0.95)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lu4ul"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vlgab"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_86neh"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t8vsw"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fkyr3"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0.45, 0.35, 1)
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yun7j"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.5, 0.85, 1, 0.9)
+disable_receive_shadows = true
+
 [sub_resource type="Curve3D" id="Curve3D_y8ijg"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -12.992178, 0, 0.09770012, 0, 0, 0, 0, 0, 0, -0.015192509, 0, 0.06589699, 0, 0, -0.14877129, 0, 0, 0.14877129, 0.061929703, 0, 7.2423325, -1.0033455, 0, -3.423172, 1.0033455, 0, 3.423172, 6.400284, 0, 10.621048, 0, 0, 0, 0, 0, 0, 6.7962255, 0, 38.886887),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -12.992178, 0, 0.09770012, 0, 0, 0, 0, 0, 0, -0.015192509, 0, 0.06589699, 0, 0, -0.14877129, 0, 0, 0.14877129, 0.061929703, 0, 7.2423325, -1.0033455, 0, -3.423172, 1.0033455, 0, 3.423172, 11.579514, 0, 10.017986, 0, 0, 0, 0, 0, 0, 10.912255, 0, 37.431324),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
 
 [sub_resource type="Curve3D" id="Curve3D_fjwqu"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 13.055168, 0, 0.053913116, 0, 0, 0, 0, 0, 0, 0.045743942, 0, 0.04574585, 0, 0, 0, 0, 0, 0, -0.0046391487, 0, 6.3302193, 1.5318527, 0, -3.7338943, -1.5318527, 0, 3.7338943, -5.6729755, 0, 11.158798, 0, 0, 0, 0, 0, 0, -6.5952024, 0, 39.028408),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 13.055168, 0, 0.053913116, 0, 0, 0, 0, 0, 0, 0.045743942, 0, 0.04574585, 0, 0, 0, 0, 0, 0, -0.0046391487, 0, 6.3302193, 1.5318527, 0, -3.7338943, -1.5318527, 0, 3.7338943, -8.069998, 0, 11.484488, 0, 0, 0, 0, 0, 0, -6.5952024, 0, 39.028408),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
@@ -1524,21 +1851,21 @@ point_count = 5
 
 [sub_resource type="Curve3D" id="Curve3D_m2xqg"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 13.055168, 0, 0.053913116, 0, 0, 0, 0, 0, 0, 0.045743942, 0, 0.04574585, 0, 0, 0, 0, 0, 0, -0.0046391487, 0, 6.3302193, 1.5318527, 0, -3.7338943, -1.5318527, 0, 3.7338943, -5.6729755, 0, 11.158798, 0, 0, 0, 0, 0, 0, -6.5952024, 0, 39.028408),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 13.055168, 0, 0.053913116, 0, 0, 0, 0, 0, 0, 0.045743942, 0, 0.04574585, 0, 0, 0, 0, 0, 0, -0.0046391487, 0, 6.3302193, 1.5318527, 0, -3.7338943, -1.5318527, 0, 3.7338943, -10.480461, 0, 11.849457, 0, 0, 0, 0, 0, 0, -10.014317, 0, 39.740303),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
 
 [sub_resource type="Curve3D" id="Curve3D_2gg5g"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -13.022745, 0, 0.06391907, 0, 0, 0, 0, 0, 0, 0.045743942, 0, 0.04574585, 0, 0, 0, 0, 0, 0, 0.020104408, 0, 21.460068, 0.05004692, 0, 10.159531, -0.05004692, 0, -10.159531, 17.276245, 0, 15.902191, 0, 0, 0, 0, 0, 0, -4.192747, 0, 10.607285),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -13.022745, 0, 0.06391907, 0, 0, 0, 0, 0, 0, 0.045743942, 0, 0.04574585, 0, 0, 0, 0, 0, 0, 0.17673683, 0, 21.423504, 0.05004692, 0, 10.159531, -0.05004692, 0, -10.159531, 20.997757, 0, 15.752106, 0, 0, 0, 0, 0, 0, -4.192747, 0, 10.607285),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
 
 [sub_resource type="Curve3D" id="Curve3D_fql1y"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -12.992178, 0, 0.09770012, 0, 0, 0, 0, 0, 0, -0.015192509, 0, 0.06589699, 0, 0, -0.14877129, 0, 0, 0.14877129, 0.061929703, 0, 7.2423325, -1.0033455, 0, -3.423172, 1.0033455, 0, 3.423172, 6.400284, 0, 10.621048, 0, 0, 0, 0, 0, 0, 6.7962255, 0, 38.886887),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -12.992178, 0, 0.09770012, 0, 0, 0, 0, 0, 0, -0.015192509, 0, 0.06589699, 0, 0, -0.14877129, 0, 0, 0.14877129, 0.061929703, 0, 7.2423325, -1.0033455, 0, -3.423172, 1.0033455, 0, 3.423172, 12.540971, 0, 10.014641, 0, 0, 0, 0, 0, 0, 10.366139, 0, 39.103043),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
@@ -1561,6 +1888,9 @@ shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1430056658]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 20, 0)
+
+[node name="HorizontalViewShift" type="Node3D" parent="." unique_id=1535569705]
+script = ExtResource("15_viewshift")
 
 [node name="NoiseBackground" parent="." unique_id=697593384 instance=ExtResource("1_pnv6h")]
 
@@ -6478,8 +6808,1080 @@ text = "Z 10"
 font_size = 48
 outline_size = 8
 
+[node name="@Node3D@124662" type="Node3D" parent="LevelScroll/LevelScrollRuler" unique_id=1485161234]
+
+[node name="@MeshInstance3D@124663" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1666002162]
+transform = Transform3D(0.08, 0, 0, 0, 0.04, 0, 0, 0, 514.45, -8.71, 0.02, -242.775)
+material_override = SubResource("StandardMaterial3D_yi6uw")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124664" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1539790964]
+transform = Transform3D(0.08, 0, 0, 0, 0.04, 0, 0, 0, 514.45, 8.71, 0.02, -242.775)
+material_override = SubResource("StandardMaterial3D_yi6uw")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124665" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1774041705]
+transform = Transform3D(0.08, 0, 0, 0, 0.04, 0, 0, 0, 30.9, -8.71, 0.02, 0)
+material_override = SubResource("StandardMaterial3D_8j6rx")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124666" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1054433379]
+transform = Transform3D(0.08, 0, 0, 0, 0.04, 0, 0, 0, 30.9, 8.71, 0.02, 0)
+material_override = SubResource("StandardMaterial3D_8j6rx")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124667" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=477741066]
+transform = Transform3D(17.42, 0, 0, 0, 0.04, 0, 0, 0, 0.08, 0, 0.02, 15.41)
+material_override = SubResource("StandardMaterial3D_8j6rx")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124668" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1302050361]
+transform = Transform3D(17.42, 0, 0, 0, 0.04, 0, 0, 0, 0.08, 0, 0.02, -15.41)
+material_override = SubResource("StandardMaterial3D_8j6rx")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124669" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=279848698]
+transform = Transform3D(0.56, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -500)
+material_override = SubResource("StandardMaterial3D_53ot6")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124670" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=283319431]
+transform = Transform3D(0.56, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -500)
+material_override = SubResource("StandardMaterial3D_53ot6")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124671" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1610206175]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -500)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -500"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124672" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1465322662]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -490)
+material_override = SubResource("StandardMaterial3D_gha05")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124673" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1952261729]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -490)
+material_override = SubResource("StandardMaterial3D_gha05")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124674" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=569674884]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -490)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -490"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124675" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1605621474]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -480)
+material_override = SubResource("StandardMaterial3D_u77t7")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124676" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1232098448]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -480)
+material_override = SubResource("StandardMaterial3D_u77t7")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124677" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=452218549]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -480)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -480"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124678" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1559428333]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -470)
+material_override = SubResource("StandardMaterial3D_utst2")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124679" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=601951689]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -470)
+material_override = SubResource("StandardMaterial3D_utst2")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124680" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=6087767]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -470)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -470"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124681" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1571485217]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -460)
+material_override = SubResource("StandardMaterial3D_4cv2x")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124682" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=539487006]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -460)
+material_override = SubResource("StandardMaterial3D_4cv2x")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124683" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=830367068]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -460)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -460"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124684" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1107653484]
+transform = Transform3D(0.56, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -450)
+material_override = SubResource("StandardMaterial3D_sk0ql")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124685" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1158551249]
+transform = Transform3D(0.56, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -450)
+material_override = SubResource("StandardMaterial3D_sk0ql")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124686" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=2031899222]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -450)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -450"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124687" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=2085268364]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -440)
+material_override = SubResource("StandardMaterial3D_ki74f")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124688" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=56215511]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -440)
+material_override = SubResource("StandardMaterial3D_ki74f")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124689" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=882546895]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -440)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -440"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124690" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=858921219]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -430)
+material_override = SubResource("StandardMaterial3D_da8u7")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124691" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=2124540357]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -430)
+material_override = SubResource("StandardMaterial3D_da8u7")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124692" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1492417174]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -430)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -430"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124693" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=2058521352]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -420)
+material_override = SubResource("StandardMaterial3D_2pkmn")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124694" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=2001159893]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -420)
+material_override = SubResource("StandardMaterial3D_2pkmn")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124695" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1088260563]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -420)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -420"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124696" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=967829739]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -410)
+material_override = SubResource("StandardMaterial3D_ai7yc")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124697" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1067923699]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -410)
+material_override = SubResource("StandardMaterial3D_ai7yc")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124698" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=527892374]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -410)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -410"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124699" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=834386666]
+transform = Transform3D(0.56, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -400)
+material_override = SubResource("StandardMaterial3D_4hh16")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124700" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=310299723]
+transform = Transform3D(0.56, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -400)
+material_override = SubResource("StandardMaterial3D_4hh16")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124701" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1462547040]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -400)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -400"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124702" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=459763672]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -390)
+material_override = SubResource("StandardMaterial3D_biklt")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124703" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1937329273]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -390)
+material_override = SubResource("StandardMaterial3D_biklt")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124704" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1343139092]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -390)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -390"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124705" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=2097667208]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -380)
+material_override = SubResource("StandardMaterial3D_jwo0v")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124706" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1442010822]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -380)
+material_override = SubResource("StandardMaterial3D_jwo0v")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124707" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=874834299]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -380)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -380"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124708" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1541496841]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -370)
+material_override = SubResource("StandardMaterial3D_jt64r")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124709" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=205659918]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -370)
+material_override = SubResource("StandardMaterial3D_jt64r")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124710" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1156128141]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -370)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -370"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124711" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1349635809]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -360)
+material_override = SubResource("StandardMaterial3D_ewfn1")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124712" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=264755207]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -360)
+material_override = SubResource("StandardMaterial3D_ewfn1")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124713" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1054363671]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -360)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -360"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124714" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=401049874]
+transform = Transform3D(0.56, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -350)
+material_override = SubResource("StandardMaterial3D_qsoqm")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124715" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1111737101]
+transform = Transform3D(0.56, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -350)
+material_override = SubResource("StandardMaterial3D_qsoqm")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124716" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1562019603]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -350)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -350"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124717" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=777826341]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -340)
+material_override = SubResource("StandardMaterial3D_xiym3")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124718" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1924343507]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -340)
+material_override = SubResource("StandardMaterial3D_xiym3")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124719" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=898194306]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -340)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -340"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124720" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1492015575]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -330)
+material_override = SubResource("StandardMaterial3D_uh2uf")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124721" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=492983746]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -330)
+material_override = SubResource("StandardMaterial3D_uh2uf")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124722" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=757259629]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -330)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -330"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124723" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=342100765]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -320)
+material_override = SubResource("StandardMaterial3D_mgtpe")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124724" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=907346205]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -320)
+material_override = SubResource("StandardMaterial3D_mgtpe")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124725" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1397129428]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -320)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -320"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124726" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=829365651]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -310)
+material_override = SubResource("StandardMaterial3D_sox2u")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124727" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1569855011]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -310)
+material_override = SubResource("StandardMaterial3D_sox2u")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124728" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=733535214]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -310)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -310"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124729" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=879568169]
+transform = Transform3D(0.56, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -300)
+material_override = SubResource("StandardMaterial3D_b184d")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124730" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=663818266]
+transform = Transform3D(0.56, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -300)
+material_override = SubResource("StandardMaterial3D_b184d")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124731" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1549149414]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -300)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -300"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124732" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=182231364]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -290)
+material_override = SubResource("StandardMaterial3D_qmbka")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124733" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=387860230]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -290)
+material_override = SubResource("StandardMaterial3D_qmbka")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124734" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1755919584]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -290)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -290"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124735" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1673418210]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -280)
+material_override = SubResource("StandardMaterial3D_obtaw")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124736" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=417622851]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -280)
+material_override = SubResource("StandardMaterial3D_obtaw")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124737" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1852309216]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -280)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -280"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124738" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=264777091]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -270)
+material_override = SubResource("StandardMaterial3D_l6tw4")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124739" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=794294346]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -270)
+material_override = SubResource("StandardMaterial3D_l6tw4")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124740" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=2145334433]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -270)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -270"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124741" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1089185585]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -260)
+material_override = SubResource("StandardMaterial3D_wgn7r")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124742" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=935181620]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -260)
+material_override = SubResource("StandardMaterial3D_wgn7r")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124743" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=94067121]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -260)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -260"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124744" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=2109661219]
+transform = Transform3D(0.56, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -250)
+material_override = SubResource("StandardMaterial3D_q2f4h")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124745" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1629851207]
+transform = Transform3D(0.56, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -250)
+material_override = SubResource("StandardMaterial3D_q2f4h")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124746" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=603458302]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -250)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -250"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124747" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=2126361567]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -240)
+material_override = SubResource("StandardMaterial3D_ft7xb")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124748" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1534498062]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -240)
+material_override = SubResource("StandardMaterial3D_ft7xb")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124749" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1279369522]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -240)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -240"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124750" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=249627937]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -230)
+material_override = SubResource("StandardMaterial3D_84h06")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124751" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1575163421]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -230)
+material_override = SubResource("StandardMaterial3D_84h06")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124752" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=140228057]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -230)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -230"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124753" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=529018690]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -220)
+material_override = SubResource("StandardMaterial3D_ibppx")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124754" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1690716039]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -220)
+material_override = SubResource("StandardMaterial3D_ibppx")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124755" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1957714228]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -220)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -220"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124756" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=154811909]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -210)
+material_override = SubResource("StandardMaterial3D_7gn7n")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124757" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=184554588]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -210)
+material_override = SubResource("StandardMaterial3D_7gn7n")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124758" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=188138101]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -210)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -210"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124759" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=554703863]
+transform = Transform3D(0.56, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -200)
+material_override = SubResource("StandardMaterial3D_4qq8k")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124760" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1443489196]
+transform = Transform3D(0.56, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -200)
+material_override = SubResource("StandardMaterial3D_4qq8k")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124761" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1651010543]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -200)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -200"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124762" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1277529368]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -190)
+material_override = SubResource("StandardMaterial3D_fl6ji")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124763" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=572819421]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -190)
+material_override = SubResource("StandardMaterial3D_fl6ji")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124764" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1906272975]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -190)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -190"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124765" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=583279236]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -180)
+material_override = SubResource("StandardMaterial3D_ebptp")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124766" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=265892097]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -180)
+material_override = SubResource("StandardMaterial3D_ebptp")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124767" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=570870626]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -180)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -180"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124768" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=668260005]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -170)
+material_override = SubResource("StandardMaterial3D_4mrrw")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124769" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=885690155]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -170)
+material_override = SubResource("StandardMaterial3D_4mrrw")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124770" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=2145556674]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -170)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -170"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124771" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1784546401]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -160)
+material_override = SubResource("StandardMaterial3D_mjowa")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124772" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1649260579]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -160)
+material_override = SubResource("StandardMaterial3D_mjowa")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124773" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=151554367]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -160)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -160"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124774" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1118267262]
+transform = Transform3D(0.56, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -150)
+material_override = SubResource("StandardMaterial3D_frh0w")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124775" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=901757784]
+transform = Transform3D(0.56, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -150)
+material_override = SubResource("StandardMaterial3D_frh0w")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124776" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1534360633]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -150)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -150"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124777" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1749120680]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -140)
+material_override = SubResource("StandardMaterial3D_npgkv")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124778" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=221721599]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -140)
+material_override = SubResource("StandardMaterial3D_npgkv")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124779" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1010451760]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -140)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -140"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124780" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1716177160]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -130)
+material_override = SubResource("StandardMaterial3D_fc7n4")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124781" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=397660639]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -130)
+material_override = SubResource("StandardMaterial3D_fc7n4")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124782" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1646859838]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -130)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -130"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124783" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1939286370]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -120)
+material_override = SubResource("StandardMaterial3D_acb7l")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124784" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=645925091]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -120)
+material_override = SubResource("StandardMaterial3D_acb7l")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124785" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=813386510]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -120)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -120"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124786" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=979626134]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -110)
+material_override = SubResource("StandardMaterial3D_xt11o")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124787" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=53713220]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -110)
+material_override = SubResource("StandardMaterial3D_xt11o")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124788" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=423400927]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -110)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -110"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124789" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1377176607]
+transform = Transform3D(0.56, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -100)
+material_override = SubResource("StandardMaterial3D_ms852")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124790" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1921001041]
+transform = Transform3D(0.56, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -100)
+material_override = SubResource("StandardMaterial3D_ms852")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124791" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=482719167]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -100)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -100"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124792" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1264691376]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -90)
+material_override = SubResource("StandardMaterial3D_55vsj")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124793" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=375471774]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -90)
+material_override = SubResource("StandardMaterial3D_55vsj")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124794" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1860118520]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -90)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -90"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124795" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=192288021]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -80)
+material_override = SubResource("StandardMaterial3D_70mu4")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124796" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=112126503]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -80)
+material_override = SubResource("StandardMaterial3D_70mu4")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124797" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=683955144]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -80)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -80"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124798" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1393797869]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -70)
+material_override = SubResource("StandardMaterial3D_gtlgh")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124799" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1620479578]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -70)
+material_override = SubResource("StandardMaterial3D_gtlgh")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124800" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=2012718196]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -70)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -70"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124801" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=284400025]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -60)
+material_override = SubResource("StandardMaterial3D_btm4f")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124802" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=74005273]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -60)
+material_override = SubResource("StandardMaterial3D_btm4f")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124803" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1947912224]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -60)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -60"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124804" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=235041753]
+transform = Transform3D(0.56, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -50)
+material_override = SubResource("StandardMaterial3D_w7oiq")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124805" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1731742880]
+transform = Transform3D(0.56, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -50)
+material_override = SubResource("StandardMaterial3D_w7oiq")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124806" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=69311139]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -50)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -50"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124807" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1746444166]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -40)
+material_override = SubResource("StandardMaterial3D_lu4ul")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124808" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1131927520]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -40)
+material_override = SubResource("StandardMaterial3D_lu4ul")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124809" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=361818324]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -40)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -40"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124810" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1387272275]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -30)
+material_override = SubResource("StandardMaterial3D_vlgab")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124811" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1126509788]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -30)
+material_override = SubResource("StandardMaterial3D_vlgab")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124812" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=630580497]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -30)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -30"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124813" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1750684079]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -20)
+material_override = SubResource("StandardMaterial3D_86neh")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124814" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=240620899]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -20)
+material_override = SubResource("StandardMaterial3D_86neh")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124815" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=279396405]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -20)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -20"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124816" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=94089944]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, -10)
+material_override = SubResource("StandardMaterial3D_t8vsw")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124817" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1862604268]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, -10)
+material_override = SubResource("StandardMaterial3D_t8vsw")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124818" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1621286682]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, -10)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z -10"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124819" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1067432273]
+transform = Transform3D(0.56, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, 0)
+material_override = SubResource("StandardMaterial3D_fkyr3")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124820" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=1182191337]
+transform = Transform3D(0.56, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, 0)
+material_override = SubResource("StandardMaterial3D_fkyr3")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124821" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=377212347]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, 0)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z 0"
+font_size = 48
+outline_size = 8
+
+[node name="@MeshInstance3D@124822" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=12346323]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, -8.75, 0.02, 10)
+material_override = SubResource("StandardMaterial3D_yun7j")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@MeshInstance3D@124823" type="MeshInstance3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=369527099]
+transform = Transform3D(0.35, 0, 0, 0, 0.04, 0, 0, 0, 0.048, 8.75, 0.02, 10)
+material_override = SubResource("StandardMaterial3D_yun7j")
+mesh = SubResource("BoxMesh_xl2te")
+
+[node name="@Label3D@124824" type="Label3D" parent="LevelScroll/LevelScrollRuler/@Node3D@124662" unique_id=2026064295]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.35, 0.02, 10)
+pixel_size = 0.012
+billboard = 1
+modulate = Color(0.92, 0.96, 1, 0.95)
+outline_modulate = Color(0, 0, 0, 0.85)
+text = "Z 10"
+font_size = 48
+outline_size = 8
+
 [node name="wave 1" type="Path3D" parent="LevelScroll" unique_id=866145614]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.732193, 0, -20)
 curve = SubResource("Curve3D_y8ijg")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 1" unique_id=1089041558]
@@ -6532,7 +7934,7 @@ speed = 8.0
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="wave 2" type="Path3D" parent="LevelScroll" unique_id=1020843966]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -29.995996)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.884453, 0, -29.995996)
 curve = SubResource("Curve3D_fjwqu")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 2" unique_id=711777851]
@@ -6585,7 +7987,7 @@ speed = 8.0
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="wave 3" type="Path3D" parent="LevelScroll" unique_id=1873775366]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -45.808247)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.039898, 0, -38.198074)
 curve = SubResource("Curve3D_rpljx")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 3" unique_id=2144100859]
@@ -6638,7 +8040,7 @@ speed = 8.0
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="wave 4" type="Path3D" parent="LevelScroll" unique_id=1853809397]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -67.10498)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.185299, 0, -59.070667)
 curve = SubResource("Curve3D_m2xqg")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 4" unique_id=374263603]
@@ -6691,7 +8093,7 @@ speed = 8.0
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="wave 5" type="Path3D" parent="LevelScroll" unique_id=1943859210]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -78.28793)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.506039, 0, -68.17857)
 curve = SubResource("Curve3D_2gg5g")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 5" unique_id=2135139181]
@@ -6744,7 +8146,7 @@ speed = 8.0
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="wave 6" type="Path3D" parent="LevelScroll" unique_id=1462768292]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -95.52283)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.902981, 0, -96.53121)
 curve = SubResource("Curve3D_fql1y")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 6" unique_id=1507688133]
@@ -6801,9 +8203,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.407116, 0, -34.297432)
 curve = SubResource("Curve3D_sgee4")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/Path3D" unique_id=522881538]
-transform = Transform3D(-0.9998815, 0, 0.014921394, 0, 1, 0, -0.014921394, 0, -0.9998815, 0.0071606636, 0, -0.0038108826)
+transform = Transform3D(-0.99988127, 0, 0.014921391, 0, 1, 0, -0.014921391, 0, -0.99988127, 0.0071606636, 0, -0.0038108826)
 loop = false
 script = ExtResource("13_fjwqu")
 
 [node name="starfighter" parent="LevelScroll/Path3D/PathFollow3D" unique_id=398680906 instance=ExtResource("10_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+fire_rate = 1.5
