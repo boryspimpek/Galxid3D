@@ -3,3 +3,4 @@ res://3dworld.tscn
 res://scenes/planets/planet.gdshader
 res://scenes/world/HorizontalViewShift.gd
 res://scenes/player/Player.tscn
+res://scenes/asteroids/AsteroidSpawner.gd

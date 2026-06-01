@@ -51,6 +51,10 @@ func _process(delta: float) -> void:
 		_noise_bg.position.x = _noise_base_x + _shift_x * background_parallax
 
 
+func get_shift_x() -> float:
+	return _shift_x
+
+
 func _calc_target_shift() -> float:
 	var bound_x: float = float(_player.get("max_bound_x"))
 	if bound_x <= 0.0:

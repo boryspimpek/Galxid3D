@@ -17,12 +17,16 @@ const ASTEROID_META := "asteroid"
 @export var randomize_spin: bool = true
 @export var despawn_off_screen: bool = true
 
+@export_group("Paralaksa boczna")
+@export var enable_edge_parallax: bool = true
+
 @export_group("Poziom 1")
 @export var y_1: float = -10.0
 @export var spawn_interval_1: float = 3.0
 @export var asteroid_speed_1: float = 2.0
 @export var spin_speed_1: float = 2.0
 @export_range(0.05, 2.0, 0.01) var scale_1: float = 1.0
+@export_range(0.0, 1.5, 0.01) var edge_parallax_1: float = 0.85
 
 @export_group("Poziom 2")
 @export var y_2: float = -30.0
@@ -30,6 +34,7 @@ const ASTEROID_META := "asteroid"
 @export var asteroid_speed_2: float = 2.0
 @export var spin_speed_2: float = 1.5
 @export_range(0.05, 2.0, 0.01) var scale_2: float = 0.65
+@export_range(0.0, 1.5, 0.01) var edge_parallax_2: float = 0.55
 
 @export_group("Poziom 3")
 @export var y_3: float = -50.0
@@ -37,13 +42,18 @@ const ASTEROID_META := "asteroid"
 @export var asteroid_speed_3: float = 2.0
 @export var spin_speed_3: float = 1.0
 @export_range(0.05, 2.0, 0.01) var scale_3: float = 0.35
+@export_range(0.0, 1.5, 0.01) var edge_parallax_3: float = 0.25
 
 @export var preprocess_time: float = 20.0
 
 var _spawn_timers: Array[float] = []
+var _layers: Array[Node3D] = []
+var _view_shift: Node
 
 
 func _ready() -> void:
+	_setup_layers()
+	_view_shift = get_parent().get_node_or_null("HorizontalViewShift")
 	_spawn_timers = [
 		spawn_interval_1,
 		spawn_interval_2,
@@ -52,9 +62,36 @@ func _ready() -> void:
 	_preprocess(preprocess_time)
 
 
+func _setup_layers() -> void:
+	_layers.clear()
+	for i in LEVEL_COUNT:
+		var layer := Node3D.new()
+		layer.name = "Layer%d" % (i + 1)
+		add_child(layer)
+		_layers.append(layer)
+
+
 func _process(delta: float) -> void:
+	_update_layer_parallax()
 	_tick_spawn_timers(delta)
 	_update_asteroids(delta)
+
+
+func _update_layer_parallax() -> void:
+	if not enable_edge_parallax:
+		for layer in _layers:
+			layer.position.x = 0.0
+		return
+
+	var shift_x := _get_view_shift_x()
+	for i in LEVEL_COUNT:
+		_layers[i].position.x = shift_x * _get_parallax(i)
+
+
+func _get_view_shift_x() -> float:
+	if _view_shift != null and _view_shift.has_method(&"get_shift_x"):
+		return _view_shift.get_shift_x()
+	return 0.0
 
 
 func _preprocess(time: float) -> void:
@@ -67,8 +104,10 @@ func _preprocess(time: float) -> void:
 			if _spawn_timers[i] <= 0.0:
 				_spawn_at_level(i)
 				_spawn_timers[i] += _get_interval(i)
-				var last := get_child(get_child_count() - 1)
-				last.global_position.z += _get_speed(i) * (time - elapsed - dt)
+				var layer := _layers[i]
+				if layer.get_child_count() > 0:
+					var last := layer.get_child(layer.get_child_count() - 1)
+					last.global_position.z += _get_speed(i) * (time - elapsed - dt)
 		elapsed += dt
 
 
@@ -81,18 +120,19 @@ func _tick_spawn_timers(delta: float) -> void:
 
 
 func _update_asteroids(delta: float) -> void:
-	for child in get_children():
-		if not child.get_meta(ASTEROID_META, false):
-			continue
+	for layer in _layers:
+		for child in layer.get_children():
+			if not child.get_meta(ASTEROID_META, false):
+				continue
 
-		child.global_position.z += child.get_meta("speed") * delta
+			child.global_position.z += child.get_meta("speed") * delta
 
-		if randomize_spin:
-			child.rotation += child.get_meta("angular_velocity") * delta
-		else:
-			child.transform = child.transform.rotated_local(
-				Vector3.UP, child.get_meta("spin_speed") * delta
-			)
+			if randomize_spin:
+				child.rotation += child.get_meta("angular_velocity") * delta
+			else:
+				child.transform = child.transform.rotated_local(
+					Vector3.UP, child.get_meta("spin_speed") * delta
+				)
 
 
 func _setup_asteroid(asteroid: Node3D, level: int) -> void:
@@ -153,6 +193,13 @@ func _get_spin_speed(level: int) -> float:
 		_: return spin_speed_3
 
 
+func _get_parallax(level: int) -> float:
+	match level:
+		0: return edge_parallax_1
+		1: return edge_parallax_2
+		_: return edge_parallax_3
+
+
 func _visible_x_range_at_y(spawn_y: float) -> Vector2:
 	var cam := get_viewport().get_camera_3d()
 	if cam == null:
@@ -203,8 +250,8 @@ func _spawn_at_level(level: int) -> void:
 	var margin := (x_range.y - x_range.x) * 0.01
 	var random_x := randf_range(x_range.x + margin, x_range.y - margin)
 
-	add_child(asteroid)
 	var level_scale := _get_scale(level)
 	asteroid.scale = Vector3.ONE * level_scale
-	asteroid.global_position = Vector3(random_x, spawn_y, spawn_z)
+	_layers[level].add_child(asteroid)
+	asteroid.position = Vector3(random_x, spawn_y, spawn_z)
 	_setup_asteroid(asteroid, level)
