@@ -3,11 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemy/Enemy.tscn" id="1_3ym5w"]
 [ext_resource type="PackedScene" uid="uid://cj06xe1qfw8ch" path="res://scenes/enemies/starfighter_model.tscn" id="2_g7p8o"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3ym5w"]
+
 [node name="starfighter" unique_id=1897743314 instance=ExtResource("1_3ym5w")]
-armor = 10
-fire_rate = 2.0
+armor = 7
+fire_rate = 1.5
 projectile_velocity = Vector3(0, 0, 8)
-aim = 2
+aim = 10
 sound = 3
 esize = 2
 
@@ -16,5 +18,9 @@ esize = 2
 [node name="CollisionShape3D" parent="." index="1" unique_id=324662688]
 transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 0, 0, 0)
 
-[node name="Muzzle" parent="." index="3" unique_id=1704985833]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="2" unique_id=1235190230]
+transform = Transform3D(1.9106855e-15, 1, -8.742278e-08, 1, 1.9106855e-15, 4.371139e-08, 4.371139e-08, -8.742278e-08, -1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_3ym5w")
+
+[node name="Muzzle" parent="." index="4" unique_id=1704985833]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9142467)

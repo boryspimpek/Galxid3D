@@ -1,8 +1,8 @@
+CollisionShape3D
 PathFollow3D
 Path3D
 Marker3D
 VisibleOnScreenNotifier3D
-CollisionShape3D
 MeshInstance3D
 Area3D
 VisibleOnScreenEnabler3D

@@ -10,7 +10,8 @@ material = SubResource("StandardMaterial3D_qvcrk")
 radius = 0.1
 height = 0.2
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qvcrk"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_qvcrk"]
+radius = 0.10744667
 
 [node name="EnemyProjectile" type="Area3D" unique_id=783238135]
 script = ExtResource("1_enemy_proj")
@@ -23,5 +24,5 @@ mesh = SubResource("CapsuleMesh_qvcrk")
 aabb = AABB(-1, -0.5070118, -1, 2, 1.0140235, 2)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=686331195]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_qvcrk")
+shape = SubResource("SphereShape3D_qvcrk")
+debug_color = Color(0.5388622, 2.4065375e-07, 0.2979452, 0.41960785)
