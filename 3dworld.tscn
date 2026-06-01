@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://1pup6o17egip" path="res://scenes/asteroids/AsteroidSpawner.gd" id="8_pnv6h"]
 [ext_resource type="PackedScene" uid="uid://b47pkgi0u300c" path="res://scenes/enemies/blaze_2.tscn" id="9_rpljx"]
 [ext_resource type="PackedScene" uid="uid://ceb36gc6o5uvc" path="res://scenes/enemies/starfighter.tscn" id="10_rpljx"]
+[ext_resource type="PackedScene" uid="uid://bgg0um4kjhgkp" path="res://scenes/enemies/blaze_4.tscn" id="12_y8ijg"]
 [ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyPath.gd" id="13_fjwqu"]
 [ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="14_ruler"]
 [ext_resource type="Script" uid="uid://dt670oushtj6" path="res://scenes/world/HorizontalViewShift.gd" id="15_viewshift"]
@@ -90,7 +91,6 @@ edge_begin = 0.1
 transform = Transform3D(1.08, 0, 0, 0, 1.08, 0, 0, 0, 1.08, 0, -170, 0)
 
 [node name="PlayAreaFrame" parent="." unique_id=143925964 instance=ExtResource("6_3vxff")]
-visible = false
 max_bound_x = 8.75
 max_bound_z = 15.45
 
@@ -449,10 +449,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.407116, 0, -34.297432)
 curve = SubResource("Curve3D_sgee4")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/Path3D" unique_id=522881538]
-transform = Transform3D(-0.9998812, 0, 0.01492139, 0, 1, 0, -0.01492139, 0, -0.9998812, 0.0071606636, 0, -0.0038108826)
+transform = Transform3D(-0.99988073, 0, 0.014921383, 0, 1, 0, -0.014921383, 0, -0.99988073, 0.0071606636, 0, -0.0038108826)
 loop = false
 script = ExtResource("13_fjwqu")
 
-[node name="starfighter" parent="LevelScroll/Path3D/PathFollow3D" unique_id=398680906 instance=ExtResource("10_rpljx")]
+[node name="starfighter2" parent="LevelScroll/Path3D/PathFollow3D" unique_id=1764314029 instance=ExtResource("10_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-fire_rate = 1.5
+
+[node name="starfighter" parent="LevelScroll" unique_id=1233399088 instance=ExtResource("10_rpljx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9058037, 0, -3.8173094)
+zmove = -3
+
+[node name="blaze 4" parent="LevelScroll" unique_id=1920276823 instance=ExtResource("12_y8ijg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8829021, 0, -13.257322)
+zmove = -2
