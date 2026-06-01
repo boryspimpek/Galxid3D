@@ -159,8 +159,6 @@ func _update_ruler() -> void:
 	var gen := Node3D.new()
 	gen.name = GENERATED_NAME
 	add_child(gen)
-	if Engine.is_editor_hint():
-		gen.owner = get_tree().edited_scene_root if get_tree() else owner
 
 	var mat_rail := _make_material(color_rail)
 	var mat_play := _make_material(color_play_zone)
@@ -238,9 +236,11 @@ func _get_scroll_speed() -> float:
 
 
 func _clear_generated() -> void:
-	var old := get_node_or_null(GENERATED_NAME)
-	if old:
-		old.queue_free()
+	# Usuń wszystkie dzieci (w tym stare zapisane przez @tool do sceny nadrzędnej).
+	for i in range(get_child_count() - 1, -1, -1):
+		var child := get_child(i)
+		remove_child(child)
+		child.free()
 
 
 func _make_material(color: Color) -> StandardMaterial3D:
@@ -259,8 +259,6 @@ func _add_box(parent: Node3D, pos: Vector3, size: Vector3, material: StandardMat
 	mesh_inst.position = pos
 	mesh_inst.scale = size
 	parent.add_child(mesh_inst)
-	if Engine.is_editor_hint() and get_tree():
-		mesh_inst.owner = get_tree().edited_scene_root
 
 
 func _add_label(parent: Node3D, pos: Vector3, text: String) -> void:
@@ -277,8 +275,6 @@ func _add_label(parent: Node3D, pos: Vector3, text: String) -> void:
 	label.outline_modulate = Color(0, 0, 0, 0.85)
 	label.font_size = 48
 	parent.add_child(label)
-	if Engine.is_editor_hint() and get_tree():
-		label.owner = get_tree().edited_scene_root
 
 
 func _get_box_mesh() -> BoxMesh:

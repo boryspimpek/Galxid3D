@@ -1,11 +1,3 @@
+res://scenes/debug/LevelScrollRuler.gd
 res://3dworld.tscn
 res://scenes/planets/planet.gdshader
-res://scenes/enemy/EnemyPath.gd
-res://scenes/world/LevelRuler.gd
-res://default_bus_layout.tres
-res://data/weapons/weapon_1.tres
-res://data/enemy_weapons/weapon_1.tres
-res://scenes/enemy/Enemy.tscn
-res://scenes/enemies/starfighter_model.tscn
-res://scenes/enemies/starfighter.tscn
-res://scenes/enemy_projectile/EnemyProjectile.tscn
