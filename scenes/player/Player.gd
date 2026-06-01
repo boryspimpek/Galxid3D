@@ -53,7 +53,7 @@ func load_ship_data():
 	var s_id = ship_id
 	ship_data = DataManager.get_ship_by_id(s_id)
 	if ship_data:
-		print("Player: Statek załadowany: ", ship_data.ship_name)
+		print("Player: Statek załadowany: ", ship_data.ship_name, " Armor: ", ship_data.armor)
 	else:
 		push_error("Player: BŁĄD: Nie znaleziono danych dla statku o ID: " + str(s_id))
 
