@@ -1,6 +1,6 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1780325968
-3dworld.tscn::PackedScene::6563213892080481897::1780325277::0::1::::<><><>0<>0<><>::uid://dcg8vcl7rmst4::::res://NoiseBackground.tscn<>uid://bte7ofi7pgn5b::::res://scenes/player/Player.tscn<>uid://c1pq466qvcqtm::::res://scenes/planets/earth.tscn<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn<>uid://ci6qjvw4jlabt::::res://scenes/world/LevelScroll3D.gd<>uid://1pup6o17egip::::res://scenes/asteroids/AsteroidSpawner.gd<>uid://b47pkgi0u300c::::res://scenes/enemies/blaze_2.tscn<>uid://ceb36gc6o5uvc::::res://scenes/enemies/starfighter.tscn<>uid://de0wqltyclsk0::::res://scenes/enemy/EnemyPath.gd<>uid://bdvg80h7a4nm8::::res://scenes/debug/LevelScrollRuler.tscn<>uid://dt670oushtj6::::res://scenes/world/HorizontalViewShift.gd
+::res://::1780328899
+3dworld.tscn::PackedScene::6563213892080481897::1780328741::0::1::::<><><>0<>0<><>::uid://dcg8vcl7rmst4::::res://NoiseBackground.tscn<>uid://bte7ofi7pgn5b::::res://scenes/player/Player.tscn<>uid://c1pq466qvcqtm::::res://scenes/planets/earth.tscn<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn<>uid://ci6qjvw4jlabt::::res://scenes/world/LevelScroll3D.gd<>uid://1pup6o17egip::::res://scenes/asteroids/AsteroidSpawner.gd<>uid://b47pkgi0u300c::::res://scenes/enemies/blaze_2.tscn<>uid://ceb36gc6o5uvc::::res://scenes/enemies/starfighter.tscn<>uid://de0wqltyclsk0::::res://scenes/enemy/EnemyPath.gd<>uid://bdvg80h7a4nm8::::res://scenes/debug/LevelScrollRuler.tscn<>uid://dt670oushtj6::::res://scenes/world/HorizontalViewShift.gd
 default_bus_layout.tres::AudioBusLayout::2099548917964122130::1780318004::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile::-1::1779810743::0::1::::<><><>0<>0<><>::
 NoiseBackground.gd::GDScript::8842678781878126347::1780234802::0::1::::<>MeshInstance3D<><>0<>0<><>::
@@ -274,9 +274,9 @@ LevelScrollRuler.gd::GDScript::5314882218949956160::1780324393::0::1::::<>Node3D
 LevelScrollRuler.tscn::PackedScene::2640763705950387221::1780315708::0::1::::<><><>0<>0<><>::res://scenes/debug/LevelScrollRuler.gd
 PlayAreaFrame.gd::GDScript::9020902000404816243::1779980435::0::1::::<>Node3D<><>0<>1<><>::
 PlayAreaFrame.tscn::PackedScene::3921225294876459380::1779980427::0::1::::<><><>0<>0<><>::res://scenes/debug/PlayAreaFrame.gd
-::res://scenes/enemies/::1780322724
+::res://scenes/enemies/::1780328862
 blaze.tscn::PackedScene::6408229248630321207::1780238091::0::1::::<><><>0<>0<><>::uid://c3de3aei70kw1::::res://scenes/enemy/Enemy.tscn<>uid://pxcet508nmj3::::res://scenes/enemies/blaze_model.tscn
-blaze_2.tscn::PackedScene::4488886178818777720::1780236174::0::1::::<><><>0<>0<><>::uid://c3de3aei70kw1::::res://scenes/enemy/Enemy.tscn<>uid://cucfe21l8ankg::::res://scenes/enemies/blaze_2_model.tscn
+blaze_2.tscn::PackedScene::4488886178818777720::1780328862::0::1::::<><><>0<>0<><>::uid://c3de3aei70kw1::::res://scenes/enemy/Enemy.tscn<>uid://cucfe21l8ankg::::res://scenes/enemies/blaze_2_model.tscn
 blaze_2_model.tscn::PackedScene::6181059182633694078::1780237777::0::1::::<><><>0<>0<><>::uid://cp877lvmukhc8::::res://assets/enemies/blaze/blaze2/Meshy_AI_Emerald_Void_Intercep_0529133813_texture.glb<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader<>uid://5te8ddsom0ac::::res://assets/enemies/blaze/blaze2/Meshy_AI_Emerald_Void_Intercep_0529133813_texture_0.jpg
 blaze_3.tscn::PackedScene::6417495494509467936::1780238075::0::1::::<><><>0<>0<><>::uid://c3de3aei70kw1::::res://scenes/enemy/Enemy.tscn<>uid://jv2relxx74s2::::res://scenes/enemies/blaze_3_model.tscn
 blaze_3_model.tscn::PackedScene::676721471041916035::1780238062::0::1::::<><><>0<>0<><>::uid://dglhtcywe25fm::::res://assets/enemies/blaze/blaze3/Meshy_AI_Emerald_Void_Intercep_0529133821_texture.glb<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader<>uid://dhmhv61fi8s4d::::res://assets/enemies/blaze/blaze3/Meshy_AI_Emerald_Void_Intercep_0529133821_texture_0.jpg
@@ -286,10 +286,10 @@ blaze_5.tscn::PackedScene::2936995571717288032::1780238755::0::1::::<><><>0<>0<>
 blaze_5_model.tscn::PackedScene::7264072116928642914::1780238693::0::1::::<><><>0<>0<><>::uid://bjurnxeuroe0j::::res://assets/enemies/blaze/blaze5/Meshy_AI_Emerald_Void_Intercep_0529133902_texture.glb<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader<>uid://vx227yr1pxqc::::res://assets/enemies/blaze/blaze5/Meshy_AI_Emerald_Void_Intercep_0529133902_texture_0.jpg
 blaze_model.tscn::PackedScene::1100442965543308182::1780236774::0::1::::<><><>0<>0<><>::uid://dolawyjb77dno::::res://assets/enemies/blaze/blaze1/Meshy_AI_Blaze_Starfighter_0529133509_texture.glb<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader<>uid://nbrlnglbjbhx::::res://assets/enemies/blaze/blaze1/Meshy_AI_Blaze_Starfighter_0529133509_texture_0.jpg
 EnemySpawner.gd::GDScript::7147072454789478884::1780144978::0::1::::<>Node3D<><>0<>0<><>::
-starfighter.tscn::PackedScene::5057416874759023692::1780322724::0::1::::<><><>0<>0<><>::uid://c3de3aei70kw1::::res://scenes/enemy/Enemy.tscn<>uid://cj06xe1qfw8ch::::res://scenes/enemies/starfighter_model.tscn
+starfighter.tscn::PackedScene::5057416874759023692::1780328787::0::1::::<><><>0<>0<><>::uid://c3de3aei70kw1::::res://scenes/enemy/Enemy.tscn<>uid://cj06xe1qfw8ch::::res://scenes/enemies/starfighter_model.tscn
 starfighter_model.tscn::PackedScene::5458073955008427727::1780320394::0::1::::<><><>0<>0<><>::uid://eyku5nilalp::::res://assets/enemies/starfighter/Meshy_AI_S_01_Starfighter_0522180707_texture.glb<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader<>uid://ceaafxtu0dkx6::::res://assets/enemies/starfighter/Meshy_AI_S_01_Starfighter_0522180707_texture_Image_0.jpg
 ::res://scenes/enemy/::1780320156
-Enemy.gd::GDScript::4605400125416299353::1780213676::0::1::::<>Area3D<><>0<>0<><>::
+Enemy.gd::GDScript::4605400125416299353::1780328528::0::1::::<>Area3D<><>0<>0<><>::
 Enemy.tscn::PackedScene::6744614999300149878::1780320156::0::1::::<><><>0<>0<><>::uid://b6u5jc5l8dstd::::res://scenes/enemy/Enemy.gd
 EnemyPath.gd::GDScript::7492991824227979501::1780314341::0::1::::<>PathFollow3D<><>0<>0<><>::
 ::res://scenes/enemy_projectile/::1780321202
@@ -303,25 +303,25 @@ explode2.tscn::PackedScene::8056899657252836964::1779976073::0::1::::<><><>0<>0<
 explode3.tscn::PackedScene::2697846894677663330::1779978610::0::1::::<><><>0<>0<><>::uid://b0080ed2yyg10::::res://scenes/explosions/Explode.gd<>uid://dqr1qpgfvwr08::::res://assets/explode/explode5.png
 Explode.gd::GDScript::4194799740091914245::1779976238::0::1::::<>Node3D<><>0<>0<><>::
 explode.tscn::PackedScene::6828219502824117238::1779976073::0::1::::<><><>0<>0<><>::uid://b0080ed2yyg10::::res://scenes/explosions/Explode.gd
-::res://scenes/planets/::1780324598
+::res://scenes/planets/::1780326001
 earth.tscn::PackedScene::6629741905061365106::1780231051::0::1::::<><><>0<>0<><>::uid://blylchano3pbx::::res://scenes/planets/earth_base.gd<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader<>uid://b5x1pv330wf72::::res://assets/planets/textures/solar system/2k_earth_daymap.jpg<>uid://dldpelql0fhfb::::res://assets/planets/textures/solar system/2k_neptune.jpg<>uid://d6ufagn3ivxr::::res://assets/planets/textures/meshy/venus.png
 earth_base.gd::GDScript::3208714856591070933::1780209291::0::1::::<>Node3D<><>0<>0<><>::
 jupiter.tscn::PackedScene::6560753609083324030::1780157170::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader
 mars.tscn::PackedScene::6325341186571572607::1780157170::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader
 mercury.tscn::PackedScene::6275983029225109434::1780157170::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader
 neptune.tscn::PackedScene::5871231224050310909::1780157170::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader
-planet.gdshader::Shader::7774145487081512526::1780324598::0::1::::<><><>0<>0<><>::
+planet.gdshader::Shader::7774145487081512526::1780326001::0::1::::<><><>0<>0<><>::
 PlanetSpawner.gd::GDScript::5663476227391756546::1780158363::0::1::::<>Node3D<><>0<>0<><>::
 planet_base.gd::GDScript::3455933010980879115::1780147874::0::1::::<>MeshInstance3D<><>0<>1<><>::
 saturn.tscn::PackedScene::2999490605396062654::1780157170::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader
 simple_planet.tscn::PackedScene::526280271132995432::1780228928::0::1::::<><><>0<>0<><>::uid://di04bmwek8try::::res://scenes/planets/planet.gdshader<>uid://bpicyg2rrp4qp::::res://scenes/planets/planet_base.gd<>uid://droo5e32n3i7x::::res://assets/planets/textures/meshy/Meshy_AI_Azure_Ringed_World_0520072106_texture_Image_0.jpg
 uranus.tscn::PackedScene::6816480709904786975::1780157170::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader
 venus.tscn::PackedScene::8582344818790218131::1780157170::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader<>uid://3787wj2faykh::::res://assets/planets/textures/solar system/2k_venus_surface.jpg
-::res://scenes/player/::1780325468
+::res://scenes/player/::1780326041
 DamageSystem.gd::GDScript::2289176751178949268::1779724021::0::1::::<>Node<><>0<>0<><>::
 DamageSystem.tscn::PackedScene::-1::1779131093::0::1::::<><><>0<>0<><>::res://scenes/player/DamageSystem.gd
-Player.gd::GDScript::8437104023902913178::1780054070::0::1::::<>CharacterBody3D<><>0<>0<><>::
-Player.tscn::PackedScene::3730234445164567377::1780325468::0::1::::<><><>0<>0<><>::uid://dsg84un7uak4y::::res://scenes/player/Player.gd<>uid://7u5n3csl0xpc::::res://scenes/player/DamageSystem.gd<>uid://b18b5anwm2fnd::::res://scenes/player/PlayerModel.tscn<>uid://b00wb11f44ov::::res://scenes/player/WeaponSystem.gd<>uid://cta2hho80ojdn::::res://scenes/player/ShieldSystem.gd
+Player.gd::GDScript::8437104023902913178::1780327614::0::1::::<>CharacterBody3D<><>0<>0<><>::
+Player.tscn::PackedScene::3730234445164567377::1780326041::0::1::::<><><>0<>0<><>::uid://dsg84un7uak4y::::res://scenes/player/Player.gd<>uid://7u5n3csl0xpc::::res://scenes/player/DamageSystem.gd<>uid://b18b5anwm2fnd::::res://scenes/player/PlayerModel.tscn<>uid://b00wb11f44ov::::res://scenes/player/WeaponSystem.gd<>uid://cta2hho80ojdn::::res://scenes/player/ShieldSystem.gd
 PlayerModel.tscn::PackedScene::4279569396074969193::1779725690::0::1::::<><><>0<>0<><>::uid://b2k1vtajibcoe::::res://assets/player3d/player.glb
 ShieldSystem.gd::GDScript::6108081646694897207::1779813039::0::1::::<>Node<><>0<>0<><>::
 ShieldSystem.tscn::PackedScene::-1::1779131093::0::1::::<><><>0<>0<><>::res://scenes/player/ShieldSystem.gd
@@ -354,7 +354,7 @@ trailmesh.gdextension::GDExtension::8020490264137839201::1779793320::0::1::::<><
 ::res://trailmesh/bin/linux/::1779793320
 ::res://trailmesh/bin/macos/::1779793320
 ::res://trailmesh/bin/macos/macos.framework/::1779793320
-::res://trailmesh/bin/windows/::1780325965
+::res://trailmesh/bin/windows/::1780328896
 ::res://trailmesh/example/::1779793320
 albedo.png::CompressedTexture2D::117215708539975444::1779793320::1779793320::1::::<><><>0<>0<>b23a40921eea09668ac99f9cc7237a6c<>res://.godot/imported/albedo.png-296ffd37ac24545f2ded3e452355f4e6.ctex::
 Camera.gd::GDScript::144620971606581968::1779793320::0::1::::<>Camera3D<><>0<>0<><>::

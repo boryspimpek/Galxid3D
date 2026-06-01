@@ -7,7 +7,9 @@
 armor = 10
 fire_rate = 2.0
 projectile_velocity = Vector3(0, 0, 8)
+aim = 2
 sound = 3
+esize = 2
 
 [node name="Starfighter" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1322169304 instance=ExtResource("2_g7p8o")]
 

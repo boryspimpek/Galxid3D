@@ -6,7 +6,9 @@ extends Area3D
 @export var damage: int = 1
 @export var fire_rate: float = 2.0
 @export var projectile_velocity: Vector3 = Vector3(0, 0, 60)
-@export var aim: int = 0
+## 0 = tylko projectile_velocity, 10 = pełne wycelowanie w gracza (prędkość bez zmian).
+@export_range(0, 10, 1) var aim: int = 0
+const AIM_MAX := 10
 @export var sound: int = 1
 @export var esize: int = 1
 
@@ -130,8 +132,30 @@ func create_projectile(dmg: int, proj_velocity: Vector3) -> void:
 
 	get_tree().current_scene.add_child(projectile)
 	projectile.global_position = muzzle.global_position
-	projectile.velocity = proj_velocity
+	projectile.velocity = _compute_projectile_velocity(proj_velocity)
 	projectile.damage = dmg
+
+
+func _compute_projectile_velocity(base_velocity: Vector3) -> Vector3:
+	if aim <= 0:
+		return base_velocity
+
+	var bullet_speed := base_velocity.length()
+	if bullet_speed < 0.001:
+		return base_velocity
+
+	var base_dir := base_velocity / bullet_speed
+	var player := get_tree().get_first_node_in_group("player") as Node3D
+	if player == null:
+		return base_velocity
+
+	var to_player := player.global_position - muzzle.global_position
+	if to_player.length_squared() < 0.0001:
+		return base_velocity
+
+	var aim_weight := clampf(float(aim) / float(AIM_MAX), 0.0, 1.0)
+	var final_dir := base_dir.lerp(to_player.normalized(), aim_weight).normalized()
+	return final_dir * bullet_speed
 
 
 # --- AKTYWACJA (linia scrolla) ---

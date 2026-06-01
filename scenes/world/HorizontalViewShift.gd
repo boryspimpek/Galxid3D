@@ -19,7 +19,8 @@ var _shift_x: float = 0.0
 
 
 func _ready() -> void:
-	process_priority = 10
+	# Po ruchu gracza (CharacterBody3D); kamera w _physics_process — wymagane przy physics_interpolation.
+	process_physics_priority = 10
 	call_deferred("_setup")
 
 
@@ -38,7 +39,7 @@ func _setup() -> void:
 		_noise_base_x = _noise_bg.position.x
 
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if _player == null or _camera == null:
 		return
 
