@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bdvg80h7a4nm8"]
+
+[ext_resource type="Script" path="res://scenes/debug/LevelScrollRuler.gd" id="1_ruler"]
+
+[node name="LevelScrollRuler" type="Node3D"]
+script = ExtResource("1_ruler")
+z_min = -120.0
+z_max = 80.0
+play_area_half_z = 15.45
+tick_spacing = 10.0

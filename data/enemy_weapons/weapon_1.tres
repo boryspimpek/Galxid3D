@@ -1,13 +1,11 @@
-[gd_resource type="Resource" script_class="EnemyWeaponData" format=3]
+[gd_resource type="Resource" script_class="EnemyWeaponData" format=3 uid="uid://d05lw0jsfofjs"]
 
-[ext_resource type="Script" path="res://scripts/resources/EnemyWeaponData.gd" id="1"]
+[ext_resource type="Script" uid="uid://bu4s4ofwuci3u" path="res://scripts/resources/EnemyWeaponData.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
 weapon_index = 1
 damage = 5
 velocity = Vector3(0, 0, 60)
-aim = 0
 fire_rate = 2
 sound = 1
-esize = 1

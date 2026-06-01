@@ -38,6 +38,7 @@ Projekt gry 3D w **Godot 4.6** (renderer: **Forward+**). Repo zawiera sceny, skr
   - `Path3D` + `PathFollow3D*` ze skryptem `res://scenes/enemy/EnemyPath.gd`
   - instancje przeciwników `res://scenes/enemies/starfighter.tscn`
   - `PlayAreaFrame` (`res://scenes/debug/PlayAreaFrame.tscn`)
+  - `LevelScrollRuler` (`res://scenes/debug/LevelScrollRuler.tscn`) — podziałka Z + czas scrolla pod `LevelScroll`
 - `scenes/`: sceny gry (player, enemy, planets, debug, projectile, …)
 - `scripts/`: logika współdzielona / singletons (core, managers, …)
 - `assets/`: grafika, audio, ikony, importy

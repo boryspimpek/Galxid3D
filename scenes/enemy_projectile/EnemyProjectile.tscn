@@ -2,7 +2,13 @@
 
 [ext_resource type="Script" uid="uid://drtojasqrdy7m" path="res://scenes/enemy_projectile/EnemyProjectile.gd" id="1_enemy_proj"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qvcrk"]
+albedo_color = Color(0.159, 0.621, 3, 1)
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qvcrk"]
+material = SubResource("StandardMaterial3D_qvcrk")
+radius = 0.1
+height = 0.2
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qvcrk"]
 
