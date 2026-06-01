@@ -26,7 +26,7 @@ func _ready() -> void:
 		_ensure_scroll_compensator()
 
 	_path_active = false
-	set_process(false)
+	set_physics_process(false)
 
 	var enemy := _find_enemy()
 	if enemy == null:
@@ -76,10 +76,10 @@ func _start_path() -> void:
 		return
 	_path_active = true
 	_anti_scroll_world = Vector3.ZERO
-	set_process(true)
+	set_physics_process(true)
 
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if not _path_active:
 		return
 

@@ -12,6 +12,5 @@ func _ready() -> void:
 	if start_offset_z != 0.0:
 		position.z = start_offset_z
 
-func _process(delta: float) -> void:
-	# if auto_scroll:
-		position.z += scroll_speed * delta
+func _physics_process(delta: float) -> void:
+	position.z += scroll_speed * delta

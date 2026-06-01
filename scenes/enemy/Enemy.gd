@@ -62,14 +62,14 @@ func _ready() -> void:
 		_screen_notifier.visible = true
 		_screen_notifier.screen_exited.connect(_on_screen_exited)
 
+	set_physics_process(true)
 	if activate_on_scroll_line:
 		_deactivate()
-		set_process(true)
 	else:
 		_activate()
 
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if activate_on_scroll_line:
 		_refresh_activation()
 
