@@ -1,20 +1,20 @@
 extends Node3D
 
-## Przesuwa mapę w bok, gdy gracz zbliża się do lewej/prawej krawędzi — widać więcej planszy z boku.
+## Przesuwa kamerę w bok przy krawędziach ekranu — widać więcej mapy, bez ruszania
+## świata (wrogowie i pociski zostają w spójnych współrzędnych globalnych).
 
 @export var max_shift_x: float = 2.5
 ## Od jakiej części max_bound_x zaczyna się przesuw (0.5 = od połowy drogi do krawędzi).
 @export var edge_begin: float = 0.5
 @export var smooth: float = 8.0
-## Tło przesuwa się słabiej niż LevelScroll (paralaksa).
+## Tło przesuwa się słabiej niż kamera (paralaksa, opcjonalnie 0 = wyłączone).
 @export var background_parallax: float = 0.35
-@export var shift_asteroids: bool = true
 
 var _player: Node3D
-var _level_scroll: Node3D
+var _camera: Camera3D
 var _noise_bg: Node3D
-var _asteroid_spawner: Node3D
-var _base_positions: Dictionary = {}
+var _camera_base_x: float = 0.0
+var _noise_base_x: float = 0.0
 var _shift_x: float = 0.0
 
 
@@ -29,43 +29,26 @@ func _setup() -> void:
 		return
 
 	_player = get_tree().get_first_node_in_group("player") as Node3D
-	_level_scroll = game.get_node_or_null("LevelScroll") as Node3D
+	_camera = game.get_node_or_null("Camera3D") as Camera3D
 	_noise_bg = game.get_node_or_null("NoiseBackground") as Node3D
-	_asteroid_spawner = game.get_node_or_null("AsteroidSpawner") as Node3D
 
-	for node in _get_shift_nodes():
-		_base_positions[node] = node.position
-
-
-func _get_shift_nodes() -> Array[Node3D]:
-	var nodes: Array[Node3D] = []
-	if _level_scroll:
-		nodes.append(_level_scroll)
+	if _camera:
+		_camera_base_x = _camera.position.x
 	if _noise_bg:
-		nodes.append(_noise_bg)
-	if shift_asteroids and _asteroid_spawner:
-		nodes.append(_asteroid_spawner)
-	return nodes
+		_noise_base_x = _noise_bg.position.x
 
 
 func _process(delta: float) -> void:
-	if _player == null or _base_positions.is_empty():
+	if _player == null or _camera == null:
 		return
 
 	var target_shift := _calc_target_shift()
 	_shift_x = lerpf(_shift_x, target_shift, smooth * delta)
 
-	if _level_scroll and _base_positions.has(_level_scroll):
-		var base: Vector3 = _base_positions[_level_scroll]
-		_level_scroll.position.x = base.x - _shift_x
+	_camera.position.x = _camera_base_x + _shift_x
 
-	if _noise_bg and _base_positions.has(_noise_bg):
-		var base_bg: Vector3 = _base_positions[_noise_bg]
-		_noise_bg.position.x = base_bg.x - _shift_x * background_parallax
-
-	if shift_asteroids and _asteroid_spawner and _base_positions.has(_asteroid_spawner):
-		var base_ast: Vector3 = _base_positions[_asteroid_spawner]
-		_asteroid_spawner.position.x = base_ast.x - _shift_x
+	if _noise_bg and background_parallax > 0.0:
+		_noise_bg.position.x = _noise_base_x + _shift_x * background_parallax
 
 
 func _calc_target_shift() -> float:

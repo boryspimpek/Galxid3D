@@ -84,10 +84,10 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2
 [node name="HorizontalViewShift" type="Node3D" parent="." unique_id=1535569705]
 script = ExtResource("15_viewshift")
 max_shift_x = 3.0
-edge_begin = 0.0
-background_parallax = 1.0
+edge_begin = 0.1
 
 [node name="NoiseBackground" parent="." unique_id=697593384 instance=ExtResource("1_pnv6h")]
+transform = Transform3D(1.08, 0, 0, 0, 1.08, 0, 0, 0, 1.08, 0, -170, 0)
 
 [node name="PlayAreaFrame" parent="." unique_id=143925964 instance=ExtResource("6_3vxff")]
 visible = false
@@ -120,7 +120,7 @@ script = ExtResource("7_scroll")
 scroll_speed = 3.0
 
 [node name="LevelScrollRuler" parent="LevelScroll" unique_id=383457667 instance=ExtResource("14_ruler")]
-max_bound_x = 11.0
+max_bound_x = 11.5
 z_min = -100.0
 z_max = 14.45
 show_time_labels = false
