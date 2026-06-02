@@ -1,12 +1,11 @@
-[gd_resource type="Resource" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="GeneratorData" format=3 uid="uid://1ykk86kri22i"]
 
-[ext_resource type="Script" path="res://scripts/resources/GeneratorData.gd" id="1"]
+[ext_resource type="Script" uid="uid://b5qnqtg671g0" path="res://scripts/resources/GeneratorData.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
 generator_index = 1
 generator_name = "Standard MR-9"
-item_graphic = 241
-power = 300
-speed = 0
+item_graphic = 1
+power = 100
 cost = 500

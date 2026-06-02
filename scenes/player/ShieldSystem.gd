@@ -1,12 +1,12 @@
 extends Node
 
-const SHIELD_WAIT = 0.5  # 15 klatek / 30 fps
+const SHIELD_WAIT = 0.5  
 
 var player: CharacterBody3D
 
 var shield: float = 0.0
 var shield_max: float = 0.0
-var shield_t: int = 0    # tpwr*20: koszt power za 1 punkt regeneracji
+var shield_t: int = 0    
 var _wait_timer: float = 0.0
 
 func _ready():
