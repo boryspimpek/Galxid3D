@@ -30,6 +30,8 @@ func take_damage(amount: int):
 			_on_player_death()
 
 func _on_player_death():
+	if get_tree():
+		get_tree().call_group("hud", "show_game_over")
 	if player and player.has_method("die"):
 		player.die()
 	else:

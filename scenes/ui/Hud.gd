@@ -7,12 +7,15 @@ extends CanvasLayer
 @onready var _shield_label: Label = %ShieldValue
 @onready var _energy_label: Label = %EnergyValue
 @onready var _shield_row: HBoxContainer = %ShieldRow
+@onready var _game_over: Control = %GameOver
 
 var _player: CharacterBody3D
 var _shield_system: Node
 
 
 func _ready() -> void:
+	add_to_group("hud")
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	call_deferred("_bind_player")
 
 
@@ -20,6 +23,25 @@ func _bind_player() -> void:
 	_player = get_tree().get_first_node_in_group("player") as CharacterBody3D
 	if _player:
 		_shield_system = _player.get_node_or_null("ShieldSystem")
+
+func show_game_over() -> void:
+	_game_over.visible = true
+	get_tree().paused = true
+
+func _restart_run() -> void:
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if not _game_over.visible:
+		return
+
+	if event is InputEventMouseButton and event.pressed:
+		_restart_run()
+	elif event is InputEventScreenTouch and event.pressed:
+		_restart_run()
+	elif event is InputEventKey and event.pressed:
+		_restart_run()
 
 
 func _process(_delta: float) -> void:

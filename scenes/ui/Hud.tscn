@@ -164,3 +164,54 @@ layout_mode = 2
 text = "900 / 900"
 label_settings = SubResource("LabelSettings_value")
 horizontal_alignment = 2
+
+[node name="GameOver" type="Control" parent="Root"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Dim" type="ColorRect" parent="Root/GameOver"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.65)
+mouse_filter = 2
+
+[node name="Center" type="CenterContainer" parent="Root/GameOver"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Root/GameOver/Center"]
+custom_minimum_size = Vector2(640, 0)
+mouse_filter = 2
+
+[node name="VBox" type="VBoxContainer" parent="Root/GameOver/Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 16
+mouse_filter = 2
+
+[node name="Title" type="Label" parent="Root/GameOver/Center/Panel/VBox"]
+layout_mode = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_title")
+horizontal_alignment = 1
+
+[node name="Hint" type="Label" parent="Root/GameOver/Center/Panel/VBox"]
+layout_mode = 2
+text = "Kliknij / dotknij, aby zagrać od początku"
+label_settings = SubResource("LabelSettings_value")
+horizontal_alignment = 1
