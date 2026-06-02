@@ -13,11 +13,11 @@ const SCROLL_COMPENSATOR_NAME := "ScrollCompensator"
 ## Wymusza "przechył" (roll/bank) na zakrętach nawet dla płaskiej ścieżki (top-down).
 @export var bank_enabled: bool = false
 ## Maksymalny przechył w stopniach.
-@export_range(0.0, 89.0, 0.1) var bank_max_degrees: float = 25.0
+@export_range(0.0, 89.0, 0.1) var bank_max_degrees: float = 45.0
 ## Jak mocno bank reaguje na zakręt (większe = mocniej).
 @export_range(0.0, 10.0, 0.01) var bank_strength: float = 2.0
 ## Dystans (w jednostkach progress) użyty do estymacji skrętu.
-@export_range(0.001, 100.0, 0.001) var bank_lookahead: float = 0.5
+@export_range(0.001, 100.0, 0.001) var bank_lookahead: float = 1.0
 ## Szybkość wygładzania przechyłu (większe = szybciej dogania).
 @export_range(0.0, 30.0, 0.1) var bank_smooth: float = 10.0
 
@@ -146,7 +146,7 @@ func _apply_scroll_compensation(delta: float) -> void:
 
 
 func _apply_banking(delta: float) -> void:
-	if not bank_enabled:
+	if not _is_bank_enabled():
 		return
 
 	var p := get_parent()
@@ -157,7 +157,7 @@ func _apply_banking(delta: float) -> void:
 		return
 
 	var baked_len: float = maxf(0.001, curve.get_baked_length())
-	var ahead: float = maxf(0.001, bank_lookahead)
+	var ahead: float = maxf(0.001, _get_bank_lookahead())
 	var d0: float = clampf(progress - ahead, 0.0, baked_len)
 	var d1: float = clampf(progress + ahead, 0.0, baked_len)
 
@@ -175,11 +175,12 @@ func _apply_banking(delta: float) -> void:
 	# Znak skrętu względem osi świata "UP" (dla top-down zwykle to właśnie chcesz).
 	var signed_turn: float = atan2(Vector3.UP.dot(dir_prev.cross(dir_next)), dir_prev.dot(dir_next))
 
-	var target: float = -signed_turn * bank_strength
-	var max_bank: float = deg_to_rad(bank_max_degrees)
+	var target: float = -signed_turn * _get_bank_strength()
+	var max_bank: float = deg_to_rad(_get_bank_max_degrees())
 	target = clampf(target, -max_bank, max_bank)
 
-	var alpha: float = 1.0 - exp(-bank_smooth * delta) if bank_smooth > 0.0 else 1.0
+	var smooth := _get_bank_smooth()
+	var alpha: float = 1.0 - exp(-smooth * delta) if smooth > 0.0 else 1.0
 
 	var anchor := _get_bank_anchor()
 	if anchor == null:
@@ -238,3 +239,43 @@ func _is_scroll_compensation_enabled() -> bool:
 		return compensate_level_scroll
 	var v: Variant = settings.get("compensate_level_scroll")
 	return bool(v) if v != null else compensate_level_scroll
+
+
+func _is_bank_enabled() -> bool:
+	var settings: Node = _get_parent_settings_node()
+	if settings == null:
+		return bank_enabled
+	var v: Variant = settings.get("bank_enabled")
+	return bool(v) if v != null else bank_enabled
+
+
+func _get_bank_max_degrees() -> float:
+	var settings: Node = _get_parent_settings_node()
+	if settings == null:
+		return bank_max_degrees
+	var v: Variant = settings.get("bank_max_degrees")
+	return float(v) if v != null else bank_max_degrees
+
+
+func _get_bank_strength() -> float:
+	var settings: Node = _get_parent_settings_node()
+	if settings == null:
+		return bank_strength
+	var v: Variant = settings.get("bank_strength")
+	return float(v) if v != null else bank_strength
+
+
+func _get_bank_lookahead() -> float:
+	var settings: Node = _get_parent_settings_node()
+	if settings == null:
+		return bank_lookahead
+	var v: Variant = settings.get("bank_lookahead")
+	return float(v) if v != null else bank_lookahead
+
+
+func _get_bank_smooth() -> float:
+	var settings: Node = _get_parent_settings_node()
+	if settings == null:
+		return bank_smooth
+	var v: Variant = settings.get("bank_smooth")
+	return float(v) if v != null else bank_smooth

@@ -24,7 +24,7 @@ volumetric_fog_emission_energy = 0.0
 
 [sub_resource type="Curve3D" id="Curve3D_y8ijg"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -12.992178, 0, 0.09770012, 0, 0, 0, 0, 0, 0, -0.015192509, 0, 0.06589699, 0, 0, -0.14877129, 0, 0, 0.14877129, 0.061929703, 0, 7.2423325, -1.0033455, 0, -3.423172, 1.0033455, 0, 3.423172, 11.579514, 0, 10.017986, 0, 0, 0, 0, 0, 0, 11.727711, 0, 37.49696),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -12.992178, 0, 0.09770012, 0, 0, 0, 0, 0, 0, -0.015192509, 0, 0.06589699, 0, 0, -0.14877129, 0, 0, 0.14877129, 0.061929703, 0, 7.2423325, -1.2069874, 0, -1.3715763, 1.2069874, 0, 1.3715763, 11.469203, 0, 8.768068, 0, 0, 0, 0, 0, 0, 11.727711, 0, 37.49696),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
@@ -36,7 +36,7 @@ point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_fjwqu"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 13.055168, 0, 0.053913116, 0, 0, 0, 0, 0, 0, 0.045743942, 0, 0.04574585, 0, 0, 0, 0, 0, 0, -0.0046391487, 0, 6.3302193, 1.5318527, 0, -3.7338943, -1.5318527, 0, 3.7338943, -8.069998, 0, 11.484488, 0, 0, 0, 0, 0, 0, -8.2486, 0, 39.276024),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 13.055168, 0, 0.053913116, 0, 0, 0, 0, 0, 0, 0.045743942, 0, 0.04574585, 0, 0, 0, 0, 0, 0, -0.0046391487, 0, 6.3302193, 0.9326706, 0, -1.8653431, -0.9326706, 0, 1.8653431, -8.052642, 0, 7.9560432, 0, 0, 0, 0, 0, 0, -8.2486, 0, 39.276024),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
@@ -84,7 +84,7 @@ point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_fql1y"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -12.992178, 0, 0.09770012, 0, 0, 0, 0, 0, 0, -0.015192509, 0, 0.06589699, 0, 0, -0.14877129, 0, 0, 0.14877129, 0.061929703, 0, 7.2423325, -1.0033455, 0, -3.423172, 1.0033455, 0, 3.423172, 12.540971, 0, 10.014641, 0, 0, 0, 0, 0, 0, 10.366139, 0, 39.103043),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -12.992178, 0, 0.09770012, 0, 0, 0, 0, 0, 0, -0.015192509, 0, 0.06589699, 0, 0, -0.14877129, 0, 0, 0.14877129, 0.061929703, 0, 7.2423325, -1.7699499, 0, -6.2340546, 1.7699499, 0, 6.2340546, 12.07119, 0, 12.729118, 0, 0, 0, 0, 0, 0, 10.366139, 0, 39.103043),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
@@ -159,6 +159,7 @@ curve = SubResource("Curve3D_y8ijg")
 script = ExtResource("10_fjwqu")
 speed = 8.0
 speed_curve = SubResource("Curve_fjwqu")
+bank_enabled = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 1" unique_id=1089041558]
 transform = Transform3D(0.0024505688, 0, -0.9999605, 0, 1, 0, 0.9999605, 0, 0.0024505688, -12.992178, 0, 0.09770012)
@@ -215,6 +216,7 @@ curve = SubResource("Curve3D_fjwqu")
 script = ExtResource("10_fjwqu")
 speed = 8.0
 speed_curve = SubResource("Curve_fql1y")
+bank_enabled = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 2" unique_id=711777851]
 transform = Transform3D(0.00062767294, 0, 0.999937, 0, 1, 0, -0.999937, 0, 0.00062767294, 13.055168, 0, 0.053913116)
@@ -271,6 +273,8 @@ curve = SubResource("Curve3D_rpljx")
 script = ExtResource("10_fjwqu")
 speed = 8.0
 speed_curve = SubResource("Curve_sgee4")
+bank_enabled = true
+bank_lookahead = 5.0
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 3" unique_id=2144100859]
 transform = Transform3D(0.00062767294, 0, 0.999937, 0, 1, 0, -0.999937, 0, 0.00062767294, 13.055168, 0, 0.053913116)
@@ -327,6 +331,8 @@ curve = SubResource("Curve3D_m2xqg")
 script = ExtResource("10_fjwqu")
 speed = 8.0
 speed_curve = SubResource("Curve_h5joq")
+bank_enabled = true
+bank_lookahead = 2.0
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 4" unique_id=374263603]
 transform = Transform3D(0.00062767294, 0, 0.999937, 0, 1, 0, -0.999937, 0, 0.00062767294, 13.055168, 0, 0.053913116)
@@ -383,6 +389,8 @@ curve = SubResource("Curve3D_2gg5g")
 script = ExtResource("10_fjwqu")
 speed = 8.0
 speed_curve = SubResource("Curve_a283u")
+bank_enabled = true
+bank_lookahead = 8.0
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 5" unique_id=2135139181]
 transform = Transform3D(0.0013904427, 0, -0.9999347, 0, 1, 0, 0.9999347, 0, 0.0013904427, -13.022745, 0, 0.06391907)
@@ -439,6 +447,8 @@ curve = SubResource("Curve3D_fql1y")
 script = ExtResource("10_fjwqu")
 speed = 8.0
 speed_curve = SubResource("Curve_njda1")
+bank_enabled = true
+bank_lookahead = 2.0
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 6" unique_id=1507688133]
 transform = Transform3D(0.0024505688, 0, -0.9999605, 0, 1, 0, 0.9999605, 0, 0.0024505688, -12.992178, 0, 0.09770012)
