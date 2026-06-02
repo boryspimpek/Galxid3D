@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="7_scroll"]
 [ext_resource type="Script" uid="uid://1pup6o17egip" path="res://scenes/asteroids/AsteroidSpawner.gd" id="8_pnv6h"]
 [ext_resource type="PackedScene" uid="uid://b47pkgi0u300c" path="res://scenes/enemies/blaze_2.tscn" id="9_rpljx"]
+[ext_resource type="Script" uid="uid://d1fby4aoidoen" path="res://scenes/enemy/EnemyPath3D.gd" id="10_fjwqu"]
 [ext_resource type="PackedScene" uid="uid://ceb36gc6o5uvc" path="res://scenes/enemies/starfighter.tscn" id="10_rpljx"]
 [ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyPath.gd" id="13_fjwqu"]
 [ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="14_ruler"]
@@ -23,24 +24,39 @@ volumetric_fog_emission_energy = 0.0
 
 [sub_resource type="Curve3D" id="Curve3D_y8ijg"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -12.992178, 0, 0.09770012, 0, 0, 0, 0, 0, 0, -0.015192509, 0, 0.06589699, 0, 0, -0.14877129, 0, 0, 0.14877129, 0.061929703, 0, 7.2423325, -1.0033455, 0, -3.423172, 1.0033455, 0, 3.423172, 11.579514, 0, 10.017986, 0, 0, 0, 0, 0, 0, 10.912255, 0, 37.431324),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -12.992178, 0, 0.09770012, 0, 0, 0, 0, 0, 0, -0.015192509, 0, 0.06589699, 0, 0, -0.14877129, 0, 0, 0.14877129, 0.061929703, 0, 7.2423325, -1.0033455, 0, -3.423172, 1.0033455, 0, 3.423172, 11.579514, 0, 10.017986, 0, 0, 0, 0, 0, 0, 11.727711, 0, 37.49696),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
+
+[sub_resource type="Curve" id="Curve_fjwqu"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0.55313355, 0.987766), 0.0, 6.7673707, 0, 0, Vector2(1, 1.9420214), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_fjwqu"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 13.055168, 0, 0.053913116, 0, 0, 0, 0, 0, 0, 0.045743942, 0, 0.04574585, 0, 0, 0, 0, 0, 0, -0.0046391487, 0, 6.3302193, 1.5318527, 0, -3.7338943, -1.5318527, 0, 3.7338943, -8.069998, 0, 11.484488, 0, 0, 0, 0, 0, 0, -6.5952024, 0, 39.028408),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 13.055168, 0, 0.053913116, 0, 0, 0, 0, 0, 0, 0.045743942, 0, 0.04574585, 0, 0, 0, 0, 0, 0, -0.0046391487, 0, 6.3302193, 1.5318527, 0, -3.7338943, -1.5318527, 0, 3.7338943, -8.069998, 0, 11.484488, 0, 0, 0, 0, 0, 0, -8.2486, 0, 39.276024),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
 
+[sub_resource type="Curve" id="Curve_fql1y"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0.55313355, 0.987766), 0.0, 6.7673707, 0, 0, Vector2(1, 1.9420214), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="Curve3D" id="Curve3D_rpljx"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 13.055168, 0, 0.053913116, 0, 0, 0, 0, 0, 0, 0.045743942, 0, 0.04574585, 0, 0, 0, 0, 0, 0, 0.041417122, 0, 21.428814, 0.05004692, 0, 10.159531, -0.05004692, 0, -10.159531, -16.749157, 0, 15.692406, 0, 0, 0, 0, 0, 0, -16.870665, 0, -4.0318527),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 13.055168, 0, 0.053913116, 0, 0, 0, 0, 0, 0, 0.045743942, 0, 0.04574585, 0, 0, 0, 0, 0, 0, 0.041417122, 0, 21.428814, 0.05004692, 0, 10.159531, -0.05004692, 0, -10.159531, -16.749157, 0, 15.692406, 0, 0, 0, 0, 0, 0, -12.866364, 0, -4.310997),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
+
+[sub_resource type="Curve" id="Curve_sgee4"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0.55313355, 0.987766), 0.0, 6.7673707, 0, 0, Vector2(1, 1.9420214), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_m2xqg"]
 _data = {
@@ -49,6 +65,11 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="Curve" id="Curve_h5joq"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0.55313355, 0.987766), 0.0, 6.7673707, 0, 0, Vector2(1, 1.9420214), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="Curve3D" id="Curve3D_2gg5g"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, -13.022745, 0, 0.06391907, 0, 0, 0, 0, 0, 0, 0.045743942, 0, 0.04574585, 0, 0, 0, 0, 0, 0, 0.17673683, 0, 21.423504, 0.05004692, 0, 10.159531, -0.05004692, 0, -10.159531, 20.997757, 0, 15.752106, 0, 0, 0, 0, 0, 0, -4.192747, 0, 10.607285),
@@ -56,12 +77,22 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="Curve" id="Curve_a283u"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0.55313355, 0.987766), 0.0, 6.7673707, 0, 0, Vector2(1, 1.9420214), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="Curve3D" id="Curve3D_fql1y"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, -12.992178, 0, 0.09770012, 0, 0, 0, 0, 0, 0, -0.015192509, 0, 0.06589699, 0, 0, -0.14877129, 0, 0, 0.14877129, 0.061929703, 0, 7.2423325, -1.0033455, 0, -3.423172, 1.0033455, 0, 3.423172, 12.540971, 0, 10.014641, 0, 0, 0, 0, 0, 0, 10.366139, 0, 39.103043),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
+
+[sub_resource type="Curve" id="Curve_njda1"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0.55313355, 0.987766), 0.0, 6.7673707, 0, 0, Vector2(1, 1.9420214), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Game" type="Node3D" unique_id=616589222]
 
@@ -125,12 +156,14 @@ color_play_zone = Color(0.2, 1, 0.4, 0)
 [node name="wave 1" type="Path3D" parent="LevelScroll" unique_id=866145614]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.732193, 0, -20)
 curve = SubResource("Curve3D_y8ijg")
+script = ExtResource("10_fjwqu")
+speed = 8.0
+speed_curve = SubResource("Curve_fjwqu")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 1" unique_id=1089041558]
 transform = Transform3D(0.0024505688, 0, -0.9999605, 0, 1, 0, 0.9999605, 0, 0.0024505688, -12.992178, 0, 0.09770012)
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 1/PathFollow3D" unique_id=2119446081 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -140,7 +173,6 @@ transform = Transform3D(0.0024505649, 0, -0.9999588, 0, 1, 0, 0.9999588, 0, 0.00
 progress = 3.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 1/PathFollow3D2" unique_id=405207419 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -150,7 +182,6 @@ transform = Transform3D(0.0024505768, 0, -0.99996364, 0, 1, 0, 0.99996364, 0, 0.
 progress = 6.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 1/PathFollow3D3" unique_id=1560258972 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -160,7 +191,6 @@ transform = Transform3D(0.0024505735, 0, -0.99996233, 0, 1, 0, 0.99996233, 0, 0.
 progress = 9.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 1/PathFollow3D4" unique_id=2086716104 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -170,7 +200,6 @@ transform = Transform3D(0.0024505847, 0, -0.99996686, 0, 1, 0, 0.99996686, 0, 0.
 progress = 12.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 1/PathFollow3D5" unique_id=340266347 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -178,12 +207,14 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 [node name="wave 2" type="Path3D" parent="LevelScroll" unique_id=1020843966]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.884453, 0, -29.995996)
 curve = SubResource("Curve3D_fjwqu")
+script = ExtResource("10_fjwqu")
+speed = 8.0
+speed_curve = SubResource("Curve_fql1y")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 2" unique_id=711777851]
 transform = Transform3D(0.00062767294, 0, 0.999937, 0, 1, 0, -0.999937, 0, 0.00062767294, 13.055168, 0, 0.053913116)
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 2/PathFollow3D" unique_id=1647038960 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -193,7 +224,6 @@ transform = Transform3D(0.00062767294, 0, 0.999937, 0, 1, 0, -0.999937, 0, 0.000
 progress = 3.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 2/PathFollow3D2" unique_id=994518869 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -203,7 +233,6 @@ transform = Transform3D(0.0006276731, 0, 0.9999373, 0, 1, 0, -0.9999373, 0, 0.00
 progress = 6.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 2/PathFollow3D3" unique_id=1081572880 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -213,7 +242,6 @@ transform = Transform3D(0.0006276722, 0, 0.9999358, 0, 1, 0, -0.9999358, 0, 0.00
 progress = 9.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 2/PathFollow3D4" unique_id=1413032367 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -223,7 +251,6 @@ transform = Transform3D(0.00062767306, 0, 0.99993724, 0, 1, 0, -0.99993724, 0, 0
 progress = 12.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 2/PathFollow3D5" unique_id=1772225557 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -231,12 +258,14 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 [node name="wave 3" type="Path3D" parent="LevelScroll" unique_id=1873775366]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.039898, 0, -38.198074)
 curve = SubResource("Curve3D_rpljx")
+script = ExtResource("10_fjwqu")
+speed = 8.0
+speed_curve = SubResource("Curve_sgee4")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 3" unique_id=2144100859]
 transform = Transform3D(0.00062767294, 0, 0.999937, 0, 1, 0, -0.999937, 0, 0.00062767294, 13.055168, 0, 0.053913116)
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 3/PathFollow3D" unique_id=1897743314 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -246,7 +275,6 @@ transform = Transform3D(0.00062767294, 0, 0.999937, 0, 1, 0, -0.999937, 0, 0.000
 progress = 3.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 3/PathFollow3D2" unique_id=337730474 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -256,7 +284,6 @@ transform = Transform3D(0.0006276731, 0, 0.9999373, 0, 1, 0, -0.9999373, 0, 0.00
 progress = 6.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 3/PathFollow3D3" unique_id=1176630574 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -266,7 +293,6 @@ transform = Transform3D(0.0006276722, 0, 0.9999358, 0, 1, 0, -0.9999358, 0, 0.00
 progress = 9.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 3/PathFollow3D4" unique_id=2026216329 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -276,7 +302,6 @@ transform = Transform3D(0.00062767306, 0, 0.99993724, 0, 1, 0, -0.99993724, 0, 0
 progress = 12.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 3/PathFollow3D5" unique_id=1356380562 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -284,12 +309,14 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 [node name="wave 4" type="Path3D" parent="LevelScroll" unique_id=1853809397]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.185299, 0, -59.070667)
 curve = SubResource("Curve3D_m2xqg")
+script = ExtResource("10_fjwqu")
+speed = 8.0
+speed_curve = SubResource("Curve_h5joq")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 4" unique_id=374263603]
 transform = Transform3D(0.00062767294, 0, 0.999937, 0, 1, 0, -0.999937, 0, 0.00062767294, 13.055168, 0, 0.053913116)
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 4/PathFollow3D" unique_id=552738166 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -299,7 +326,6 @@ transform = Transform3D(0.00062767294, 0, 0.999937, 0, 1, 0, -0.999937, 0, 0.000
 progress = 3.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 4/PathFollow3D2" unique_id=265198206 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -309,7 +335,6 @@ transform = Transform3D(0.0006276731, 0, 0.9999373, 0, 1, 0, -0.9999373, 0, 0.00
 progress = 6.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 4/PathFollow3D3" unique_id=4801649 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -319,7 +344,6 @@ transform = Transform3D(0.0006276722, 0, 0.9999358, 0, 1, 0, -0.9999358, 0, 0.00
 progress = 9.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 4/PathFollow3D4" unique_id=1221178692 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -329,7 +353,6 @@ transform = Transform3D(0.00062767306, 0, 0.99993724, 0, 1, 0, -0.99993724, 0, 0
 progress = 12.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 4/PathFollow3D5" unique_id=476984315 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -337,12 +360,14 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 [node name="wave 5" type="Path3D" parent="LevelScroll" unique_id=1943859210]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.506039, 0, -68.17857)
 curve = SubResource("Curve3D_2gg5g")
+script = ExtResource("10_fjwqu")
+speed = 8.0
+speed_curve = SubResource("Curve_a283u")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 5" unique_id=2135139181]
 transform = Transform3D(0.0013904427, 0, -0.9999347, 0, 1, 0, 0.9999347, 0, 0.0013904427, -13.022745, 0, 0.06391907)
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 5/PathFollow3D" unique_id=1524352687 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -352,7 +377,6 @@ transform = Transform3D(0.0013904425, 0, -0.9999345, 0, 1, 0, 0.9999345, 0, 0.00
 progress = 3.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 5/PathFollow3D2" unique_id=1088866029 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -362,7 +386,6 @@ transform = Transform3D(0.0013904425, 0, -0.9999345, 0, 1, 0, 0.9999345, 0, 0.00
 progress = 6.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 5/PathFollow3D3" unique_id=484801412 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -372,7 +395,6 @@ transform = Transform3D(0.0013904414, 0, -0.9999337, 0, 1, 0, 0.9999337, 0, 0.00
 progress = 9.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 5/PathFollow3D4" unique_id=1470464933 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -382,7 +404,6 @@ transform = Transform3D(0.0013904398, 0, -0.9999326, 0, 1, 0, 0.9999326, 0, 0.00
 progress = 12.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 5/PathFollow3D5" unique_id=357423036 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -390,12 +411,14 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 [node name="wave 6" type="Path3D" parent="LevelScroll" unique_id=1462768292]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.902981, 0, -93.512115)
 curve = SubResource("Curve3D_fql1y")
+script = ExtResource("10_fjwqu")
+speed = 8.0
+speed_curve = SubResource("Curve_njda1")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 6" unique_id=1507688133]
 transform = Transform3D(0.0024505688, 0, -0.9999605, 0, 1, 0, 0.9999605, 0, 0.0024505688, -12.992178, 0, 0.09770012)
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 6/PathFollow3D" unique_id=432632776 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -405,7 +428,6 @@ transform = Transform3D(0.0024505649, 0, -0.9999588, 0, 1, 0, 0.9999588, 0, 0.00
 progress = 3.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 6/PathFollow3D2" unique_id=442499564 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -415,7 +437,6 @@ transform = Transform3D(0.0024505768, 0, -0.99996364, 0, 1, 0, 0.99996364, 0, 0.
 progress = 6.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 6/PathFollow3D3" unique_id=1181399380 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -425,7 +446,6 @@ transform = Transform3D(0.0024505735, 0, -0.99996233, 0, 1, 0, 0.99996233, 0, 0.
 progress = 9.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 6/PathFollow3D4" unique_id=417665442 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -435,7 +455,6 @@ transform = Transform3D(0.0024505847, 0, -0.99996686, 0, 1, 0, 0.99996686, 0, 0.
 progress = 12.0
 loop = false
 script = ExtResource("13_fjwqu")
-speed = 8.0
 
 [node name="blaze 2" parent="LevelScroll/wave 6/PathFollow3D5" unique_id=668987345 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)

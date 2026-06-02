@@ -2,6 +2,7 @@ extends PathFollow3D
 
 const SCROLL_COMPENSATOR_NAME := "ScrollCompensator"
 
+@export var use_parent_settings: bool = true
 @export var speed: float = 5.0 # jednostki 3D na sekundę wzdłuż krzywej
 ## Opcjonalny mnożnik prędkości wzdłuż ścieżki (oś X: 0..1 = progress/baked_length).
 ## Jeśli puste, poruszanie jest ze stałą prędkością `speed`.
@@ -18,7 +19,7 @@ var _anti_scroll_world: Vector3 = Vector3.ZERO
 
 func _ready() -> void:
 	_level_scroll = _find_level_scroll()
-	if compensate_level_scroll:
+	if _is_scroll_compensation_enabled():
 		_ensure_scroll_compensator()
 
 	_path_active = false
@@ -83,10 +84,11 @@ func _physics_process(delta: float) -> void:
 	var baked_len: float = get_baked_length_safe()
 	var t: float = clampf(progress / baked_len, 0.0, 1.0)
 	var speed_mul: float = 1.0
-	if speed_curve:
-		speed_mul = maxf(0.0, speed_curve.sample_baked(t))
+	var curve := _get_speed_curve()
+	if curve:
+		speed_mul = maxf(0.0, curve.sample_baked(t))
 
-	progress += (speed * speed_mul) * delta
+	progress += (_get_speed() * speed_mul) * delta
 
 	progress = clamp(progress, 0.0, baked_len)
 
@@ -113,7 +115,7 @@ func _find_level_scroll() -> Node3D:
 
 
 func _apply_scroll_compensation(delta: float) -> void:
-	if not compensate_level_scroll or _level_scroll == null:
+	if not _is_scroll_compensation_enabled() or _level_scroll == null:
 		return
 	var scroll_speed: Variant = _level_scroll.get("scroll_speed")
 	if scroll_speed == null or float(scroll_speed) == 0.0:
@@ -129,3 +131,42 @@ func _apply_scroll_compensation(delta: float) -> void:
 	# Najpierw punkt na ścieżce (ze scrollem), potem stały offset w świecie — nie w local parent.
 	anchor.position = Vector3.ZERO
 	anchor.global_position += _anti_scroll_world
+
+
+func _get_parent_settings_node() -> Node:
+	if not use_parent_settings:
+		return null
+	var p := get_parent()
+	if p == null:
+		return null
+	var s: Script = p.get_script()
+	if s == null:
+		return null
+	# Linter w edytorze może nie widzieć class_name; opieramy się o plik skryptu.
+	if s.resource_path.get_file() != "EnemyPath3D.gd":
+		return null
+	return p
+
+
+func _get_speed() -> float:
+	var settings: Node = _get_parent_settings_node()
+	if settings == null:
+		return speed
+	var v: Variant = settings.get("speed")
+	return float(v) if v != null else speed
+
+
+func _get_speed_curve() -> Curve:
+	var settings: Node = _get_parent_settings_node()
+	if settings == null:
+		return speed_curve
+	var v: Variant = settings.get("speed_curve")
+	return v as Curve if v != null else speed_curve
+
+
+func _is_scroll_compensation_enabled() -> bool:
+	var settings: Node = _get_parent_settings_node()
+	if settings == null:
+		return compensate_level_scroll
+	var v: Variant = settings.get("compensate_level_scroll")
+	return bool(v) if v != null else compensate_level_scroll
