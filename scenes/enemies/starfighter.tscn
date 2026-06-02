@@ -9,7 +9,6 @@
 armor = 10
 fire_rate = 1.5
 projectile_velocity = Vector3(0, 0, 8)
-aim = 10
 sound = 3
 esize = 2
 
@@ -22,5 +21,11 @@ transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.3
 transform = Transform3D(1.9106855e-15, 1, -8.742278e-08, 1, 1.9106855e-15, 4.371139e-08, 4.371139e-08, -8.742278e-08, -1, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_3ym5w")
 
+[node name="VisibleOnScreenNotifier3D" parent="." index="3" unique_id=1484925388]
+visible = false
+
 [node name="Muzzle" parent="." index="4" unique_id=1704985833]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9142467)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, 0.155)
+
+[node name="Muzzle2" type="Marker3D" parent="." index="5" unique_id=646053511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0, 0.155)

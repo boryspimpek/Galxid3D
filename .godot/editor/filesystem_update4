@@ -9,3 +9,5 @@ res://scripts/core/DataManager.gd
 res://scripts/resources/GeneratorData.gd
 res://scenes/ui/Hud.gd
 res://scenes/player/DamageSystem.gd
+res://scenes/enemy_projectile/EnemyProjectile.tscn
+res://scenes/enemies/starfighter.tscn

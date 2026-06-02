@@ -124,7 +124,7 @@ boom4.png::CompressedTexture2D::6776662002216919928::1779131092::1779977850::1::
 boom.png::CompressedTexture2D::323097929366084747::1779131092::1779973760::1::::<><><>0<>0<>0d164a0ba72702513223a99bdc0d8887<>res://.godot/imported/boom.png-94d28117d22b8726a6414b218877c926.s3tc.ctex<*>res://.godot/imported/boom.png-94d28117d22b8726a6414b218877c926.etc2.ctex::
 explode5.png::CompressedTexture2D::8318985982996447959::1779978476::1779978482::1::::<><><>0<>0<>0d63e210f1c3c28f609c1fe49a92f485<>res://.godot/imported/explode5.png-e8f19fdae615e55e3068f2fdeafa647b.s3tc.ctex<*>res://.godot/imported/explode5.png-e8f19fdae615e55e3068f2fdeafa647b.etc2.ctex::
 ::res://assets/particle pack/::1780410451
-::res://assets/particle pack/PNG (Transparent)/::1780410431
+::res://assets/particle pack/PNG (Transparent)/::1780410452
 circle_01.png::CompressedTexture2D::2357051204517644316::1780410429::1780410452::1::::<><><>0<>0<>b33e811df4f2a9e2ec585fd636baf24f<>res://.godot/imported/circle_01.png-1eb5c9d04dd337b92aa3fc913035021f.ctex::
 circle_02.png::CompressedTexture2D::4452356738779882832::1780410429::1780410452::1::::<><><>0<>0<>ec846b3fe11701a42e4c961911a7cde1<>res://.godot/imported/circle_02.png-6e6ffbb3e6be8c7acc6501a4c23423de.ctex::
 circle_03.png::CompressedTexture2D::6142278358793522536::1780410429::1780410452::1::::<><><>0<>0<>3faf4045988f2d823a77307ce1cb5a9e<>res://.godot/imported/circle_03.png-b1345fc0f220a87f65a5f4f996fdcda9.ctex::
@@ -174,7 +174,7 @@ smoke_08.png::CompressedTexture2D::2066578281959004849::1780410429::1780410451::
 smoke_09.png::CompressedTexture2D::7880908469371249813::1780410429::1780410451::1::::<><><>0<>0<>005c5168d5ee7bc8300e39489cb6cfbf<>res://.godot/imported/smoke_09.png-f7a442c08fe484c29342d5622853e415.ctex::
 smoke_10.png::CompressedTexture2D::1342624989829309422::1780410429::1780410451::1::::<><><>0<>0<>c4bb924ce6632d28671280ae2afa84ca<>res://.godot/imported/smoke_10.png-98a3673a12a8b7698f58e4c78e791d16.ctex::
 spark_01.png::CompressedTexture2D::3263896399766116328::1780410429::1780410451::1::::<><><>0<>0<>0125f0633b5c82bfc6c76e4579d2a9af<>res://.godot/imported/spark_01.png-5c182c93b7c7a387216bc6eb8615f98a.ctex::
-spark_02.png::CompressedTexture2D::1309102013509881603::1780410429::1780410451::1::::<><><>0<>0<>f8830188a5d69d95649b5b39a4501610<>res://.godot/imported/spark_02.png-8597cd8f953c5d5a8082fc0821da7209.ctex::
+spark_02.png::CompressedTexture2D::1309102013509881603::1780410429::1780410986::1::::<><><>0<>0<>c1862160e7706bf563b9c51d79d9b34e<>res://.godot/imported/spark_02.png-8597cd8f953c5d5a8082fc0821da7209.s3tc.ctex<*>res://.godot/imported/spark_02.png-8597cd8f953c5d5a8082fc0821da7209.etc2.ctex::
 spark_03.png::CompressedTexture2D::3027516983801452705::1780410429::1780410451::1::::<><><>0<>0<>2a6db457cb572e010ea8e72d9d514fb9<>res://.godot/imported/spark_03.png-09f0de57d7440fedb38933090bed5770.ctex::
 spark_04.png::CompressedTexture2D::5862519457865973147::1780410429::1780410451::1::::<><><>0<>0<>8ee5bd75b64562c5c966c3e9f408ca09<>res://.godot/imported/spark_04.png-64a6447dfcb1fcac910a7ab496b39b28.ctex::
 spark_05.png::CompressedTexture2D::1250014567684112734::1780410429::1780410451::1::::<><><>0<>0<>d55543a6b0a72da15c72ab67d4e051d9<>res://.godot/imported/spark_05.png-8da9c1d84ca3baa905894221153fff11.ctex::
@@ -205,7 +205,7 @@ window_01.png::CompressedTexture2D::3531962806276167347::1780410429::1780410451:
 window_02.png::CompressedTexture2D::5229175529424527955::1780410429::1780410451::1::::<><><>0<>0<>d1002af5e34ab1e1a01fbd3755f90d78<>res://.godot/imported/window_02.png-b13d464817eed9b874446f46e2078c3a.ctex::
 window_03.png::CompressedTexture2D::3243566809566223685::1780410429::1780410451::1::::<><><>0<>0<>87e7c998db2df3afb71d695ee7651a45<>res://.godot/imported/window_03.png-9a059c85b50e46dd9474d4393424045c.ctex::
 window_04.png::CompressedTexture2D::7995044134161238335::1780410429::1780410451::1::::<><><>0<>0<>6b7b9fdad7957c11bb96925075eeb4d8<>res://.godot/imported/window_04.png-78db539a0050f907f3d673326a1b1540.ctex::
-::res://assets/particle pack/PNG (Transparent)/Rotated/::1780410431
+::res://assets/particle pack/PNG (Transparent)/Rotated/::1780410452
 flame_05_rotated.png::CompressedTexture2D::1668006296408163847::1780410429::1780410452::1::::<><><>0<>0<>78918318180bc3089a2a89bc19fb94ff<>res://.godot/imported/flame_05_rotated.png-0e59f090f206b10f73433ec79cc35dcb.ctex::
 flame_06_rotated.png::CompressedTexture2D::7157924217364236232::1780410429::1780410452::1::::<><><>0<>0<>1d1ab9faee8a22c31a57f4fed930fda1<>res://.godot/imported/flame_06_rotated.png-f09e81cbd14b5117a40cc887f8d35de4.ctex::
 muzzle_01_rotated.png::CompressedTexture2D::969864130531526919::1780410429::1780410452::1::::<><><>0<>0<>3dee76ce5afc1874a7bdbd3b9678dda9<>res://.godot/imported/muzzle_01_rotated.png-c8af6ab0c0ebf722d7376b2fbea0d6f7.ctex::
