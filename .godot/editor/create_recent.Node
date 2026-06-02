@@ -1,13 +1,12 @@
-CollisionShape3D
 PathFollow3D
 Path3D
+CollisionShape3D
 Marker3D
 VisibleOnScreenNotifier3D
 MeshInstance3D
 Area3D
 VisibleOnScreenEnabler3D
 Node3D
-TrailEmitter
 FogVolume
 GPUParticles3D
 Sprite3D

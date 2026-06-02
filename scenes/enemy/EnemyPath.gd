@@ -10,6 +10,17 @@ const SCROLL_COMPENSATOR_NAME := "ScrollCompensator"
 ## Odejmuje przesunięcie LevelScroll od wroga — ścieżkę układasz tak, jak ma wyglądać na ekranie.
 @export var compensate_level_scroll: bool = true
 
+## Wymusza "przechył" (roll/bank) na zakrętach nawet dla płaskiej ścieżki (top-down).
+@export var bank_enabled: bool = false
+## Maksymalny przechył w stopniach.
+@export_range(0.0, 89.0, 0.1) var bank_max_degrees: float = 25.0
+## Jak mocno bank reaguje na zakręt (większe = mocniej).
+@export_range(0.0, 10.0, 0.01) var bank_strength: float = 2.0
+## Dystans (w jednostkach progress) użyty do estymacji skrętu.
+@export_range(0.001, 100.0, 0.001) var bank_lookahead: float = 0.5
+## Szybkość wygładzania przechyłu (większe = szybciej dogania).
+@export_range(0.0, 30.0, 0.1) var bank_smooth: float = 10.0
+
 var _path_active: bool = false
 var _level_scroll: Node3D
 var _scroll_compensator: Node3D
@@ -95,6 +106,7 @@ func _physics_process(delta: float) -> void:
 	_apply_scroll_compensation(delta)
 
 	rotation_mode = PathFollow3D.ROTATION_ORIENTED
+	_apply_banking(delta)
 
 
 func get_baked_length_safe() -> float:
@@ -131,6 +143,62 @@ func _apply_scroll_compensation(delta: float) -> void:
 	# Najpierw punkt na ścieżce (ze scrollem), potem stały offset w świecie — nie w local parent.
 	anchor.position = Vector3.ZERO
 	anchor.global_position += _anti_scroll_world
+
+
+func _apply_banking(delta: float) -> void:
+	if not bank_enabled:
+		return
+
+	var p := get_parent()
+	if not (p is Path3D):
+		return
+	var curve := (p as Path3D).curve
+	if curve == null:
+		return
+
+	var baked_len: float = maxf(0.001, curve.get_baked_length())
+	var ahead: float = maxf(0.001, bank_lookahead)
+	var d0: float = clampf(progress - ahead, 0.0, baked_len)
+	var d1: float = clampf(progress + ahead, 0.0, baked_len)
+
+	var pos0: Vector3 = curve.sample_baked(d0)
+	var pos: Vector3 = curve.sample_baked(progress)
+	var pos1: Vector3 = curve.sample_baked(d1)
+
+	var dir_prev: Vector3 = (pos - pos0)
+	var dir_next: Vector3 = (pos1 - pos)
+	if dir_prev.length_squared() < 0.000001 or dir_next.length_squared() < 0.000001:
+		return
+	dir_prev = dir_prev.normalized()
+	dir_next = dir_next.normalized()
+
+	# Znak skrętu względem osi świata "UP" (dla top-down zwykle to właśnie chcesz).
+	var signed_turn: float = atan2(Vector3.UP.dot(dir_prev.cross(dir_next)), dir_prev.dot(dir_next))
+
+	var target: float = -signed_turn * bank_strength
+	var max_bank: float = deg_to_rad(bank_max_degrees)
+	target = clampf(target, -max_bank, max_bank)
+
+	var alpha: float = 1.0 - exp(-bank_smooth * delta) if bank_smooth > 0.0 else 1.0
+
+	var anchor := _get_bank_anchor()
+	if anchor == null:
+		return
+
+	# Roll (bank) wokół lokalnej osi Z wroga.
+	var r := anchor.rotation
+	r.z = lerp_angle(r.z, target, alpha)
+	anchor.rotation = r
+
+
+func _get_bank_anchor() -> Node3D:
+	if _scroll_compensator:
+		for child in _scroll_compensator.get_children():
+			var n := child as Node3D
+			if n and child.is_in_group("enemies"):
+				return n
+	var e := _find_enemy() as Node3D
+	return e
 
 
 func _get_parent_settings_node() -> Node:
