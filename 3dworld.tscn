@@ -450,8 +450,8 @@ zmove = 2
 
 [node name="starfighter3" parent="LevelScroll" unique_id=131326324 instance=ExtResource("10_rpljx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.754381, 0, -39.091568)
-zmove = 2
+zmove = -2
 
 [node name="starfighter4" parent="LevelScroll" unique_id=356306559 instance=ExtResource("10_rpljx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6789074, 0, -59.24108)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6789074, 0, -50.858185)
 zmove = -2

@@ -3,11 +3,11 @@ extends PathFollow3D
 const SCROLL_COMPENSATOR_NAME := "ScrollCompensator"
 
 @export var speed: float = 5.0 # jednostki 3D na sekundę wzdłuż krzywej
+## Opcjonalny mnożnik prędkości wzdłuż ścieżki (oś X: 0..1 = progress/baked_length).
+## Jeśli puste, poruszanie jest ze stałą prędkością `speed`.
+@export var speed_curve: Curve
 ## Odejmuje przesunięcie LevelScroll od wroga — ścieżkę układasz tak, jak ma wyglądać na ekranie.
 @export var compensate_level_scroll: bool = true
-# @export var loop_path: bool = true
-# @export var face_movement: bool = true
-# @export var wait_for_screen: bool = true
 
 var _path_active: bool = false
 var _level_scroll: Node3D
@@ -17,10 +17,6 @@ var _anti_scroll_world: Vector3 = Vector3.ZERO
 
 
 func _ready() -> void:
-	# if not wait_for_screen:
-	# 	_start_path()
-	# 	return
-
 	_level_scroll = _find_level_scroll()
 	if compensate_level_scroll:
 		_ensure_scroll_compensator()
@@ -84,14 +80,18 @@ func _physics_process(delta: float) -> void:
 		return
 
 	# PathFollow3D automatycznie ustawia swoją pozycję na podstawie `progress`.
-	progress += speed * delta
+	var baked_len: float = get_baked_length_safe()
+	var t: float = clampf(progress / baked_len, 0.0, 1.0)
+	var speed_mul: float = 1.0
+	if speed_curve:
+		speed_mul = maxf(0.0, speed_curve.sample_baked(t))
 
-	progress = clamp(progress, 0.0, get_baked_length_safe())
+	progress += (speed * speed_mul) * delta
+
+	progress = clamp(progress, 0.0, baked_len)
 
 	_apply_scroll_compensation(delta)
 
-	# if face_movement:
-	# 	# obrót zgodnie z tangentem ścieżki (w Godot 4 wystarczy włączyć też `rotation_mode` w Inspectorze)
 	rotation_mode = PathFollow3D.ROTATION_ORIENTED
 
 

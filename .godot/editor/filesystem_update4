@@ -1,13 +1,4 @@
-res://scenes/world/HorizontalViewShift.gd
-res://3dworld.tscn
-res://scenes/planets/planet.gdshader
 res://scenes/enemies/starfighter.tscn
-res://scenes/player/Player.tscn
-res://scenes/enemy_projectile/EnemyProjectile.tscn
-res://scenes/enemies/blaze_2.tscn
-res://scenes/enemy/Enemy.gd
+res://scenes/planets/planet.gdshader
+res://3dworld.tscn
 res://scenes/enemy/EnemyPath.gd
-res://scenes/world/LevelScroll3D.gd
-res://scenes/ui/Hud.gd
-res://scenes/enemies/blaze_2_model.tscn
-res://default_bus_layout.tres
