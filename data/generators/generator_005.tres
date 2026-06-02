@@ -6,7 +6,6 @@
 script = ExtResource("1")
 generator_index = 5
 generator_name = "Advanced MircoFusion"
-item_graphic = 267
 power = 900
-speed = 0
+regeneration = 300
 cost = 15000

@@ -4,3 +4,7 @@ res://scenes/planets/planet.gdshader
 res://data/weapons/weapon_1.tres
 res://scenes/player/ShieldSystem.gd
 res://data/generators/generator_001.tres
+res://data/generators/generator_002.tres
+res://scripts/core/DataManager.gd
+res://scripts/resources/GeneratorData.gd
+res://scenes/ui/Hud.gd

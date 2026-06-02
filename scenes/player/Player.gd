@@ -16,9 +16,9 @@ extends CharacterBody3D
 
 var armor: int = 0
 var max_armor: int = 0
-var power: float = 900.0
-var power_max: float = 900.0
-var power_add: float = 0.0
+var regen: float = 0.0
+var max_power: float = 0
+var power: float = 0
 var ship_data: ShipData = null
 
 @export var max_bound_x: float = 11.7
@@ -62,8 +62,10 @@ func apply_ship_stats():
 	max_armor = armor
 
 func init_power_regeneration():
-	var generator_power = DataManager.get_generator_power(generator_id)
-	power_add = generator_power
+	var regeneration = DataManager.get_generator_regeneration(generator_id)
+	regen = regeneration
+	max_power = DataManager.get_generator_power(generator_id)
+	power = max_power
 
 # ============================================================================
 # 2. INPUT — mysz I dotyk w jednym miejscu
@@ -108,7 +110,7 @@ func _screen_to_world(screen_pos: Vector2) -> Vector3:
 # ============================================================================
 
 func _physics_process(delta: float):
-	power = min(power_max, power + power_add * delta)
+	power = min(max_power, power + regen * delta)
 
 	var prev_x: float = global_position.x
 

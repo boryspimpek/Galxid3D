@@ -6,7 +6,6 @@
 script = ExtResource("1")
 generator_index = 6
 generator_name = "Gravitron Pulse-Wave"
-item_graphic = 271
 power = 1500
-speed = 255
+regeneration = 255
 cost = 50000

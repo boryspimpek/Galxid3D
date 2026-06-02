@@ -129,9 +129,13 @@ func get_weapon_power_use(weapon_index: int) -> int:
 		return weapon.power_use
 	return 0
 
+func get_generator_regeneration(generator_id: int) -> float:
+	var generator = get_generator_by_id(generator_id)
+	return generator.regeneration if generator else 0
+
 func get_generator_power(generator_id: int) -> float:
 	var generator = get_generator_by_id(generator_id)
-	return float(generator.power) if generator else 0.0
+	return generator.power if generator else 0
 
 # ============================================================================
 # CZYSZCZENIE CACHE (do debugowania)

@@ -41,7 +41,7 @@ func _process(_delta: float) -> void:
 		_shield_label.text = "%d / %d" % [int(roundf(sh)), int(roundf(max_sh))]
 		_shield_row.visible = float(_shield_system.shield_max) > 0.0
 
-	var max_pwr := maxf(1.0, _player.power_max)
+	var max_pwr := maxf(1.0, float(_player.max_power))
 	var pwr := clampf(_player.power, 0.0, max_pwr)
 	_energy_bar.max_value = max_pwr
 	_energy_bar.value = pwr
