@@ -135,12 +135,10 @@ func _clamp_to_screen():
 # ============================================================================
 
 func take_damage(amount: int) -> void:
-	armor -= amount
-	if armor <= 0:
-		die()
-	else:
-		# 019_S_HULL_HIT.wav
-		SoundManager.play_hit_sound(4)
+	if damage_system:
+		damage_system.take_damage(amount)
+		return
+	push_warning("Player: Brak DamageSystem — obrażenia pominięte")
 
 func die() -> void:
 	queue_free()

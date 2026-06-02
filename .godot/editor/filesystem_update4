@@ -8,3 +8,4 @@ res://data/generators/generator_002.tres
 res://scripts/core/DataManager.gd
 res://scripts/resources/GeneratorData.gd
 res://scenes/ui/Hud.gd
+res://scenes/player/DamageSystem.gd

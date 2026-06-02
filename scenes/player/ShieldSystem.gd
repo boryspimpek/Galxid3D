@@ -1,6 +1,6 @@
 extends Node
 
-const SHIELD_WAIT = 0.5  
+const SHIELD_WAIT = 5.0  
 
 var player: CharacterBody3D
 
