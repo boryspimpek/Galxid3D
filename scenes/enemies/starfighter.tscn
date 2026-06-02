@@ -8,6 +8,7 @@
 [node name="starfighter" unique_id=1897743314 instance=ExtResource("1_3ym5w")]
 armor = 10
 fire_rate = 1.5
+aim = 2
 projectile_velocity = Vector3(0, 0, 8)
 sound = 3
 esize = 2
@@ -20,9 +21,6 @@ transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.3
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="2" unique_id=1235190230]
 transform = Transform3D(1.9106855e-15, 1, -8.742278e-08, 1, 1.9106855e-15, 4.371139e-08, 4.371139e-08, -8.742278e-08, -1, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_3ym5w")
-
-[node name="VisibleOnScreenNotifier3D" parent="." index="3" unique_id=1484925388]
-visible = false
 
 [node name="Muzzle" parent="." index="4" unique_id=1704985833]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, 0.155)

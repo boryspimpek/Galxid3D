@@ -2,21 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://hq602uu7kt7m" path="res://scenes/planets/simple_planet.tscn" id="1_k0muh"]
 [ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="2_k0muh"]
+[ext_resource type="Texture2D" uid="uid://bbtxpx2nr6ade" path="res://assets/planets/textures/solar system/2k_jupiter.jpg" id="3_tex"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5hhn"]
 cull_mode = 1
 grow = true
 grow_amount = 0.3
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rid86"]
-load_path = "res://.godot/imported/2k_jupiter.jpg-bf98b86ba5038ec915a44ce1a3aea360.s3tc.ctex"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c88h4"]
 render_priority = 0
 next_pass = SubResource("StandardMaterial3D_d5hhn")
 shader = ExtResource("2_k0muh")
 shader_parameter/albedo_color = Color(1, 1, 1, 1)
-shader_parameter/albedo_texture = SubResource("CompressedTexture2D_rid86")
+shader_parameter/albedo_texture = ExtResource("3_tex")
 shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/metallic = 0.4150000197125
 shader_parameter/clearcoat = 1.0

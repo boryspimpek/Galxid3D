@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://c4jv1o5v0f2m1"]
 
 [ext_resource type="Script" uid="uid://b0080ed2yyg10" path="res://scenes/explosions/Explode.gd" id="2_explode3d"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5jnvr"]
-load_path = "res://.godot/imported/boom.png-94d28117d22b8726a6414b218877c926.s3tc.ctex"
+[ext_resource type="Texture2D" uid="uid://eurm1kga3iy2" path="res://assets/explode/boom.png" id="3_boom"]
 
 [sub_resource type="Animation" id="Animation_reset"]
 length = 0.001
@@ -49,7 +47,7 @@ script = ExtResource("2_explode3d")
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1169635179]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 billboard = 1
-texture = SubResource("CompressedTexture2D_5jnvr")
+texture = ExtResource("3_boom")
 hframes = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1618128187]

@@ -1,6 +1,7 @@
-GPUParticles3D
 PathFollow3D
+EnemyPath3D
 Path3D
+GPUParticles3D
 CollisionShape3D
 Marker3D
 VisibleOnScreenNotifier3D

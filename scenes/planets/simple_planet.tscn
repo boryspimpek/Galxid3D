@@ -3,21 +3,19 @@
 [ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="1_yrxqc"]
 [ext_resource type="Script" uid="uid://bpicyg2rrp4qp" path="res://scenes/planets/planet_base.gd" id="3_k4q7n"]
 [ext_resource type="Texture2D" uid="uid://droo5e32n3i7x" path="res://assets/planets/textures/meshy/Meshy_AI_Azure_Ringed_World_0520072106_texture_Image_0.jpg" id="3_mqevj"]
+[ext_resource type="Texture2D" uid="uid://1twux37maqnb" path="res://assets/planets/textures/solar system/Gemini_Generated_Image_9vs8tr9vs8tr9vs8.png" id="4_gemini"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqevj"]
 cull_mode = 1
 grow = true
 grow_amount = 0.3
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mqevj"]
-load_path = "res://.godot/imported/Gemini_Generated_Image_9vs8tr9vs8tr9vs8.png-fd37f1decb37f29423fc84efa0ac1795.s3tc.ctex"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a34da"]
 render_priority = 0
 next_pass = SubResource("StandardMaterial3D_mqevj")
 shader = ExtResource("1_yrxqc")
 shader_parameter/albedo_color = Color(1, 1, 1, 1)
-shader_parameter/albedo_texture = SubResource("CompressedTexture2D_mqevj")
+shader_parameter/albedo_texture = ExtResource("4_gemini")
 shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/metallic = 0.414000019665
 shader_parameter/clearcoat = 1.0

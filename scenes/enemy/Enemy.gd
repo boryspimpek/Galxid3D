@@ -5,10 +5,10 @@ extends Area3D
 @export var armor: int = 1
 @export var damage: int = 1
 @export var fire_rate: float = 2.0
-@export var projectile_velocity: Vector3 = Vector3(0, 0, 60)
 ## 0 = tylko projectile_velocity, 10 = pełne wycelowanie w gracza (prędkość bez zmian).
 @export_range(0, 10, 1) var aim: int = 0
 const AIM_MAX := 10
+@export var projectile_velocity: Vector3 = Vector3(0, 0, 60)
 @export var sound: int = 1
 @export var esize: int = 1
 
@@ -30,6 +30,7 @@ var speed: float:
 @onready var muzzle: Marker3D = $Muzzle
 
 # --- ZMIENNE WEWNĘTRZNE (LOGIKA) ---
+var _muzzles: Array[Marker3D] = []
 var enemy_velocity: Vector3
 var fire_timer: float = 0.0
 var is_firing: bool = false
@@ -56,6 +57,11 @@ func _ready() -> void:
 	collision_mask = 5
 
 	enemy_velocity = Vector3(float(xmove), float(ymove), float(zmove))
+
+	_muzzles = [muzzle]
+	var muzzle2 := get_node_or_null("Muzzle2") as Marker3D
+	if muzzle2:
+		_muzzles.append(muzzle2)
 
 	_screen_notifier = get_node_or_null("VisibleOnScreenNotifier3D") as VisibleOnScreenNotifier3D
 	if _screen_notifier:
@@ -121,23 +127,24 @@ func die() -> void:
 # --- OBSŁUGA STRZELANIA ---
 
 func shoot() -> void:
-	create_projectile(damage, projectile_velocity)
+	for from_muzzle in _muzzles:
+		create_projectile(damage, projectile_velocity, from_muzzle)
 	SoundManager.play_weapon_sound(sound)
 
 	fire_timer = fire_rate
 
 
-func create_projectile(dmg: int, proj_velocity: Vector3) -> void:
+func create_projectile(dmg: int, proj_velocity: Vector3, from_muzzle: Marker3D) -> void:
 	var projectile_scene = GameConstants.enemy_projectile_scene
 	var projectile = projectile_scene.instantiate()
 
 	get_tree().current_scene.add_child(projectile)
-	projectile.global_position = muzzle.global_position
-	projectile.velocity = _compute_projectile_velocity(proj_velocity)
+	projectile.global_position = from_muzzle.global_position
+	projectile.velocity = _compute_projectile_velocity(proj_velocity, from_muzzle)
 	projectile.damage = dmg
 
 
-func _compute_projectile_velocity(base_velocity: Vector3) -> Vector3:
+func _compute_projectile_velocity(base_velocity: Vector3, from_muzzle: Marker3D) -> Vector3:
 	if aim <= 0:
 		return base_velocity
 
@@ -150,7 +157,7 @@ func _compute_projectile_velocity(base_velocity: Vector3) -> Vector3:
 	if player == null:
 		return base_velocity
 
-	var to_player := player.global_position - muzzle.global_position
+	var to_player := player.global_position - from_muzzle.global_position
 	if to_player.length_squared() < 0.0001:
 		return base_velocity
 

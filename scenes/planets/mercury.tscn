@@ -2,21 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://hq602uu7kt7m" path="res://scenes/planets/simple_planet.tscn" id="1_recc1"]
 [ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="2_hqfxl"]
+[ext_resource type="Texture2D" uid="uid://cvy20n5p3850e" path="res://assets/planets/textures/solar system/2k_mercury.jpg" id="3_tex"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42d1q"]
 cull_mode = 1
 grow = true
 grow_amount = 0.3
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hqfxl"]
-load_path = "res://.godot/imported/2k_mercury.jpg-a6dd2c9c255eb2227dea93243471afa4.s3tc.ctex"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d8y16"]
 render_priority = 0
 next_pass = SubResource("StandardMaterial3D_42d1q")
 shader = ExtResource("2_hqfxl")
 shader_parameter/albedo_color = Color(1, 1, 1, 1)
-shader_parameter/albedo_texture = SubResource("CompressedTexture2D_hqfxl")
+shader_parameter/albedo_texture = ExtResource("3_tex")
 shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/metallic = 0.4150000197125
 shader_parameter/clearcoat = 1.0

@@ -96,6 +96,54 @@ _limits = [0.0, 3.0, 0.0, 1.0]
 _data = [Vector2(0.55313355, 0.987766), 0.0, 6.7673707, 0, 0, Vector2(1, 1.9420214), 0.0, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="Curve3D" id="Curve3D_a283u"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.0021238327, 0, 0.03056717, 0, 0, 0, 0, 0, 0, 0.04365158, 0, 8.25117, 0, 0, 0, 0, 0, 0, 11.11688, 0, 8.232313),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_a02db"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 5), 0.0, 0.0, 0, 0, Vector2(0.59945506, 5), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_njda1"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.0021238327, 0, 0.03056717, 0, 0, 0, 0, 0, 0, -0.075629234, 0, 3.6355934, 0, 0, 0, 0, 0, 0, -11.507406, 0, 3.6218262),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_kisij"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 5), 0.0, 0.0, 0, 0, Vector2(0.59945506, 5), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_sgee4"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.0021238327, 0, 0.03056717, 0, 0, 0, 0, 0, 0, 0.04365158, 0, 8.25117, 0, 0, 0, 0, 0, 0, 26.564295, 0, 8.100357),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_sq30x"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 5), 0.0, 0.0, 0, 0, Vector2(0.3787466, 5), 0.0, 0.0, 0, 0, Vector2(0.48228884, 0.29787254), 0.0, 0.0, 0, 0, Vector2(0.70844686, 0.29787254), 0.0, 40.13211, 0, 1, Vector2(0.8256131, 5), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_h5joq"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.0021238327, 0, 0.03056717, 0, 0, 0, 0, 0, 0, -0.17724991, 0, 6.5800247, 0, 0, 0, 0, 0, 0, -27.731995, 0, 6.7522354),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_e4jcy"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 5), 0.0, 0.0, 0, 0, Vector2(0.3787466, 5), 0.0, 0.0, 0, 0, Vector2(0.48228884, 0.29787254), 0.0, 0.0, 0, 0, Vector2(0.70844686, 0.29787254), 0.0, 40.13211, 0, 1, Vector2(0.8256131, 5), 0.0, 0.0, 0, 0]
+point_count = 5
+
 [node name="Game" type="Node3D" unique_id=616589222]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2090551855]
@@ -322,7 +370,7 @@ bank_enabled = true
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="wave 4" type="Path3D" parent="LevelScroll" unique_id=1853809397]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.185299, 0, -59.070667)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.262833, 0, -59.070667)
 curve = SubResource("Curve3D_m2xqg")
 script = ExtResource("10_fjwqu")
 speed = 8.0
@@ -495,22 +543,62 @@ bank_enabled = true
 [node name="blaze 2" parent="LevelScroll/wave 6/PathFollow3D5" unique_id=668987345 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
-[node name="starfighter" parent="LevelScroll" unique_id=354643621 instance=ExtResource("10_rpljx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.735443, 0, -70.183716)
-zmove = -2
+[node name="starfighter left" type="Path3D" parent="LevelScroll" unique_id=1096031301]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.855473, 0, -79.048325)
+curve = SubResource("Curve3D_a283u")
+script = ExtResource("10_fjwqu")
+speed_curve = SubResource("Curve_a02db")
+bank_enabled = true
 
-[node name="starfighter2" parent="LevelScroll" unique_id=466415993 instance=ExtResource("10_rpljx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.471449, 0, -69.35358)
-zmove = 2
+[node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/starfighter left" unique_id=361045995]
+transform = Transform3D(-0.9999788, 0, -0.005051461, 0, 1, 0, 0.005051461, 0, -0.9999788, 0.0021238327, 0, 0.03056717)
+loop = false
+script = ExtResource("13_fjwqu")
 
-[node name="starfighter3" parent="LevelScroll" unique_id=131326324 instance=ExtResource("10_rpljx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.754381, 0, -39.091568)
-zmove = -2
+[node name="starfighter" parent="LevelScroll/starfighter left/PathFollow3D" unique_id=1766588749 instance=ExtResource("10_rpljx")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="starfighter4" parent="LevelScroll" unique_id=356306559 instance=ExtResource("10_rpljx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6789074, 0, -50.858185)
-zmove = -2
+[node name="starfighter right" type="Path3D" parent="LevelScroll" unique_id=1003829020]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.954819, 0, -87.37079)
+curve = SubResource("Curve3D_njda1")
+script = ExtResource("10_fjwqu")
+speed_curve = SubResource("Curve_kisij")
+bank_enabled = true
 
-[node name="starfighter5" parent="LevelScroll" unique_id=657083364 instance=ExtResource("10_rpljx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.689468)
-zmove = -3
+[node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/starfighter right" unique_id=572719255]
+transform = Transform3D(-0.9997633, 0, 0.021562874, 0, 1, 0, -0.021562874, 0, -0.9997633, 0.0021238327, 0, 0.03056717)
+loop = false
+script = ExtResource("13_fjwqu")
+
+[node name="starfighter" parent="LevelScroll/starfighter right/PathFollow3D" unique_id=1209574411 instance=ExtResource("10_rpljx")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="starfighter left2" type="Path3D" parent="LevelScroll" unique_id=821168026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -35.046165)
+curve = SubResource("Curve3D_sgee4")
+script = ExtResource("10_fjwqu")
+speed_curve = SubResource("Curve_sq30x")
+bank_enabled = true
+
+[node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/starfighter left2" unique_id=1010242877]
+transform = Transform3D(-0.9999788, 0, -0.005051461, 0, 1, 0, 0.005051461, 0, -0.9999788, 0.0021238327, 0, 0.03056717)
+loop = false
+script = ExtResource("13_fjwqu")
+
+[node name="starfighter" parent="LevelScroll/starfighter left2/PathFollow3D" unique_id=764090483 instance=ExtResource("10_rpljx")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="starfighter right2" type="Path3D" parent="LevelScroll" unique_id=604843432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -50.521164)
+curve = SubResource("Curve3D_h5joq")
+script = ExtResource("10_fjwqu")
+speed_curve = SubResource("Curve_e4jcy")
+bank_enabled = true
+
+[node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/starfighter right2" unique_id=1111405812]
+transform = Transform3D(-0.99962044, 0, 0.027377067, 0, 1, 0, -0.027377067, 0, -0.99962044, 0.0021238327, 0, 0.03056717)
+loop = false
+script = ExtResource("13_fjwqu")
+
+[node name="starfighter" parent="LevelScroll/starfighter right2/PathFollow3D" unique_id=1466853133 instance=ExtResource("10_rpljx")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
