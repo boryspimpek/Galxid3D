@@ -3,9 +3,9 @@ extends Node3D
 ## Przesuwa kamerę w bok przy krawędziach ekranu — widać więcej mapy, bez ruszania
 ## świata (wrogowie i pociski zostają w spójnych współrzędnych globalnych).
 
-@export var max_shift_x: float = 2.5
+@export var max_shift_x: float = 3
 ## Od jakiej części max_bound_x zaczyna się przesuw (0.5 = od połowy drogi do krawędzi).
-@export var edge_begin: float = 0.5
+@export var edge_begin: float = 0.1
 @export var smooth: float = 8.0
 ## Tło przesuwa się słabiej niż kamera (paralaksa, opcjonalnie 0 = wyłączone).
 @export var background_parallax: float = 0.35

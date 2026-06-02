@@ -12,3 +12,5 @@ res://scenes/player/DamageSystem.gd
 res://scenes/enemy_projectile/EnemyProjectile.tscn
 res://scenes/enemies/starfighter.tscn
 res://scenes/enemy/Enemy.gd
+res://scenes/ui/Hud.tscn
+res://scenes/world/HorizontalViewShift.gd

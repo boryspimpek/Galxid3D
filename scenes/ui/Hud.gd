@@ -7,6 +7,8 @@ extends CanvasLayer
 @onready var _shield_label: Label = %ShieldValue
 @onready var _energy_label: Label = %EnergyValue
 @onready var _shield_row: HBoxContainer = %ShieldRow
+@onready var _restart_button: Button = %RestartButton
+@onready var _restart_confirm: Control = %RestartConfirm
 @onready var _game_over: Control = %GameOver
 
 var _player: CharacterBody3D
@@ -16,6 +18,10 @@ var _shield_system: Node
 func _ready() -> void:
 	add_to_group("hud")
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	_restart_button.pressed.connect(_on_restart_button_pressed)
+	%RestartConfirmYes.pressed.connect(_restart_run)
+	%RestartConfirmNo.pressed.connect(_hide_restart_confirm)
+	%GameOverRestartButton.pressed.connect(_restart_run)
 	call_deferred("_bind_player")
 
 
@@ -25,14 +31,35 @@ func _bind_player() -> void:
 		_shield_system = _player.get_node_or_null("ShieldSystem")
 
 func show_game_over() -> void:
+	_hide_restart_confirm()
+	_restart_button.visible = false
 	_game_over.visible = true
 	get_tree().paused = true
+
+
+func _on_restart_button_pressed() -> void:
+	_show_restart_confirm()
+
+
+func _show_restart_confirm() -> void:
+	_restart_confirm.visible = true
+	get_tree().paused = true
+
+
+func _hide_restart_confirm() -> void:
+	_restart_confirm.visible = false
+	if not _game_over.visible:
+		get_tree().paused = false
+
 
 func _restart_run() -> void:
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 
+
 func _unhandled_input(event: InputEvent) -> void:
+	if _restart_confirm.visible:
+		return
 	if not _game_over.visible:
 		return
 

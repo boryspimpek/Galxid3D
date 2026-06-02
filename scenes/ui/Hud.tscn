@@ -165,6 +165,89 @@ text = "900 / 900"
 label_settings = SubResource("LabelSettings_value")
 horizontal_alignment = 2
 
+[node name="TopRight" type="MarginContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -280.0
+offset_bottom = 88.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 36
+
+[node name="RestartButton" type="Button" parent="Root/TopRight"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 56)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 20
+text = "Od nowa"
+
+[node name="RestartConfirm" type="Control" parent="Root"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Dim" type="ColorRect" parent="Root/RestartConfirm"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.55)
+mouse_filter = 2
+
+[node name="Center" type="CenterContainer" parent="Root/RestartConfirm"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Root/RestartConfirm/Center"]
+custom_minimum_size = Vector2(560, 0)
+mouse_filter = 2
+
+[node name="VBox" type="VBoxContainer" parent="Root/RestartConfirm/Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Message" type="Label" parent="Root/RestartConfirm/Center/Panel/VBox"]
+layout_mode = 2
+text = "Uruchomić poziom od początku?"
+label_settings = SubResource("LabelSettings_title")
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="Root/RestartConfirm/Center/Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="RestartConfirmYes" type="Button" parent="Root/RestartConfirm/Center/Panel/VBox/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Tak"
+
+[node name="RestartConfirmNo" type="Button" parent="Root/RestartConfirm/Center/Panel/VBox/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Anuluj"
+
 [node name="GameOver" type="Control" parent="Root"]
 unique_name_in_owner = true
 visible = false
@@ -210,8 +293,15 @@ text = "GAME OVER"
 label_settings = SubResource("LabelSettings_title")
 horizontal_alignment = 1
 
+[node name="GameOverRestartButton" type="Button" parent="Root/GameOver/Center/Panel/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Zagraj od nowa"
+
 [node name="Hint" type="Label" parent="Root/GameOver/Center/Panel/VBox"]
 layout_mode = 2
-text = "Kliknij / dotknij, aby zagrać od początku"
+text = "lub kliknij / dotknij ekran"
 label_settings = SubResource("LabelSettings_value")
 horizontal_alignment = 1
