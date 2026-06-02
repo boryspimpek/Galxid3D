@@ -115,9 +115,6 @@ edge_begin = 0.1
 transform = Transform3D(1.08, 0, 0, 0, 1.08, 0, 0, 0, 1.08, 0, -170, 0)
 
 [node name="PlayAreaFrame" parent="." unique_id=143925964 instance=ExtResource("6_3vxff")]
-visible = false
-max_bound_x = 8.75
-max_bound_z = 15.45
 
 [node name="AsteroidSpawner" type="Node3D" parent="." unique_id=1227067656]
 script = ExtResource("8_pnv6h")
@@ -147,9 +144,6 @@ script = ExtResource("7_scroll")
 scroll_speed = 3.0
 
 [node name="LevelScrollRuler" parent="LevelScroll" unique_id=383457667 instance=ExtResource("14_ruler")]
-max_bound_x = 11.5
-z_min = -100.0
-z_max = 14.45
 show_time_labels = false
 color_play_zone = Color(0.2, 1, 0.4, 0)
 

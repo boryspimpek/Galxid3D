@@ -13,8 +13,8 @@ disable_receive_shadows = true
 
 [node name="PlayAreaFrame" type="Node3D"]
 script = ExtResource("1_frame")
-max_bound_x = 8.5
-max_bound_z = 14.5
+max_bound_x = 8.75
+max_bound_z = 15.45
 border_thickness = 0.15
 border_height = 0.05
 y_offset = 0.02

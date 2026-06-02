@@ -4,12 +4,12 @@ extends Node3D
 ## Ramka granic planszy (X/Z) — do podglądu w edytorze przy ustawianiu Path3D.
 ## Domyślne wartości jak w Player.tscn (max_bound_x / max_bound_z).
 
-@export var max_bound_x: float = 8.5:
+@export var max_bound_x: float = 8.75:
 	set(value):
 		max_bound_x = value
 		_update_frame()
 
-@export var max_bound_z: float = 14.5:
+@export var max_bound_z: float = 15.45:
 	set(value):
 		max_bound_z = value
 		_update_frame()
