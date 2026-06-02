@@ -39,3 +39,4 @@ func reload():
 
 func take_shield_damage(amount: float):
 	shield = max(shield - amount, 0.0)
+	SoundManager.play_hit_sound(4)

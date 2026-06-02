@@ -384,7 +384,7 @@ script = ExtResource("10_fjwqu")
 speed = 8.0
 speed_curve = SubResource("Curve_a283u")
 bank_enabled = true
-bank_lookahead = 8.0
+bank_lookahead = 10.0
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 5" unique_id=2135139181]
 transform = Transform3D(0.0013904427, 0, -0.9999347, 0, 1, 0, 0.9999347, 0, 0.0013904427, -13.022745, 0, 0.06391907)

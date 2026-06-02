@@ -3,7 +3,8 @@ extends Node
 const SOUND_DIR = "res://data/extracted_sounds/"
 
 var _weapon_player: AudioStreamPlayer   # kanał broni - restartuje przy każdym strzale
-var _impact_player: AudioStreamPlayer   # kanał trafień/eksplozji - niezależny
+var _impact_player: AudioStreamPlayer   # kanał eksplozji/dużych efektów - niezależny
+var _hit_player: AudioStreamPlayer      # kanał trafień (osobny bus do ściszania)
 var _cache: Dictionary = {}      # sound_id -> AudioStream or null
 var _path_map: Dictionary = {}   # sound_id -> file path
 
@@ -14,6 +15,9 @@ func _ready():
 	_impact_player = AudioStreamPlayer.new()
 	_impact_player.bus = "Explosions"
 	add_child(_impact_player)
+	_hit_player = AudioStreamPlayer.new()
+	_hit_player.bus = "Impacts"
+	add_child(_hit_player)
 	_scan_sounds()
 
 func _scan_sounds():
@@ -56,6 +60,9 @@ func play_weapon_sound(sound_id: int) -> void:
 
 func play_sound(sound_id: int) -> void:
 	_play_on(_impact_player, sound_id)
+
+func play_hit_sound(sound_id: int) -> void:
+	_play_on(_hit_player, sound_id)
 
 func _play_on(player: AudioStreamPlayer, sound_id: int) -> void:
 	if sound_id <= 0:

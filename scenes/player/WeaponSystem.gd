@@ -37,7 +37,6 @@ func _physics_process(delta: float):
 func load_weapon_config():
 	current_weapon_index = player.front_weapon_index
 	print("WeaponSystem: próbuję załadować broń ID=", current_weapon_index)
-	print("WeaponSystem: broni w cache=", DataManager.weapons_cache.size())
 	
 	weapon_data = DataManager.get_weapon_by_id(current_weapon_index)
 	

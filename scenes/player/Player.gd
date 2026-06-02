@@ -21,7 +21,7 @@ var power_max: float = 900.0
 var power_add: float = 0.0
 var ship_data: ShipData = null
 
-@export var max_bound_x: float = 8.7
+@export var max_bound_x: float = 11.7
 @export var max_bound_z: float = 15.25
 
 @onready var weapon_system: Node = $WeaponSystem
@@ -137,7 +137,8 @@ func take_damage(amount: int) -> void:
 	if armor <= 0:
 		die()
 	else:
-		SoundManager.play_sound(3)
+		# 019_S_HULL_HIT.wav
+		SoundManager.play_hit_sound(4)
 
 func die() -> void:
 	queue_free()

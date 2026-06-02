@@ -103,7 +103,8 @@ func take_damage(amount: int) -> void:
 	if armor <= 0:
 		die()
 	else:
-		SoundManager.play_sound(3)
+		# 003_S_ENEMY_HIT.wav
+		SoundManager.play_hit_sound(3)
 
 
 func die() -> void:
