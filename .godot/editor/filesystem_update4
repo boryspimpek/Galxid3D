@@ -1,7 +1,5 @@
-res://scenes/planets/planet.gdshader
-res://3dworld.tscn
-res://slide.tscn
-res://scenes/enemies/slide.tscn
-res://slide_left.tscn
 res://scenes/enemies/animation.gd
-res://scenes/enemy/Enemy.gd
+res://scenes/enemy/EnemyPath.gd
+res://scenes/world/LevelScroll3D.gd
+res://3dworld.tscn
+res://scenes/planets/planet.gdshader

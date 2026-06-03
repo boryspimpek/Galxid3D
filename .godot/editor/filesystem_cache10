@@ -1,11 +1,12 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1780491485
-3dworld.tscn::PackedScene::6563213892080481897::1780490735::0::1::::<><><>0<>0<><>::uid://dcg8vcl7rmst4::::res://NoiseBackground.tscn<>uid://bte7ofi7pgn5b::::res://scenes/player/Player.tscn<>uid://c1pq466qvcqtm::::res://scenes/planets/earth.tscn<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn<>uid://ci6qjvw4jlabt::::res://scenes/world/LevelScroll3D.gd<>uid://1pup6o17egip::::res://scenes/asteroids/AsteroidSpawner.gd<>uid://b47pkgi0u300c::::res://scenes/enemies/blaze_2.tscn<>uid://d1fby4aoidoen::::res://scenes/enemy/EnemyPath3D.gd<>uid://ceb36gc6o5uvc::::res://scenes/enemies/starfighter.tscn<>uid://de0wqltyclsk0::::res://scenes/enemy/EnemyPath.gd<>uid://bdvg80h7a4nm8::::res://scenes/debug/LevelScrollRuler.tscn<>uid://dt670oushtj6::::res://scenes/world/HorizontalViewShift.gd<>uid://pv4lucn5p30f::::res://scenes/ui/Hud.tscn
+::res://::1780499540
+3dworld.tscn::PackedScene::6563213892080481897::1780499265::0::1::::<><><>0<>0<><>::uid://dcg8vcl7rmst4::::res://NoiseBackground.tscn<>uid://bte7ofi7pgn5b::::res://scenes/player/Player.tscn<>uid://c1pq466qvcqtm::::res://scenes/planets/earth.tscn<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn<>uid://ci6qjvw4jlabt::::res://scenes/world/LevelScroll3D.gd<>uid://1pup6o17egip::::res://scenes/asteroids/AsteroidSpawner.gd<>uid://b47pkgi0u300c::::res://scenes/enemies/blaze_2.tscn<>uid://d1fby4aoidoen::::res://scenes/enemy/EnemyPath3D.gd<>uid://ceb36gc6o5uvc::::res://scenes/enemies/starfighter.tscn<>uid://de0wqltyclsk0::::res://scenes/enemy/EnemyPath.gd<>uid://dvf2aajxjamx5::::res://slide_left.tscn<>uid://bdvg80h7a4nm8::::res://scenes/debug/LevelScrollRuler.tscn<>uid://dt670oushtj6::::res://scenes/world/HorizontalViewShift.gd<>uid://pv4lucn5p30f::::res://scenes/ui/Hud.tscn
 default_bus_layout.tres::AudioBusLayout::2099548917964122130::1780403827::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile::-1::1779810743::0::1::::<><><>0<>0<><>::
 NoiseBackground.gd::GDScript::8842678781878126347::1780234802::0::1::::<>MeshInstance3D<><>0<>0<><>::
 NoiseBackground.tscn::PackedScene::7314067290829715995::1780234976::0::1::::<><><>0<>0<><>::uid://dx8pvlroqpk00::::res://NoiseBackground.gd
 README.md::TextFile::-1::1780315676::0::1::::<><><>0<>0<><>::
+slide_left.tscn::PackedScene::8645189030013272844::1780498636::0::1::::<><><>0<>0<><>::uid://ceb36gc6o5uvc::::res://scenes/enemies/starfighter.tscn<>uid://djxxgxw8t47jb::::res://scenes/enemies/animation.gd<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn
 ::res://assets/::1780410451
 ::res://assets/asteroids/::1780211530
 asteroid2.glb::PackedScene::3835921654494331215::1780159094::1780206081::1::::<><><>0<>0<>ae8530816a35fb46e26851fba64417e0<>res://.godot/imported/asteroid2.glb-21e6d792a0e93e17841b88ff0ca05972.scn::
@@ -374,7 +375,8 @@ LevelScrollRuler.gd::GDScript::5314882218949956160::1780324393::0::1::::<>Node3D
 LevelScrollRuler.tscn::PackedScene::2640763705950387221::1780315708::0::1::::<><><>0<>0<><>::res://scenes/debug/LevelScrollRuler.gd
 PlayAreaFrame.gd::GDScript::9020902000404816243::1780401726::0::1::::<>Node3D<><>0<>1<><>::
 PlayAreaFrame.tscn::PackedScene::3921225294876459380::1780401802::0::1::::<><><>0<>0<><>::res://scenes/debug/PlayAreaFrame.gd
-::res://scenes/enemies/::1780414437
+::res://scenes/enemies/::1780493330
+animation.gd::GDScript::7839850781310714475::1780497753::0::1::::<>Node3D<><>0<>0<><>::
 blaze.tscn::PackedScene::6408229248630321207::1780238091::0::1::::<><><>0<>0<><>::uid://c3de3aei70kw1::::res://scenes/enemy/Enemy.tscn<>uid://pxcet508nmj3::::res://scenes/enemies/blaze_model.tscn
 blaze_2.tscn::PackedScene::4488886178818777720::1780330524::0::1::::<><><>0<>0<><>::uid://c3de3aei70kw1::::res://scenes/enemy/Enemy.tscn<>uid://cucfe21l8ankg::::res://scenes/enemies/blaze_2_model.tscn
 blaze_2_model.tscn::PackedScene::6181059182633694078::1780332156::0::1::::<><><>0<>0<><>::uid://cp877lvmukhc8::::res://assets/enemies/blaze/blaze2/Meshy_AI_Emerald_Void_Intercep_0529133813_texture.glb<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader<>uid://5te8ddsom0ac::::res://assets/enemies/blaze/blaze2/Meshy_AI_Emerald_Void_Intercep_0529133813_texture_0.jpg
@@ -386,11 +388,10 @@ blaze_5.tscn::PackedScene::2936995571717288032::1780238755::0::1::::<><><>0<>0<>
 blaze_5_model.tscn::PackedScene::7264072116928642914::1780238693::0::1::::<><><>0<>0<><>::uid://bjurnxeuroe0j::::res://assets/enemies/blaze/blaze5/Meshy_AI_Emerald_Void_Intercep_0529133902_texture.glb<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader<>uid://vx227yr1pxqc::::res://assets/enemies/blaze/blaze5/Meshy_AI_Emerald_Void_Intercep_0529133902_texture_0.jpg
 blaze_model.tscn::PackedScene::1100442965543308182::1780236774::0::1::::<><><>0<>0<><>::uid://dolawyjb77dno::::res://assets/enemies/blaze/blaze1/Meshy_AI_Blaze_Starfighter_0529133509_texture.glb<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader<>uid://nbrlnglbjbhx::::res://assets/enemies/blaze/blaze1/Meshy_AI_Blaze_Starfighter_0529133509_texture_0.jpg
 EnemySpawner.gd::GDScript::7147072454789478884::1780144978::0::1::::<>Node3D<><>0<>0<><>::
-slide.tscn::PackedScene::8503445743312940840::1780491485::0::1::::<><><>0<>0<><>::uid://bh3x5gquu3djc::::res://scenes/enemies/blaze_5.tscn<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn
 starfighter.tscn::PackedScene::5057416874759023692::1780414437::0::1::::<><><>0<>0<><>::uid://c3de3aei70kw1::::res://scenes/enemy/Enemy.tscn<>uid://cj06xe1qfw8ch::::res://scenes/enemies/starfighter_model.tscn
 starfighter_model.tscn::PackedScene::5458073955008427727::1780320394::0::1::::<><><>0<>0<><>::uid://eyku5nilalp::::res://assets/enemies/starfighter/Meshy_AI_S_01_Starfighter_0522180707_texture.glb<>uid://di04bmwek8try::::res://scenes/planets/planet.gdshader<>uid://ceaafxtu0dkx6::::res://assets/enemies/starfighter/Meshy_AI_S_01_Starfighter_0522180707_texture_Image_0.jpg
 ::res://scenes/enemy/::1780398895
-Enemy.gd::GDScript::4605400125416299353::1780414188::0::1::::<>Area3D<><>0<>0<><>::
+Enemy.gd::GDScript::4605400125416299353::1780499105::0::1::::<>Area3D<><>0<>0<><>::
 Enemy.tscn::PackedScene::6744614999300149878::1780320156::0::1::::<><><>0<>0<><>::uid://b6u5jc5l8dstd::::res://scenes/enemy/Enemy.gd
 EnemyPath3D.gd::GDScript::8994598974309003045::1780401441::0::1::::EnemyPath3D<>Path3D<><>0<>0<><>::
 EnemyPath.gd::GDScript::7492991824227979501::1780401447::0::1::::<>PathFollow3D<><>0<>0<><>::

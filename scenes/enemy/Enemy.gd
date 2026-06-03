@@ -17,7 +17,7 @@ const AIM_MAX := 10
 @export var ymove: int = 0
 @export var zmove: int = 0
 
-## Prędkość w osi Z (używana m.in. przez EnemySpawner); synchronizuje się z zmove.
+## Prędkość w osi Z; synchronizuje się z zmove.
 var speed: float:
 	get:
 		return enemy_velocity.z
@@ -52,6 +52,8 @@ signal combat_deactivated
 # --- METODY WBUDOWANE (LIFECYCLE) ---
 
 func _ready() -> void:
+	physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_ON
+
 	add_to_group("enemies")
 	collision_layer = 2
 	collision_mask = 5
@@ -73,6 +75,8 @@ func _ready() -> void:
 		_deactivate()
 	else:
 		_activate()
+
+	reset_physics_interpolation()
 
 
 func _physics_process(delta: float) -> void:

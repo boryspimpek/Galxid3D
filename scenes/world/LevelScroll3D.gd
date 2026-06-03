@@ -9,8 +9,10 @@ extends Node3D
 @export var start_offset_z: float = 0.0
 
 func _ready() -> void:
+	physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_OFF
 	if start_offset_z != 0.0:
 		position.z = start_offset_z
+	reset_physics_interpolation()
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	position.z += scroll_speed * delta

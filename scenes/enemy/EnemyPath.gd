@@ -29,12 +29,15 @@ var _anti_scroll_world: Vector3 = Vector3.ZERO
 
 
 func _ready() -> void:
+	# Ruch w _process — zsynchronizowany z klatką renderu (tablet 90/120 Hz).
+	physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_OFF
+
 	_level_scroll = _find_level_scroll()
 	if _is_scroll_compensation_enabled():
 		_ensure_scroll_compensator()
 
 	_path_active = false
-	set_physics_process(false)
+	set_process(false)
 
 	var enemy := _find_enemy()
 	if enemy == null:
@@ -75,6 +78,7 @@ func _ensure_scroll_compensator() -> void:
 
 	_scroll_compensator = Node3D.new()
 	_scroll_compensator.name = SCROLL_COMPENSATOR_NAME
+	_scroll_compensator.physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_OFF
 	add_child(_scroll_compensator)
 	enemy.reparent(_scroll_compensator, true)
 
@@ -84,10 +88,11 @@ func _start_path() -> void:
 		return
 	_path_active = true
 	_anti_scroll_world = Vector3.ZERO
-	set_physics_process(true)
+	set_process(true)
+	reset_physics_interpolation()
 
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	if not _path_active:
 		return
 

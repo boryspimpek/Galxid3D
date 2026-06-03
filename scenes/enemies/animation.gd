@@ -37,7 +37,7 @@ var _awaiting_scene_activation: bool = true
 func _ready() -> void:
 	_level_scroll = _find_level_scroll()
 	_anim.animation_finished.connect(_on_animation_finished)
-	set_physics_process(false)
+	set_process(false)
 	call_deferred("_setup_activation")
 
 
@@ -68,7 +68,7 @@ func _setup_scene_scroll_activation() -> void:
 			)
 
 	_awaiting_scene_activation = true
-	set_physics_process(true)
+	set_process(true)
 
 
 func _setup_enemy_scroll_activation() -> void:
@@ -78,7 +78,7 @@ func _setup_enemy_scroll_activation() -> void:
 		_enemy.combat_activated.connect(_start_slide, CONNECT_ONE_SHOT)
 
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	if not _sliding:
 		if (
 			activation_mode == ActivationMode.SCENE_SCROLL_LINE
@@ -112,7 +112,7 @@ func _start_slide() -> void:
 	if _sliding:
 		return
 	_sliding = true
-	set_physics_process(_needs_physics_process())
+	set_process(_needs_process())
 	_anim.speed_scale = _sample_speed_multiplier(0.0)
 	_anim.play(animation_name)
 
@@ -121,7 +121,7 @@ func _on_animation_finished(anim_name: StringName) -> void:
 	if anim_name != animation_name:
 		return
 	_sliding = false
-	set_physics_process(
+	set_process(
 		activation_mode == ActivationMode.SCENE_SCROLL_LINE and _awaiting_scene_activation
 	)
 	_anim.speed_scale = 1.0
@@ -157,7 +157,7 @@ func _get_animation_progress() -> float:
 	return clampf(_anim.current_animation_position / length, 0.0, 1.0)
 
 
-func _needs_physics_process() -> bool:
+func _needs_process() -> bool:
 	if _sliding:
 		return compensate_level_scroll or speed_curve != null
 	return activation_mode == ActivationMode.SCENE_SCROLL_LINE and _awaiting_scene_activation
