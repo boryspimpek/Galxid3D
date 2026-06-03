@@ -1,3 +1,5 @@
 res://3dworld.tscn
 res://scenes/planets/planet.gdshader
-res://data/generators/generator_001.tres
+res://scenes/enemy/Enemy.gd
+res://scripts/core/GameConstants.gd
+res://scenes/enemy_projectile/EnemyProjectile.tscn

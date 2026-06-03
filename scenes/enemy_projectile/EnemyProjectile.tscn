@@ -18,33 +18,15 @@ particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="Gradient" id="Gradient_6e53e"]
-offsets = PackedFloat32Array(0.42560554, 0.97231835)
-colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_6ynra"]
-gradient = SubResource("Gradient_6e53e")
+[sub_resource type="QuadMesh" id="QuadMesh_w21hb"]
 
 [sub_resource type="Curve" id="Curve_ljfmw"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.4031746, 1), 0.0, 0.0, 0, 0, Vector2(0.5746032, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="CurveTexture" id="CurveTexture_jaf2d"]
-curve = SubResource("Curve_ljfmw")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0bk3v"]
-emission_shape = 1
-emission_sphere_radius = 0.1
-angle_min = 1.0728835e-05
-angle_max = 720.0
-spread = 0.0
-angular_velocity_min = -5.000016
-angular_velocity_max = -5.000016
-gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_jaf2d")
-color_ramp = SubResource("GradientTexture1D_6ynra")
-
-[sub_resource type="QuadMesh" id="QuadMesh_w21hb"]
+[sub_resource type="Gradient" id="Gradient_6e53e"]
+offsets = PackedFloat32Array(0.42560554, 0.97231835)
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1)
 
 [node name="EnemyProjectile" type="Area3D" unique_id=783238135]
 script = ExtResource("1_enemy_proj")
@@ -56,10 +38,20 @@ aabb = AABB(-1, -0.5070118, -1, 2, 1.0140235, 2)
 shape = SubResource("SphereShape3D_qvcrk")
 debug_color = Color(0.5388622, 2.4065375e-07, 0.2979452, 0.41960785)
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1722491119]
+[node name="GPUParticles3D" type="CPUParticles3D" parent="." unique_id=1937773718]
 material_override = SubResource("StandardMaterial3D_ixmjk")
 amount = 90
 lifetime = 0.05
 fixed_fps = 60
-process_material = SubResource("ParticleProcessMaterial_0bk3v")
-draw_pass_1 = SubResource("QuadMesh_w21hb")
+visibility_aabb = AABB(-4, -4, -4, 8, 8, 8)
+mesh = SubResource("QuadMesh_w21hb")
+emission_shape = 1
+emission_sphere_radius = 0.1
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = -5.000016
+angular_velocity_max = -5.000016
+angle_min = 1.0728835e-05
+angle_max = 720.0
+scale_amount_curve = SubResource("Curve_ljfmw")
+color_ramp = SubResource("Gradient_6e53e")

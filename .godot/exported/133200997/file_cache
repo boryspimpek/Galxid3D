@@ -32,7 +32,7 @@ res://data/weapons/weapon_2.tres::f2ab886f61a9bd0f106ea1fce6940e52::1779730015::
 res://data/weapons/weapon_3.tres::f454c6f70ca02053df93418ffe2d35e3::1779730025::res://.godot/exported/133200997/export-a96a21cb3c369a11010626952d1b30b1-weapon_3.res
 res://scenes/asteroids/asteroid.tscn::c8fd28b29153d3e624e8a1e2ba593edf::1780208792::res://.godot/exported/133200997/export-3d16b80044f31a13cb95ee11a584742c-asteroid.scn
 res://scenes/enemy/Enemy.tscn::d2686643389db6dc3017d4d9218040ef::1780320156::res://.godot/exported/133200997/export-c7c3445ce3daf3f371bdfe30a3ba2ab3-Enemy.scn
-res://scenes/enemy_projectile/EnemyProjectile.tscn::3148aca19b589825a22de35412a0609d::1780413691::res://.godot/exported/133200997/export-9a1129f3dc6a9276c1498149693e8b72-EnemyProjectile.scn
+res://scenes/enemy_projectile/EnemyProjectile.tscn::182907f8779be621c0b6e75d7b5aebff::1780504827::res://.godot/exported/133200997/export-9a1129f3dc6a9276c1498149693e8b72-EnemyProjectile.scn
 res://scenes/engines/engine.tscn::e3eb343a262b4c795d939308e5ca82f3::1779131093::res://.godot/exported/133200997/export-75b7a3dde16fd513245007a5ca23857c-engine.scn
 res://scenes/explosions/explode.tscn::fcabe067141d15efb2729f3de2398197::1780417746::res://.godot/exported/133200997/export-683a874278cdad8b6826e4a91433987f-explode.scn
 res://scenes/player/DamageSystem.tscn::3ac63060d40ce22ce774a6f0be8ec269::1779131093::res://.godot/exported/133200997/export-0719c037fb9207b81401fb5710bf971c-DamageSystem.scn
@@ -41,7 +41,7 @@ res://scenes/player/PlayerModel.tscn::a9b9db435516e881264cb6d0eee396ae::17797256
 res://scenes/player/ShieldSystem.tscn::e3444b212e6f63c1480335d8f3e23070::1779131093::res://.godot/exported/133200997/export-0a98f7243e8aea79343d3c7e3bc467c5-ShieldSystem.scn
 res://scenes/player/WeaponSystem.tscn::b51032d79b00ea281868efda9e151ad5::1779131093::res://.godot/exported/133200997/export-eef44eb320987654286e1653e7352728-WeaponSystem.scn
 res://scenes/projectile/Projectile.tscn::9f3034634814d731462cbed1ac71fcfd::1779977138::res://.godot/exported/133200997/export-d51b6ad9e18066cc7ea8055c0639a43b-Projectile.scn
-res://3dworld.tscn::15227a6d56827d3abd4eb1131f2bc915::1780501262::res://.godot/exported/133200997/export-37e875acfa77dccf473348a8829cfa46-3dworld.scn
+res://3dworld.tscn::14028965572c47295dc8479683991168::1780502330::res://.godot/exported/133200997/export-37e875acfa77dccf473348a8829cfa46-3dworld.scn
 res://default_bus_layout.tres::b86178f342a004aa846553e9151b2ab6::1780403827::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
 res://scenes/debug/PlayAreaFrame.tscn::e7f92eba5675a712945efe1e6611a27d::1780401802::res://.godot/exported/133200997/export-60f130f43cd0a34daf493c6300271137-PlayAreaFrame.scn
 res://scenes/explosions/explode2.tscn::6cc6b50b315faf9b7010184f62b86045::1779976073::res://.godot/exported/133200997/export-6155def951c17524d84e46b9fcc8525b-explode2.scn

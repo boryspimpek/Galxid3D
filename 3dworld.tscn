@@ -182,6 +182,7 @@ script = ExtResource("7_scroll")
 scroll_speed = 3.0
 
 [node name="LevelScrollRuler" parent="LevelScroll" unique_id=383457667 instance=ExtResource("14_ruler")]
+visible = false
 show_time_labels = false
 color_play_zone = Color(0.2, 1, 0.4, 0)
 
@@ -569,7 +570,7 @@ speed_curve = SubResource("Curve_e4jcy")
 bank_enabled = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/starfighter right2" unique_id=1111405812]
-transform = Transform3D(-0.99961734, 0, 0.027376981, 0, 1, 0, -0.027376981, 0, -0.99961734, 0.0021238327, 0, 0.03056717)
+transform = Transform3D(-0.9996173, 0, 0.02737698, 0, 1, 0, -0.02737698, 0, -0.9996173, 0.0021238327, 0, 0.03056717)
 loop = false
 script = ExtResource("13_fjwqu")
 
