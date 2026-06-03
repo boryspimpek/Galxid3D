@@ -4,3 +4,4 @@ res://slide.tscn
 res://scenes/enemies/slide.tscn
 res://slide_left.tscn
 res://scenes/enemies/animation.gd
+res://scenes/enemy/Enemy.gd

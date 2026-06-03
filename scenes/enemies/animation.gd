@@ -1,19 +1,29 @@
 extends Node3D
 
-## Odtwarza animację po aktywacji wroga i kompensuje LevelScroll,
-## żeby ruch na ekranie był poziomy (jak przy EnemyPath).
+## Odtwarza animację poziomą i kompensuje LevelScroll (jak EnemyPath).
 ##
-## speed_curve (opcjonalna): oś X 0..1 = postęp animacji, Y = mnożnik prędkości
-## (1.0 = normalnie). Kompensacja scrolla jest zawsze w czasie rzeczywistym —
-## niezależnie od speed_scale — więc zmiana prędkości animacji nie psuje osi Z.
+## SCENE_SCROLL_LINE (domyślny): animacja startuje, gdy **origin sceny** minie
+## scroll_activation_z. Wroga ustaw nisko (ujemne lokalne Z) — wejdzie w kadr
+## z boku, gdy scena trafi na linię górną kadru.
+##
+## ENEMY_SCROLL_LINE: stary tryb — start po combat_activated wroga.
+
+enum ActivationMode {
+	SCENE_SCROLL_LINE,
+	ENEMY_SCROLL_LINE,
+}
 
 @export var animation_name: StringName = &"slide"
 @export var compensate_level_scroll: bool = true
 
+@export_group("Aktywacja")
+@export var activation_mode: ActivationMode = ActivationMode.SCENE_SCROLL_LINE
+## Linia górna kadru — dla SCENE_SCROLL_LINE liczy się global Z **tego węzła**.
+@export var scroll_activation_z: float = -17.0
+@export var warn_if_active_on_spawn: bool = true
+
 @export_group("Prędkość")
-## Stały mnożnik, gdy speed_curve jest pusta.
 @export var playback_speed: float = 1.0
-## Krzywa prędkości w trakcie ruchu (jak speed_curve w EnemyPath3D).
 @export var speed_curve: Curve
 
 @onready var _anim: AnimationPlayer = $AnimationPlayer
@@ -21,18 +31,47 @@ extends Node3D
 var _enemy: Node
 var _level_scroll: Node3D
 var _sliding: bool = false
+var _awaiting_scene_activation: bool = true
 
 
 func _ready() -> void:
 	_level_scroll = _find_level_scroll()
+	_anim.animation_finished.connect(_on_animation_finished)
+	set_physics_process(false)
+	call_deferred("_setup_activation")
+
+
+func _setup_activation() -> void:
 	_enemy = _find_enemy()
 	if _enemy == null:
 		push_warning("%s: brak wroga w grupie 'enemies'." % name)
 		return
 
-	_anim.animation_finished.connect(_on_animation_finished)
-	set_physics_process(false)
+	match activation_mode:
+		ActivationMode.SCENE_SCROLL_LINE:
+			_setup_scene_scroll_activation()
+		ActivationMode.ENEMY_SCROLL_LINE:
+			_setup_enemy_scroll_activation()
 
+
+func _setup_scene_scroll_activation() -> void:
+	_enemy.activate_on_scroll_line = false
+	if _enemy.is_combat_active():
+		_enemy._deactivate()
+
+	if warn_if_active_on_spawn:
+		var remaining: float = scroll_activation_z - global_position.z
+		if remaining <= 0.0:
+			push_warning(
+				"%s: scena już za linią aktywacji (%.1f). Przesuń instancję w -Z pod LevelScroll."
+				% [name, remaining]
+			)
+
+	_awaiting_scene_activation = true
+	set_physics_process(true)
+
+
+func _setup_enemy_scroll_activation() -> void:
 	if _enemy.is_combat_active():
 		_start_slide()
 	else:
@@ -41,12 +80,32 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if not _sliding:
+		if (
+			activation_mode == ActivationMode.SCENE_SCROLL_LINE
+			and _awaiting_scene_activation
+			and global_position.z >= scroll_activation_z
+		):
+			_trigger_wave()
 		return
 
 	if compensate_level_scroll:
 		_apply_scroll_compensation(delta)
 
 	_update_playback_speed()
+
+
+func _trigger_wave() -> void:
+	if not _awaiting_scene_activation or _sliding:
+		return
+	_awaiting_scene_activation = false
+
+	if _enemy.has_method("activate_combat"):
+		_enemy.activate_combat()
+	elif _enemy.has_method("_activate"):
+		_enemy.activate_on_scroll_line = false
+		_enemy._activate()
+
+	_start_slide()
 
 
 func _start_slide() -> void:
@@ -62,7 +121,9 @@ func _on_animation_finished(anim_name: StringName) -> void:
 	if anim_name != animation_name:
 		return
 	_sliding = false
-	set_physics_process(false)
+	set_physics_process(
+		activation_mode == ActivationMode.SCENE_SCROLL_LINE and _awaiting_scene_activation
+	)
 	_anim.speed_scale = 1.0
 
 
@@ -97,7 +158,9 @@ func _get_animation_progress() -> float:
 
 
 func _needs_physics_process() -> bool:
-	return compensate_level_scroll or speed_curve != null
+	if _sliding:
+		return compensate_level_scroll or speed_curve != null
+	return activation_mode == ActivationMode.SCENE_SCROLL_LINE and _awaiting_scene_activation
 
 
 func _find_enemy() -> Node:

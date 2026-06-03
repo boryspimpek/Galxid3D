@@ -99,6 +99,12 @@ func is_combat_active() -> bool:
 	return _is_active
 
 
+## Wymusza walkę bez linii scrolla (np. fale slide sterowane przez animation.gd).
+func activate_combat() -> void:
+	activate_on_scroll_line = false
+	_activate()
+
+
 ## Ile jednostek brakuje do linii aktywacji (0 = właśnie teraz).
 func get_scroll_distance_remaining() -> float:
 	return scroll_activation_z - global_position.z
