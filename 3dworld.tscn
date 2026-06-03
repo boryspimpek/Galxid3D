@@ -21,8 +21,6 @@ background_mode = 1
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 glow_enabled = true
-glow_intensity = 0.74
-glow_strength = 0.59
 volumetric_fog_density = 0.0
 volumetric_fog_emission_energy = 0.0
 
@@ -124,25 +122,29 @@ point_count = 5
 
 [node name="Game" type="Node3D" unique_id=616589222]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2090551855]
+[node name="World" type="Node3D" parent="." unique_id=435478258]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World" unique_id=2090551855]
 environment = SubResource("Environment_vshm1")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1804465455]
-transform = Transform3D(-0.25881895, 0.6830125, -0.6830125, 0, 0.70710665, 0.70710653, 0.9659255, 0.18301265, -0.18301265, 0, 15, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World" unique_id=1804465455]
+transform = Transform3D(-0.25881904, 0.68301266, -0.6830127, 0, 0.7071068, 0.70710677, 0.9659258, 0.18301268, -0.1830127, 0, 15, 0)
 shadow_enabled = true
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1430056658]
+[node name="Camera3D" type="Camera3D" parent="World" unique_id=1430056658]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 20, 0)
 
-[node name="HorizontalViewShift" type="Node3D" parent="." unique_id=1535569705]
+[node name="HorizontalViewShift" type="Node3D" parent="World" unique_id=1535569705]
 script = ExtResource("15_viewshift")
 
-[node name="NoiseBackground" parent="." unique_id=697593384 instance=ExtResource("1_pnv6h")]
+[node name="Background" type="Node3D" parent="." unique_id=2089427376]
+
+[node name="NoiseBackground" parent="Background" unique_id=697593384 instance=ExtResource("1_pnv6h")]
 transform = Transform3D(1.08, 0, 0, 0, 1.08, 0, 0, 0, 1.08, 0, -170, 0)
 
-[node name="PlayAreaFrame" parent="." unique_id=143925964 instance=ExtResource("6_3vxff")]
+[node name="PlayAreaFrame" parent="Background" unique_id=143925964 instance=ExtResource("6_3vxff")]
 
-[node name="AsteroidSpawner" type="Node3D" parent="." unique_id=1227067656]
+[node name="AsteroidSpawner" type="Node3D" parent="Background" unique_id=1227067656]
 script = ExtResource("8_pnv6h")
 spawn_interval_1 = 16.0
 asteroid_speed_1 = 12.0
@@ -157,7 +159,7 @@ asteroid_speed_3 = 0.5
 scale_3 = 0.3
 preprocess_time = 600.0
 
-[node name="earth" parent="." unique_id=1944613414 instance=ExtResource("5_3vxff")]
+[node name="earth" parent="Background" unique_id=1944613414 instance=ExtResource("5_3vxff")]
 transform = Transform3D(0.725, 0, 0, 0, 0.47754982, 0.5455009, 0, -0.5455009, 0.47754982, 25, -80, -18)
 
 [node name="Player" parent="." unique_id=1811810025 instance=ExtResource("4_n40md")]
@@ -170,9 +172,11 @@ script = ExtResource("7_scroll")
 scroll_speed = 3.0
 
 [node name="LevelScrollRuler" parent="LevelScroll" unique_id=383457667 instance=ExtResource("14_ruler")]
-visible = false
 show_time_labels = false
 color_play_zone = Color(0.2, 1, 0.4, 0)
+
+[node name="slide left" parent="LevelScroll" unique_id=942362656 instance=ExtResource("14_fql1y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9875374, 0, -37.08793)
 
 [node name="Formation" parent="LevelScroll" unique_id=1730415998 instance=ExtResource("10_sgee4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55752945, 0, -20.080433)
@@ -485,6 +489,3 @@ script = ExtResource("13_fjwqu")
 
 [node name="starfighter" parent="LevelScroll/starfighter right2/PathFollow3D" unique_id=1466853133 instance=ExtResource("10_rpljx")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
-
-[node name="Animation" parent="LevelScroll" unique_id=942362656 instance=ExtResource("14_fql1y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95312977, 0, -37.179874)

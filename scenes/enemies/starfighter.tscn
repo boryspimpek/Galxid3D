@@ -8,7 +8,7 @@
 [node name="starfighter" unique_id=1897743314 instance=ExtResource("1_3ym5w")]
 armor = 10
 fire_rate = 1.5
-aim = 2
+aim = 8
 projectile_velocity = Vector3(0, 0, 8)
 sound = 3
 esize = 2

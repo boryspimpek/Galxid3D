@@ -1,3 +1,10 @@
-res://3dworld.tscn
+res://scenes/enemies/blaze_2_model.tscn
 res://scenes/planets/planet.gdshader
-res://scenes/enemies/formation.tscn
+res://scenes/enemies/animation.gd
+res://scenes/enemy/Enemy.gd
+res://scenes/enemy/EnemyPath3D.gd
+res://scenes/enemy/EnemyPath.gd
+res://scenes/world/LevelScroll3D.gd
+res://3dworld.tscn
+res://scenes/enemy_projectile/EnemyProjectile.tscn
+res://scenes/enemies/starfighter.tscn
