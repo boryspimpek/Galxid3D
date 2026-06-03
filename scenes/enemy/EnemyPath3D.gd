@@ -18,4 +18,3 @@ class_name EnemyPath3D
 @export_range(0.001, 100.0, 0.001) var bank_lookahead: float = 1.0
 ## Szybkość wygładzania przechyłu (większe = szybciej dogania).
 @export_range(0.0, 30.0, 0.1) var bank_smooth: float = 10.0
-

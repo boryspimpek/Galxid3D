@@ -1,25 +1,15 @@
 extends PathFollow3D
+class_name EnemyPath
 
 const SCROLL_COMPENSATOR_NAME := "ScrollCompensator"
 
-@export var use_parent_settings: bool = true
-@export var speed: float = 5.0 # jednostki 3D na sekundę wzdłuż krzywej
-## Opcjonalny mnożnik prędkości wzdłuż ścieżki (oś X: 0..1 = progress/baked_length).
-## Jeśli puste, poruszanie jest ze stałą prędkością `speed`.
-@export var speed_curve: Curve
-## Odejmuje przesunięcie LevelScroll od wroga — ścieżkę układasz tak, jak ma wyglądać na ekranie.
-@export var compensate_level_scroll: bool = true
-
-## Wymusza "przechył" (roll/bank) na zakrętach nawet dla płaskiej ścieżki (top-down).
-@export var bank_enabled: bool = false
-## Maksymalny przechył w stopniach.
-@export_range(0.0, 89.0, 0.1) var bank_max_degrees: float = 45.0
-## Jak mocno bank reaguje na zakręt (większe = mocniej).
-@export_range(0.0, 10.0, 0.01) var bank_strength: float = 2.0
-## Dystans (w jednostkach progress) użyty do estymacji skrętu.
-@export_range(0.001, 100.0, 0.001) var bank_lookahead: float = 1.0
-## Szybkość wygładzania przechyłu (większe = szybciej dogania).
-@export_range(0.0, 30.0, 0.1) var bank_smooth: float = 10.0
+const DEFAULT_SPEED := 5.0
+const DEFAULT_COMPENSATE_LEVEL_SCROLL := true
+const DEFAULT_BANK_ENABLED := false
+const DEFAULT_BANK_MAX_DEGREES := 45.0
+const DEFAULT_BANK_STRENGTH := 2.0
+const DEFAULT_BANK_LOOKAHEAD := 1.0
+const DEFAULT_BANK_SMOOTH := 10.0
 
 var _path_active: bool = false
 var _level_scroll: Node3D
@@ -207,80 +197,46 @@ func _get_bank_anchor() -> Node3D:
 	return e
 
 
-func _get_parent_settings_node() -> Node:
-	if not use_parent_settings:
-		return null
+func _get_path_settings() -> EnemyPath3D:
 	var p := get_parent()
-	if p == null:
-		return null
-	var s: Script = p.get_script()
-	if s == null:
-		return null
-	# Linter w edytorze może nie widzieć class_name; opieramy się o plik skryptu.
-	if s.resource_path.get_file() != "EnemyPath3D.gd":
-		return null
-	return p
+	return p as EnemyPath3D if p is EnemyPath3D else null
 
 
 func _get_speed() -> float:
-	var settings: Node = _get_parent_settings_node()
-	if settings == null:
-		return speed
-	var v: Variant = settings.get("speed")
-	return float(v) if v != null else speed
+	var settings := _get_path_settings()
+	return settings.speed if settings else DEFAULT_SPEED
 
 
 func _get_speed_curve() -> Curve:
-	var settings: Node = _get_parent_settings_node()
-	if settings == null:
-		return speed_curve
-	var v: Variant = settings.get("speed_curve")
-	return v as Curve if v != null else speed_curve
+	var settings := _get_path_settings()
+	return settings.speed_curve if settings else null
 
 
 func _is_scroll_compensation_enabled() -> bool:
-	var settings: Node = _get_parent_settings_node()
-	if settings == null:
-		return compensate_level_scroll
-	var v: Variant = settings.get("compensate_level_scroll")
-	return bool(v) if v != null else compensate_level_scroll
+	var settings := _get_path_settings()
+	return settings.compensate_level_scroll if settings else DEFAULT_COMPENSATE_LEVEL_SCROLL
 
 
 func _is_bank_enabled() -> bool:
-	var settings: Node = _get_parent_settings_node()
-	if settings == null:
-		return bank_enabled
-	var v: Variant = settings.get("bank_enabled")
-	return bool(v) if v != null else bank_enabled
+	var settings := _get_path_settings()
+	return settings.bank_enabled if settings else DEFAULT_BANK_ENABLED
 
 
 func _get_bank_max_degrees() -> float:
-	var settings: Node = _get_parent_settings_node()
-	if settings == null:
-		return bank_max_degrees
-	var v: Variant = settings.get("bank_max_degrees")
-	return float(v) if v != null else bank_max_degrees
+	var settings := _get_path_settings()
+	return settings.bank_max_degrees if settings else DEFAULT_BANK_MAX_DEGREES
 
 
 func _get_bank_strength() -> float:
-	var settings: Node = _get_parent_settings_node()
-	if settings == null:
-		return bank_strength
-	var v: Variant = settings.get("bank_strength")
-	return float(v) if v != null else bank_strength
+	var settings := _get_path_settings()
+	return settings.bank_strength if settings else DEFAULT_BANK_STRENGTH
 
 
 func _get_bank_lookahead() -> float:
-	var settings: Node = _get_parent_settings_node()
-	if settings == null:
-		return bank_lookahead
-	var v: Variant = settings.get("bank_lookahead")
-	return float(v) if v != null else bank_lookahead
+	var settings := _get_path_settings()
+	return settings.bank_lookahead if settings else DEFAULT_BANK_LOOKAHEAD
 
 
 func _get_bank_smooth() -> float:
-	var settings: Node = _get_parent_settings_node()
-	if settings == null:
-		return bank_smooth
-	var v: Variant = settings.get("bank_smooth")
-	return float(v) if v != null else bank_smooth
+	var settings := _get_path_settings()
+	return settings.bank_smooth if settings else DEFAULT_BANK_SMOOTH

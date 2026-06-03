@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://c6bq1qkhotmeh"]
+
+[ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemy/EnemyPath3D.gd" id="1_rxsle"]
+[ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyPath.gd" id="2_g61cf"]
+[ext_resource type="PackedScene" uid="uid://ceb36gc6o5uvc" path="res://scenes/enemies/starfighter.tscn" id="3_rxsle"]
+
+[sub_resource type="Curve3D" id="Curve3D_lu1cq"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.00030326843, 0, 0.007098198, 0, 0, 0, 0, 0, 0, -0.100494385, 0, 14.304094, 0, 0, 0, 0, 0, 0, 10.490253, 0, 14.304094),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_ahi8g"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0.55313355, 0.987766), 0.0, 6.7673707, 0, 0, Vector2(1, 1.9420214), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Formation" type="Path3D" unique_id=1730415998]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 10)
+curve = SubResource("Curve3D_lu1cq")
+script = ExtResource("1_rxsle")
+speed = 8.0
+speed_curve = SubResource("Curve_ahi8g")
+bank_enabled = true
+
+[node name="PathFollow3D" type="PathFollow3D" parent="." unique_id=310916544]
+transform = Transform3D(-0.9999703, 0, 0.007050096, 0, 1, 0, -0.007050096, 0, -0.9999703, 0, 0, 0)
+loop = false
+script = ExtResource("2_g61cf")
+
+[node name="starfighter" parent="PathFollow3D" unique_id=1897743314 instance=ExtResource("3_rxsle")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)

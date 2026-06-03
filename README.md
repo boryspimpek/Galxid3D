@@ -35,7 +35,7 @@ Projekt gry 3D w **Godot 4.6** (renderer: **Forward+**). Repo zawiera sceny, skr
 - `3dworld.tscn`: główna scena gry (`Node3D` o nazwie `Game`) z m.in.:
   - `Player` (`res://scenes/player/Player.tscn`)
   - `PlanetSpawner` (`res://scenes/planets/PlanetSpawner.gd`)
-  - `Path3D` + `PathFollow3D*` ze skryptem `res://scenes/enemy/EnemyPath.gd`
+  - `Path3D` ze skryptem `EnemyPath3D.gd` (ustawienia fali) + `PathFollow3D*` ze skryptem `EnemyPath.gd` (ruch wroga)
   - instancje przeciwników `res://scenes/enemies/starfighter.tscn`
   - `PlayAreaFrame` (`res://scenes/debug/PlayAreaFrame.tscn`)
   - `LevelScrollRuler` (`res://scenes/debug/LevelScrollRuler.tscn`) — podziałka Z + czas scrolla pod `LevelScroll`

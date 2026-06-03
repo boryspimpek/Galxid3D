@@ -3,3 +3,5 @@ res://scenes/planets/planet.gdshader
 res://scenes/enemy/Enemy.gd
 res://scripts/core/GameConstants.gd
 res://scenes/enemy_projectile/EnemyProjectile.tscn
+res://scenes/enemies/formation.tscn
+res://scenes/enemy/EnemyPath.gd
