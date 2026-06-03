@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://dvf2aajxjamx5"]
+
+[ext_resource type="PackedScene" uid="uid://ceb36gc6o5uvc" path="res://scenes/enemies/starfighter.tscn" id="1_0vmke"]
+[ext_resource type="Script" uid="uid://djxxgxw8t47jb" path="res://scenes/enemies/animation.gd" id="1_ia55e"]
+[ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="2_ia55e"]
+
+[sub_resource type="Curve" id="Curve_ia55e"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 5), 0.0, 0.0, 0, 0, Vector2(0.18467996, 5), 0.0, 0.0, 0, 0, Vector2(0.3746065, 0.27272797), 0.0, 0.0, 0, 0, Vector2(0.54879326, 0.27272797), 0.0, 0.0, 0, 0, Vector2(0.67156345, 5), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Animation" id="Animation_qfmeh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("starfighter:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-15, 0, 7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("starfighter:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gcxqi"]
+resource_name = "slide"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("starfighter:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-15, 0, 7), Vector3(15, 0, 7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("starfighter:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.7666667, 2, 3, 4.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.2617994), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, -0.5235988)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wy1wy"]
+_data = {
+&"RESET": SubResource("Animation_qfmeh"),
+&"slide": SubResource("Animation_gcxqi")
+}
+
+[node name="slide left" type="Node3D" unique_id=942362656]
+script = ExtResource("1_ia55e")
+speed_curve = SubResource("Curve_ia55e")
+
+[node name="starfighter" parent="." unique_id=1897743314 instance=ExtResource("1_0vmke")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 7)
+zmove = -3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=360053583]
+libraries/ = SubResource("AnimationLibrary_wy1wy")
+
+[node name="PlayAreaFrame" parent="." unique_id=1415705200 instance=ExtResource("2_ia55e")]
+visible = false

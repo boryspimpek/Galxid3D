@@ -1,3 +1,4 @@
+AnimationPlayer
 PathFollow3D
 EnemyPath3D
 Path3D
@@ -11,4 +12,3 @@ VisibleOnScreenEnabler3D
 Node3D
 FogVolume
 Sprite3D
-Node

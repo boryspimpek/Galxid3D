@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://d1fby4aoidoen" path="res://scenes/enemy/EnemyPath3D.gd" id="10_fjwqu"]
 [ext_resource type="PackedScene" uid="uid://ceb36gc6o5uvc" path="res://scenes/enemies/starfighter.tscn" id="10_rpljx"]
 [ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyPath.gd" id="13_fjwqu"]
+[ext_resource type="PackedScene" uid="uid://dvf2aajxjamx5" path="res://slide_left.tscn" id="14_fql1y"]
 [ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="14_ruler"]
 [ext_resource type="Script" uid="uid://dt670oushtj6" path="res://scenes/world/HorizontalViewShift.gd" id="15_viewshift"]
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="16_hud"]
@@ -594,9 +595,12 @@ speed_curve = SubResource("Curve_e4jcy")
 bank_enabled = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/starfighter right2" unique_id=1111405812]
-transform = Transform3D(-0.9996203, 0, 0.027377063, 0, 1, 0, -0.027377063, 0, -0.9996203, 0.0021238327, 0, 0.03056717)
+transform = Transform3D(-0.99961805, 0, 0.027377002, 0, 1, 0, -0.027377002, 0, -0.99961805, 0.0021238327, 0, 0.03056717)
 loop = false
 script = ExtResource("13_fjwqu")
 
 [node name="starfighter" parent="LevelScroll/starfighter right2/PathFollow3D" unique_id=1466853133 instance=ExtResource("10_rpljx")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Node3D" parent="LevelScroll" unique_id=942362656 instance=ExtResource("14_fql1y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48608875, 0, -31.759272)
