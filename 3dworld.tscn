@@ -489,3 +489,7 @@ script = ExtResource("13_fjwqu")
 
 [node name="starfighter" parent="LevelScroll/starfighter right2/PathFollow3D" unique_id=1466853133 instance=ExtResource("10_rpljx")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="starfighter" parent="LevelScroll" unique_id=1897743314 instance=ExtResource("10_rpljx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.04224)
+zmove = 8

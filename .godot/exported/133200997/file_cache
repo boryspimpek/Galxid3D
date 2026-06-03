@@ -41,7 +41,7 @@ res://scenes/player/PlayerModel.tscn::a9b9db435516e881264cb6d0eee396ae::17797256
 res://scenes/player/ShieldSystem.tscn::e3444b212e6f63c1480335d8f3e23070::1779131093::res://.godot/exported/133200997/export-0a98f7243e8aea79343d3c7e3bc467c5-ShieldSystem.scn
 res://scenes/player/WeaponSystem.tscn::b51032d79b00ea281868efda9e151ad5::1779131093::res://.godot/exported/133200997/export-eef44eb320987654286e1653e7352728-WeaponSystem.scn
 res://scenes/projectile/Projectile.tscn::9f3034634814d731462cbed1ac71fcfd::1779977138::res://.godot/exported/133200997/export-d51b6ad9e18066cc7ea8055c0639a43b-Projectile.scn
-res://3dworld.tscn::6a321a1e5977d430c512a9a010ad8f46::1780512203::res://.godot/exported/133200997/export-37e875acfa77dccf473348a8829cfa46-3dworld.scn
+res://3dworld.tscn::e51c98e72ee5a8bff4ef7738b925eb32::1780513061::res://.godot/exported/133200997/export-37e875acfa77dccf473348a8829cfa46-3dworld.scn
 res://default_bus_layout.tres::b86178f342a004aa846553e9151b2ab6::1780403827::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
 res://scenes/debug/PlayAreaFrame.tscn::e7f92eba5675a712945efe1e6611a27d::1780401802::res://.godot/exported/133200997/export-60f130f43cd0a34daf493c6300271137-PlayAreaFrame.scn
 res://scenes/explosions/explode2.tscn::6cc6b50b315faf9b7010184f62b86045::1779976073::res://.godot/exported/133200997/export-6155def951c17524d84e46b9fcc8525b-explode2.scn
