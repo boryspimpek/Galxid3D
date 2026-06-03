@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="7_scroll"]
 [ext_resource type="Script" uid="uid://1pup6o17egip" path="res://scenes/asteroids/AsteroidSpawner.gd" id="8_pnv6h"]
 [ext_resource type="PackedScene" uid="uid://b47pkgi0u300c" path="res://scenes/enemies/blaze_2.tscn" id="9_rpljx"]
-[ext_resource type="Script" uid="uid://d1fby4aoidoen" path="res://scenes/enemy/EnemyPath3D.gd" id="10_fjwqu"]
+[ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemy/EnemyPath3D.gd" id="10_fjwqu"]
 [ext_resource type="PackedScene" uid="uid://ceb36gc6o5uvc" path="res://scenes/enemies/starfighter.tscn" id="10_rpljx"]
 [ext_resource type="PackedScene" uid="uid://c6bq1qkhotmeh" path="res://scenes/enemies/formation.tscn" id="10_sgee4"]
 [ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyPath.gd" id="13_fjwqu"]
@@ -112,7 +112,7 @@ point_count = 3
 
 [sub_resource type="Curve3D" id="Curve3D_h5joq"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.0021238327, 0, 0.03056717, 0, 0, 0, 0, 0, 0, -0.17724991, 0, 6.5800247, 0, 0, 0, 0, 0, 0, -27.731995, 0, 6.7522354),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.0021238327, 0, 0.03056717, 0, 0, 0, 0, 0, 0, -0.00961113, 0, 10.265854, 0, 0, 0, 0, 0, 0, -27.945766, 0, 10.169689),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
@@ -139,7 +139,6 @@ script = ExtResource("15_viewshift")
 
 [node name="NoiseBackground" parent="." unique_id=697593384 instance=ExtResource("1_pnv6h")]
 transform = Transform3D(1.08, 0, 0, 0, 1.08, 0, 0, 0, 1.08, 0, -170, 0)
-visible = false
 
 [node name="PlayAreaFrame" parent="." unique_id=143925964 instance=ExtResource("6_3vxff")]
 
@@ -176,21 +175,20 @@ show_time_labels = false
 color_play_zone = Color(0.2, 1, 0.4, 0)
 
 [node name="Formation" parent="LevelScroll" unique_id=1730415998 instance=ExtResource("10_sgee4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3572445, 0, -18.525364)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55752945, 0, -20.080433)
 
 [node name="wave 2" type="Path3D" parent="LevelScroll" unique_id=1020843966]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.884453, 0, -29.995996)
+curve = SubResource("Curve3D_fjwqu")
 script = ExtResource("10_fjwqu")
 speed = 8.0
 speed_curve = SubResource("Curve_fql1y")
 bank_enabled = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.884453, 0, -29.995996)
-curve = SubResource("Curve3D_fjwqu")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 2" unique_id=711777851]
 transform = Transform3D(0.00062767294, 0, 0.999937, 0, 1, 0, -0.999937, 0, 0.00062767294, 13.055168, 0, 0.053913116)
 loop = false
 script = ExtResource("13_fjwqu")
-
 
 [node name="blaze 2" parent="LevelScroll/wave 2/PathFollow3D" unique_id=1647038960 instance=ExtResource("9_rpljx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -232,13 +230,13 @@ script = ExtResource("13_fjwqu")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="wave 3" type="Path3D" parent="LevelScroll" unique_id=1873775366]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.039898, 0, -38.198074)
+curve = SubResource("Curve3D_rpljx")
 script = ExtResource("10_fjwqu")
 speed = 8.0
 speed_curve = SubResource("Curve_sgee4")
 bank_enabled = true
 bank_lookahead = 5.0
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.039898, 0, -38.198074)
-curve = SubResource("Curve3D_rpljx")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 3" unique_id=2144100859]
 transform = Transform3D(0.00062767294, 0, 0.999937, 0, 1, 0, -0.999937, 0, 0.00062767294, 13.055168, 0, 0.053913116)
@@ -285,13 +283,13 @@ script = ExtResource("13_fjwqu")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="wave 4" type="Path3D" parent="LevelScroll" unique_id=1853809397]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.262833, 0, -59.070667)
+curve = SubResource("Curve3D_m2xqg")
 script = ExtResource("10_fjwqu")
 speed = 8.0
 speed_curve = SubResource("Curve_h5joq")
 bank_enabled = true
 bank_lookahead = 2.0
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.262833, 0, -59.070667)
-curve = SubResource("Curve3D_m2xqg")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 4" unique_id=374263603]
 transform = Transform3D(0.00062767294, 0, 0.999937, 0, 1, 0, -0.999937, 0, 0.00062767294, 13.055168, 0, 0.053913116)
@@ -338,13 +336,13 @@ script = ExtResource("13_fjwqu")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="wave 5" type="Path3D" parent="LevelScroll" unique_id=1943859210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.506039, 0, -72.452576)
+curve = SubResource("Curve3D_2gg5g")
 script = ExtResource("10_fjwqu")
 speed = 8.0
 speed_curve = SubResource("Curve_a283u")
 bank_enabled = true
 bank_lookahead = 10.0
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.506039, 0, -72.452576)
-curve = SubResource("Curve3D_2gg5g")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 5" unique_id=2135139181]
 transform = Transform3D(0.0013904427, 0, -0.9999347, 0, 1, 0, 0.9999347, 0, 0.0013904427, -13.022745, 0, 0.06391907)
@@ -391,13 +389,13 @@ script = ExtResource("13_fjwqu")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="wave 6" type="Path3D" parent="LevelScroll" unique_id=1462768292]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.902981, 0, -100.20805)
+curve = SubResource("Curve3D_fql1y")
 script = ExtResource("10_fjwqu")
 speed = 8.0
 speed_curve = SubResource("Curve_njda1")
 bank_enabled = true
 bank_lookahead = 2.0
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.902981, 0, -100.20805)
-curve = SubResource("Curve3D_fql1y")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/wave 6" unique_id=1507688133]
 transform = Transform3D(0.0024505688, 0, -0.9999605, 0, 1, 0, 0.9999605, 0, 0.0024505688, -12.992178, 0, 0.09770012)
@@ -444,49 +442,46 @@ script = ExtResource("13_fjwqu")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="starfighter left" type="Path3D" parent="LevelScroll" unique_id=1096031301]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.855473, 0, -74.54548)
+curve = SubResource("Curve3D_a283u")
 script = ExtResource("10_fjwqu")
 speed_curve = SubResource("Curve_a02db")
 bank_enabled = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.855473, 0, -74.54548)
-curve = SubResource("Curve3D_a283u")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/starfighter left" unique_id=361045995]
 transform = Transform3D(-0.9999788, 0, -0.005051461, 0, 1, 0, 0.005051461, 0, -0.9999788, 0.0021238327, 0, 0.03056717)
 loop = false
 script = ExtResource("13_fjwqu")
 
-
 [node name="starfighter" parent="LevelScroll/starfighter left/PathFollow3D" unique_id=1766588749 instance=ExtResource("10_rpljx")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="starfighter right" type="Path3D" parent="LevelScroll" unique_id=1003829020]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.954819, 0, -82.37912)
+curve = SubResource("Curve3D_njda1")
 script = ExtResource("10_fjwqu")
 speed_curve = SubResource("Curve_kisij")
 bank_enabled = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.954819, 0, -82.37912)
-curve = SubResource("Curve3D_njda1")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/starfighter right" unique_id=572719255]
 transform = Transform3D(-0.9997633, 0, 0.021562874, 0, 1, 0, -0.021562874, 0, -0.9997633, 0.0021238327, 0, 0.03056717)
 loop = false
 script = ExtResource("13_fjwqu")
 
-
 [node name="starfighter" parent="LevelScroll/starfighter right/PathFollow3D" unique_id=1209574411 instance=ExtResource("10_rpljx")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="starfighter right2" type="Path3D" parent="LevelScroll" unique_id=604843432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -50.521164)
+curve = SubResource("Curve3D_h5joq")
 script = ExtResource("10_fjwqu")
 speed_curve = SubResource("Curve_e4jcy")
 bank_enabled = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -50.521164)
-curve = SubResource("Curve3D_h5joq")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="LevelScroll/starfighter right2" unique_id=1111405812]
-transform = Transform3D(-0.99961656, 0, 0.027376961, 0, 1, 0, -0.027376961, 0, -0.99961656, 0.0021238327, 0, 0.03056717)
+transform = Transform3D(-0.99998677, 0, 0.0011464529, 0, 1, 0, -0.0011464529, 0, -0.99998677, 0.0021238327, 0, 0.03056717)
 loop = false
 script = ExtResource("13_fjwqu")
-
 
 [node name="starfighter" parent="LevelScroll/starfighter right2/PathFollow3D" unique_id=1466853133 instance=ExtResource("10_rpljx")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)

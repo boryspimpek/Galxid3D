@@ -2,32 +2,71 @@
 
 [ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemy/EnemyPath3D.gd" id="1_rxsle"]
 [ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyPath.gd" id="2_g61cf"]
-[ext_resource type="PackedScene" uid="uid://ceb36gc6o5uvc" path="res://scenes/enemies/starfighter.tscn" id="3_rxsle"]
+[ext_resource type="PackedScene" uid="uid://bh3x5gquu3djc" path="res://scenes/enemies/blaze_5.tscn" id="3_g61cf"]
 
 [sub_resource type="Curve3D" id="Curve3D_lu1cq"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.00030326843, 0, 0.007098198, 0, 0, 0, 0, 0, 0, -0.100494385, 0, 14.304094, 0, 0, 0, 0, 0, 0, 10.490253, 0, 14.304094),
-"tilts": PackedFloat32Array(0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.00030326843, 0, 0.007098198, 0, 0, 0, 0, 0, 0, 16.590544, 0, 2.1107612, -2.067564, 0, -3.4619684, 2.067564, 0, 3.4619684, 25.920841, 0, 6.3736677, 0, 0, 0, 0, 0, 0, 23.805193, 0, 30.895947),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
 }
-point_count = 3
+point_count = 4
 
 [sub_resource type="Curve" id="Curve_ahi8g"]
 _limits = [0.0, 3.0, 0.0, 1.0]
 _data = [Vector2(0.55313355, 0.987766), 0.0, 6.7673707, 0, 0, Vector2(1, 1.9420214), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="Formation" type="Path3D" unique_id=1730415998]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 10)
+[node name="Formation" type="Node3D" unique_id=1730415998]
+
+[node name="Path" type="Path3D" parent="." unique_id=1730415999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.077095, 0, 3.319785)
 curve = SubResource("Curve3D_lu1cq")
 script = ExtResource("1_rxsle")
+activation_mode = 0
 speed = 8.0
 speed_curve = SubResource("Curve_ahi8g")
 bank_enabled = true
 
-[node name="PathFollow3D" type="PathFollow3D" parent="." unique_id=310916544]
-transform = Transform3D(-0.9999703, 0, 0.007050096, 0, 1, 0, -0.007050096, 0, -0.9999703, 0, 0, 0)
+[node name="PathFollow3D" type="PathFollow3D" parent="Path" unique_id=310916544]
+transform = Transform3D(-0.12579143, 0, -0.9920363, 0, 1, 0, 0.9920363, 0, -0.12579143, 0.00030326843, 0, 0.007098198)
 loop = false
 script = ExtResource("2_g61cf")
 
-[node name="starfighter" parent="PathFollow3D" unique_id=1897743314 instance=ExtResource("3_rxsle")]
+[node name="blaze 5" parent="Path/PathFollow3D" unique_id=1897743314 instance=ExtResource("3_g61cf")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="PathFollow3D2" type="PathFollow3D" parent="Path" unique_id=2110210760]
+transform = Transform3D(-0.12579162, 0, -0.9920369, 0, 1, 0, 0.9920369, 0, -0.12579162, 2.976129, 0, 0.38443658)
+progress = 3.0
+loop = false
+script = ExtResource("2_g61cf")
+
+[node name="blaze 5" parent="Path/PathFollow3D2" unique_id=687596131 instance=ExtResource("3_g61cf")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="PathFollow3D3" type="PathFollow3D" parent="Path" unique_id=956187911]
+transform = Transform3D(-0.1257915, 0, -0.9920369, 0, 1, 0, 0.9920369, 0, -0.1257915, 5.9525495, 0, 0.7618502)
+progress = 6.0
+loop = false
+script = ExtResource("2_g61cf")
+
+[node name="blaze 5" parent="Path/PathFollow3D3" unique_id=1363455605 instance=ExtResource("3_g61cf")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="PathFollow3D4" type="PathFollow3D" parent="Path" unique_id=914193793]
+transform = Transform3D(-0.12579146, 0, -0.9920366, 0, 1, 0, 0.9920366, 0, -0.12579146, 8.928841, 0, 1.1392475)
+progress = 9.0
+loop = false
+script = ExtResource("2_g61cf")
+
+[node name="blaze 5" parent="Path/PathFollow3D4" unique_id=929407191 instance=ExtResource("3_g61cf")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="PathFollow3D5" type="PathFollow3D" parent="Path" unique_id=1922970098]
+transform = Transform3D(-0.12579143, 0, -0.9920363, 0, 1, 0, 0.9920363, 0, -0.12579143, 11.905087, 0, 1.5166394)
+progress = 12.0
+loop = false
+script = ExtResource("2_g61cf")
+
+[node name="blaze 5" parent="Path/PathFollow3D5" unique_id=1145258823 instance=ExtResource("3_g61cf")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)

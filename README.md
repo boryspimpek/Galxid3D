@@ -60,7 +60,7 @@ Plik: `scenes/enemy/Enemy.gd`.
 - **`LevelScroll`** (`scenes/world/LevelScroll3D.gd`): przesuwa dzieci wzdłuż **+Z** (`scroll_speed`). Pod nim trzymaj Path3D, planety, tło — gracz i kamera zostają na root sceny.
 - **Wszyscy wrogowie**: aktywacja gdy `global_position.z >= scroll_activation_z` (górna krawędź kadru). Pozycja startowa: `z = scroll_activation_z - odległość`. Czas do startu ≈ `odległość / scroll_speed`.
 - **`EnemySpawner`** (`scenes/enemies/EnemySpawner.gd`): losowy spawn wrogów nad linią aktywacji — umieść pod `LevelScroll`. Pola jak w `PlanetSpawner`: `spawn_interval`, `preprocess_time`, lista `enemy_scenes` (pusta = domyślna pula wszystkich typów).
-- **`EnemyPath.gd`**: start ścieżki po sygnale `combat_activated` z wroga.
+- **`EnemyPath.gd`**: start ścieżki po `combat_activated` wroga lub po `wave_activated` z `EnemyPath3D` (tryb `SCENE_SCROLL_LINE` — jak `animation.gd` / formation).
 
 ## Notatki dla pracy z AI (żeby szybciej startować rozmowy)
 

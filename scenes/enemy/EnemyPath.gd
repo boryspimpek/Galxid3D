@@ -28,6 +28,17 @@ func _ready() -> void:
 
 	_path_active = false
 	set_process(false)
+	_setup_path_start()
+
+
+func _setup_path_start() -> void:
+	var wave := _get_path_settings()
+	if wave != null and wave.uses_scene_activation():
+		if wave.is_wave_activated():
+			_start_path()
+		else:
+			wave.wave_activated.connect(_start_path, CONNECT_ONE_SHOT)
+		return
 
 	var enemy := _find_enemy()
 	if enemy == null:
