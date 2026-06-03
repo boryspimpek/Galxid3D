@@ -7,5 +7,5 @@ script = ExtResource("1")
 generator_index = 1
 generator_name = "Standard MR-9"
 power = 300
-regeneration = 120
+regeneration = 300.0
 cost = 500

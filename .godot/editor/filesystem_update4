@@ -1,5 +1,3 @@
-res://scenes/enemies/animation.gd
-res://scenes/enemy/EnemyPath.gd
-res://scenes/world/LevelScroll3D.gd
 res://3dworld.tscn
 res://scenes/planets/planet.gdshader
+res://data/generators/generator_001.tres

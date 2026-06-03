@@ -31,9 +31,10 @@ var ship_data: ShipData = null
 
 var main_camera: Camera3D
 
-# ── NOWE zmienne dotykowe ──────────────────────────────────────────
-var touch_target := Vector3.ZERO   # ostatnia pozycja palca w świecie 3D
-var is_firing    := false           # czy palec jest przyciśnięty
+# ── Dotyk: cel w świecie + offset (palec nie musi być nad modelem) ──
+var touch_target := Vector3.ZERO
+var is_firing := false
+var _touch_grab_offset := Vector3.ZERO  # różnica palec↔statek w momencie dotknięcia
 
 # ============================================================================
 # 1. INICJALIZACJA
@@ -72,18 +73,16 @@ func init_power_regeneration():
 # ============================================================================
 
 func _unhandled_input(event: InputEvent) -> void:
-	# ── Dotyk (tablet / telefon) ──
+	# ── Dotyk: względny chwyt — statek jedzie z ruchem palca, nie pod palcem ──
 	if event is InputEventScreenTouch:
 		is_firing = event.pressed
 		if event.pressed:
-			var pos = _screen_to_world(event.position)
-			if pos != Vector3.ZERO:
-				touch_target = pos
+			_begin_relative_touch(event.position)
+		else:
+			_touch_grab_offset = Vector3.ZERO
 
 	elif event is InputEventScreenDrag:
-		var pos = _screen_to_world(event.position)
-		if pos != Vector3.ZERO:
-			touch_target = pos
+		_update_relative_touch(event.position)
 
 	# ── Mysz (PC / One-Click Deploy w przeglądarce) ──
 	elif event is InputEventMouseButton:
@@ -93,6 +92,27 @@ func _unhandled_input(event: InputEvent) -> void:
 		var pos = _screen_to_world(get_viewport().get_mouse_position())
 		if pos != Vector3.ZERO:
 			touch_target = pos
+
+func _begin_relative_touch(screen_pos: Vector2) -> void:
+	var finger_world := _screen_to_world(screen_pos)
+	if finger_world == Vector3.ZERO:
+		return
+	_touch_grab_offset = Vector3(
+		finger_world.x - global_position.x,
+		0.0,
+		finger_world.z - global_position.z
+	)
+	touch_target = global_position
+
+func _update_relative_touch(screen_pos: Vector2) -> void:
+	var finger_world := _screen_to_world(screen_pos)
+	if finger_world == Vector3.ZERO:
+		return
+	touch_target = Vector3(
+		finger_world.x - _touch_grab_offset.x,
+		0.0,
+		finger_world.z - _touch_grab_offset.z
+	)
 
 # Pomocnik: rzut ekran → płaszczyzna Y=0
 func _screen_to_world(screen_pos: Vector2) -> Vector3:
