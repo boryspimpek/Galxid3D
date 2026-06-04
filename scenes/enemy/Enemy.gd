@@ -183,6 +183,9 @@ func _activate() -> void:
 	_is_active = true
 	is_firing = true
 	fire_timer = fire_rate
+	# PathFollow odpina się w EnemyPath; wrogowie bez ścieżki — tutaj.
+	if not get_parent() is PathFollow3D:
+		LevelScroll3D.detach_to_active_scene(self)
 	combat_activated.emit()
 
 

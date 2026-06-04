@@ -1,10 +1,11 @@
-res://scenes/enemies/blaze_2_model.tscn
+res://scenes/debug/smooth_enemy_test.tscn
 res://scenes/planets/planet.gdshader
-res://scenes/enemies/animation.gd
+res://scenes/debug/smooth_enemy_test.gd
+res://scenes/debug/test_level_scroll_wave2.tscn
+res://scenes/debug/test_wave_path_only.tscn
 res://scenes/enemy/Enemy.gd
 res://scenes/enemy/EnemyPath3D.gd
 res://scenes/enemy/EnemyPath.gd
 res://scenes/world/LevelScroll3D.gd
 res://3dworld.tscn
-res://scenes/enemy_projectile/EnemyProjectile.tscn
-res://scenes/enemies/starfighter.tscn
+res://scenes/enemies/formation.tscn

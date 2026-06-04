@@ -1,6 +1,6 @@
+PathFollow3D
 Node3D
 MeshInstance3D
-PathFollow3D
 Path3D
 AnimationPlayer
 EnemyPath3D

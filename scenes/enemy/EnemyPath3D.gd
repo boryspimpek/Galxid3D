@@ -27,8 +27,6 @@ const ACTIVATION_ORIGIN_NAME := "ActivationOrigin"
 ## Opcjonalny mnożnik prędkości wzdłuż ścieżki (oś X: 0..1 = progress/baked_length).
 ## Jeśli puste, poruszanie jest ze stałą prędkością `speed`.
 @export var speed_curve: Curve
-## Odejmuje przesunięcie LevelScroll od wroga — ścieżkę układasz tak, jak ma wyglądać na ekranie.
-@export var compensate_level_scroll: bool = true
 
 @export_group("Bank")
 ## Wymusza "przechył" (roll/bank) na zakrętach nawet dla płaskiej ścieżki (top-down).

@@ -1,92 +1,54 @@
 extends PathFollow3D
-class_name EnemyPath
+class_name TestEnemyPath
 
-const SCROLL_COMPENSATOR_NAME := "ScrollCompensator"
+## PathFollow tylko po krzywej — bez LevelScroll i bez kompensacji.
+## _physics_process + interpolacja (jak żółty CharacterBody w teście).
 
-const DEFAULT_SPEED := 5.0
-const DEFAULT_BANK_ENABLED := false
+const DEFAULT_SPEED := 8.0
+const DEFAULT_BANK_ENABLED := true
 const DEFAULT_BANK_MAX_DEGREES := 45.0
 const DEFAULT_BANK_STRENGTH := 2.0
 const DEFAULT_BANK_LOOKAHEAD := 1.0
 const DEFAULT_BANK_SMOOTH := 10.0
 
-var _path_active: bool = false
-## Ustawienia fali (EnemyPath3D) — cache przed odpinaniem od LevelScroll.
+@export var auto_start: bool = true
+@export var loop_path: bool = true
+
 var _wave_settings: EnemyPath3D
+var _active: bool = false
 
 
 func _ready() -> void:
+	physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_ON
+	loop = loop_path
 	_wave_settings = get_parent() as EnemyPath3D
-	_cleanup_legacy_scroll_compensator()
-	_path_active = false
-	set_physics_process(false)
-	_setup_path_start()
 
-
-func _setup_path_start() -> void:
-	if _wave_settings != null and _wave_settings.uses_scene_activation():
-		if _wave_settings.is_wave_activated():
-			_start_path()
-		else:
-			_wave_settings.wave_activated.connect(_start_path, CONNECT_ONE_SHOT)
-		return
-
-	var enemy := _find_enemy()
-	if enemy == null:
-		_start_path()
-		return
-
-	if enemy.is_combat_active():
-		_start_path()
-	else:
-		enemy.combat_activated.connect(_start_path, CONNECT_ONE_SHOT)
-
-
-func _cleanup_legacy_scroll_compensator() -> void:
-	var compensator := get_node_or_null(SCROLL_COMPENSATOR_NAME) as Node3D
-	if compensator == null:
-		return
-	for child in compensator.get_children():
-		if child.is_in_group("enemies"):
-			child.reparent(self, true)
-	compensator.queue_free()
-
-
-func _find_enemy() -> Node:
 	for child in get_children():
 		if child.is_in_group("enemies"):
-			return child
-	return null
+			_activate_enemy(child)
+
+	if auto_start:
+		_start_path()
+
+
+func _activate_enemy(enemy: Node) -> void:
+	if enemy.has_method("activate_combat"):
+		enemy.activate_combat()
+	elif enemy.has_method("_activate"):
+		enemy.set("activate_on_scroll_line", false)
+		enemy._activate()
 
 
 func _start_path() -> void:
-	if _path_active:
+	if _active:
 		return
-	_path_active = true
-	physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_ON
-	_detach_path_from_level_scroll()
+	_active = true
 	set_physics_process(true)
 	reset_physics_interpolation()
 
 
-func _detach_path_from_level_scroll() -> void:
-	var path3d := get_parent() as Path3D
-	if path3d == null or not LevelScroll3D.is_under_level_scroll(self):
-		return
-	var root := get_tree().current_scene
-	if root == null:
-		return
-
-	var active_path := Path3D.new()
-	active_path.name = "%s__%d" % [path3d.name, get_instance_id()]
-	active_path.curve = path3d.curve
-	root.add_child(active_path)
-	active_path.global_transform = path3d.global_transform
-	reparent(active_path, true)
-
-
 func _physics_process(delta: float) -> void:
-	if not _path_active:
+	if not _active:
 		return
 
 	var baked_len: float = get_baked_length_safe()
@@ -97,7 +59,10 @@ func _physics_process(delta: float) -> void:
 		speed_mul = maxf(0.0, curve.sample_baked(t))
 
 	progress += (_get_speed() * speed_mul) * delta
-	progress = clamp(progress, 0.0, baked_len)
+	if loop:
+		progress = wrapf(progress, 0.0, baked_len)
+	else:
+		progress = clampf(progress, 0.0, baked_len)
 
 	rotation_mode = PathFollow3D.ROTATION_ORIENTED
 	_apply_banking(delta)
@@ -156,6 +121,13 @@ func _apply_banking(delta: float) -> void:
 	var r := anchor.rotation
 	r.z = lerp_angle(r.z, target, alpha)
 	anchor.rotation = r
+
+
+func _find_enemy() -> Node:
+	for child in get_children():
+		if child.is_in_group("enemies"):
+			return child
+	return null
 
 
 func _get_speed() -> float:
