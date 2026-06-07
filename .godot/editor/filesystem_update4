@@ -1,11 +1,8 @@
-res://scenes/debug/smooth_enemy_test.tscn
-res://scenes/planets/planet.gdshader
-res://scenes/debug/smooth_enemy_test.gd
-res://scenes/debug/test_level_scroll_wave2.tscn
-res://scenes/debug/test_wave_path_only.tscn
-res://scenes/enemy/Enemy.gd
-res://scenes/enemy/EnemyPath3D.gd
-res://scenes/enemy/EnemyPath.gd
-res://scenes/world/LevelScroll3D.gd
 res://3dworld.tscn
+res://assets/shaders/toon.gdshader
+res://scenes/enemies/formation2.tscn
 res://scenes/enemies/formation.tscn
+res://scenes/enemies/formation3.tscn
+res://scenes/enemies/formation4.tscn
+res://scenes/ui/Hud.tscn
+res://scenes/world/NoiseBackground.tscn

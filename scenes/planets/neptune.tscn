@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cpwck5pptf7hx"]
 
 [ext_resource type="PackedScene" uid="uid://hq602uu7kt7m" path="res://scenes/planets/simple_planet.tscn" id="1_hd1me"]
-[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="2_5hhm1"]
+[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://assets/shaders/toon.gdshader" id="2_5hhm1"]
 [ext_resource type="Texture2D" uid="uid://dldpelql0fhfb" path="res://assets/planets/textures/solar system/2k_neptune.jpg" id="3_tex"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c043r"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c1pq466qvcqtm"]
 
 [ext_resource type="Script" uid="uid://blylchano3pbx" path="res://scenes/planets/earth_base.gd" id="1_cwnmv"]
-[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="2_5i67w"]
+[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://assets/shaders/toon.gdshader" id="2_5i67w"]
 [ext_resource type="Texture2D" uid="uid://b5x1pv330wf72" path="res://assets/planets/textures/solar system/2k_earth_daymap.jpg" id="3_trc54"]
 [ext_resource type="Texture2D" uid="uid://dldpelql0fhfb" path="res://assets/planets/textures/solar system/2k_neptune.jpg" id="4_xbhfj"]
 [ext_resource type="Texture2D" uid="uid://d6ufagn3ivxr" path="res://assets/planets/textures/meshy/venus.png" id="5_fnp8i"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://hq602uu7kt7m"]
 
-[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="1_yrxqc"]
+[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://assets/shaders/toon.gdshader" id="1_yrxqc"]
 [ext_resource type="Script" uid="uid://bpicyg2rrp4qp" path="res://scenes/planets/planet_base.gd" id="3_k4q7n"]
 [ext_resource type="Texture2D" uid="uid://droo5e32n3i7x" path="res://assets/planets/textures/meshy/Meshy_AI_Azure_Ringed_World_0520072106_texture_Image_0.jpg" id="3_mqevj"]
 [ext_resource type="Texture2D" uid="uid://1twux37maqnb" path="res://assets/planets/textures/solar system/Gemini_Generated_Image_9vs8tr9vs8tr9vs8.png" id="4_gemini"]

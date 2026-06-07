@@ -13,7 +13,6 @@ config_version=5
 config/name="GALAXID FREE"
 run/main_scene="uid://c0rjf6bfsduht"
 config/features=PackedStringArray("4.6", "Forward Plus")
-run/max_fps=60
 config/icon="res://assets/enemies/icon.svg"
 
 [audio]
@@ -28,11 +27,11 @@ SoundManager="*res://scripts/managers/SoundManager.gd"
 
 [display]
 
-window/size/viewport_width=1080
-window/size/viewport_height=1920
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/size/always_on_top=true
-window/size/window_width_override=600
-window/size/window_height_override=800
+window/size/window_width_override=1300
+window/size/window_height_override=730
 window/stretch/mode="canvas_items"
 window/handheld/orientation=1
 
@@ -48,5 +47,7 @@ common/physics_interpolation=true
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
+anti_aliasing/quality/msaa_3d=2
+anti_aliasing/quality/use_taa=true
+anti_aliasing/max_fps=0

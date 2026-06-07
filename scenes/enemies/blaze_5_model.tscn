@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dbq1haxfor3uc"]
 
 [ext_resource type="PackedScene" uid="uid://bjurnxeuroe0j" path="res://assets/enemies/blaze/blaze5/Meshy_AI_Emerald_Void_Intercep_0529133902_texture.glb" id="1_dojbo"]
-[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="2_fwlab"]
+[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://assets/shaders/toon.gdshader" id="2_fwlab"]
 [ext_resource type="Texture2D" uid="uid://vx227yr1pxqc" path="res://assets/enemies/blaze/blaze5/Meshy_AI_Emerald_Void_Intercep_0529133902_texture_0.jpg" id="3_rwow7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwlab"]

@@ -1,6 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqx7galaxidhud"]
+[gd_scene format=3 uid="uid://pv4lucn5p30f"]
 
-[ext_resource type="Script" path="res://scenes/ui/Hud.gd" id="1_hud"]
+[ext_resource type="Script" uid="uid://y8p3sop88mb5" path="res://scenes/ui/Hud.gd" id="1_hud"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_title"]
+font_size = 22
+font_color = Color(0.85, 0.92, 1, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 0.85)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_track"]
 bg_color = Color(0.05, 0.08, 0.14, 0.75)
@@ -21,12 +27,11 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_energy"]
-bg_color = Color(0.25, 0.75, 1, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
+[sub_resource type="LabelSettings" id="LabelSettings_value"]
+font_size = 18
+font_color = Color(0.9, 0.95, 1, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 0.8)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shield"]
 bg_color = Color(0.72, 0.45, 1, 1)
@@ -35,23 +40,18 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
-[sub_resource type="LabelSettings" id="LabelSettings_title"]
-font_size = 22
-font_color = Color(0.85, 0.92, 1, 1)
-outline_size = 4
-outline_color = Color(0, 0, 0, 0.85)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_energy"]
+bg_color = Color(0.25, 0.75, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
-[sub_resource type="LabelSettings" id="LabelSettings_value"]
-font_size = 18
-font_color = Color(0.9, 0.95, 1, 1)
-outline_size = 3
-outline_color = Color(0, 0, 0, 0.8)
-
-[node name="Hud" type="CanvasLayer"]
+[node name="Hud" type="CanvasLayer" unique_id=1368757147]
 layer = 10
 script = ExtResource("1_hud")
 
-[node name="Root" type="Control" parent="."]
+[node name="Root" type="Control" parent="." unique_id=604441093]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,7 +60,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="TopBar" type="MarginContainer" parent="Root"]
+[node name="TopBar" type="MarginContainer" parent="Root" unique_id=947160678]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -71,22 +71,22 @@ theme_override_constants/margin_left = 36
 theme_override_constants/margin_top = 28
 theme_override_constants/margin_right = 36
 
-[node name="Bars" type="VBoxContainer" parent="Root/TopBar"]
+[node name="Bars" type="VBoxContainer" parent="Root/TopBar" unique_id=1726180820]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="HealthRow" type="HBoxContainer" parent="Root/TopBar/Bars"]
+[node name="HealthRow" type="HBoxContainer" parent="Root/TopBar/Bars" unique_id=950781077]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="HealthTitle" type="Label" parent="Root/TopBar/Bars/HealthRow"]
+[node name="HealthTitle" type="Label" parent="Root/TopBar/Bars/HealthRow" unique_id=45681853]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
-text = "Życie"
+text = "HP"
 label_settings = SubResource("LabelSettings_title")
 
-[node name="HealthBar" type="ProgressBar" parent="Root/TopBar/Bars/HealthRow"]
+[node name="HealthBar" type="ProgressBar" parent="Root/TopBar/Bars/HealthRow" unique_id=832822483]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
@@ -97,7 +97,7 @@ max_value = 10.0
 value = 10.0
 show_percentage = false
 
-[node name="HealthValue" type="Label" parent="Root/TopBar/Bars/HealthRow"]
+[node name="HealthValue" type="Label" parent="Root/TopBar/Bars/HealthRow" unique_id=1592365844]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
@@ -105,29 +105,28 @@ text = "10 / 10"
 label_settings = SubResource("LabelSettings_value")
 horizontal_alignment = 2
 
-[node name="ShieldRow" type="HBoxContainer" parent="Root/TopBar/Bars"]
+[node name="ShieldRow" type="HBoxContainer" parent="Root/TopBar/Bars" unique_id=828591799]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="ShieldTitle" type="Label" parent="Root/TopBar/Bars/ShieldRow"]
+[node name="ShieldTitle" type="Label" parent="Root/TopBar/Bars/ShieldRow" unique_id=54389127]
 custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
-text = "Tarcza"
+text = "Shield"
 label_settings = SubResource("LabelSettings_title")
 
-[node name="ShieldBar" type="ProgressBar" parent="Root/TopBar/Bars/ShieldRow"]
+[node name="ShieldBar" type="ProgressBar" parent="Root/TopBar/Bars/ShieldRow" unique_id=503056336]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/background = SubResource("StyleBoxFlat_track")
 theme_override_styles/fill = SubResource("StyleBoxFlat_shield")
-max_value = 100.0
 value = 100.0
 show_percentage = false
 
-[node name="ShieldValue" type="Label" parent="Root/TopBar/Bars/ShieldRow"]
+[node name="ShieldValue" type="Label" parent="Root/TopBar/Bars/ShieldRow" unique_id=1448797159]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
@@ -135,18 +134,18 @@ text = "0 / 0"
 label_settings = SubResource("LabelSettings_value")
 horizontal_alignment = 2
 
-[node name="EnergyRow" type="HBoxContainer" parent="Root/TopBar/Bars"]
+[node name="EnergyRow" type="HBoxContainer" parent="Root/TopBar/Bars" unique_id=2055975093]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="EnergyTitle" type="Label" parent="Root/TopBar/Bars/EnergyRow"]
+[node name="EnergyTitle" type="Label" parent="Root/TopBar/Bars/EnergyRow" unique_id=1375530962]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
-text = "Energia"
+text = "Energy"
 label_settings = SubResource("LabelSettings_title")
 
-[node name="EnergyBar" type="ProgressBar" parent="Root/TopBar/Bars/EnergyRow"]
+[node name="EnergyBar" type="ProgressBar" parent="Root/TopBar/Bars/EnergyRow" unique_id=664122566]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
@@ -157,7 +156,7 @@ max_value = 900.0
 value = 900.0
 show_percentage = false
 
-[node name="EnergyValue" type="Label" parent="Root/TopBar/Bars/EnergyRow"]
+[node name="EnergyValue" type="Label" parent="Root/TopBar/Bars/EnergyRow" unique_id=395216205]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
@@ -165,7 +164,7 @@ text = "900 / 900"
 label_settings = SubResource("LabelSettings_value")
 horizontal_alignment = 2
 
-[node name="TopRight" type="MarginContainer" parent="Root"]
+[node name="TopRight" type="MarginContainer" parent="Root" unique_id=1470369384]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -176,7 +175,7 @@ grow_horizontal = 0
 theme_override_constants/margin_top = 28
 theme_override_constants/margin_right = 36
 
-[node name="RestartButton" type="Button" parent="Root/TopRight"]
+[node name="RestartButton" type="Button" parent="Root/TopRight" unique_id=758519264]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(220, 56)
 layout_mode = 2
@@ -184,10 +183,10 @@ size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 20
 text = "Od nowa"
 
-[node name="RestartConfirm" type="Control" parent="Root"]
+[node name="RestartConfirm" type="Control" parent="Root" unique_id=1715448484]
 unique_name_in_owner = true
 visible = false
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -195,18 +194,18 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="Dim" type="ColorRect" parent="Root/RestartConfirm"]
-layout_mode = 3
+[node name="Dim" type="ColorRect" parent="Root/RestartConfirm" unique_id=131998671]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 0.55)
-mouse_filter = 2
 
-[node name="Center" type="CenterContainer" parent="Root/RestartConfirm"]
-layout_mode = 3
+[node name="Center" type="CenterContainer" parent="Root/RestartConfirm" unique_id=295540232]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -214,44 +213,45 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Panel" type="PanelContainer" parent="Root/RestartConfirm/Center"]
+[node name="Panel" type="PanelContainer" parent="Root/RestartConfirm/Center" unique_id=1129699688]
 custom_minimum_size = Vector2(560, 0)
+layout_mode = 2
 mouse_filter = 2
 
-[node name="VBox" type="VBoxContainer" parent="Root/RestartConfirm/Center/Panel"]
+[node name="VBox" type="VBoxContainer" parent="Root/RestartConfirm/Center/Panel" unique_id=1545135700]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Message" type="Label" parent="Root/RestartConfirm/Center/Panel/VBox"]
+[node name="Message" type="Label" parent="Root/RestartConfirm/Center/Panel/VBox" unique_id=567917412]
 layout_mode = 2
 text = "Uruchomić poziom od początku?"
 label_settings = SubResource("LabelSettings_title")
 horizontal_alignment = 1
 
-[node name="Buttons" type="HBoxContainer" parent="Root/RestartConfirm/Center/Panel/VBox"]
+[node name="Buttons" type="HBoxContainer" parent="Root/RestartConfirm/Center/Panel/VBox" unique_id=1694532512]
 layout_mode = 2
 theme_override_constants/separation = 24
 alignment = 1
 
-[node name="RestartConfirmYes" type="Button" parent="Root/RestartConfirm/Center/Panel/VBox/Buttons"]
+[node name="RestartConfirmYes" type="Button" parent="Root/RestartConfirm/Center/Panel/VBox/Buttons" unique_id=148537409]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 52)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Tak"
 
-[node name="RestartConfirmNo" type="Button" parent="Root/RestartConfirm/Center/Panel/VBox/Buttons"]
+[node name="RestartConfirmNo" type="Button" parent="Root/RestartConfirm/Center/Panel/VBox/Buttons" unique_id=1372687129]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 52)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Anuluj"
 
-[node name="GameOver" type="Control" parent="Root"]
+[node name="GameOver" type="Control" parent="Root" unique_id=1194686363]
 unique_name_in_owner = true
 visible = false
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -259,18 +259,18 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="Dim" type="ColorRect" parent="Root/GameOver"]
-layout_mode = 3
+[node name="Dim" type="ColorRect" parent="Root/GameOver" unique_id=421354343]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 0.65)
-mouse_filter = 2
 
-[node name="Center" type="CenterContainer" parent="Root/GameOver"]
-layout_mode = 3
+[node name="Center" type="CenterContainer" parent="Root/GameOver" unique_id=1520361048]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -278,29 +278,30 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Panel" type="PanelContainer" parent="Root/GameOver/Center"]
+[node name="Panel" type="PanelContainer" parent="Root/GameOver/Center" unique_id=155429737]
 custom_minimum_size = Vector2(640, 0)
-mouse_filter = 2
-
-[node name="VBox" type="VBoxContainer" parent="Root/GameOver/Center/Panel"]
 layout_mode = 2
-theme_override_constants/separation = 16
 mouse_filter = 2
 
-[node name="Title" type="Label" parent="Root/GameOver/Center/Panel/VBox"]
+[node name="VBox" type="VBoxContainer" parent="Root/GameOver/Center/Panel" unique_id=1217034783]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="Root/GameOver/Center/Panel/VBox" unique_id=1296888760]
 layout_mode = 2
 text = "GAME OVER"
 label_settings = SubResource("LabelSettings_title")
 horizontal_alignment = 1
 
-[node name="GameOverRestartButton" type="Button" parent="Root/GameOver/Center/Panel/VBox"]
+[node name="GameOverRestartButton" type="Button" parent="Root/GameOver/Center/Panel/VBox" unique_id=1697699714]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "Zagraj od nowa"
 
-[node name="Hint" type="Label" parent="Root/GameOver/Center/Panel/VBox"]
+[node name="Hint" type="Label" parent="Root/GameOver/Center/Panel/VBox" unique_id=408560341]
 layout_mode = 2
 text = "lub kliknij / dotknij ekran"
 label_settings = SubResource("LabelSettings_value")

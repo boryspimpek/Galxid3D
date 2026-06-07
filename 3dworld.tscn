@@ -1,7 +1,16 @@
 [gd_scene format=3 uid="uid://c0rjf6bfsduht"]
 
+[ext_resource type="Script" uid="uid://dt670oushtj6" path="res://scenes/world/HorizontalViewShift.gd" id="1_3vxff"]
+[ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="1_m2xqg"]
+[ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="1_rpljx"]
+[ext_resource type="PackedScene" uid="uid://c1pq466qvcqtm" path="res://scenes/planets/earth.tscn" id="2_lp3by"]
 [ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="4_n40md"]
+[ext_resource type="Script" uid="uid://1pup6o17egip" path="res://scenes/asteroids/AsteroidSpawner.gd" id="4_rpljx"]
+[ext_resource type="PackedScene" uid="uid://dcg8vcl7rmst4" path="res://scenes/world/NoiseBackground.tscn" id="5_m2xqg"]
+[ext_resource type="PackedScene" uid="uid://b4kkmjte8klff" path="res://scenes/enemies/formation2.tscn" id="6_dba1v"]
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="7_scroll"]
+[ext_resource type="PackedScene" uid="uid://dd21l172sp65r" path="res://scenes/enemies/formation3.tscn" id="8_pnv6h"]
+[ext_resource type="PackedScene" uid="uid://i8caj32bmnmu" path="res://scenes/enemies/formation4.tscn" id="9_2gg5g"]
 [ext_resource type="PackedScene" uid="uid://c6bq1qkhotmeh" path="res://scenes/enemies/formation.tscn" id="10_sgee4"]
 
 [sub_resource type="Environment" id="Environment_vshm1"]
@@ -13,6 +22,11 @@ volumetric_fog_density = 0.0
 volumetric_fog_emission_energy = 0.0
 
 [node name="Game" type="Node3D" unique_id=616589222]
+
+[node name="PlayAreaFrame" parent="." unique_id=422821734 instance=ExtResource("1_m2xqg")]
+max_bound_x = 27.3
+
+[node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("1_rpljx")]
 
 [node name="World" type="Node3D" parent="." unique_id=435478258]
 
@@ -26,12 +40,98 @@ shadow_enabled = true
 [node name="Camera3D" type="Camera3D" parent="World" unique_id=1430056658]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 20, 0)
 
+[node name="Background" type="Node3D" parent="." unique_id=1105100676]
+
+[node name="earth" parent="Background" unique_id=1975713936 instance=ExtResource("2_lp3by")]
+transform = Transform3D(0.4990674, -0.030524269, 0, -0.030383743, -0.49676976, -0.047922913, 0.0029256241, 0.04783353, -0.49769807, 25, -50, -10)
+spin_speed = 0.5
+speed = 0.3
+
+[node name="HorizontalSgift" type="Node3D" parent="Background" unique_id=1299904887]
+script = ExtResource("1_3vxff")
+
+[node name="MeshInstance3D" parent="Background" unique_id=697593384 instance=ExtResource("5_m2xqg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -87.24279, 0)
+
+[node name="AsteroidSpawner" type="Node3D" parent="Background" unique_id=2034522390]
+script = ExtResource("4_rpljx")
+spawn_interval_1 = 15.0
+asteroid_speed_1 = 15.0
+scale_1 = 2.0
+y_2 = -15.0
+spawn_interval_2 = 7.5
+scale_2 = 1.5
+y_3 = -20.0
+spawn_interval_3 = 10.0
+asteroid_speed_3 = 0.5
+preprocess_time = 360.0
+
 [node name="Player" parent="." unique_id=1811810025 instance=ExtResource("4_n40md")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.94)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.085, 0, 7.94)
+max_bound_x = 40.0
+max_bound_z = 20.0
 
 [node name="LevelScroll" type="Node3D" parent="." unique_id=1395802397]
 script = ExtResource("7_scroll")
 scroll_speed = 3.0
 
 [node name="Formation" parent="LevelScroll" unique_id=1730415998 instance=ExtResource("10_sgee4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55752945, 0, -20.080433)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)
+
+[node name="Formation2" parent="LevelScroll" unique_id=747510776 instance=ExtResource("6_dba1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -35)
+
+[node name="PathFollow3D" parent="LevelScroll/Formation2/Path" parent_id_path=PackedInt32Array(747510776, 1730415999) index="0" unique_id=310916544]
+transform = Transform3D(-0.04429491, 0, -0.99899656, 0, 1, 0, 0.99899656, 0, -0.04429491, 0.00030326843, 0, 0.007098198)
+
+[node name="PathFollow3D2" parent="LevelScroll/Formation2/Path" parent_id_path=PackedInt32Array(747510776, 1730415999) index="1" unique_id=2110210760]
+transform = Transform3D(-0.044294976, 0, -0.99899805, 0, 1, 0, 0.99899805, 0, -0.044294976, 2.997095, 0, 0.13997397)
+
+[node name="PathFollow3D3" parent="LevelScroll/Formation2/Path" parent_id_path=PackedInt32Array(747510776, 1730415999) index="2" unique_id=956187911]
+transform = Transform3D(-0.04429497, 0, -0.9989979, 0, 1, 0, 0.9989979, 0, -0.04429497, 5.994314, 0, 0.2728687)
+
+[node name="PathFollow3D4" parent="LevelScroll/Formation2/Path" parent_id_path=PackedInt32Array(747510776, 1730415999) index="3" unique_id=914193793]
+transform = Transform3D(-0.044294912, 0, -0.9989966, 0, 1, 0, 0.9989966, 0, -0.044294912, 8.991473, 0, 0.4057607)
+
+[node name="PathFollow3D5" parent="LevelScroll/Formation2/Path" parent_id_path=PackedInt32Array(747510776, 1730415999) index="4" unique_id=1922970098]
+transform = Transform3D(-0.044294905, 0, -0.9989965, 0, 1, 0, 0.9989965, 0, -0.044294905, 11.988711, 0, 0.5386564)
+
+[node name="Formation3" parent="LevelScroll" unique_id=1084173044 instance=ExtResource("8_pnv6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -50)
+
+[node name="PathFollow3D" parent="LevelScroll/Formation3/Path" parent_id_path=PackedInt32Array(1084173044, 1730415999) index="0" unique_id=310916544]
+transform = Transform3D(-0.14354526, 0, 0.9896193, 0, 1, 0, -0.9896193, 0, -0.14354526, 0.00030326843, 0, 0.007098198)
+
+[node name="PathFollow3D2" parent="LevelScroll/Formation3/Path" parent_id_path=PackedInt32Array(1084173044, 1730415999) index="1" unique_id=2110210760]
+transform = Transform3D(-0.14354551, 0, 0.9896194, 0, 1, 0, -0.9896194, 0, -0.14354551, -2.9684098, 0, 0.4377133)
+
+[node name="PathFollow3D3" parent="LevelScroll/Formation3/Path" parent_id_path=PackedInt32Array(1084173044, 1730415999) index="2" unique_id=956187911]
+transform = Transform3D(-0.14354526, 0, 0.9896194, 0, 1, 0, -0.9896194, 0, -0.14354526, -5.9375477, 0, 0.86838996)
+
+[node name="PathFollow3D4" parent="LevelScroll/Formation3/Path" parent_id_path=PackedInt32Array(1084173044, 1730415999) index="3" unique_id=914193793]
+transform = Transform3D(-0.14354503, 0, 0.98961616, 0, 1, 0, -0.98961616, 0, -0.14354503, -8.906498, 0, 1.2990394)
+
+[node name="PathFollow3D5" parent="LevelScroll/Formation3/Path" parent_id_path=PackedInt32Array(1084173044, 1730415999) index="4" unique_id=1922970098]
+transform = Transform3D(-0.1435448, 0, 0.98961616, 0, 1, 0, -0.98961616, 0, -0.1435448, -11.875668, 0, 1.729721)
+
+[node name="Formation4" parent="LevelScroll" unique_id=1018981486 instance=ExtResource("9_2gg5g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -65)
+
+[node name="PathFollow3D" parent="LevelScroll/Formation4/Path" parent_id_path=PackedInt32Array(1018981486, 1730415999) index="0" unique_id=310916544]
+transform = Transform3D(-0.050533827, 0, 0.9986982, 0, 1, 0, -0.9986982, 0, -0.050533827, 0.00030326843, 0, 0.007098198)
+
+[node name="PathFollow3D2" parent="LevelScroll/Formation4/Path" parent_id_path=PackedInt32Array(1018981486, 1730415999) index="1" unique_id=2110210760]
+transform = Transform3D(-0.050533827, 0, 0.9986982, 0, 1, 0, -0.9986982, 0, -0.050533827, -2.9955895, 0, 0.15868948)
+
+[node name="PathFollow3D3" parent="LevelScroll/Formation4/Path" parent_id_path=PackedInt32Array(1018981486, 1730415999) index="2" unique_id=956187911]
+transform = Transform3D(-0.05053382, 0, 0.99869806, 0, 1, 0, -0.99869806, 0, -0.05053382, -5.9919624, 0, 0.3103051)
+
+[node name="PathFollow3D4" parent="LevelScroll/Formation4/Path" parent_id_path=PackedInt32Array(1018981486, 1730415999) index="3" unique_id=914193793]
+transform = Transform3D(-0.050533652, 0, 0.9986947, 0, 1, 0, -0.9986947, 0, -0.050533652, -8.988306, 0, 0.4619191)
+
+[node name="PathFollow3D5" parent="LevelScroll/Formation4/Path" parent_id_path=PackedInt32Array(1018981486, 1730415999) index="4" unique_id=1922970098]
+transform = Transform3D(-0.05053376, 0, 0.9986945, 0, 1, 0, -0.9986945, 0, -0.05053376, -11.984648, 0, 0.61353314)
+
+[editable path="LevelScroll/Formation2"]
+[editable path="LevelScroll/Formation3"]
+[editable path="LevelScroll/Formation4"]

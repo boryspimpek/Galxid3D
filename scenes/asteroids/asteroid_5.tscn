@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dyv24l4s54ql2"]
 
 [ext_resource type="PackedScene" uid="uid://cp1jm371oehi7" path="res://assets/asteroids/asteroid5.glb" id="1_vumbq"]
-[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="2_r47fi"]
+[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://assets/shaders/toon.gdshader" id="2_r47fi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vumbq"]
 cull_mode = 1

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://pxcet508nmj3"]
 
 [ext_resource type="PackedScene" uid="uid://dolawyjb77dno" path="res://assets/enemies/blaze/blaze1/Meshy_AI_Blaze_Starfighter_0529133509_texture.glb" id="1_model"]
-[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://scenes/planets/planet.gdshader" id="2_tvhe7"]
+[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://assets/shaders/toon.gdshader" id="2_tvhe7"]
 [ext_resource type="Texture2D" uid="uid://nbrlnglbjbhx" path="res://assets/enemies/blaze/blaze1/Meshy_AI_Blaze_Starfighter_0529133509_texture_0.jpg" id="3_16ihu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvhe7"]

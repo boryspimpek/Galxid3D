@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dcg8vcl7rmst4"]
 
-[ext_resource type="Script" uid="uid://dx8pvlroqpk00" path="res://NoiseBackground.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://dx8pvlroqpk00" path="res://scenes/world/NoiseBackground.gd" id="1_script"]
 
 [sub_resource type="Gradient" id="Gradient_dba1v"]
 offsets = PackedFloat32Array(0.21967213, 0.41967213, 0.6262295, 0.80655736)
@@ -17,14 +17,12 @@ color_ramp = SubResource("Gradient_dba1v")
 in_3d_space = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rpljx"]
+shading_mode = 0
 albedo_texture = SubResource("NoiseTexture2D_c5uhi")
-metallic = 0.44
-metallic_specular = 0.0
-roughness = 0.94
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hq8co"]
 material = SubResource("StandardMaterial3D_rpljx")
-size = Vector2(165, 290)
+size = Vector2(380, 290)
 
 [node name="MeshInstance3D" type="MeshInstance3D" unique_id=697593384]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -170, 0)
