@@ -113,7 +113,13 @@ func _disconnect_target_signal(target) -> void:
 
 
 func _on_target_lost() -> void:
-	_remove_bolt()
+	# tree_exiting odpala się także przy reparentowaniu celu (detach ze scrolla
+	# przy aktywacji), nie tylko przy jego usuwaniu. Błyskawicę kasujemy więc
+	# tylko gdy cel jest faktycznie kolejkowany do usunięcia.
+	var start_dying := is_instance_valid(start_target) and start_target.is_queued_for_deletion()
+	var end_dying := is_instance_valid(end_target) and end_target.is_queued_for_deletion()
+	if start_dying or end_dying:
+		_remove_bolt()
 
 
 func _remove_bolt() -> void:

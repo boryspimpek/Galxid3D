@@ -21,23 +21,30 @@ func _process(delta: float) -> void:
 	position.z += scroll_speed * delta
 
 
-static func is_under_level_scroll(node: Node) -> bool:
+static func _find_level_scroll(node: Node) -> Node:
 	var n: Node = node
 	while n:
 		var script: Script = n.get_script()
 		if script and script.resource_path.get_file() == SCRIPT_FILE:
-			return true
+			return n
 		n = n.get_parent()
-	return false
+	return null
+
+
+static func is_under_level_scroll(node: Node) -> bool:
+	return _find_level_scroll(node) != null
 
 
 static func detach_to_active_scene(node: Node) -> void:
-	if node == null or not is_under_level_scroll(node):
+	if node == null:
 		return
-	var tree := node.get_tree()
-	if tree == null:
+	var scroll := _find_level_scroll(node)
+	if scroll == null:
 		return
-	var root := tree.current_scene
-	if root == null or node.get_parent() == root:
+	# Przepinamy do rodzica LevelScroll (np. GameWorld), aby węzeł został w tym
+	# samym World3D / SubViewport i nadal był renderowany przez kamerę gry,
+	# a jednocześnie przestał być przesuwany przez scroll.
+	var target := scroll.get_parent()
+	if target == null or node.get_parent() == target:
 		return
-	node.reparent(root, true)
+	node.reparent(target, true)

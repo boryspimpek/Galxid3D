@@ -1,0 +1,5 @@
+res://3dworld.tscn
+res://assets/shaders/toon.gdshader
+res://scenes/vfx/electric_discharge_3d.tscn
+res://scenes/vfx/ElectricDischarge.gd
+res://scenes/enemies/formation2.tscn
