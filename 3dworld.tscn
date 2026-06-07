@@ -79,7 +79,7 @@ noise_parallax = 0.0
 earth_parallax = 0.0
 
 [node name="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=697593384 instance=ExtResource("5_m2xqg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -87.24279, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.079773, -87.24279, 3.474618)
 
 [node name="AsteroidSpawner" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=2034522390]
 script = ExtResource("4_rpljx")
@@ -125,18 +125,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5924435, 0, -119.0583)
 zmove = 1
 
 [node name="satellite" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1868700798 instance=ExtResource("14_sgee4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.007614)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.751148, 0, -5.3876286)
 
 [node name="satellite2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=387061174 instance=ExtResource("14_sgee4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.564323, 0, -10.26643)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.686985, 0, -5.489643)
 
-[node name="ElectricDischarge" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=346619554 instance=ExtResource("15_h5joq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.521259, 0, -10.064434)
-bolt_width = 17.72
-
-[node name="Bolt" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/ElectricDischarge" index="2" unique_id=1377526562]
-transform = Transform3D(-0.91997856, 0, -0.3919688, 0.3919688, 0, -0.91997856, 0, 1, 0, 0, 0, -0.38187408)
+[node name="ElectricDischarge" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1340476580 node_paths=PackedStringArray("start_target", "end_target") instance=ExtResource("15_h5joq")]
+start_target = NodePath("../satellite")
+end_target = NodePath("../satellite2")
 
 [node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("1_rpljx")]
-
-[editable path="GameViewportContainer/GameViewport/GameWorld/LevelScroll/ElectricDischarge"]
