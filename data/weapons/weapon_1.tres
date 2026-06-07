@@ -21,7 +21,7 @@ velocity = Vector3(0, 0, -60)
 script = ExtResource("2_pl")
 damage = 2
 fire_rate = 0.25
-power_use = 30
+power_use = 40
 projectile = 2
 velocity = Vector3(0, 0, -60)
 
@@ -29,7 +29,7 @@ velocity = Vector3(0, 0, -60)
 script = ExtResource("2_pl")
 damage = 3
 fire_rate = 0.25
-power_use = 35
+power_use = 40
 projectile = 3
 velocity = Vector3(0, 0, -60)
 
@@ -37,14 +37,14 @@ velocity = Vector3(0, 0, -60)
 script = ExtResource("2_pl")
 damage = 4
 fire_rate = 0.15
-power_use = 35
+power_use = 45
 velocity = Vector3(0, 0, -60)
 
 [sub_resource type="Resource" id="pl_5"]
 script = ExtResource("2_pl")
 damage = 5
 fire_rate = 0.15
-power_use = 45
+power_use = 50
 projectile = 2
 velocity = Vector3(0, 0, -60)
 
@@ -52,7 +52,7 @@ velocity = Vector3(0, 0, -60)
 script = ExtResource("2_pl")
 damage = 6
 fire_rate = 0.15
-power_use = 55
+power_use = 60
 projectile = 3
 velocity = Vector3(0, 0, -60)
 
@@ -92,3 +92,4 @@ power_level_7 = SubResource("pl_7")
 power_level_8 = SubResource("pl_8")
 power_level_9 = SubResource("pl_9")
 power_level_10 = SubResource("pl_10")
+sound = 20

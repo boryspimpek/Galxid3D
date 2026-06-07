@@ -21,3 +21,4 @@ res://scenes/projectile/Projectile4.tscn
 res://scenes/projectile/Projectile5.tscn
 res://scenes/projectile/Projectile7.tscn
 res://scenes/enemy_projectile/EnemyProjectile.tscn
+res://scenes/pickup/Pickup.tscn

@@ -1,26 +1,28 @@
 [gd_scene format=3 uid="uid://c8pkup3dscn00"]
 
 [ext_resource type="Script" uid="uid://b8pkup3dl00t0" path="res://scenes/pickup/Pickup.gd" id="1_pickup"]
+[ext_resource type="Texture2D" uid="uid://tqgl0kuaeve6" path="res://assets/particle pack/PNG (Transparent)/star_07.png" id="2_lt6pn"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pickup"]
-albedo_color = Color(1, 0.84, 0.2, 1)
-emission_enabled = true
-emission = Color(1, 0.78, 0.1, 1)
-emission_energy_multiplier = 2.0
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t8d0u"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(1, 1, 0, 1)
+albedo_texture = ExtResource("2_lt6pn")
+billboard_mode = 1
+billboard_keep_scale = true
 
-[sub_resource type="BoxMesh" id="BoxMesh_pickup"]
-material = SubResource("StandardMaterial3D_pickup")
-size = Vector3(0.4, 0.4, 0.4)
+[sub_resource type="PlaneMesh" id="PlaneMesh_b6opp"]
+material = SubResource("StandardMaterial3D_t8d0u")
+orientation = 2
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pickup"]
 radius = 0.8
 
 [node name="Pickup" type="Area3D" unique_id=553133865]
 script = ExtResource("1_pickup")
-drift_velocity = Vector3(0, 0, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=175517102]
-mesh = SubResource("BoxMesh_pickup")
+mesh = SubResource("PlaneMesh_b6opp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=382059270]
 shape = SubResource("SphereShape3D_pickup")
