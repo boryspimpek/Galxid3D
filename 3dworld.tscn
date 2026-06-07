@@ -17,8 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://chbe1na0vrwt8" path="res://scenes/enemies/satellite.tscn" id="14_sgee4"]
 [ext_resource type="PackedScene" uid="uid://ryp1is7xr46v" path="res://scenes/vfx/electric_discharge_3d.tscn" id="15_h5joq"]
 [ext_resource type="PackedScene" uid="uid://dbqhlqawrvwa7" path="res://scenes/enemies/voyager.tscn" id="16_a283u"]
-[ext_resource type="Script" path="res://scenes/enemy/movement/LinearMoveData.gd" id="17_move"]
-[ext_resource type="Script" path="res://scenes/enemy/movement/TimedMoveData.gd" id="18_a02db"]
+[ext_resource type="Script" uid="uid://dtprhja8af0to" path="res://scenes/enemy/movement/LinearMoveData.gd" id="17_move"]
+[ext_resource type="Script" uid="uid://fm1cgecs4881" path="res://scenes/enemy/movement/TimedMoveData.gd" id="18_a02db"]
 
 [sub_resource type="Environment" id="Environment_vshm1"]
 background_mode = 1

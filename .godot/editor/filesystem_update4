@@ -13,3 +13,7 @@ res://scripts/resources/WeaponData.gd
 res://scenes/player/WeaponSystem.gd
 res://scripts/core/DataManager.gd
 res://scenes/player/Player.gd
+res://scripts/core/GameConstants.gd
+res://scripts/resources/WeaponPowerLevelData.gd
+res://scenes/projectile/Projectile.tscn
+res://scenes/projectile/Projectile3.tscn
