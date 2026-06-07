@@ -6,3 +6,5 @@ res://scenes/enemies/formation3.tscn
 res://scenes/enemies/formation4.tscn
 res://scenes/ui/Hud.tscn
 res://scenes/world/NoiseBackground.tscn
+res://scenes/asteroids/AsteroidSpawner.gd
+res://scenes/world/HorizontalViewShift.gd

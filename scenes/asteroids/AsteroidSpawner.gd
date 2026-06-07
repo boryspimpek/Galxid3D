@@ -19,6 +19,7 @@ const ASTEROID_META := "asteroid"
 
 @export_group("Paralaksa boczna")
 @export var enable_edge_parallax: bool = true
+## Mnożnik względem przesunięcia z HorizontalViewShift (pozycja gracza, bez ruchu kamery).
 
 @export_group("Poziom 1")
 @export var y_1: float = -10.0

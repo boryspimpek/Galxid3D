@@ -47,8 +47,10 @@ transform = Transform3D(0.4990674, -0.030524269, 0, -0.030383743, -0.49676976, -
 spin_speed = 0.5
 speed = 0.3
 
-[node name="HorizontalSgift" type="Node3D" parent="Background" unique_id=1299904887]
+[node name="HorizontalViewShift" type="Node3D" parent="Background" unique_id=1299904887]
 script = ExtResource("1_3vxff")
+noise_parallax = 0.0
+earth_parallax = 0.1
 
 [node name="MeshInstance3D" parent="Background" unique_id=697593384 instance=ExtResource("5_m2xqg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -87.24279, 0)
@@ -82,19 +84,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -35)
 
 [node name="PathFollow3D" parent="LevelScroll/Formation2/Path" parent_id_path=PackedInt32Array(747510776, 1730415999) index="0" unique_id=310916544]
-transform = Transform3D(-0.04429491, 0, -0.99899656, 0, 1, 0, 0.99899656, 0, -0.04429491, 0.00030326843, 0, 0.007098198)
+transform = Transform3D(-0.044294905, 0, -0.9989965, 0, 1, 0, 0.9989965, 0, -0.044294905, 0.00030326843, 0, 0.007098198)
 
 [node name="PathFollow3D2" parent="LevelScroll/Formation2/Path" parent_id_path=PackedInt32Array(747510776, 1730415999) index="1" unique_id=2110210760]
-transform = Transform3D(-0.044294976, 0, -0.99899805, 0, 1, 0, 0.99899805, 0, -0.044294976, 2.997095, 0, 0.13997397)
+transform = Transform3D(-0.044294972, 0, -0.998998, 0, 1, 0, 0.998998, 0, -0.044294972, 2.997095, 0, 0.13997397)
 
 [node name="PathFollow3D3" parent="LevelScroll/Formation2/Path" parent_id_path=PackedInt32Array(747510776, 1730415999) index="2" unique_id=956187911]
-transform = Transform3D(-0.04429497, 0, -0.9989979, 0, 1, 0, 0.9989979, 0, -0.04429497, 5.994314, 0, 0.2728687)
+transform = Transform3D(-0.044294965, 0, -0.99899787, 0, 1, 0, 0.99899787, 0, -0.044294965, 5.994314, 0, 0.2728687)
 
 [node name="PathFollow3D4" parent="LevelScroll/Formation2/Path" parent_id_path=PackedInt32Array(747510776, 1730415999) index="3" unique_id=914193793]
-transform = Transform3D(-0.044294912, 0, -0.9989966, 0, 1, 0, 0.9989966, 0, -0.044294912, 8.991473, 0, 0.4057607)
+transform = Transform3D(-0.04429491, 0, -0.99899656, 0, 1, 0, 0.99899656, 0, -0.04429491, 8.991473, 0, 0.4057607)
 
 [node name="PathFollow3D5" parent="LevelScroll/Formation2/Path" parent_id_path=PackedInt32Array(747510776, 1730415999) index="4" unique_id=1922970098]
-transform = Transform3D(-0.044294905, 0, -0.9989965, 0, 1, 0, 0.9989965, 0, -0.044294905, 11.988711, 0, 0.5386564)
+transform = Transform3D(-0.0442949, 0, -0.99899644, 0, 1, 0, 0.99899644, 0, -0.0442949, 11.988711, 0, 0.5386564)
 
 [node name="Formation3" parent="LevelScroll" unique_id=1084173044 instance=ExtResource("8_pnv6h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -50)
@@ -127,7 +129,7 @@ transform = Transform3D(-0.050533827, 0, 0.9986982, 0, 1, 0, -0.9986982, 0, -0.0
 transform = Transform3D(-0.05053382, 0, 0.99869806, 0, 1, 0, -0.99869806, 0, -0.05053382, -5.9919624, 0, 0.3103051)
 
 [node name="PathFollow3D4" parent="LevelScroll/Formation4/Path" parent_id_path=PackedInt32Array(1018981486, 1730415999) index="3" unique_id=914193793]
-transform = Transform3D(-0.050533652, 0, 0.9986947, 0, 1, 0, -0.9986947, 0, -0.050533652, -8.988306, 0, 0.4619191)
+transform = Transform3D(-0.050533656, 0, 0.9986948, 0, 1, 0, -0.9986948, 0, -0.050533656, -8.988306, 0, 0.4619191)
 
 [node name="PathFollow3D5" parent="LevelScroll/Formation4/Path" parent_id_path=PackedInt32Array(1018981486, 1730415999) index="4" unique_id=1922970098]
 transform = Transform3D(-0.05053376, 0, 0.9986945, 0, 1, 0, -0.9986945, 0, -0.05053376, -11.984648, 0, 0.61353314)
