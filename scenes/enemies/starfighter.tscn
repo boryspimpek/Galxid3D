@@ -26,8 +26,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, 0.155)
 [node name="Muzzle2" type="Marker3D" parent="." index="5" unique_id=646053511]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0, 0.155)
 
-[node name="Weapon" parent="." unique_id=1893540021]
-fire_rate = 1.5
+[node name="Weapon" parent="." index="6" unique_id=1893540021]
+fire_rate = 2.5
+projectile_velocity = Vector3(0, 0, 16)
 aim = 10
-projectile_velocity = Vector3(0, 0, 8)
 sound = 3
