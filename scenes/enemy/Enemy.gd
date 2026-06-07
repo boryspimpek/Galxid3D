@@ -4,11 +4,6 @@ extends Area3D
 @export_group("Combat")
 @export var armor: int = 1
 
-@export_group("Movement")
-@export var xmove: int = 0
-@export var ymove: int = 0
-@export var zmove: int = 0
-
 @export_group("General")
 @export var esize: int = 1
 @export var value: int = 2
@@ -17,10 +12,11 @@ extends Area3D
 @onready var ship_model: Node3D = $EnemyModel
 
 # --- ZMIENNE WEWNĘTRZNE (LOGIKA) ---
-var enemy_velocity: Vector3
 var _is_active: bool = false
 ## Komponent strzelania (dziecko ze skryptem dziedziczącym po EnemyWeapon).
 var _weapon: EnemyWeapon
+## Komponent ruchu (dziecko ze skryptem dziedziczącym po EnemyMovement).
+var _movement: EnemyMovement
 
 @export_group("Activation")
 @export var activate_on_scroll_line: bool = true
@@ -44,9 +40,8 @@ func _ready() -> void:
 	collision_layer = 2
 	collision_mask = 5
 
-	enemy_velocity = Vector3(float(xmove), float(ymove), float(zmove))
-
 	_weapon = _find_weapon()
+	_movement = _find_movement()
 
 	_screen_notifier = get_node_or_null("VisibleOnScreenNotifier3D") as VisibleOnScreenNotifier3D
 	if _screen_notifier:
@@ -69,7 +64,8 @@ func _physics_process(delta: float) -> void:
 	if not _is_active:
 		return
 
-	global_position += enemy_velocity * delta
+	if _movement:
+		_movement.process_movement(delta)
 
 
 # --- METODY PUBLICZNE (API ENEMY) ---
@@ -143,6 +139,13 @@ func _spawn_pickups() -> void:
 func _find_weapon() -> EnemyWeapon:
 	for child in get_children():
 		if child is EnemyWeapon:
+			return child
+	return null
+
+
+func _find_movement() -> EnemyMovement:
+	for child in get_children():
+		if child is EnemyMovement:
 			return child
 	return null
 

@@ -93,6 +93,8 @@ speed_curve = SubResource("Curve_ia55e")
 
 [node name="starfighter" parent="." unique_id=1897743314 instance=ExtResource("1_0vmke")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 7)
+
+[node name="Movement" parent="starfighter"]
 zmove = -3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=360053583]
