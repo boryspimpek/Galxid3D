@@ -12,7 +12,6 @@ height = 1.5536003
 
 [node name="Player" type="CharacterBody3D" unique_id=1811810025]
 script = ExtResource("1_onrkg")
-front_power_level = 3
 
 [node name="Blaze" parent="." unique_id=700868063 instance=ExtResource("6_c3xxp")]
 transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, 0, 0, 0)

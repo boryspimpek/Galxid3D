@@ -17,3 +17,7 @@ res://scripts/core/GameConstants.gd
 res://scripts/resources/WeaponPowerLevelData.gd
 res://scenes/projectile/Projectile.tscn
 res://scenes/projectile/Projectile3.tscn
+res://scenes/projectile/Projectile4.tscn
+res://scenes/projectile/Projectile5.tscn
+res://scenes/projectile/Projectile7.tscn
+res://scenes/enemy_projectile/EnemyProjectile.tscn

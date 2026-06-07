@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dqrw3a8bxb6vw"]
+
+[ext_resource type="Script" uid="uid://cxso55pxdnnn3" path="res://scenes/projectile/projectile.gd" id="1_8yc5a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nskuf"]
+albedo_color = Color(2, 0, 0, 1)
+grow_amount = -0.182
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cm8q0"]
+material = SubResource("StandardMaterial3D_nskuf")
+radius = 0.1
+height = 0.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vig4e"]
+size = Vector3(0.927475, 3.2046661, 0.19824219)
+
+[node name="Projectile" type="Area3D" unique_id=1517421005]
+script = ExtResource("1_8yc5a")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1002288102]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.5, 0, 0)
+mesh = SubResource("CapsuleMesh_cm8q0")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=1029958816]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_cm8q0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=596842928]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1, 0, 0)
+mesh = SubResource("CapsuleMesh_cm8q0")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1270707092]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1.5, 0, 0.4)
+mesh = SubResource("CapsuleMesh_cm8q0")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1855569356]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 0, 0)
+mesh = SubResource("CapsuleMesh_cm8q0")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1656644411]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1, 0, 0)
+mesh = SubResource("CapsuleMesh_cm8q0")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=517853100]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.5, 0, 0.4)
+mesh = SubResource("CapsuleMesh_cm8q0")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=1302911795]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 0, 0.20473605)
+shape = SubResource("BoxShape3D_vig4e")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1913704919]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.18565166)
+aabb = AABB(-1.6012456, -0.099812835, -0.4516137, 3.2024913, 0.19962567, 0.9256883)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

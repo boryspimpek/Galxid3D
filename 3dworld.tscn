@@ -17,13 +17,14 @@
 [ext_resource type="PackedScene" uid="uid://chbe1na0vrwt8" path="res://scenes/enemies/satellite.tscn" id="14_sgee4"]
 [ext_resource type="PackedScene" uid="uid://ryp1is7xr46v" path="res://scenes/vfx/electric_discharge_3d.tscn" id="15_h5joq"]
 [ext_resource type="PackedScene" uid="uid://dbqhlqawrvwa7" path="res://scenes/enemies/voyager.tscn" id="16_a283u"]
-[ext_resource type="Script" uid="uid://dtprhja8af0to" path="res://scenes/enemy/movement/LinearMoveData.gd" id="17_move"]
-[ext_resource type="Script" uid="uid://fm1cgecs4881" path="res://scenes/enemy/movement/TimedMoveData.gd" id="18_a02db"]
+[ext_resource type="Script" path="res://scenes/enemy/movement/LinearMoveData.gd" id="17_move"]
+[ext_resource type="Script" path="res://scenes/enemy/movement/TimedMoveData.gd" id="18_a02db"]
 
 [sub_resource type="Environment" id="Environment_vshm1"]
 background_mode = 1
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
+glow_enabled = true
 volumetric_fog_density = 0.0
 volumetric_fog_emission_energy = 0.0
 
@@ -121,6 +122,7 @@ edge_parallax_3 = 0.05
 
 [node name="Player" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1811810025 instance=ExtResource("4_n40md")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.085, 0, 7.94)
+front_power_level = 3
 
 [node name="LevelScroll" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1395802397]
 script = ExtResource("7_scroll")

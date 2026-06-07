@@ -1,3 +1,5 @@
+CollisionShape3D
+VisibleOnScreenNotifier3D
 Node3D
 MeshInstance3D
 Sprite3D
@@ -7,8 +9,6 @@ Path3D
 AnimationPlayer
 EnemyPath3D
 GPUParticles3D
-CollisionShape3D
 Marker3D
-VisibleOnScreenNotifier3D
 Area3D
 VisibleOnScreenEnabler3D

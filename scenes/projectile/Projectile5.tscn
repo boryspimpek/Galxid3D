@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://1exh83yvqmh5"]
+
+[ext_resource type="Script" uid="uid://cxso55pxdnnn3" path="res://scenes/projectile/projectile.gd" id="1_ngyr5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nskuf"]
+albedo_color = Color(2, 0, 0, 1)
+grow_amount = -0.182
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cm8q0"]
+material = SubResource("StandardMaterial3D_nskuf")
+radius = 0.1
+height = 0.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ngyr5"]
+size = Vector3(2.200943, 0.20124817, 0.90600586)
+
+[node name="Projectile2" type="Area3D" unique_id=1517421005]
+script = ExtResource("1_ngyr5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1002288102]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 0, 0)
+mesh = SubResource("CapsuleMesh_cm8q0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=813486962]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.5, 0, 0)
+mesh = SubResource("CapsuleMesh_cm8q0")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1876370897]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1, 0, 0.4)
+mesh = SubResource("CapsuleMesh_cm8q0")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=859920341]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1, 0, 0.4)
+mesh = SubResource("CapsuleMesh_cm8q0")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=845973013]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_cm8q0")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=516312837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.19773173)
+aabb = AABB(-1, -0.09916006, -0.4523935, 2, 0.19832012, 0.904787)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=221830299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006942749, 0.0009994507, 0.1973877)
+shape = SubResource("BoxShape3D_ngyr5")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
