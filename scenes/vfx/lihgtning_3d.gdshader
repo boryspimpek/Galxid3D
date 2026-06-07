@@ -10,6 +10,7 @@ uniform vec4 base_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
 uniform float glow_thickness = 0.08;
 uniform vec4 glow_color : source_color = vec4(0.2, 0.0, 0.8, 1.0);
 uniform float alpha : hint_range(0, 1) = 1.0;
+uniform float length_scale = 1.0;
 
 float plot(vec2 st, float pct, float half_width) {
 	return smoothstep(pct - half_width, pct, st.y) -
@@ -45,6 +46,7 @@ float fbm(vec2 n) {
 
 void fragment() {
 	vec2 uv = UV;
+	uv.x *= length_scale;
 	vec4 color = vec4(0.0);
 
 	vec2 t;

@@ -52,7 +52,7 @@ render_target_update_mode = 4
 [node name="GameWorld" type="Node3D" parent="GameViewportContainer/GameViewport" unique_id=616589225]
 
 [node name="PlayAreaFrame" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=422821734 instance=ExtResource("1_m2xqg")]
-max_bound_x = 27.3
+max_bound_x = 20.7
 
 [node name="World" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=435478258]
 
@@ -109,7 +109,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -80)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -110)
 
 [node name="starfighter" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1897743314 instance=ExtResource("13_fql1y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.930466, 0, -24.751049)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.930466, 0, -38.63256)
 zmove = 1
 
 [node name="starfighter2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=951122642 instance=ExtResource("13_fql1y")]
@@ -125,13 +125,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5924435, 0, -119.0583)
 zmove = 1
 
 [node name="satellite" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1868700798 instance=ExtResource("14_sgee4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.751148, 0, -5.3876286)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -3.4377651, 0, -13.578823)
+zmove = 1
 
 [node name="satellite2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=387061174 instance=ExtResource("14_sgee4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.686985, 0, -5.489643)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.60424, 0, -13.497265)
+zmove = 1
 
 [node name="ElectricDischarge" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1340476580 node_paths=PackedStringArray("start_target", "end_target") instance=ExtResource("15_h5joq")]
 start_target = NodePath("../satellite")
 end_target = NodePath("../satellite2")
+reference_length = 4.0
 
 [node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("1_rpljx")]
