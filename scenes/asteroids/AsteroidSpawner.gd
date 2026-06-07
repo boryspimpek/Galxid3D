@@ -1,5 +1,7 @@
 extends Node3D
 
+const GameViewportHelper = preload("res://scenes/world/GameViewportHelper.gd")
+
 const ASTEROID_SCENES = [
 	"res://scenes/asteroids/asteroid.tscn",
 	"res://scenes/asteroids/asteroid_2.tscn",
@@ -202,13 +204,14 @@ func _get_parallax(level: int) -> float:
 
 
 func _visible_x_range_at_y(spawn_y: float) -> Vector2:
-	var cam := get_viewport().get_camera_3d()
+	var vp: Viewport = GameViewportHelper.get_render_viewport(get_tree())
+	var cam: Camera3D = vp.get_camera_3d()
 	if cam == null:
 		push_warning("Brak kamery — używam domyślnego zakresu spawnu X")
 		return Vector2(-7.65, 7.65)
 
 	var plane := Plane(Vector3.UP, spawn_y)
-	var vp_size := get_viewport().get_visible_rect().size
+	var vp_size: Vector2 = vp.get_visible_rect().size
 	var corners := [
 		Vector2.ZERO,
 		Vector2(vp_size.x, 0.0),

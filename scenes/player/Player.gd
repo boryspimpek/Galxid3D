@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+const GameViewportHelper = preload("res://scenes/world/GameViewportHelper.gd")
+
 # --- Loadout ---
 @export var ship_id: int = 2
 @export var front_weapon_index: int = 2
@@ -44,7 +46,7 @@ func _ready():
 	add_to_group("player")
 	collision_layer = 1
 	collision_mask  = 0
-	main_camera = get_viewport().get_camera_3d()
+	main_camera = GameViewportHelper.get_game_camera(get_tree())
 	await get_tree().process_frame
 	load_ship_data()
 	apply_ship_stats()
@@ -73,8 +75,9 @@ func init_power_regeneration():
 # ============================================================================
 
 func _unhandled_input(event: InputEvent) -> void:
-	# ── Dotyk: względny chwyt — statek jedzie z ruchem palca, nie pod palcem ──
 	if event is InputEventScreenTouch:
+		if not GameViewportHelper.is_point_in_game_area(get_tree(), event.position):
+			return
 		is_firing = event.pressed
 		if event.pressed:
 			_begin_relative_touch(event.position)
@@ -82,14 +85,19 @@ func _unhandled_input(event: InputEvent) -> void:
 			_touch_grab_offset = Vector3.ZERO
 
 	elif event is InputEventScreenDrag:
+		if not GameViewportHelper.is_point_in_game_area(get_tree(), event.position):
+			return
 		_update_relative_touch(event.position)
 
-	# ── Mysz (PC / One-Click Deploy w przeglądarce) ──
 	elif event is InputEventMouseButton:
+		if not GameViewportHelper.is_point_in_game_area(get_tree(), event.position):
+			return
 		is_firing = Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
 
 	elif event is InputEventMouseMotion:
-		var pos = _screen_to_world(get_viewport().get_mouse_position())
+		if not GameViewportHelper.is_point_in_game_area(get_tree(), event.position):
+			return
+		var pos = _screen_to_world(event.position)
 		if pos != Vector3.ZERO:
 			touch_target = pos
 
@@ -114,16 +122,9 @@ func _update_relative_touch(screen_pos: Vector2) -> void:
 		finger_world.z - _touch_grab_offset.z
 	)
 
-# Pomocnik: rzut ekran → płaszczyzna Y=0
+# Pomocnik: rzut ekran → płaszczyzna Y=0 (współrzędne okna głównego → SubViewport gry)
 func _screen_to_world(screen_pos: Vector2) -> Vector3:
-	if not main_camera:
-		main_camera = get_viewport().get_camera_3d()
-		if not main_camera: return Vector3.ZERO
-	var ray_origin    = main_camera.project_ray_origin(screen_pos)
-	var ray_direction = main_camera.project_ray_normal(screen_pos)
-	var plane         = Plane(Vector3.UP, 0.0)
-	var hit           = plane.intersects_ray(ray_origin, ray_direction)
-	return hit if hit != null else Vector3.ZERO
+	return GameViewportHelper.screen_to_world_on_plane(get_tree(), screen_pos, 0.0)
 
 # ============================================================================
 # 3. FIZYKA
