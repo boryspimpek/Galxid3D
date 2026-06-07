@@ -12,9 +12,9 @@ _data = {
 }
 point_count = 4
 
-[sub_resource type="Curve" id="Curve_ahi8g"]
+[sub_resource type="Curve" id="Curve_a3xl8"]
 _limits = [0.0, 3.0, 0.0, 1.0]
-_data = [Vector2(0.55313355, 0.987766), 0.0, 6.7673707, 0, 0, Vector2(1, 1.9420214), 0.0, 0.0, 0, 0]
+_data = [Vector2(0.2978937, 1.0017669), 0.0, 6.7673707, 0, 0, Vector2(1, 2.095612), 0.9908535, 0.0, 0, 0]
 point_count = 2
 
 [node name="Formation" type="Node3D" unique_id=1730415998]
@@ -25,11 +25,11 @@ curve = SubResource("Curve3D_lu1cq")
 script = ExtResource("1_knp4y")
 activation_mode = 0
 speed = 8.0
-speed_curve = SubResource("Curve_ahi8g")
+speed_curve = SubResource("Curve_a3xl8")
 bank_enabled = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path" unique_id=310916544]
-transform = Transform3D(-0.044294942, 0, -0.99899733, 0, 1, 0, 0.99899733, 0, -0.044294942, 0.00030326843, 0, 0.007098198)
+transform = Transform3D(-0.044294935, 0, -0.99899715, 0, 1, 0, 0.99899715, 0, -0.044294935, 0.00030326843, 0, 0.007098198)
 loop = false
 script = ExtResource("2_a3xl8")
 
@@ -38,7 +38,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 despawn_off_screen = false
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Path" unique_id=2110210760]
-transform = Transform3D(-0.044295, 0, -0.9989987, 0, 1, 0, 0.9989987, 0, -0.044295, 2.997095, 0, 0.13997397)
+transform = Transform3D(-0.044294994, 0, -0.9989985, 0, 1, 0, 0.9989985, 0, -0.044294994, 2.997095, 0, 0.13997397)
 progress = 3.0
 loop = false
 script = ExtResource("2_a3xl8")
@@ -48,7 +48,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 despawn_off_screen = false
 
 [node name="PathFollow3D3" type="PathFollow3D" parent="Path" unique_id=956187911]
-transform = Transform3D(-0.044295, 0, -0.9989987, 0, 1, 0, 0.9989987, 0, -0.044295, 5.994314, 0, 0.2728687)
+transform = Transform3D(-0.044294994, 0, -0.9989985, 0, 1, 0, 0.9989985, 0, -0.044294994, 5.994314, 0, 0.2728687)
 progress = 6.0
 loop = false
 script = ExtResource("2_a3xl8")
@@ -58,7 +58,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 despawn_off_screen = false
 
 [node name="PathFollow3D4" type="PathFollow3D" parent="Path" unique_id=914193793]
-transform = Transform3D(-0.04429495, 0, -0.99899745, 0, 1, 0, 0.99899745, 0, -0.04429495, 8.991473, 0, 0.4057607)
+transform = Transform3D(-0.04429494, 0, -0.9989973, 0, 1, 0, 0.9989973, 0, -0.04429494, 8.991473, 0, 0.4057607)
 progress = 9.0
 loop = false
 script = ExtResource("2_a3xl8")
@@ -68,7 +68,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 despawn_off_screen = false
 
 [node name="PathFollow3D5" type="PathFollow3D" parent="Path" unique_id=1922970098]
-transform = Transform3D(-0.04429494, 0, -0.9989972, 0, 1, 0, 0.9989972, 0, -0.04429494, 11.988711, 0, 0.5386564)
+transform = Transform3D(-0.04429493, 0, -0.99899703, 0, 1, 0, 0.99899703, 0, -0.04429493, 11.988711, 0, 0.5386564)
 progress = 12.0
 loop = false
 script = ExtResource("2_a3xl8")

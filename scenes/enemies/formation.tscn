@@ -14,7 +14,7 @@ point_count = 4
 
 [sub_resource type="Curve" id="Curve_ahi8g"]
 _limits = [0.0, 3.0, 0.0, 1.0]
-_data = [Vector2(0.55313355, 0.987766), 0.0, 6.7673707, 0, 0, Vector2(1, 1.9420214), 0.0, 0.0, 0, 0]
+_data = [Vector2(0.40366971, 1.002439), 0.0, 6.7673707, 0, 0, Vector2(1, 2.095612), 0.9908535, 0.0, 0, 0]
 point_count = 2
 
 [node name="Formation" type="Node3D" unique_id=1730415998]

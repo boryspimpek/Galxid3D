@@ -18,7 +18,12 @@ static func get_game_viewport(tree: SceneTree) -> SubViewport:
 static func get_game_camera(tree: SceneTree) -> Camera3D:
 	var game_viewport := get_game_viewport(tree)
 	if game_viewport:
-		return game_viewport.get_camera_3d()
+		var cam := game_viewport.get_camera_3d()
+		if cam:
+			return cam
+		for node in game_viewport.find_children("*", "Camera3D", true, false):
+			if node is Camera3D:
+				return node as Camera3D
 	return tree.root.get_viewport().get_camera_3d()
 
 

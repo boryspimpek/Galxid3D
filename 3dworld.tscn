@@ -73,23 +73,16 @@ speed = 0.3
 [node name="HorizontalViewShift" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=1299904887]
 script = ExtResource("1_3vxff")
 noise_parallax = 0.0
-earth_parallax = 0.1
+earth_parallax = 0.0
 
 [node name="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=697593384 instance=ExtResource("5_m2xqg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -87.24279, 0)
 
 [node name="AsteroidSpawner" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=2034522390]
 script = ExtResource("4_rpljx")
-spawn_interval_1 = 15.0
-asteroid_speed_1 = 15.0
-scale_1 = 2.0
-y_2 = -15.0
-spawn_interval_2 = 7.5
-scale_2 = 1.5
-y_3 = -20.0
-spawn_interval_3 = 10.0
-asteroid_speed_3 = 0.5
-preprocess_time = 360.0
+spawn_interval_2 = 4.0
+scale_3 = 0.45
+edge_parallax_3 = 0.05
 
 [node name="Player" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1811810025 instance=ExtResource("4_n40md")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.085, 0, 7.94)

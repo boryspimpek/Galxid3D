@@ -24,30 +24,30 @@ const ASTEROID_META := "asteroid"
 ## Mnożnik względem przesunięcia z HorizontalViewShift (pozycja gracza, bez ruchu kamery).
 
 @export_group("Poziom 1")
-@export var y_1: float = -10.0
-@export var spawn_interval_1: float = 3.0
-@export var asteroid_speed_1: float = 2.0
-@export var spin_speed_1: float = 2.0
-@export_range(0.05, 2.0, 0.01) var scale_1: float = 1.0
-@export_range(0.0, 1.5, 0.01) var edge_parallax_1: float = 0.85
+@export var y_1: float = 5.0
+@export var spawn_interval_1: float = 10.0
+@export var asteroid_speed_1: float = 10.0
+@export var spin_speed_1: float = 1.0
+@export_range(0.05, 2.0, 0.01) var scale_1: float = 1.8
+@export_range(0.0, 1.5, 0.01) var edge_parallax_1: float = 0.2
 
 @export_group("Poziom 2")
-@export var y_2: float = -30.0
-@export var spawn_interval_2: float = 3.0
-@export var asteroid_speed_2: float = 2.0
-@export var spin_speed_2: float = 1.5
-@export_range(0.05, 2.0, 0.01) var scale_2: float = 0.65
-@export_range(0.0, 1.5, 0.01) var edge_parallax_2: float = 0.55
+@export var y_2: float = -15.0
+@export var spawn_interval_2: float = 5.0
+@export var asteroid_speed_2: float = 4.0
+@export var spin_speed_2: float = 1.0
+@export_range(0.05, 2.0, 0.01) var scale_2: float = 1.8
+@export_range(0.0, 1.5, 0.01) var edge_parallax_2: float = 0.2
 
 @export_group("Poziom 3")
-@export var y_3: float = -50.0
-@export var spawn_interval_3: float = 3.0
-@export var asteroid_speed_3: float = 2.0
+@export var y_3: float = -20.0
+@export var spawn_interval_3: float = 15.0
+@export var asteroid_speed_3: float = 0.5
 @export var spin_speed_3: float = 1.0
 @export_range(0.05, 2.0, 0.01) var scale_3: float = 0.35
-@export_range(0.0, 1.5, 0.01) var edge_parallax_3: float = 0.25
+@export_range(0.0, 1.5, 0.01) var edge_parallax_3: float = 0.1
 
-@export var preprocess_time: float = 20.0
+@export var preprocess_time: float = 360.0
 
 var _spawn_timers: Array[float] = []
 var _layers: Array[Node3D] = []
@@ -62,6 +62,12 @@ func _ready() -> void:
 		spawn_interval_2,
 		spawn_interval_3,
 	]
+	if preprocess_time > 0.0:
+		_start_preprocess()
+
+
+func _start_preprocess() -> void:
+	await get_tree().process_frame
 	_preprocess(preprocess_time)
 
 
@@ -205,7 +211,7 @@ func _get_parallax(level: int) -> float:
 
 func _visible_x_range_at_y(spawn_y: float) -> Vector2:
 	var vp: Viewport = GameViewportHelper.get_render_viewport(get_tree())
-	var cam: Camera3D = vp.get_camera_3d()
+	var cam: Camera3D = GameViewportHelper.get_game_camera(get_tree())
 	if cam == null:
 		push_warning("Brak kamery — używam domyślnego zakresu spawnu X")
 		return Vector2(-7.65, 7.65)

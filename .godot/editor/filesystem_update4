@@ -10,3 +10,4 @@ res://scenes/asteroids/AsteroidSpawner.gd
 res://scenes/world/HorizontalViewShift.gd
 res://scenes/ui/Hud.gd
 res://scenes/player/Player.gd
+res://scenes/world/GameViewportHelper.gd

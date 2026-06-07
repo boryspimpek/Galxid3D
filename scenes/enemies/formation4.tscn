@@ -12,9 +12,9 @@ _data = {
 }
 point_count = 4
 
-[sub_resource type="Curve" id="Curve_ahi8g"]
+[sub_resource type="Curve" id="Curve_y850x"]
 _limits = [0.0, 3.0, 0.0, 1.0]
-_data = [Vector2(0.55313355, 0.987766), 0.0, 6.7673707, 0, 0, Vector2(1, 1.9420214), 0.0, 0.0, 0, 0]
+_data = [Vector2(0.30290872, 0.9970405), 0.0, 6.7673707, 0, 0, Vector2(1, 2.095612), 0.9908535, 0.0, 0, 0]
 point_count = 2
 
 [node name="Formation" type="Node3D" unique_id=1730415998]
@@ -25,7 +25,7 @@ curve = SubResource("Curve3D_lu1cq")
 script = ExtResource("1_y850x")
 activation_mode = 0
 speed = 8.0
-speed_curve = SubResource("Curve_ahi8g")
+speed_curve = SubResource("Curve_y850x")
 bank_enabled = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path" unique_id=310916544]
@@ -58,7 +58,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 despawn_off_screen = false
 
 [node name="PathFollow3D4" type="PathFollow3D" parent="Path" unique_id=914193793]
-transform = Transform3D(-0.05053368, 0, 0.99869525, 0, 1, 0, -0.99869525, 0, -0.05053368, -8.988306, 0, 0.4619191)
+transform = Transform3D(-0.050533686, 0, 0.9986954, 0, 1, 0, -0.9986954, 0, -0.050533686, -8.988306, 0, 0.4619191)
 progress = 9.0
 loop = false
 script = ExtResource("2_aoh3w")
