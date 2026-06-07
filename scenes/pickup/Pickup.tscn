@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8pkup3dscn00"]
+
+[ext_resource type="Script" uid="uid://b8pkup3dl00t0" path="res://scenes/pickup/Pickup.gd" id="1_pickup"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pickup"]
+albedo_color = Color(1, 0.84, 0.2, 1)
+emission_enabled = true
+emission = Color(1, 0.78, 0.1, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_pickup"]
+material = SubResource("StandardMaterial3D_pickup")
+size = Vector3(0.4, 0.4, 0.4)
+
+[node name="Pickup" type="Area3D"]
+script = ExtResource("1_pickup")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_pickup")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+aabb = AABB(-0.5, -0.5, -0.5, 1, 1, 1)

@@ -118,14 +118,38 @@ func take_damage(amount: int) -> void:
 
 
 func die() -> void:
-	SoundManager.play_sound(9 if esize == 1 else 8)
+	SoundManager.play_sound(9)
 	var explosion_scene := GameConstants.get_explosion_scene(esize)
 	if explosion_scene:
 		var explosion := explosion_scene.instantiate()
 		get_tree().current_scene.add_child(explosion)
 		if explosion is Node3D:
 			explosion.global_position = global_position
+	_spawn_pickups()
 	queue_free()
+
+
+## Wyrzuca `value` pickupów z pozycji wroga w losowych kierunkach (płaszczyzna XZ).
+func _spawn_pickups() -> void:
+	var pickup_scene := GameConstants.pickup_scene
+	if pickup_scene == null or value <= 0:
+		return
+
+	var scene_root := get_tree().current_scene
+	# Kamera jest top-down (patrzy w dół osi Y), więc niższe Y renderuje się
+	# "pod" eksplozją (Y=0). Przesuwamy loot w dół, by nie przysłaniał wybuchu.
+	var spawn_offset := Vector3(0.0, -2.0, 0.0)
+	for i in value:
+		var pickup := pickup_scene.instantiate()
+		scene_root.add_child(pickup)
+		if pickup is Node3D:
+			pickup.global_position = global_position + spawn_offset
+
+		var angle := randf() * TAU
+		var dir := Vector3(cos(angle), 0.0, sin(angle))
+		var speed := randf_range(4.0, 8.0)
+		if pickup.has_method("launch"):
+			pickup.launch(dir, speed)
 
 
 # --- OBSŁUGA STRZELANIA ---

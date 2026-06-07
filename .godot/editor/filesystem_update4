@@ -21,3 +21,5 @@ res://scenes/enemies formations/formation3.tscn
 res://scenes/enemy/Enemy.gd
 res://scenes/enemies/satellite.tscn
 res://scenes/enemies/starfighter.tscn
+res://scripts/core/GameConstants.gd
+res://scenes/pickup/Pickup.gd

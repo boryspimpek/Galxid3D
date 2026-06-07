@@ -12,9 +12,13 @@ var player_projectile_scene: PackedScene
 var explosion_scene: PackedScene
 var _explosion_scene_cache: Dictionary = {}
 
+# ---- Scena pickupa (loot z wrogów) ----
+var pickup_scene: PackedScene
+
 func _ready():
 	enemy_projectile_scene = preload("res://scenes/enemy_projectile/EnemyProjectile.tscn")
 	player_projectile_scene = preload("res://scenes/projectile/Projectile.tscn")
+	pickup_scene = preload("res://scenes/pickup/Pickup.tscn")
 	explosion_scene = get_explosion_scene(1)
 
 func get_explosion_scene(size: int) -> PackedScene:
