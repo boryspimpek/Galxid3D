@@ -92,4 +92,4 @@ power_level_7 = SubResource("pl_7")
 power_level_8 = SubResource("pl_8")
 power_level_9 = SubResource("pl_9")
 power_level_10 = SubResource("pl_10")
-sound = 20
+sound = 25
