@@ -1,7 +1,5 @@
 extends CharacterBody3D
 
-const GameViewportHelper = preload("res://scenes/world/GameViewportHelper.gd")
-
 # --- Loadout ---
 @export var ship_id: int = 2
 @export var front_weapon_index: int = 2

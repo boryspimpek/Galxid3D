@@ -6,9 +6,9 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3ym5w"]
 
 [node name="starfighter" unique_id=1897743314 instance=ExtResource("1_3ym5w")]
-armor = 10
+armor = 7
 fire_rate = 1.5
-aim = 8
+aim = 10
 projectile_velocity = Vector3(0, 0, 8)
 sound = 3
 esize = 2

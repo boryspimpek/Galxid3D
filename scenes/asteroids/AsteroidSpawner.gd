@@ -1,7 +1,5 @@
 extends Node3D
 
-const GameViewportHelper = preload("res://scenes/world/GameViewportHelper.gd")
-
 const ASTEROID_SCENES = [
 	"res://scenes/asteroids/asteroid.tscn",
 	"res://scenes/asteroids/asteroid_2.tscn",

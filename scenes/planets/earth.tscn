@@ -17,7 +17,7 @@ height = 100.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cwnmv"]
 cull_mode = 1
 grow = true
-grow_amount = 0.07
+grow_amount = 0.35
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pa0cx"]
 render_priority = 0

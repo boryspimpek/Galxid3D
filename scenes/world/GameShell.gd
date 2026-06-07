@@ -25,12 +25,8 @@ func _apply_layout() -> void:
 	if not is_node_ready():
 		return
 
-	var window_size := get_viewport().get_visible_rect().size
-	var game_width := maxf(1.0, window_size.x - hud_panel_width)
-
 	_viewport_container.set_anchors_preset(Control.PRESET_FULL_RECT)
 	_viewport_container.offset_right = -hud_panel_width
-	_game_viewport.size = Vector2i(int(game_width), int(window_size.y))
 
 	if _hud:
 		_hud.panel_width = hud_panel_width
