@@ -3,11 +3,6 @@ extends Area3D
 # --- ZMIENNE EKSPORTOWANE (@EXPORT) ---
 @export_group("Combat")
 @export var armor: int = 1
-@export var damage: int = 1
-@export var fire_rate: float = 250.0
-@export_range(0, 10, 1) var aim: int = 0
-const AIM_MAX := 10
-@export var projectile_velocity: Vector3 = Vector3(0, 0, 60)
 
 @export_group("Movement")
 @export var xmove: int = 0
@@ -15,20 +10,17 @@ const AIM_MAX := 10
 @export var zmove: int = 0
 
 @export_group("General")
-@export var sound: int = 1
 @export var esize: int = 1
 @export var value: int = 2
 
 # --- REFERENCJE WĘZŁÓW (@ONREADY) ---
 @onready var ship_model: Node3D = $EnemyModel
-@onready var muzzle: Marker3D = $Muzzle
 
 # --- ZMIENNE WEWNĘTRZNE (LOGIKA) ---
-var _muzzles: Array[Marker3D] = []
 var enemy_velocity: Vector3
-var fire_timer: float = 0.0
-var is_firing: bool = false
 var _is_active: bool = false
+## Komponent strzelania (dziecko ze skryptem dziedziczącym po EnemyWeapon).
+var _weapon: EnemyWeapon
 
 @export_group("Activation")
 @export var activate_on_scroll_line: bool = true
@@ -54,10 +46,7 @@ func _ready() -> void:
 
 	enemy_velocity = Vector3(float(xmove), float(ymove), float(zmove))
 
-	_muzzles = [muzzle]
-	var muzzle2 := get_node_or_null("Muzzle2") as Marker3D
-	if muzzle2:
-		_muzzles.append(muzzle2)
+	_weapon = _find_weapon()
 
 	_screen_notifier = get_node_or_null("VisibleOnScreenNotifier3D") as VisibleOnScreenNotifier3D
 	if _screen_notifier:
@@ -80,17 +69,14 @@ func _physics_process(delta: float) -> void:
 	if not _is_active:
 		return
 
-	fire_timer = max(0.0, fire_timer - delta)
-	if is_firing and fire_timer <= 0.0:
-		shoot()
-
 	global_position += enemy_velocity * delta
 
 
 # --- METODY PUBLICZNE (API ENEMY) ---
 
 func set_firing(firing: bool) -> void:
-	is_firing = firing
+	if _weapon:
+		_weapon.set_firing(firing)
 
 
 func is_combat_active() -> bool:
@@ -152,46 +138,13 @@ func _spawn_pickups() -> void:
 			pickup.launch(dir, speed)
 
 
-# --- OBSŁUGA STRZELANIA ---
+# --- BROŃ (komponent strzelania) ---
 
-func shoot() -> void:
-	for from_muzzle in _muzzles:
-		create_projectile(damage, projectile_velocity, from_muzzle)
-	SoundManager.play_weapon_sound(sound)
-
-	fire_timer = fire_rate
-
-
-func create_projectile(dmg: int, proj_velocity: Vector3, from_muzzle: Marker3D) -> void:
-	var projectile_scene = GameConstants.enemy_projectile_scene
-	var projectile = projectile_scene.instantiate()
-
-	get_tree().current_scene.add_child(projectile)
-	projectile.global_position = from_muzzle.global_position
-	projectile.velocity = _compute_projectile_velocity(proj_velocity, from_muzzle)
-	projectile.damage = dmg
-
-
-func _compute_projectile_velocity(base_velocity: Vector3, from_muzzle: Marker3D) -> Vector3:
-	if aim <= 0:
-		return base_velocity
-
-	var bullet_speed := base_velocity.length()
-	if bullet_speed < 0.001:
-		return base_velocity
-
-	var base_dir := base_velocity / bullet_speed
-	var player := get_tree().get_first_node_in_group("player") as Node3D
-	if player == null:
-		return base_velocity
-
-	var to_player := player.global_position - from_muzzle.global_position
-	if to_player.length_squared() < 0.0001:
-		return base_velocity
-
-	var aim_weight := clampf(float(aim) / float(AIM_MAX), 0.0, 1.0)
-	var final_dir := base_dir.lerp(to_player.normalized(), aim_weight).normalized()
-	return final_dir * bullet_speed
+func _find_weapon() -> EnemyWeapon:
+	for child in get_children():
+		if child is EnemyWeapon:
+			return child
+	return null
 
 
 # --- AKTYWACJA (linia scrolla) ---
@@ -207,8 +160,7 @@ func _activate() -> void:
 	if _is_active:
 		return
 	_is_active = true
-	is_firing = true
-	fire_timer = fire_rate
+	set_firing(true)
 	# PathFollow odpina się w EnemyPath; wrogowie bez ścieżki — tutaj.
 	if not get_parent() is PathFollow3D:
 		LevelScroll3D.detach_to_active_scene(self)
@@ -219,7 +171,7 @@ func _deactivate() -> void:
 	if not _is_active:
 		return
 	_is_active = false
-	is_firing = false
+	set_firing(false)
 	combat_deactivated.emit()
 
 

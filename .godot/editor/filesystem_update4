@@ -1,30 +1,5 @@
-res://3dworld.tscn
+res://scenes/enemy/weapons/EnemyWeapon.gd
 res://assets/shaders/toon.gdshader
-res://scenes/vfx/electric_discharge_3d.tscn
-res://scenes/vfx/ElectricDischarge.gd
-res://scenes/enemies/formation2.tscn
-res://scenes/enemies/formation.tscn
-res://scenes/enemies/formation3.tscn
-res://scenes/enemies/formation4.tscn
-res://scenes/enemies/blaze_4_model.tscn
-res://scenes/enemies/blaze_3_model.tscn
-res://scenes/enemies/blaze_2_model.tscn
-res://scenes/enemies/blaze_model.tscn
-res://scenes/player/Player.tscn
-res://scenes/player/Player.gd
-res://scenes/enemies/blaze_3.tscn
-res://scenes/enemies/blaze_4.tscn
-res://scenes/enemies/blaze_5.tscn
-res://scenes/enemies/blaze_2.tscn
-res://scenes/enemies formations/formation2.tscn
-res://scenes/enemies formations/formation3.tscn
-res://scenes/enemy/Enemy.gd
-res://scenes/enemies/satellite.tscn
-res://scenes/enemies/starfighter.tscn
-res://scripts/core/GameConstants.gd
-res://scenes/pickup/Pickup.gd
-res://scenes/pickup/Pickup.tscn
-res://scenes/ui/Hud.gd
-res://scenes/ui/Hud.tscn
-res://data/weapons/weapon_1.tres
-res://data/weapons/weapon_2.tres
+res://3dworld.tscn
+res://scenes/enemies/voyager.tscn
+res://scenes/enemies/voyager_model.tscn

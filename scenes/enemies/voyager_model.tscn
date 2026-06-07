@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cr7rlbbhoidnb"]
+
+[ext_resource type="PackedScene" uid="uid://qbdkbnujc3rn" path="res://assets/enemies/voyager/Meshy_AI_Neon_Voyager_0529140031_texture.glb" id="1_ord55"]
+[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://assets/shaders/toon.gdshader" id="2_5loqc"]
+[ext_resource type="Texture2D" uid="uid://dnfn8gjjtk5xg" path="res://assets/enemies/voyager/Meshy_AI_Neon_Voyager_0529140031_texture_0.jpg" id="3_ipb1q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_moel4"]
+cull_mode = 1
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.02
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q3ahd"]
+render_priority = 0
+next_pass = SubResource("StandardMaterial3D_moel4")
+shader = ExtResource("2_5loqc")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = ExtResource("3_ipb1q")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/clearcoat = 0.0
+shader_parameter/clearcoat_roughness = 0.0
+shader_parameter/shadow_threshold = 0.2230000105925
+shader_parameter/shadow_softness = 0.0
+shader_parameter/ambient_fill = 0.0190000009025
+
+[node name="Voyager" unique_id=549098316 instance=ExtResource("1_ord55")]
+
+[node name="Mesh" parent="." index="0" unique_id=1944474349]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_q3ahd")

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b18b5anwm2fnd" path="res://scenes/player/PlayerModel.tscn" id="2_c3xxp"]
 [ext_resource type="Script" uid="uid://b00wb11f44ov" path="res://scenes/player/WeaponSystem.gd" id="3_tpg5x"]
 [ext_resource type="Script" uid="uid://cta2hho80ojdn" path="res://scenes/player/ShieldSystem.gd" id="4_c3xxp"]
-[ext_resource type="PackedScene" uid="uid://pxcet508nmj3" path="res://scenes/enemies/blaze_model.tscn" id="6_c3xxp"]
+[ext_resource type="PackedScene" uid="uid://pxcet508nmj3" path="res://scenes/player/blaze_model.tscn" id="6_c3xxp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wr5hl"]
 radius = 0.39990234
