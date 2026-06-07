@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
 # --- Loadout ---
-@export var ship_id: int = 2
-@export var front_weapon_index: int = 2
+@export var ship_id: int = 1
+@export var front_weapon_index: int = 1
 @export var front_power_level: int = 1
 @export var rear_weapon_index: int = 1
 @export var rear_power_level: int = 1

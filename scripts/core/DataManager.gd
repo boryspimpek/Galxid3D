@@ -123,10 +123,10 @@ func get_generator_by_id(id: int) -> GeneratorData:
 	push_error("DataManager: Nie znaleziono generatora o ID=", id)
 	return null
 
-func get_weapon_power_use(weapon_index: int) -> int:
+func get_weapon_power_use(weapon_index: int, power_level: int = 1) -> int:
 	var weapon = get_weapon_by_id(weapon_index)
 	if weapon:
-		return weapon.power_use
+		return weapon.get_power_level_data(power_level).power_use
 	return 0
 
 func get_generator_regeneration(generator_id: int) -> float:

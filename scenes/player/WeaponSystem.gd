@@ -56,18 +56,16 @@ func shoot():
 		if weapon_data == null:
 			return  # nadal null - rezygnujemy
 	
-	var power_use = DataManager.get_weapon_power_use(current_weapon_index)
+	var power_level_data = weapon_data.get_power_level_data(player.front_power_level)
+	var power_use = power_level_data.power_use
 	if player.power < power_use:
 		return
 	
 	player.power -= power_use
 	
-	var damage = weapon_data.damage
-	var velocity = weapon_data.velocity
-	
-	create_projectile(damage, velocity)
+	create_projectile(power_level_data.damage, power_level_data.velocity)
 	SoundManager.play_weapon_sound(weapon_data.sound)
-	fire_timer = weapon_data.fire_rate
+	fire_timer = power_level_data.fire_rate
 
 func create_projectile(damage: int, velocity: Vector3):
 	var projectile_scene = GameConstants.player_projectile_scene

@@ -20,9 +20,9 @@ shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/metallic = 0.0
 shader_parameter/clearcoat = 1.0
 shader_parameter/clearcoat_roughness = 0.750000035625
-shader_parameter/shadow_threshold = 0.400000019
+shader_parameter/shadow_threshold = 0.482000022895
 shader_parameter/shadow_softness = 0.0
-shader_parameter/ambient_fill = 0.0250000011875
+shader_parameter/ambient_fill = 0.050000002375
 
 [node name="Blaze" unique_id=700868063 instance=ExtResource("1_model")]
 

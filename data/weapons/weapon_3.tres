@@ -1,14 +1,90 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://deqnk3cihewx"]
 
-[ext_resource type="Script" path="res://scripts/resources/WeaponData.gd" id="1_abcde"]
+[ext_resource type="Script" path="res://scripts/resources/WeaponData.gd" id="1_weapon"]
+[ext_resource type="Script" path="res://scripts/resources/WeaponPowerLevelData.gd" id="2_pl"]
+
+[sub_resource type="Resource" id="pl_1"]
+script = ExtResource("2_pl")
+damage = 25
+fire_rate = 0.5
+power_use = 25
+velocity = Vector3(0, 0, -30)
+
+[sub_resource type="Resource" id="pl_2"]
+script = ExtResource("2_pl")
+damage = 50
+fire_rate = 0.49
+power_use = 27
+velocity = Vector3(0, 0, -35)
+
+[sub_resource type="Resource" id="pl_3"]
+script = ExtResource("2_pl")
+damage = 75
+fire_rate = 0.48
+power_use = 29
+velocity = Vector3(0, 0, -40)
+
+[sub_resource type="Resource" id="pl_4"]
+script = ExtResource("2_pl")
+damage = 100
+fire_rate = 0.47
+power_use = 31
+velocity = Vector3(0, 0, -45)
+
+[sub_resource type="Resource" id="pl_5"]
+script = ExtResource("2_pl")
+damage = 125
+fire_rate = 0.46
+power_use = 33
+velocity = Vector3(0, 0, -50)
+
+[sub_resource type="Resource" id="pl_6"]
+script = ExtResource("2_pl")
+damage = 150
+fire_rate = 0.45
+power_use = 35
+velocity = Vector3(0, 0, -55)
+
+[sub_resource type="Resource" id="pl_7"]
+script = ExtResource("2_pl")
+damage = 175
+fire_rate = 0.44
+power_use = 37
+velocity = Vector3(0, 0, -60)
+
+[sub_resource type="Resource" id="pl_8"]
+script = ExtResource("2_pl")
+damage = 200
+fire_rate = 0.43
+power_use = 39
+velocity = Vector3(0, 0, -65)
+
+[sub_resource type="Resource" id="pl_9"]
+script = ExtResource("2_pl")
+damage = 225
+fire_rate = 0.42
+power_use = 41
+velocity = Vector3(0, 0, -70)
+
+[sub_resource type="Resource" id="pl_10"]
+script = ExtResource("2_pl")
+damage = 250
+fire_rate = 0.41
+power_use = 43
+velocity = Vector3(0, 0, -75)
 
 [resource]
-script = ExtResource("1_abcde")
+script = ExtResource("1_weapon")
 weapon_index = 3
 weapon_name = "Heavy Cannon"
-damage = 25
-velocity = Vector3(0, 0, -30)
-fire_rate = 0.5
-
 sound = 2
-power_use = 25
+power_level_1 = SubResource("pl_1")
+power_level_2 = SubResource("pl_2")
+power_level_3 = SubResource("pl_3")
+power_level_4 = SubResource("pl_4")
+power_level_5 = SubResource("pl_5")
+power_level_6 = SubResource("pl_6")
+power_level_7 = SubResource("pl_7")
+power_level_8 = SubResource("pl_8")
+power_level_9 = SubResource("pl_9")
+power_level_10 = SubResource("pl_10")
