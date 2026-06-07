@@ -12,6 +12,7 @@ extends CanvasLayer
 @onready var _health_label: Label = %HealthValue
 @onready var _shield_label: Label = %ShieldValue
 @onready var _energy_label: Label = %EnergyValue
+@onready var _score_label: Label = %ScoreValue
 @onready var _shield_row: VBoxContainer = %ShieldRow
 @onready var _restart_button: Button = %RestartButton
 @onready var _restart_confirm: Control = %RestartConfirm
@@ -89,6 +90,8 @@ func _process(_delta: float) -> void:
 	if _player == null:
 		_bind_player()
 		return
+
+	_score_label.text = str(_player.score)
 
 	var max_hp := maxi(1, _player.max_armor)
 	var hp := clampi(_player.armor, 0, max_hp)

@@ -5,9 +5,9 @@
 [resource]
 script = ExtResource("1_abcde")
 weapon_index = 1
-weapon_name = "Pulse-Cannon"
+weapon_name = "Pulse Cannon"
 damage = 1
 velocity = Vector3(0, 0, -60)
-fire_rate = 0.25
+fire_rate = 0.15
 sound = 1
-power_use = 30
+power_use = 40

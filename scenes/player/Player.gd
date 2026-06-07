@@ -21,8 +21,8 @@ var max_power: float = 0
 var power: float = 0
 var ship_data: ShipData = null
 
-@export var max_bound_x: float = 11.7
-@export var max_bound_z: float = 15.25
+@export var max_bound_x: float = 40.0
+@export var max_bound_z: float = 20.0
 
 @onready var weapon_system: Node = $WeaponSystem
 @onready var damage_system: Node = $DamageSystem
@@ -158,6 +158,10 @@ func take_damage(amount: int) -> void:
 		damage_system.take_damage(amount)
 		return
 	push_warning("Player: Brak DamageSystem — obrażenia pominięte")
+
+## Zbieranie lootu wyrzuconego przez wrogów (HUD odczytuje score co klatkę).
+func collect_pickup(amount: int) -> void:
+	score += amount
 
 func die() -> void:
 	queue_free()

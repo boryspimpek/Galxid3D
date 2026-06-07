@@ -23,3 +23,8 @@ res://scenes/enemies/satellite.tscn
 res://scenes/enemies/starfighter.tscn
 res://scripts/core/GameConstants.gd
 res://scenes/pickup/Pickup.gd
+res://scenes/pickup/Pickup.tscn
+res://scenes/ui/Hud.gd
+res://scenes/ui/Hud.tscn
+res://data/weapons/weapon_1.tres
+res://data/weapons/weapon_2.tres

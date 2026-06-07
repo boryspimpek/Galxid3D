@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://c5rk6l7jaj8mn"]
 
-[ext_resource type="Script" path="res://scripts/resources/WeaponData.gd" id="1_abcde"]
+[ext_resource type="Script" uid="uid://ml3ennlcxw0v" path="res://scripts/resources/WeaponData.gd" id="1_abcde"]
 
 [resource]
 script = ExtResource("1_abcde")
@@ -9,6 +9,5 @@ weapon_name = "Fast Blaster"
 damage = 5
 velocity = Vector3(0, 0, -80)
 fire_rate = 0.1
-
 sound = 1
 power_use = 15
