@@ -1,12 +1,18 @@
 extends CanvasLayer
 
+@export var panel_width: float = 300.0:
+	set(value):
+		panel_width = maxf(180.0, value)
+		_apply_panel_width()
+
+@onready var _side_panel: PanelContainer = $Root/SidePanel
 @onready var _health_bar: ProgressBar = %HealthBar
 @onready var _shield_bar: ProgressBar = %ShieldBar
 @onready var _energy_bar: ProgressBar = %EnergyBar
 @onready var _health_label: Label = %HealthValue
 @onready var _shield_label: Label = %ShieldValue
 @onready var _energy_label: Label = %EnergyValue
-@onready var _shield_row: HBoxContainer = %ShieldRow
+@onready var _shield_row: VBoxContainer = %ShieldRow
 @onready var _restart_button: Button = %RestartButton
 @onready var _restart_confirm: Control = %RestartConfirm
 @onready var _game_over: Control = %GameOver
@@ -18,6 +24,7 @@ var _shield_system: Node
 func _ready() -> void:
 	add_to_group("hud")
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	_apply_panel_width()
 	_restart_button.pressed.connect(_on_restart_button_pressed)
 	%RestartConfirmYes.pressed.connect(_restart_run)
 	%RestartConfirmNo.pressed.connect(_hide_restart_confirm)
@@ -29,6 +36,13 @@ func _bind_player() -> void:
 	_player = get_tree().get_first_node_in_group("player") as CharacterBody3D
 	if _player:
 		_shield_system = _player.get_node_or_null("ShieldSystem")
+
+
+func _apply_panel_width() -> void:
+	if not is_node_ready() or _side_panel == null:
+		return
+	_side_panel.offset_left = -panel_width
+
 
 func show_game_over() -> void:
 	_hide_restart_confirm()
