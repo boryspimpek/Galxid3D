@@ -20,3 +20,7 @@ res://data/generators/generator_001.tres
 res://scenes/enemies/satelite_model.tscn
 res://scenes/enemies/satellite.tscn
 res://lihgtning.gdshader
+res://scenes/vfx/electric_discharge.tscn
+res://scenes/vfx/lihgtning.gdshader
+res://scenes/vfx/electric_discharge_3d.tscn
+res://scenes/vfx/ElectricDischarge.gd

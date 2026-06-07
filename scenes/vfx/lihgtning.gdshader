@@ -1,4 +1,5 @@
 shader_type canvas_item;
+render_mode unshaded;
 
 uniform int lightning_number = 5;
 uniform vec2 amplitude = vec2(2.0,1.0);
@@ -7,7 +8,7 @@ uniform float thickness = 0.02;
 uniform float speed = 3.0;
 uniform vec4 base_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
 uniform float glow_thickness = 0.08;
-uniform vec4 glow_color : source_color = vec4(0.2, 0, 0.8, 0.0);
+uniform vec4 glow_color : source_color = vec4(0.2, 0, 0.8, 1.0); // Zmieniłem alfa na 1.0, żeby było widać blask!
 uniform float alpha : hint_range(0, 1) = 1.0;
 
 // plot function 
@@ -42,7 +43,6 @@ float fbm(vec2 n) {
     return total;
 }
 
-
 void fragment(){
 	vec2 uv = UV;
 	vec4 color = vec4(0.0, 0.0, 0.0, 0.0);
@@ -51,7 +51,7 @@ void fragment(){
 	float y ;
 	float pct ;
 	float buffer;	
-	// add more lightning
+    
 	for ( int i = 0; i < lightning_number; i++){
 		t = uv * amplitude + vec2(float(i), -float(i)) - TIME*speed;
 		y = fbm(t)*offset;
@@ -61,6 +61,5 @@ void fragment(){
 		color += buffer*glow_color;
 	}
 	
-	color.a *= alpha;
-	COLOR = color;
+	COLOR = vec4(color.rgb, color.a * alpha);
 }
