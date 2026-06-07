@@ -6,6 +6,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a8pbj"]
 cull_mode = 1
+albedo_color = Color(0, 0, 0, 1)
 grow = true
 grow_amount = 0.01
 

@@ -3,3 +3,16 @@ res://assets/shaders/toon.gdshader
 res://scenes/vfx/electric_discharge_3d.tscn
 res://scenes/vfx/ElectricDischarge.gd
 res://scenes/enemies/formation2.tscn
+res://scenes/enemies/formation.tscn
+res://scenes/enemies/formation3.tscn
+res://scenes/enemies/formation4.tscn
+res://scenes/enemies/blaze_4_model.tscn
+res://scenes/enemies/blaze_3_model.tscn
+res://scenes/enemies/blaze_2_model.tscn
+res://scenes/enemies/blaze_model.tscn
+res://scenes/player/Player.tscn
+res://scenes/player/Player.gd
+res://scenes/enemies/blaze_3.tscn
+res://scenes/enemies/blaze_4.tscn
+res://scenes/enemies/blaze_5.tscn
+res://scenes/enemies/blaze_2.tscn

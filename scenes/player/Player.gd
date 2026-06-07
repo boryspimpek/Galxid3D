@@ -27,7 +27,7 @@ var ship_data: ShipData = null
 @onready var weapon_system: Node = $WeaponSystem
 @onready var damage_system: Node = $DamageSystem
 @onready var shield_system: Node = $ShieldSystem
-@onready var ship_model: Node3D = $PlayerModel
+@onready var ship_model: Node3D = $Blaze
 
 var main_camera: Camera3D
 
@@ -142,7 +142,7 @@ func _physics_process(delta: float):
 	_update_tilt(global_position.x - prev_x, delta)
 
 func _update_tilt(dx: float, delta: float) -> void:
-	var target: float = clampf(-dx * 1.5, -0.8, 0.8)
+	var target: float = clampf(dx * 1.5, -0.8, 0.8)
 	ship_model.rotation.z = lerpf(ship_model.rotation.z, target, delta * 10.0)
 
 func _clamp_to_screen():

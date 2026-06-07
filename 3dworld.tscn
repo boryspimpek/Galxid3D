@@ -8,11 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="4_n40md"]
 [ext_resource type="Script" uid="uid://1pup6o17egip" path="res://scenes/asteroids/AsteroidSpawner.gd" id="4_rpljx"]
 [ext_resource type="PackedScene" uid="uid://dcg8vcl7rmst4" path="res://scenes/world/NoiseBackground.tscn" id="5_m2xqg"]
-[ext_resource type="PackedScene" uid="uid://b4kkmjte8klff" path="res://scenes/enemies/formation2.tscn" id="6_dba1v"]
+[ext_resource type="PackedScene" uid="uid://b4kkmjte8klff" path="res://scenes/enemies formations/formation2.tscn" id="6_dba1v"]
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="7_scroll"]
-[ext_resource type="PackedScene" uid="uid://dd21l172sp65r" path="res://scenes/enemies/formation3.tscn" id="8_pnv6h"]
-[ext_resource type="PackedScene" uid="uid://i8caj32bmnmu" path="res://scenes/enemies/formation4.tscn" id="9_2gg5g"]
-[ext_resource type="PackedScene" uid="uid://c6bq1qkhotmeh" path="res://scenes/enemies/formation.tscn" id="10_sgee4"]
+[ext_resource type="PackedScene" uid="uid://dd21l172sp65r" path="res://scenes/enemies formations/formation3.tscn" id="8_pnv6h"]
+[ext_resource type="PackedScene" uid="uid://i8caj32bmnmu" path="res://scenes/enemies formations/formation4.tscn" id="9_2gg5g"]
+[ext_resource type="PackedScene" uid="uid://c6bq1qkhotmeh" path="res://scenes/enemies formations/formation1.tscn" id="10_sgee4"]
 [ext_resource type="PackedScene" uid="uid://ceb36gc6o5uvc" path="res://scenes/enemies/starfighter.tscn" id="13_fql1y"]
 [ext_resource type="PackedScene" uid="uid://chbe1na0vrwt8" path="res://scenes/enemies/satellite.tscn" id="14_sgee4"]
 [ext_resource type="PackedScene" uid="uid://ryp1is7xr46v" path="res://scenes/vfx/electric_discharge_3d.tscn" id="15_h5joq"]
@@ -96,7 +96,7 @@ max_bound_z = 20.0
 script = ExtResource("7_scroll")
 scroll_speed = 6.0
 
-[node name="Formation" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1730415998 instance=ExtResource("10_sgee4")]
+[node name="Formation1" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1730415998 instance=ExtResource("10_sgee4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)
 
 [node name="Formation2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=747510776 instance=ExtResource("6_dba1v")]
@@ -113,19 +113,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.930466, 0, -38.63256)
 zmove = 1
 
 [node name="starfighter2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=951122642 instance=ExtResource("13_fql1y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.086235, 0, -77.29854)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.086235, 0, -97.645325)
 zmove = 1
 
 [node name="starfighter3" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1000482690 instance=ExtResource("13_fql1y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1337128, 0, -117.36697)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1337128, 0, -148.8806)
 zmove = 1
 
 [node name="satellite" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1827604185 instance=ExtResource("14_sgee4")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -4.6081734, 0, -23.431408)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 20.939953, 0, -31.696978)
 zmove = 2
 
 [node name="satellite2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1292277464 instance=ExtResource("14_sgee4")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.333385, 0, -29.404846)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -7.787245, 0, -23.250397)
 zmove = 2
 
 [node name="ElectricDischarge" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1340476580 node_paths=PackedStringArray("start_target", "end_target") instance=ExtResource("15_h5joq")]

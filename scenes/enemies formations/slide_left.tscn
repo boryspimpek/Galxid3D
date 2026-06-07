@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dvf2aajxjamx5"]
 
 [ext_resource type="PackedScene" uid="uid://ceb36gc6o5uvc" path="res://scenes/enemies/starfighter.tscn" id="1_0vmke"]
-[ext_resource type="Script" uid="uid://djxxgxw8t47jb" path="res://scenes/enemies/animation.gd" id="1_ia55e"]
+[ext_resource type="Script" uid="uid://djxxgxw8t47jb" path="res://scenes/enemy/animation.gd" id="1_ia55e"]
 [ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="2_ia55e"]
 
 [sub_resource type="Curve" id="Curve_ia55e"]

@@ -36,6 +36,11 @@ extends Node3D
 ## Górna krawędź kadru — jak u wrogów (np. -17.0 z PlayAreaFrame).
 @export var scroll_activation_z: float = -17.0
 
+@export_group("Obrażenia")
+@export var contact_damage: int = 1
+@export var hit_radius: float = 1.5
+@export var hit_cooldown: float = 0.5
+
 @onready var _start: Marker3D = get_node_or_null("Start") as Marker3D
 @onready var _end: Marker3D = get_node_or_null("End") as Marker3D
 @onready var _bolt: MeshInstance3D = $Bolt
@@ -45,6 +50,7 @@ var _shader_material: ShaderMaterial
 var _active: bool = false
 var _was_active: bool = false
 var _removing: bool = false
+var _hit_cooldown_left: float = 0.0
 
 
 func _ready() -> void:
@@ -57,7 +63,7 @@ func _ready() -> void:
 	_update_bolt_transform()
 
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if _removing:
 		return
 
@@ -74,6 +80,7 @@ func _physics_process(_delta: float) -> void:
 	if _bolt:
 		_bolt.visible = _active
 	_update_bolt_transform()
+	_process_player_collision(delta)
 
 
 func _compute_active() -> bool:
@@ -140,6 +147,40 @@ func _exit_tree() -> void:
 func _on_activated() -> void:
 	if not Engine.is_editor_hint():
 		LevelScroll3D.detach_to_active_scene(self)
+
+
+func _process_player_collision(delta: float) -> void:
+	if Engine.is_editor_hint() or not _active:
+		return
+
+	_hit_cooldown_left = maxf(0.0, _hit_cooldown_left - delta)
+	if _hit_cooldown_left > 0.0:
+		return
+
+	var player := get_tree().get_first_node_in_group("player") as Node3D
+	if player == null or not player.has_method("take_damage"):
+		return
+
+	var start_pos := _resolve_start_position()
+	var end_pos := _resolve_end_position()
+	var distance := _distance_point_to_segment_xz(player.global_position, start_pos, end_pos)
+	if distance <= hit_radius:
+		player.take_damage(contact_damage)
+		_hit_cooldown_left = hit_cooldown
+
+
+func _distance_point_to_segment_xz(point: Vector3, start_pos: Vector3, end_pos: Vector3) -> float:
+	var point_xz := Vector2(point.x, point.z)
+	var start_xz := Vector2(start_pos.x, start_pos.z)
+	var end_xz := Vector2(end_pos.x, end_pos.z)
+	var segment := end_xz - start_xz
+	var segment_length_sq := segment.length_squared()
+	if segment_length_sq < 0.0001:
+		return point_xz.distance_to(start_xz)
+
+	var t := clampf((point_xz - start_xz).dot(segment) / segment_length_sq, 0.0, 1.0)
+	var closest := start_xz + segment * t
+	return point_xz.distance_to(closest)
 
 
 func _resolve_start_position() -> Vector3:

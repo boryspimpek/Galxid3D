@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b18b5anwm2fnd" path="res://scenes/player/PlayerModel.tscn" id="2_c3xxp"]
 [ext_resource type="Script" uid="uid://b00wb11f44ov" path="res://scenes/player/WeaponSystem.gd" id="3_tpg5x"]
 [ext_resource type="Script" uid="uid://cta2hho80ojdn" path="res://scenes/player/ShieldSystem.gd" id="4_c3xxp"]
+[ext_resource type="PackedScene" uid="uid://pxcet508nmj3" path="res://scenes/enemies/blaze_model.tscn" id="6_c3xxp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wr5hl"]
 radius = 0.39990234
@@ -14,9 +15,9 @@ height = 1.5536003
 script = ExtResource("1_onrkg")
 ship_id = 1
 front_weapon_index = 1
-max_bound_x = 11.7
 
 [node name="PlayerModel" parent="." unique_id=476255480 instance=ExtResource("2_c3xxp")]
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1950378145]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.002, -1.1712636e-08, 0.010802746)
@@ -33,3 +34,6 @@ script = ExtResource("4_c3xxp")
 
 [node name="Muzzle" type="Marker3D" parent="." unique_id=807064709]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.725918)
+
+[node name="Blaze" parent="." unique_id=700868063 instance=ExtResource("6_c3xxp")]
+transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, 0, 0, 0)
