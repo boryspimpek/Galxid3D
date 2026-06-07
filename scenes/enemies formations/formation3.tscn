@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dd21l172sp65r"]
 
 [ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemy/EnemyPath3D.gd" id="1_cswtf"]
-[ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyPath.gd" id="2_5avpn"]
+[ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyFollow.gd" id="2_5avpn"]
 [ext_resource type="PackedScene" uid="uid://cxoxhipdefe5m" path="res://scenes/enemies/blaze_3.tscn" id="3_cswtf"]
 [ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="4_y2bup"]
 
@@ -43,7 +43,6 @@ loop = false
 script = ExtResource("2_5avpn")
 
 [node name="blaze 3" parent="Path/PathFollow3D2" unique_id=599822296 instance=ExtResource("3_cswtf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="PathFollow3D3" type="PathFollow3D" parent="Path" unique_id=956187911]
 transform = Transform3D(-0.14354528, 0, 0.98961955, 0, 1, 0, -0.98961955, 0, -0.14354528, -5.9375477, 0, 0.86838996)
@@ -64,7 +63,7 @@ script = ExtResource("2_5avpn")
 transform = Transform3D(-1.3, 0, -1.9629454e-07, 0, 1.3, 0, 1.9629454e-07, 0, -1.3, 0, 0, 0)
 
 [node name="PathFollow3D5" type="PathFollow3D" parent="Path" unique_id=1922970098]
-transform = Transform3D(-0.14354485, 0, 0.9896166, 0, 1, 0, -0.9896166, 0, -0.14354485, -11.875668, 0, 1.729721)
+transform = Transform3D(-0.14354485, 0, 0.98961663, 0, 1, 0, -0.98961663, 0, -0.14354485, -11.875668, 0, 1.729721)
 progress = 12.0
 loop = false
 script = ExtResource("2_5avpn")

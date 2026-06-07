@@ -16,3 +16,8 @@ res://scenes/enemies/blaze_3.tscn
 res://scenes/enemies/blaze_4.tscn
 res://scenes/enemies/blaze_5.tscn
 res://scenes/enemies/blaze_2.tscn
+res://scenes/enemies formations/formation2.tscn
+res://scenes/enemies formations/formation3.tscn
+res://scenes/enemy/Enemy.gd
+res://scenes/enemies/satellite.tscn
+res://scenes/enemies/starfighter.tscn

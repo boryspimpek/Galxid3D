@@ -6,12 +6,14 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3ym5w"]
 
 [node name="starfighter" unique_id=1897743314 instance=ExtResource("1_3ym5w")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
 armor = 7
 fire_rate = 1.5
 aim = 10
 projectile_velocity = Vector3(0, 0, 8)
 sound = 3
 esize = 2
+value = 20
 
 [node name="Starfighter" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1322169304 instance=ExtResource("2_g7p8o")]
 

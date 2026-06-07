@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c6bq1qkhotmeh"]
 
 [ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemy/EnemyPath3D.gd" id="1_rxsle"]
-[ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyPath.gd" id="2_g61cf"]
+[ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyFollow.gd" id="2_g61cf"]
 [ext_resource type="PackedScene" uid="uid://bh3x5gquu3djc" path="res://scenes/enemies/blaze_5.tscn" id="3_g61cf"]
 [ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="4_g61cf"]
 

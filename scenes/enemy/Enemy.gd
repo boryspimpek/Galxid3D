@@ -1,21 +1,23 @@
 extends Area3D
 
 # --- ZMIENNE EKSPORTOWANE (@EXPORT) ---
-@export_group("Statystyki")
+@export_group("Combat")
 @export var armor: int = 1
 @export var damage: int = 1
-@export var fire_rate: float = 2.0
-## 0 = tylko projectile_velocity, 10 = pełne wycelowanie w gracza (prędkość bez zmian).
+@export var fire_rate: float = 250.0
 @export_range(0, 10, 1) var aim: int = 0
 const AIM_MAX := 10
 @export var projectile_velocity: Vector3 = Vector3(0, 0, 60)
-@export var sound: int = 1
-@export var esize: int = 1
 
-@export_group("Ruch Bazowy")
+@export_group("Movement")
 @export var xmove: int = 0
 @export var ymove: int = 0
 @export var zmove: int = 0
+
+@export_group("General")
+@export var sound: int = 1
+@export var esize: int = 1
+@export var value: int = 2
 
 # --- REFERENCJE WĘZŁÓW (@ONREADY) ---
 @onready var ship_model: Node3D = $EnemyModel
@@ -28,7 +30,7 @@ var fire_timer: float = 0.0
 var is_firing: bool = false
 var _is_active: bool = false
 
-@export_group("Aktywacja")
+@export_group("Activation")
 @export var activate_on_scroll_line: bool = true
 @export var despawn_off_screen: bool = true
 ## Górna krawędź kadru. Wróg aktywuje się gdy global_position.z >= tej wartości.
