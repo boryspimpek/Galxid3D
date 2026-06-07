@@ -3,7 +3,7 @@ class_name EnemyFacing
 
 # ============================================================================
 # ENEMY FACING - bazowy komponent orientacji (obrotu) wroga.
-# Oddzielony od ruchu (EnemyMovement = translacja) i broni. Enemy woła
+# Oddzielony od ruchu (movement_data = translacja) i broni. Enemy woła
 # process_facing() co klatkę fizyki, gdy wróg jest aktywny. Konkretny sposób
 # orientacji implementuje podklasa (np. FacePlayer).
 #

@@ -4,6 +4,11 @@ extends Area3D
 @export_group("Combat")
 @export var armor: int = 1
 
+@export_group("Movement")
+## Zasób ruchu (np. LinearMoveData). Edytowalny per instancja na korzeniu wroga.
+## Zostaw pusty dla wrogów sterowanych ścieżką (Path3D).
+@export var movement_data: MovementData
+
 @export_group("General")
 @export var esize: int = 1
 @export var value: int = 2
@@ -13,10 +18,10 @@ extends Area3D
 
 # --- ZMIENNE WEWNĘTRZNE (LOGIKA) ---
 var _is_active: bool = false
+## Czas (s) odkąd ruch jest aktywny — przekazywany do MovementData.get_velocity().
+var _move_elapsed: float = 0.0
 ## Komponent strzelania (dziecko ze skryptem dziedziczącym po EnemyWeapon).
 var _weapon: EnemyWeapon
-## Komponent ruchu (dziecko ze skryptem dziedziczącym po EnemyMovement).
-var _movement: EnemyMovement
 ## Opcjonalny komponent orientacji (dziecko dziedziczące po EnemyFacing).
 var _facing: EnemyFacing
 
@@ -43,7 +48,6 @@ func _ready() -> void:
 	collision_mask = 5
 
 	_weapon = _find_weapon()
-	_movement = _find_movement()
 	_facing = _find_facing()
 
 	_screen_notifier = get_node_or_null("VisibleOnScreenNotifier3D") as VisibleOnScreenNotifier3D
@@ -67,8 +71,9 @@ func _physics_process(delta: float) -> void:
 	if not _is_active:
 		return
 
-	if _movement:
-		_movement.process_movement(delta)
+	if movement_data:
+		global_position += movement_data.get_velocity(_move_elapsed) * delta
+		_move_elapsed += delta
 
 	if _facing:
 		_facing.process_facing(delta)
@@ -149,13 +154,6 @@ func _find_weapon() -> EnemyWeapon:
 	return null
 
 
-func _find_movement() -> EnemyMovement:
-	for child in get_children():
-		if child is EnemyMovement:
-			return child
-	return null
-
-
 func _find_facing() -> EnemyFacing:
 	for child in get_children():
 		if child is EnemyFacing:
@@ -176,6 +174,7 @@ func _activate() -> void:
 	if _is_active:
 		return
 	_is_active = true
+	_move_elapsed = 0.0
 	set_firing(true)
 	# PathFollow odpina się w EnemyPath; wrogowie bez ścieżki — tutaj.
 	if not get_parent() is PathFollow3D:

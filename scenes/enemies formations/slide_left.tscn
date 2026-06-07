@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ceb36gc6o5uvc" path="res://scenes/enemies/starfighter.tscn" id="1_0vmke"]
 [ext_resource type="Script" uid="uid://djxxgxw8t47jb" path="res://scenes/enemy/animation.gd" id="1_ia55e"]
 [ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="2_ia55e"]
+[ext_resource type="Script" uid="uid://c3linmvdata001" path="res://scenes/enemy/movement/LinearMoveData.gd" id="3_move"]
 
 [sub_resource type="Curve" id="Curve_ia55e"]
 _limits = [0.0, 5.0, 0.0, 1.0]
@@ -87,15 +88,17 @@ _data = {
 &"slide right": SubResource("Animation_ia55e")
 }
 
+[sub_resource type="Resource" id="Move_starfighter"]
+script = ExtResource("3_move")
+zmove = -3
+
 [node name="slide left" type="Node3D" unique_id=942362656]
 script = ExtResource("1_ia55e")
 speed_curve = SubResource("Curve_ia55e")
 
 [node name="starfighter" parent="." unique_id=1897743314 instance=ExtResource("1_0vmke")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 7)
-
-[node name="Movement" parent="starfighter"]
-zmove = -3
+movement_data = SubResource("Move_starfighter")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=360053583]
 libraries/ = SubResource("AnimationLibrary_wy1wy")

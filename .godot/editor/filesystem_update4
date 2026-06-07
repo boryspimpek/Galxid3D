@@ -2,3 +2,5 @@ res://scenes/enemy/Enemy.gd
 res://scenes/enemies/voyager.tscn
 res://assets/shaders/toon.gdshader
 res://3dworld.tscn
+res://scenes/enemy/Enemy.tscn
+res://scenes/enemy/facing/EnemyFacing.gd
