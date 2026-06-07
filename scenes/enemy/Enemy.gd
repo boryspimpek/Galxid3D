@@ -17,6 +17,8 @@ var _is_active: bool = false
 var _weapon: EnemyWeapon
 ## Komponent ruchu (dziecko ze skryptem dziedziczącym po EnemyMovement).
 var _movement: EnemyMovement
+## Opcjonalny komponent orientacji (dziecko dziedziczące po EnemyFacing).
+var _facing: EnemyFacing
 
 @export_group("Activation")
 @export var activate_on_scroll_line: bool = true
@@ -42,6 +44,7 @@ func _ready() -> void:
 
 	_weapon = _find_weapon()
 	_movement = _find_movement()
+	_facing = _find_facing()
 
 	_screen_notifier = get_node_or_null("VisibleOnScreenNotifier3D") as VisibleOnScreenNotifier3D
 	if _screen_notifier:
@@ -66,6 +69,9 @@ func _physics_process(delta: float) -> void:
 
 	if _movement:
 		_movement.process_movement(delta)
+
+	if _facing:
+		_facing.process_facing(delta)
 
 
 # --- METODY PUBLICZNE (API ENEMY) ---
@@ -146,6 +152,13 @@ func _find_weapon() -> EnemyWeapon:
 func _find_movement() -> EnemyMovement:
 	for child in get_children():
 		if child is EnemyMovement:
+			return child
+	return null
+
+
+func _find_facing() -> EnemyFacing:
+	for child in get_children():
+		if child is EnemyFacing:
 			return child
 	return null
 
