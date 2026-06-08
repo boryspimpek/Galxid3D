@@ -8,6 +8,9 @@ transparency = 1
 blend_mode = 1
 albedo_color = Color(1, 1, 0, 1)
 albedo_texture = ExtResource("2_lt6pn")
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+emission_energy_multiplier = 8.25
 billboard_mode = 1
 billboard_keep_scale = true
 

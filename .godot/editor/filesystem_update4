@@ -8,3 +8,5 @@ res://scenes/enemy/Enemy.gd
 res://scenes/explosions/vfx_air_explosion_01.tscn
 res://scenes/explosions/vfx_ground_explosion_01.tscn
 res://scenes/explosions/vfx_nuke_explosion_01.tscn
+res://scripts/core/GameConstants.gd
+res://scenes/pickup/Pickup.tscn
