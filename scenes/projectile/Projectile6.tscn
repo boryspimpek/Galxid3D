@@ -1,52 +1,40 @@
 [gd_scene format=3 uid="uid://dk56uyrj3phtg"]
 
 [ext_resource type="Script" uid="uid://cxso55pxdnnn3" path="res://scenes/projectile/projectile.gd" id="1_vig4e"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nskuf"]
-albedo_color = Color(2, 0, 0, 1)
-grow_amount = -0.182
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_cm8q0"]
-material = SubResource("StandardMaterial3D_nskuf")
-radius = 0.1
-height = 0.5
+[ext_resource type="PackedScene" uid="uid://l3mk56ty44tw" path="res://assets/BinbunVFX/MagicProjectiles/magic_projectiles/effects/mprojectile_javelin/mprojectile_javelin_vfx_01.tscn" id="2_feid3"]
+[ext_resource type="PackedScene" uid="uid://bbrua2kwcecpu" path="res://assets/BinbunVFX/MagicProjectiles/magic_projectiles/effects/mprojectile_javelin/mprojectile_javelin_vfx_02.tscn" id="3_7mke1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vig4e"]
-size = Vector3(0.5038452, 1.7075806, 0.19824219)
+size = Vector3(1.1127777, 2.8075104, 0.19824219)
 
 [node name="Projectile" type="Area3D" unique_id=1517421005]
 script = ExtResource("1_vig4e")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1002288102]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.25, 0, 0)
-mesh = SubResource("CapsuleMesh_cm8q0")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=596842928]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.75, 0, 0)
-mesh = SubResource("CapsuleMesh_cm8q0")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1270707092]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1.25, 0, 0.4)
-mesh = SubResource("CapsuleMesh_cm8q0")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1855569356]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.25, 0, 0)
-mesh = SubResource("CapsuleMesh_cm8q0")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1656644411]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.75, 0, 0)
-mesh = SubResource("CapsuleMesh_cm8q0")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=517853100]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.25, 0, 0.4)
-mesh = SubResource("CapsuleMesh_cm8q0")
-
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=1302911795]
-transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 0, 0)
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 2.0599766e-09, 0, 0.22261477)
 shape = SubResource("BoxShape3D_vig4e")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1913704919]
-aabb = AABB(-0.8508722, -0.099812835, -0.25101244, 1.7017444, 0.19962567, 0.5020249)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9606827)
+aabb = AABB(-1.4477763, -0.099812835, -1.292425, 2.8955526, 0.19962567, 2.5799673)
+
+[node name="MProjectileJavelinVFX_01" parent="." unique_id=541282647 instance=ExtResource("2_feid3")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.7486812, 0, 0)
+
+[node name="MProjectileJavelinVFX_02" parent="." unique_id=1224920255 instance=ExtResource("2_feid3")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.24717212, 0, 0)
+
+[node name="MProjectileJavelinVFX_03" parent="." unique_id=1542109024 instance=ExtResource("2_feid3")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.24717212, 0, 0)
+
+[node name="MProjectileJavelinVFX_04" parent="." unique_id=1490589533 instance=ExtResource("2_feid3")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.75226307, 0, 0)
+
+[node name="MProjectileJavelinVFX_05" parent="." unique_id=1898497690 instance=ExtResource("3_7mke1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.25, 0, 0.35)
+
+[node name="MProjectileJavelinVFX_06" parent="." unique_id=2003172393 instance=ExtResource("3_7mke1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.25, 0, 0.35)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

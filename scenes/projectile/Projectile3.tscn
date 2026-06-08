@@ -1,57 +1,27 @@
 [gd_scene format=3 uid="uid://jcgd2boq21bd"]
 
 [ext_resource type="Script" uid="uid://cxso55pxdnnn3" path="res://scenes/projectile/projectile.gd" id="1_uj3nw"]
+[ext_resource type="PackedScene" uid="uid://l3mk56ty44tw" path="res://assets/BinbunVFX/MagicProjectiles/magic_projectiles/effects/mprojectile_javelin/mprojectile_javelin_vfx_01.tscn" id="2_v17j1"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nskuf"]
-albedo_color = Color(2, 0, 0, 1)
-grow_amount = -0.182
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_cm8q0"]
-material = SubResource("StandardMaterial3D_nskuf")
-radius = 0.1
-height = 0.5
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nskuf"]
-radius = 0.10058594
-height = 0.49856567
+[sub_resource type="BoxShape3D" id="BoxShape3D_7yn2g"]
+size = Vector3(1.2822266, 0.20843506, 0.68688965)
 
 [node name="Projectile2" type="Area3D" unique_id=1517421005]
 script = ExtResource("1_uj3nw")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1002288102]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 0, 0)
-mesh = SubResource("CapsuleMesh_cm8q0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1719570957]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5, 1.2672634e-11, -0.000289917)
-shape = SubResource("CapsuleShape3D_nskuf")
-
-[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1682580241]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
-aabb = AABB(-0.10498387, -0.102447845, -0.25066954, 0.20996775, 0.20489569, 0.5013391)
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=813486962]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.5, 0, 0)
-mesh = SubResource("CapsuleMesh_cm8q0")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1403258375]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.5, 1.2672634e-11, -0.000289917)
-shape = SubResource("CapsuleShape3D_nskuf")
-
-[node name="VisibleOnScreenNotifier3D2" type="VisibleOnScreenNotifier3D" parent="." unique_id=874613092]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
-aabb = AABB(-0.10498387, -0.102447845, -0.25066954, 0.20996775, 0.20489569, 0.5013391)
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=845973013]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
-mesh = SubResource("CapsuleMesh_cm8q0")
-
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1313357752]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.2672634e-11, -0.000289917)
-shape = SubResource("CapsuleShape3D_nskuf")
+shape = SubResource("BoxShape3D_7yn2g")
 
 [node name="VisibleOnScreenNotifier3D3" type="VisibleOnScreenNotifier3D" parent="." unique_id=434721026]
-aabb = AABB(-0.10498387, -0.102447845, -0.25066954, 0.20996775, 0.20489569, 0.5013391)
+aabb = AABB(-0.6400128, -0.102447845, -0.34097725, 1.2800256, 0.20489569, 0.6819545)
+
+[node name="MProjectileJavelinVFX_01" parent="." unique_id=541282647 instance=ExtResource("2_v17j1")]
+
+[node name="MProjectileJavelinVFX_02" parent="." unique_id=657998408 instance=ExtResource("2_v17j1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.5134405, 0, 0)
+
+[node name="MProjectileJavelinVFX_03" parent="." unique_id=153250679 instance=ExtResource("2_v17j1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.48974323, 0, 0)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
