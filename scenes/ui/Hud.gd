@@ -33,6 +33,13 @@ func _ready() -> void:
 	%RestartConfirmNo.pressed.connect(_hide_restart_confirm)
 	%GameOverRestartButton.pressed.connect(_restart_run)
 	call_deferred("_bind_player")
+	call_deferred("_enable_game_viewport_render_timing")
+
+
+func _enable_game_viewport_render_timing() -> void:
+	var vp := get_tree().get_first_node_in_group("game_viewport") as SubViewport
+	if vp:
+		RenderingServer.viewport_set_measure_render_time(vp.get_viewport_rid(), true)
 
 
 func _bind_player() -> void:
@@ -125,4 +132,19 @@ func _update_fps(delta: float) -> void:
 	if not show_fps:
 		return
 	var fps := Engine.get_frames_per_second()
-	_fps_label.text = "FPS: %d (%.1f ms)" % [fps, delta * 1000.0]
+	var frame_ms := delta * 1000.0
+	var render_ms := _get_game_render_ms()
+	var logic_ms := maxf(0.0, frame_ms - render_ms)
+	_fps_label.text = "FPS: %d | logika: %.1f ms | gfx: %.1f ms" % [fps, logic_ms, render_ms]
+
+
+func _get_game_render_ms() -> float:
+	var vp := get_tree().get_first_node_in_group("game_viewport") as SubViewport
+	if vp == null:
+		return 0.0
+	var rid := vp.get_viewport_rid()
+	# CPU (przygotowanie) + GPU (rysowanie) SubViewport gry — w ms.
+	return (
+		RenderingServer.viewport_get_measured_render_time_cpu(rid)
+		+ RenderingServer.viewport_get_measured_render_time_gpu(rid)
+	)

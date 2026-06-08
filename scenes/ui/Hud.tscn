@@ -82,10 +82,10 @@ unique_name_in_owner = true
 layout_mode = 0
 offset_left = 12.0
 offset_top = 10.0
-offset_right = 200.0
+offset_right = 380.0
 offset_bottom = 34.0
 mouse_filter = 2
-text = "FPS: -- (-- ms)"
+text = "FPS: -- | logika: -- ms | gfx: -- ms"
 label_settings = SubResource("LabelSettings_fps")
 
 [node name="SidePanel" type="PanelContainer" parent="Root" unique_id=947160678]
