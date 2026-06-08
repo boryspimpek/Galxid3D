@@ -178,4 +178,7 @@ end_target = NodePath("../satellite4")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.8604336, 0, -74.74675)
 movement_data = SubResource("Resource_sq30x")
 
+[node name="voyager" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=49530381 instance=ExtResource("16_a283u")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 8.315826, 0, -9.66715)
+
 [node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("1_rpljx")]

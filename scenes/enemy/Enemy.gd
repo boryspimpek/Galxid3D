@@ -10,8 +10,28 @@ extends Area3D
 @export var movement_data: MovementData
 
 @export_group("General")
-@export var esize: int = 1
 @export var value: int = 2
+
+enum ExplosionScene {
+	EXPLODE,
+	EXPLODE2,
+	EXPLODE3,
+	EXPLODE4,
+	EXPLODE5,
+	EXPLODE6,
+}
+
+const _EXPLOSION_SCENES: Array[PackedScene] = [
+	preload("res://scenes/explosions/explode.tscn"),
+	preload("res://scenes/explosions/explode2.tscn"),
+	preload("res://scenes/explosions/explode3.tscn"),
+	preload("res://scenes/explosions/explode4.tscn"),
+	preload("res://scenes/explosions/explode5.tscn"),
+	preload("res://scenes/explosions/explode6.tscn"),
+]
+
+## Scena wybuchu po śmierci — wybierz z listy w inspektorze (per typ wroga).
+@export var explosion_scene: ExplosionScene = ExplosionScene.EXPLODE
 
 # --- REFERENCJE WĘZŁÓW (@ONREADY) ---
 @onready var ship_model: Node3D = $EnemyModel
@@ -112,9 +132,9 @@ func take_damage(amount: int) -> void:
 
 func die() -> void:
 	SoundManager.play_sound(9)
-	var explosion_scene := GameConstants.get_explosion_scene(esize)
-	if explosion_scene:
-		var explosion := explosion_scene.instantiate()
+	var scene := _EXPLOSION_SCENES[explosion_scene]
+	if scene:
+		var explosion := scene.instantiate()
 		get_tree().current_scene.add_child(explosion)
 		if explosion is Node3D:
 			explosion.global_position = global_position
