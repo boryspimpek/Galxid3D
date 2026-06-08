@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ca1jpgqyjjoky"]
+[gd_scene format=3 uid="uid://ca1jpgqyjjoky"]
 
 [ext_resource type="Script" uid="uid://tb7n6ybv43ch" path="res://assets/BinbunVFX/shared/script/vfx_controller.gd" id="1_g577y"]
 [ext_resource type="Material" uid="uid://ce4vmv0clvn1c" path="res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_04/flash_04_long.tres" id="2_g577y"]
@@ -223,7 +223,7 @@ _data = {
 &"main": SubResource("Animation_pmcog")
 }
 
-[node name="MuzzleFlash_04" type="Node3D"]
+[node name="MuzzleFlash_04" type="Node3D" unique_id=1711024830]
 script = ExtResource("1_g577y")
 primary_color = Color(1, 1, 0.639216, 1)
 secondary_color = Color(1, 0.705882, 0, 1)
@@ -231,7 +231,7 @@ light_color = Color(1, 1, 1, 1)
 light_energy = 2.0
 mesh_resolutions = 16
 
-[node name="Flash_Long" type="GPUParticles3D" parent="."]
+[node name="Flash_Long" type="GPUParticles3D" parent="." unique_id=621490231]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.05, 0, 0)
 material_override = ExtResource("2_g577y")
 emitting = false
@@ -243,7 +243,7 @@ local_coords = true
 process_material = SubResource("ParticleProcessMaterial_x3jb1")
 draw_pass_1 = SubResource("QuadMesh_nsh8r")
 
-[node name="Flash_Side" type="GPUParticles3D" parent="."]
+[node name="Flash_Side" type="GPUParticles3D" parent="." unique_id=1446841395]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.05, 0, 0)
 material_override = ExtResource("3_g577y")
 emitting = false
@@ -255,7 +255,7 @@ local_coords = true
 process_material = SubResource("ParticleProcessMaterial_1ajix")
 draw_pass_1 = SubResource("QuadMesh_cp3r6")
 
-[node name="Flash_Front" type="GPUParticles3D" parent="."]
+[node name="Flash_Front" type="GPUParticles3D" parent="." unique_id=1868342625]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 material_override = ExtResource("4_m7qx7")
 emitting = false
@@ -266,18 +266,16 @@ local_coords = true
 process_material = SubResource("ParticleProcessMaterial_a7jl0")
 draw_pass_1 = SubResource("QuadMesh_g577y")
 
-[node name="Glow" type="MeshInstance3D" parent="."]
+[node name="Glow" type="MeshInstance3D" parent="." unique_id=1592046882]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.5, 0, 0)
 material_override = ExtResource("5_m7qx7")
 mesh = SubResource("SphereMesh_g577y")
 
-[node name="Light" type="OmniLight3D" parent="."]
+[node name="Light" type="OmniLight3D" parent="." unique_id=378612876]
 light_energy = 0.0
 omni_range = 2.0
 script = ExtResource("5_1ajix")
 light_multiplier = 0.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_m7qx7")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1576952793]
+libraries/ = SubResource("AnimationLibrary_m7qx7")

@@ -4,8 +4,8 @@ extends Resource
 const POWER_LEVEL_COUNT := 10
 
 @export_group("Combat")
-@export var weapon_index: int = 1
-@export var weapon_name: String = "Pulse Cannon"
+@export var weapon_index: int = 100
+@export var weapon_name: String = "Name not set"
 @export var power_level_1: WeaponPowerLevelData
 @export var power_level_2: WeaponPowerLevelData
 @export var power_level_3: WeaponPowerLevelData
@@ -16,6 +16,12 @@ const POWER_LEVEL_COUNT := 10
 @export var power_level_8: WeaponPowerLevelData
 @export var power_level_9: WeaponPowerLevelData
 @export var power_level_10: WeaponPowerLevelData
+
+@export_group("Visual")
+## Efekt przy lufie — przeciągnij scenę muzzle flash z FileSystem.
+@export var muzzle_flash_scene: PackedScene
+## Dodatkowy obrót efektu (stopnie), gdy asset wymaga korekty osi.
+@export var muzzle_flash_rotation_offset: Vector3 = Vector3.ZERO
 
 @export_group("Audio")
 @export var sound: int = 1

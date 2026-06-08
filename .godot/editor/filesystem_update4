@@ -1,0 +1,14 @@
+res://3dworld.tscn
+res://assets/shaders/toon.gdshader
+res://data/weapons/weapon_1.tres
+res://data/weapons/weapon_2.tres
+res://scripts/resources/WeaponData.gd
+res://scenes/player/WeaponSystem.gd
+res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_04/flash_04_long.tres
+res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_04/flash_04_front.tres
+res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_04/flash_04_glow.tres
+res://assets/BinbunVFX/muzzle_flash/effects/muzzle_flash/muzzle_flash_04.tscn
+res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_01/wide_01_glow.tres
+res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_01/wide_01_front.tres
+res://assets/BinbunVFX/muzzle_flash/effects/wide_flash/wide_flash_01.tscn
+res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_01/flash_01_side.tres

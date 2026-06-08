@@ -76,7 +76,7 @@ velocity = Vector3(0, 0, -120)
 [resource]
 script = ExtResource("1_weapon")
 weapon_index = 2
-weapon_name = "Fast Blaster"
+weapon_name = "Fast BlasterX"
 power_level_1 = SubResource("pl_1")
 power_level_2 = SubResource("pl_2")
 power_level_3 = SubResource("pl_3")

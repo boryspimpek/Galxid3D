@@ -68,6 +68,7 @@ func shoot():
 		power_level_data.damage,
 		power_level_data.velocity
 	)
+	_spawn_muzzle_flash(power_level_data.velocity)
 	SoundManager.play_weapon_sound(weapon_data.sound)
 	fire_timer = power_level_data.fire_rate
 
@@ -78,3 +79,54 @@ func create_projectile(projectile_id: int, damage: int, velocity: Vector3):
 	projectile.global_position = muzzle.global_position
 	projectile.velocity = velocity
 	projectile.damage = damage
+
+
+func _spawn_muzzle_flash(velocity: Vector3) -> void:
+	var scene := weapon_data.muzzle_flash_scene
+	if scene == null:
+		return
+
+	var flash := scene.instantiate()
+	get_tree().current_scene.add_child(flash)
+	if flash is Node3D:
+		flash.global_transform = _muzzle_flash_transform(velocity)
+
+	if flash is VFXController:
+		flash.autoplay = false
+		flash.one_shot = true
+		flash.play()
+
+	var anim := flash.get_node_or_null("AnimationPlayer") as AnimationPlayer
+	if anim:
+		anim.animation_finished.connect(func(_name: StringName) -> void:
+			flash.queue_free()
+		, CONNECT_ONE_SHOT)
+
+
+func _muzzle_flash_transform(velocity: Vector3) -> Transform3D:
+	var direction := velocity
+	if direction.length_squared() < 0.0001:
+		direction = Vector3(0.0, 0.0, -1.0)
+	else:
+		direction = direction.normalized()
+
+	# BinbunVFX muzzle flash: efekt „wylatuje” wzdłuż lokalnej osi +X.
+	var x_axis := direction
+	var up := Vector3.UP
+	var z_axis := x_axis.cross(up)
+	if z_axis.length_squared() < 0.0001:
+		z_axis = Vector3.RIGHT
+	else:
+		z_axis = z_axis.normalized()
+	var y_axis := z_axis.cross(x_axis).normalized()
+
+	var basis := Basis(x_axis, y_axis, z_axis)
+	var offset := weapon_data.muzzle_flash_rotation_offset
+	if offset != Vector3.ZERO:
+		basis = basis * Basis.from_euler(Vector3(
+			deg_to_rad(offset.x),
+			deg_to_rad(offset.y),
+			deg_to_rad(offset.z),
+		))
+
+	return Transform3D(basis, muzzle.global_position)
