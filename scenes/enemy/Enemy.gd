@@ -13,25 +13,19 @@ extends Area3D
 @export var value: int = 2
 
 enum ExplosionScene {
-	EXPLODE,
-	EXPLODE2,
-	EXPLODE3,
-	EXPLODE4,
-	EXPLODE5,
-	EXPLODE6,
+	AIR,
+	GROUND,
+	NUKE,
 }
 
 const _EXPLOSION_SCENES: Array[PackedScene] = [
-	preload("res://scenes/explosions/explode.tscn"),
-	preload("res://scenes/explosions/explode2.tscn"),
-	preload("res://scenes/explosions/explode3.tscn"),
-	preload("res://scenes/explosions/explode4.tscn"),
-	preload("res://scenes/explosions/explode5.tscn"),
-	preload("res://scenes/explosions/explode6.tscn"),
+	preload("res://scenes/explosions/vfx_air_explosion_01.tscn"),
+	preload("res://scenes/explosions/vfx_ground_explosion_01.tscn"),
+	preload("res://scenes/explosions/vfx_nuke_explosion_01.tscn"),
 ]
 
 ## Scena wybuchu po śmierci — wybierz z listy w inspektorze (per typ wroga).
-@export var explosion_scene: ExplosionScene = ExplosionScene.EXPLODE
+@export var explosion_scene: ExplosionScene = ExplosionScene.AIR
 
 # --- REFERENCJE WĘZŁÓW (@ONREADY) ---
 @onready var ship_model: Node3D = $EnemyModel

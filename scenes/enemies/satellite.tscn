@@ -6,8 +6,8 @@
 [node name="satellite" unique_id=1897743314 instance=ExtResource("1_0kkwh")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 armor = 5
-explosion_scene = 3
 value = 10
+explosion_scene = 1
 
 [node name="Satellite" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1307557819 instance=ExtResource("2_1rps2")]
 

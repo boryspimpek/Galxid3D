@@ -5,3 +5,6 @@ res://scenes/explosions/explode4.tscn
 res://scenes/enemies/satellite.tscn
 res://scenes/enemies/starfighter.tscn
 res://scenes/enemy/Enemy.gd
+res://scenes/explosions/vfx_air_explosion_01.tscn
+res://scenes/explosions/vfx_ground_explosion_01.tscn
+res://scenes/explosions/vfx_nuke_explosion_01.tscn
