@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+@export var show_fps: bool = true
 @export var panel_width: float = 300.0:
 	set(value):
 		panel_width = maxf(180.0, value)
@@ -17,6 +18,7 @@ extends CanvasLayer
 @onready var _restart_button: Button = %RestartButton
 @onready var _restart_confirm: Control = %RestartConfirm
 @onready var _game_over: Control = %GameOver
+@onready var _fps_label: Label = %FpsLabel
 
 var _player: CharacterBody3D
 var _shield_system: Node
@@ -86,7 +88,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		_restart_run()
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	_update_fps(delta)
+
 	if _player == null:
 		_bind_player()
 		return
@@ -112,3 +116,13 @@ func _process(_delta: float) -> void:
 	_energy_bar.max_value = max_pwr
 	_energy_bar.value = pwr
 	_energy_label.text = "%d / %d" % [int(roundf(pwr)), int(roundf(max_pwr))]
+
+
+func _update_fps(delta: float) -> void:
+	if _fps_label == null:
+		return
+	_fps_label.visible = show_fps
+	if not show_fps:
+		return
+	var fps := Engine.get_frames_per_second()
+	_fps_label.text = "FPS: %d (%.1f ms)" % [fps, delta * 1000.0]

@@ -4,3 +4,4 @@ res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mproj
 res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mprojectile_javelin_01/mprojectile_javelin_01_trail.tres
 res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mprojectile_javelin_01/mprojectile_javelin_01_core.tres
 res://assets/shaders/toon.gdshader
+res://scenes/ui/Hud.gd
