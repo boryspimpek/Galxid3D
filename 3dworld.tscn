@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c6bq1qkhotmeh" path="res://scenes/enemies formations/formation1.tscn" id="10_sgee4"]
 [ext_resource type="PackedScene" uid="uid://ceb36gc6o5uvc" path="res://scenes/enemies/starfighter.tscn" id="13_fql1y"]
 [ext_resource type="PackedScene" uid="uid://chbe1na0vrwt8" path="res://scenes/enemies/satellite.tscn" id="14_sgee4"]
-[ext_resource type="PackedScene" uid="uid://ryp1is7xr46v" path="res://scenes/vfx/electric_discharge_3d.tscn" id="15_h5joq"]
+[ext_resource type="PackedScene" uid="uid://ryp1is7xr46v" path="res://assets/ElectricDischargeVFX/electric_discharge_3d.tscn" id="15_h5joq"]
 [ext_resource type="PackedScene" uid="uid://dbqhlqawrvwa7" path="res://scenes/enemies/voyager.tscn" id="16_a283u"]
 [ext_resource type="Script" path="res://scenes/enemy/movement/LinearMoveData.gd" id="17_move"]
 [ext_resource type="Script" path="res://scenes/enemy/movement/TimedMoveData.gd" id="18_a02db"]
@@ -32,7 +32,7 @@ volumetric_fog_emission_energy = 0.0
 script = ExtResource("17_move")
 zmove = 1
 
-[sub_resource type="Resource" id="Move_starfighter2"]
+[sub_resource type="Resource" id="Resource_a02db"]
 script = ExtResource("17_move")
 zmove = 1
 
@@ -143,18 +143,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -110)
 [node name="starfighter" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1897743314 instance=ExtResource("13_fql1y")]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -14.930466, 0, -38.63256)
 movement_data = SubResource("Move_starfighter")
+explosion_scene = 0
 
 [node name="starfighter2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=951122642 instance=ExtResource("13_fql1y")]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 17.086235, 0, -97.645325)
-movement_data = SubResource("Move_starfighter2")
+movement_data = SubResource("Resource_a02db")
+explosion_scene = 0
 
 [node name="satellite" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1827604185 instance=ExtResource("14_sgee4")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 20.939953, 0, -31.696978)
 movement_data = SubResource("Move_satellite")
+explosion_scene = 0
 
 [node name="satellite2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1292277464 instance=ExtResource("14_sgee4")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.787245, 0, -23.250397)
 movement_data = SubResource("Move_satellite2")
+explosion_scene = 0
 
 [node name="ElectricDischarge" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1340476580 node_paths=PackedStringArray("start_target", "end_target") instance=ExtResource("15_h5joq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.764343, 0, 0)
@@ -164,10 +168,12 @@ end_target = NodePath("../satellite2")
 [node name="satellite3" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1671696747 instance=ExtResource("14_sgee4")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -19.560495, 0, -83.75679)
 movement_data = SubResource("Move_satellite3")
+explosion_scene = 0
 
 [node name="satellite4" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=441556761 instance=ExtResource("14_sgee4")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -4.255411, 0, -71.481)
 movement_data = SubResource("Move_satellite4")
+explosion_scene = 0
 
 [node name="ElectricDischarge2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1959679176 node_paths=PackedStringArray("start_target", "end_target") instance=ExtResource("15_h5joq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.89266, 0, -54.574223)
@@ -177,8 +183,10 @@ end_target = NodePath("../satellite4")
 [node name="voyager" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1072650208 instance=ExtResource("16_a283u")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.8604336, 0, -74.74675)
 movement_data = SubResource("Resource_sq30x")
+explosion_scene = 0
 
 [node name="voyager" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=49530381 instance=ExtResource("16_a283u")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 8.315826, 0, -9.66715)
+explosion_scene = 0
 
 [node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("1_rpljx")]
