@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dk56uyrj3phtg"]
 
 [ext_resource type="Script" uid="uid://cxso55pxdnnn3" path="res://scenes/projectile/projectile.gd" id="1_vig4e"]
-[ext_resource type="PackedScene" uid="uid://l3mk56ty44tw" path="res://assets/BinbunVFX/MagicProjectiles/magic_projectiles/effects/mprojectile_javelin/mprojectile_javelin_vfx_01.tscn" id="2_feid3"]
-[ext_resource type="PackedScene" uid="uid://bbrua2kwcecpu" path="res://assets/BinbunVFX/MagicProjectiles/magic_projectiles/effects/mprojectile_javelin/mprojectile_javelin_vfx_02.tscn" id="3_7mke1"]
+[ext_resource type="PackedScene" uid="uid://l3mk56ty44tw" path="res://assets/BinbunVFX/magic_projectiles/effects/mprojectile_javelin/mprojectile_javelin_vfx_01.tscn" id="2_feid3"]
+[ext_resource type="PackedScene" uid="uid://bbrua2kwcecpu" path="res://assets/BinbunVFX/magic_projectiles/effects/mprojectile_javelin/mprojectile_javelin_vfx_02.tscn" id="3_7mke1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vig4e"]
 size = Vector3(1.1127777, 2.8075104, 0.19824219)

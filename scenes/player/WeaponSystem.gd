@@ -91,16 +91,21 @@ func _spawn_muzzle_flash(velocity: Vector3) -> void:
 	if flash is Node3D:
 		flash.global_transform = _muzzle_flash_transform(velocity)
 
-	if flash is VFXController:
-		flash.autoplay = false
-		flash.one_shot = true
-		flash.play()
+	_try_play_vfx_flash(flash)
 
 	var anim := flash.get_node_or_null("AnimationPlayer") as AnimationPlayer
 	if anim:
 		anim.animation_finished.connect(func(_name: StringName) -> void:
 			flash.queue_free()
 		, CONNECT_ONE_SHOT)
+
+
+func _try_play_vfx_flash(flash: Node) -> void:
+	if not flash.has_method("play"):
+		return
+	flash.set("autoplay", false)
+	flash.set("one_shot", true)
+	flash.play()
 
 
 func _muzzle_flash_transform(velocity: Vector3) -> Transform3D:
