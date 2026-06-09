@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://b47pkgi0u300c"]
 
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemy/Enemy.tscn" id="1_oev27"]
+[ext_resource type="PackedScene" uid="uid://6okj4uhag0tm" path="res://assets/BinbunVFX_Vol2/ExplosionFX/effects/air/vfx_air_explosion_01.tscn" id="2_06u0f"]
 [ext_resource type="PackedScene" uid="uid://cucfe21l8ankg" path="res://scenes/enemies/blaze_2_model.tscn" id="2_yunnb"]
 
 [node name="blaze 2" unique_id=1897743314 instance=ExtResource("1_oev27")]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
+explosion_scene = ExtResource("2_06u0f")
 
 [node name="Blaze 2" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=2089973672 instance=ExtResource("2_yunnb")]
 

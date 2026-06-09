@@ -12,20 +12,9 @@ extends Area3D
 @export_group("General")
 @export var value: int = 2
 
-enum ExplosionScene {
-	AIR,
-	GROUND,
-	NUKE,
-}
-
-const _EXPLOSION_SCENES: Array[PackedScene] = [
-	preload("res://assets/BinbunVFX_Vol2/ExplosionFX/effects/air/vfx_air_explosion_01.tscn"),
-	preload("res://assets/BinbunVFX_Vol2/ExplosionFX/effects/ground/vfx_ground_explosion_01.tscn"),
-	preload("res://assets/BinbunVFX_Vol2/ExplosionFX/effects/nuke/vfx_nuke_explosion_01.tscn"),
-]
-
-## Scena wybuchu po śmierci — wybierz z listy w inspektorze (per typ wroga).
-@export var explosion_scene: ExplosionScene = ExplosionScene.AIR
+@export_group("Visual")
+## Scena wybuchu po śmierci — przeciągnij scenę VFX z FileSystem.
+@export var explosion_scene: PackedScene
 
 # --- REFERENCJE WĘZŁÓW (@ONREADY) ---
 @onready var ship_model: Node3D = $EnemyModel
@@ -125,9 +114,8 @@ func take_damage(amount: int) -> void:
 
 func die() -> void:
 	SoundManager.play_sound(9)
-	var scene := _EXPLOSION_SCENES[explosion_scene]
-	if scene:
-		var explosion := scene.instantiate()
+	if explosion_scene:
+		var explosion := explosion_scene.instantiate()
 		get_tree().current_scene.add_child(explosion)
 		if explosion is Node3D:
 			explosion.global_position = global_position

@@ -12,3 +12,9 @@ res://scenes/enemy/Enemy.gd
 res://assets/BinbunVFX_Vol2/ExplosionFX/effects/nuke/vfx_nuke_explosion_01.tscn
 res://assets/BinbunVFX_Vol2/ExplosionFX/effects/ground/vfx_ground_explosion_01.tscn
 res://assets/BinbunVFX_Vol2/ExplosionFX/effects/air/vfx_air_explosion_01.tscn
+res://scenes/enemies/voyager.tscn
+res://scenes/enemies/blaze_2.tscn
+res://scenes/enemies/blaze_3.tscn
+res://scenes/enemies/blaze_4.tscn
+res://scenes/enemies/blaze_5.tscn
+res://scenes/enemies/satelite_2.tscn

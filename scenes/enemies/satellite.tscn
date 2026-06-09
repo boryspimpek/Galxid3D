@@ -2,12 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemy/Enemy.tscn" id="1_0kkwh"]
 [ext_resource type="PackedScene" uid="uid://f4qnlqxwm7yv" path="res://scenes/enemies/satelite_model.tscn" id="2_1rps2"]
+[ext_resource type="PackedScene" uid="uid://chqijevfxuhpd" path="res://assets/BinbunVFX_Vol2/ExplosionFX/effects/ground/vfx_ground_explosion_01.tscn" id="3_ground"]
 
 [node name="satellite" unique_id=1897743314 instance=ExtResource("1_0kkwh")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 armor = 5
 value = 10
-explosion_scene = 1
+explosion_scene = ExtResource("3_ground")
 
 [node name="Satellite" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1307557819 instance=ExtResource("2_1rps2")]
 
