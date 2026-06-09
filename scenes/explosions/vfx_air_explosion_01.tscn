@@ -524,7 +524,7 @@ tracks/0/loop_wrap = false
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
-"update": 2,
+"update": 1,
 "values": [true, false]
 }
 tracks/1/type = "method"

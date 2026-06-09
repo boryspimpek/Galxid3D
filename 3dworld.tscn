@@ -24,7 +24,6 @@
 background_mode = 1
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
-glow_enabled = true
 volumetric_fog_density = 0.0
 volumetric_fog_emission_energy = 0.0
 

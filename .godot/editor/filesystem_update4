@@ -1,7 +1,9 @@
-res://3dworld.tscn
+res://scenes/explosions/vfx_air_explosion_01.tscn
 res://assets/BinbunVFX/shared/texture/noise/cell/cell_manhattan_01.tres
 res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mprojectile_javelin_01/mprojectile_javelin_01_head.tres
 res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mprojectile_javelin_01/mprojectile_javelin_01_trail.tres
 res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mprojectile_javelin_01/mprojectile_javelin_01_core.tres
 res://assets/shaders/toon.gdshader
-res://scenes/ui/Hud.gd
+res://assets/BinbunVFX_Vol2/ExplosionFX/shader/explosion_smoke.gdshader
+res://assets/BinbunVFX_Vol2/shared/script/VFXControllerBB.gd
+res://scenes/explosions/vfx_ground_explosion_01.tscn

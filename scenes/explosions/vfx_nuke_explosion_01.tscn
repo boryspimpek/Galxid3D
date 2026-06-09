@@ -80,7 +80,7 @@ bump_strength = 32.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4hl6l"]
 render_priority = 0
 shader = ExtResource("1_4hl6l")
-shader_parameter/effect_decay = 0.999999977648
+shader_parameter/effect_decay = 0.0
 shader_parameter/is_particle = false
 shader_parameter/primary_color = Color(1, 0.37254903, 0.10980392, 1)
 shader_parameter/secondary_color = Color(0.9764706, 0.11764706, 0, 1)
@@ -103,7 +103,7 @@ height = 6.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hd7cn"]
 render_priority = 0
 shader = ExtResource("1_4hl6l")
-shader_parameter/effect_decay = 0.999999977648
+shader_parameter/effect_decay = 0.0
 shader_parameter/is_particle = false
 shader_parameter/primary_color = Color(1, 0.37254903, 0.10980392, 1)
 shader_parameter/secondary_color = Color(0.9764706, 0.11764706, 0, 1)
@@ -130,7 +130,7 @@ cap_bottom = false
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8abwl"]
 render_priority = 0
 shader = ExtResource("1_4hl6l")
-shader_parameter/effect_decay = 0.999999977648
+shader_parameter/effect_decay = 0.0
 shader_parameter/is_particle = true
 shader_parameter/primary_color = Color(1, 0.37254903, 0.10980392, 1)
 shader_parameter/secondary_color = Color(0.9764706, 0.11764706, 0, 1)

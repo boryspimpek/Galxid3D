@@ -511,7 +511,7 @@ tracks/8/keys = {
 resource_name = "main"
 length = 2.6
 step = 0.05
-capture_included = true
+capture_included = false
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -521,7 +521,7 @@ tracks/0/loop_wrap = false
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
-"update": 2,
+"update": 1,
 "values": [true, false]
 }
 tracks/1/type = "method"
@@ -745,5 +745,6 @@ vfx_light_energy = 10.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1003910935]
 callback_mode_process = 0
 libraries/ = SubResource("AnimationLibrary_x8bvq")
+speed_scale = 0.1
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1585741883]
