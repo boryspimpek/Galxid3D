@@ -19,9 +19,9 @@ enum ExplosionScene {
 }
 
 const _EXPLOSION_SCENES: Array[PackedScene] = [
-	preload("res://scenes/explosions/vfx_air_explosion_01.tscn"),
-	preload("res://scenes/explosions/vfx_ground_explosion_01.tscn"),
-	preload("res://scenes/explosions/vfx_nuke_explosion_01.tscn"),
+	preload("res://assets/BinbunVFX_Vol2/ExplosionFX/effects/air/vfx_air_explosion_01.tscn"),
+	preload("res://assets/BinbunVFX_Vol2/ExplosionFX/effects/ground/vfx_ground_explosion_01.tscn"),
+	preload("res://assets/BinbunVFX_Vol2/ExplosionFX/effects/nuke/vfx_nuke_explosion_01.tscn"),
 ]
 
 ## Scena wybuchu po śmierci — wybierz z listy w inspektorze (per typ wroga).
@@ -120,7 +120,6 @@ func take_damage(amount: int) -> void:
 	if armor <= 0:
 		die()
 	else:
-		# 003_S_ENEMY_HIT.wav
 		SoundManager.play_hit_sound(3)
 
 

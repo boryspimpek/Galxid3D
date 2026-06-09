@@ -7,3 +7,8 @@ res://assets/shaders/toon.gdshader
 res://assets/BinbunVFX_Vol2/ExplosionFX/shader/explosion_smoke.gdshader
 res://assets/BinbunVFX_Vol2/shared/script/VFXControllerBB.gd
 res://scenes/explosions/vfx_ground_explosion_01.tscn
+res://3dworld.tscn
+res://scenes/enemy/Enemy.gd
+res://assets/BinbunVFX_Vol2/ExplosionFX/effects/nuke/vfx_nuke_explosion_01.tscn
+res://assets/BinbunVFX_Vol2/ExplosionFX/effects/ground/vfx_ground_explosion_01.tscn
+res://assets/BinbunVFX_Vol2/ExplosionFX/effects/air/vfx_air_explosion_01.tscn
