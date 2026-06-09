@@ -1,11 +1,11 @@
 Node3D
+PathFollow3D
+Path3D
 MeshInstance3D
 CollisionShape3D
 VisibleOnScreenNotifier3D
 Sprite3D
 ColorRect
-PathFollow3D
-Path3D
 AnimationPlayer
 EnemyPath3D
 GPUParticles3D

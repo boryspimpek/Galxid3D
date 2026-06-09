@@ -1,17 +1,32 @@
 [gd_scene format=3 uid="uid://uqkpok243a4g"]
 
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemy/Enemy.tscn" id="1_yhem4"]
+[ext_resource type="Script" path="res://scenes/enemy/movement/LinearMoveData.gd" id="2_2gg4m"]
 [ext_resource type="PackedScene" uid="uid://dqifwsgog7iw5" path="res://scenes/enemies/satelite_2_model.tscn" id="2_s1cqj"]
 [ext_resource type="Script" uid="uid://cr2knbmonx42w" path="res://scenes/enemy/facing/FacePlayer.gd" id="3_s1cqj"]
 
+[sub_resource type="Resource" id="Resource_vr8x4"]
+script = ExtResource("2_2gg4m")
+zmove = 5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2gg4m"]
+radius = 1.1539446
+
 [node name="Satelite2" unique_id=1897743314 instance=ExtResource("1_yhem4")]
+movement_data = SubResource("Resource_vr8x4")
 
 [node name="Satelite2" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1628716030 instance=ExtResource("2_s1cqj")]
 
-[node name="Weapon" parent="." index="4" unique_id=1893540021]
-fire_rate = 1.0
-projectile_velocity = Vector3(0, 0, 30)
-aim = 10
+[node name="CollisionShape3D" parent="." index="1" unique_id=324662688]
+shape = SubResource("SphereShape3D_2gg4m")
 
-[node name="Facing" type="Node3D" parent="." index="5" unique_id=1946899739]
+[node name="Muzzle" parent="." index="3" unique_id=1704985833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3882726, 0.5869238)
+
+[node name="Facing" type="Node3D" parent="." index="4" unique_id=1946899739]
 script = ExtResource("3_s1cqj")
+
+[node name="Weapon" parent="." index="5" unique_id=1893540021]
+fire_rate = 1.5
+projectile_velocity = Vector3(0, 0, 20)
+aim = 10

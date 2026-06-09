@@ -18,3 +18,5 @@ res://scenes/enemies/blaze_3.tscn
 res://scenes/enemies/blaze_4.tscn
 res://scenes/enemies/blaze_5.tscn
 res://scenes/enemies/satelite_2.tscn
+res://scenes/enemy_projectile/EnemyProjectile.tscn
+res://data/weapons/weapon_1.tres

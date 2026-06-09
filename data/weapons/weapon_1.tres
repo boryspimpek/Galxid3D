@@ -14,7 +14,7 @@ velocity = Vector3(0, 0, -60)
 script = ExtResource("2_pl")
 damage = 10
 fire_rate = 0.15
-power_use = 100
+power_use = 150
 projectile = 7
 velocity = Vector3(0, 0, -60)
 
