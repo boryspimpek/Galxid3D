@@ -1,0 +1,7 @@
+res://3dworld.tscn
+res://assets/BinbunVFX/shared/texture/noise/cell/cell_manhattan_01.tres
+res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mprojectile_javelin_01/mprojectile_javelin_01_head.tres
+res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mprojectile_javelin_01/mprojectile_javelin_01_trail.tres
+res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mprojectile_javelin_01/mprojectile_javelin_01_core.tres
+res://assets/shaders/toon.gdshader
+res://scenes/enemies/satelite_2.tscn
