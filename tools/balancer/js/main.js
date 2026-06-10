@@ -16,7 +16,7 @@ import {
     onWeaponGeneratorChange, startEnergySimulation
 } from './weapons.js';
 import {
-    addNewEnemy, onEnemyPanelLoadoutChange, syncPanelFromEnemy,
+    addNewEnemy, onEnemyPanelLoadoutChange, onGlobalWeaponChange, syncPanelFromEnemy,
     updateEnemyPanelInfo, handleEnemyTableInteraction, handleEnemyTableChange
 } from './enemies.js';
 import { editingEnemyId } from './state.js';
@@ -39,7 +39,7 @@ function bindEvents() {
     document.getElementById('w-generator-select').addEventListener('change', onWeaponGeneratorChange);
     document.getElementById('e-ship-select').addEventListener('change', onEnemyPanelLoadoutChange);
     document.getElementById('e-shield-select').addEventListener('change', onEnemyPanelLoadoutChange);
-    document.getElementById('e-weapon-select').addEventListener('change', onEnemyPanelLoadoutChange);
+    document.getElementById('e-weapon-select').addEventListener('change', onGlobalWeaponChange);
 
     document.getElementById('btn-new-ship').addEventListener('click', newShipForm);
     document.getElementById('btn-add-ship').addEventListener('click', addShip);

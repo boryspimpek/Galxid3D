@@ -4,8 +4,7 @@ import {
     setEditingGeneratorId, setEditingWeaponId, setEditingEnemyId,
     setEditingShipId, setEditingShieldId
 } from './state.js';
-import { ensureGameDataArrays } from './utils.js';
-import { isValidGameData } from './utils.js';
+import { ensureGameDataArrays, getExportGameData, isValidGameData } from './utils.js';
 import { updateTables } from './ui.js';
 import { newShipForm, newShieldForm } from './player.js';
 import { newGeneratorForm } from './generators.js';
@@ -40,7 +39,7 @@ export function collectFormState() {
             cost: parseFloat(document.getElementById('w-cost').value)
         },
         enemy: {
-            weaponAnchor: document.getElementById('e-weapon-select').value,
+            playerWeaponId: document.getElementById('e-weapon-select').value,
             shipId: document.getElementById('e-ship-select').value,
             shieldId: document.getElementById('e-shield-select').value
         }
@@ -132,7 +131,7 @@ export function importFromJson() {
 }
 
 export function downloadJson() {
-    const blob = new Blob([JSON.stringify(gameData, null, 2)], { type: 'application/json' });
+    const blob = new Blob([JSON.stringify(getExportGameData(), null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;

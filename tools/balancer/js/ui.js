@@ -2,7 +2,7 @@ import {
     gameData, pendingFormRestore, editingGeneratorId, editingWeaponId,
     editingShipId, editingShieldId, clearPendingFormRestore
 } from './state.js';
-import { getGeneratorById, populateSelect } from './utils.js';
+import { getGeneratorById, populateSelect, getExportGameData } from './utils.js';
 import { persistState } from './persistence.js';
 import {
     highlightShipRow, updateShipFormMode,
@@ -94,8 +94,10 @@ export function updateTables() {
     if (pendingFormRestore?.weapon?.generatorId) {
         document.getElementById('w-generator-select').value = pendingFormRestore.weapon.generatorId;
     }
-    if (pendingFormRestore?.enemy?.weaponAnchor) {
-        document.getElementById('e-weapon-select').value = pendingFormRestore.enemy.weaponAnchor;
+    const playerWeapon = pendingFormRestore?.enemy?.playerWeaponId
+        ?? pendingFormRestore?.enemy?.weaponAnchor;
+    if (playerWeapon) {
+        document.getElementById('e-weapon-select').value = playerWeapon;
     }
     if (pendingFormRestore?.enemy?.shipId) {
         document.getElementById('e-ship-select').value = pendingFormRestore.enemy.shipId;
@@ -115,7 +117,7 @@ export function updateTables() {
     updateGeneratorFormMode();
     updateWeaponFormMode();
     onWeaponGeneratorChange();
-    document.getElementById('json-preview').value = JSON.stringify(gameData, null, 2);
+    document.getElementById('json-preview').value = JSON.stringify(getExportGameData(), null, 2);
     updateStatusBar();
     persistState();
 }

@@ -197,7 +197,7 @@
             <div class="panel full-width">
                 <h2>Projektowanie Wrogów</h2>
 
-                <p class="enemy-panel-desc">Ustaw statek, tarczę i broń kotwicę. TTK, TTD i CD edytujesz bezpośrednio w tabeli — pozostałe kolumny przeliczają się automatycznie.</p>
+                <p class="enemy-panel-desc">Ustaw statek, tarczę i broń gracza (tylko do obliczeń). HP, Damage i CD edytujesz w tabeli — TTK, TTD i pozostałe kolumny przeliczają się automatycznie.</p>
 
                 <div class="enemy-panel-toolbar">
                     <div class="grid-3">
@@ -210,7 +210,7 @@
                             <select id="e-shield-select"></select>
                         </div>
                         <div class="form-group">
-                            <label>Broń kotwica</label>
+                            <label>Broń gracza (obliczenia)</label>
                             <select id="e-weapon-select"></select>
                         </div>
                     </div>
@@ -221,16 +221,16 @@
                 </div>
 
                 <h3>Przeciwnicy</h3>
-                <p class="table-hint">Kliknij wiersz, aby ustawić statek/tarczę/broń z panelu. Zmiany zapisują się od razu.</p>
+                <p class="table-hint">Kliknij wiersz, aby ustawić statek i tarczę z panelu. Broń gracza jest wspólna dla wszystkich obliczeń.</p>
                 <div class="table-wrapper enemies-table-wrapper">
                     <table class="enemies-edit-table">
                         <thead>
-                            <tr><th>Nazwa</th><th>Weapon</th><th>TTK</th><th>TTD</th><th>CD</th><th>HP</th><th>DPS</th><th>Damage</th><th>Strz. gracza</th><th>Strz. wroga</th><th>Zagrożenie</th></tr>
+                            <tr><th>Name</th><th>Armor</th><th>Damage</th><th>Fire Rate</th><th>DPS</th><th>STK</th><th>STD</th><th>TTK</th><th>TTD</th><th>Threat</th><th class="enemy-delete-col"></th></tr>
                         </thead>
                         <tbody id="enemies-table"></tbody>
                     </table>
                 </div>
-                <p class="sandbox-formula enemies-formula">HP = DPS kotwicy × TTK &nbsp;·&nbsp; DPS wroga = HP gracza ÷ TTD &nbsp;·&nbsp; pocisk = DPS × CD</p>
+                <p class="sandbox-formula enemies-formula">TTK = HP ÷ DPS broni gracza &nbsp;·&nbsp; TTD = HP gracza ÷ DPS wroga &nbsp;·&nbsp; DPS wroga = Damage ÷ CD</p>
             </div>
         </div>
 

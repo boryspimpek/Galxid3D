@@ -17,8 +17,8 @@ export function getDefaultGameData() {
             { id: "ciezkie_dzialo_t2", name: "Ciężkie Działo T2", generatorId: "generator_t2", dmg: 60, cooldown: 0.4, cost: 25, dps: 150 }
         ],
         enemies: [
-            { id: "mieso_armatnie_dron", name: "Mięso Armatnie (Dron)", weaponAnchor: "laser_plazmowy_t1", shipId: "statek_startowy", shieldId: "tarcza_podstawowa", ttk: 0.0, hp: 10, playerHp: 100, ttd: 20, dps: 5, attackCooldown: 1.0, projectileDmg: 5, shotsToKill: 20, shotsToKillAnchor: 1, threatPoints: 0 },
-            { id: "standardowy_mysliwiec", name: "Standardowy Myśliwiec", weaponAnchor: "laser_plazmowy_t1", shipId: "statek_startowy", shieldId: "tarcza_podstawowa", ttk: 0.5, hp: 25, playerHp: 100, ttd: 5, dps: 20, attackCooldown: 0.5, projectileDmg: 10, shotsToKill: 10, shotsToKillAnchor: 3, threatPoints: 10 }
+            { id: "mieso_armatnie_dron", name: "Mięso Armatnie (Dron)", shipId: "statek_startowy", shieldId: "tarcza_podstawowa", hp: 10, projectileDmg: 5, attackCooldown: 1.0 },
+            { id: "standardowy_mysliwiec", name: "Standardowy Myśliwiec", shipId: "statek_startowy", shieldId: "tarcza_podstawowa", hp: 25, projectileDmg: 10, attackCooldown: 0.5 }
         ]
     };
 }

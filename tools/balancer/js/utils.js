@@ -68,37 +68,19 @@ export function ensureEnemyIds() {
             enemy.shieldId = gameData.shields[0].id;
         }
 
-        const ship = gameData.ships.find(s => s.id === enemy.shipId);
-        const shield = gameData.shields.find(s => s.id === enemy.shieldId);
-        enemy.playerHp = (ship?.armor ?? 0) + (shield?.shield ?? 0);
+        if (enemy.hp == null) enemy.hp = 25;
+        if (enemy.projectileDmg == null) enemy.projectileDmg = 10;
+        if (enemy.attackCooldown == null) enemy.attackCooldown = 0.5;
 
-        if (enemy.ttd == null) enemy.ttd = enemy.dps > 0 && enemy.playerHp > 0 ? enemy.playerHp / enemy.dps : 4;
-        if (enemy.attackCooldown == null) {
-            enemy.attackCooldown = enemy.projectileDmg && enemy.dps > 0
-                ? enemy.projectileDmg / enemy.dps
-                : 0.5;
-        }
-        if (enemy.ttd <= 0) {
-            enemy.dps = 0;
-            enemy.projectileDmg = enemy.playerHp;
-            enemy.shotsToKill = 1;
-            enemy.instantKill = true;
-        } else {
-            enemy.dps = enemy.playerHp / enemy.ttd;
-            enemy.projectileDmg = enemy.dps * enemy.attackCooldown;
-            enemy.shotsToKill = enemy.projectileDmg > 0
-                ? Math.ceil(enemy.playerHp / enemy.projectileDmg)
-                : 0;
-            enemy.instantKill = false;
-        }
-
-        if (enemy.shotsToKillAnchor == null) {
-            const anchor = gameData.weapons.find(w => w.id === enemy.weaponAnchor);
-            enemy.shotsToKillAnchor = anchor && enemy.hp != null
-                ? shotsToKillWithWeapon(enemy.hp, anchor)
-                : 0;
-        }
+        delete enemy.weaponAnchor;
     });
+}
+
+export function getExportGameData() {
+    return {
+        ...gameData,
+        enemies: gameData.enemies.map(({ weaponAnchor, ...enemy }) => enemy)
+    };
 }
 
 export function ensureGameDataArrays() {

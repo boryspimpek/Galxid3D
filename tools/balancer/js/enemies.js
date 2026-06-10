@@ -2,9 +2,9 @@ import { gameData, editingEnemyId, setEditingEnemyId } from './state.js';
 import { slugifyId, getEnemyById, getShipById, getShieldById, shotsToKillWithWeapon } from './utils.js';
 import { persistState } from './persistence.js';
 
-const COEFF_FIELDS = {
-    ttk: { step: 0.1, min: 0, max: 10 },
-    ttd: { step: 0.1, min: 0, max: 60 },
+const INPUT_FIELDS = {
+    hp: { step: 1, min: 1, max: 5000, integer: true },
+    projectileDmg: { step: 0.5, min: 0.1, max: 500 },
     attackCooldown: { step: 0.05, min: 0.05, max: 3 }
 };
 
@@ -19,52 +19,56 @@ function escapeHtml(text) {
 function buildNumSpinner(field, value, config) {
     const v = value ?? config.min;
     return `<div class="num-spinner" data-field="${field}">
-        <button type="button" class="spinner-btn" data-step="-1" aria-label="Zmniejsz">▼</button>
+        <button type="button" class="spinner-btn" data-step="1" aria-label="Zwiększ">▴</button>
         <input type="number" class="spinner-input" value="${v}" step="${config.step}" min="${config.min}" max="${config.max}">
-        <button type="button" class="spinner-btn" data-step="1" aria-label="Zwiększ">▲</button>
+        <button type="button" class="spinner-btn" data-step="-1" aria-label="Zmniejsz">▾</button>
     </div>`;
+}
+
+function formatTtk(ttk) {
+    if (ttk <= 0) return '<span class="badge badge-green">0</span>';
+    return `<span class="badge badge-green">${ttk.toFixed(2)}</span>`;
+}
+
+function formatTtd(ttd, instantKill) {
+    if (instantKill || ttd <= 0) return '<span class="badge badge-red">1 strzał</span>';
+    return `<span class="badge badge-red">${ttd.toFixed(2)}</span>`;
 }
 
 function formatEnemyCalculated(enemy) {
     const dpsLabel = enemy.instantKill ? '1 strzał' : `${(enemy.dps ?? 0).toFixed(1)}`;
     return {
-        hp: `<span class="badge badge-red">${enemy.hp}</span>`,
         dps: `<span class="badge badge-orange">${dpsLabel}</span>`,
-        projectileDmg: `<span class="badge badge-purple">${(enemy.projectileDmg ?? 0).toFixed(1)}</span>`,
         shotsToKill: `<span class="badge badge-red">${enemy.shotsToKill ?? '—'}</span>`,
         shotsToKillAnchor: `<span class="badge badge-green">${enemy.shotsToKillAnchor ?? '—'}</span>`,
+        ttk: formatTtk(enemy.ttk ?? 0),
+        ttd: formatTtd(enemy.ttd ?? 0, enemy.instantKill),
         threatPoints: `<span class="badge badge-orange">${enemy.threatPoints} pkt</span>`
     };
 }
 
 function buildEnemyRow(enemy) {
-    const weapon = gameData.weapons.find(w => w.id === enemy.weaponAnchor);
-    const weaponName = weapon ? weapon.name : 'Brak';
     const rowClass = enemy.id === editingEnemyId ? 'row-selected' : '';
     const calc = formatEnemyCalculated(enemy);
 
     return `<tr class="${rowClass}" data-id="${escapeHtml(enemy.id)}" data-enemy-row>
         <td><input type="text" class="enemy-name-input" value="${escapeHtml(enemy.name)}"></td>
-        <td class="enemy-weapon-cell">${escapeHtml(weaponName)}</td>
-        <td>${buildNumSpinner('ttk', enemy.ttk, COEFF_FIELDS.ttk)}</td>
-        <td>${buildNumSpinner('ttd', enemy.ttd, COEFF_FIELDS.ttd)}</td>
-        <td>${buildNumSpinner('attackCooldown', enemy.attackCooldown, COEFF_FIELDS.attackCooldown)}</td>
-        <td data-calc="hp">${calc.hp}</td>
+        <td>${buildNumSpinner('hp', enemy.hp, INPUT_FIELDS.hp)}</td>
+        <td>${buildNumSpinner('projectileDmg', enemy.projectileDmg, INPUT_FIELDS.projectileDmg)}</td>
+        <td>${buildNumSpinner('attackCooldown', enemy.attackCooldown, INPUT_FIELDS.attackCooldown)}</td>
         <td data-calc="dps">${calc.dps}</td>
-        <td data-calc="projectileDmg">${calc.projectileDmg}</td>
-        <td data-calc="shotsToKill">${calc.shotsToKill}</td>
         <td data-calc="shotsToKillAnchor">${calc.shotsToKillAnchor}</td>
+        <td data-calc="shotsToKill">${calc.shotsToKill}</td>
+        <td data-calc="ttk">${calc.ttk}</td>
+        <td data-calc="ttd">${calc.ttd}</td>
         <td data-calc="threatPoints">${calc.threatPoints}</td>
+        <td class="enemy-delete-cell"><button type="button" class="enemy-delete-btn" aria-label="Usuń wroga">×</button></td>
     </tr>`;
 }
 
 export function updateEnemyRowCalculated(enemy) {
     const row = document.querySelector(`#enemies-table tr[data-id="${enemy.id}"]`);
     if (!row) return;
-
-    const weapon = gameData.weapons.find(w => w.id === enemy.weaponAnchor);
-    const weaponCell = row.querySelector('.enemy-weapon-cell');
-    if (weaponCell) weaponCell.textContent = weapon ? weapon.name : 'Brak';
 
     const calc = formatEnemyCalculated(enemy);
     Object.entries(calc).forEach(([key, html]) => {
@@ -87,50 +91,57 @@ export function getPlayerHpForEnemy(enemy) {
     return (ship?.armor ?? 0) + (shield?.shield ?? 0);
 }
 
-export function computeAttackStats(playerHp, ttd, attackCooldown) {
-    if (ttd <= 0) {
-        return {
-            playerHp,
-            ttd: 0,
-            dps: 0,
-            attackCooldown,
-            projectileDmg: playerHp,
-            shotsToKill: 1,
-            instantKill: true
-        };
-    }
-
-    const dps = playerHp / ttd;
-    const projectileDmg = dps * attackCooldown;
-    const shotsToKill = projectileDmg > 0 ? Math.ceil(playerHp / projectileDmg) : 0;
-
-    return { playerHp, ttd, dps, attackCooldown, projectileDmg, shotsToKill, instantKill: false };
-}
-
-export function computeDefenseStats(weaponAnchor, ttk, dps) {
-    const anchorWeapon = gameData.weapons.find(w => w.id === weaponAnchor);
-    if (!anchorWeapon) return { hp: 0, threatPoints: 0, shotsToKillAnchor: 0 };
-
-    const hp = ttk <= 0 ? anchorWeapon.dmg : Math.round(anchorWeapon.dps * ttk);
-    const threatPoints = Math.round(ttk * dps);
-    const shotsToKillAnchor = shotsToKillWithWeapon(hp, anchorWeapon);
-    return { hp, threatPoints, shotsToKillAnchor };
+export function getGlobalWeaponAnchor() {
+    return document.getElementById('e-weapon-select')?.value ?? '';
 }
 
 export function recalcEnemy(enemy) {
-    const attack = computeAttackStats(getPlayerHpForEnemy(enemy), enemy.ttd, enemy.attackCooldown);
-    const defense = computeDefenseStats(enemy.weaponAnchor, enemy.ttk, attack.dps);
+    const anchorWeapon = gameData.weapons.find(w => w.id === getGlobalWeaponAnchor());
+    const playerHp = getPlayerHpForEnemy(enemy);
+    const hp = enemy.hp ?? 1;
+    const projectileDmg = enemy.projectileDmg ?? 0.1;
+    const attackCooldown = enemy.attackCooldown ?? 0.05;
 
-    enemy.playerHp = attack.playerHp;
-    enemy.ttd = attack.ttd;
-    enemy.dps = attack.dps;
-    enemy.attackCooldown = attack.attackCooldown;
-    enemy.projectileDmg = attack.projectileDmg;
-    enemy.shotsToKill = attack.shotsToKill;
-    enemy.instantKill = attack.instantKill;
-    enemy.hp = defense.hp;
-    enemy.threatPoints = defense.threatPoints;
-    enemy.shotsToKillAnchor = defense.shotsToKillAnchor;
+    let dps = 0;
+    let ttd = 0;
+    let shotsToKill = 0;
+    let instantKill = false;
+
+    if (projectileDmg > 0 && attackCooldown > 0) {
+        dps = projectileDmg / attackCooldown;
+        if (projectileDmg >= playerHp) {
+            instantKill = true;
+            ttd = 0;
+            shotsToKill = 1;
+        } else {
+            ttd = playerHp / dps;
+            shotsToKill = Math.ceil(playerHp / projectileDmg);
+        }
+    }
+
+    let ttk = 0;
+    let shotsToKillAnchor = 0;
+    if (anchorWeapon && hp > 0) {
+        if (hp <= anchorWeapon.dmg) {
+            ttk = 0;
+            shotsToKillAnchor = 1;
+        } else {
+            ttk = hp / anchorWeapon.dps;
+            shotsToKillAnchor = shotsToKillWithWeapon(hp, anchorWeapon);
+        }
+    }
+
+    enemy.playerHp = playerHp;
+    enemy.hp = hp;
+    enemy.projectileDmg = projectileDmg;
+    enemy.attackCooldown = attackCooldown;
+    enemy.dps = dps;
+    enemy.ttd = ttd;
+    enemy.ttk = ttk;
+    enemy.shotsToKill = shotsToKill;
+    enemy.shotsToKillAnchor = shotsToKillAnchor;
+    enemy.threatPoints = Math.round(ttk * dps);
+    enemy.instantKill = instantKill;
 
     return enemy;
 }
@@ -142,14 +153,13 @@ export function recalcAllEnemies() {
 function getPanelLoadout() {
     return {
         shipId: document.getElementById('e-ship-select')?.value ?? '',
-        shieldId: document.getElementById('e-shield-select')?.value ?? '',
-        weaponAnchor: document.getElementById('e-weapon-select')?.value ?? ''
+        shieldId: document.getElementById('e-shield-select')?.value ?? ''
     };
 }
 
 function validateLoadout(loadout) {
-    if (!loadout.weaponAnchor) {
-        alert('Wybierz broń kotwicę.');
+    if (!getGlobalWeaponAnchor()) {
+        alert('Wybierz broń gracza do obliczeń.');
         return false;
     }
     if (!loadout.shipId || !loadout.shieldId) {
@@ -184,13 +194,9 @@ export function syncPanelFromEnemy(id) {
     const enemy = getEnemyById(id);
     if (!enemy) return;
 
-    const weaponSelect = document.getElementById('e-weapon-select');
     const shipSelect = document.getElementById('e-ship-select');
     const shieldSelect = document.getElementById('e-shield-select');
 
-    if (enemy.weaponAnchor && [...weaponSelect.options].some(o => o.value === enemy.weaponAnchor)) {
-        weaponSelect.value = enemy.weaponAnchor;
-    }
     if (enemy.shipId && [...shipSelect.options].some(o => o.value === enemy.shipId)) {
         shipSelect.value = enemy.shipId;
     }
@@ -208,12 +214,12 @@ export function updateEnemyPanelInfo() {
     const ship = getShipById(loadout.shipId);
     const shield = getShieldById(loadout.shieldId);
     const hp = (ship?.armor ?? 0) + (shield?.shield ?? 0);
-    const weapon = gameData.weapons.find(w => w.id === loadout.weaponAnchor);
+    const weapon = gameData.weapons.find(w => w.id === getGlobalWeaponAnchor());
     const weaponLabel = weapon ? weapon.name : '—';
 
     info.innerHTML = `
         <span>Efektywne HP: <b>${hp}</b></span>
-        <span>Broń kotwica: <b>${weaponLabel}</b></span>
+        <span>Broń gracza: <b>${weaponLabel}</b></span>
         ${editingEnemyId ? '<span class="enemy-panel-selected">Edytujesz wybrany wiersz</span>' : '<span>Szablon dla nowego wroga</span>'}
     `;
 }
@@ -245,6 +251,18 @@ export function initEnemyPanel() {
     updateEnemyPanelInfo();
 }
 
+export function onGlobalWeaponChange() {
+    if (!getGlobalWeaponAnchor()) {
+        updateEnemyPanelInfo();
+        persistState();
+        return;
+    }
+    recalcAllEnemies();
+    gameData.enemies.forEach(e => updateEnemyRowCalculated(e));
+    updateEnemyPanelInfo();
+    persistState();
+}
+
 export function onEnemyPanelLoadoutChange() {
     if (!editingEnemyId) {
         updateEnemyPanelInfo();
@@ -258,11 +276,23 @@ export function onEnemyPanelLoadoutChange() {
     const loadout = getPanelLoadout();
     enemy.shipId = loadout.shipId;
     enemy.shieldId = loadout.shieldId;
-    enemy.weaponAnchor = loadout.weaponAnchor;
     recalcEnemy(enemy);
     updateEnemyRowCalculated(enemy);
     highlightEnemyRow();
     updateEnemyPanelInfo();
+    persistState();
+}
+
+export function deleteEnemy(id) {
+    const index = gameData.enemies.findIndex(e => e.id === id);
+    if (index === -1) return;
+
+    gameData.enemies.splice(index, 1);
+    if (editingEnemyId === id) {
+        setEditingEnemyId(null);
+        updateEnemyPanelInfo();
+    }
+    renderEnemiesTable();
     persistState();
 }
 
@@ -274,9 +304,10 @@ export function addNewEnemy() {
     const enemy = {
         id: uniqueEnemyId(name),
         name,
-        ...loadout,
-        ttk: 0.5,
-        ttd: 4,
+        shipId: loadout.shipId,
+        shieldId: loadout.shieldId,
+        hp: 25,
+        projectileDmg: 2.5,
         attackCooldown: 0.1
     };
     recalcEnemy(enemy);
@@ -295,16 +326,17 @@ export function updateEnemyName(id, name) {
     persistState();
 }
 
-export function updateEnemyCoeff(id, field, rawValue) {
+export function updateEnemyInput(id, field, rawValue) {
     const enemy = getEnemyById(id);
-    if (!enemy || !(field in COEFF_FIELDS)) return;
+    if (!enemy || !(field in INPUT_FIELDS)) return;
 
-    const { min, max, step } = COEFF_FIELDS[field];
+    const { min, max, step, integer } = INPUT_FIELDS[field];
     let value = parseFloat(rawValue);
     if (Number.isNaN(value)) value = min;
     value = Math.round(value / step) * step;
     value = Math.max(min, Math.min(max, value));
-    value = Math.round(value * 1000) / 1000;
+    if (integer) value = Math.round(value);
+    else value = Math.round(value * 1000) / 1000;
 
     enemy[field] = value;
     recalcEnemy(enemy);
@@ -319,16 +351,24 @@ export function updateEnemyCoeff(id, field, rawValue) {
     persistState();
 }
 
-export function stepEnemyCoeff(id, field, direction) {
+export function stepEnemyInput(id, field, direction) {
     const enemy = getEnemyById(id);
-    if (!enemy || !(field in COEFF_FIELDS)) return;
+    if (!enemy || !(field in INPUT_FIELDS)) return;
 
-    const { step } = COEFF_FIELDS[field];
+    const { step } = INPUT_FIELDS[field];
     const current = enemy[field] ?? 0;
-    updateEnemyCoeff(id, field, current + direction * step);
+    updateEnemyInput(id, field, current + direction * step);
 }
 
 export function handleEnemyTableInteraction(event) {
+    const deleteBtn = event.target.closest('.enemy-delete-btn');
+    if (deleteBtn) {
+        event.stopPropagation();
+        const row = deleteBtn.closest('tr[data-enemy-row]');
+        if (row) deleteEnemy(row.dataset.id);
+        return;
+    }
+
     const spinnerBtn = event.target.closest('.spinner-btn');
     if (spinnerBtn) {
         event.stopPropagation();
@@ -336,7 +376,7 @@ export function handleEnemyTableInteraction(event) {
         const row = spinnerBtn.closest('tr[data-enemy-row]');
         if (!wrapper || !row) return;
         const step = parseFloat(spinnerBtn.dataset.step);
-        stepEnemyCoeff(row.dataset.id, wrapper.dataset.field, step > 0 ? 1 : -1);
+        stepEnemyInput(row.dataset.id, wrapper.dataset.field, step > 0 ? 1 : -1);
         return;
     }
 
@@ -364,7 +404,7 @@ export function handleEnemyTableChange(event) {
         const wrapper = input.closest('[data-field]');
         const row = input.closest('tr[data-enemy-row]');
         if (wrapper && row) {
-            updateEnemyCoeff(row.dataset.id, wrapper.dataset.field, input.value);
+            updateEnemyInput(row.dataset.id, wrapper.dataset.field, input.value);
         }
         return;
     }

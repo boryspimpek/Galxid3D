@@ -8,7 +8,7 @@
 
 [node name="starfighter" unique_id=1897743314 instance=ExtResource("1_3ym5w")]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
-armor = 50
+armor = 45
 value = 20
 explosion_scene = ExtResource("3_ground")
 
@@ -28,7 +28,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, 0.155)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0, 0.155)
 
 [node name="Weapon" parent="." index="6" unique_id=1893540021]
-damage = 5
+damage = 10
+fire_rate = 2.5
 projectile_velocity = Vector3(0, 0, 16)
 aim = 10
 sound = 3
