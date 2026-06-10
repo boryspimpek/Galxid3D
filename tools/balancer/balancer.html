@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Space Shooter: Master Balancer Sandbox (Cross-Comparison)</title>
+    <link rel="stylesheet" href="balancer.css">
+</head>
+<body>
+
+    <h1>🚀 Space Shooter: Master Balancer Studio</h1>
+
+    <div class="container">
+
+        <div class="panel">
+            <h2>1. Generatory Energii</h2>
+
+            <div class="form-group">
+                <label>Nazwa generatora</label>
+                <input type="text" id="g-name" value="Generator T1">
+            </div>
+
+            <div class="form-group">
+                <label>Max energia: <span id="lbl-g-max">300</span></label>
+                <input type="range" id="g-max-energy" min="50" max="1500" value="300" step="50" oninput="updateGeneratorSliders()">
+            </div>
+
+            <div class="form-group">
+                <label>Odnawianie (Regen/sek): <span id="lbl-g-regen">30</span></label>
+                <input type="range" id="g-regen" min="5" max="300" value="30" step="5" oninput="updateGeneratorSliders()">
+            </div>
+
+            <p class="form-mode form-mode-new" id="generator-form-mode">Nowy generator</p>
+            <div class="form-actions">
+                <button class="btn-secondary" onclick="newGeneratorForm()">➕ Nowy</button>
+                <button class="btn-gen" id="btn-add-generator" onclick="addGenerator()">Dodaj generator</button>
+                <button class="btn-gen" id="btn-save-generator" onclick="saveGeneratorChanges()" hidden>Zapisz zmiany</button>
+            </div>
+
+            <h3>Zapisane Generatory</h3>
+            <p class="table-hint">Kliknij wiersz, aby edytować istniejący generator</p>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr><th>Nazwa</th><th>Max E</th><th>Regen</th></tr>
+                    </thead>
+                    <tbody id="generators-table"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h2>2. Projektowanie Broni</h2>
+            
+            <div class="form-group">
+                <label>Nazwa broni</label>
+                <input type="text" id="w-name" value="Laser Plazmowy T1">
+            </div>
+
+            <div class="form-group">
+                <label>Generator</label>
+                <select id="w-generator-select" onchange="onWeaponGeneratorChange()"></select>
+                <div class="generator-info" id="w-generator-info">—</div>
+            </div>
+
+            <div class="grid-2">
+                <div class="form-group">
+                    <label>Obrażenia (DMG): <span id="lbl-dmg">10</span></label>
+                    <input type="range" id="w-dmg" min="1" max="200" value="10" oninput="updateSliders()">
+                </div>
+                <div class="form-group">
+                    <label>Szybkostrzelność (CD): <span id="lbl-cd">0.20s</span></label>
+                    <input type="range" id="w-cooldown" min="0.05" max="1.0" value="0.20" step="0.05" oninput="updateSliders()">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Koszt strzału: <span id="lbl-cost">10</span></label>
+                <input type="range" id="w-cost" min="1" max="100" value="10" oninput="updateSliders()">
+            </div>
+
+            <h3>Wskaźniki Wydajności</h3>
+            <div class="live-sandbox">
+                <div class="stat-row">
+                    <div>Czysty Burst DPS broni:</div>
+                    <div class="stat-val stat-dps" id="stat-dps">50 DMG/s</div>
+                </div>
+                <div class="stat-row">
+                    <div>Zużycie energii (Drain):</div>
+                    <div class="stat-val" id="stat-drain">50 E/s</div>
+                </div>
+                <div class="stat-row">
+                    <div>Bilans energetyczny netto:</div>
+                    <div class="stat-val stat-bilans-deficit" id="stat-bilans">-20 E/s</div>
+                </div>
+                <div class="stat-row">
+                    <div>Czas do rozładowania:</div>
+                    <div class="stat-val stat-depletion" id="stat-depletion">15.0s</div>
+                </div>
+                
+                <div class="energy-bar-container">
+                    <div class="energy-bar" id="energy-bar"></div>
+                    <div class="energy-text" id="energy-text">⚡ ENERGIA GENERATORA: 300 / 300</div>
+                </div>
+            </div>
+
+            <p class="form-mode form-mode-new" id="weapon-form-mode">Nowa broń</p>
+            <div class="form-actions">
+                <button class="btn-secondary" onclick="newWeaponForm()">➕ Nowa</button>
+                <button id="btn-add-weapon" onclick="addWeapon()">Dodaj broń</button>
+                <button id="btn-save-weapon" onclick="saveWeaponChanges()" hidden>Zapisz zmiany</button>
+            </div>
+
+            <h3>Zapisane Bronie</h3>
+            <p class="table-hint">Kliknij wiersz, aby edytować istniejącą broń</p>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr><th>Nazwa</th><th>Generator</th><th>DMG</th><th>CD</th><th>Koszt</th><th>DPS</th></tr>
+                    </thead>
+                    <tbody id="weapons-table"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h2>3. Projektowanie Wrogów</h2>
+            
+            <div class="form-group">
+                <label>Nazwa Wroga / Archetyp</label>
+                <input type="text" id="e-name" value="Standardowy Myśliwiec">
+            </div>
+
+            <div class="form-group">
+                <label>Zbalansuj pod broń bazową (Kotwica):</label>
+                <select id="e-weapon-select" onchange="calculateEnemyStats()"></select>
+            </div>
+
+            <div class="grid-2">
+                <div class="form-group">
+                    <label>Bazowy TTK (w sekundach): <span id="lbl-ttk">0.50s</span></label>
+                    <input type="range" id="e-ttk" min="0.0" max="10.0" value="0.50" step="0.1" oninput="updateEnemySliders()">
+                </div>
+                <div class="form-group">
+                    <label>Wygenerowane HP wroga</label>
+                    <input type="number" id="e-hp" value="25" readonly>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>DPS tego wroga (Atak): <span id="lbl-edps">20</span></label>
+                <input type="range" id="e-dps" min="0" max="300" value="20" step="5" oninput="updateEnemySliders()">
+            </div>
+
+            <div class="cross-test-box">
+                <h3>🔍 Zachowanie wobec innych broni</h3>
+                <p class="cross-test-desc">Jak zmienia się TTK tego wroga i punkty zagrożenia przy obecnym HP (<span id="current-hp-display" class="hp-display">25</span> HP):</p>
+                
+                <div class="cross-test-scroll">
+                    <table>
+                        <thead>
+                            <tr><th>Nazwa broni</th><th>Moc DPS</th><th>Symulowany TTK</th><th>Punkty Zagrożenia</th></tr>
+                        </thead>
+                        <tbody id="cross-test-table"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <p class="form-mode form-mode-new" id="enemy-form-mode">Nowy wróg</p>
+            <div class="form-actions">
+                <button class="btn-secondary" onclick="newEnemyForm()">➕ Nowy</button>
+                <button class="btn-enemy" id="btn-add-enemy" onclick="addEnemy()">Dodaj wroga</button>
+                <button class="btn-enemy" id="btn-save-enemy" onclick="saveEnemyChanges()" hidden>Zapisz zmiany</button>
+            </div>
+
+            <h3>Zapisani Przeciwnicy</h3>
+            <p class="table-hint">Kliknij wiersz, aby edytować istniejącego wroga</p>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr><th>Nazwa</th><th>Kotwica Broni</th><th>TTK</th><th>HP</th><th>Zagrożenie</th></tr>
+                    </thead>
+                    <tbody id="enemies-table"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel full-width">
+            <h2>4. Gotowy eksport danych konfiguracyjnych (JSON dla Godota)</h2>
+            <p class="save-hint">Ustawienia zapisują się automatycznie w przeglądarce. Poniżej czysty JSON do gry (bez stanu formularzy).</p>
+            <div class="export-actions">
+                <button class="btn-secondary" onclick="importFromJson()">📥 Zaimportuj z JSON</button>
+                <button class="btn-secondary" onclick="downloadJson()">💾 Pobierz plik .json</button>
+                <button class="btn-danger" onclick="resetAllData()">🗑 Reset do domyślnych</button>
+            </div>
+            <textarea class="json-output" id="json-preview"></textarea>
+        </div>
+
+    </div>
+
+    <script src="balancer.js"></script>
+</body>
+</html>
