@@ -96,8 +96,9 @@ export function updateTables() {
         const weaponName = weapon ? weapon.name : "Brak";
         const rowClass = e.id === editingEnemyId ? 'row-selected' : '';
         const ttdLabel = e.instantKill || e.ttd <= 0 ? '1 strzał' : `${e.ttd}s`;
+        const cdLabel = `${(e.attackCooldown ?? 0).toFixed(2)}s`;
         eTable.innerHTML += buildRow(rowClass, e.id,
-            `<td><b>${escapeHtml(e.name)}</b></td><td>${escapeHtml(weaponName)}</td><td>${e.ttk}s</td><td><span class="badge badge-purple">${ttdLabel}</span></td><td><span class="badge badge-red">${e.hp} HP</span></td><td><span class="badge badge-orange">${(e.dps ?? 0).toFixed(1)}/s</span></td><td><span class="badge badge-purple">${(e.projectileDmg ?? 0).toFixed(1)}</span></td><td><span class="badge badge-red">${e.shotsToKill ?? '—'}</span></td><td><span class="badge badge-green">${e.shotsToKillAnchor ?? '—'}</span></td><td><span class="badge badge-orange">${e.threatPoints} pkt</span></td>`);
+            `<td><b>${escapeHtml(e.name)}</b></td><td>${escapeHtml(weaponName)}</td><td>${e.ttk}s</td><td><span class="badge badge-purple">${ttdLabel}</span></td><td><span class="badge badge-blue">${cdLabel}</span></td><td><span class="badge badge-red">${e.hp} HP</span></td><td><span class="badge badge-orange">${(e.dps ?? 0).toFixed(1)}/s</span></td><td><span class="badge badge-purple">${(e.projectileDmg ?? 0).toFixed(1)}</span></td><td><span class="badge badge-red">${e.shotsToKill ?? '—'}</span></td><td><span class="badge badge-green">${e.shotsToKillAnchor ?? '—'}</span></td><td><span class="badge badge-orange">${e.threatPoints} pkt</span></td>`);
     });
 
     if (pendingFormRestore?.weapon?.generatorId) {
