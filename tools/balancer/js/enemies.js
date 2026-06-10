@@ -4,8 +4,8 @@ import { persistState } from './persistence.js';
 
 const INPUT_FIELDS = {
     hp: { step: 1, min: 1, max: 5000, integer: true },
-    projectileDmg: { step: 0.5, min: 0.1, max: 500 },
-    attackCooldown: { step: 0.05, min: 0.05, max: 3 }
+    projectileDmg: { step: 0.5, min: 0, max: 500 },
+    attackCooldown: { step: 0.05, min: 0, max: 3 }
 };
 
 function escapeHtml(text) {
@@ -30,19 +30,31 @@ function formatTtk(ttk) {
     return `<span class="badge badge-green">${ttk.toFixed(2)}</span>`;
 }
 
-function formatTtd(ttd, instantKill) {
-    if (instantKill || ttd <= 0) return '<span class="badge badge-red">1 strzał</span>';
-    return `<span class="badge badge-red">${ttd.toFixed(2)}</span>`;
+function formatTtd(enemy) {
+    if (enemy.projectileDmg <= 0) return '<span class="badge badge-red">—</span>';
+    if (enemy.instantKill || enemy.ttd <= 0) return '<span class="badge badge-red">1 strzał</span>';
+    return `<span class="badge badge-red">${enemy.ttd.toFixed(2)}</span>`;
+}
+
+function formatDps(enemy) {
+    if (enemy.projectileDmg <= 0) return '0';
+    if (enemy.attackCooldown <= 0) return '∞';
+    if (enemy.instantKill) return '1 strzał';
+    return (enemy.dps ?? 0).toFixed(1);
+}
+
+function formatShotsToKill(enemy) {
+    if (enemy.projectileDmg <= 0) return '—';
+    return enemy.shotsToKill ?? '—';
 }
 
 function formatEnemyCalculated(enemy) {
-    const dpsLabel = enemy.instantKill ? '1 strzał' : `${(enemy.dps ?? 0).toFixed(1)}`;
     return {
-        dps: `<span class="badge badge-orange">${dpsLabel}</span>`,
-        shotsToKill: `<span class="badge badge-red">${enemy.shotsToKill ?? '—'}</span>`,
+        dps: `<span class="badge badge-orange">${formatDps(enemy)}</span>`,
+        shotsToKill: `<span class="badge badge-red">${formatShotsToKill(enemy)}</span>`,
         shotsToKillAnchor: `<span class="badge badge-green">${enemy.shotsToKillAnchor ?? '—'}</span>`,
         ttk: formatTtk(enemy.ttk ?? 0),
-        ttd: formatTtd(enemy.ttd ?? 0, enemy.instantKill),
+        ttd: formatTtd(enemy),
         threatPoints: `<span class="badge badge-orange">${enemy.threatPoints} pkt</span>`
     };
 }
@@ -99,15 +111,24 @@ export function recalcEnemy(enemy) {
     const anchorWeapon = gameData.weapons.find(w => w.id === getGlobalWeaponAnchor());
     const playerHp = getPlayerHpForEnemy(enemy);
     const hp = enemy.hp ?? 1;
-    const projectileDmg = enemy.projectileDmg ?? 0.1;
-    const attackCooldown = enemy.attackCooldown ?? 0.05;
+    const projectileDmg = Math.max(0, enemy.projectileDmg ?? 0);
+    const attackCooldown = Math.max(0, enemy.attackCooldown ?? 0);
 
     let dps = 0;
     let ttd = 0;
     let shotsToKill = 0;
     let instantKill = false;
 
-    if (projectileDmg > 0 && attackCooldown > 0) {
+    if (projectileDmg <= 0) {
+        dps = 0;
+        ttd = 0;
+        shotsToKill = 0;
+    } else if (attackCooldown <= 0) {
+        dps = Infinity;
+        shotsToKill = projectileDmg >= playerHp ? 1 : Math.ceil(playerHp / projectileDmg);
+        instantKill = true;
+        ttd = 0;
+    } else {
         dps = projectileDmg / attackCooldown;
         if (projectileDmg >= playerHp) {
             instantKill = true;
@@ -135,12 +156,13 @@ export function recalcEnemy(enemy) {
     enemy.hp = hp;
     enemy.projectileDmg = projectileDmg;
     enemy.attackCooldown = attackCooldown;
-    enemy.dps = dps;
+    enemy.dps = Number.isFinite(dps) ? dps : 0;
     enemy.ttd = ttd;
     enemy.ttk = ttk;
     enemy.shotsToKill = shotsToKill;
     enemy.shotsToKillAnchor = shotsToKillAnchor;
-    enemy.threatPoints = Math.round(ttk * dps);
+    const threat = ttk * dps;
+    enemy.threatPoints = Number.isFinite(threat) ? Math.round(threat) : 0;
     enemy.instantKill = instantKill;
 
     return enemy;

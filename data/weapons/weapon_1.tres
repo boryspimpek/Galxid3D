@@ -6,6 +6,7 @@
 
 [sub_resource type="Resource" id="pl_1"]
 script = ExtResource("2_pl")
+damage = 10
 fire_rate = 0.25
 power_use = 30
 velocity = Vector3(0, 0, -60)
@@ -20,7 +21,7 @@ velocity = Vector3(0, 0, -60)
 
 [sub_resource type="Resource" id="pl_2"]
 script = ExtResource("2_pl")
-damage = 2
+damage = 20
 fire_rate = 0.25
 power_use = 40
 projectile = 2
@@ -28,7 +29,7 @@ velocity = Vector3(0, 0, -60)
 
 [sub_resource type="Resource" id="pl_3"]
 script = ExtResource("2_pl")
-damage = 3
+damage = 30
 fire_rate = 0.25
 power_use = 40
 projectile = 3
