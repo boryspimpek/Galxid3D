@@ -188,20 +188,6 @@
             </div>
             <input type="hidden" id="e-hp" value="25">
 
-            <div class="cross-test-box">
-                <h3>🔍 Zachowanie wobec innych broni</h3>
-                <p class="cross-test-desc">Jak zmienia się TTK tego wroga i punkty zagrożenia przy obecnym HP (<span id="current-hp-display" class="hp-display">25</span> HP):</p>
-                
-                <div class="cross-test-scroll">
-                    <table>
-                        <thead>
-                            <tr><th>Nazwa broni</th><th>Moc DPS</th><th>Symulowany TTK</th><th>Strzały</th><th>Punkty Zagrożenia</th></tr>
-                        </thead>
-                        <tbody id="cross-test-table"></tbody>
-                    </table>
-                </div>
-            </div>
-
             <p class="form-mode form-mode-new" id="enemy-form-mode">Nowy wróg</p>
             <div class="form-actions">
                 <button class="btn-secondary" onclick="newEnemyForm()">➕ Nowy</button>
@@ -214,7 +200,7 @@
             <div class="table-wrapper">
                 <table>
                     <thead>
-                        <tr><th>Nazwa</th><th>Kotwica</th><th>TTK</th><th>TTD</th><th>HP</th><th>DPS</th><th>Pocisk</th><th>Strzały</th><th>Zagrożenie</th></tr>
+                        <tr><th>Nazwa</th><th>Weapon</th><th>TTK</th><th>TTD</th><th>HP</th><th>DPS</th><th>Damage</th><th>Strz. gracza</th><th>Strz. wroga</th><th>Zagrożenie</th></tr>
                     </thead>
                     <tbody id="enemies-table"></tbody>
                 </table>

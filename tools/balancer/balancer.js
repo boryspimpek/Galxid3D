@@ -11,8 +11,8 @@ function getDefaultGameData() {
             { id: "ciezkie_dzialo_t2", name: "Ciężkie Działo T2", generatorId: "generator_t2", dmg: 60, cooldown: 0.4, cost: 25, dps: 150 }
         ],
         enemies: [
-            { id: "mieso_armatnie_dron", name: "Mięso Armatnie (Dron)", weaponAnchor: "laser_plazmowy_t1", ttk: 0.0, hp: 10, playerHp: 100, ttd: 20, dps: 5, attackCooldown: 1.0, projectileDmg: 5, shotsToKill: 20, threatPoints: 0 },
-            { id: "standardowy_mysliwiec", name: "Standardowy Myśliwiec", weaponAnchor: "laser_plazmowy_t1", ttk: 0.5, hp: 25, playerHp: 100, ttd: 5, dps: 20, attackCooldown: 0.5, projectileDmg: 10, shotsToKill: 10, threatPoints: 10 }
+            { id: "mieso_armatnie_dron", name: "Mięso Armatnie (Dron)", weaponAnchor: "laser_plazmowy_t1", ttk: 0.0, hp: 10, playerHp: 100, ttd: 20, dps: 5, attackCooldown: 1.0, projectileDmg: 5, shotsToKill: 20, shotsToKillAnchor: 1, threatPoints: 0 },
+            { id: "standardowy_mysliwiec", name: "Standardowy Myśliwiec", weaponAnchor: "laser_plazmowy_t1", ttk: 0.5, hp: 25, playerHp: 100, ttd: 5, dps: 20, attackCooldown: 0.5, projectileDmg: 10, shotsToKill: 10, shotsToKillAnchor: 3, threatPoints: 10 }
         ]
     };
 }
@@ -58,6 +58,13 @@ function ensureEnemyIds() {
                 ? Math.ceil(enemy.playerHp / enemy.projectileDmg)
                 : 0;
             enemy.instantKill = false;
+        }
+
+        if (enemy.shotsToKillAnchor == null) {
+            const anchor = gameData.weapons.find(w => w.id === enemy.weaponAnchor);
+            enemy.shotsToKillAnchor = anchor && enemy.hp != null
+                ? (enemy.hp <= anchor.dmg ? 1 : Math.ceil(enemy.hp / anchor.dmg))
+                : 0;
         }
     });
 }
@@ -553,7 +560,6 @@ function updateEnemySliders() {
 function calculateEnemyStats() {
     const weaponId = document.getElementById('e-weapon-select').value;
     const ttk = parseFloat(document.getElementById('e-ttk').value);
-    const enemyDps = computeEnemyAttackStats().dps;
 
     const anchorWeapon = gameData.weapons.find(w => w.id === weaponId);
     if (!anchorWeapon) return;
@@ -566,34 +572,8 @@ function calculateEnemyStats() {
     }
 
     document.getElementById('e-hp').value = calculatedHp;
-    document.getElementById('current-hp-display').innerText = calculatedHp;
     document.getElementById('stat-enemy-hp').innerText = calculatedHp + ' HP';
     document.getElementById('stat-shots-to-kill-enemy').innerText = shotsToKillWithWeapon(calculatedHp, anchorWeapon);
-
-    const crossTableBody = document.getElementById('cross-test-table');
-    crossTableBody.innerHTML = '';
-
-    gameData.weapons.forEach(w => {
-        let simTtk = calculatedHp / w.dps;
-        if (calculatedHp <= w.dmg) {
-            simTtk = 0.0;
-        }
-
-        const shotsToKillEnemy = shotsToKillWithWeapon(calculatedHp, w);
-        const simThreat = Math.round(simTtk * enemyDps);
-        const isAnchor = w.id === weaponId ? "style='background: rgba(79, 195, 247, 0.15);'" : "";
-        const anchorLabel = w.id === weaponId ? " <small style='color:#4fc3f7;'>(Kotwica)</small>" : "";
-
-        crossTableBody.innerHTML += `
-            <tr ${isAnchor}>
-                <td><b>${w.name}</b>${anchorLabel}</td>
-                <td><span class="badge badge-blue">${w.dps.toFixed(0)}/s</span></td>
-                <td><span class="badge badge-purple">${simTtk <= 0 ? '1 strzał' : simTtk.toFixed(2) + 's'}</span></td>
-                <td><span class="badge badge-red">${shotsToKillEnemy}</span></td>
-                <td><span class="badge badge-orange">${simThreat} pkt</span></td>
-            </tr>
-        `;
-    });
 }
 
 function addGenerator() {
@@ -794,7 +774,7 @@ function updateTables() {
         const weaponName = weapon ? weapon.name : "Brak";
         const rowClass = e.id === editingEnemyId ? 'row-selected' : '';
         const ttdLabel = e.instantKill || e.ttd <= 0 ? '1 strzał' : `${e.ttd}s`;
-        eTable.innerHTML += `<tr class="${rowClass}" data-id="${e.id}" onclick="loadEnemyIntoForm('${e.id}')"><td><b>${e.name}</b></td><td>${weaponName}</td><td>${e.ttk}s</td><td><span class="badge badge-purple">${ttdLabel}</span></td><td><span class="badge badge-red">${e.hp} HP</span></td><td><span class="badge badge-orange">${(e.dps ?? 0).toFixed(1)}/s</span></td><td><span class="badge badge-purple">${(e.projectileDmg ?? 0).toFixed(1)}</span></td><td><span class="badge badge-red">${e.shotsToKill ?? '—'}</span></td><td><span class="badge badge-orange">${e.threatPoints} pkt</span></td></tr>`;
+        eTable.innerHTML += `<tr class="${rowClass}" data-id="${e.id}" onclick="loadEnemyIntoForm('${e.id}')"><td><b>${e.name}</b></td><td>${weaponName}</td><td>${e.ttk}s</td><td><span class="badge badge-purple">${ttdLabel}</span></td><td><span class="badge badge-red">${e.hp} HP</span></td><td><span class="badge badge-orange">${(e.dps ?? 0).toFixed(1)}/s</span></td><td><span class="badge badge-purple">${(e.projectileDmg ?? 0).toFixed(1)}</span></td><td><span class="badge badge-red">${e.shotsToKill ?? '—'}</span></td><td><span class="badge badge-green">${e.shotsToKillAnchor ?? '—'}</span></td><td><span class="badge badge-orange">${e.threatPoints} pkt</span></td></tr>`;
     });
 
     if (pendingFormRestore?.weapon?.generatorId) {
