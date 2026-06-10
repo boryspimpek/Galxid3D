@@ -6,3 +6,8 @@ res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mproj
 res://assets/shaders/toon.gdshader
 res://balanciaga.tscn
 res://data/ships/ship_001.tres
+res://scenes/enemies/starfighter.tscn
+res://data/weapons/weapon_1.tres
+res://data/shields/shield_001.tres
+res://scenes/enemies/satelite_2.tscn
+res://scenes/enemies/voyager.tscn

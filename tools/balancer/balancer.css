@@ -34,6 +34,13 @@ button.btn-enemy:hover { background: #ef6c00; }
 .form-actions button { flex: 1; min-width: 120px; margin-top: 0; }
 
 .live-sandbox { background: #141419; border-radius: 8px; padding: 15px; margin-top: 10px; border-left: 4px solid #0288d1; }
+.attack-sandbox { border-left-color: #ef6c00; }
+.defense-sandbox { border-left-color: #4fc3f7; }
+.sandbox-formula { font-size: 0.75rem; color: #888; margin: 8px 0 0; }
+.stat-projectile { color: #ffb74d; }
+.stat-shots { color: #e57373; }
+.stat-enemy-dps { color: #ef6c00; }
+.panel-subtitle { font-size: 0.95rem; color: #aaaaab; margin: 18px 0 10px; font-weight: 600; }
 .stat-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.9rem; }
 .stat-val { font-family: monospace; font-weight: bold; }
 

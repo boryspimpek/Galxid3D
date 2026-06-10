@@ -130,26 +130,63 @@
                 <input type="text" id="e-name" value="Standardowy Myśliwiec">
             </div>
 
+            <h3 class="panel-subtitle">Zagrożenie dla gracza</h3>
+
+            <div class="form-group">
+                <label>HP gracza (referencyjne)</label>
+                <input type="number" id="e-player-hp" value="100" min="1" step="1" oninput="updateEnemySliders()">
+            </div>
+
+            <div class="form-group">
+                <label>TTD (Time to Die): <span id="lbl-ttd">4.00s</span></label>
+                <input type="range" id="e-ttd" min="0" max="60" value="4" step="0.1" oninput="updateEnemySliders()">
+            </div>
+
+            <div class="form-group">
+                <label>Cooldown ataku wroga: <span id="lbl-attack-cd">0.10s</span></label>
+                <input type="range" id="e-attack-cd" min="0.05" max="3.0" value="0.10" step="0.05" oninput="updateEnemySliders()">
+            </div>
+
+            <div class="live-sandbox attack-sandbox">
+                <div class="stat-row">
+                    <div>Wymagany DPS wroga:</div>
+                    <div class="stat-val stat-enemy-dps" id="stat-enemy-dps">25.0 DPS</div>
+                </div>
+                <div class="stat-row">
+                    <div>DMG pocisku w Godocie:</div>
+                    <div class="stat-val stat-projectile" id="stat-projectile-dmg">2.5 DMG</div>
+                </div>
+                <div class="stat-row">
+                    <div>Pocisków do zabicia gracza:</div>
+                    <div class="stat-val stat-shots" id="stat-shots-to-kill">40</div>
+                </div>
+                <p class="sandbox-formula">DPS = HP gracza ÷ TTD &nbsp;·&nbsp; pocisk DMG = DPS × CD &nbsp;·&nbsp; strzały = HP gracza ÷ pocisk DMG</p>
+            </div>
+
+            <h3 class="panel-subtitle">Żywotność wroga (TTK)</h3>
+
             <div class="form-group">
                 <label>Zbalansuj pod broń bazową (Kotwica):</label>
                 <select id="e-weapon-select" onchange="calculateEnemyStats()"></select>
             </div>
 
-            <div class="grid-2">
-                <div class="form-group">
-                    <label>Bazowy TTK (w sekundach): <span id="lbl-ttk">0.50s</span></label>
-                    <input type="range" id="e-ttk" min="0.0" max="10.0" value="0.50" step="0.1" oninput="updateEnemySliders()">
-                </div>
-                <div class="form-group">
-                    <label>Wygenerowane HP wroga</label>
-                    <input type="number" id="e-hp" value="25" readonly>
-                </div>
+            <div class="form-group">
+                <label>Bazowy TTK (w sekundach): <span id="lbl-ttk">0.50s</span></label>
+                <input type="range" id="e-ttk" min="0.0" max="10.0" value="0.50" step="0.1" oninput="updateEnemySliders()">
             </div>
 
-            <div class="form-group">
-                <label>DPS tego wroga (Atak): <span id="lbl-edps">20</span></label>
-                <input type="range" id="e-dps" min="0" max="300" value="20" step="5" oninput="updateEnemySliders()">
+            <div class="live-sandbox defense-sandbox">
+                <div class="stat-row">
+                    <div>HP wroga:</div>
+                    <div class="stat-val stat-dps" id="stat-enemy-hp">25 HP</div>
+                </div>
+                <div class="stat-row">
+                    <div>Pocisków do zabicia wroga (kotwica):</div>
+                    <div class="stat-val stat-shots" id="stat-shots-to-kill-enemy">3</div>
+                </div>
+                <p class="sandbox-formula">HP = DPS kotwicy × TTK &nbsp;·&nbsp; strzały = HP wroga ÷ DMG kotwicy</p>
             </div>
+            <input type="hidden" id="e-hp" value="25">
 
             <div class="cross-test-box">
                 <h3>🔍 Zachowanie wobec innych broni</h3>
@@ -158,7 +195,7 @@
                 <div class="cross-test-scroll">
                     <table>
                         <thead>
-                            <tr><th>Nazwa broni</th><th>Moc DPS</th><th>Symulowany TTK</th><th>Punkty Zagrożenia</th></tr>
+                            <tr><th>Nazwa broni</th><th>Moc DPS</th><th>Symulowany TTK</th><th>Strzały</th><th>Punkty Zagrożenia</th></tr>
                         </thead>
                         <tbody id="cross-test-table"></tbody>
                     </table>
@@ -177,7 +214,7 @@
             <div class="table-wrapper">
                 <table>
                     <thead>
-                        <tr><th>Nazwa</th><th>Kotwica Broni</th><th>TTK</th><th>HP</th><th>Zagrożenie</th></tr>
+                        <tr><th>Nazwa</th><th>Kotwica</th><th>TTK</th><th>TTD</th><th>HP</th><th>DPS</th><th>Pocisk</th><th>Strzały</th><th>Zagrożenie</th></tr>
                     </thead>
                     <tbody id="enemies-table"></tbody>
                 </table>
