@@ -2,6 +2,12 @@ const STORAGE_KEY = 'galaxid3d_balancer';
 
 function getDefaultGameData() {
     return {
+        ships: [
+            { id: "statek_startowy", name: "Statek Startowy", armor: 50 }
+        ],
+        shields: [
+            { id: "tarcza_podstawowa", name: "Tarcza Podstawowa", shield: 50 }
+        ],
         generators: [
             { id: "generator_t1", name: "Generator T1", maxEnergy: 300, regen: 30 },
             { id: "generator_t2", name: "Generator T2", maxEnergy: 400, regen: 40 }
@@ -11,8 +17,8 @@ function getDefaultGameData() {
             { id: "ciezkie_dzialo_t2", name: "Ciężkie Działo T2", generatorId: "generator_t2", dmg: 60, cooldown: 0.4, cost: 25, dps: 150 }
         ],
         enemies: [
-            { id: "mieso_armatnie_dron", name: "Mięso Armatnie (Dron)", weaponAnchor: "laser_plazmowy_t1", ttk: 0.0, hp: 10, playerHp: 100, ttd: 20, dps: 5, attackCooldown: 1.0, projectileDmg: 5, shotsToKill: 20, shotsToKillAnchor: 1, threatPoints: 0 },
-            { id: "standardowy_mysliwiec", name: "Standardowy Myśliwiec", weaponAnchor: "laser_plazmowy_t1", ttk: 0.5, hp: 25, playerHp: 100, ttd: 5, dps: 20, attackCooldown: 0.5, projectileDmg: 10, shotsToKill: 10, shotsToKillAnchor: 3, threatPoints: 10 }
+            { id: "mieso_armatnie_dron", name: "Mięso Armatnie (Dron)", weaponAnchor: "laser_plazmowy_t1", shipId: "statek_startowy", shieldId: "tarcza_podstawowa", ttk: 0.0, hp: 10, playerHp: 100, ttd: 20, dps: 5, attackCooldown: 1.0, projectileDmg: 5, shotsToKill: 20, shotsToKillAnchor: 1, threatPoints: 0 },
+            { id: "standardowy_mysliwiec", name: "Standardowy Myśliwiec", weaponAnchor: "laser_plazmowy_t1", shipId: "statek_startowy", shieldId: "tarcza_podstawowa", ttk: 0.5, hp: 25, playerHp: 100, ttd: 5, dps: 20, attackCooldown: 0.5, projectileDmg: 10, shotsToKill: 10, shotsToKillAnchor: 3, threatPoints: 10 }
         ]
     };
 }
@@ -22,7 +28,16 @@ let currentSimEnergy = 300;
 let editingGeneratorId = null;
 let editingWeaponId = null;
 let editingEnemyId = null;
+let editingShipId = null;
+let editingShieldId = null;
 let pendingFormRestore = null;
+
+function ensureGameDataArrays() {
+    const defaults = getDefaultGameData();
+    if (!Array.isArray(gameData.ships)) gameData.ships = defaults.ships;
+    if (!Array.isArray(gameData.shields)) gameData.shields = defaults.shields;
+    ensureEnemyIds();
+}
 
 function slugifyId(name) {
     return name.toLowerCase().replace(/[^a-z0-9]/g, "_");
@@ -39,8 +54,18 @@ function ensureEnemyIds() {
             enemy.id = id;
         }
 
-        if (enemy.playerHp == null) enemy.playerHp = 100;
-        if (enemy.ttd == null) enemy.ttd = enemy.dps > 0 ? enemy.playerHp / enemy.dps : 4;
+        if (enemy.shipId == null && gameData.ships.length > 0) {
+            enemy.shipId = gameData.ships[0].id;
+        }
+        if (enemy.shieldId == null && gameData.shields.length > 0) {
+            enemy.shieldId = gameData.shields[0].id;
+        }
+
+        const ship = gameData.ships.find(s => s.id === enemy.shipId);
+        const shield = gameData.shields.find(s => s.id === enemy.shieldId);
+        enemy.playerHp = (ship?.armor ?? 0) + (shield?.shield ?? 0);
+
+        if (enemy.ttd == null) enemy.ttd = enemy.dps > 0 && enemy.playerHp > 0 ? enemy.playerHp / enemy.dps : 4;
         if (enemy.attackCooldown == null) {
             enemy.attackCooldown = enemy.projectileDmg && enemy.dps > 0
                 ? enemy.projectileDmg / enemy.dps
@@ -81,6 +106,16 @@ function collectFormState() {
         editingGeneratorId,
         editingWeaponId,
         editingEnemyId,
+        editingShipId,
+        editingShieldId,
+        ship: {
+            name: document.getElementById('ship-name').value,
+            armor: parseFloat(document.getElementById('ship-armor').value)
+        },
+        shield: {
+            name: document.getElementById('shield-name').value,
+            shield: parseFloat(document.getElementById('shield-value').value)
+        },
         generator: {
             name: document.getElementById('g-name').value,
             maxEnergy: parseFloat(document.getElementById('g-max-energy').value),
@@ -97,7 +132,8 @@ function collectFormState() {
             name: document.getElementById('e-name').value,
             weaponAnchor: document.getElementById('e-weapon-select').value,
             ttk: parseFloat(document.getElementById('e-ttk').value),
-            playerHp: parseFloat(document.getElementById('e-player-hp').value),
+            shipId: document.getElementById('e-ship-select').value,
+            shieldId: document.getElementById('e-shield-select').value,
             ttd: parseFloat(document.getElementById('e-ttd').value),
             attackCooldown: parseFloat(document.getElementById('e-attack-cd').value)
         }
@@ -110,6 +146,18 @@ function applyFormState(form) {
     editingGeneratorId = form.editingGeneratorId ?? null;
     editingWeaponId = form.editingWeaponId ?? null;
     editingEnemyId = form.editingEnemyId ?? null;
+    editingShipId = form.editingShipId ?? null;
+    editingShieldId = form.editingShieldId ?? null;
+
+    if (form.ship) {
+        document.getElementById('ship-name').value = form.ship.name ?? '';
+        document.getElementById('ship-armor').value = form.ship.armor ?? 50;
+    }
+
+    if (form.shield) {
+        document.getElementById('shield-name').value = form.shield.name ?? '';
+        document.getElementById('shield-value').value = form.shield.shield ?? 50;
+    }
 
     if (form.generator) {
         document.getElementById('g-name').value = form.generator.name ?? '';
@@ -127,7 +175,6 @@ function applyFormState(form) {
     if (form.enemy) {
         document.getElementById('e-name').value = form.enemy.name ?? '';
         document.getElementById('e-ttk').value = form.enemy.ttk ?? 0.5;
-        document.getElementById('e-player-hp').value = form.enemy.playerHp ?? 100;
         document.getElementById('e-ttd').value = form.enemy.ttd ?? 4;
         document.getElementById('e-attack-cd').value = form.enemy.attackCooldown ?? 0.1;
     }
@@ -155,12 +202,12 @@ function loadState() {
         const saved = JSON.parse(raw);
         if (isValidGameData(saved.gameData)) {
             gameData = saved.gameData;
-            ensureEnemyIds();
+            ensureGameDataArrays();
             return saved.form ?? true;
         }
         if (isValidGameData(saved)) {
             gameData = saved;
-            ensureEnemyIds();
+            ensureGameDataArrays();
             return true;
         }
     } catch (e) {
@@ -180,8 +227,10 @@ function importFromJson() {
         }
 
         gameData = data;
-        ensureEnemyIds();
+        ensureGameDataArrays();
         editingGeneratorId = null;
+        editingShipId = null;
+        editingShieldId = null;
         editingWeaponId = null;
         editingEnemyId = null;
         updateTables();
@@ -206,6 +255,8 @@ function resetAllData() {
 
     localStorage.removeItem(STORAGE_KEY);
     gameData = getDefaultGameData();
+    newShipForm();
+    newShieldForm();
     newGeneratorForm();
     newWeaponForm();
     newEnemyForm();
@@ -224,8 +275,26 @@ function getEnemyById(id) {
     return gameData.enemies.find(e => e.id === id);
 }
 
+function getShipById(id) {
+    return gameData.ships.find(s => s.id === id);
+}
+
+function getShieldById(id) {
+    return gameData.shields.find(s => s.id === id);
+}
+
+function getPlayerEffectiveHp() {
+    const ship = getShipById(document.getElementById('e-ship-select')?.value);
+    const shield = getShieldById(document.getElementById('e-shield-select')?.value);
+    return (ship?.armor ?? 0) + (shield?.shield ?? 0);
+}
+
+function onPlayerLoadoutChange() {
+    updateEnemySliders();
+}
+
 function computeEnemyAttackStats() {
-    const playerHp = parseFloat(document.getElementById('e-player-hp').value) || 100;
+    const playerHp = getPlayerEffectiveHp();
     const ttd = parseFloat(document.getElementById('e-ttd').value);
     const attackCooldown = parseFloat(document.getElementById('e-attack-cd').value);
 
@@ -268,6 +337,8 @@ function buildEnemyRecord(weaponAnchor, enemyTtk) {
     const defense = computeEnemyDefenseStats(weaponAnchor, enemyTtk, attack.dps);
 
     return {
+        shipId: document.getElementById('e-ship-select').value,
+        shieldId: document.getElementById('e-shield-select').value,
         playerHp: attack.playerHp,
         ttd: attack.ttd,
         dps: attack.dps,
@@ -314,6 +385,176 @@ setInterval(() => {
     bar.style.width = pct + '%';
     document.getElementById('energy-text').innerText = `⚡ ENERGIA GENERATORA: ${Math.round(currentSimEnergy)} / ${maxEnergy}`;
 }, 100);
+
+function updateShipSliders() {
+    document.getElementById('lbl-ship-armor').innerText = document.getElementById('ship-armor').value;
+    if (document.getElementById('e-ship-select')?.options.length) {
+        updateEnemySliders();
+    } else {
+        persistState();
+    }
+}
+
+function updateShieldSliders() {
+    document.getElementById('lbl-shield-value').innerText = document.getElementById('shield-value').value;
+    if (document.getElementById('e-shield-select')?.options.length) {
+        updateEnemySliders();
+    } else {
+        persistState();
+    }
+}
+
+function newShipForm() {
+    editingShipId = null;
+    document.getElementById('ship-name').value = '';
+    document.getElementById('ship-armor').value = 50;
+    updateShipSliders();
+    highlightShipRow();
+    updateShipFormMode();
+    persistState();
+}
+
+function updateShipFormMode() {
+    const isEditing = !!editingShipId;
+    document.getElementById('btn-add-ship').hidden = isEditing;
+    document.getElementById('btn-save-ship').hidden = !isEditing;
+    const modeEl = document.getElementById('ship-form-mode');
+    if (isEditing) {
+        const ship = getShipById(editingShipId);
+        modeEl.textContent = `Edycja: ${ship?.name ?? '—'}`;
+        modeEl.className = 'form-mode form-mode-edit';
+    } else {
+        modeEl.textContent = 'Nowy statek';
+        modeEl.className = 'form-mode form-mode-new';
+    }
+}
+
+function loadShipIntoForm(id) {
+    const ship = getShipById(id);
+    if (!ship) return;
+    editingShipId = id;
+    document.getElementById('ship-name').value = ship.name;
+    document.getElementById('ship-armor').value = ship.armor;
+    updateShipSliders();
+    highlightShipRow();
+    updateShipFormMode();
+    persistState();
+}
+
+function highlightShipRow() {
+    document.querySelectorAll('#ships-table tr').forEach(row => {
+        row.classList.toggle('row-selected', row.dataset.id === editingShipId);
+    });
+}
+
+function addShip() {
+    const name = document.getElementById('ship-name').value.trim();
+    if (!name) {
+        alert('Podaj nazwę statku.');
+        return;
+    }
+    const armor = parseFloat(document.getElementById('ship-armor').value);
+    const id = slugifyId(name);
+    if (gameData.ships.some(s => s.id === id)) {
+        alert('Statek o tej nazwie już istnieje. Kliknij go w tabeli, aby edytować.');
+        return;
+    }
+    gameData.ships.push({ id, name, armor });
+    newShipForm();
+    updateTables();
+}
+
+function saveShipChanges() {
+    if (!editingShipId) return;
+    const name = document.getElementById('ship-name').value.trim();
+    if (!name) {
+        alert('Podaj nazwę statku.');
+        return;
+    }
+    const armor = parseFloat(document.getElementById('ship-armor').value);
+    const index = gameData.ships.findIndex(s => s.id === editingShipId);
+    if (index > -1) {
+        gameData.ships[index] = { id: editingShipId, name, armor };
+    }
+    ensureEnemyIds();
+    updateTables();
+}
+
+function newShieldForm() {
+    editingShieldId = null;
+    document.getElementById('shield-name').value = '';
+    document.getElementById('shield-value').value = 50;
+    updateShieldSliders();
+    highlightShieldRow();
+    updateShieldFormMode();
+    persistState();
+}
+
+function updateShieldFormMode() {
+    const isEditing = !!editingShieldId;
+    document.getElementById('btn-add-shield').hidden = isEditing;
+    document.getElementById('btn-save-shield').hidden = !isEditing;
+    const modeEl = document.getElementById('shield-form-mode');
+    if (isEditing) {
+        const shield = getShieldById(editingShieldId);
+        modeEl.textContent = `Edycja: ${shield?.name ?? '—'}`;
+        modeEl.className = 'form-mode form-mode-edit';
+    } else {
+        modeEl.textContent = 'Nowa tarcza';
+        modeEl.className = 'form-mode form-mode-new';
+    }
+}
+
+function loadShieldIntoForm(id) {
+    const shield = getShieldById(id);
+    if (!shield) return;
+    editingShieldId = id;
+    document.getElementById('shield-name').value = shield.name;
+    document.getElementById('shield-value').value = shield.shield;
+    updateShieldSliders();
+    highlightShieldRow();
+    updateShieldFormMode();
+    persistState();
+}
+
+function highlightShieldRow() {
+    document.querySelectorAll('#shields-table tr').forEach(row => {
+        row.classList.toggle('row-selected', row.dataset.id === editingShieldId);
+    });
+}
+
+function addShield() {
+    const name = document.getElementById('shield-name').value.trim();
+    if (!name) {
+        alert('Podaj nazwę tarczy.');
+        return;
+    }
+    const shield = parseFloat(document.getElementById('shield-value').value);
+    const id = slugifyId(name);
+    if (gameData.shields.some(s => s.id === id)) {
+        alert('Tarcza o tej nazwie już istnieje. Kliknij ją w tabeli, aby edytować.');
+        return;
+    }
+    gameData.shields.push({ id, name, shield });
+    newShieldForm();
+    updateTables();
+}
+
+function saveShieldChanges() {
+    if (!editingShieldId) return;
+    const name = document.getElementById('shield-name').value.trim();
+    if (!name) {
+        alert('Podaj nazwę tarczy.');
+        return;
+    }
+    const shield = parseFloat(document.getElementById('shield-value').value);
+    const index = gameData.shields.findIndex(s => s.id === editingShieldId);
+    if (index > -1) {
+        gameData.shields[index] = { id: editingShieldId, name, shield };
+    }
+    ensureEnemyIds();
+    updateTables();
+}
 
 function updateGeneratorSliders() {
     document.getElementById('lbl-g-max').innerText = document.getElementById('g-max-energy').value;
@@ -486,12 +727,17 @@ function updateSliders() {
 function newEnemyForm() {
     editingEnemyId = null;
     document.getElementById('e-name').value = '';
-    document.getElementById('e-player-hp').value = 100;
     document.getElementById('e-ttd').value = 4;
     document.getElementById('e-attack-cd').value = 0.10;
     document.getElementById('e-ttk').value = 0.5;
     if (gameData.weapons.length > 0) {
         document.getElementById('e-weapon-select').value = gameData.weapons[0].id;
+    }
+    if (gameData.ships.length > 0) {
+        document.getElementById('e-ship-select').value = gameData.ships[0].id;
+    }
+    if (gameData.shields.length > 0) {
+        document.getElementById('e-shield-select').value = gameData.shields[0].id;
     }
     updateEnemySliders();
     highlightEnemyRow();
@@ -522,13 +768,22 @@ function loadEnemyIntoForm(id) {
     editingEnemyId = id;
     document.getElementById('e-name').value = enemy.name;
     document.getElementById('e-ttk').value = enemy.ttk;
-    document.getElementById('e-player-hp').value = enemy.playerHp ?? 100;
     document.getElementById('e-ttd').value = enemy.ttd ?? 4;
     document.getElementById('e-attack-cd').value = enemy.attackCooldown ?? 0.5;
 
     const weaponSelect = document.getElementById('e-weapon-select');
     if (enemy.weaponAnchor && [...weaponSelect.options].some(o => o.value === enemy.weaponAnchor)) {
         weaponSelect.value = enemy.weaponAnchor;
+    }
+
+    const shipSelect = document.getElementById('e-ship-select');
+    if (enemy.shipId && [...shipSelect.options].some(o => o.value === enemy.shipId)) {
+        shipSelect.value = enemy.shipId;
+    }
+
+    const shieldSelect = document.getElementById('e-shield-select');
+    if (enemy.shieldId && [...shieldSelect.options].some(o => o.value === enemy.shieldId)) {
+        shieldSelect.value = enemy.shieldId;
     }
 
     updateEnemySliders();
@@ -546,6 +801,7 @@ function highlightEnemyRow() {
 function updateEnemySliders() {
     const attack = computeEnemyAttackStats();
 
+    document.getElementById('stat-player-effective-hp').innerText = attack.playerHp;
     document.getElementById('lbl-ttd').innerText = attack.ttd <= 0 ? '0s (1 strzał)' : attack.ttd.toFixed(2) + 's';
     document.getElementById('lbl-attack-cd').innerText = attack.attackCooldown.toFixed(2) + 's';
     document.getElementById('lbl-ttk').innerText = parseFloat(document.getElementById('e-ttk').value).toFixed(2) + 's';
@@ -676,8 +932,18 @@ function saveWeaponChanges() {
 
 function addEnemy() {
     const weaponAnchor = document.getElementById('e-weapon-select').value;
+    const shipId = document.getElementById('e-ship-select').value;
+    const shieldId = document.getElementById('e-shield-select').value;
     if (!weaponAnchor) {
         alert('Wybierz broń kotwicę przed dodaniem wroga.');
+        return;
+    }
+    if (!shipId || !shieldId) {
+        alert('Wybierz statek i tarczę gracza przed dodaniem wroga.');
+        return;
+    }
+    if (getPlayerEffectiveHp() <= 0) {
+        alert('Efektywne HP gracza musi być większe od zera (armor + tarcza).');
         return;
     }
 
@@ -705,8 +971,18 @@ function saveEnemyChanges() {
     if (!editingEnemyId) return;
 
     const weaponAnchor = document.getElementById('e-weapon-select').value;
+    const shipId = document.getElementById('e-ship-select').value;
+    const shieldId = document.getElementById('e-shield-select').value;
     if (!weaponAnchor) {
         alert('Wybierz broń kotwicę przed zapisaniem wroga.');
+        return;
+    }
+    if (!shipId || !shieldId) {
+        alert('Wybierz statek i tarczę gracza przed zapisaniem wroga.');
+        return;
+    }
+    if (getPlayerEffectiveHp() <= 0) {
+        alert('Efektywne HP gracza musi być większe od zera (armor + tarcza).');
         return;
     }
 
@@ -741,6 +1017,25 @@ function populateSelect(selectId, items, valueKey, labelFn, currentValue) {
 }
 
 function updateTables() {
+    const shipsTable = document.getElementById('ships-table');
+    shipsTable.innerHTML = '';
+    gameData.ships.forEach(s => {
+        const rowClass = s.id === editingShipId ? 'row-selected' : '';
+        shipsTable.innerHTML += `<tr class="${rowClass}" data-id="${s.id}" onclick="loadShipIntoForm('${s.id}')"><td><b>${s.name}</b></td><td><span class="badge badge-green">${s.armor}</span></td></tr>`;
+    });
+
+    const shieldsTable = document.getElementById('shields-table');
+    shieldsTable.innerHTML = '';
+    gameData.shields.forEach(s => {
+        const rowClass = s.id === editingShieldId ? 'row-selected' : '';
+        shieldsTable.innerHTML += `<tr class="${rowClass}" data-id="${s.id}" onclick="loadShieldIntoForm('${s.id}')"><td><b>${s.name}</b></td><td><span class="badge badge-blue">${s.shield}</span></td></tr>`;
+    });
+
+    const currentShipSelect = document.getElementById('e-ship-select').value;
+    const currentShieldSelect = document.getElementById('e-shield-select').value;
+    populateSelect('e-ship-select', gameData.ships, 'id', s => `${s.name} (${s.armor} armor)`, currentShipSelect);
+    populateSelect('e-shield-select', gameData.shields, 'id', s => `${s.name} (${s.shield} shield)`, currentShieldSelect);
+
     const gTable = document.getElementById('generators-table');
     gTable.innerHTML = '';
     gameData.generators.forEach(g => {
@@ -783,11 +1078,21 @@ function updateTables() {
     if (pendingFormRestore?.enemy?.weaponAnchor) {
         document.getElementById('e-weapon-select').value = pendingFormRestore.enemy.weaponAnchor;
     }
+    if (pendingFormRestore?.enemy?.shipId) {
+        document.getElementById('e-ship-select').value = pendingFormRestore.enemy.shipId;
+    }
+    if (pendingFormRestore?.enemy?.shieldId) {
+        document.getElementById('e-shield-select').value = pendingFormRestore.enemy.shieldId;
+    }
     pendingFormRestore = null;
 
+    highlightShipRow();
+    highlightShieldRow();
     highlightGeneratorRow();
     highlightWeaponRow();
     highlightEnemyRow();
+    updateShipFormMode();
+    updateShieldFormMode();
     updateGeneratorFormMode();
     updateWeaponFormMode();
     updateEnemyFormMode();
@@ -805,6 +1110,8 @@ window.onload = function() {
 
     updateGeneratorSliders();
     updateTables();
+    updateShipSliders();
+    updateShieldSliders();
     updateSliders();
     updateEnemySliders();
 };

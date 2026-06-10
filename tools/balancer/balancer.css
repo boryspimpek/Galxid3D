@@ -6,6 +6,9 @@ h1 { text-align: center; margin-bottom: 25px; text-transform: uppercase; letter-
 .panel { background: #1e1e24; padding: 22px; border-radius: 12px; border: 1px solid #2d2d38; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
 .full-width { grid-column: span 3; }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.ship-shield-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.ship-shield-col { border-right: 1px solid #2d2d38; padding-right: 20px; }
+.ship-shield-col:last-child { border-right: none; padding-right: 0; padding-left: 10px; }
 
 .form-group { margin-bottom: 15px; }
 label { font-size: 0.85rem; font-weight: bold; color: #aaaaab; display: flex; justify-content: space-between; margin-bottom: 6px; }
@@ -22,6 +25,10 @@ button { width: 100%; background: #0288d1; color: white; border: none; padding: 
 button:hover { background: #039be5; }
 button.btn-gen { background: #00796b; }
 button.btn-gen:hover { background: #00897b; }
+button.btn-ship { background: #5e35b1; }
+button.btn-ship:hover { background: #7e57c2; }
+button.btn-shield { background: #00838f; }
+button.btn-shield:hover { background: #0097a7; }
 button.btn-secondary { background: #455a64; }
 button.btn-secondary:hover { background: #546e7a; }
 button.btn-enemy { background: #e65100; margin-top: 15px; }
@@ -66,13 +73,19 @@ th { background: #252530; color: #4fc3f7; font-weight: 600; position: sticky; to
 
 #generators-table tr,
 #weapons-table tr,
-#enemies-table tr { cursor: pointer; transition: background 0.15s; }
+#enemies-table tr,
+#ships-table tr,
+#shields-table tr { cursor: pointer; transition: background 0.15s; }
 #generators-table tr:hover,
 #weapons-table tr:hover,
-#enemies-table tr:hover { background: rgba(79, 195, 247, 0.1); }
+#enemies-table tr:hover,
+#ships-table tr:hover,
+#shields-table tr:hover { background: rgba(79, 195, 247, 0.1); }
 #generators-table tr.row-selected,
 #weapons-table tr.row-selected,
-#enemies-table tr.row-selected { background: rgba(79, 195, 247, 0.22); }
+#enemies-table tr.row-selected,
+#ships-table tr.row-selected,
+#shields-table tr.row-selected { background: rgba(79, 195, 247, 0.22); }
 .table-hint { font-size: 0.75rem; color: #888; margin-top: 6px; }
 
 .export-actions { display: flex; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }

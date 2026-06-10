@@ -11,8 +11,64 @@
 
     <div class="container">
 
+        <div class="panel full-width">
+            <h2>1. Statek i Tarcza</h2>
+            <div class="ship-shield-grid">
+                <div class="ship-shield-col">
+                    <h3 class="panel-subtitle">Statki</h3>
+                    <div class="form-group">
+                        <label>Nazwa statku</label>
+                        <input type="text" id="ship-name" value="Statek Startowy">
+                    </div>
+                    <div class="form-group">
+                        <label>Armor: <span id="lbl-ship-armor">50</span></label>
+                        <input type="range" id="ship-armor" min="0" max="500" value="50" step="5" oninput="updateShipSliders()">
+                    </div>
+                    <p class="form-mode form-mode-new" id="ship-form-mode">Nowy statek</p>
+                    <div class="form-actions">
+                        <button class="btn-secondary" onclick="newShipForm()">➕ Nowy</button>
+                        <button class="btn-ship" id="btn-add-ship" onclick="addShip()">Dodaj statek</button>
+                        <button class="btn-ship" id="btn-save-ship" onclick="saveShipChanges()" hidden>Zapisz zmiany</button>
+                    </div>
+                    <h3>Zapisane Statki</h3>
+                    <p class="table-hint">Kliknij wiersz, aby edytować statek</p>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead><tr><th>Nazwa</th><th>Armor</th></tr></thead>
+                            <tbody id="ships-table"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="ship-shield-col">
+                    <h3 class="panel-subtitle">Tarcze</h3>
+                    <div class="form-group">
+                        <label>Nazwa tarczy</label>
+                        <input type="text" id="shield-name" value="Tarcza Podstawowa">
+                    </div>
+                    <div class="form-group">
+                        <label>Shield: <span id="lbl-shield-value">50</span></label>
+                        <input type="range" id="shield-value" min="0" max="500" value="50" step="5" oninput="updateShieldSliders()">
+                    </div>
+                    <p class="form-mode form-mode-new" id="shield-form-mode">Nowa tarcza</p>
+                    <div class="form-actions">
+                        <button class="btn-secondary" onclick="newShieldForm()">➕ Nowa</button>
+                        <button class="btn-shield" id="btn-add-shield" onclick="addShield()">Dodaj tarczę</button>
+                        <button class="btn-shield" id="btn-save-shield" onclick="saveShieldChanges()" hidden>Zapisz zmiany</button>
+                    </div>
+                    <h3>Zapisane Tarcze</h3>
+                    <p class="table-hint">Kliknij wiersz, aby edytować tarczę</p>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead><tr><th>Nazwa</th><th>Shield</th></tr></thead>
+                            <tbody id="shields-table"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="panel">
-            <h2>1. Generatory Energii</h2>
+            <h2>2. Generatory Energii</h2>
 
             <div class="form-group">
                 <label>Nazwa generatora</label>
@@ -49,7 +105,7 @@
         </div>
 
         <div class="panel">
-            <h2>2. Projektowanie Broni</h2>
+            <h2>3. Projektowanie Broni</h2>
             
             <div class="form-group">
                 <label>Nazwa broni</label>
@@ -123,7 +179,7 @@
         </div>
 
         <div class="panel">
-            <h2>3. Projektowanie Wrogów</h2>
+            <h2>4. Projektowanie Wrogów</h2>
             
             <div class="form-group">
                 <label>Nazwa Wroga / Archetyp</label>
@@ -132,9 +188,15 @@
 
             <h3 class="panel-subtitle">Zagrożenie dla gracza</h3>
 
-            <div class="form-group">
-                <label>HP gracza (referencyjne)</label>
-                <input type="number" id="e-player-hp" value="100" min="1" step="1" oninput="updateEnemySliders()">
+            <div class="grid-2">
+                <div class="form-group">
+                    <label>Statek gracza</label>
+                    <select id="e-ship-select" onchange="onPlayerLoadoutChange()"></select>
+                </div>
+                <div class="form-group">
+                    <label>Tarcza gracza</label>
+                    <select id="e-shield-select" onchange="onPlayerLoadoutChange()"></select>
+                </div>
             </div>
 
             <div class="form-group">
@@ -148,6 +210,10 @@
             </div>
 
             <div class="live-sandbox attack-sandbox">
+                <div class="stat-row">
+                    <div>Efektywne HP gracza (armor + tarcza):</div>
+                    <div class="stat-val stat-dps" id="stat-player-effective-hp">100</div>
+                </div>
                 <div class="stat-row">
                     <div>Wymagany DPS wroga:</div>
                     <div class="stat-val stat-enemy-dps" id="stat-enemy-dps">25.0 DPS</div>
@@ -208,7 +274,7 @@
         </div>
 
         <div class="panel full-width">
-            <h2>4. Gotowy eksport danych konfiguracyjnych (JSON dla Godota)</h2>
+            <h2>5. Gotowy eksport danych konfiguracyjnych (JSON dla Godota)</h2>
             <p class="save-hint">Ustawienia zapisują się automatycznie w przeglądarce. Poniżej czysty JSON do gry (bez stanu formularzy).</p>
             <div class="export-actions">
                 <button class="btn-secondary" onclick="importFromJson()">📥 Zaimportuj z JSON</button>
