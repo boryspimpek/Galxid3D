@@ -2,7 +2,8 @@ import { gameData, editingShipId, editingShieldId, setEditingShipId, setEditingS
 import { slugifyId, getShipById, getShieldById, ensureEnemyIds } from './utils.js';
 import { persistState } from './persistence.js';
 import { updateTables } from './ui.js';
-import { updateEnemySliders } from './enemies.js';
+import { updateEnemyPanelInfo } from './enemies.js';
+import { updateStatusBar } from './ui.js';
 
 export function getPlayerEffectiveHp() {
     const ship = getShipById(document.getElementById('e-ship-select')?.value);
@@ -11,25 +12,22 @@ export function getPlayerEffectiveHp() {
 }
 
 export function onPlayerLoadoutChange() {
-    updateEnemySliders();
+    updateEnemyPanelInfo();
+    updateStatusBar();
 }
 
 export function updateShipSliders() {
     document.getElementById('lbl-ship-armor').innerText = document.getElementById('ship-armor').value;
-    if (document.getElementById('e-ship-select')?.options.length) {
-        updateEnemySliders();
-    } else {
-        persistState();
-    }
+    updateEnemyPanelInfo();
+    updateStatusBar();
+    persistState();
 }
 
 export function updateShieldSliders() {
     document.getElementById('lbl-shield-value').innerText = document.getElementById('shield-value').value;
-    if (document.getElementById('e-shield-select')?.options.length) {
-        updateEnemySliders();
-    } else {
-        persistState();
-    }
+    updateEnemyPanelInfo();
+    updateStatusBar();
+    persistState();
 }
 
 export function newShipForm() {

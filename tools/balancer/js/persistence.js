@@ -10,7 +10,7 @@ import { updateTables } from './ui.js';
 import { newShipForm, newShieldForm } from './player.js';
 import { newGeneratorForm } from './generators.js';
 import { newWeaponForm } from './weapons.js';
-import { newEnemyForm } from './enemies.js';
+import { initEnemyPanel } from './enemies.js';
 
 export function collectFormState() {
     return {
@@ -40,13 +40,9 @@ export function collectFormState() {
             cost: parseFloat(document.getElementById('w-cost').value)
         },
         enemy: {
-            name: document.getElementById('e-name').value,
             weaponAnchor: document.getElementById('e-weapon-select').value,
-            ttk: parseFloat(document.getElementById('e-ttk').value),
             shipId: document.getElementById('e-ship-select').value,
-            shieldId: document.getElementById('e-shield-select').value,
-            ttd: parseFloat(document.getElementById('e-ttd').value),
-            attackCooldown: parseFloat(document.getElementById('e-attack-cd').value)
+            shieldId: document.getElementById('e-shield-select').value
         }
     };
 }
@@ -79,13 +75,6 @@ export function applyFormState(form) {
         document.getElementById('w-cooldown').value = form.weapon.cooldown ?? 0.2;
         document.getElementById('w-cost').value = form.weapon.cost ?? 10;
     }
-    if (form.enemy) {
-        document.getElementById('e-name').value = form.enemy.name ?? '';
-        document.getElementById('e-ttk').value = form.enemy.ttk ?? 0.5;
-        document.getElementById('e-ttd').value = form.enemy.ttd ?? 4;
-        document.getElementById('e-attack-cd').value = form.enemy.attackCooldown ?? 0.1;
-    }
-
     return form;
 }
 
@@ -161,6 +150,7 @@ export function resetAllData() {
     newShieldForm();
     newGeneratorForm();
     newWeaponForm();
-    newEnemyForm();
+    resetEditingIds();
+    initEnemyPanel();
     updateTables();
 }

@@ -197,96 +197,40 @@
             <div class="panel full-width">
                 <h2>Projektowanie Wrogów</h2>
 
-                <div class="form-group">
-                    <label>Nazwa Wroga / Archetyp</label>
-                    <input type="text" id="e-name" value="Standardowy Myśliwiec">
-                </div>
+                <p class="enemy-panel-desc">Ustaw statek, tarczę i broń kotwicę. TTK, TTD i CD edytujesz bezpośrednio w tabeli — pozostałe kolumny przeliczają się automatycznie.</p>
 
-                <h3 class="panel-subtitle">Zagrożenie dla gracza</h3>
-
-                <div class="grid-2">
-                    <div class="form-group">
-                        <label>Statek gracza</label>
-                        <select id="e-ship-select"></select>
+                <div class="enemy-panel-toolbar">
+                    <div class="grid-3">
+                        <div class="form-group">
+                            <label>Statek gracza</label>
+                            <select id="e-ship-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>Tarcza gracza</label>
+                            <select id="e-shield-select"></select>
+                        </div>
+                        <div class="form-group">
+                            <label>Broń kotwica</label>
+                            <select id="e-weapon-select"></select>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>Tarcza gracza</label>
-                        <select id="e-shield-select"></select>
+                    <div class="enemy-panel-info" id="enemy-panel-info"></div>
+                    <div class="form-actions enemy-panel-actions">
+                        <button type="button" class="btn-secondary" id="btn-new-enemy">➕ Nowy wróg</button>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label>TTD (Time to Die): <span id="lbl-ttd">4.00s</span></label>
-                    <input type="range" id="e-ttd" min="0" max="60" value="4" step="0.1">
-                </div>
-
-                <div class="form-group">
-                    <label>Cooldown ataku wroga: <span id="lbl-attack-cd">0.10s</span></label>
-                    <input type="range" id="e-attack-cd" min="0.05" max="3.0" value="0.10" step="0.05">
-                </div>
-
-                <div class="live-sandbox attack-sandbox">
-                    <div class="stat-row">
-                        <div>Efektywne HP gracza (armor + tarcza):</div>
-                        <div class="stat-val stat-dps" id="stat-player-effective-hp">100</div>
-                    </div>
-                    <div class="stat-row">
-                        <div>Wymagany DPS wroga:</div>
-                        <div class="stat-val stat-enemy-dps" id="stat-enemy-dps">25.0 DPS</div>
-                    </div>
-                    <div class="stat-row">
-                        <div>DMG pocisku w Godocie:</div>
-                        <div class="stat-val stat-projectile" id="stat-projectile-dmg">2.5 DMG</div>
-                    </div>
-                    <div class="stat-row">
-                        <div>Pocisków do zabicia gracza:</div>
-                        <div class="stat-val stat-shots" id="stat-shots-to-kill">40</div>
-                    </div>
-                    <p class="sandbox-formula">DPS = HP gracza ÷ TTD &nbsp;·&nbsp; pocisk DMG = DPS × CD &nbsp;·&nbsp; strzały = HP gracza ÷ pocisk DMG</p>
-                </div>
-
-                <h3 class="panel-subtitle">Żywotność wroga (TTK)</h3>
-
-                <div class="form-group">
-                    <label>Zbalansuj pod broń bazową (Kotwica):</label>
-                    <select id="e-weapon-select"></select>
-                </div>
-
-                <div class="form-group">
-                    <label>Bazowy TTK (w sekundach): <span id="lbl-ttk">0.50s</span></label>
-                    <input type="range" id="e-ttk" min="0.0" max="10.0" value="0.50" step="0.1">
-                </div>
-
-                <div class="live-sandbox defense-sandbox">
-                    <div class="stat-row">
-                        <div>HP wroga:</div>
-                        <div class="stat-val stat-dps" id="stat-enemy-hp">25 HP</div>
-                    </div>
-                    <div class="stat-row">
-                        <div>Pocisków do zabicia wroga (kotwica):</div>
-                        <div class="stat-val stat-shots" id="stat-shots-to-kill-enemy">3</div>
-                    </div>
-                    <p class="sandbox-formula">HP = DPS kotwicy × TTK &nbsp;·&nbsp; strzały = HP wroga ÷ DMG kotwicy</p>
-                </div>
-                <input type="hidden" id="e-hp" value="25">
-
-                <p class="form-mode form-mode-new" id="enemy-form-mode">Nowy wróg</p>
-                <div class="form-actions">
-                    <button type="button" class="btn-secondary" id="btn-new-enemy">➕ Nowy</button>
-                    <button type="button" class="btn-enemy" id="btn-add-enemy">Dodaj wroga</button>
-                    <button type="button" class="btn-enemy" id="btn-save-enemy" hidden>Zapisz zmiany</button>
-                </div>
-
-                <h3>Zapisani Przeciwnicy</h3>
-                <p class="table-hint">Kliknij wiersz, aby edytować istniejącego wroga</p>
-                <div class="table-wrapper">
-                    <table>
+                <h3>Przeciwnicy</h3>
+                <p class="table-hint">Kliknij wiersz, aby ustawić statek/tarczę/broń z panelu. Zmiany zapisują się od razu.</p>
+                <div class="table-wrapper enemies-table-wrapper">
+                    <table class="enemies-edit-table">
                         <thead>
                             <tr><th>Nazwa</th><th>Weapon</th><th>TTK</th><th>TTD</th><th>CD</th><th>HP</th><th>DPS</th><th>Damage</th><th>Strz. gracza</th><th>Strz. wroga</th><th>Zagrożenie</th></tr>
                         </thead>
                         <tbody id="enemies-table"></tbody>
                     </table>
                 </div>
+                <p class="sandbox-formula enemies-formula">HP = DPS kotwicy × TTK &nbsp;·&nbsp; DPS wroga = HP gracza ÷ TTD &nbsp;·&nbsp; pocisk = DPS × CD</p>
             </div>
         </div>
 

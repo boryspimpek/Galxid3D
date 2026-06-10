@@ -2,7 +2,7 @@ import { gameData, currentSimEnergy, editingWeaponId, setEditingWeaponId, setCur
 import { getGeneratorById, getWeaponById } from './utils.js';
 import { persistState } from './persistence.js';
 import { updateTables } from './ui.js';
-import { calculateEnemyStats } from './enemies.js';
+import { renderEnemiesTable } from './enemies.js';
 
 export function getSelectedWeaponGenerator() {
     const id = document.getElementById('w-generator-select').value;
@@ -90,7 +90,7 @@ export function updateSliders() {
     document.getElementById('lbl-cd').innerText = parseFloat(document.getElementById('w-cooldown').value).toFixed(2) + 's';
     document.getElementById('lbl-cost').innerText = document.getElementById('w-cost').value;
     sim();
-    calculateEnemyStats();
+    renderEnemiesTable();
     persistState();
 }
 

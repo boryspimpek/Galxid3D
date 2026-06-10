@@ -4,7 +4,7 @@ import { initTabs } from './tabs.js';
 import { updateTables } from './ui.js';
 import {
     updateShipSliders, updateShieldSliders, newShipForm, addShip, saveShipChanges,
-    loadShipIntoForm, onPlayerLoadoutChange, newShieldForm, addShield, saveShieldChanges,
+    loadShipIntoForm, newShieldForm, addShield, saveShieldChanges,
     loadShieldIntoForm
 } from './player.js';
 import {
@@ -16,16 +16,16 @@ import {
     onWeaponGeneratorChange, startEnergySimulation
 } from './weapons.js';
 import {
-    updateEnemySliders, newEnemyForm, addEnemy, saveEnemyChanges, loadEnemyIntoForm,
-    calculateEnemyStats
+    addNewEnemy, onEnemyPanelLoadoutChange, syncPanelFromEnemy,
+    updateEnemyPanelInfo, handleEnemyTableInteraction, handleEnemyTableChange
 } from './enemies.js';
+import { editingEnemyId } from './state.js';
 
 const TABLE_LOADERS = {
     'ships-table': loadShipIntoForm,
     'shields-table': loadShieldIntoForm,
     'generators-table': loadGeneratorIntoForm,
-    'weapons-table': loadWeaponIntoForm,
-    'enemies-table': loadEnemyIntoForm
+    'weapons-table': loadWeaponIntoForm
 };
 
 function bindEvents() {
@@ -37,12 +37,9 @@ function bindEvents() {
     document.getElementById('w-cooldown').addEventListener('input', updateSliders);
     document.getElementById('w-cost').addEventListener('input', updateSliders);
     document.getElementById('w-generator-select').addEventListener('change', onWeaponGeneratorChange);
-    document.getElementById('e-ship-select').addEventListener('change', onPlayerLoadoutChange);
-    document.getElementById('e-shield-select').addEventListener('change', onPlayerLoadoutChange);
-    document.getElementById('e-ttd').addEventListener('input', updateEnemySliders);
-    document.getElementById('e-attack-cd').addEventListener('input', updateEnemySliders);
-    document.getElementById('e-ttk').addEventListener('input', updateEnemySliders);
-    document.getElementById('e-weapon-select').addEventListener('change', calculateEnemyStats);
+    document.getElementById('e-ship-select').addEventListener('change', onEnemyPanelLoadoutChange);
+    document.getElementById('e-shield-select').addEventListener('change', onEnemyPanelLoadoutChange);
+    document.getElementById('e-weapon-select').addEventListener('change', onEnemyPanelLoadoutChange);
 
     document.getElementById('btn-new-ship').addEventListener('click', newShipForm);
     document.getElementById('btn-add-ship').addEventListener('click', addShip);
@@ -56,12 +53,16 @@ function bindEvents() {
     document.getElementById('btn-new-weapon').addEventListener('click', newWeaponForm);
     document.getElementById('btn-add-weapon').addEventListener('click', addWeapon);
     document.getElementById('btn-save-weapon').addEventListener('click', saveWeaponChanges);
-    document.getElementById('btn-new-enemy').addEventListener('click', newEnemyForm);
-    document.getElementById('btn-add-enemy').addEventListener('click', addEnemy);
-    document.getElementById('btn-save-enemy').addEventListener('click', saveEnemyChanges);
+    document.getElementById('btn-new-enemy').addEventListener('click', addNewEnemy);
     document.getElementById('btn-import-json').addEventListener('click', importFromJson);
     document.getElementById('btn-download-json').addEventListener('click', downloadJson);
     document.getElementById('btn-reset-data').addEventListener('click', resetAllData);
+
+    const enemiesTable = document.getElementById('enemies-table');
+    enemiesTable.addEventListener('click', handleEnemyTableInteraction);
+    enemiesTable.addEventListener('input', handleEnemyTableChange);
+    enemiesTable.addEventListener('change', handleEnemyTableChange);
+    enemiesTable.addEventListener('blur', handleEnemyTableChange, true);
 
     document.body.addEventListener('click', (e) => {
         const row = e.target.closest('tr[data-table-row]');
@@ -85,10 +86,14 @@ function init() {
 
     updateGeneratorSliders();
     updateTables();
+    if (editingEnemyId) {
+        syncPanelFromEnemy(editingEnemyId);
+    } else {
+        updateEnemyPanelInfo();
+    }
     updateShipSliders();
     updateShieldSliders();
     updateSliders();
-    updateEnemySliders();
 }
 
 document.addEventListener('DOMContentLoaded', init);
