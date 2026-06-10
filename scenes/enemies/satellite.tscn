@@ -6,7 +6,7 @@
 
 [node name="satellite" unique_id=1897743314 instance=ExtResource("1_0kkwh")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
-armor = 5
+armor = 65
 value = 10
 explosion_scene = ExtResource("3_ground")
 

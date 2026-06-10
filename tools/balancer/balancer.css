@@ -167,20 +167,43 @@ th { background: #252530; color: #4fc3f7; font-weight: 600; position: sticky; to
     background: transparent; border: none; border-bottom: 1px solid #3a3a48;
     color: #e0e0e6; font-family: monospace; font-size: 0.8rem; font-weight: 600;
     -moz-appearance: textfield;
+    appearance: textfield;
 }
 .spinner-input:focus { border-bottom-color: #4fc3f7; outline: none; }
 .spinner-input::-webkit-outer-spin-button,
-.spinner-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.spinner-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
 
 .enemies-edit-table tr[data-enemy-row] { cursor: pointer; }
 .enemies-edit-table tr[data-enemy-row] .enemy-name-input,
 .enemies-edit-table tr[data-enemy-row] .num-spinner { cursor: default; }
 
-.enemy-delete-col { width: 40px; padding: 8px !important; }
-.enemy-delete-cell { text-align: center; width: 40px; padding: 8px !important; }
-.enemy-delete-btn {
-    width: 28px; min-width: 28px; height: 28px; margin: 0; padding: 0;
-    background: transparent; color: #e57373; border: 1px solid #3f3f52;
-    font-size: 1.2rem; line-height: 1; border-radius: 4px; cursor: pointer;
+.enemy-actions-col { width: 46px; padding: 6px !important; }
+.enemy-actions-cell { width: 46px; padding: 6px !important; vertical-align: middle; }
+.enemy-row-actions {
+    display: flex; align-items: center; justify-content: center; gap: 5px;
 }
-.enemy-delete-btn:hover { background: #c62828; color: #fff; border-color: #c62828; }
+.enemy-reorder {
+    display: flex; flex-direction: column; align-items: center; gap: 1px; line-height: 1;
+}
+.enemies-edit-table .enemy-move-btn,
+.enemies-edit-table .enemy-delete-btn {
+    width: auto; margin: 0; margin-top: 0; font-weight: normal; line-height: 1;
+}
+.enemies-edit-table .enemy-move-btn {
+    min-width: 18px; height: 14px; padding: 0 2px;
+    background: none; border: none; color: #8a8a9a;
+    font-size: 9px; border-radius: 0; cursor: pointer;
+}
+.enemies-edit-table .enemy-move-btn:hover:not(:disabled) { background: none; color: #4fc3f7; }
+.enemies-edit-table .enemy-move-btn:disabled { opacity: 0.3; cursor: default; }
+.enemies-edit-table .enemy-delete-btn {
+    width: 20px; min-width: 20px; height: 20px; padding: 0; flex-shrink: 0;
+    background: transparent; color: #e57373; border: 1px solid #4a4a58;
+    font-size: 0.85rem; border-radius: 3px; cursor: pointer;
+}
+.enemies-edit-table .enemy-delete-btn:hover { background: #c62828; color: #fff; border-color: #c62828; }
+.enemies-edit-table tr[data-enemy-row] .enemy-row-actions { cursor: default; }

@@ -59,9 +59,11 @@ function formatEnemyCalculated(enemy) {
     };
 }
 
-function buildEnemyRow(enemy) {
+function buildEnemyRow(enemy, index, total) {
     const rowClass = enemy.id === editingEnemyId ? 'row-selected' : '';
     const calc = formatEnemyCalculated(enemy);
+    const canMoveUp = index > 0;
+    const canMoveDown = index < total - 1;
 
     return `<tr class="${rowClass}" data-id="${escapeHtml(enemy.id)}" data-enemy-row>
         <td><input type="text" class="enemy-name-input" value="${escapeHtml(enemy.name)}"></td>
@@ -74,7 +76,15 @@ function buildEnemyRow(enemy) {
         <td data-calc="ttk">${calc.ttk}</td>
         <td data-calc="ttd">${calc.ttd}</td>
         <td data-calc="threatPoints">${calc.threatPoints}</td>
-        <td class="enemy-delete-cell"><button type="button" class="enemy-delete-btn" aria-label="Usuń wroga">×</button></td>
+        <td class="enemy-actions-cell">
+            <div class="enemy-row-actions">
+                <div class="enemy-reorder">
+                    <button type="button" class="enemy-move-btn" data-dir="-1" aria-label="Przesuń wyżej" ${canMoveUp ? '' : 'disabled'}>▴</button>
+                    <button type="button" class="enemy-move-btn" data-dir="1" aria-label="Przesuń niżej" ${canMoveDown ? '' : 'disabled'}>▾</button>
+                </div>
+                <button type="button" class="enemy-delete-btn" aria-label="Usuń wroga">×</button>
+            </div>
+        </td>
     </tr>`;
 }
 
@@ -92,7 +102,8 @@ export function updateEnemyRowCalculated(enemy) {
 export function renderEnemiesTable() {
     recalcAllEnemies();
     const eTable = document.getElementById('enemies-table');
-    eTable.innerHTML = gameData.enemies.map(buildEnemyRow).join('');
+    const total = gameData.enemies.length;
+    eTable.innerHTML = gameData.enemies.map((enemy, index) => buildEnemyRow(enemy, index, total)).join('');
     highlightEnemyRow();
     updateEnemyPanelInfo();
 }
@@ -305,6 +316,20 @@ export function onEnemyPanelLoadoutChange() {
     persistState();
 }
 
+export function moveEnemy(id, direction) {
+    const index = gameData.enemies.findIndex(e => e.id === id);
+    if (index === -1) return;
+
+    const newIndex = index + direction;
+    if (newIndex < 0 || newIndex >= gameData.enemies.length) return;
+
+    const [enemy] = gameData.enemies.splice(index, 1);
+    gameData.enemies.splice(newIndex, 0, enemy);
+    renderEnemiesTable();
+    selectEnemyRow(id);
+    persistState();
+}
+
 export function deleteEnemy(id) {
     const index = gameData.enemies.findIndex(e => e.id === id);
     if (index === -1) return;
@@ -383,6 +408,15 @@ export function stepEnemyInput(id, field, direction) {
 }
 
 export function handleEnemyTableInteraction(event) {
+    const moveBtn = event.target.closest('.enemy-move-btn');
+    if (moveBtn) {
+        event.stopPropagation();
+        if (moveBtn.disabled) return;
+        const row = moveBtn.closest('tr[data-enemy-row]');
+        if (row) moveEnemy(row.dataset.id, parseInt(moveBtn.dataset.dir, 10));
+        return;
+    }
+
     const deleteBtn = event.target.closest('.enemy-delete-btn');
     if (deleteBtn) {
         event.stopPropagation();
