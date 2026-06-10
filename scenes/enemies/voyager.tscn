@@ -8,7 +8,7 @@
 
 [node name="voyager" unique_id=1897743314 instance=ExtResource("1_mmrnp")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-armor = 15
+armor = 100
 value = 50
 explosion_scene = ExtResource("4_nuke")
 
@@ -27,7 +27,7 @@ script = ExtResource("3_yecyo")
 script = ExtResource("3_f87xg")
 burst_count = 3
 burst_interval = 0.12
-damage = 10
+damage = 7
 fire_rate = 2.0
 projectile_velocity = Vector3(0, 0, 5)
 aim = 10
