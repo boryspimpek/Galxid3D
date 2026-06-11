@@ -2,7 +2,7 @@ extends Resource
 class_name MovementData
 
 # ============================================================================
-# MOVEMENT DATA - bazowy ZASÓB ruchu wroga (wzorzec jak WeaponData).
+# MOVEMENT DATA - bazowy ZASÓB ruchu wroga (wzorzec jak EnemyWeaponData).
 # Przypisujesz go do wroga przez @export movement_data — różne instancje
 # mogą mieć różne zasoby (i różne parametry) edytowane wprost na korzeniu.
 # Konkretny sposób ruchu implementuje podklasa, nadpisując get_velocity().

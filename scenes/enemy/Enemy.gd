@@ -3,8 +3,8 @@ extends Area3D
 # --- ZMIENNE EKSPORTOWANE (@EXPORT) ---
 @export_group("Combat")
 @export var armor: int = 1
-## Parametry broni edytowalne per instancja (jak movement_data).
-## Węzeł Weapon określa wzór ognia; zasób — wartości liczbowe.
+## Zasób broni (np. EnemyWeaponData, BurstEnemyWeaponData). Jak movement_data —
+## zostaw pusty, jeśli wróg nie strzela. Typ zasobu wybierasz w inspektorze.
 @export var weapon_data: EnemyWeaponData
 
 @export_group("Movement")
@@ -26,8 +26,11 @@ extends Area3D
 var _is_active: bool = false
 ## Czas (s) odkąd ruch jest aktywny — przekazywany do MovementData.get_velocity().
 var _move_elapsed: float = 0.0
-## Komponent strzelania (dziecko ze skryptem dziedziczącym po EnemyWeapon).
-var _weapon: EnemyWeapon
+var _weapon_firing: bool = false
+var _fire_timer: float = 0.0
+## Stan wzorca broni (np. licznik serii burst) — zasób weapon_data jest bezstanowy.
+var _weapon_state: Dictionary = {}
+var _muzzles: Array[Marker3D] = []
 ## Opcjonalny komponent orientacji (dziecko dziedziczące po EnemyFacing).
 var _facing: EnemyFacing
 
@@ -53,9 +56,7 @@ func _ready() -> void:
 	collision_layer = 2
 	collision_mask = 5
 
-	_weapon = _find_weapon()
-	if _weapon and weapon_data:
-		_weapon.apply_data(weapon_data)
+	_collect_muzzles()
 	_facing = _find_facing()
 
 	_screen_notifier = get_node_or_null("VisibleOnScreenNotifier3D") as VisibleOnScreenNotifier3D
@@ -83,6 +84,9 @@ func _physics_process(delta: float) -> void:
 		global_position += movement_data.get_velocity(_move_elapsed) * delta
 		_move_elapsed += delta
 
+	if weapon_data:
+		_process_weapon(delta)
+
 	if _facing:
 		_facing.process_facing(delta)
 
@@ -90,8 +94,10 @@ func _physics_process(delta: float) -> void:
 # --- METODY PUBLICZNE (API ENEMY) ---
 
 func set_firing(firing: bool) -> void:
-	if _weapon:
-		_weapon.set_firing(firing)
+	if firing and not _weapon_firing and weapon_data:
+		weapon_data.on_begin_firing(_weapon_state)
+		_fire_timer = 0.0 if weapon_data.fire_on_activate else weapon_data.fire_rate
+	_weapon_firing = firing
 
 
 func is_combat_active() -> bool:
@@ -151,13 +157,25 @@ func _spawn_pickups() -> void:
 			pickup.launch(dir, speed)
 
 
-# --- BROŃ (komponent strzelania) ---
+# --- BROŃ (weapon_data) ---
 
-func _find_weapon() -> EnemyWeapon:
-	for child in get_children():
-		if child is EnemyWeapon:
-			return child
-	return null
+func _process_weapon(delta: float) -> void:
+	_fire_timer = max(0.0, _fire_timer - delta)
+	if not _weapon_firing or _fire_timer > 0.0:
+		return
+	weapon_data.fire(self, _muzzles, _weapon_state)
+	SoundManager.play_weapon_sound(weapon_data.sound)
+	_fire_timer = weapon_data.get_next_fire_delay(_weapon_state)
+
+
+func _collect_muzzles() -> void:
+	_muzzles.clear()
+	var m1 := get_node_or_null("Muzzle") as Marker3D
+	if m1:
+		_muzzles.append(m1)
+	var m2 := get_node_or_null("Muzzle2") as Marker3D
+	if m2:
+		_muzzles.append(m2)
 
 
 func _find_facing() -> EnemyFacing:
