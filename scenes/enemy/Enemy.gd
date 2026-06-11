@@ -118,6 +118,7 @@ func get_scroll_distance_remaining() -> float:
 
 
 func take_damage(amount: int, hit_world_position: Variant = null) -> void:
+	_spawn_damage_popup(amount, hit_world_position)
 	var will_die := armor - amount <= 0
 	if not will_die:
 		_spawn_hit_effect(hit_world_position)
@@ -142,6 +143,14 @@ func die() -> void:
 			explosion.global_position = death_pos
 	_spawn_pickups()
 	queue_free()
+
+
+func _spawn_damage_popup(amount: int, hit_world_position: Variant) -> void:
+	var pos := global_position
+	if hit_world_position is Vector3:
+		pos = hit_world_position
+	pos += Vector3(randf_range(-0.2, 0.2), 0.35, randf_range(-0.2, 0.2))
+	DamagePopup.spawn(get_tree(), pos, amount)
 
 
 func _spawn_hit_effect(hit_world_position: Variant) -> void:
