@@ -10,3 +10,7 @@ res://3dworld.tscn
 res://scenes/player/ShieldSystem.gd
 res://scripts/resources/ShieldData.gd
 res://balanciaga.tscn
+res://scenes/enemy/weapons/EnemyWeapon.gd
+res://scenes/enemies/voyager.tscn
+res://assets/ElectricDischargeVFX/electric_discharge_3d.tscn
+res://assets/ElectricDischargeVFX/ElectricDischarge.gd

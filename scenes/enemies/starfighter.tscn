@@ -24,6 +24,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0, 0.155)
 [node name="Weapon" parent="." index="5" unique_id=1893540021]
 damage = 10
 fire_rate = 2.0
+fire_on_activate = true
 projectile_velocity = Vector3(0, 0, 16)
-aim = 10
+aim = 5
 sound = 3

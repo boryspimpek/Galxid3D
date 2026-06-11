@@ -37,7 +37,7 @@ extends Node3D
 @export var scroll_activation_z: float = -17.0
 
 @export_group("Obrażenia")
-@export var contact_damage: int = 1
+@export var contact_damage: int = 50
 @export var hit_radius: float = 1.5
 @export var hit_cooldown: float = 0.5
 

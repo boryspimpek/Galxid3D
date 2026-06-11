@@ -17,6 +17,7 @@ script = ExtResource("6_u3nud")
 [node name="Balanciaga" type="Node3D" unique_id=1997630958]
 
 [node name="Player" parent="." unique_id=1811810025 instance=ExtResource("1_e8wqp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.9567585)
 front_power_level = 3
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=755330341]

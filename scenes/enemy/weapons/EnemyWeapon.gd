@@ -11,6 +11,8 @@ class_name EnemyWeapon
 
 @export var damage: int = 1
 @export var fire_rate: float = 250.0
+## Pierwszy strzał od razu po aktywacji; kolejne nadal w rytmie fire_rate.
+@export var fire_on_activate: bool = false
 @export var projectile_velocity: Vector3 = Vector3(0, 0, 8)
 @export_range(0, 10, 1) var aim: int = 0
 @export var sound: int = 1
@@ -37,11 +39,10 @@ func _physics_process(delta: float) -> void:
 		fire_timer = _next_fire_delay()
 
 
-## Włącza/wyłącza ogień. Po włączeniu odczekujemy pełny cykl (fire_rate),
-## tak jak robił to wcześniej Enemy._activate().
+## Włącza/wyłącza ogień. Domyślnie odczekujemy pełny cykl (fire_rate) przed pierwszym strzałem.
 func set_firing(firing: bool) -> void:
 	if firing and not is_firing:
-		fire_timer = fire_rate
+		fire_timer = 0.0 if fire_on_activate else fire_rate
 	is_firing = firing
 
 

@@ -29,6 +29,7 @@ burst_count = 3
 burst_interval = 0.12
 damage = 8
 fire_rate = 2.0
+fire_on_activate = true
 projectile_velocity = Vector3(0, 0, 5)
 aim = 10
 sound = 5
