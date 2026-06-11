@@ -144,6 +144,7 @@ edge_parallax_3 = 0.05
 
 [node name="Player" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1811810025 instance=ExtResource("4_n40md")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.085, 0, 7.94)
+front_power_level = 3
 
 [node name="LevelScroll" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1395802397]
 script = ExtResource("7_scroll")
@@ -248,57 +249,46 @@ movement_data = SubResource("Resource_sq30x")
 
 [node name="Satelite2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Satelite 2" unique_id=2014793913 instance=ExtResource("20_kisij")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.762, 0, -217.74791)
-armor = 4
 explosion_scene = ExtResource("19_air")
 
 [node name="Satelite3" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Satelite 2" unique_id=2010160207 instance=ExtResource("20_kisij")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.226, 0, -229.57524)
-armor = 4
 explosion_scene = ExtResource("19_air")
 
 [node name="Satelite4" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Satelite 2" unique_id=100743560 instance=ExtResource("20_kisij")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.027752, 0, -249.56584)
-armor = 4
 explosion_scene = ExtResource("19_air")
 
 [node name="Satelite8" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Satelite 2" unique_id=880036743 instance=ExtResource("20_kisij")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.729988, 0, -272.48572)
-armor = 4
 explosion_scene = ExtResource("19_air")
 
 [node name="Satelite9" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Satelite 2" unique_id=749886149 instance=ExtResource("20_kisij")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.675243, 0, -311.35916)
-armor = 4
 explosion_scene = ExtResource("19_air")
 
 [node name="Satelite10" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Satelite 2" unique_id=1122619266 instance=ExtResource("20_kisij")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5107841, 0, -291.42838)
-armor = 4
 explosion_scene = ExtResource("19_air")
 
 [node name="Satelite11" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Satelite 2" unique_id=407145140 instance=ExtResource("20_kisij")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31261444, 0, -204.76384)
-armor = 4
 explosion_scene = ExtResource("19_air")
 
 [node name="Satelite13" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Satelite 2" unique_id=238496710 instance=ExtResource("20_kisij")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.396, 0, -234.60951)
-armor = 4
 explosion_scene = ExtResource("19_air")
 
 [node name="Satelite14" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Satelite 2" unique_id=783845298 instance=ExtResource("20_kisij")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.893051, 0, -299.10074)
-armor = 4
 explosion_scene = ExtResource("19_air")
 
 [node name="Satelite17" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Satelite 2" unique_id=462138424 instance=ExtResource("20_kisij")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.141907, 0, -259.17297)
-armor = 4
 explosion_scene = ExtResource("19_air")
 
 [node name="Satelite19" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Satelite 2" unique_id=1585527726 instance=ExtResource("20_kisij")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.57806, 0, -278.44434)
-armor = 4
 explosion_scene = ExtResource("19_air")
 
 [node name="Voyager" type="Path3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1668047955]

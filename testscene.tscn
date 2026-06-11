@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://diqam3axqrfb5"]
+
+[ext_resource type="Script" uid="uid://h4tfxlaeefcu" path="res://scenes/world/GameShell.gd" id="1_p6d4t"]
+[ext_resource type="PackedScene" uid="uid://c1pq466qvcqtm" path="res://scenes/planets/earth.tscn" id="2_svm4y"]
+[ext_resource type="Script" uid="uid://dt670oushtj6" path="res://scenes/world/HorizontalViewShift.gd" id="3_l64kj"]
+[ext_resource type="PackedScene" uid="uid://dcg8vcl7rmst4" path="res://scenes/world/NoiseBackground.tscn" id="4_f5pqc"]
+[ext_resource type="Script" uid="uid://1pup6o17egip" path="res://scenes/asteroids/AsteroidSpawner.gd" id="5_yxk4f"]
+[ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="6_w8ow6"]
+[ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="7_xi04n"]
+[ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="8_m0ysk"]
+[ext_resource type="Script" path="res://scenes/enemy/movement/LinearMoveData.gd" id="14_3pbrw"]
+[ext_resource type="PackedScene" uid="uid://chbe1na0vrwt8" path="res://scenes/enemies/satellite.tscn" id="16_fgdto"]
+[ext_resource type="PackedScene" uid="uid://uqkpok243a4g" path="res://scenes/enemies/satelite_2.tscn" id="22_w11bf"]
+[ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="23_010gm"]
+
+[sub_resource type="Environment" id="Environment_vshm1"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+volumetric_fog_density = 0.0
+volumetric_fog_emission_energy = 0.0
+
+[sub_resource type="Resource" id="Resource_01clm"]
+script = ExtResource("14_3pbrw")
+
+[node name="GameShell" type="Control" unique_id=616589222]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p6d4t")
+
+[node name="GameViewportContainer" type="SubViewportContainer" parent="." unique_id=616589223]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="GameViewport" type="SubViewport" parent="GameViewportContainer" unique_id=616589224]
+handle_input_locally = false
+size = Vector2i(1620, 1080)
+render_target_update_mode = 4
+
+[node name="GameWorld" type="Node3D" parent="GameViewportContainer/GameViewport" unique_id=616589225]
+
+[node name="World" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=435478258]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=2090551855]
+environment = SubResource("Environment_vshm1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=1804465455]
+transform = Transform3D(-0.25881904, 0.68301266, -0.6830127, 0, 0.7071068, 0.70710677, 0.9659258, 0.18301268, -0.1830127, 0, 15, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=1430056658]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 20, 0)
+
+[node name="Background" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1105100676]
+
+[node name="earth" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=1975713936 instance=ExtResource("2_svm4y")]
+transform = Transform3D(0.4990674, -0.030524269, 0, -0.030383743, -0.49676976, -0.047922913, 0.0029256241, 0.04783353, -0.49769807, 25, -50, -10)
+spin_speed = 0.5
+speed = 1.0
+
+[node name="HorizontalViewShift" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=1299904887]
+script = ExtResource("3_l64kj")
+noise_parallax = 0.0
+earth_parallax = 0.0
+
+[node name="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=697593384 instance=ExtResource("4_f5pqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.079773, -87.24279, 3.474618)
+visible = false
+
+[node name="AsteroidSpawner" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=2034522390]
+script = ExtResource("5_yxk4f")
+spawn_interval_2 = 4.0
+scale_3 = 0.45
+edge_parallax_3 = 0.05
+
+[node name="Player" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1811810025 instance=ExtResource("6_w8ow6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.085, 0, 7.94)
+front_power_level = 3
+
+[node name="LevelScroll" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1395802397]
+script = ExtResource("7_xi04n")
+scroll_speed = 6.0
+
+[node name="LevelScrollRuler" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1812342039 instance=ExtResource("8_m0ysk")]
+max_bound_x = 23.0
+z_min = -240.0
+z_max = 10.0
+show_time_labels = false
+scroll_speed = 6.0
+
+[node name="satellite" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1897743314 instance=ExtResource("16_fgdto")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -8.14061, 0, 1.7444153)
+
+[node name="Satelite2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1335435173 instance=ExtResource("22_w11bf")]
+movement_data = SubResource("Resource_01clm")
+
+[node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("23_010gm")]

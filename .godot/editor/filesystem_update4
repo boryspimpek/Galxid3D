@@ -19,3 +19,4 @@ res://scenes/enemy/facing/EnemyFacing.gd
 res://scenes/enemy/facing/FacePlayer.gd
 res://scenes/enemy/Enemy.gd
 res://scenes/enemies/satelite_2.tscn
+res://testscene.tscn
