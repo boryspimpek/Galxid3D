@@ -5,6 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://dqifwsgog7iw5" path="res://scenes/enemies/satelite_2_model.tscn" id="2_s1cqj"]
 [ext_resource type="Script" uid="uid://cr2knbmonx42w" path="res://scenes/enemy/facing/FacePlayer.gd" id="3_s1cqj"]
 [ext_resource type="PackedScene" uid="uid://chqijevfxuhpd" path="res://assets/BinbunVFX_Vol2/ExplosionFX/effects/ground/vfx_ground_explosion_01.tscn" id="3_vr8x4"]
+[ext_resource type="Script" path="res://scenes/enemy/weapons/EnemyWeaponData.gd" id="4_weapon_data"]
+
+[sub_resource type="Resource" id="Weapon_satelite_2"]
+script = ExtResource("4_weapon_data")
+damage = 10
+fire_rate = 1.5
+projectile_velocity = Vector3(0, 0, 12)
+aim = 5
 
 [sub_resource type="Resource" id="Resource_vr8x4"]
 script = ExtResource("2_2gg4m")
@@ -15,6 +23,7 @@ radius = 1.1539446
 
 [node name="Satelite2" unique_id=1897743314 instance=ExtResource("1_yhem4")]
 armor = 55
+weapon_data = SubResource("Weapon_satelite_2")
 movement_data = SubResource("Resource_vr8x4")
 explosion_scene = ExtResource("3_vr8x4")
 
@@ -28,9 +37,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3882726, 0.5869238)
 
 [node name="Facing" type="Node3D" parent="." index="4" unique_id=1946899739]
 script = ExtResource("3_s1cqj")
-
-[node name="Weapon" parent="." index="5" unique_id=1893540021]
-damage = 10
-fire_rate = 1.5
-projectile_velocity = Vector3(0, 0, 12)
-aim = 5

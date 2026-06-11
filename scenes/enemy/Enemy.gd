@@ -3,6 +3,9 @@ extends Area3D
 # --- ZMIENNE EKSPORTOWANE (@EXPORT) ---
 @export_group("Combat")
 @export var armor: int = 1
+## Parametry broni edytowalne per instancja (jak movement_data).
+## Węzeł Weapon określa wzór ognia; zasób — wartości liczbowe.
+@export var weapon_data: EnemyWeaponData
 
 @export_group("Movement")
 ## Zasób ruchu (np. LinearMoveData). Edytowalny per instancja na korzeniu wroga.
@@ -51,6 +54,8 @@ func _ready() -> void:
 	collision_mask = 5
 
 	_weapon = _find_weapon()
+	if _weapon and weapon_data:
+		_weapon.apply_data(weapon_data)
 	_facing = _find_facing()
 
 	_screen_notifier = get_node_or_null("VisibleOnScreenNotifier3D") as VisibleOnScreenNotifier3D

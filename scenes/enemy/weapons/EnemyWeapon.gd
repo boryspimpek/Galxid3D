@@ -31,6 +31,18 @@ func _ready() -> void:
 	_collect_muzzles()
 
 
+## Kopiuje parametry z zasobu (ustawianego na korzeniu Enemy jako weapon_data).
+func apply_data(data: EnemyWeaponData) -> void:
+	if data == null:
+		return
+	damage = data.damage
+	fire_rate = data.fire_rate
+	fire_on_activate = data.fire_on_activate
+	projectile_velocity = data.projectile_velocity
+	aim = data.aim
+	sound = data.sound
+
+
 func _physics_process(delta: float) -> void:
 	fire_timer = max(0.0, fire_timer - delta)
 	if is_firing and fire_timer <= 0.0:

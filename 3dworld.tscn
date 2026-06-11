@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://scenes/enemy/movement/TimedMoveData.gd" id="18_a02db"]
 [ext_resource type="PackedScene" uid="uid://uqkpok243a4g" path="res://scenes/enemies/satelite_2.tscn" id="20_kisij"]
 [ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemy/EnemyPath3D.gd" id="22_f8qi0"]
+[ext_resource type="Script" uid="uid://bs5humyuxa5j2" path="res://scenes/enemy/weapons/BurstEnemyWeaponData.gd" id="22_g8gpr"]
 [ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyFollow.gd" id="23_dtfyh"]
 
 [sub_resource type="Environment" id="Environment_vshm1"]
@@ -74,12 +75,30 @@ _data = {
 }
 point_count = 4
 
+[sub_resource type="Resource" id="Resource_f8qi0"]
+script = ExtResource("22_g8gpr")
+damage = 8
+fire_rate = 2.0
+fire_on_activate = true
+projectile_velocity = Vector3(0, 0, 12)
+aim = 10
+sound = 5
+
 [sub_resource type="Curve3D" id="Curve3D_f8qi0"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.007255554, 0, -0.023376465, 1.8120346, 0, -2.7868347, -1.8120346, 0, 2.7868347, -4.8869076, 0, 9.943237, 11.604616, 0, -0.2736969, -11.604616, 0, 0.2736969, -29.927603, 0, 18.64032, 0, 0, 0, 0, 0, 0, -57.445786, 0, 11.234024),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
+
+[sub_resource type="Resource" id="Resource_dtfyh"]
+script = ExtResource("22_g8gpr")
+damage = 8
+fire_rate = 2.0
+fire_on_activate = true
+projectile_velocity = Vector3(0, 0, 12)
+aim = 10
+sound = 5
 
 [node name="GameShell" type="Control" unique_id=616589222]
 layout_mode = 3
@@ -283,6 +302,7 @@ script = ExtResource("23_dtfyh")
 
 [node name="voyager" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Voyager/PathFollow3D" unique_id=1594724433 instance=ExtResource("16_a283u")]
 transform = Transform3D(-2, 0, -1.7484555e-07, 0, 2, 0, 1.7484555e-07, 0, -2, 0, 0, 0)
+weapon_data = SubResource("Resource_f8qi0")
 
 [node name="Voyager2" type="Path3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1631859355]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.11615, 0, -294.61026)
@@ -296,5 +316,6 @@ script = ExtResource("23_dtfyh")
 
 [node name="voyager" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Voyager2/PathFollow3D" unique_id=1425618364 instance=ExtResource("16_a283u")]
 transform = Transform3D(-2, 0, -1.7484555e-07, 0, 2, 0, 1.7484555e-07, 0, -2, 0, 0, 0)
+weapon_data = SubResource("Resource_dtfyh")
 
 [node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("1_rpljx")]

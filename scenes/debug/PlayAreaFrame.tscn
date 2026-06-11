@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bq7playareaframe"]
+[gd_scene format=3 uid="uid://bv4qai58b1rya"]
 
 [ext_resource type="Script" path="res://scenes/debug/PlayAreaFrame.gd" id="1_frame"]
 

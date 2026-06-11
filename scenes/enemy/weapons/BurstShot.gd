@@ -22,6 +22,14 @@ func _ready() -> void:
 	_shots_left = burst_count
 
 
+func apply_data(data: EnemyWeaponData) -> void:
+	super.apply_data(data)
+	if data is BurstEnemyWeaponData:
+		burst_count = data.burst_count
+		burst_interval = data.burst_interval
+		_shots_left = burst_count
+
+
 func set_firing(firing: bool) -> void:
 	# Każda aktywacja zaczyna nową serię od początku.
 	if firing and not is_firing:

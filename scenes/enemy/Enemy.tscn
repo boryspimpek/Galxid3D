@@ -1,12 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3de3aei70kw1"]
+[gd_scene load_steps=5 format=3 uid="uid://c3de3aei70kw1"]
 
 [ext_resource type="Script" uid="uid://b6u5jc5l8dstd" path="res://scenes/enemy/Enemy.gd" id="1_enemy"]
 [ext_resource type="Script" uid="uid://c5simpsh0ot01" path="res://scenes/enemy/weapons/SimpleShoot.gd" id="2_weapon"]
+[ext_resource type="Script" path="res://scenes/enemy/weapons/EnemyWeaponData.gd" id="3_weapon_data"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sjakr"]
 
+[sub_resource type="Resource" id="Weapon_default"]
+script = ExtResource("3_weapon_data")
+fire_rate = 250.0
+
 [node name="Enemy" type="Area3D" unique_id=1897743314]
 script = ExtResource("1_enemy")
+weapon_data = SubResource("Weapon_default")
 
 [node name="EnemyModel" type="Node3D" parent="." unique_id=634598779]
 
@@ -20,6 +26,5 @@ shape = SubResource("CapsuleShape3D_sjakr")
 
 [node name="Weapon" type="Node" parent="." unique_id=1893540021]
 script = ExtResource("2_weapon")
-fire_rate = 250.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
