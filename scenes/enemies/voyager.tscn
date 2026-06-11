@@ -4,18 +4,16 @@
 [ext_resource type="PackedScene" uid="uid://cr7rlbbhoidnb" path="res://scenes/enemies/voyager_model.tscn" id="2_f87xg"]
 [ext_resource type="Script" uid="uid://cr2knbmonx42w" path="res://scenes/enemy/facing/FacePlayer.gd" id="4_face"]
 [ext_resource type="PackedScene" uid="uid://s6dwn56csbw1" path="res://assets/BinbunVFX_Vol2/ExplosionFX/effects/nuke/vfx_nuke_explosion_01.tscn" id="4_nuke"]
-[ext_resource type="Script" path="res://scenes/enemy/weapons/BurstEnemyWeaponData.gd" id="5_weapon_data"]
+[ext_resource type="Script" uid="uid://bs5humyuxa5j2" path="res://scenes/enemy/weapons/BurstEnemyWeaponData.gd" id="5_weapon_data"]
 
 [sub_resource type="Resource" id="Weapon_voyager"]
 script = ExtResource("5_weapon_data")
 damage = 8
-fire_rate = 2.0
+fire_rate = 1.5
 fire_on_activate = true
-projectile_velocity = Vector3(0, 0, 5)
+projectile_velocity = Vector3(0, 0, 10)
 aim = 10
 sound = 5
-burst_count = 3
-burst_interval = 0.12
 
 [node name="voyager" unique_id=1897743314 instance=ExtResource("1_mmrnp")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -32,5 +30,5 @@ transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.3
 [node name="Muzzle" parent="." index="3" unique_id=1704985833]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9653013)
 
-[node name="Facing" type="Node3D" parent="." index="4"]
+[node name="Facing" type="Node3D" parent="." index="4" unique_id=547084207]
 script = ExtResource("4_face")

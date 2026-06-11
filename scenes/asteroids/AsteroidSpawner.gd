@@ -19,7 +19,10 @@ const ASTEROID_META := "asteroid"
 
 @export_group("Paralaksa boczna")
 @export var enable_edge_parallax: bool = true
-## Mnożnik względem przesunięcia z HorizontalViewShift (pozycja gracza, bez ruchu kamery).
+## Maks. przesunięcie warstw asteroid przy graczu na krawędzi play area (oś X).
+@export var max_parallax_shift: float = 8.0
+@export var parallax_smooth: float = 8.0
+## Mnożnik przesunięcia gracza per warstwa asteroid (bliższe = większa wartość).
 
 @export_group("Poziom 1")
 @export var y_1: float = 5.0
@@ -49,12 +52,13 @@ const ASTEROID_META := "asteroid"
 
 var _spawn_timers: Array[float] = []
 var _layers: Array[Node3D] = []
-var _view_shift: Node
+var _player: Node3D
+var _shift_x: float = 0.0
 
 
 func _ready() -> void:
 	_setup_layers()
-	_view_shift = get_parent().get_node_or_null("HorizontalViewShift")
+	call_deferred("_setup_player")
 	_spawn_timers = [
 		spawn_interval_1,
 		spawn_interval_2,
@@ -78,10 +82,23 @@ func _setup_layers() -> void:
 		_layers.append(layer)
 
 
+func _setup_player() -> void:
+	_player = get_tree().get_first_node_in_group("player") as Node3D
+
+
 func _process(delta: float) -> void:
+	_update_parallax_shift(delta)
 	_update_layer_parallax()
 	_tick_spawn_timers(delta)
 	_update_asteroids(delta)
+
+
+func _update_parallax_shift(delta: float) -> void:
+	if _player == null:
+		return
+
+	var target_shift := _calc_target_shift()
+	_shift_x = lerpf(_shift_x, target_shift, parallax_smooth * delta)
 
 
 func _update_layer_parallax() -> void:
@@ -90,15 +107,16 @@ func _update_layer_parallax() -> void:
 			layer.position.x = 0.0
 		return
 
-	var shift_x := _get_view_shift_x()
 	for i in LEVEL_COUNT:
-		_layers[i].position.x = shift_x * _get_parallax(i)
+		_layers[i].position.x = _shift_x * _get_parallax(i)
 
 
-func _get_view_shift_x() -> float:
-	if _view_shift != null and _view_shift.has_method(&"get_shift_x"):
-		return _view_shift.get_shift_x()
-	return 0.0
+func _calc_target_shift() -> float:
+	var bound_x: float = float(_player.get("max_bound_x"))
+	if bound_x <= 0.0:
+		return 0.0
+
+	return (_player.global_position.x / bound_x) * max_parallax_shift
 
 
 func _preprocess(time: float) -> void:

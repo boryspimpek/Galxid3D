@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://h4tfxlaeefcu" path="res://scenes/world/GameShell.gd" id="1_p6d4t"]
 [ext_resource type="PackedScene" uid="uid://c1pq466qvcqtm" path="res://scenes/planets/earth.tscn" id="2_svm4y"]
-[ext_resource type="Script" uid="uid://dt670oushtj6" path="res://scenes/world/HorizontalViewShift.gd" id="3_l64kj"]
 [ext_resource type="PackedScene" uid="uid://dcg8vcl7rmst4" path="res://scenes/world/NoiseBackground.tscn" id="4_f5pqc"]
 [ext_resource type="Script" uid="uid://1pup6o17egip" path="res://scenes/asteroids/AsteroidSpawner.gd" id="5_yxk4f"]
 [ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="6_w8ow6"]
@@ -68,12 +67,7 @@ transform = Transform3D(0.4990674, -0.030524269, 0, -0.030383743, -0.49676976, -
 spin_speed = 0.5
 speed = 1.0
 
-[node name="HorizontalViewShift" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=1299904887]
-script = ExtResource("3_l64kj")
-noise_parallax = 0.0
-earth_parallax = 0.0
-
-[node name="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=697593384 instance=ExtResource("4_f5pqc")]
+[node name="NoiseBackground" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=697593384 instance=ExtResource("4_f5pqc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.079773, -87.24279, 3.474618)
 visible = false
 
