@@ -15,14 +15,12 @@ const SETTLE_TIME := 0.08
 @export var tilt_y: Vector2 = Vector2(-0.25, 0.25)
 
 @onready var _label: Label3D = $Label3D
-@onready var _glow: Label3D = $GlowLabel3D
 
 var _elapsed: float = 0.0
 var _start_pos: Vector3 = Vector3.ZERO
 var _drift: Vector3 = Vector3.ZERO
 var _tilt: float = 0.0
 var _label_base_color: Color = Color.WHITE
-var _glow_base_color: Color = Color.WHITE
 
 
 static func spawn(tree: SceneTree, world_position: Vector3, amount: int) -> void:
@@ -44,16 +42,12 @@ static func _get_spawn_parent(tree: SceneTree) -> Node:
 
 
 func setup(world_position: Vector3, amount: int) -> void:
-	var text := str(amount)
 	_start_pos = world_position
 	global_position = world_position
 
-	_label.text = text
-	_glow.text = text
+	_label.text = str(amount)
 	_label_base_color = _label.modulate
-	_glow_base_color = _glow.modulate
 	_label.modulate = _label_base_color
-	_glow.modulate = _glow_base_color
 
 	_drift = Vector3(
 		randf_range(drift_x.x, drift_x.y),
@@ -63,9 +57,7 @@ func setup(world_position: Vector3, amount: int) -> void:
 	_tilt = randf_range(tilt_y.x, tilt_y.y)
 	rotation.y = _tilt
 
-	var tiny_scale := 0.15
-	_label.scale = Vector3.ONE * tiny_scale
-	_glow.scale = Vector3.ONE * tiny_scale * 1.15
+	_label.scale = Vector3.ONE * 0.15
 	_elapsed = 0.0
 
 
@@ -88,13 +80,11 @@ func _process(delta: float) -> void:
 		scale_val = lerpf(1.0, 0.88, shrink_t)
 
 	_label.scale = Vector3.ONE * scale_val
-	_glow.scale = Vector3.ONE * scale_val * 1.12
 
 	var fade_start := 0.45
 	var fade_t := clampf((t - fade_start) / (1.0 - fade_start), 0.0, 1.0)
 	var alpha := 1.0 - fade_t * fade_t
 	_label.modulate = Color(_label_base_color.r, _label_base_color.g, _label_base_color.b, _label_base_color.a * alpha)
-	_glow.modulate = Color(_glow_base_color.r, _glow_base_color.g, _glow_base_color.b, _glow_base_color.a * alpha)
 
 	rotation.y = _tilt * (1.0 - move_ease * 0.6)
 

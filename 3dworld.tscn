@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://c0rjf6bfsduht"]
 
-[ext_resource type="Script" uid="uid://dt670oushtj6" path="res://scenes/world/HorizontalViewShift.gd" id="1_3vxff"]
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="1_rpljx"]
 [ext_resource type="Script" uid="uid://h4tfxlaeefcu" path="res://scenes/world/GameShell.gd" id="1_shell"]
 [ext_resource type="PackedScene" uid="uid://c1pq466qvcqtm" path="res://scenes/planets/earth.tscn" id="2_lp3by"]
@@ -146,25 +145,22 @@ transform = Transform3D(0.4990674, -0.030524269, 0, -0.030383743, -0.49676976, -
 spin_speed = 0.5
 speed = 1.0
 
-[node name="HorizontalViewShift" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=1299904887]
-script = ExtResource("1_3vxff")
-noise_parallax = 0.0
-earth_parallax = 0.0
-
 [node name="NoiseBackground" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=697593384 instance=ExtResource("5_m2xqg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.079773, -87.24279, 3.474618)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -87.243, 0)
 
 [node name="AsteroidSpawner" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=2034522390]
 script = ExtResource("4_rpljx")
 spawn_interval_2 = 1.0
 asteroid_speed_2 = 30.0
+edge_parallax_2 = 0.76
 spawn_interval_3 = 1.0
 asteroid_speed_3 = 10.0
 scale_3 = 0.45
-edge_parallax_3 = 0.05
+edge_parallax_3 = 0.14
 
 [node name="Player" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1811810025 instance=ExtResource("4_n40md")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.085, 0, 7.94)
+front_power_level = 2
 
 [node name="LevelScroll" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1395802397]
 script = ExtResource("7_scroll")

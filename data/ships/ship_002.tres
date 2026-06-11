@@ -1,15 +1,10 @@
-[gd_resource type="Resource" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="ShipData" format=3 uid="uid://bkervyyqf7x73"]
 
-[ext_resource type="Script" path="res://scripts/resources/ShipData.gd" id="1"]
+[ext_resource type="Script" uid="uid://b67wo33ojrncw" path="res://scripts/resources/ShipData.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
 ship_index = 2
-ship_name = "SuperCarrot"
-ship_graphic = 119
-item_graphic = 281
-ani = 2
-speed = -2
-armor = 26
+ship_name = "USP Talon Light Fighter"
+armor = 40
 cost = 65000
-big_ship_graphic = 32

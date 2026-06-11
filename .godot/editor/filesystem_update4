@@ -8,3 +8,6 @@ res://testscene.tscn
 res://data/weapons/weapon_1.tres
 res://scenes/ui/DamagePopup.gd
 res://scenes/enemy/Enemy.gd
+res://3dworld.tscn
+res://data/ships/ship_001.tres
+res://data/ships/ship_002.tres

@@ -1,26 +1,18 @@
 [gd_scene format=3 uid="uid://c8dmgpopup01"]
 
 [ext_resource type="Script" uid="uid://pv1xprfd8c53" path="res://scenes/ui/DamagePopup.gd" id="1_popup"]
+[ext_resource type="FontFile" uid="uid://dqyf02xb4hxr" path="res://assets/fonts/Bangers-Regular.ttf" id="2_5mopy"]
 
 [node name="DamagePopup" type="Node3D" unique_id=410455053]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 script = ExtResource("1_popup")
 drift_z = Vector2(-1.2, 0)
 
-[node name="GlowLabel3D" type="Label3D" parent="." unique_id=892104337]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02)
-pixel_size = 0.008
-billboard = 1
-modulate = Color(0, 0, 0, 1)
-outline_modulate = Color(1, 1, 1, 1)
-text = "0"
-font_size = 108
-
 [node name="Label3D" type="Label3D" parent="." unique_id=583403419]
 pixel_size = 0.008
 billboard = 1
 modulate = Color(1, 0.95, 0.38, 1)
-outline_modulate = Color(0.9691369, 0.9691369, 0.9691368, 1)
 text = "0"
+font = ExtResource("2_5mopy")
 font_size = 96
-outline_size = 14
+outline_size = 20
