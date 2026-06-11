@@ -1,10 +1,8 @@
-res://3dworld.tscn
+res://scenes/ui/DamagePopup.tscn
 res://assets/BinbunVFX/shared/texture/noise/cell/cell_manhattan_01.tres
 res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mprojectile_javelin_01/mprojectile_javelin_01_head.tres
 res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mprojectile_javelin_01/mprojectile_javelin_01_trail.tres
 res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mprojectile_javelin_01/mprojectile_javelin_01_core.tres
 res://assets/shaders/toon.gdshader
-res://scenes/enemy/Enemy.gd
-res://scenes/ui/DamagePopup.tscn
-res://scenes/player/Player.gd
-res://scenes/ui/Hud.gd
+res://testscene.tscn
+res://data/weapons/weapon_1.tres

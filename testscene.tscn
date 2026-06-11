@@ -102,6 +102,7 @@ scroll_speed = 6.0
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -8.14061, 0, 1.7444153)
 
 [node name="Satelite2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1335435173 instance=ExtResource("22_w11bf")]
+armor = 1000
 movement_data = SubResource("Resource_01clm")
 
 [node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("23_010gm")]
