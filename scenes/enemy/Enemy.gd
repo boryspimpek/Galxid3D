@@ -133,6 +133,7 @@ func take_damage(amount: int, hit_world_position: Variant = null) -> void:
 
 
 func die() -> void:
+	HitComboManager.register_kill()
 	SoundManager.play_sound(9)
 	if explosion_scene:
 		var death_pos := global_position
@@ -289,6 +290,7 @@ func _deactivate() -> void:
 func _on_screen_exited() -> void:
 	_deactivate()
 	if despawn_off_screen:
+		print("[Enemy] despawn off-screen: ", name, " @ z=", global_position.z)
 		queue_free()
 
 

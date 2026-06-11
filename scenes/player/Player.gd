@@ -77,7 +77,7 @@ func _log_connected_joypads() -> void:
 	if pads.is_empty():
 		print("Player: Brak podłączonych padów (joypadów).")
 		return
-	print("Player: Wykryto %d pad(ów):" % pads.size())
+	# print("Player: Wykryto %d pad(ów):" % pads.size())
 	for device_id in pads:
 		print(
 			"  [%d] %s (guid: %s)" % [

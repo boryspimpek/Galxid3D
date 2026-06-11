@@ -14,13 +14,13 @@ point_count = 4
 
 [sub_resource type="Curve" id="Curve_ahi8g"]
 _limits = [0.0, 3.0, 0.0, 1.0]
-_data = [Vector2(0.40366971, 1.002439), 0.0, 6.7673707, 0, 0, Vector2(1, 2.095612), 0.9908535, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0, 0.94315076), 0.0, 0.51740485, 0, 0, Vector2(0.5151515, 2.1411917), 6.875751, 6.875751, 0, 0, Vector2(1, 2.19863), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [node name="Formation" type="Node3D" unique_id=1730415998]
 
 [node name="Path" type="Path3D" parent="." unique_id=1730415999]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.142967, 0, 3.1889534)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.796192, 0, 3.1889534)
 curve = SubResource("Curve3D_lu1cq")
 script = ExtResource("1_rxsle")
 activation_mode = 0
@@ -73,5 +73,4 @@ script = ExtResource("2_g61cf")
 transform = Transform3D(-1.3, 0, -1.9629454e-07, 0, 1.3, 0, 1.9629454e-07, 0, -1.3, 0, 0, 0)
 
 [node name="PlayAreaFrame" parent="." unique_id=616916982 instance=ExtResource("4_g61cf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.45)
 visible = false

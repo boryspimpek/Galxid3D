@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @export var show_fps: bool = true
+@export var min_combo_to_show: int = 2
 @export var panel_width: float = 300.0:
 	set(value):
 		panel_width = maxf(180.0, value)
@@ -19,6 +20,7 @@ extends CanvasLayer
 @onready var _restart_confirm: Control = %RestartConfirm
 @onready var _game_over: Control = %GameOver
 @onready var _fps_label: Label = %FpsLabel
+@onready var _combo_label: Label = %ComboLabel
 
 var _player: CharacterBody3D
 var _shield_system: Node
@@ -32,8 +34,10 @@ func _ready() -> void:
 	%RestartConfirmYes.pressed.connect(_restart_run)
 	%RestartConfirmNo.pressed.connect(_hide_restart_confirm)
 	%GameOverRestartButton.pressed.connect(_restart_run)
+	HitComboManager.combo_changed.connect(_on_combo_changed)
 	call_deferred("_bind_player")
 	call_deferred("_enable_game_viewport_render_timing")
+	_update_combo_label(HitComboManager.combo)
 
 
 func _enable_game_viewport_render_timing() -> void:
@@ -125,6 +129,20 @@ func _process(delta: float) -> void:
 	_energy_bar.max_value = max_pwr
 	_energy_bar.value = pwr
 	_energy_label.text = "%d / %d" % [int(roundf(pwr)), int(roundf(max_pwr))]
+
+
+func _on_combo_changed(combo: int) -> void:
+	_update_combo_label(combo)
+
+
+func _update_combo_label(combo: int) -> void:
+	if _combo_label == null:
+		return
+	if combo < min_combo_to_show:
+		_combo_label.visible = false
+		return
+	_combo_label.visible = true
+	_combo_label.text = "COMBO x%d" % combo
 
 
 func _update_fps(delta: float) -> void:

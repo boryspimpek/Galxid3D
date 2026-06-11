@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://46bi8dsn4fu5"
 DataManager="*res://scripts/core/DataManager.gd"
 GameConstants="*res://scripts/core/GameConstants.gd"
 SoundManager="*res://scripts/managers/SoundManager.gd"
+HitComboManager="*res://scripts/managers/HitComboManager.gd"
 
 [display]
 

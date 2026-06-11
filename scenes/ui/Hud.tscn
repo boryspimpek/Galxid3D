@@ -50,6 +50,12 @@ font_color = Color(1, 0.84, 0.2, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 0.85)
 
+[sub_resource type="LabelSettings" id="LabelSettings_combo"]
+font_size = 44
+font_color = Color(1, 0.55, 0.15, 1)
+outline_size = 6
+outline_color = Color(0.1, 0.04, 0, 0.9)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shield"]
 bg_color = Color(0.72, 0.45, 1, 1)
 corner_radius_top_left = 2
@@ -87,6 +93,23 @@ offset_bottom = 34.0
 mouse_filter = 2
 text = "FPS: -- | logika: -- ms | gfx: -- ms"
 label_settings = SubResource("LabelSettings_fps")
+
+[node name="ComboLabel" type="Label" parent="Root" unique_id=2847193051]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -220.0
+offset_top = 72.0
+offset_right = 220.0
+offset_bottom = 132.0
+grow_horizontal = 2
+mouse_filter = 2
+text = "COMBO x2"
+label_settings = SubResource("LabelSettings_combo")
+horizontal_alignment = 1
 
 [node name="SidePanel" type="PanelContainer" parent="Root" unique_id=947160678]
 layout_mode = 1
