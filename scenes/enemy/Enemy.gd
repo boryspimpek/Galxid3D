@@ -159,6 +159,11 @@ func _find_facing() -> EnemyFacing:
 	for child in get_children():
 		if child is EnemyFacing:
 			return child
+	var parent := get_parent()
+	if parent is PathFollow3D:
+		for sibling in parent.get_children():
+			if sibling is EnemyFacing:
+				return sibling
 	return null
 
 

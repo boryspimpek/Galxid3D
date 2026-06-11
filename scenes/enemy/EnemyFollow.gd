@@ -59,6 +59,17 @@ func _find_enemy() -> Node:
 	return null
 
 
+func _enemy_has_facing_component() -> bool:
+	for child in get_children():
+		if child is EnemyFacing:
+			return true
+		if child.is_in_group("enemies"):
+			for sub in child.get_children():
+				if sub is EnemyFacing:
+					return true
+	return false
+
+
 func _start_path() -> void:
 	if _path_active:
 		return
@@ -99,7 +110,11 @@ func _physics_process(delta: float) -> void:
 	progress += (_get_speed() * speed_mul) * delta
 	progress = clamp(progress, 0.0, baked_len)
 
-	rotation_mode = PathFollow3D.ROTATION_ORIENTED
+	# EnemyFacing (np. FacePlayer) sam ustawia yaw — bez podwójnego obrotu PathFollow.
+	if _enemy_has_facing_component():
+		rotation_mode = PathFollow3D.ROTATION_NONE
+	else:
+		rotation_mode = PathFollow3D.ROTATION_ORIENTED
 	_apply_banking(delta)
 
 

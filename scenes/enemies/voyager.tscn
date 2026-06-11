@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemy/Enemy.tscn" id="1_mmrnp"]
 [ext_resource type="PackedScene" uid="uid://cr7rlbbhoidnb" path="res://scenes/enemies/voyager_model.tscn" id="2_f87xg"]
 [ext_resource type="Script" uid="uid://b7burstsh0t01" path="res://scenes/enemy/weapons/BurstShot.gd" id="3_f87xg"]
-[ext_resource type="Script" uid="uid://cr2knbmonx42w" path="res://scenes/enemy/facing/FacePlayer.gd" id="3_yecyo"]
+[ext_resource type="Script" uid="uid://cr2knbmonx42w" path="res://scenes/enemy/facing/FacePlayer.gd" id="4_face"]
 [ext_resource type="PackedScene" uid="uid://s6dwn56csbw1" path="res://assets/BinbunVFX_Vol2/ExplosionFX/effects/nuke/vfx_nuke_explosion_01.tscn" id="4_nuke"]
 
 [node name="voyager" unique_id=1897743314 instance=ExtResource("1_mmrnp")]
@@ -20,8 +20,8 @@ transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.3
 [node name="Muzzle" parent="." index="3" unique_id=1704985833]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9653013)
 
-[node name="Facing" type="Node3D" parent="." index="4" unique_id=565702729]
-script = ExtResource("3_yecyo")
+[node name="Facing" type="Node3D" parent="." index="4"]
+script = ExtResource("4_face")
 
 [node name="Weapon" parent="." index="5" unique_id=1893540021]
 script = ExtResource("3_f87xg")

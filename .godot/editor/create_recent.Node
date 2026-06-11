@@ -1,9 +1,9 @@
+Node3D
 PathFollow3D
 Path3D
 DirectionalLight3D
 WorldEnvironment
 Camera3D
-Node3D
 MeshInstance3D
 CollisionShape3D
 VisibleOnScreenNotifier3D

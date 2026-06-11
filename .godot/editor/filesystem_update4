@@ -14,3 +14,8 @@ res://scenes/enemy/weapons/EnemyWeapon.gd
 res://scenes/enemies/voyager.tscn
 res://assets/ElectricDischargeVFX/electric_discharge_3d.tscn
 res://assets/ElectricDischargeVFX/ElectricDischarge.gd
+res://scenes/enemy/EnemyFollow.gd
+res://scenes/enemy/facing/EnemyFacing.gd
+res://scenes/enemy/facing/FacePlayer.gd
+res://scenes/enemy/Enemy.gd
+res://scenes/enemies/satelite_2.tscn

@@ -33,4 +33,4 @@ script = ExtResource("3_s1cqj")
 damage = 10
 fire_rate = 1.5
 projectile_velocity = Vector3(0, 0, 12)
-aim = 10
+aim = 5

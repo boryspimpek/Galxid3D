@@ -3,8 +3,8 @@ class_name FacePlayer
 
 # ============================================================================
 # FACE PLAYER - płynnie obraca wroga (yaw wokół Y) w stronę gracza.
-# Obraca cały korzeń wroga, więc muzzle też celują w gracza (działa jak
-# fizyczne celowanie). Kamera jest top-down, dlatego liczy się tylko yaw.
+# Działa też na wrogach pod PathFollow3D (EnemyPath) — dodaj węzeł „Facing”
+# ze skryptem FacePlayer; EnemyFollow wtedy nie obraca PathFollow za wrogiem.
 # ============================================================================
 
 ## Szybkość wygładzania obrotu (większe = szybciej dogania gracza).
@@ -26,10 +26,11 @@ func process_facing(delta: float) -> void:
 	if to_player.length_squared() < 0.0001:
 		return
 
-	# atan2(x, z): yaw, przy którym lokalna oś +Z wskazuje na gracza.
 	var target_yaw := atan2(to_player.x, to_player.z) + deg_to_rad(yaw_offset_degrees)
-
 	var alpha := 1.0 - exp(-turn_smooth * delta) if turn_smooth > 0.0 else 1.0
-	var r := _enemy.rotation
-	r.y = lerp_angle(r.y, target_yaw, alpha)
-	_enemy.rotation = r
+	var bank_z := _enemy.rotation.z
+	var global_r := _enemy.global_rotation
+	global_r.x = 0.0
+	global_r.y = lerp_angle(global_r.y, target_yaw, alpha)
+	_enemy.global_rotation = global_r
+	_enemy.rotation.z = bank_z

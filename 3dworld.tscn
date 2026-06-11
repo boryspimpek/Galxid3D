@@ -302,13 +302,14 @@ armor = 4
 explosion_scene = ExtResource("19_air")
 
 [node name="Voyager" type="Path3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1668047955]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.589497, 0, -250.4121)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.58994, 0, -257.3014)
 curve = SubResource("Curve3D_2y1ty")
 script = ExtResource("22_f8qi0")
 bank_enabled = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Voyager" unique_id=807025026]
 transform = Transform3D(-0.9979069, 0, -0.064458475, 0, 1, 0, 0.064458475, 0, -0.9979069, -0.007255554, 0, -0.023376465)
+loop = false
 script = ExtResource("23_dtfyh")
 
 [node name="voyager" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Voyager/PathFollow3D" unique_id=1594724433 instance=ExtResource("16_a283u")]
