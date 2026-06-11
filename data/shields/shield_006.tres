@@ -6,6 +6,7 @@
 script = ExtResource("1")
 shield_index = 6
 shield_name = "MicroCorp LXS Class B"
-generator_needed = 6
 protection = 7
+shield_wait = 5.0
+shield_regen_cost = 120
 cost = 4000

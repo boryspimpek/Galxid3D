@@ -6,6 +6,7 @@
 script = ExtResource("1")
 shield_index = 2
 shield_name = "Advanced Integrity Field"
-generator_needed = 3
 protection = 3
+shield_wait = 5.0
+shield_regen_cost = 60
 cost = 250

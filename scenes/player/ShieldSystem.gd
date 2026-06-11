@@ -1,12 +1,11 @@
 extends Node
 
-const SHIELD_WAIT = 5.0  
-
 var player: CharacterBody3D
 
 var shield: float = 0.0
 var shield_max: float = 0.0
-var shield_t: int = 0    
+var shield_regen_cost: int = 0
+var shield_wait: float = 0.0
 var _wait_timer: float = 0.0
 
 func _ready():
@@ -17,10 +16,11 @@ func _ready():
 func load_shield_config():
 	var shield_data = DataManager.get_shield_by_id(player.shield_id)
 	if shield_data:
-		shield_t   = shield_data.generator_needed * 20
+		shield_regen_cost = shield_data.shield_regen_cost
+		shield_wait = shield_data.shield_wait
 		shield     = float(shield_data.protection)
-		shield_max = float(shield_data.protection * 2)
-		print("ShieldSystem: shield=", shield, "/", shield_max, " shield_t=", shield_t, " (power/pkt)")
+		shield_max = float(shield_data.protection)
+		print("ShieldSystem: shield=", shield, "/", shield_max, " regen_cost=", shield_regen_cost, " wait=", shield_wait, "s")
 	else:
 		push_warning("ShieldSystem: brak danych tarczy (shield_id=%d)" % player.shield_id)
 
@@ -29,10 +29,10 @@ func _physics_process(delta: float):
 		_wait_timer -= delta
 
 	if shield < shield_max and _wait_timer <= 0.0:
-		if player.power >= shield_t:
-			player.power -= shield_t
-			shield += 1.0
-			_wait_timer = SHIELD_WAIT
+		if player.power >= shield_regen_cost:
+			player.power -= shield_regen_cost
+			shield += 10.0
+			_wait_timer = shield_wait
 
 func reload():
 	load_shield_config()
