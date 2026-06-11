@@ -18,6 +18,8 @@ extends Area3D
 @export_group("Visual")
 ## Scena wybuchu po śmierci — przeciągnij scenę VFX z FileSystem.
 @export var explosion_scene: PackedScene
+## Efekt trafienia (np. Binbun vfx_hit_01) — odtwarzany przy każdym nieśmiertelnym trafieniu.
+@export var hit_effect_scene: PackedScene
 
 # --- REFERENCJE WĘZŁÓW (@ONREADY) ---
 @onready var ship_model: Node3D = $EnemyModel
@@ -115,12 +117,14 @@ func get_scroll_distance_remaining() -> float:
 	return scroll_activation_z - global_position.z
 
 
-func take_damage(amount: int) -> void:
-	armor -= amount
-	if armor <= 0:
-		die()
-	else:
+func take_damage(amount: int, hit_world_position: Variant = null) -> void:
+	var will_die := armor - amount <= 0
+	if not will_die:
+		_spawn_hit_effect(hit_world_position)
 		SoundManager.play_hit_sound(3)
+	armor -= amount
+	if will_die:
+		die()
 
 
 func die() -> void:
@@ -138,6 +142,29 @@ func die() -> void:
 			explosion.global_position = death_pos
 	_spawn_pickups()
 	queue_free()
+
+
+func _spawn_hit_effect(hit_world_position: Variant) -> void:
+	if hit_effect_scene == null:
+		return
+
+	var hit := hit_effect_scene.instantiate()
+	_unique_vfx_materials(hit)
+	add_child(hit)
+	if hit is Node3D:
+		var local_pos := Vector3.ZERO
+		if hit_world_position is Vector3:
+			local_pos = to_local(hit_world_position)
+		(hit as Node3D).position = local_pos
+
+	if hit.get("one_shot") != null:
+		hit.set("one_shot", true)
+	if hit.get("autoplay") != null:
+		hit.set("autoplay", false)
+	if hit.has_signal("finished"):
+		hit.finished.connect(hit.queue_free)
+	if hit.has_method("play"):
+		hit.play()
 
 
 func _unique_vfx_materials(root: Node) -> void:
