@@ -126,12 +126,31 @@ func take_damage(amount: int) -> void:
 func die() -> void:
 	SoundManager.play_sound(9)
 	if explosion_scene:
+		var death_pos := global_position
 		var explosion := explosion_scene.instantiate()
+		# Binbun VFX współdzielą ShaderMaterial między instancjami — bez duplicate
+		# każda nowa eksplozja odtwarza animację także na starych (w poprzednich pozycjach).
+		_unique_vfx_materials(explosion)
+		if explosion.has_signal("finished"):
+			explosion.finished.connect(explosion.queue_free)
 		get_tree().current_scene.add_child(explosion)
 		if explosion is Node3D:
-			explosion.global_position = global_position
+			explosion.global_position = death_pos
 	_spawn_pickups()
 	queue_free()
+
+
+func _unique_vfx_materials(root: Node) -> void:
+	if root is MeshInstance3D:
+		var mesh := root as MeshInstance3D
+		if mesh.material_override:
+			mesh.material_override = mesh.material_override.duplicate()
+	elif root is GPUParticles3D:
+		var particles := root as GPUParticles3D
+		if particles.material_override:
+			particles.material_override = particles.material_override.duplicate()
+	for child in root.get_children():
+		_unique_vfx_materials(child)
 
 
 ## Wyrzuca `value` pickupów z pozycji wroga w losowych kierunkach (płaszczyzna XZ).

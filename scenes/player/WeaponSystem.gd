@@ -19,6 +19,8 @@ var current_weapon_index: int = 1
 var fire_timer: float = 0.0
 var is_firing: bool = false
 var _ready_to_fire: bool = false
+## Maks. czas życia muzzle flash (s) — krótki, żeby nie zostawał w świecie za graczem.
+const MUZZLE_FLASH_MAX_LIFETIME := 0.12
 
 func _ready():
 	player = get_parent()
@@ -87,20 +89,18 @@ func _spawn_muzzle_flash(velocity: Vector3) -> void:
 		return
 
 	var flash := scene.instantiate()
-	get_tree().current_scene.add_child(flash)
+	# Dziecko Muzzle — błysk jedzie z graczem, nie zostaje w świecie w miejscu strzału.
+	muzzle.add_child(flash)
 	if flash is Node3D:
-		flash.global_transform = _muzzle_flash_transform(velocity)
+		(flash as Node3D).transform = _muzzle_flash_local_transform(velocity)
 
 	_try_play_vfx_flash(flash)
-
-	var anim := flash.get_node_or_null("AnimationPlayer") as AnimationPlayer
-	if anim:
-		anim.animation_finished.connect(func(_name: StringName) -> void:
-			flash.queue_free()
-		, CONNECT_ONE_SHOT)
+	_schedule_flash_cleanup(flash)
 
 
 func _try_play_vfx_flash(flash: Node) -> void:
+	if flash.get("speed_scale") != null:
+		flash.set("speed_scale", 1.75)
 	if not flash.has_method("play"):
 		return
 	flash.set("autoplay", false)
@@ -108,7 +108,28 @@ func _try_play_vfx_flash(flash: Node) -> void:
 	flash.play()
 
 
-func _muzzle_flash_transform(velocity: Vector3) -> Transform3D:
+func _schedule_flash_cleanup(flash: Node) -> void:
+	# instance_id zamiast capture węzła — lambda nie trzyma referencji po queue_free().
+	var flash_id := flash.get_instance_id()
+	var cleanup := func(_anim_name: StringName = &"") -> void:
+		var node := instance_from_id(flash_id)
+		if node:
+			node.queue_free()
+
+	var anim := flash.get_node_or_null("AnimationPlayer") as AnimationPlayer
+	if anim:
+		anim.animation_finished.connect(cleanup, CONNECT_ONE_SHOT)
+
+	get_tree().create_timer(MUZZLE_FLASH_MAX_LIFETIME).timeout.connect(cleanup, CONNECT_ONE_SHOT)
+
+
+func _muzzle_flash_local_transform(velocity: Vector3) -> Transform3D:
+	var world_basis := _muzzle_flash_basis(velocity)
+	var local_basis := muzzle.global_basis.inverse() * world_basis
+	return Transform3D(local_basis, Vector3.ZERO)
+
+
+func _muzzle_flash_basis(velocity: Vector3) -> Basis:
 	var direction := velocity
 	if direction.length_squared() < 0.0001:
 		direction = Vector3(0.0, 0.0, -1.0)
@@ -134,4 +155,4 @@ func _muzzle_flash_transform(velocity: Vector3) -> Transform3D:
 			deg_to_rad(offset.z),
 		))
 
-	return Transform3D(basis, muzzle.global_position)
+	return basis
