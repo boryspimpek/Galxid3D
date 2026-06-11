@@ -23,6 +23,7 @@ var ship_data: ShipData = null
 
 @export var max_bound_x: float = 40.0
 @export var max_bound_z: float = 20.0
+@export var gamepad_move_speed: float = 30.0
 
 @onready var weapon_system: Node = $WeaponSystem
 @onready var damage_system: Node = $DamageSystem
@@ -34,6 +35,7 @@ var main_camera: Camera3D
 # ── Dotyk: cel w świecie + offset (palec nie musi być nad modelem) ──
 var touch_target := Vector3.ZERO
 var is_firing := false
+var _touch_firing := false
 var _touch_grab_offset := Vector3.ZERO  # różnica palec↔statek w momencie dotknięcia
 
 # ============================================================================
@@ -45,10 +47,12 @@ func _ready():
 	collision_layer = 1
 	collision_mask  = 0
 	main_camera = GameViewportHelper.get_game_camera(get_tree())
+	Input.joy_connection_changed.connect(_on_joy_connection_changed)
 	await get_tree().process_frame
 	load_ship_data()
 	apply_ship_stats()
 	init_power_regeneration()
+	_log_connected_joypads()
 
 func load_ship_data():
 	var s_id = ship_id
@@ -68,15 +72,39 @@ func init_power_regeneration():
 	max_power = DataManager.get_generator_power(generator_id)
 	power = max_power
 
+func _log_connected_joypads() -> void:
+	var pads := Input.get_connected_joypads()
+	if pads.is_empty():
+		print("Player: Brak podłączonych padów (joypadów).")
+		return
+	print("Player: Wykryto %d pad(ów):" % pads.size())
+	for device_id in pads:
+		print(
+			"  [%d] %s (guid: %s)" % [
+				device_id,
+				Input.get_joy_name(device_id),
+				Input.get_joy_guid(device_id),
+			]
+		)
+
+func _on_joy_connection_changed(device_id: int, connected: bool) -> void:
+	if connected:
+		print(
+			"Player: Pad podłączony [%d] %s" % [device_id, Input.get_joy_name(device_id)]
+		)
+	else:
+		print("Player: Pad odłączony [%d]" % device_id)
+	_log_connected_joypads()
+
 # ============================================================================
-# 2. INPUT — mysz I dotyk w jednym miejscu
+# 2. INPUT — mysz, dotyk i gamepad
 # ============================================================================
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:
 		if not GameViewportHelper.is_point_in_game_area(get_tree(), event.position):
 			return
-		is_firing = event.pressed
+		_touch_firing = event.pressed
 		if event.pressed:
 			_begin_relative_touch(event.position)
 		else:
@@ -86,11 +114,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		if not GameViewportHelper.is_point_in_game_area(get_tree(), event.position):
 			return
 		_update_relative_touch(event.position)
-
-	elif event is InputEventMouseButton:
-		if not GameViewportHelper.is_point_in_game_area(get_tree(), event.position):
-			return
-		is_firing = Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
 
 	elif event is InputEventMouseMotion:
 		if not GameViewportHelper.is_point_in_game_area(get_tree(), event.position):
@@ -133,11 +156,21 @@ func _physics_process(delta: float):
 
 	var prev_x: float = global_position.x
 
-	if touch_target != Vector3.ZERO:
+	var stick := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+	if stick.length() > 0.0:
+		global_position.x += stick.x * gamepad_move_speed * delta
+		global_position.z += stick.y * gamepad_move_speed * delta
+		touch_target = Vector3.ZERO
+	elif touch_target != Vector3.ZERO:
 		global_position.x = touch_target.x
 		global_position.z = touch_target.z
 
 	_clamp_to_screen()
+	is_firing = (
+		Input.is_action_pressed("fire")
+		or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
+		or _touch_firing
+	)
 	weapon_system.set_firing(is_firing)
 	_update_tilt(global_position.x - prev_x, delta)
 

@@ -93,6 +93,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		_restart_run()
 	elif event is InputEventKey and event.pressed:
 		_restart_run()
+	elif event is InputEventJoypadButton and event.pressed:
+		_restart_run()
 
 
 func _process(delta: float) -> void:
