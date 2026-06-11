@@ -3,8 +3,8 @@ extends Area3D
 # --- ZMIENNE EKSPORTOWANE (@EXPORT) ---
 @export_group("Combat")
 @export var armor: int = 1
-## Zasób broni (np. EnemyWeaponData, BurstEnemyWeaponData). Jak movement_data —
-## zostaw pusty, jeśli wróg nie strzela. Typ zasobu wybierasz w inspektorze.
+## Zasób broni (EnemyWeaponData / BurstEnemyWeaponData / CircleEnemyWeaponData).
+## Jak movement_data — zostaw pusty, jeśli wróg nie strzela.
 @export var weapon_data: EnemyWeaponData
 
 @export_group("Movement")

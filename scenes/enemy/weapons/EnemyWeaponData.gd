@@ -35,11 +35,19 @@ func get_next_fire_delay(_state: Dictionary) -> float:
 
 
 func spawn_projectile(enemy: Node3D, from_muzzle: Marker3D) -> void:
+	spawn_projectile_at(
+		enemy,
+		from_muzzle.global_position,
+		_compute_projectile_velocity(enemy, projectile_velocity, from_muzzle)
+	)
+
+
+func spawn_projectile_at(enemy: Node3D, global_pos: Vector3, velocity: Vector3) -> void:
 	var projectile_scene := GameConstants.enemy_projectile_scene
 	var projectile := projectile_scene.instantiate()
 	enemy.get_tree().current_scene.add_child(projectile)
-	projectile.global_position = from_muzzle.global_position
-	projectile.velocity = _compute_projectile_velocity(enemy, projectile_velocity, from_muzzle)
+	projectile.global_position = global_pos
+	projectile.velocity = velocity
 	projectile.damage = damage
 
 
