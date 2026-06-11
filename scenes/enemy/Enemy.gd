@@ -20,6 +20,10 @@ extends Area3D
 @export var explosion_scene: PackedScene
 ## Efekt trafienia (np. Binbun vfx_hit_01) — odtwarzany przy każdym nieśmiertelnym trafieniu.
 @export var hit_effect_scene: PackedScene
+## Przesunięcie popupu obrażeń w lokalnych osiach wroga (Z− = tył / „wyżej” na ekranie).
+@export var popup_spawn_offset_local: Vector3 = Vector3(0.0, 0.35, -1.2)
+## Losowy rozrzut ± w lokalnych osiach wroga (X = boki, Y = góra, Z = przód/tył).
+@export var popup_spawn_jitter_local: Vector3 = Vector3(0.25, 0.0, 0.35)
 
 # --- REFERENCJE WĘZŁÓW (@ONREADY) ---
 @onready var ship_model: Node3D = $EnemyModel
@@ -149,7 +153,13 @@ func _spawn_damage_popup(amount: int, hit_world_position: Variant) -> void:
 	var pos := global_position
 	if hit_world_position is Vector3:
 		pos = hit_world_position
-	pos += Vector3(randf_range(-0.2, 0.2), 0.35, randf_range(-0.2, 0.2))
+
+	var jitter := Vector3(
+		randf_range(-popup_spawn_jitter_local.x, popup_spawn_jitter_local.x),
+		randf_range(-popup_spawn_jitter_local.y, popup_spawn_jitter_local.y),
+		randf_range(-popup_spawn_jitter_local.z, popup_spawn_jitter_local.z)
+	)
+	pos += global_transform.basis * (popup_spawn_offset_local + jitter)
 	DamagePopup.spawn(get_tree(), pos, amount)
 
 

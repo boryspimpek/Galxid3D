@@ -6,3 +6,5 @@ res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mproj
 res://assets/shaders/toon.gdshader
 res://testscene.tscn
 res://data/weapons/weapon_1.tres
+res://scenes/ui/DamagePopup.gd
+res://scenes/enemy/Enemy.gd
