@@ -1,25 +1,31 @@
 [gd_scene format=3 uid="uid://ceb36gc6o5uvc"]
 
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemy/Enemy.tscn" id="1_3ym5w"]
-[ext_resource type="PackedScene" uid="uid://cj06xe1qfw8ch" path="res://scenes/enemies/starfighter_model.tscn" id="2_g7p8o"]
-[ext_resource type="PackedScene" uid="uid://chqijevfxuhpd" path="res://assets/BinbunVFX_Vol2/ExplosionFX/effects/ground/vfx_ground_explosion_01.tscn" id="3_ground"]
-[ext_resource type="Script" path="res://scenes/enemy/weapons/EnemyWeaponData.gd" id="4_weapon_data"]
+[ext_resource type="PackedScene" uid="uid://cj06xe1qfw8ch" path="res://assets/enemies/starfighter/starfighter_model.tscn" id="2_g7p8o"]
+[ext_resource type="Script" path="res://scenes/enemy/movement/LinearMoveData.gd" id="3_q8gre"]
+[ext_resource type="PackedScene" uid="uid://6okj4uhag0tm" path="res://assets/BinbunVFX_Vol2/ExplosionFX/effects/air/vfx_air_explosion_01.tscn" id="4_q8gre"]
+[ext_resource type="Script" uid="uid://eo6qejm2h6hl" path="res://scenes/enemy/weapons/EnemyWeaponData.gd" id="4_weapon_data"]
+[ext_resource type="PackedScene" uid="uid://dp6fn641cy82u" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/impact/vfx_impact_01.tscn" id="5_sqqeh"]
 
 [sub_resource type="Resource" id="Weapon_starfighter"]
 script = ExtResource("4_weapon_data")
 damage = 10
-fire_rate = 2.0
+fire_rate = 0.8
 fire_on_activate = true
-projectile_velocity = Vector3(0, 0, 16)
+projectile_velocity = Vector3(0, 0, 10)
 aim = 5
 sound = 3
 
+[sub_resource type="Resource" id="Resource_a7w8t"]
+script = ExtResource("3_q8gre")
+
 [node name="starfighter" unique_id=1897743314 instance=ExtResource("1_3ym5w")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
-armor = 45
+armor = 40
 weapon_data = SubResource("Weapon_starfighter")
+movement_data = SubResource("Resource_a7w8t")
 value = 20
-explosion_scene = ExtResource("3_ground")
+explosion_scene = ExtResource("4_q8gre")
+hit_effect_scene = ExtResource("5_sqqeh")
 
 [node name="Starfighter" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1322169304 instance=ExtResource("2_g7p8o")]
 

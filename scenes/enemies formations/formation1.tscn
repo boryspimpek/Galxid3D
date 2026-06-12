@@ -7,20 +7,20 @@
 
 [sub_resource type="Curve3D" id="Curve3D_lu1cq"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.00030326843, 0, 0.007098198, 0, 0, 0, 0, 0, 0, 13.153278, 0, 1.6498041, -5.1843033, 0, -6.869688, 5.1843033, 0, 6.869688, 36.930054, 0, 11.353956, 0, 0, 0, 0, 0, 0, 37.306686, 0, 34.705185),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.0050640106, -0.000546813, 0.007091522, -4.107029, -0.011931181, -0.6343994, 4.107029, 0.011931181, 0.6343994, 19.131456, 5.2600803, 1.4412956, -2.0463467, 0.00024414063, -3.2741566, 2.0463467, -0.00024414063, 3.2741566, 28.840813, 5.232959, 6.7053337, 0, 0, 0, 0, 0, 0, 29.862362, 5.2057815, 35.71143),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
 
 [sub_resource type="Curve" id="Curve_ahi8g"]
 _limits = [0.0, 3.0, 0.0, 1.0]
-_data = [Vector2(0, 0.94315076), 0.0, 0.51740485, 0, 0, Vector2(0.5151515, 2.1411917), 6.875751, 6.875751, 0, 0, Vector2(1, 2.19863), 0.0, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 0.94315076), 0.0, 0.51740485, 0, 0, Vector2(0.5151515, 2.1411917), 6.875751, 6.875751, 0, 0]
+point_count = 2
 
 [node name="Formation" type="Node3D" unique_id=1730415998]
 
 [node name="Path" type="Path3D" parent="." unique_id=1730415999]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.796192, 0, 3.1889534)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.796192, -5.208223, 3.1889534)
 curve = SubResource("Curve3D_lu1cq")
 script = ExtResource("1_rxsle")
 activation_mode = 0
@@ -29,48 +29,48 @@ speed_curve = SubResource("Curve_ahi8g")
 bank_enabled = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path" unique_id=310916544]
-transform = Transform3D(-0.12392704, 0, -0.9922707, 0, 1, 0, 0.9922707, 0, -0.12392704, 0.00030326843, 0, 0.007098198)
+transform = Transform3D(-0.053139318, -0.3288172, -0.9428735, 1.4900847e-08, 0.94422513, -0.3292763, 0.99856603, -0.017498225, -0.0501756, -0.0050640106, -0.000546813, 0.007091522)
 loop = false
 script = ExtResource("2_g61cf")
 
 [node name="blaze 5" parent="Path/PathFollow3D" unique_id=1897743314 instance=ExtResource("3_g61cf")]
-transform = Transform3D(-1.3, 0, -1.9629454e-07, 0, 1.3, 0, 1.9629454e-07, 0, -1.3, 0, 0, 0)
+transform = Transform3D(-7.65, 0, -1.155118e-06, 0, 7.65, 0, 1.155118e-06, 0, -7.65, 0, 0, 0)
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Path" unique_id=2110210760]
-transform = Transform3D(-0.12392719, 0, -0.99227184, 0, 1, 0, 0.99227184, 0, -0.12392719, 2.976949, 0, 0.37885848)
+transform = Transform3D(-0.057564605, -0.31442738, -0.94751114, -0.0015078064, 0.94912577, -0.31486195, 0.9983226, -0.016696798, -0.055110298, 2.8320482, 0.9612279, 0.16655472)
 progress = 3.0
 loop = false
 script = ExtResource("2_g61cf")
 
 [node name="blaze 5" parent="Path/PathFollow3D2" unique_id=514381283 instance=ExtResource("3_g61cf")]
-transform = Transform3D(-1.3, 0, -1.9629454e-07, 0, 1.3, 0, 1.9629454e-07, 0, -1.3, 0, 0, 0)
+transform = Transform3D(-7.65, 0, -1.155118e-06, 0, 7.65, 0, 1.155118e-06, 0, -7.65, 0, 0, 0)
 
 [node name="PathFollow3D3" type="PathFollow3D" parent="Path" unique_id=956187911]
-transform = Transform3D(-0.12392713, 0, -0.9922714, 0, 1, 0, 0.9922714, 0, -0.12392713, 5.9540434, 0, 0.7506748)
+transform = Transform3D(-0.060903296, -0.30357164, -0.9508356, -0.002596158, 0.9526657, -0.30397895, 0.9981243, -0.016045338, -0.0588085, 5.679552, 1.889802, 0.33733854)
 progress = 6.0
 loop = false
 script = ExtResource("2_g61cf")
 
 [node name="blaze 5" parent="Path/PathFollow3D3" unique_id=540680656 instance=ExtResource("3_g61cf")]
-transform = Transform3D(-1.3, 0, -1.9629454e-07, 0, 1.3, 0, 1.9629454e-07, 0, -1.3, 0, 0, 0)
+transform = Transform3D(-7.65, 0, -1.155118e-06, 0, 7.65, 0, 1.155118e-06, 0, -7.65, 0, 0, 0)
 
 [node name="PathFollow3D4" type="PathFollow3D" parent="Path" unique_id=914193793]
-transform = Transform3D(-0.1239271, 0, -0.9922712, 0, 1, 0, 0.9922712, 0, -0.1239271, 8.931065, 0, 1.122482)
+transform = Transform3D(-0.06495326, -0.2904024, -0.9546731, -0.003860248, 0.9567788, -0.2907685, 0.99786496, -0.015201635, -0.063266635, 8.537745, 2.7828372, 0.5201728)
 progress = 9.0
 loop = false
 script = ExtResource("2_g61cf")
 
 [node name="blaze 5" parent="Path/PathFollow3D4" unique_id=1562378140 instance=ExtResource("3_g61cf")]
-transform = Transform3D(-1.3, 0, -1.9629454e-07, 0, 1.3, 0, 1.9629454e-07, 0, -1.3, 0, 0, 0)
+transform = Transform3D(-7.65, 0, -1.155118e-06, 0, 7.65, 0, 1.155118e-06, 0, -7.65, 0, 0, 0)
 
 [node name="PathFollow3D5" type="PathFollow3D" parent="Path" unique_id=1922970098]
-transform = Transform3D(-0.12392705, 0, -0.99227077, 0, 1, 0, 0.99227077, 0, -0.12392705, 11.907449, 0, 1.4942099)
+transform = Transform3D(-0.070594616, -0.27205226, -0.95966315, -0.0055200425, 0.9621741, -0.2723474, 0.99745417, -0.013929642, -0.06942717, 11.408954, 3.6293776, 0.71862155)
 progress = 12.0
 loop = false
 script = ExtResource("2_g61cf")
 
 [node name="blaze 5" parent="Path/PathFollow3D5" unique_id=867071919 instance=ExtResource("3_g61cf")]
-transform = Transform3D(-1.3, 0, -1.9629454e-07, 0, 1.3, 0, 1.9629454e-07, 0, -1.3, 0, 0, 0)
+transform = Transform3D(-7.65, 0, -1.155118e-06, 0, 7.65, 0, 1.155118e-06, 0, -7.65, 0, 0, 0)
 
 [node name="PlayAreaFrame" parent="." unique_id=616916982 instance=ExtResource("4_g61cf")]
 visible = false

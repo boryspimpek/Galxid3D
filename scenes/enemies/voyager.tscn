@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dbqhlqawrvwa7"]
 
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemy/Enemy.tscn" id="1_mmrnp"]
-[ext_resource type="PackedScene" uid="uid://cr7rlbbhoidnb" path="res://scenes/enemies/voyager_model.tscn" id="2_f87xg"]
+[ext_resource type="PackedScene" uid="uid://cr7rlbbhoidnb" path="res://assets/enemies/voyager/voyager_model.tscn" id="2_f87xg"]
 [ext_resource type="Script" uid="uid://cr2knbmonx42w" path="res://scenes/enemy/facing/FacePlayer.gd" id="4_face"]
 [ext_resource type="PackedScene" uid="uid://s6dwn56csbw1" path="res://assets/BinbunVFX_Vol2/ExplosionFX/effects/nuke/vfx_nuke_explosion_01.tscn" id="4_nuke"]
 [ext_resource type="Script" uid="uid://bs5humyuxa5j2" path="res://scenes/enemy/weapons/BurstEnemyWeaponData.gd" id="5_weapon_data"]
@@ -16,7 +16,6 @@ aim = 10
 sound = 5
 
 [node name="voyager" unique_id=1897743314 instance=ExtResource("1_mmrnp")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 armor = 100
 weapon_data = SubResource("Weapon_voyager")
 value = 50
