@@ -10,6 +10,9 @@ const DEFAULT_BANK_STRENGTH := 2.0
 const DEFAULT_BANK_LOOKAHEAD := 1.0
 const DEFAULT_BANK_SMOOTH := 10.0
 
+## Korekta yaw modelu względem ścieżki (mesh GLB często patrzy w tył względem PathFollow).
+@export var enemy_yaw_offset_degrees: float = 180.0
+
 var _path_active: bool = false
 ## Ustawienia fali (EnemyPath3D) — cache przed odpinaniem od LevelScroll.
 var _wave_settings: EnemyPath3D
@@ -18,6 +21,7 @@ var _wave_settings: EnemyPath3D
 func _ready() -> void:
 	_wave_settings = get_parent() as EnemyPath3D
 	_cleanup_legacy_scroll_compensator()
+	_apply_enemy_yaw_offset()
 	_path_active = false
 	set_physics_process(false)
 	_setup_path_start()
@@ -57,6 +61,15 @@ func _find_enemy() -> Node:
 		if child.is_in_group("enemies"):
 			return child
 	return null
+
+
+func _apply_enemy_yaw_offset() -> void:
+	if enemy_yaw_offset_degrees == 0.0:
+		return
+	var enemy := _find_enemy() as Node3D
+	if enemy == null:
+		return
+	enemy.rotate_y(deg_to_rad(enemy_yaw_offset_degrees))
 
 
 func _enemy_has_facing_component() -> bool:

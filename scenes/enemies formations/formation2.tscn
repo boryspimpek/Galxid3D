@@ -34,7 +34,6 @@ loop = false
 script = ExtResource("2_a3xl8")
 
 [node name="blaze 5" parent="Path/PathFollow3D" unique_id=1897743314 instance=ExtResource("3_2sbb6")]
-transform = Transform3D(-7.65, 0, -6.6878425e-07, 0, 7.65, 0, 6.6878425e-07, 0, -7.65, 0, 0, 0)
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Path" unique_id=2110210760]
 transform = Transform3D(0.030082507, -0.4215147, -0.9063029, -0.0053431964, 0.9066511, -0.42183673, 0.9995104, 0.017533218, 0.025022158, 2.2525613, 1.317991, 0.6604947)
@@ -43,7 +42,6 @@ loop = false
 script = ExtResource("2_a3xl8")
 
 [node name="blaze 5" parent="Path/PathFollow3D2" unique_id=687596131 instance=ExtResource("3_2sbb6")]
-transform = Transform3D(-7.65, 0, -1.155118e-06, 0, 7.65, 0, 1.155118e-06, 0, -7.65, 0, 0, 0)
 
 [node name="PathFollow3D3" type="PathFollow3D" parent="Path" unique_id=956187911]
 transform = Transform3D(0.022446081, -0.38978836, -0.92061174, -0.008736845, 0.9207501, -0.39004472, 0.9996873, 0.016798925, 0.017261762, 4.993276, 2.5362906, 0.5969915)
@@ -52,7 +50,6 @@ loop = false
 script = ExtResource("2_a3xl8")
 
 [node name="blaze 5" parent="Path/PathFollow3D3" unique_id=1363455605 instance=ExtResource("3_2sbb6")]
-transform = Transform3D(-7.65, 0, -1.155118e-06, 0, 7.65, 0, 1.155118e-06, 0, -7.65, 0, 0, 0)
 
 [node name="PathFollow3D4" type="PathFollow3D" parent="Path" unique_id=914193793]
 transform = Transform3D(0.013843, -0.35404658, -0.93510425, -0.01218718, 0.9350852, -0.3542042, 0.9998074, 0.016300255, 0.0086295605, 7.7768884, 3.6543515, 0.557799)
@@ -61,7 +58,6 @@ loop = false
 script = ExtResource("2_a3xl8")
 
 [node name="blaze 5" parent="Path/PathFollow3D4" unique_id=929407191 instance=ExtResource("3_2sbb6")]
-transform = Transform3D(-7.65, 0, -1.155118e-06, 0, 7.65, 0, 1.155118e-06, 0, -7.65, 0, 0, 0)
 
 [node name="PathFollow3D5" type="PathFollow3D" parent="Path" unique_id=1922970098]
 transform = Transform3D(0.0031512624, -0.3096274, -0.95083135, -0.015950289, 0.95072025, -0.30963063, 0.9998273, 0.016142767, -0.0019427146, 10.605474, 4.652985, 0.5471349)
@@ -70,7 +66,6 @@ loop = false
 script = ExtResource("2_a3xl8")
 
 [node name="blaze 5" parent="Path/PathFollow3D5" unique_id=1145258823 instance=ExtResource("3_2sbb6")]
-transform = Transform3D(-7.65, 0, -1.155118e-06, 0, 7.65, 0, 1.155118e-06, 0, -7.65, 0, 0, 0)
 
 [node name="PlayAreaFrame" parent="." unique_id=2025243004 instance=ExtResource("4_a3xl8")]
 visible = false

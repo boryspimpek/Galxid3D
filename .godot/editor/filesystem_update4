@@ -1,24 +1,10 @@
+res://scenes/enemy/EnemyFollow.gd
 res://3dworld.tscn
 res://assets/BinbunVFX/shared/texture/noise/cell/cell_manhattan_01.tres
 res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mprojectile_javelin_01/mprojectile_javelin_01_head.tres
 res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mprojectile_javelin_01/mprojectile_javelin_01_trail.tres
 res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mprojectile_javelin_01/mprojectile_javelin_01_core.tres
 res://assets/shaders/toon.gdshader
-res://scenes/enemies formations/formation1.tscn
-res://scenes/enemies formations/formation3.tscn
-res://scenes/enemies formations/formation2.tscn
-res://scenes/enemies formations/formation4.tscn
-res://scenes/enemies formations/formation5.tscn
-res://scenes/enemies formations/formation6.tscn
-res://scenes/enemies formations/formation7.tscn
-res://scenes/enemies formations/formation8.tscn
-res://scenes/enemies formations/formation9.tscn
-res://scenes/enemies formations/formation10.tscn
-res://scenes/enemies/starfighter.tscn
-res://scenes/enemies/blaze_2.tscn
-res://scenes/enemies/blaze_3.tscn
-res://scenes/enemies/blaze_4.tscn
-res://scenes/enemies/blaze_5.tscn
-res://scenes/enemies/satellite.tscn
-res://scenes/enemies/voyager.tscn
 res://scenes/enemy/Enemy.tscn
+res://scenes/enemies formations/formation7.tscn
+res://scenes/enemies/starfighter.tscn

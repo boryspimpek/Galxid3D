@@ -111,7 +111,7 @@ show_time_labels = false
 scroll_speed = 6.0
 
 [node name="satellite" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1897743314 instance=ExtResource("16_fgdto")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -8.14061, 0, -12.020086)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.14061, 0, -12.020086)
 movement_data = SubResource("Resource_b847t")
 
 [node name="Satelite2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1335435173 instance=ExtResource("22_w11bf")]

@@ -10,10 +10,9 @@
 [sub_resource type="Resource" id="Weapon_starfighter"]
 script = ExtResource("4_weapon_data")
 damage = 10
-fire_rate = 0.8
+fire_rate = 1.0
 fire_on_activate = true
-projectile_velocity = Vector3(0, 0, 10)
-aim = 5
+aim = 10
 sound = 3
 
 [sub_resource type="Resource" id="Resource_a7w8t"]
