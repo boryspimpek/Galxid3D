@@ -5,5 +5,5 @@ extends Node3D
 
 
 func _process(delta: float) -> void:
-	transform = transform.rotated_local(Vector3.UP, spin_speed * delta)
+	rotate_object_local(Vector3.UP, spin_speed * delta)
 	global_position.z += speed * delta

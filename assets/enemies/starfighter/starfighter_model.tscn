@@ -24,7 +24,9 @@ shader_parameter/shadow_softness = 0.0
 shader_parameter/ambient_fill = 0.0250000011875
 
 [node name="Starfighter" unique_id=1322169304 instance=ExtResource("1_of4gp")]
+layers = 2
 
-[node name="Mesh_0" parent="." index="0" unique_id=196635194]
+[node name="Mesh_0" parent="." index="0" unique_id=1442320094]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+layers = 2
 surface_material_override/0 = SubResource("ShaderMaterial_xd0qx")

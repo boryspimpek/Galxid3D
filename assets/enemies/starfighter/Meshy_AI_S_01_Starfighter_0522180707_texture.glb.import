@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Meshy_AI_S_01_Starfighter_0522180707_texture.
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="MeshInstance3D"
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true

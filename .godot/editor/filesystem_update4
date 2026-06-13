@@ -1,10 +1,10 @@
-res://scenes/enemy/EnemyFollow.gd
-res://3dworld.tscn
+res://3dworldTEST.tscn
 res://assets/BinbunVFX/shared/texture/noise/cell/cell_manhattan_01.tres
 res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mprojectile_javelin_01/mprojectile_javelin_01_head.tres
 res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mprojectile_javelin_01/mprojectile_javelin_01_trail.tres
 res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mprojectile_javelin_01/mprojectile_javelin_01_core.tres
 res://assets/shaders/toon.gdshader
-res://scenes/enemy/Enemy.tscn
-res://scenes/enemies formations/formation7.tscn
-res://scenes/enemies/starfighter.tscn
+res://scenes/player/blaze_model.tscn
+res://scenes/planets/earth.tscn
+res://scenes/planets/sun.tscn
+res://scenes/player/Player.tscn

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dwxx72pi5s8ka"]
+
+[ext_resource type="PackedScene" uid="uid://krt2bvt2dftg" path="res://assets/asteroids/asteroid_light.glb" id="1_07158"]
+[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://assets/shaders/toon.gdshader" id="2_y7p33"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q5nq3"]
+render_priority = 0
+shader = ExtResource("2_y7p33")
+shader_parameter/albedo_color = Color(0.36282945, 0.36282945, 0.36282945, 1)
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/metallic = 0.7550000358625
+shader_parameter/clearcoat = 1.0
+shader_parameter/clearcoat_roughness = 0.718000034105
+shader_parameter/shadow_threshold = 0.2190000104025
+shader_parameter/shadow_softness = 0.0
+shader_parameter/ambient_fill = 0.0
+
+[node name="asteroid_light" unique_id=1601892717 instance=ExtResource("1_07158")]
+
+[node name="rock" parent="." index="0" unique_id=425540742]
+surface_material_override/0 = SubResource("ShaderMaterial_q5nq3")

@@ -14,7 +14,7 @@ next_pass = SubResource("StandardMaterial3D_d30nl")
 shader = ExtResource("3_cq47y")
 shader_parameter/albedo_color = Color(0.44291076, 0.44291076, 0.44291073, 1)
 shader_parameter/line_color = Color(0, 0, 0, 1)
-shader_parameter/metallic = 0.0
+shader_parameter/metallic = 0.870000041325
 shader_parameter/clearcoat = 0.0
 shader_parameter/clearcoat_roughness = 0.0
 shader_parameter/shadow_threshold = 0.5
@@ -24,6 +24,7 @@ shader_parameter/ambient_fill = 0.0
 [node name="asteroid2" unique_id=328044832 instance=ExtResource("1_7sspn")]
 
 [node name="rock_013" parent="." index="0" unique_id=1669457310]
+layers = 2
 surface_material_override/0 = SubResource("ShaderMaterial_a21ph")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." index="1" unique_id=770297658]

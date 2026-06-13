@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://b6ujitbkngsqd"]
+
+[ext_resource type="Script" uid="uid://h4tfxlaeefcu" path="res://scenes/world/GameShell.gd" id="1_damfe"]
+[ext_resource type="Texture2D" uid="uid://55d766w1fxoy" path="res://assets/skybox/panorama6.jpg" id="2_erldj"]
+[ext_resource type="PackedScene" uid="uid://bpnoq5bivk33d" path="res://scenes/planets/sun.tscn" id="3_3x62a"]
+[ext_resource type="PackedScene" uid="uid://c1pq466qvcqtm" path="res://scenes/planets/earth.tscn" id="4_mb6vs"]
+[ext_resource type="Script" uid="uid://1pup6o17egip" path="res://scenes/asteroids/AsteroidSpawner.gd" id="6_0110e"]
+[ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="7_f0k27"]
+[ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="24_iexie"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t60f6"]
+panorama = ExtResource("2_erldj")
+
+[sub_resource type="Sky" id="Sky_tbaa5"]
+sky_material = SubResource("PanoramaSkyMaterial_t60f6")
+process_mode = 3
+
+[sub_resource type="Environment" id="Environment_2y1ty"]
+background_mode = 2
+background_energy_multiplier = 0.8
+sky = SubResource("Sky_tbaa5")
+glow_enabled = true
+glow_intensity = 0.8
+glow_bloom = 0.2
+glow_hdr_threshold = 4.0
+adjustment_enabled = true
+adjustment_brightness = 1.12
+adjustment_contrast = 1.065
+adjustment_saturation = 1.5
+
+[node name="GameShell" type="Control" unique_id=616589222]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_damfe")
+
+[node name="GameViewportContainer" type="SubViewportContainer" parent="." unique_id=616589223]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="GameViewport" type="SubViewport" parent="GameViewportContainer" unique_id=616589224]
+handle_input_locally = false
+size = Vector2i(1620, 1080)
+render_target_update_mode = 4
+
+[node name="GameWorld" type="Node3D" parent="GameViewportContainer/GameViewport" unique_id=616589225]
+
+[node name="World" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=435478258]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=2090551855]
+environment = SubResource("Environment_2y1ty")
+
+[node name="Light ring" type="DirectionalLight3D" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=1961031784]
+transform = Transform3D(0.99999994, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 15, 0)
+light_cull_mask = 8
+shadow_enabled = true
+
+[node name="Light earth" type="DirectionalLight3D" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=801004506]
+transform = Transform3D(0.6156614, -5.3822834e-08, -0.7880108, -8.742277e-08, -1, 0, -0.7880107, 6.889009e-08, -0.61566144, 0, 15, 0)
+light_cull_mask = 4
+shadow_enabled = true
+
+[node name="Light action" type="DirectionalLight3D" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=1129389940]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 15, 0)
+light_cull_mask = 16
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=1430056658]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 20, 0)
+
+[node name="Background" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1105100676]
+
+[node name="Sun" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=145217065 instance=ExtResource("3_3x62a")]
+transform = Transform3D(0.08, 0, 0, 0, 0.055572666, 0.057547186, 0, -0.057547186, 0.055572666, -40, -55, -40)
+
+[node name="earth" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=1975713936 instance=ExtResource("4_mb6vs")]
+transform = Transform3D(0.355, 0, 0, 0, 0.32173926, 0.1500295, 0, -0.1500295, 0.32173926, 35, -50, -20)
+spin_speed = 0.5
+speed = 1.0
+
+[node name="AsteroidSpawner" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=2034522390]
+script = ExtResource("6_0110e")
+spawn_interval_2 = 1.0
+asteroid_speed_2 = 30.0
+edge_parallax_2 = 0.76
+spawn_interval_3 = 1.0
+asteroid_speed_3 = 10.0
+scale_3 = 0.45
+edge_parallax_3 = 0.14
+
+[node name="Player" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1811810025 instance=ExtResource("7_f0k27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.085, 0, 11.808233)
+
+[node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("24_iexie")]

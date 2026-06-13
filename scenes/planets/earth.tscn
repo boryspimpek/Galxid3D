@@ -26,10 +26,10 @@ shader = ExtResource("2_5i67w")
 shader_parameter/albedo_color = Color(1, 1, 1, 1)
 shader_parameter/albedo_texture = ExtResource("4_xbhfj")
 shader_parameter/line_color = Color(0, 0, 0, 1)
-shader_parameter/metallic = 0.8330000395675
+shader_parameter/metallic = 0.950000045125
 shader_parameter/clearcoat = 0.2530000120175
 shader_parameter/clearcoat_roughness = 0.0
-shader_parameter/shadow_threshold = 0.58800002793
+shader_parameter/shadow_threshold = 0.10000000475
 shader_parameter/shadow_softness = 0.0
 shader_parameter/ambient_fill = 0.018000000855
 
@@ -56,10 +56,12 @@ spin_speed = 0.1
 speed = 0.2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1264017003]
+layers = 4
 mesh = SubResource("SphereMesh_cwnmv")
 surface_material_override/0 = SubResource("ShaderMaterial_pa0cx")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=539177]
 transform = Transform3D(1, 0, 0, 0, 0.05, 0, 0, 0, 1, 0, 0, 0)
+layers = 8
 mesh = SubResource("TorusMesh_xbhfj")
 surface_material_override/0 = SubResource("ShaderMaterial_fnp8i")
