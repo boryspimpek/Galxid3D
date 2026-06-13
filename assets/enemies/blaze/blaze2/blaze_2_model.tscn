@@ -18,16 +18,17 @@ shader_parameter/albedo_color = Color(1, 1, 1, 1)
 shader_parameter/albedo_texture = ExtResource("3_k0lhk")
 shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/metallic = 0.0
-shader_parameter/clearcoat = 1.0
-shader_parameter/clearcoat_roughness = 0.750000035625
-shader_parameter/shadow_threshold = 0.400000019
+shader_parameter/clearcoat = 0.0
+shader_parameter/clearcoat_roughness = 0.0
+shader_parameter/shadow_threshold = 0.750000035625
 shader_parameter/shadow_softness = 0.0
-shader_parameter/ambient_fill = 0.0250000011875
+shader_parameter/ambient_fill = 0.0
+shader_parameter/hdr_cap = 0.635
 
 [node name="Blaze 2" unique_id=2089973672 instance=ExtResource("1_wxi2m")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
-layers = 2
+layers = 16
 
 [node name="Mesh" parent="." index="0" unique_id=517509725]
-layers = 2
+layers = 16
 surface_material_override/0 = SubResource("ShaderMaterial_eoryj")

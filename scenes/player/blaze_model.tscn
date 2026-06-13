@@ -23,6 +23,7 @@ shader_parameter/clearcoat_roughness = 0.750000035625
 shader_parameter/shadow_threshold = 0.482000022895
 shader_parameter/shadow_softness = 0.0
 shader_parameter/ambient_fill = 0.050000002375
+shader_parameter/hdr_cap = 0.635
 
 [node name="Blaze" unique_id=700868063 instance=ExtResource("1_model")]
 layers = 16

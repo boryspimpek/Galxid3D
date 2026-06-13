@@ -8,3 +8,8 @@ res://scenes/player/blaze_model.tscn
 res://scenes/planets/earth.tscn
 res://scenes/planets/sun.tscn
 res://scenes/player/Player.tscn
+res://3dworld.tscn
+res://assets/enemies/blaze/blaze2/blaze_2_model.tscn
+res://assets/enemies/blaze/blaze5/blaze_5_model.tscn
+res://assets/enemies/blaze/blaze3/blaze_3_model.tscn
+res://assets/enemies/blaze/blaze4/blaze_4_model.tscn
