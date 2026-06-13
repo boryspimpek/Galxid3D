@@ -12,6 +12,19 @@ uniform float clearcoat_roughness : hint_range(0.0, 1.0) = 0.2;
 uniform float shadow_threshold : hint_range(0.0, 1.0) = 0.5;
 uniform float shadow_softness : hint_range(0.0, 1.0) = 0.02;
 uniform float ambient_fill : hint_range(0.0, 1.0) = 0.0;
+// 16.0 = wyłączony limit (jak bez hdr_cap). Niżej = mniej globalnego glow.
+uniform float hdr_cap : hint_range(0.0, 16.0) = 16;
+
+vec3 cap_hdr(vec3 color) {
+	if (hdr_cap >= 16.0) {
+		return color;
+	}
+	float peak = max(max(color.r, color.g), color.b);
+	if (peak > hdr_cap) {
+		return color * (hdr_cap / peak);
+	}
+	return color;
+}
 
 void fragment() {
 	vec4 tex = texture(albedo_texture, UV);
@@ -20,7 +33,7 @@ void fragment() {
 	METALLIC = metallic;
 	ROUGHNESS = 1.0;
 	SPECULAR = 0.0;
-	EMISSION = ALBEDO * ambient_fill;
+	EMISSION = cap_hdr(ALBEDO * ambient_fill);
 }
 
 void light() {
@@ -38,7 +51,6 @@ void light() {
 	float cc_spec = pow(cc_ndoth, cc_exponent) * clearcoat;
 	
 	// --- 3. FINALNE ŁĄCZENIE ---
-	// Dodajemy kolor rozproszony (planeta)
-	DIFFUSE_LIGHT += diffuse_color * ATTENUATION;
-	SPECULAR_LIGHT += cc_spec * LIGHT_COLOR * ATTENUATION;
+	DIFFUSE_LIGHT += cap_hdr(diffuse_color * ATTENUATION);
+	SPECULAR_LIGHT += cap_hdr(cc_spec * LIGHT_COLOR * ATTENUATION);
 }

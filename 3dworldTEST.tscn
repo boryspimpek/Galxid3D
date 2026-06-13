@@ -6,6 +6,21 @@
 [ext_resource type="PackedScene" uid="uid://c1pq466qvcqtm" path="res://scenes/planets/earth.tscn" id="4_mb6vs"]
 [ext_resource type="Script" uid="uid://1pup6o17egip" path="res://scenes/asteroids/AsteroidSpawner.gd" id="6_0110e"]
 [ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="7_f0k27"]
+[ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="8_damfe"]
+[ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="9_b32tr"]
+[ext_resource type="PackedScene" uid="uid://c6bq1qkhotmeh" path="res://scenes/enemies formations/formation1.tscn" id="10_3x62a"]
+[ext_resource type="PackedScene" uid="uid://dd21l172sp65r" path="res://scenes/enemies formations/formation3.tscn" id="11_mb6vs"]
+[ext_resource type="PackedScene" uid="uid://b4kkmjte8klff" path="res://scenes/enemies formations/formation2.tscn" id="12_2cpwq"]
+[ext_resource type="PackedScene" uid="uid://i8caj32bmnmu" path="res://scenes/enemies formations/formation4.tscn" id="13_0110e"]
+[ext_resource type="PackedScene" uid="uid://mqfrdiaxtht5" path="res://scenes/enemies formations/formation6.tscn" id="15_rqgbx"]
+[ext_resource type="PackedScene" uid="uid://b5j3jumdkod3r" path="res://scenes/enemies formations/formation7.tscn" id="16_dqcsc"]
+[ext_resource type="PackedScene" uid="uid://c2vk2d14w4myt" path="res://scenes/enemies formations/formation8.tscn" id="17_83rd0"]
+[ext_resource type="PackedScene" uid="uid://dxn372vpgwgeo" path="res://scenes/enemies formations/formation9.tscn" id="18_xhp7w"]
+[ext_resource type="PackedScene" uid="uid://cgcltl7omc1q" path="res://scenes/enemies formations/formation10.tscn" id="19_m4jus"]
+[ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemy/EnemyPath3D.gd" id="20_pi6x7"]
+[ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyFollow.gd" id="21_cqlfu"]
+[ext_resource type="PackedScene" uid="uid://ceb36gc6o5uvc" path="res://scenes/enemies/starfighter.tscn" id="22_xop2s"]
+[ext_resource type="Script" uid="uid://cr2knbmonx42w" path="res://scenes/enemy/facing/FacePlayer.gd" id="23_mgq3g"]
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="24_iexie"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t60f6"]
@@ -27,6 +42,32 @@ adjustment_enabled = true
 adjustment_brightness = 1.12
 adjustment_contrast = 1.065
 adjustment_saturation = 1.5
+
+[sub_resource type="Curve3D" id="Curve3D_rbxkt"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.007502556, 0, -0.040412903, 5.6062517, 0, 0.0002784729, -5.6062517, 0, -0.0002784729, -7.530554, 0, 5.363369, 0, 0, 0, 0, 0, 0, -34.34234, 0, 5.1610413),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_ncxdr"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 2.335443), 0.0, 0.0, 0, 0, Vector2(0.26700252, 0.11392403), 0.0, 0.0, 0, 0, Vector2(1, 0.17088604), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_damfe"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.007502556, 0, -0.040412903, -0.8446398, 0, -4.645508, 0.8446398, 0, 4.645508, 5.4357586, 0, 9.734825, 0, 0, 0, 0, 0, 0, -14.865452, 0, 11.011635),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_b32tr"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.007502556, 0, -0.040412903, -5.426414, 0, -0.82992554, 5.426414, 0, 0.82992554, 6.009829, 0, 7.1643524, 0, 0, 0, 0, 0, 0, 27.204771, 0, 7.738922),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
 
 [node name="GameShell" type="Control" unique_id=616589222]
 layout_mode = 3
@@ -99,5 +140,129 @@ edge_parallax_3 = 0.14
 
 [node name="Player" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1811810025 instance=ExtResource("7_f0k27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.085, 0, 11.808233)
+
+[node name="LevelScroll" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1176387560]
+script = ExtResource("8_damfe")
+scroll_speed = 6.0
+
+[node name="LevelScrollRuler" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=14402018 instance=ExtResource("9_b32tr")]
+max_bound_x = 23.0
+z_min = -340.0
+z_max = 10.0
+show_time_labels = false
+scroll_speed = 6.0
+
+[node name="Blaze Formations" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=849094056]
+
+[node name="Formation1" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=1730415998 instance=ExtResource("10_3x62a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.17173, 0, -39.638702)
+
+[node name="Formation3" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=1965016186 instance=ExtResource("11_mb6vs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, -62.968704)
+
+[node name="Formation2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=1807021162 instance=ExtResource("12_2cpwq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, -85.383705)
+
+[node name="Formation3_1" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=240530878 instance=ExtResource("11_mb6vs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, -109.73374)
+
+[node name="Formation4" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=177148138 instance=ExtResource("13_0110e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, -359.01892)
+
+[node name="Formation6" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=170418616 instance=ExtResource("15_rqgbx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, -171.0396)
+
+[node name="Formation7" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=1992082871 instance=ExtResource("16_dqcsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -214.79695)
+
+[node name="Formation7_1" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=1589242402 instance=ExtResource("16_dqcsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, -232.05194)
+
+[node name="Formation7_2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=1867365847 instance=ExtResource("16_dqcsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.12387, 0, -269.4356)
+
+[node name="Formation7_3" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=1070732418 instance=ExtResource("16_dqcsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8205872, 0, -251.26945)
+
+[node name="Formation8" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=1787026222 instance=ExtResource("17_83rd0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, -135.30676)
+
+[node name="Formation9" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=1147372416 instance=ExtResource("18_xhp7w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, -322.4737)
+
+[node name="Formation10" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=2101615399 instance=ExtResource("19_m4jus")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, -343.7203)
+
+[node name="Starfighter" type="Path3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1616163705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.145941, 0, -82.55924)
+curve = SubResource("Curve3D_rbxkt")
+script = ExtResource("20_pi6x7")
+speed = 12.0
+speed_curve = SubResource("Curve_ncxdr")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Starfighter" unique_id=792104014]
+transform = Transform3D(-0.9416139, 0, 0.3366013, 0, 1, 0, -0.3366013, 0, -0.9416139, 0.007502556, 0, -0.040412903)
+loop = false
+script = ExtResource("21_cqlfu")
+
+[node name="starfighter" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Starfighter/PathFollow3D" unique_id=1897743314 instance=ExtResource("22_xop2s")]
+
+[node name="Facing" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Starfighter/PathFollow3D/starfighter" unique_id=1489145731]
+transform = Transform3D(-0.7692308, 0, 6.7055225e-08, 0, 0.7692308, 0, -6.7055225e-08, 0, -0.7692308, 0, 0, 0)
+script = ExtResource("23_mgq3g")
+
+[node name="Starfighter2" type="Path3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1179010354]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.129549, 0, -120.143845)
+curve = SubResource("Curve3D_damfe")
+script = ExtResource("20_pi6x7")
+speed = 12.0
+speed_curve = SubResource("Curve_ncxdr")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Starfighter2" unique_id=1195951446]
+transform = Transform3D(-0.7456592, 0, -0.66627574, 0, 1, 0, 0.66627574, 0, -0.7456592, 0.007502556, 0, -0.040412903)
+loop = false
+script = ExtResource("21_cqlfu")
+
+[node name="starfighter" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Starfighter2/PathFollow3D" unique_id=74608331 instance=ExtResource("22_xop2s")]
+
+[node name="Facing" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Starfighter2/PathFollow3D/starfighter" unique_id=1891273808]
+transform = Transform3D(-0.7692308, 0, 6.7055225e-08, 0, 0.7692308, 0, -6.7055225e-08, 0, -0.7692308, 0, 0, 0)
+script = ExtResource("23_mgq3g")
+
+[node name="Starfighter3" type="Path3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=650858282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.53826714, 0, -159.55614)
+curve = SubResource("Curve3D_b32tr")
+script = ExtResource("20_pi6x7")
+speed = 12.0
+speed_curve = SubResource("Curve_ncxdr")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Starfighter3" unique_id=1938339092]
+transform = Transform3D(-0.99591076, 0, -0.08997202, 0, 1, 0, 0.08997202, 0, -0.99591076, 0.007502556, 0, -0.040412903)
+loop = false
+script = ExtResource("21_cqlfu")
+
+[node name="starfighter" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Starfighter3/PathFollow3D" unique_id=1414389995 instance=ExtResource("22_xop2s")]
+
+[node name="Facing" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Starfighter3/PathFollow3D/starfighter" unique_id=273248553]
+transform = Transform3D(-0.7692308, 0, 6.7055225e-08, 0, 0.7692308, 0, -6.7055225e-08, 0, -0.7692308, 0, 0, 0)
+script = ExtResource("23_mgq3g")
+
+[node name="Starfighter4" type="Path3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=720659576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.736624, 0, -236.38232)
+curve = SubResource("Curve3D_rbxkt")
+script = ExtResource("20_pi6x7")
+speed = 12.0
+speed_curve = SubResource("Curve_ncxdr")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Starfighter4" unique_id=413845528]
+transform = Transform3D(-0.9416139, 0, 0.3366013, 0, 1, 0, -0.3366013, 0, -0.9416139, 0.007502556, 0, -0.040412903)
+loop = false
+script = ExtResource("21_cqlfu")
+
+[node name="starfighter" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Starfighter4/PathFollow3D" unique_id=575344817 instance=ExtResource("22_xop2s")]
+
+[node name="Facing" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Starfighter4/PathFollow3D/starfighter" unique_id=1835234163]
+transform = Transform3D(-0.7692308, 0, 6.7055225e-08, 0, 0.7692308, 0, -6.7055225e-08, 0, -0.7692308, 0, 0, 0)
+script = ExtResource("23_mgq3g")
 
 [node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("24_iexie")]

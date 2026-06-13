@@ -29,9 +29,10 @@ shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/metallic = 0.950000045125
 shader_parameter/clearcoat = 0.2530000120175
 shader_parameter/clearcoat_roughness = 0.0
-shader_parameter/shadow_threshold = 0.10000000475
+shader_parameter/shadow_threshold = 0.210000009975
 shader_parameter/shadow_softness = 0.0
 shader_parameter/ambient_fill = 0.018000000855
+shader_parameter/hdr_cap = 16.0
 
 [sub_resource type="TorusMesh" id="TorusMesh_xbhfj"]
 inner_radius = 97.564
@@ -49,6 +50,7 @@ shader_parameter/clearcoat_roughness = 0.9650000458375
 shader_parameter/shadow_threshold = 0.6090000289275
 shader_parameter/shadow_softness = 0.0
 shader_parameter/ambient_fill = 0.010000000475
+shader_parameter/hdr_cap = 16.0
 
 [node name="earth" type="Node3D" unique_id=1975713936]
 script = ExtResource("1_cwnmv")
