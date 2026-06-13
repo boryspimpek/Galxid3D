@@ -20,11 +20,13 @@ shader_parameter/clearcoat_roughness = 0.2
 shader_parameter/shadow_threshold = 0.5
 shader_parameter/shadow_softness = 0.02
 shader_parameter/ambient_fill = 0.0
+shader_parameter/hdr_cap = 16.0
 
 [node name="asteroid4" unique_id=1938320443 instance=ExtResource("1_chdtm")]
+layers = 16
 
 [node name="rock" parent="." index="0" unique_id=662391979]
-layers = 2
+layers = 16
 surface_material_override/0 = SubResource("ShaderMaterial_pokn7")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." index="1" unique_id=1973536924]

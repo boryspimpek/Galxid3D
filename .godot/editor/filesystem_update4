@@ -14,3 +14,11 @@ res://assets/enemies/blaze/blaze5/blaze_5_model.tscn
 res://assets/enemies/blaze/blaze3/blaze_3_model.tscn
 res://assets/enemies/blaze/blaze4/blaze_4_model.tscn
 res://assets/enemies/starfighter/starfighter_model.tscn
+res://scenes/enemy_projectile/EnemyProjectile.tscn
+res://scenes/asteroids/asteroid.tscn
+res://scenes/asteroids/asteroid_2.tscn
+res://scenes/asteroids/asteroid_3.tscn
+res://scenes/asteroids/asteroid_4.tscn
+res://scenes/asteroids/asteroid_5.tscn
+res://scenes/asteroids/asteroid_6.tscn
+res://scenes/asteroids/asteroid_7.tscn

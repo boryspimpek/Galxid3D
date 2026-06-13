@@ -35,8 +35,7 @@ background_mode = 2
 background_energy_multiplier = 0.8
 sky = SubResource("Sky_tbaa5")
 glow_enabled = true
-glow_intensity = 0.8
-glow_bloom = 0.2
+glow_intensity = 7.17
 glow_hdr_threshold = 4.0
 adjustment_enabled = true
 adjustment_brightness = 1.12
@@ -121,7 +120,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2
 [node name="Background" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1105100676]
 
 [node name="Sun" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=145217065 instance=ExtResource("3_3x62a")]
-transform = Transform3D(0.08, 0, 0, 0, 0.055572666, 0.057547186, 0, -0.057547186, 0.055572666, -40, -55, -40)
+transform = Transform3D(0.175, 0, 0, 0, -0.0739582, 0.15860386, 0, -0.15860386, -0.0739582, -41.48, -55, -40)
 
 [node name="earth" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=1975713936 instance=ExtResource("4_mb6vs")]
 transform = Transform3D(0.355, 0, 0, 0, 0.32173926, 0.1500295, 0, -0.1500295, 0.32173926, 35, -50, -20)
@@ -130,11 +129,12 @@ speed = 1.0
 
 [node name="AsteroidSpawner" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=2034522390]
 script = ExtResource("6_0110e")
+y_1 = 3.0
 spawn_interval_2 = 1.0
 asteroid_speed_2 = 30.0
 edge_parallax_2 = 0.76
 spawn_interval_3 = 1.0
-asteroid_speed_3 = 10.0
+asteroid_speed_3 = 5.0
 scale_3 = 0.45
 edge_parallax_3 = 0.14
 

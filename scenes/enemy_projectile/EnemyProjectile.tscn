@@ -6,7 +6,8 @@
 radius = 0.10744667
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qvcrk"]
-albedo_color = Color(1.2518961, 0.2821902, 0, 1)
+shading_mode = 0
+albedo_color = Color(1.7, 0, 0, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_8eh4e"]
 material = SubResource("StandardMaterial3D_qvcrk")
@@ -24,4 +25,5 @@ shape = SubResource("SphereShape3D_qvcrk")
 debug_color = Color(0.5388622, 2.4065375e-07, 0.2979452, 0.41960785)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2092406045]
+layers = 16
 mesh = SubResource("SphereMesh_8eh4e")
