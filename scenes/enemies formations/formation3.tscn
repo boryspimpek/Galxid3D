@@ -12,11 +12,6 @@ _data = {
 }
 point_count = 4
 
-[sub_resource type="Curve" id="Curve_m3lk0"]
-_limits = [0.0, 3.0, 0.0, 1.0]
-_data = [Vector2(0, 0.94315076), 0.0, 0.51740485, 0, 0, Vector2(0.5151515, 2.1411917), 6.875751, 6.875751, 0, 0]
-point_count = 2
-
 [node name="Formation" type="Node3D" unique_id=1730415998]
 
 [node name="Path" type="Path3D" parent="." unique_id=1730415999]
@@ -25,7 +20,6 @@ curve = SubResource("Curve3D_lu1cq")
 script = ExtResource("1_cswtf")
 activation_mode = 0
 speed = 8.0
-speed_curve = SubResource("Curve_m3lk0")
 bank_enabled = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path" unique_id=310916544]
@@ -44,7 +38,7 @@ script = ExtResource("2_5avpn")
 [node name="blaze 3" parent="Path/PathFollow3D2" unique_id=599822296 instance=ExtResource("3_cswtf")]
 
 [node name="PathFollow3D3" type="PathFollow3D" parent="Path" unique_id=956187911]
-transform = Transform3D(-0.105845675, 0.25235686, 0.9618024, 0.0023073063, 0.9673201, -0.25353795, -0.99434555, -0.02461818, -0.10296985, -5.7975583, 1.4257593, 0.6013006)
+transform = Transform3D(-0.10584567, 0.25235686, 0.9618024, 0.0023073063, 0.9673201, -0.25353795, -0.9943455, -0.02461818, -0.10296985, -5.7975583, 1.4257593, 0.6013006)
 progress = 6.0
 loop = false
 script = ExtResource("2_5avpn")
@@ -52,7 +46,7 @@ script = ExtResource("2_5avpn")
 [node name="blaze 3" parent="Path/PathFollow3D3" unique_id=70216865 instance=ExtResource("3_cswtf")]
 
 [node name="PathFollow3D4" type="PathFollow3D" parent="Path" unique_id=914193793]
-transform = Transform3D(-0.11009488, 0.24713671, 0.962677, 0.0034150663, 0.9686812, -0.24827328, -0.9938921, -0.024047257, -0.10749023, -8.68432, 2.1787968, 0.9167461)
+transform = Transform3D(-0.11009489, 0.24713671, 0.962677, 0.0034150665, 0.9686812, -0.24827328, -0.99389213, -0.024047257, -0.10749023, -8.68432, 2.1787968, 0.9167461)
 progress = 9.0
 loop = false
 script = ExtResource("2_5avpn")
@@ -60,7 +54,7 @@ script = ExtResource("2_5avpn")
 [node name="blaze 3" parent="Path/PathFollow3D4" unique_id=153749245 instance=ExtResource("3_cswtf")]
 
 [node name="PathFollow3D5" type="PathFollow3D" parent="Path" unique_id=1922970098]
-transform = Transform3D(-0.115739696, 0.24019694, 0.9637683, 0.004849738, 0.9704358, -0.24126565, -0.99323654, -0.023251219, -0.11348386, -11.5740185, 2.9137316, 1.2477125)
+transform = Transform3D(-0.115739696, 0.24019693, 0.9637683, 0.004849738, 0.97043574, -0.24126565, -0.99323654, -0.023251217, -0.11348386, -11.5740185, 2.9137316, 1.2477125)
 progress = 12.0
 loop = false
 script = ExtResource("2_5avpn")

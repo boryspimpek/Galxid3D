@@ -11,3 +11,7 @@ res://scenes/player/Player.tscn
 res://assets/BinbunVFX/muzzle_flash/effects/big_flash/big_flash_01.tscn
 res://scenes/planets/sun.tscn
 res://main.tscn
+res://scenes/enemy/Enemy.tscn
+res://scenes/debug/LevelScrollRuler.gd
+res://scenes/enemies formations/formation1.tscn
+res://scenes/enemies formations/formation3.tscn

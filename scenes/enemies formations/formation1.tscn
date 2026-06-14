@@ -15,11 +15,6 @@ _data = {
 }
 point_count = 4
 
-[sub_resource type="Curve" id="Curve_ahi8g"]
-_limits = [0.0, 3.0, 0.0, 1.0]
-_data = [Vector2(0, 0.94315076), 0.0, 0.51740485, 0, 0, Vector2(0.5151515, 2.1411917), 6.875751, 6.875751, 0, 0]
-point_count = 2
-
 [node name="Formation" type="Node3D" unique_id=1730415998]
 
 [node name="Path" type="Path3D" parent="." unique_id=1730415999]
@@ -28,7 +23,6 @@ curve = SubResource("Curve3D_lu1cq")
 script = ExtResource("1_rxsle")
 activation_mode = 0
 speed = 8.0
-speed_curve = SubResource("Curve_ahi8g")
 bank_enabled = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path" unique_id=310916544]

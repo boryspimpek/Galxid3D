@@ -90,11 +90,6 @@ extends Node3D
 		label_pixel_size = value
 		_queue_update()
 
-@export var label_side: float = 1.0:
-	set(value):
-		label_side = value
-		_queue_update()
-
 @export var color_rail: Color = Color(0.35, 0.75, 1.0, 0.75):
 	set(value):
 		color_rail = value
@@ -181,7 +176,7 @@ func _update_ruler() -> void:
 	if z < z_lo:
 		z += spacing
 
-	var label_x := bx + 0.6 * signf(label_side if label_side != 0.0 else 1.0)
+	const LABEL_MARGIN := 0.6
 
 	while z <= z_hi + 0.001:
 		var is_major := tick_index % major_tick_every == 0
@@ -194,7 +189,9 @@ func _update_ruler() -> void:
 		_add_box(gen, Vector3(bx, y, z), Vector3(tick_len, h, t * 0.6), mat_tick)
 
 		if show_distance_labels or show_time_labels:
-			_add_label(gen, Vector3(label_x, y, z), _format_tick_label(z, is_major))
+			var tick_label := _format_tick_label(z, is_major)
+			_add_label(gen, Vector3(-bx - LABEL_MARGIN, y, z), tick_label)
+			_add_label(gen, Vector3(bx + LABEL_MARGIN, y, z), tick_label)
 
 		z += spacing
 		tick_index += 1
