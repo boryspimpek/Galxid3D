@@ -19,6 +19,13 @@ var current_weapon_index: int = 1
 var fire_timer: float = 0.0
 var is_firing: bool = false
 var _ready_to_fire: bool = false
+var _combo_shot_timer: float = 0.0
+## Minimalne combo (włącznie) wymagane do strzału ProjectileX.
+@export var combo_shot_min: int = 4
+@export var combo_shot_damage: int = 25
+@export var combo_shot_power_use: int = 50
+@export var combo_shot_velocity: Vector3 = Vector3(0, 0, -60)
+@export var combo_shot_cooldown: float = 0.35
 ## Maks. czas życia muzzle flash (s) — krótki, żeby nie zostawał w świecie za graczem.
 const MUZZLE_FLASH_MAX_LIFETIME := 0.12
 
@@ -33,6 +40,7 @@ func _physics_process(delta: float):
 	if not _ready_to_fire:
 		return
 	fire_timer = max(0.0, fire_timer - delta)
+	_combo_shot_timer = max(0.0, _combo_shot_timer - delta)
 	if is_firing and fire_timer <= 0.0:
 		shoot()
 		
@@ -49,6 +57,30 @@ func load_weapon_config():
 
 func set_firing(firing: bool):
 	is_firing = firing
+
+func can_shoot_combo() -> bool:
+	return (
+		HitComboManager.combo >= combo_shot_min
+		and _combo_shot_timer <= 0.0
+		and not player.is_dodging
+	)
+
+func shoot_combo() -> void:
+	if not can_shoot_combo():
+		return
+	if player.power < combo_shot_power_use:
+		return
+
+	player.power -= combo_shot_power_use
+	var projectile := GameConstants.combo_projectile_scene.instantiate()
+	get_tree().current_scene.add_child(projectile)
+	projectile.global_position = muzzle.global_position
+	projectile.velocity = combo_shot_velocity
+	projectile.damage = combo_shot_damage
+	_spawn_muzzle_flash(combo_shot_velocity)
+	if weapon_data:
+		SoundManager.play_weapon_sound(weapon_data.sound)
+	_combo_shot_timer = combo_shot_cooldown
 
 func shoot():
 	# Zabezpieczenie - jeśli brak danych broni, spróbuj załadować ponownie
@@ -84,6 +116,8 @@ func create_projectile(projectile_id: int, damage: int, velocity: Vector3):
 
 
 func _spawn_muzzle_flash(velocity: Vector3) -> void:
+	if weapon_data == null:
+		return
 	var scene := weapon_data.muzzle_flash_scene
 	if scene == null:
 		return

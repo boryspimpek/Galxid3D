@@ -224,6 +224,8 @@ func _physics_process(delta: float):
 		)
 	)
 	weapon_system.set_firing(is_firing)
+	if Input.is_action_just_pressed("combo_shot"):
+		weapon_system.shoot_combo()
 	_update_tilt(velocity_x, delta)
 
 func _update_dodge(delta: float) -> void:

@@ -43,3 +43,6 @@ res://scenes/asteroids/asteroid_7.tscn
 res://data/ships/ship_001.tres
 res://scenes/planets/earth_base.gd
 res://scenes/projectile/ProjectileX.tscn
+res://scenes/player/WeaponSystem.gd
+res://scripts/core/GameConstants.gd
+res://data/weapons/weapon_2.tres

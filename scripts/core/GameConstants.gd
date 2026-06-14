@@ -7,6 +7,7 @@ extends Node
 # ---- Sceny pocisków ----
 var enemy_projectile_scene: PackedScene
 var player_projectile_scene: PackedScene
+var combo_projectile_scene: PackedScene
 var _player_projectile_scene_cache: Dictionary = {}
 
 # ---- Scena pickupa (loot z wrogów) ----
@@ -15,6 +16,7 @@ var pickup_scene: PackedScene
 func _ready():
 	enemy_projectile_scene = preload("res://scenes/enemy_projectile/EnemyProjectile.tscn")
 	player_projectile_scene = preload("res://scenes/projectile/Projectile.tscn")
+	combo_projectile_scene = preload("res://scenes/projectile/ProjectileX.tscn")
 	pickup_scene = preload("res://scenes/pickup/Pickup.tscn")
 
 func get_player_projectile_scene(projectile_id: int) -> PackedScene:
