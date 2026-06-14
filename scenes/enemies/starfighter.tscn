@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemy/Enemy.tscn" id="1_3ym5w"]
 [ext_resource type="PackedScene" uid="uid://cj06xe1qfw8ch" path="res://assets/enemies/starfighter/starfighter_model.tscn" id="2_g7p8o"]
-[ext_resource type="Script" path="res://scenes/enemy/movement/LinearMoveData.gd" id="3_q8gre"]
+[ext_resource type="Script" uid="uid://dtprhja8af0to" path="res://scenes/enemy/movement/LinearMoveData.gd" id="3_q8gre"]
 [ext_resource type="PackedScene" uid="uid://6okj4uhag0tm" path="res://assets/BinbunVFX_Vol2/ExplosionFX/effects/air/vfx_air_explosion_01.tscn" id="4_q8gre"]
 [ext_resource type="Script" uid="uid://eo6qejm2h6hl" path="res://scenes/enemy/weapons/EnemyWeaponData.gd" id="4_weapon_data"]
 [ext_resource type="PackedScene" uid="uid://dp6fn641cy82u" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/impact/vfx_impact_01.tscn" id="5_sqqeh"]
@@ -10,8 +10,9 @@
 [sub_resource type="Resource" id="Weapon_starfighter"]
 script = ExtResource("4_weapon_data")
 damage = 10
-fire_rate = 1.0
+fire_rate = 2.5
 fire_on_activate = true
+projectile_velocity = Vector3(0, 0, 5)
 aim = 10
 sound = 3
 
@@ -19,7 +20,8 @@ sound = 3
 script = ExtResource("3_q8gre")
 
 [node name="starfighter" unique_id=1897743314 instance=ExtResource("1_3ym5w")]
-armor = 40
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+armor = 100
 weapon_data = SubResource("Weapon_starfighter")
 movement_data = SubResource("Resource_a7w8t")
 value = 20

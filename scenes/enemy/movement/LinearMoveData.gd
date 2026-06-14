@@ -7,10 +7,10 @@ class_name LinearMoveData
 # Zostaw 0,0,0 dla wrogów sterowanych ścieżką (Path3D).
 # ============================================================================
 
-@export var xmove: int = 0
-@export var ymove: int = 0
-@export var zmove: int = 0
+@export var xmove: float = 0.0
+@export var ymove: float = 0.0
+@export var zmove: float = 0.0
 
 
 func get_velocity(_elapsed: float) -> Vector3:
-	return Vector3(float(xmove), float(ymove), float(zmove))
+	return Vector3(xmove, ymove, zmove)

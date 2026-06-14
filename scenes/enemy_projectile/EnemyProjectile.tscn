@@ -7,7 +7,7 @@ radius = 0.10744667
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qvcrk"]
 shading_mode = 0
-albedo_color = Color(1.7, 0, 0, 1)
+albedo_color = Color(1.353256, 0, 0, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_8eh4e"]
 material = SubResource("StandardMaterial3D_qvcrk")
@@ -15,6 +15,7 @@ radius = 0.3
 height = 0.6
 
 [node name="EnemyProjectile" type="Area3D" unique_id=783238135]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 0)
 script = ExtResource("1_enemy_proj")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=493736527]
