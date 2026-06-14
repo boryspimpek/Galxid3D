@@ -1,6 +1,7 @@
+MeshInstance3D
+Sprite3D
 Camera3D
 TextureRect
-MeshInstance3D
 MultiMeshInstance3D
 DirectionalLight3D
 MeshInstance2D
@@ -10,5 +11,4 @@ Path3D
 WorldEnvironment
 CollisionShape3D
 VisibleOnScreenNotifier3D
-Sprite3D
 ColorRect

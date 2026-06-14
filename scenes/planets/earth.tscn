@@ -2,15 +2,10 @@
 
 [ext_resource type="Script" uid="uid://blylchano3pbx" path="res://scenes/planets/earth_base.gd" id="1_cwnmv"]
 [ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://assets/shaders/toon.gdshader" id="2_5i67w"]
-[ext_resource type="Texture2D" uid="uid://b5x1pv330wf72" path="res://assets/planets/textures/solar system/2k_earth_daymap.jpg" id="3_trc54"]
+[ext_resource type="Texture2D" uid="uid://tg5dtkq5slv1" path="res://assets/planets/textures/solar system/2k_venus_atmosphere.jpg" id="4_pa0cx"]
 [ext_resource type="Texture2D" uid="uid://dldpelql0fhfb" path="res://assets/planets/textures/solar system/2k_neptune.jpg" id="4_xbhfj"]
-[ext_resource type="Texture2D" uid="uid://d6ufagn3ivxr" path="res://assets/planets/textures/meshy/venus.png" id="5_fnp8i"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1umni"]
-albedo_texture = ExtResource("3_trc54")
 
 [sub_resource type="SphereMesh" id="SphereMesh_cwnmv"]
-material = SubResource("StandardMaterial3D_1umni")
 radius = 50.0
 height = 100.0
 
@@ -26,12 +21,12 @@ shader = ExtResource("2_5i67w")
 shader_parameter/albedo_color = Color(1, 1, 1, 1)
 shader_parameter/albedo_texture = ExtResource("4_xbhfj")
 shader_parameter/line_color = Color(0, 0, 0, 1)
-shader_parameter/metallic = 0.950000045125
-shader_parameter/clearcoat = 0.2530000120175
-shader_parameter/clearcoat_roughness = 0.0
+shader_parameter/metallic = 0.9050000429875
+shader_parameter/clearcoat = 0.2090000099275
+shader_parameter/clearcoat_roughness = 0.5270000250325
 shader_parameter/shadow_threshold = 0.210000009975
 shader_parameter/shadow_softness = 0.0
-shader_parameter/ambient_fill = 0.018000000855
+shader_parameter/ambient_fill = 0.00800000038
 shader_parameter/hdr_cap = 16.0
 
 [sub_resource type="TorusMesh" id="TorusMesh_xbhfj"]
@@ -42,7 +37,7 @@ outer_radius = 59.456
 render_priority = 0
 shader = ExtResource("2_5i67w")
 shader_parameter/albedo_color = Color(1, 1, 1, 1)
-shader_parameter/albedo_texture = ExtResource("5_fnp8i")
+shader_parameter/albedo_texture = ExtResource("4_pa0cx")
 shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/metallic = 0.98800004693
 shader_parameter/clearcoat = 0.4890000232275

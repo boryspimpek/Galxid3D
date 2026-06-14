@@ -1,11 +1,17 @@
 [gd_scene format=3 uid="uid://ca26ern58wgjl"]
 
 [ext_resource type="Script" uid="uid://cxso55pxdnnn3" path="res://scenes/projectile/projectile.gd" id="1_opwgi"]
-[ext_resource type="PackedScene" uid="uid://l3mk56ty44tw" path="res://assets/BinbunVFX/magic_projectiles/effects/mprojectile_javelin/mprojectile_javelin_vfx_01.tscn" id="2_cm8q0"]
+[ext_resource type="Texture2D" uid="uid://6hcmqf7vlpeb" path="res://assets/projectiles/fire bullet.png" id="2_cm8q0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nskuf"]
 radius = 0.10058594
 height = 0.49856567
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cm8q0"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1.5720325, 1.5720325, 1.5720325, 1)
+albedo_texture = ExtResource("2_cm8q0")
 
 [node name="Projectile" type="Area3D" unique_id=1517421005]
 script = ExtResource("1_opwgi")
@@ -17,7 +23,11 @@ shape = SubResource("CapsuleShape3D_nskuf")
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1682580241]
 aabb = AABB(-0.10498387, -0.102447845, -0.25066954, 0.20996775, 0.20489569, 0.5013391)
 
-[node name="MProjectileJavelinVFX_01" parent="." unique_id=2006368575 instance=ExtResource("2_cm8q0")]
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=680446642]
+transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, 0.006, 0, 0.014)
+material_override = SubResource("StandardMaterial3D_cm8q0")
+axis = 1
+texture = ExtResource("2_cm8q0")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
