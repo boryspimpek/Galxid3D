@@ -24,6 +24,10 @@ var ship_data: ShipData = null
 @export var max_bound_x: float = 40.0
 @export var max_bound_z: float = 20.0
 @export var gamepad_move_speed: float = 30.0
+@export var gamepad_l2_move_speed: float = 12.0
+@export var gamepad_acceleration: float = 70.0
+@export var gamepad_deceleration: float = 100.0
+@export_range(1.0, 3.0, 0.05) var gamepad_response_exponent: float = 1.4
 
 @onready var weapon_system: Node = $WeaponSystem
 @onready var damage_system: Node = $DamageSystem
@@ -37,6 +41,7 @@ var touch_target := Vector3.ZERO
 var is_firing := false
 var _touch_firing := false
 var _touch_grab_offset := Vector3.ZERO  # różnica palec↔statek w momencie dotknięcia
+var _gamepad_velocity := Vector2.ZERO
 
 # ============================================================================
 # 1. INICJALIZACJA
@@ -155,15 +160,37 @@ func _physics_process(delta: float):
 	power = min(max_power, power + regen * delta)
 
 	var prev_x: float = global_position.x
+	var tilt_dx: float = 0.0
 
 	var stick := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	if stick.length() > 0.0:
-		global_position.x += stick.x * gamepad_move_speed * delta
-		global_position.z += stick.y * gamepad_move_speed * delta
 		touch_target = Vector3.ZERO
+		var deflection := stick.length()
+		var curved := pow(deflection, gamepad_response_exponent)
+		var active_speed := (
+			gamepad_l2_move_speed
+			if Input.is_action_pressed("move_l2")
+			else gamepad_move_speed
+		)
+		var target_velocity := stick.normalized() * curved * active_speed
+		_gamepad_velocity = _gamepad_velocity.move_toward(
+			target_velocity, gamepad_acceleration * delta
+		)
 	elif touch_target != Vector3.ZERO:
+		_gamepad_velocity = Vector2.ZERO
 		global_position.x = touch_target.x
 		global_position.z = touch_target.z
+		tilt_dx = global_position.x - prev_x
+	else:
+		_gamepad_velocity = _gamepad_velocity.move_toward(
+			Vector2.ZERO, gamepad_deceleration * delta
+		)
+
+	if _gamepad_velocity.length() > 0.0:
+		global_position.x += _gamepad_velocity.x * delta
+		global_position.z += _gamepad_velocity.y * delta
+		if tilt_dx == 0.0:
+			tilt_dx = _gamepad_velocity.x * delta
 
 	_clamp_to_screen()
 	is_firing = (
@@ -172,15 +199,21 @@ func _physics_process(delta: float):
 		or _touch_firing
 	)
 	weapon_system.set_firing(is_firing)
-	_update_tilt(global_position.x - prev_x, delta)
+	_update_tilt(tilt_dx, delta)
 
 func _update_tilt(dx: float, delta: float) -> void:
 	var target: float = clampf(dx * 1.5, -0.8, 0.8)
 	ship_model.rotation.z = lerpf(ship_model.rotation.z, target, delta * 10.0)
 
 func _clamp_to_screen():
-	global_position.x = clamp(global_position.x, -max_bound_x, max_bound_x)
-	global_position.z = clamp(global_position.z, -max_bound_z, max_bound_z)
+	var clamped_x := clampf(global_position.x, -max_bound_x, max_bound_x)
+	var clamped_z := clampf(global_position.z, -max_bound_z, max_bound_z)
+	if clamped_x != global_position.x:
+		_gamepad_velocity.x = 0.0
+	if clamped_z != global_position.z:
+		_gamepad_velocity.y = 0.0
+	global_position.x = clamped_x
+	global_position.z = clamped_z
 
 # ============================================================================
 # 4. OBRAŻENIA / ŚMIERĆ / DEBUG
