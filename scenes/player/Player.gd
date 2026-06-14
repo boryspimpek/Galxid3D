@@ -28,6 +28,20 @@ var ship_data: ShipData = null
 @export var gamepad_acceleration: float = 70.0
 @export var gamepad_deceleration: float = 100.0
 @export_range(1.0, 3.0, 0.05) var gamepad_response_exponent: float = 1.4
+@export var tilt_velocity_factor: float = 0.025
+
+@export var dodge_depth: float = 1.0
+@export var dodge_descend_speed: float = 12.0
+@export var dodge_duration: float = 0.4
+@export var dodge_ascend_speed: float = 10.0
+@export var dodge_cooldown: float = 0.6
+@export var dodge_pitch: float = -0.4
+
+enum DodgePhase { GROUNDED, DESCENDING, UNDER, ASCENDING, COOLDOWN }
+
+const PLAYER_COLLISION_LAYER := 1
+
+var is_dodging := false
 
 @onready var weapon_system: Node = $WeaponSystem
 @onready var damage_system: Node = $DamageSystem
@@ -42,6 +56,8 @@ var is_firing := false
 var _touch_firing := false
 var _touch_grab_offset := Vector3.ZERO  # różnica palec↔statek w momencie dotknięcia
 var _gamepad_velocity := Vector2.ZERO
+var _dodge_phase: DodgePhase = DodgePhase.GROUNDED
+var _dodge_timer: float = 0.0
 
 # ============================================================================
 # 1. INICJALIZACJA
@@ -49,7 +65,7 @@ var _gamepad_velocity := Vector2.ZERO
 
 func _ready():
 	add_to_group("player")
-	collision_layer = 1
+	collision_layer = PLAYER_COLLISION_LAYER
 	collision_mask  = 0
 	main_camera = GameViewportHelper.get_game_camera(get_tree())
 	Input.joy_connection_changed.connect(_on_joy_connection_changed)
@@ -158,9 +174,10 @@ func _screen_to_world(screen_pos: Vector2) -> Vector3:
 
 func _physics_process(delta: float):
 	power = min(max_power, power + regen * delta)
+	_update_dodge(delta)
 
 	var prev_x: float = global_position.x
-	var tilt_dx: float = 0.0
+	var using_touch := false
 
 	var stick := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	if stick.length() > 0.0:
@@ -178,9 +195,9 @@ func _physics_process(delta: float):
 		)
 	elif touch_target != Vector3.ZERO:
 		_gamepad_velocity = Vector2.ZERO
+		using_touch = true
 		global_position.x = touch_target.x
 		global_position.z = touch_target.z
-		tilt_dx = global_position.x - prev_x
 	else:
 		_gamepad_velocity = _gamepad_velocity.move_toward(
 			Vector2.ZERO, gamepad_deceleration * delta
@@ -189,20 +206,65 @@ func _physics_process(delta: float):
 	if _gamepad_velocity.length() > 0.0:
 		global_position.x += _gamepad_velocity.x * delta
 		global_position.z += _gamepad_velocity.y * delta
-		if tilt_dx == 0.0:
-			tilt_dx = _gamepad_velocity.x * delta
 
 	_clamp_to_screen()
+
+	var velocity_x: float
+	if using_touch:
+		velocity_x = (global_position.x - prev_x) / maxf(delta, 0.0001)
+	else:
+		velocity_x = _gamepad_velocity.x
+
 	is_firing = (
-		Input.is_action_pressed("fire")
-		or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
-		or _touch_firing
+		not is_dodging
+		and (
+			Input.is_action_pressed("fire")
+			or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
+			or _touch_firing
+		)
 	)
 	weapon_system.set_firing(is_firing)
-	_update_tilt(tilt_dx, delta)
+	_update_tilt(velocity_x, delta)
 
-func _update_tilt(dx: float, delta: float) -> void:
-	var target: float = clampf(dx * 1.5, -0.8, 0.8)
+func _update_dodge(delta: float) -> void:
+	match _dodge_phase:
+		DodgePhase.GROUNDED:
+			if Input.is_action_just_pressed("dodge"):
+				_dodge_phase = DodgePhase.DESCENDING
+				is_dodging = true
+		DodgePhase.DESCENDING:
+			global_position.y = move_toward(
+				global_position.y, -dodge_depth, dodge_descend_speed * delta
+			)
+			if global_position.y <= -dodge_depth + 0.001:
+				global_position.y = -dodge_depth
+				_dodge_phase = DodgePhase.UNDER
+				_dodge_timer = dodge_duration
+		DodgePhase.UNDER:
+			_dodge_timer -= delta
+			if _dodge_timer <= 0.0:
+				_dodge_phase = DodgePhase.ASCENDING
+		DodgePhase.ASCENDING:
+			global_position.y = move_toward(global_position.y, 0.0, dodge_ascend_speed * delta)
+			if global_position.y >= -0.001:
+				global_position.y = 0.0
+				is_dodging = false
+				_dodge_phase = DodgePhase.COOLDOWN
+				_dodge_timer = dodge_cooldown
+		DodgePhase.COOLDOWN:
+			_dodge_timer -= delta
+			if _dodge_timer <= 0.0:
+				_dodge_phase = DodgePhase.GROUNDED
+
+	collision_layer = 0 if is_dodging else PLAYER_COLLISION_LAYER
+	_update_dodge_pitch(delta)
+
+func _update_dodge_pitch(delta: float) -> void:
+	var target_pitch: float = dodge_pitch if is_dodging else 0.0
+	ship_model.rotation.x = lerpf(ship_model.rotation.x, target_pitch, delta * 10.0)
+
+func _update_tilt(velocity_x: float, delta: float) -> void:
+	var target: float = clampf(velocity_x * tilt_velocity_factor, -0.8, 0.8)
 	ship_model.rotation.z = lerpf(ship_model.rotation.z, target, delta * 10.0)
 
 func _clamp_to_screen():

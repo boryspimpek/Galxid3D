@@ -12,6 +12,8 @@ func _ready():
 	shield_system = player.get_node("ShieldSystem")
 
 func take_damage(amount: int):
+	if player.is_dodging:
+		return
 	# print("--- HIT  dmg=%d  shield=%.1f  armor=%d" % [amount, shield_system.shield if shield_system else 0.0, player.armor])
 	if shield_system and shield_system.shield > 0:
 		var shield_absorbed: float = minf(float(amount), float(shield_system.shield))

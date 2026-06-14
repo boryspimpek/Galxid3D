@@ -30,3 +30,4 @@ res://scenes/enemies formations/formation6.tscn
 res://scenes/enemies formations/formation7.tscn
 res://scenes/enemies formations/formation8.tscn
 res://scenes/player/Player.gd
+res://scenes/player/DamageSystem.gd
