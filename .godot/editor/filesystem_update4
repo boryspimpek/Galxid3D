@@ -41,3 +41,5 @@ res://scenes/asteroids/asteroid_4.tscn
 res://scenes/asteroids/asteroid_5.tscn
 res://scenes/asteroids/asteroid_7.tscn
 res://data/ships/ship_001.tres
+res://scenes/planets/earth_base.gd
+res://scenes/projectile/ProjectileX.tscn

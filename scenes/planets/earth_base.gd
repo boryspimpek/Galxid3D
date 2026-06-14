@@ -1,7 +1,7 @@
 extends Node3D
 
-@export var spin_speed: float = 0.5
-@export var speed: float = 0.0
+@export var spin_speed: float = 0.1
+@export var speed: float = 1.0
 
 
 func _process(delta: float) -> void:
