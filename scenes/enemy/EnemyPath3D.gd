@@ -23,7 +23,7 @@ const ACTIVATION_ORIGIN_NAME := "ActivationOrigin"
 @export var warn_if_active_on_spawn: bool = true
 
 @export_group("Ruch")
-@export var speed: float = 5.0 # jednostki 3D na sekundę wzdłuż krzywej
+@export var speed: float = 6.0 # jednostki 3D na sekundę wzdłuż krzywej
 ## Opcjonalny mnożnik prędkości wzdłuż ścieżki (oś X: 0..1 = progress/baked_length).
 ## Jeśli puste, poruszanie jest ze stałą prędkością `speed`.
 @export var speed_curve: Curve

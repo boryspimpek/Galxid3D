@@ -7,7 +7,7 @@
 
 [sub_resource type="Curve3D" id="Curve3D_lu1cq"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.031471252, -0.122976065, 0.0071525574, 3.4813614, -0.58044434, -2.1879148, -3.4813614, 0.58044434, 2.1879148, -19.717148, 4.849169, 4.434531, 12.183401, 0.008300781, -0.68241215, -12.183401, -0.008300781, 0.68241215, -37.097878, 5.282152, 17.2651, 0, 0, 0, 0, 0, 0, -67.59756, 5.278002, -3.4538822),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.0027618408, -0.0020946413, 0.0072021484, 4.680992, 0, -0.031375885, -4.680992, 0, 0.031375885, -42.02958, -0.0020751953, 23.12333, 2.080284, 0, 5.5633335, -2.080284, 0, -5.5633335, -58.52027, -0.0020751953, 13.8720255, 0, 0, 0, 0, 0, 0, -59.54471, -0.0020751953, -1.153038),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
@@ -15,47 +15,48 @@ point_count = 4
 [node name="Formation" type="Node3D" unique_id=1730415998]
 
 [node name="Path" type="Path3D" parent="." unique_id=1730415999]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.789392, -5.264574, 1.5190136)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.714905, 0, -6.565695)
 curve = SubResource("Curve3D_lu1cq")
 script = ExtResource("1_knp4y")
 activation_mode = 0
-speed = 8.0
+speed = 10.0
 bank_enabled = true
+bank_lookahead = 10.0
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path" unique_id=310916544]
-transform = Transform3D(-0.13689645, 0.25684482, 0.9566726, -1.490072e-08, 0.96579605, -0.25927788, -0.99055547, -0.035496406, -0.13221379, -0.031471252, -0.122976065, 0.0071525574)
+transform = Transform3D(-0.52577287, 3.7674673e-07, 0.8505734, -1.421031e-14, 0.99999386, -4.4289462e-07, -0.8505798, -2.328802e-07, -0.52576894, -0.0027618408, -0.0020946413, 0.0072021484)
 loop = false
 script = ExtResource("2_a3xl8")
 
 [node name="blaze 3" parent="Path/PathFollow3D" unique_id=1897743314 instance=ExtResource("3_cswtf")]
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Path" unique_id=2110210760]
-transform = Transform3D(-0.15339999, 0.25282878, 0.95523864, 0.0044410178, 0.9668707, -0.25518212, -0.9881174, -0.0349048, -0.14944263, -2.8988872, 0.64742696, 0.43504885)
-progress = 3.0
+transform = Transform3D(-0.5195883, 3.722489e-07, 0.8543644, -3.1917233e-09, 0.99998826, -4.376106e-07, -0.8543622, -2.301224e-07, -0.5195896, -4.267254, -0.0020924434, 2.6170068)
+progress = 5.0
 loop = false
 script = ExtResource("2_a3xl8")
 
 [node name="blaze 3" parent="Path/PathFollow3D2" unique_id=599822296 instance=ExtResource("3_cswtf")]
 
 [node name="PathFollow3D3" type="PathFollow3D" parent="Path" unique_id=956187911]
-transform = Transform3D(-0.16558522, 0.24986501, 0.9539841, 0.007679717, 0.96766394, -0.25210077, -0.9860978, -0.034421094, -0.16215605, -5.7630143, 1.408492, 0.9021975)
-progress = 6.0
+transform = Transform3D(-0.51546675, 3.692636e-07, 0.85684985, -5.2836233e-09, 0.99999356, -4.3409995e-07, -0.8568213, -2.2831682e-07, -0.5154839, -8.545705, -0.0020902639, 5.204925)
+progress = 10.0
 loop = false
 script = ExtResource("2_a3xl8")
 
 [node name="blaze 3" parent="Path/PathFollow3D3" unique_id=70216865 instance=ExtResource("3_cswtf")]
 
 [node name="PathFollow3D4" type="PathFollow3D" parent="Path" unique_id=914193793]
-transform = Transform3D(-0.18005513, 0.24634865, 0.9522719, 0.011476569, 0.9685909, -0.24838156, -0.9835837, -0.03379503, -0.17722133, -8.622693, 2.159489, 1.4103942)
-progress = 9.0
+transform = Transform3D(-0.51111823, 3.660781e-07, 0.85946435, -7.490459e-09, 0.99999696, -4.303512e-07, -0.85949534, -2.2641149e-07, -0.51109976, -12.836589, -0.0020881023, 7.7717304)
+progress = 15.0
 loop = false
 script = ExtResource("2_a3xl8")
 
 [node name="blaze 3" parent="Path/PathFollow3D4" unique_id=153749245 instance=ExtResource("3_cswtf")]
 
 [node name="PathFollow3D5" type="PathFollow3D" parent="Path" unique_id=1922970098]
-transform = Transform3D(-0.19954407, 0.24159618, 0.94959784, 0.016515635, 0.96977454, -0.24326201, -0.9797112, -0.032859314, -0.19751152, -11.475987, 2.8974805, 1.97071)
-progress = 12.0
+transform = Transform3D(-0.50597906, 3.6233598e-07, 0.86249244, -1.00377e-08, 0.99995315, -4.2597267e-07, -0.86249375, -2.2420065e-07, -0.5059783, -17.141466, -0.0020859612, 10.314958)
+progress = 20.0
 loop = false
 script = ExtResource("2_a3xl8")
 

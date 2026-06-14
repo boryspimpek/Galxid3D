@@ -23,3 +23,9 @@ res://scenes/enemy_projectile/EnemyProjectile.tscn
 res://scenes/enemy/movement/LinearMoveData.gd
 res://assets/enemies/voyager/voyager_model.tscn
 res://scenes/enemies/voyager.tscn
+res://data/weapons/weapon_1.tres
+res://scenes/enemies formations/formation5.tscn
+res://scenes/enemy/EnemyPath3D.gd
+res://scenes/enemies formations/formation6.tscn
+res://scenes/enemies formations/formation7.tscn
+res://scenes/enemies formations/formation8.tscn

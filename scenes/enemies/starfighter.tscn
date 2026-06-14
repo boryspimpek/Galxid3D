@@ -21,7 +21,7 @@ script = ExtResource("3_q8gre")
 
 [node name="starfighter" unique_id=1897743314 instance=ExtResource("1_3ym5w")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
-armor = 100
+armor = 120
 weapon_data = SubResource("Weapon_starfighter")
 movement_data = SubResource("Resource_a7w8t")
 value = 20
