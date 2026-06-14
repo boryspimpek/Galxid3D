@@ -31,8 +31,8 @@ shader_parameter/ambient_fill = 0.00800000038
 shader_parameter/hdr_cap = 16.0
 
 [sub_resource type="TorusMesh" id="TorusMesh_xbhfj"]
-inner_radius = 97.564
-outer_radius = 59.456
+inner_radius = 97.0
+outer_radius = 59.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fnp8i"]
 render_priority = 0
@@ -58,15 +58,16 @@ mesh = SubResource("SphereMesh_cwnmv")
 surface_material_override/0 = SubResource("ShaderMaterial_pa0cx")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=539177]
-transform = Transform3D(1, 0, 0, 0, 0.05, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.049809735, -0.08715574, 0, 0.004357787, 0.9961947, 0, 0, 0)
 layers = 8
 mesh = SubResource("TorusMesh_xbhfj")
 surface_material_override/0 = SubResource("ShaderMaterial_fnp8i")
 
 [node name="AsteroidOrbit" type="Node3D" parent="." unique_id=167405076]
-transform = Transform3D(0.819152, -0.2867882, 0.49673173, 0, 0.8660253, 0.49999997, -0.5735764, -0.409576, 0.70940644, 0, 0, 0)
+transform = Transform3D(0.819152, -0.24240386, 0.5198367, 0, 0.9063077, 0.42261824, -0.5735764, -0.3461886, 0.7424038, 0, 0, 0)
 script = ExtResource("1_orbit")
 asteroid_count = 100
-orbit_radius = 130.0
+orbit_radius_min = 110.0
+orbit_radius_max = 150.0
 orbit_speed = 0.035
 asteroid_scale = 1.0

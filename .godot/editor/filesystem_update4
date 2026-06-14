@@ -32,3 +32,12 @@ res://scenes/enemies formations/formation8.tscn
 res://scenes/player/Player.gd
 res://scenes/player/DamageSystem.gd
 res://scenes/planets/PlanetOrbit.gd
+res://scenes/asteroids/simple_asteroid.tscn
+res://scenes/asteroids/asteroid_6.tscn
+res://scenes/asteroids/asteroid.tscn
+res://scenes/asteroids/asteroid_2.tscn
+res://scenes/asteroids/asteroid_3.tscn
+res://scenes/asteroids/asteroid_4.tscn
+res://scenes/asteroids/asteroid_5.tscn
+res://scenes/asteroids/asteroid_7.tscn
+res://data/ships/ship_001.tres

@@ -11,7 +11,8 @@ const ASTEROID_SCENES = [
 ]
 
 @export var asteroid_count: int = 10
-@export var orbit_radius: float = 62.0
+@export var orbit_radius_min: float = 62.0
+@export var orbit_radius_max: float = 62.0
 @export var orbit_speed: float = 0.12
 @export_range(0.05, 1.0, 0.01) var asteroid_scale: float = 0.12
 @export var randomize_start_angles: bool = true
@@ -40,11 +41,12 @@ func _process(delta: float) -> void:
 	for orbiter in _orbiters:
 		orbiter["angle"] += orbit_speed * delta
 		var angle: float = orbiter["angle"]
+		var radius: float = orbiter["radius"]
 		var node: Node3D = orbiter["node"]
 		node.position = Vector3(
-			cos(angle) * orbit_radius,
+			cos(angle) * radius,
 			0.0,
-			sin(angle) * orbit_radius
+			sin(angle) * radius
 		)
 		if spin_asteroids:
 			node.rotate_object_local(Vector3.UP, asteroid_spin_speed * delta)
@@ -70,9 +72,13 @@ func _spawn_orbiters() -> void:
 		if randomize_start_angles:
 			angle += randf_range(-0.15, 0.15)
 
+		var radius_min := minf(orbit_radius_min, orbit_radius_max)
+		var radius_max := maxf(orbit_radius_min, orbit_radius_max)
+		var radius := randf_range(radius_min, radius_max)
+
 		asteroid.position = Vector3(
-			cos(angle) * orbit_radius,
+			cos(angle) * radius,
 			0.0,
-			sin(angle) * orbit_radius
+			sin(angle) * radius
 		)
-		_orbiters.append({"node": asteroid, "angle": angle})
+		_orbiters.append({"node": asteroid, "angle": angle, "radius": radius})

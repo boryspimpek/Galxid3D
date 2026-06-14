@@ -3,14 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://b118kctkgkepx" path="res://assets/asteroids/asteroid6.glb" id="1_n06s7"]
 [ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://assets/shaders/toon.gdshader" id="2_i2s8o"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n06s7"]
-cull_mode = 1
-grow = true
-grow_amount = 0.02
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ltxiy"]
 render_priority = 0
-next_pass = SubResource("StandardMaterial3D_n06s7")
 shader = ExtResource("2_i2s8o")
 shader_parameter/albedo_color = Color(0.37036446, 0.3703645, 0.37036446, 1)
 shader_parameter/line_color = Color(0, 0, 0, 1)
@@ -23,7 +17,7 @@ shader_parameter/ambient_fill = 0.0
 shader_parameter/hdr_cap = 16.0
 
 [node name="asteroid6" unique_id=1723924494 instance=ExtResource("1_n06s7")]
-layers = 16
+layers = 4
 
 [node name="rock_002" parent="." index="0" unique_id=1667315130]
 layers = 16
