@@ -86,7 +86,7 @@ render_target_update_mode = 4
 environment = SubResource("Environment_2y1ty")
 
 [node name="Light ring" type="DirectionalLight3D" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=1961031784]
-transform = Transform3D(0.99999994, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 15, 0)
+transform = Transform3D(1, 0, 0, 0, -0.5664063, -0.8241261, 0, 0.8241261, -0.5664063, 0, 0, 0)
 light_cull_mask = 8
 shadow_enabled = true
 
@@ -113,14 +113,14 @@ gamepad_deceleration = 500.0
 [node name="Background" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=240733446]
 
 [node name="Sun" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=145217065 instance=ExtResource("3_1u8w0")]
-transform = Transform3D(0.15, 0, 0, 0, -0.12057852, 0.08922344, 0, -0.08922344, -0.12057852, -40, -55, -40)
+transform = Transform3D(0.15, 0, 0, 0, -0.12057852, 0.08922344, 0, -0.08922344, -0.12057852, -30.63, -34.607, -26.895)
 
 [node name="earth" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=1975713936 instance=ExtResource("4_0odxb")]
-transform = Transform3D(0.3044311, -0.01861984, 4.1215056e-08, -0.016663516, -0.27244586, -0.13609034, 0.008308168, 0.1358365, -0.27295497, 25, -50, -10)
+transform = Transform3D(0.305, 0, 0, 0, 0.17537662, 0.24953564, 0, -0.24953566, 0.1753766, 25, -20.155, -10)
 spin_speed = 0.5
-speed = 1.0
 
 [node name="AsteroidSpawner" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=1122324284]
+visible = false
 script = ExtResource("5_lswn8")
 spawn_interval_2 = 1.0
 asteroid_speed_2 = 30.0

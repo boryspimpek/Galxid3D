@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c1pq466qvcqtm"]
 
 [ext_resource type="Script" uid="uid://blylchano3pbx" path="res://scenes/planets/earth_base.gd" id="1_cwnmv"]
+[ext_resource type="Script" uid="uid://c42gpfswfidnt" path="res://scenes/planets/PlanetOrbit.gd" id="1_orbit"]
 [ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://assets/shaders/toon.gdshader" id="2_5i67w"]
 [ext_resource type="Texture2D" uid="uid://tg5dtkq5slv1" path="res://assets/planets/textures/solar system/2k_venus_atmosphere.jpg" id="4_pa0cx"]
 [ext_resource type="Texture2D" uid="uid://dldpelql0fhfb" path="res://assets/planets/textures/solar system/2k_neptune.jpg" id="4_xbhfj"]
@@ -50,7 +51,6 @@ shader_parameter/hdr_cap = 16.0
 [node name="earth" type="Node3D" unique_id=1975713936]
 script = ExtResource("1_cwnmv")
 spin_speed = 0.1
-speed = 0.2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1264017003]
 layers = 4
@@ -62,3 +62,11 @@ transform = Transform3D(1, 0, 0, 0, 0.05, 0, 0, 0, 1, 0, 0, 0)
 layers = 8
 mesh = SubResource("TorusMesh_xbhfj")
 surface_material_override/0 = SubResource("ShaderMaterial_fnp8i")
+
+[node name="AsteroidOrbit" type="Node3D" parent="." unique_id=167405076]
+transform = Transform3D(0.819152, -0.2867882, 0.49673173, 0, 0.8660253, 0.49999997, -0.5735764, -0.409576, 0.70940644, 0, 0, 0)
+script = ExtResource("1_orbit")
+asteroid_count = 100
+orbit_radius = 130.0
+orbit_speed = 0.035
+asteroid_scale = 1.0
