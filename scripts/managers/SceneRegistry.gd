@@ -1,15 +1,13 @@
 extends Node
 
 # ============================================================================
-# GAME CONSTANTS - Centralne miejsce dla stałych używanych w całej grze
+# SCENE REGISTRY - Preload scen gameplayowych i resolver ścieżek pocisków gracza.
 # ============================================================================
 
-# ---- Sceny pocisków ----
 var enemy_projectile_scene: PackedScene
 var player_projectile_scene: PackedScene
 var _player_projectile_scene_cache: Dictionary = {}
 
-# ---- Scena pickupa (loot z wrogów) ----
 var pickup_scene: PackedScene
 
 func _ready():

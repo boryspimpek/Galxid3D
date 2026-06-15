@@ -185,7 +185,7 @@ func _spawn_hit_effect(hit_world_position: Variant) -> void:
 
 ## Wyrzuca `value` pickupów z pozycji wroga w losowych kierunkach (płaszczyzna XZ).
 func _spawn_pickups() -> void:
-	var pickup_scene := GameConstants.pickup_scene
+	var pickup_scene := SceneRegistry.pickup_scene
 	if pickup_scene == null or value <= 0:
 		return
 

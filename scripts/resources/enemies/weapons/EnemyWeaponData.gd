@@ -43,7 +43,7 @@ func spawn_projectile(enemy: Node3D, from_muzzle: Marker3D) -> void:
 
 
 func spawn_projectile_at(enemy: Node3D, global_pos: Vector3, velocity: Vector3) -> void:
-	var projectile_scene := GameConstants.enemy_projectile_scene
+	var projectile_scene := SceneRegistry.enemy_projectile_scene
 	var projectile := projectile_scene.instantiate()
 	enemy.get_tree().current_scene.add_child(projectile)
 	projectile.global_position = global_pos

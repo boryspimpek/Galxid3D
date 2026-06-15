@@ -28,3 +28,4 @@ res://scenes/enemies/formations/formation2.tscn
 res://scenes/enemies/formations/formation3.tscn
 res://scenes/player/Player.gd
 res://scripts/core/DataManager.gd
+res://scripts/resources/enemies/weapons/EnemyWeaponData.gd

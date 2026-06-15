@@ -27,7 +27,7 @@ Projekt gry 3D w **Godot 4.6** (renderer: **Forward+**). Repo zawiera sceny, skr
 Źródło: sekcja `[autoload]` w `project.godot`.
 
 - `DataManager`: `res://scripts/managers/DataManager.gd`
-- `GameConstants`: `res://scripts/core/GameConstants.gd`
+- `SceneRegistry`: `res://scripts/managers/SceneRegistry.gd`
 - `SoundManager`: `res://scripts/managers/SoundManager.gd`
 
 ## Struktura (najczęściej używane)
@@ -50,7 +50,7 @@ Plik: `scenes/enemies/base/Enemy.gd`.
 
 - Przeciwnik rozszerza `Area3D`, dodaje się do grupy `enemies`.
 - Strzelanie w pętli `_process` oparte o `fire_rate` i timer.
-- Pociski tworzone przez `GameConstants.enemy_projectile_scene`.
+- Pociski tworzone przez `SceneRegistry.enemy_projectile_scene`.
 - Dźwięki przez `SoundManager` (trafienie/wybuch/broń).
 - Kolizja z graczem:
   - gracz jest w grupie `player`
@@ -69,9 +69,9 @@ Jeśli prosisz asystenta o zmiany, podaj:
 
 - **Godot wersja**: 4.6
 - **Scena startowa**: `3dworld.tscn`
-- **Singletony**: `DataManager`, `GameConstants`, `SoundManager`
+- **Singletony**: `DataManager`, `SceneRegistry`, `SoundManager`
 - **Miejsca w projekcie**:
   - logika przeciwników: `scenes/enemies/base/`
   - logika pocisków: `scenes/projectile/`
-  - globalne stałe/spawn scen: `scripts/core/GameConstants.gd`
+  - rejestr scen / spawn pocisków: `scripts/managers/SceneRegistry.gd`
 

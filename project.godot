@@ -22,7 +22,7 @@ buses/default_bus_layout="uid://46bi8dsn4fu5"
 [autoload]
 
 DataManager="*res://scripts/managers/DataManager.gd"
-GameConstants="*res://scripts/core/GameConstants.gd"
+SceneRegistry="*res://scripts/managers/SceneRegistry.gd"
 SoundManager="*res://scripts/managers/SoundManager.gd"
 HitComboManager="*res://scripts/managers/HitComboManager.gd"
 

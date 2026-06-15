@@ -111,7 +111,7 @@ func shoot():
 	fire_timer = power_level_data.fire_rate
 
 func create_projectile(projectile_id: int, damage: int, velocity: Vector3):
-	var projectile_scene = GameConstants.get_player_projectile_scene(projectile_id)
+	var projectile_scene = SceneRegistry.get_player_projectile_scene(projectile_id)
 	var projectile = projectile_scene.instantiate()
 	get_tree().current_scene.add_child(projectile)
 	projectile.global_position = muzzle.global_position
