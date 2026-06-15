@@ -19,3 +19,12 @@ res://scripts/resources/WeaponData.gd
 res://scripts/resources/WeaponComboShotData.gd
 res://scenes/player/ShieldSystem.gd
 res://scripts/resources/ShieldData.gd
+res://scenes/debug/LevelScrollRuler.gd
+res://scenes/debug/LevelScrollRuler.tscn
+res://scenes/debug/PlayAreaFrame.gd
+res://scenes/debug/PlayAreaFrame.tscn
+res://scenes/enemies/base/Enemy.gd
+res://scenes/enemies/formations/formation2.tscn
+res://scenes/enemies/formations/formation3.tscn
+res://scenes/player/Player.gd
+res://scripts/core/DataManager.gd

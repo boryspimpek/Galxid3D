@@ -44,7 +44,7 @@ var _facing: EnemyFacing
 @export var activate_on_scroll_line: bool = true
 @export var despawn_off_screen: bool = true
 ## Górna krawędź kadru. Wróg aktywuje się gdy global_position.z >= tej wartości.
-## Ustaw na minus max_bound_z z PlayAreaFrame (np. -17.0).
+## Ustaw jak PlayAreaConfig.scroll_activation_z (domyślnie -17.0).
 @export var scroll_activation_z: float = -17.0
 
 var _screen_notifier: VisibleOnScreenNotifier3D

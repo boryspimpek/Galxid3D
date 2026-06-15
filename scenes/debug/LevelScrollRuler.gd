@@ -4,12 +4,14 @@ extends Node3D
 ## Przedłużona ramka wzdłuż Z (pod LevelScroll) z podziałką dystansu i czasu scrolla.
 ## Umieść jako dziecko LevelScroll — współrzędne Z zgadzają się z falami i Path3D.
 
-@export_group("Zakres")
-@export var max_bound_x: float = 8.75:
+const DEFAULT_CONFIG_PATH := "res://data/play_area/default.tres"
+
+@export var play_area: PlayAreaConfig:
 	set(value):
-		max_bound_x = value
+		play_area = value
 		_queue_update()
 
+@export_group("Zakres")
 @export var z_min: float = -120.0:
 	set(value):
 		z_min = value
@@ -18,12 +20,6 @@ extends Node3D
 @export var z_max: float = 80.0:
 	set(value):
 		z_max = value
-		_queue_update()
-
-## Wewnątrz ±tej wartości — podświetlony odcinek (jak PlayAreaFrame max_bound_z).
-@export var play_area_half_z: float = 15.45:
-	set(value):
-		play_area_half_z = value
 		_queue_update()
 
 @export_group("Podziałka")
@@ -125,6 +121,12 @@ func _ready() -> void:
 	_queue_update()
 
 
+func _get_config() -> PlayAreaConfig:
+	if play_area != null:
+		return play_area
+	return load(DEFAULT_CONFIG_PATH) as PlayAreaConfig
+
+
 func _queue_update() -> void:
 	if not is_inside_tree():
 		return
@@ -141,10 +143,14 @@ func _update_ruler() -> void:
 
 	_clear_generated()
 
+	var config := _get_config()
+	if config == null:
+		return
+
 	var z_lo := minf(z_min, z_max)
 	var z_hi := maxf(z_min, z_max)
-	var bx := maxf(0.1, max_bound_x)
-	var play_z := maxf(0.0, play_area_half_z)
+	var bx := maxf(0.1, config.ruler_half_x)
+	var play_z := maxf(0.0, config.ruler_play_half_z)
 	var t := maxf(0.01, rail_thickness)
 	var h := maxf(0.01, rail_height)
 	var y := y_offset
@@ -162,7 +168,7 @@ func _update_ruler() -> void:
 	_add_box(gen, Vector3(-bx + t * 0.5, y, z_center), Vector3(t, h, depth), mat_rail)
 	_add_box(gen, Vector3(bx - t * 0.5, y, z_center), Vector3(t, h, depth), mat_rail)
 
-	# Podświetlenie strefy gry (±play_area_half_z)
+	# Podświetlenie strefy gry (±ruler_play_half_z z PlayAreaConfig)
 	if play_z > 0.0:
 		var play_depth := play_z * 2.0
 		_add_box(gen, Vector3(-bx + t * 0.5, y, 0.0), Vector3(t, h, play_depth), mat_play)

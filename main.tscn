@@ -140,7 +140,6 @@ scroll_speed = 6.0
 start_offset_z = 100.0
 
 [node name="LevelScrollRuler" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=552135128 instance=ExtResource("8_qsp4k")]
-max_bound_x = 20.0
 z_min = -600.0
 z_max = 10.0
 tick_spacing = 6.0

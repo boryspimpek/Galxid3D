@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bv4qai58b1rya"]
 
 [ext_resource type="Script" uid="uid://d1r165khvanpr" path="res://scenes/debug/PlayAreaFrame.gd" id="1_frame"]
+[ext_resource type="Resource" path="res://data/play_area/default.tres" id="2_play_area"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_edge"]
 
@@ -11,9 +12,8 @@ albedo_color = Color(0.2, 1, 0.35, 0.85)
 disable_receive_shadows = true
 
 [node name="PlayAreaFrame" type="Node3D" unique_id=784318850]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 15.45)
 script = ExtResource("1_frame")
-max_bound_x = 23.0
+play_area = ExtResource("2_play_area")
 
 [node name="EdgePosZ" type="MeshInstance3D" parent="." unique_id=1326682649]
 transform = Transform3D(46, 0, 0, 0, 0.05, 0, 0, 0, 0.15, 0, 0.02, 15.375)

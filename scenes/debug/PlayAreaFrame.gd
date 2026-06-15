@@ -1,17 +1,13 @@
 @tool
 extends Node3D
 
-## Ramka granic planszy (X/Z) — do podglądu w edytorze przy ustawianiu Path3D.
-## Domyślne wartości jak w Player.tscn (max_bound_x / max_bound_z).
+## Ramka granic widocznego kadru (X/Z) — do podglądu w edytorze przy ustawianiu Path3D.
 
-@export var max_bound_x: float = 8.75:
-	set(value):
-		max_bound_x = value
-		_update_frame()
+const DEFAULT_CONFIG_PATH := "res://data/play_area/default.tres"
 
-@export var max_bound_z: float = 15.45:
+@export var play_area: PlayAreaConfig:
 	set(value):
-		max_bound_z = value
+		play_area = value
 		_update_frame()
 
 @export var border_thickness: float = 0.15:
@@ -34,8 +30,18 @@ func _ready() -> void:
 	_update_frame()
 
 
+func _get_config() -> PlayAreaConfig:
+	if play_area != null:
+		return play_area
+	return load(DEFAULT_CONFIG_PATH) as PlayAreaConfig
+
+
 func _update_frame() -> void:
 	if not is_inside_tree():
+		return
+
+	var config := _get_config()
+	if config == null:
 		return
 
 	var edge_pos_z := get_node_or_null("EdgePosZ") as MeshInstance3D
@@ -47,8 +53,8 @@ func _update_frame() -> void:
 
 	var t := maxf(0.01, border_thickness)
 	var h := maxf(0.01, border_height)
-	var bx := maxf(0.1, max_bound_x)
-	var bz := maxf(0.1, max_bound_z)
+	var bx := maxf(0.1, config.frame_half_x)
+	var bz := maxf(0.1, config.frame_half_z)
 	var y := y_offset
 
 	var width := bx * 2.0

@@ -6,6 +6,9 @@ var weapons_cache: Array = []
 var shields_cache: Array = []
 var generators_cache: Array = []
 
+const PLAY_AREA_CONFIG_PATH := "res://data/play_area/default.tres"
+var play_area_config: PlayAreaConfig
+
 var _loaded: bool = false
 
 func _ready():
@@ -31,6 +34,10 @@ func _load_all():
 	generators_cache = _load_tres_from_dir("res://data/generators", GeneratorData)
 	generators_cache.sort_custom(func(a, b): return a.generator_index < b.generator_index)
 	print("DataManager: Załadowano ", generators_cache.size(), " generatorów")
+
+	play_area_config = load(PLAY_AREA_CONFIG_PATH) as PlayAreaConfig
+	if play_area_config == null:
+		push_error("DataManager: Nie załadowano PlayAreaConfig: ", PLAY_AREA_CONFIG_PATH)
 
 
 func _load_tres_from_dir(dir_path: String, type) -> Array:
@@ -91,6 +98,9 @@ func get_generator_regeneration(generator_id: int) -> float:
 func get_generator_power(generator_id: int) -> float:
 	var generator = get_generator_by_id(generator_id)
 	return generator.power if generator else 0
+
+func get_play_area_config() -> PlayAreaConfig:
+	return play_area_config
 
 # ============================================================================
 # CZYSZCZENIE CACHE (do debugowania)

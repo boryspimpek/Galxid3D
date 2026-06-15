@@ -21,8 +21,9 @@ var max_power: float = 0
 var power: float = 0
 var ship_data: ShipData = null
 
-@export var max_bound_x: float = 40.0
-@export var max_bound_z: float = 20.0
+@export var play_area: PlayAreaConfig
+var max_bound_x: float = 40.0
+var max_bound_z: float = 20.0
 @export var gamepad_move_speed: float = 30.0
 @export var gamepad_l2_move_speed: float = 12.0
 @export var gamepad_acceleration: float = 70.0
@@ -70,10 +71,25 @@ func _ready():
 	main_camera = GameViewportHelper.get_game_camera(get_tree())
 	Input.joy_connection_changed.connect(_on_joy_connection_changed)
 	await get_tree().process_frame
+	_apply_play_area_bounds()
 	load_ship_data()
 	apply_ship_stats()
 	init_power_regeneration()
 	_log_connected_joypads()
+
+func _resolve_play_area() -> PlayAreaConfig:
+	if play_area != null:
+		return play_area
+	return DataManager.get_play_area_config()
+
+
+func _apply_play_area_bounds() -> void:
+	var area := _resolve_play_area()
+	if area == null:
+		return
+	max_bound_x = area.player_half_x
+	max_bound_z = area.player_half_z
+
 
 func load_ship_data():
 	var s_id = ship_id

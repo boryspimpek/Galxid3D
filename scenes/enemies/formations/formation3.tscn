@@ -61,5 +61,4 @@ script = ExtResource("2_pyold")
 [node name="blaze 3" parent="Path/PathFollow3D5" unique_id=714860725 instance=ExtResource("3_cswtf")]
 
 [node name="PlayAreaFrame" parent="." unique_id=2025243004 instance=ExtResource("4_a3xl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, 15.45)
 visible = false
