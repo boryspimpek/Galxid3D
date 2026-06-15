@@ -1,47 +1,32 @@
 extends Area3D
 
-# --- ZMIENNE EKSPORTOWANE (@EXPORT) ---
 @export_group("Combat")
 @export var armor: int = 1
-## Zasób broni (EnemyWeaponData / BurstEnemyWeaponData / CircleEnemyWeaponData).
-## Jak movement_data — zostaw pusty, jeśli wróg nie strzela.
 @export var weapon_data: EnemyWeaponData
-## ID dźwięku przy trafieniu bez śmierci (SoundManager, bus Impacts). 0 = cisza.
 @export var hit_sound: int = 3
-## ID dźwięku przy śmierci / wybuchu (SoundManager, bus Explosions). 0 = cisza.
 @export var explosion_sound: int = 9
 
 @export_group("Movement")
-## Zasób ruchu (np. LinearMoveData). Edytowalny per instancja na korzeniu wroga.
-## Zostaw pusty dla wrogów sterowanych ścieżką (Path3D).
 @export var movement_data: MovementData
 
 @export_group("General")
 @export var value: int = 2
 
 @export_group("Visual")
-## Scena wybuchu po śmierci — przeciągnij scenę VFX z FileSystem.
 @export var explosion_scene: PackedScene
-## Efekt trafienia (np. Binbun vfx_hit_01) — odtwarzany przy każdym nieśmiertelnym trafieniu.
 @export var hit_effect_scene: PackedScene
-## Przesunięcie popupu obrażeń w lokalnych osiach wroga (Z− = tył / „wyżej” na ekranie).
 var popup_spawn_offset_local: Vector3 = Vector3(0.0, 0.35, -1.2)
-## Losowy rozrzut ± w lokalnych osiach wroga (X = boki, Y = góra, Z = przód/tył).
 var popup_spawn_jitter_local: Vector3 = Vector3(0.25, 0.0, 0.35)
 
-# --- REFERENCJE WĘZŁÓW (@ONREADY) ---
 @onready var ship_model: Node3D = $EnemyModel
 
-# --- ZMIENNE WEWNĘTRZNE (LOGIKA) ---
 var _is_active: bool = false
-## Czas (s) odkąd ruch jest aktywny — przekazywany do MovementData.get_velocity().
 var _move_elapsed: float = 0.0
 var _weapon_firing: bool = false
 var _fire_timer: float = 0.0
-## Stan wzorca broni (np. licznik serii burst) — zasób weapon_data jest bezstanowy.
+## weapon_data jest bezstanowy — stan wzorca (np. seria burst) trzymamy tutaj.
 var _weapon_state: Dictionary = {}
 var _muzzles: Array[Marker3D] = []
-## Opcjonalny komponent orientacji (dziecko dziedziczące po EnemyFacing).
 var _facing: EnemyFacing
 
 @export_group("Activation")
@@ -54,8 +39,6 @@ var _scroll_activation_z: float = -17.0
 signal combat_activated
 signal combat_deactivated
 
-
-# --- METODY WBUDOWANE (LIFECYCLE) ---
 
 func _ready() -> void:
 	physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_ON
@@ -101,8 +84,6 @@ func _physics_process(delta: float) -> void:
 		_facing.process_facing(delta)
 
 
-# --- METODY PUBLICZNE (API ENEMY) ---
-
 func set_firing(firing: bool) -> void:
 	if firing and not _weapon_firing and weapon_data:
 		weapon_data.on_begin_firing(_weapon_state)
@@ -114,13 +95,12 @@ func is_combat_active() -> bool:
 	return _is_active
 
 
-## Wymusza walkę bez linii scrolla (np. fale slide sterowane przez animation.gd).
+## Aktywacja fali z EnemyPath3D (SCENE_SCROLL_LINE) — nie po pozycji Z wroga.
 func activate_combat() -> void:
 	activate_on_scroll_line = false
 	_activate()
 
 
-## Ile jednostek brakuje do linii aktywacji (0 = właśnie teraz).
 func get_scroll_distance_remaining() -> float:
 	return _scroll_activation_z - global_position.z
 
@@ -187,15 +167,13 @@ func _spawn_hit_effect(hit_world_position: Variant) -> void:
 		hit.play()
 
 
-## Wyrzuca `value` pickupów z pozycji wroga w losowych kierunkach (płaszczyzna XZ).
 func _spawn_pickups() -> void:
 	var pickup_scene := SceneRegistry.pickup_scene
 	if pickup_scene == null or value <= 0:
 		return
 
 	var scene_root := get_tree().current_scene
-	# Kamera jest top-down (patrzy w dół osi Y), więc niższe Y renderuje się
-	# "pod" eksplozją (Y=0). Przesuwamy loot w dół, by nie przysłaniał wybuchu.
+	# Kamera top-down: niższe Y renderuje się pod eksplozją — loot schodzimy w dół.
 	var spawn_offset := Vector3(0.0, -2.0, 0.0)
 	for i in value:
 		var pickup := pickup_scene.instantiate()
@@ -209,8 +187,6 @@ func _spawn_pickups() -> void:
 		if pickup.has_method("launch"):
 			pickup.launch(dir, speed)
 
-
-# --- BROŃ (weapon_data) ---
 
 func _process_weapon(delta: float) -> void:
 	_fire_timer = max(0.0, _fire_timer - delta)
@@ -243,8 +219,6 @@ func _find_facing() -> EnemyFacing:
 	return null
 
 
-# --- AKTYWACJA (linia scrolla) ---
-
 func _refresh_activation() -> void:
 	if global_position.z >= _scroll_activation_z:
 		_activate()
@@ -258,7 +232,7 @@ func _activate() -> void:
 	_is_active = true
 	_move_elapsed = 0.0
 	set_firing(true)
-	# PathFollow odpina się w EnemyPathFollow; wrogowie bez ścieżki — tutaj.
+	# PathFollow odpina EnemyPathFollow; wrogowie bez ścieżki — tutaj.
 	if not get_parent() is PathFollow3D:
 		LevelScroll3D.detach_to_active_scene(self)
 	combat_activated.emit()
@@ -271,8 +245,6 @@ func _deactivate() -> void:
 	set_firing(false)
 	combat_deactivated.emit()
 
-
-# --- OBSŁUGA SYGNAŁÓW (SIGNALS) ---
 
 func _on_screen_exited() -> void:
 	_deactivate()
