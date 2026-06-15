@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_3ym5w"]
 [ext_resource type="PackedScene" uid="uid://cj06xe1qfw8ch" path="res://assets/enemies/starfighter/starfighter_model.tscn" id="2_g7p8o"]
-[ext_resource type="Script" uid="uid://dtprhja8af0to" path="res://scenes/enemies/base/movement/LinearMoveData.gd" id="3_q8gre"]
+[ext_resource type="Script" uid="uid://dtprhja8af0to" path="res://scripts/resources/enemies/movement/LinearMoveData.gd" id="3_q8gre"]
 [ext_resource type="PackedScene" uid="uid://6okj4uhag0tm" path="res://assets/BinbunVFX_Vol2/ExplosionFX/effects/air/vfx_air_explosion_01.tscn" id="4_q8gre"]
-[ext_resource type="Script" uid="uid://eo6qejm2h6hl" path="res://scenes/enemies/base/weapons/EnemyWeaponData.gd" id="4_weapon_data"]
+[ext_resource type="Script" uid="uid://eo6qejm2h6hl" path="res://scripts/resources/enemies/weapons/EnemyWeaponData.gd" id="4_weapon_data"]
 [ext_resource type="PackedScene" uid="uid://dp6fn641cy82u" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/impact/vfx_impact_01.tscn" id="5_sqqeh"]
 
 [sub_resource type="Resource" id="Weapon_starfighter"]

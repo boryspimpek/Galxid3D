@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cr7rlbbhoidnb" path="res://assets/enemies/voyager/voyager_model.tscn" id="2_f87xg"]
 [ext_resource type="Script" uid="uid://cr2knbmonx42w" path="res://scenes/enemies/base/facing/FacePlayer.gd" id="4_face"]
 [ext_resource type="PackedScene" uid="uid://s6dwn56csbw1" path="res://assets/BinbunVFX_Vol2/ExplosionFX/effects/nuke/vfx_nuke_explosion_01.tscn" id="4_nuke"]
-[ext_resource type="Script" uid="uid://bs5humyuxa5j2" path="res://scenes/enemies/base/weapons/BurstEnemyWeaponData.gd" id="5_weapon_data"]
+[ext_resource type="Script" uid="uid://bs5humyuxa5j2" path="res://scripts/resources/enemies/weapons/BurstEnemyWeaponData.gd" id="5_weapon_data"]
 
 [sub_resource type="Resource" id="Weapon_voyager"]
 script = ExtResource("5_weapon_data")

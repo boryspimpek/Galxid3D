@@ -26,7 +26,7 @@ Projekt gry 3D w **Godot 4.6** (renderer: **Forward+**). Repo zawiera sceny, skr
 
 Źródło: sekcja `[autoload]` w `project.godot`.
 
-- `DataManager`: `res://scripts/core/DataManager.gd`
+- `DataManager`: `res://scripts/managers/DataManager.gd`
 - `GameConstants`: `res://scripts/core/GameConstants.gd`
 - `SoundManager`: `res://scripts/managers/SoundManager.gd`
 
@@ -40,7 +40,8 @@ Projekt gry 3D w **Godot 4.6** (renderer: **Forward+**). Repo zawiera sceny, skr
   - `PlayAreaFrame` (`res://scenes/debug/PlayAreaFrame.tscn`)
   - `LevelScrollRuler` (`res://scenes/debug/LevelScrollRuler.tscn`) — podziałka Z + czas scrolla pod `LevelScroll`
 - `scenes/enemies/`: wrogowie — `base/` (logika), `types/` (prefaby), `formations/` (fale)
-- `scripts/`: logika współdzielona / singletons (core, managers, …)
+- `scripts/`: logika współdzielona / singletons (`core/`, `managers/`, `resources/`)
+- `scripts/resources/`: dane gracza (`WeaponData`, `ShipData`, …) i wrogów (`enemies/movement/`, `enemies/weapons/`)
 - `assets/`: grafika, audio, ikony, importy
 
 ## Przykład logiki przeciwnika

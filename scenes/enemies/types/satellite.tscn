@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_0kkwh"]
 [ext_resource type="PackedScene" uid="uid://f4qnlqxwm7yv" path="res://assets/enemies/satelite1/satelite_model.tscn" id="2_1rps2"]
 [ext_resource type="PackedScene" uid="uid://chqijevfxuhpd" path="res://assets/BinbunVFX_Vol2/ExplosionFX/effects/ground/vfx_ground_explosion_01.tscn" id="3_ground"]
-[ext_resource type="Script" uid="uid://eo6qejm2h6hl" path="res://scenes/enemies/base/weapons/EnemyWeaponData.gd" id="4_weapon_data"]
+[ext_resource type="Script" uid="uid://eo6qejm2h6hl" path="res://scripts/resources/enemies/weapons/EnemyWeaponData.gd" id="4_weapon_data"]
 
 [sub_resource type="Resource" id="Weapon_satellite"]
 script = ExtResource("4_weapon_data")
