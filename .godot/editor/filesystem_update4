@@ -40,3 +40,7 @@ res://scenes/projectile/Projectile.tscn
 res://scenes/enemies/types/voyager.tscn
 res://scenes/enemies/types/starfighter.tscn
 res://scenes/enemies/types/blaze_2.tscn
+res://scenes/player/DamageSystem.gd
+res://scripts/resources/ShipData.gd
+res://data/shields/shield_001.tres
+res://data/ships/ship_001.tres

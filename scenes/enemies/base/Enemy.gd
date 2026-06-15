@@ -6,6 +6,10 @@ extends Area3D
 ## Zasób broni (EnemyWeaponData / BurstEnemyWeaponData / CircleEnemyWeaponData).
 ## Jak movement_data — zostaw pusty, jeśli wróg nie strzela.
 @export var weapon_data: EnemyWeaponData
+## ID dźwięku przy trafieniu bez śmierci (SoundManager, bus Impacts). 0 = cisza.
+@export var hit_sound: int = 3
+## ID dźwięku przy śmierci / wybuchu (SoundManager, bus Explosions). 0 = cisza.
+@export var explosion_sound: int = 9
 
 @export_group("Movement")
 ## Zasób ruchu (np. LinearMoveData). Edytowalny per instancja na korzeniu wroga.
@@ -124,7 +128,7 @@ func take_damage(amount: int, hit_world_position: Variant = null) -> void:
 	var will_die := armor - amount <= 0
 	if not will_die:
 		_spawn_hit_effect(hit_world_position)
-		SoundManager.play_hit_sound(3)
+		SoundManager.play_hit_sound(hit_sound)
 	armor -= amount
 	if will_die:
 		die()
@@ -132,7 +136,7 @@ func take_damage(amount: int, hit_world_position: Variant = null) -> void:
 
 func die() -> void:
 	HitComboManager.register_kill()
-	SoundManager.play_sound(9)
+	SoundManager.play_sound(explosion_sound)
 	if explosion_scene:
 		var death_pos := global_position
 		var explosion := explosion_scene.instantiate()

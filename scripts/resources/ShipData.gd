@@ -6,3 +6,7 @@ extends Resource
 @export var speed: int = 0
 @export var armor: int = 0
 @export var cost: int = 0
+
+@export_group("Audio")
+## ID dźwięku przy trafieniu w pancerz (SoundManager, bus Impacts). 0 = cisza.
+@export var hit_sound: int = 19

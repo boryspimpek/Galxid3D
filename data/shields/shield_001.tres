@@ -9,3 +9,4 @@ shield_name = "Structural Integrity Field"
 protection = 20
 shield_regen_cost = 100
 cost = 100
+hit_sound = 4

@@ -8,6 +8,7 @@ var shield_regen_cost: int = 0
 var shield_regen_amount: float = 10.0
 var shield_wait: float = 0.0
 var _wait_timer: float = 0.0
+var _hit_sound: int = 27
 
 func _ready():
 	player = get_parent()
@@ -22,6 +23,7 @@ func load_shield_config():
 		shield_wait = shield_data.shield_wait
 		shield     = float(shield_data.protection)
 		shield_max = float(shield_data.protection)
+		_hit_sound = shield_data.hit_sound
 		print(
 			"ShieldSystem: shield=", shield, "/", shield_max,
 			" regen=", shield_regen_amount, " regen_cost=", shield_regen_cost,
@@ -45,4 +47,4 @@ func reload():
 
 func take_shield_damage(amount: float):
 	shield = max(shield - amount, 0.0)
-	SoundManager.play_hit_sound(4)
+	SoundManager.play_hit_sound(_hit_sound)

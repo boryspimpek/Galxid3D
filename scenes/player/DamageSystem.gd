@@ -24,8 +24,8 @@ func take_damage(amount: int):
 	if amount > 0:
 		player.armor -= amount
 		if player.armor > 0:
-			# 019_S_HULL_HIT.wav
-			SoundManager.play_hit_sound(4)
+			var hit_sound: int = player.ship_data.hit_sound if player.ship_data else 19
+			SoundManager.play_hit_sound(hit_sound)
 		# print("    przebicie do pancerza -%d  armor=%d" % [amount, player.armor])
 		if player.armor <= 0:
 			player.armor = 0

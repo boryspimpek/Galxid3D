@@ -8,3 +8,4 @@ ship_index = 1
 ship_name = "USP Talon Light Fighter"
 armor = 4000
 cost = 6000
+hit_sound = 4
