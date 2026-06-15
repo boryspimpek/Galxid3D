@@ -16,8 +16,6 @@ const ACTIVATION_ORIGIN_NAME := "ActivationOrigin"
 
 @export_group("Aktywacja")
 @export var activation_mode: ActivationMode = ActivationMode.ENEMY_SCROLL_LINE
-## Górna krawędź kadru — dla SCENE_SCROLL_LINE liczy się global Z punktu aktywacji.
-@export var scroll_activation_z: float = -17.0
 ## Opcjonalnie: inny węzeł niż ActivationOrigin / rodzic Node3D (ścieżka od tego Path3D).
 @export var activation_origin: NodePath
 @export var warn_if_active_on_spawn: bool = true
@@ -42,6 +40,7 @@ const ACTIVATION_ORIGIN_NAME := "ActivationOrigin"
 
 var _awaiting_scene_activation: bool = false
 var _wave_activated: bool = false
+var _scroll_activation_z: float = -17.0
 
 
 func _ready() -> void:
@@ -57,6 +56,10 @@ func is_wave_activated() -> bool:
 
 
 func _setup_activation() -> void:
+	var play_area := DataManager.get_play_area_config()
+	if play_area:
+		_scroll_activation_z = play_area.scroll_activation_z
+
 	if activation_mode != ActivationMode.SCENE_SCROLL_LINE:
 		return
 
@@ -66,7 +69,7 @@ func _setup_activation() -> void:
 			enemy._deactivate()
 
 	if warn_if_active_on_spawn:
-		var remaining: float = scroll_activation_z - _get_activation_origin().global_position.z
+		var remaining: float = _scroll_activation_z - _get_activation_origin().global_position.z
 		if remaining <= 0.0:
 			push_warning(
 				"%s: punkt aktywacji już za linią (%.1f). Przesuń root sceny lub ActivationOrigin w -Z."
@@ -81,7 +84,7 @@ func _setup_activation() -> void:
 func _process(_delta: float) -> void:
 	if not _awaiting_scene_activation or _wave_activated:
 		return
-	if _get_activation_origin().global_position.z >= scroll_activation_z:
+	if _get_activation_origin().global_position.z >= _scroll_activation_z:
 		_trigger_wave()
 
 

@@ -1,13 +1,6 @@
-[gd_resource type="Resource" script_class="PlayAreaConfig" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="PlayAreaConfig" format=3 uid="uid://c4c338oea8trl"]
 
-[ext_resource type="Script" path="res://scripts/resources/PlayAreaConfig.gd" id="1"]
+[ext_resource type="Script" uid="uid://ilwaljmmp6vs" path="res://scripts/resources/PlayAreaConfig.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
-player_half_x = 40.0
-player_half_z = 20.0
-frame_half_x = 23.0
-frame_half_z = 15.45
-ruler_half_x = 20.0
-ruler_play_half_z = 15.45
-scroll_activation_z = -17.0

@@ -30,6 +30,7 @@ loop = false
 script = ExtResource("2_eqw7n")
 
 [node name="blaze 2" parent="Path/PathFollow3D" unique_id=1897743314 instance=ExtResource("3_prrtn")]
+scroll_activation_z = null
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Path" unique_id=2110210760]
 transform = Transform3D(-0.059745193, -0.30733645, -0.94970006, -0.0022234102, 0.951452, -0.3077546, 0.9981945, -0.016275795, -0.05752815, 4.729105, 1.5838569, 0.27916542)
@@ -56,7 +57,7 @@ script = ExtResource("2_eqw7n")
 [node name="blaze 6" parent="Path/PathFollow3D4" unique_id=1176518187 instance=ExtResource("3_g61cf")]
 
 [node name="PathFollow3D5" type="PathFollow3D" parent="Path" unique_id=1922970098]
-transform = Transform3D(-0.15183961, -0.005286232, -0.98836225, -0.01710153, 0.99983436, -0.002720137, 0.9882182, 0.016490323, -0.15190883, 19.18691, 5.2602863, 1.4498205)
+transform = Transform3D(-0.15183961, -0.0052862316, -0.98836225, -0.01710153, 0.99983424, -0.002720137, 0.9882182, 0.016490322, -0.15190883, 19.18691, 5.2602863, 1.4498205)
 progress = 20.0
 loop = false
 script = ExtResource("2_eqw7n")

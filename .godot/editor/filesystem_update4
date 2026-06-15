@@ -44,3 +44,6 @@ res://scenes/player/DamageSystem.gd
 res://scripts/resources/ShipData.gd
 res://data/shields/shield_001.tres
 res://data/ships/ship_001.tres
+res://scenes/enemies/base/EnemyPath3D.gd
+res://scenes/enemies/formations/formation1.tscn
+res://data/play_area/default.tres

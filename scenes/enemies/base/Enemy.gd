@@ -47,11 +47,9 @@ var _facing: EnemyFacing
 @export_group("Activation")
 @export var activate_on_scroll_line: bool = true
 @export var despawn_off_screen: bool = true
-## Górna krawędź kadru. Wróg aktywuje się gdy global_position.z >= tej wartości.
-## Ustaw jak PlayAreaConfig.scroll_activation_z (domyślnie -17.0).
-@export var scroll_activation_z: float = -17.0
 
 var _screen_notifier: VisibleOnScreenNotifier3D
+var _scroll_activation_z: float = -17.0
 
 signal combat_activated
 signal combat_deactivated
@@ -61,6 +59,10 @@ signal combat_deactivated
 
 func _ready() -> void:
 	physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_ON
+
+	var play_area := DataManager.get_play_area_config()
+	if play_area:
+		_scroll_activation_z = play_area.scroll_activation_z
 
 	add_to_group("enemies")
 
@@ -120,7 +122,7 @@ func activate_combat() -> void:
 
 ## Ile jednostek brakuje do linii aktywacji (0 = właśnie teraz).
 func get_scroll_distance_remaining() -> float:
-	return scroll_activation_z - global_position.z
+	return _scroll_activation_z - global_position.z
 
 
 func take_damage(amount: int, hit_world_position: Variant = null) -> void:
@@ -244,7 +246,7 @@ func _find_facing() -> EnemyFacing:
 # --- AKTYWACJA (linia scrolla) ---
 
 func _refresh_activation() -> void:
-	if global_position.z >= scroll_activation_z:
+	if global_position.z >= _scroll_activation_z:
 		_activate()
 	else:
 		_deactivate()
