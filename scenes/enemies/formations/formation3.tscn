@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://vj8mqc5fbe18"]
 
-[ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemy/EnemyPath3D.gd" id="1_knp4y"]
-[ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyPathFollow.gd" id="2_pyold"]
-[ext_resource type="PackedScene" uid="uid://cxoxhipdefe5m" path="res://scenes/enemies/blaze_3.tscn" id="3_cswtf"]
+[ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemies/base/EnemyPath3D.gd" id="1_knp4y"]
+[ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemies/base/EnemyPathFollow.gd" id="2_pyold"]
+[ext_resource type="PackedScene" uid="uid://cxoxhipdefe5m" path="res://scenes/enemies/types/blaze_3.tscn" id="3_cswtf"]
 [ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="4_a3xl8"]
 
 [sub_resource type="Curve3D" id="Curve3D_lu1cq"]

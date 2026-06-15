@@ -8,3 +8,6 @@ res://scenes/enemies formations/formation6.tscn
 res://scenes/enemies formations/formation7.tscn
 res://scenes/enemies formations/formation8.tscn
 res://main.tscn
+res://scenes/enemies/formations/formation4.tscn
+res://scenes/enemies/types/satellite_2.tscn
+res://assets/enemies/satelite2/satellite_2_model.tscn

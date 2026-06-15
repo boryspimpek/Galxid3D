@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c8keoramkser6"]
 
-[ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemy/EnemyPath3D.gd" id="1_y850x"]
-[ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyPathFollow.gd" id="2_litrc"]
-[ext_resource type="PackedScene" uid="uid://bh3x5gquu3djc" path="res://scenes/enemies/blaze_5.tscn" id="3_d2sn8"]
+[ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemies/base/EnemyPath3D.gd" id="1_y850x"]
+[ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemies/base/EnemyPathFollow.gd" id="2_litrc"]
+[ext_resource type="PackedScene" uid="uid://bh3x5gquu3djc" path="res://scenes/enemies/types/blaze_5.tscn" id="3_d2sn8"]
 [ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="4_mto47"]
 
 [sub_resource type="Curve3D" id="Curve3D_t6a12"]
@@ -61,3 +61,4 @@ script = ExtResource("2_litrc")
 [node name="blaze 5" parent="Path2/PathFollow3D5" unique_id=1791976939 instance=ExtResource("3_d2sn8")]
 
 [node name="PlayAreaFrame" parent="." unique_id=616916982 instance=ExtResource("4_mto47")]
+visible = false

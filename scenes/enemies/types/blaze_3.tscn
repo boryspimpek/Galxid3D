@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cxoxhipdefe5m"]
 
-[ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemy/Enemy.tscn" id="1_yw4ty"]
+[ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_yw4ty"]
 [ext_resource type="PackedScene" uid="uid://6okj4uhag0tm" path="res://assets/BinbunVFX_Vol2/ExplosionFX/effects/air/vfx_air_explosion_01.tscn" id="2_cjihn"]
 [ext_resource type="PackedScene" uid="uid://jv2relxx74s2" path="res://assets/enemies/blaze/blaze3/blaze_3_model.tscn" id="2_ruhlo"]
 

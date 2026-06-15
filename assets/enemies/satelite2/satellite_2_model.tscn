@@ -16,8 +16,9 @@ shader_parameter/clearcoat_roughness = 1.0
 shader_parameter/shadow_threshold = 0.1290000061275
 shader_parameter/shadow_softness = 0.0
 shader_parameter/ambient_fill = 0.0190000009025
+shader_parameter/hdr_cap = 16.0
 
-[node name="Satelite2" unique_id=1628716030 instance=ExtResource("1_aqo1w")]
+[node name="Satellite2" unique_id=1628716030 instance=ExtResource("1_aqo1w")]
 
-[node name="Mesh" parent="." index="0" unique_id=1124793197]
+[node name="Mesh" parent="." index="0" unique_id=191553908]
 surface_material_override/0 = SubResource("ShaderMaterial_af84h")

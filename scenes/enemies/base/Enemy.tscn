@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c3de3aei70kw1"]
 
-[ext_resource type="Script" uid="uid://b6u5jc5l8dstd" path="res://scenes/enemy/Enemy.gd" id="1_enemy"]
+[ext_resource type="Script" uid="uid://b6u5jc5l8dstd" path="res://scenes/enemies/base/Enemy.gd" id="1_enemy"]
 [ext_resource type="PackedScene" uid="uid://dpntm33m1fs4l" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/big_impact/vfx_big_impact_01.tscn" id="2_vwhkw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sjakr"]

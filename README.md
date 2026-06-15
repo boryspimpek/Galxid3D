@@ -36,16 +36,16 @@ Projekt gry 3D w **Godot 4.6** (renderer: **Forward+**). Repo zawiera sceny, skr
   - `Player` (`res://scenes/player/Player.tscn`)
   - `PlanetSpawner` (`res://scenes/planets/PlanetSpawner.gd`)
   - `Path3D` ze skryptem `EnemyPath3D.gd` (ustawienia fali) + `PathFollow3D*` ze skryptem `EnemyPathFollow.gd` (ruch wroga)
-  - instancje przeciwników `res://scenes/enemies/starfighter.tscn`
+  - instancje przeciwników `res://scenes/enemies/types/starfighter.tscn`
   - `PlayAreaFrame` (`res://scenes/debug/PlayAreaFrame.tscn`)
   - `LevelScrollRuler` (`res://scenes/debug/LevelScrollRuler.tscn`) — podziałka Z + czas scrolla pod `LevelScroll`
-- `scenes/`: sceny gry (player, enemy, planets, debug, projectile, …)
+- `scenes/enemies/`: wrogowie — `base/` (logika), `types/` (prefaby), `formations/` (fale)
 - `scripts/`: logika współdzielona / singletons (core, managers, …)
 - `assets/`: grafika, audio, ikony, importy
 
 ## Przykład logiki przeciwnika
 
-Plik: `scenes/enemy/Enemy.gd`.
+Plik: `scenes/enemies/base/Enemy.gd`.
 
 - Przeciwnik rozszerza `Area3D`, dodaje się do grupy `enemies`.
 - Strzelanie w pętli `_process` oparte o `fire_rate` i timer.
@@ -70,7 +70,7 @@ Jeśli prosisz asystenta o zmiany, podaj:
 - **Scena startowa**: `3dworld.tscn`
 - **Singletony**: `DataManager`, `GameConstants`, `SoundManager`
 - **Miejsca w projekcie**:
-  - logika przeciwników: `scenes/enemy/`
+  - logika przeciwników: `scenes/enemies/base/`
   - logika pocisków: `scenes/projectile/`
   - globalne stałe/spawn scen: `scripts/core/GameConstants.gd`
 
