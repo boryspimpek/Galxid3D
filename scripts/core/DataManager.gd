@@ -1,8 +1,5 @@
 extends Node
 
-# Preload resource classes
-const WeaponDataClass = preload("res://scripts/resources/WeaponData.gd")
-
 # Cache danych
 var ships_cache: Array = []
 var weapons_cache: Array = []
@@ -19,81 +16,39 @@ func _load_all():
 		return
 	_loaded = true
 
-	# --- STATKI --- dodawaj kolejne jeśli masz więcej plików
-	var ship_files = [
-		"res://data/ships/ship_001.tres",
-		"res://data/ships/ship_002.tres",
-		"res://data/ships/ship_003.tres",
-		"res://data/ships/ship_004.tres",
-		"res://data/ships/ship_005.tres",
-		"res://data/ships/ship_006.tres",
-		"res://data/ships/ship_007.tres",
-		"res://data/ships/ship_008.tres",
-		"res://data/ships/ship_009.tres",
-		"res://data/ships/ship_010.tres",
-		"res://data/ships/ship_011.tres",
-		"res://data/ships/ship_012.tres",
-		"res://data/ships/ship_013.tres",
-	]
-	for path in ship_files:
-		if ResourceLoader.exists(path):
-			var res = load(path) as ShipData
-			if res:
-				ships_cache.append(res)
+	ships_cache = _load_tres_from_dir("res://data/ships", ShipData)
 	ships_cache.sort_custom(func(a, b): return a.ship_index < b.ship_index)
 	print("DataManager: Załadowano ", ships_cache.size(), " statków")
 
-	# --- BRONIE ---
-	var weapon_files = [
-		"res://data/weapons/weapon_1.tres",
-		"res://data/weapons/weapon_2.tres",
-		"res://data/weapons/weapon_3.tres",
-	]
-	for path in weapon_files:
-		if ResourceLoader.exists(path):
-			var res = load(path) as WeaponDataClass
-			if res:
-				weapons_cache.append(res)
+	weapons_cache = _load_tres_from_dir("res://data/weapons", WeaponData)
 	weapons_cache.sort_custom(func(a, b): return a.weapon_index < b.weapon_index)
 	print("DataManager: Załadowano ", weapons_cache.size(), " broni")
 
-	# --- TARCZE ---
-	var shield_files = [
-		"res://data/shields/shield_001.tres",
-		"res://data/shields/shield_002.tres",
-		"res://data/shields/shield_003.tres",
-		"res://data/shields/shield_004.tres",
-		"res://data/shields/shield_005.tres",
-		"res://data/shields/shield_006.tres",
-		"res://data/shields/shield_007.tres",
-		"res://data/shields/shield_008.tres",
-		"res://data/shields/shield_009.tres",
-		"res://data/shields/shield_010.tres",
-	]
-	for path in shield_files:
-		if ResourceLoader.exists(path):
-			var res = load(path) as ShieldData
-			if res:
-				shields_cache.append(res)
+	shields_cache = _load_tres_from_dir("res://data/shields", ShieldData)
 	shields_cache.sort_custom(func(a, b): return a.shield_index < b.shield_index)
 	print("DataManager: Załadowano ", shields_cache.size(), " tarcz")
 
-	# --- GENERATORY ---
-	var generator_files = [
-		"res://data/generators/generator_001.tres",
-		"res://data/generators/generator_002.tres",
-		"res://data/generators/generator_003.tres",
-		"res://data/generators/generator_004.tres",
-		"res://data/generators/generator_005.tres",
-		"res://data/generators/generator_006.tres",
-	]
-	for path in generator_files:
-		if ResourceLoader.exists(path):
-			var res = load(path) as GeneratorData
-			if res:
-				generators_cache.append(res)
+	generators_cache = _load_tres_from_dir("res://data/generators", GeneratorData)
 	generators_cache.sort_custom(func(a, b): return a.generator_index < b.generator_index)
 	print("DataManager: Załadowano ", generators_cache.size(), " generatorów")
+
+
+func _load_tres_from_dir(dir_path: String, type) -> Array:
+	var cache: Array = []
+	var dir := DirAccess.open(dir_path)
+	if dir == null:
+		push_error("DataManager: Nie można otworzyć katalogu: ", dir_path)
+		return cache
+
+	for file_name in dir.get_files():
+		if not file_name.ends_with(".tres"):
+			continue
+		var path: String = dir_path.path_join(file_name)
+		var res = load(path)
+		if res != null and is_instance_of(res, type):
+			cache.append(res)
+
+	return cache
 
 func get_ship_by_id(id: int) -> ShipData:
 	for ship in ships_cache:
@@ -102,7 +57,7 @@ func get_ship_by_id(id: int) -> ShipData:
 	push_error("DataManager: Nie znaleziono statku o ID=", id)
 	return null
 
-func get_weapon_by_id(id: int) -> WeaponDataClass:
+func get_weapon_by_id(id: int) -> WeaponData:
 	for weapon in weapons_cache:
 		if weapon.weapon_index == id:
 			return weapon

@@ -1,48 +1,5 @@
-res://scenes/player/blaze_model.tscn
-res://assets/BinbunVFX/shared/texture/noise/cell/cell_manhattan_01.tres
-res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mprojectile_javelin_01/mprojectile_javelin_01_head.tres
-res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mprojectile_javelin_01/mprojectile_javelin_01_trail.tres
-res://assets/BinbunVFX/magic_projectiles/src/materials/mprojectile_javelin/mprojectile_javelin_01/mprojectile_javelin_01_core.tres
-res://assets/shaders/toon.gdshader
-res://scenes/planets/earth.tscn
-res://3dworldTEST.tscn
-res://scenes/projectile/Projectile.tscn
-res://scenes/player/Player.tscn
-res://assets/BinbunVFX/muzzle_flash/effects/big_flash/big_flash_01.tscn
-res://scenes/planets/sun.tscn
+res://scripts/core/DataManager.gd
+res://assets/BinbunVFX_Vol2/shared/script/VFXControllerBB.gd
+res://scenes/enemy/Enemy.gd
 res://main.tscn
-res://scenes/enemy/Enemy.tscn
-res://scenes/debug/LevelScrollRuler.gd
-res://scenes/enemies formations/formation1.tscn
-res://scenes/enemies formations/formation3.tscn
-res://scenes/pickup/Pickup.tscn
-res://scenes/enemies formations/formation2.tscn
-res://scenes/enemies/starfighter.tscn
-res://scenes/enemies formations/formation4.tscn
-res://scenes/enemy_projectile/EnemyProjectile.tscn
-res://scenes/enemy/movement/LinearMoveData.gd
-res://assets/enemies/voyager/voyager_model.tscn
-res://scenes/enemies/voyager.tscn
-res://data/weapons/weapon_1.tres
-res://scenes/enemies formations/formation5.tscn
-res://scenes/enemy/EnemyPath3D.gd
-res://scenes/enemies formations/formation6.tscn
-res://scenes/enemies formations/formation7.tscn
-res://scenes/enemies formations/formation8.tscn
-res://scenes/player/Player.gd
-res://scenes/player/DamageSystem.gd
-res://scenes/planets/PlanetOrbit.gd
-res://scenes/asteroids/simple_asteroid.tscn
-res://scenes/asteroids/asteroid_6.tscn
-res://scenes/asteroids/asteroid.tscn
-res://scenes/asteroids/asteroid_2.tscn
-res://scenes/asteroids/asteroid_3.tscn
-res://scenes/asteroids/asteroid_4.tscn
-res://scenes/asteroids/asteroid_5.tscn
-res://scenes/asteroids/asteroid_7.tscn
-res://data/ships/ship_001.tres
-res://scenes/planets/earth_base.gd
-res://scenes/projectile/ProjectileX.tscn
-res://scenes/player/WeaponSystem.gd
-res://scripts/core/GameConstants.gd
-res://data/weapons/weapon_2.tres
+res://assets/shaders/toon.gdshader

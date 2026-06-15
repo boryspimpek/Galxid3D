@@ -61,8 +61,10 @@ signal finished
 signal stopped
 
 var _vfx_playing: bool = false
+var _instance_materials_ready: bool = false
 
 func _ready() -> void:
+	_ensure_instance_materials()
 	if autoplay:
 		play()
 
@@ -74,6 +76,7 @@ func play() -> void:
 	if anim == null:
 		return
 
+	_ensure_instance_materials()
 	_vfx_playing = true
 	anim.play("main")
 	anim.seek(0.0, true)
@@ -87,6 +90,26 @@ func play() -> void:
 	if !one_shot:
 		anim.advance(0.0)
 		play()
+
+func _ensure_instance_materials() -> void:
+	if _instance_materials_ready or Engine.is_editor_hint():
+		return
+	_duplicate_instance_materials(self)
+	_instance_materials_ready = true
+
+
+func _duplicate_instance_materials(root: Node) -> void:
+	for child in root.get_children():
+		if child is MeshInstance3D:
+			var mesh := child as MeshInstance3D
+			if mesh.material_override:
+				mesh.material_override = mesh.material_override.duplicate()
+		elif child is GPUParticles3D:
+			var gpu_particles := child as GPUParticles3D
+			if gpu_particles.material_override:
+				gpu_particles.material_override = gpu_particles.material_override.duplicate()
+		_duplicate_instance_materials(child)
+
 
 func _is_smoke_material(mat: ShaderMaterial) -> bool:
 	if mat == null or mat.shader == null:
