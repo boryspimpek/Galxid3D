@@ -6,6 +6,8 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sjakr"]
 
 [node name="Enemy" type="Area3D" unique_id=1897743314]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_enemy")
 hit_effect_scene = ExtResource("2_vwhkw")
 

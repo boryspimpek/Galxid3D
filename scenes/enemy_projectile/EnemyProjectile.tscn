@@ -16,6 +16,8 @@ height = 0.6
 
 [node name="EnemyProjectile" type="Area3D" unique_id=783238135]
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 0)
+collision_layer = 8
+collision_mask = 1
 script = ExtResource("1_enemy_proj")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=493736527]

@@ -30,3 +30,13 @@ res://scenes/player/Player.gd
 res://scripts/core/DataManager.gd
 res://scripts/resources/enemies/weapons/EnemyWeaponData.gd
 res://scripts/managers/SceneRegistry.gd
+res://scenes/enemies/base/Enemy.tscn
+res://scenes/enemy_projectile/EnemyProjectile.gd
+res://scenes/enemy_projectile/EnemyProjectile.tscn
+res://scenes/pickup/Pickup.gd
+res://scenes/pickup/Pickup.tscn
+res://scenes/projectile/projectile.gd
+res://scenes/projectile/Projectile.tscn
+res://scenes/enemies/types/voyager.tscn
+res://scenes/enemies/types/starfighter.tscn
+res://scenes/enemies/types/blaze_2.tscn

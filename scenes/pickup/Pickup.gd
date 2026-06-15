@@ -11,9 +11,6 @@ var _collected: bool = false
 
 func _ready() -> void:
 	add_to_group("pickups")
-	# Wykrywamy gracza (warstwa 1), sami nie kolidujemy z niczym innym.
-	collision_layer = 0
-	collision_mask = 1
 	monitoring = true
 	body_entered.connect(_on_body_entered)
 

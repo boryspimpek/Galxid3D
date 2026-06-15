@@ -14,6 +14,8 @@ albedo_color = Color(1.5720325, 1.5720325, 1.5720325, 1)
 albedo_texture = ExtResource("2_cm8q0")
 
 [node name="Projectile" type="Area3D" unique_id=1517421005]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_opwgi")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1719570957]

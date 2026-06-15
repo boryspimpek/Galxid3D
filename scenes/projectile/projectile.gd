@@ -5,9 +5,6 @@ extends Area3D
 @export var damage: int = 3
 
 func _ready():
-	# Warstwa 4 = pocisk gracza; maska 2 = wykrywa wrogów (warstwa 2)
-	collision_layer = 4
-	collision_mask  = 2
 	for child in get_children():
 		if child is VisibleOnScreenNotifier3D:
 			child.screen_exited.connect(queue_free)

@@ -13,6 +13,8 @@ height = 1.5536003
 [sub_resource type="SphereMesh" id="SphereMesh_tpg5x"]
 
 [node name="Player" type="CharacterBody3D" unique_id=1811810025]
+collision_layer = 1
+collision_mask = 0
 script = ExtResource("1_onrkg")
 
 [node name="Blaze" parent="." unique_id=700868063 instance=ExtResource("6_c3xxp")]

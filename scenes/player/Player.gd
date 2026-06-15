@@ -66,8 +66,6 @@ var _dodge_timer: float = 0.0
 
 func _ready():
 	add_to_group("player")
-	collision_layer = PLAYER_COLLISION_LAYER
-	collision_mask  = 0
 	main_camera = GameViewportHelper.get_game_camera(get_tree())
 	Input.joy_connection_changed.connect(_on_joy_connection_changed)
 	await get_tree().process_frame

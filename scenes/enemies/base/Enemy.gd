@@ -59,8 +59,6 @@ func _ready() -> void:
 	physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_ON
 
 	add_to_group("enemies")
-	collision_layer = 2
-	collision_mask = 5
 
 	_collect_muzzles()
 	_facing = _find_facing()

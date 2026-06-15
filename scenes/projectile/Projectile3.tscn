@@ -7,6 +7,8 @@
 size = Vector3(1.2822266, 0.20843506, 0.68688965)
 
 [node name="Projectile2" type="Area3D" unique_id=1517421005]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_uj3nw")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1313357752]
