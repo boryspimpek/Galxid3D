@@ -17,3 +17,5 @@ res://scenes/player/WeaponSystem.gd
 res://scripts/core/GameConstants.gd
 res://scripts/resources/WeaponData.gd
 res://scripts/resources/WeaponComboShotData.gd
+res://scenes/player/ShieldSystem.gd
+res://scripts/resources/ShieldData.gd

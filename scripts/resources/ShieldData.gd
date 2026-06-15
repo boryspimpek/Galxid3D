@@ -6,4 +6,6 @@ extends Resource
 @export var protection: int = 0
 @export var shield_wait: float = 5.0
 @export var shield_regen_cost: int = 0
+## Ile punktów tarczy wraca na jeden tick regeneracji.
+@export var shield_regen_amount: float = 10.0
 @export var cost: int = 0
