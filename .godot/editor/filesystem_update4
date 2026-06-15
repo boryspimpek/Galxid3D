@@ -11,3 +11,9 @@ res://main.tscn
 res://scenes/enemies/formations/formation4.tscn
 res://scenes/enemies/types/satellite_2.tscn
 res://assets/enemies/satelite2/satellite_2_model.tscn
+res://data/weapons/weapon_1.tres
+res://scenes/player/Player.tscn
+res://scenes/player/WeaponSystem.gd
+res://scripts/core/GameConstants.gd
+res://scripts/resources/WeaponData.gd
+res://scripts/resources/WeaponComboShotData.gd

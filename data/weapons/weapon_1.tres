@@ -3,6 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://db4vd2isl5vb1" path="res://assets/BinbunVFX/muzzle_flash/effects/big_flash/big_flash_01.tscn" id="1_jns5a"]
 [ext_resource type="Script" uid="uid://ml3ennlcxw0v" path="res://scripts/resources/WeaponData.gd" id="1_weapon"]
 [ext_resource type="Script" uid="uid://datij7ugn8eej" path="res://scripts/resources/WeaponPowerLevelData.gd" id="2_pl"]
+[ext_resource type="Script" uid="uid://cx0dkobw5wnj7" path="res://scripts/resources/WeaponComboShotData.gd" id="3_combo"]
+
+[sub_resource type="Resource" id="combo_1"]
+script = ExtResource("3_combo")
+min_kill_combo = 5
+damage = 150
 
 [sub_resource type="Resource" id="pl_1"]
 script = ExtResource("2_pl")
@@ -95,5 +101,6 @@ power_level_7 = SubResource("pl_7")
 power_level_8 = SubResource("pl_8")
 power_level_9 = SubResource("pl_9")
 power_level_10 = SubResource("pl_10")
+combo_shot = SubResource("combo_1")
 muzzle_flash_scene = ExtResource("1_jns5a")
 sound = 25

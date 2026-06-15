@@ -20,12 +20,6 @@ var fire_timer: float = 0.0
 var is_firing: bool = false
 var _ready_to_fire: bool = false
 var _combo_shot_timer: float = 0.0
-## Minimalne combo (włącznie) wymagane do strzału ProjectileX.
-@export var combo_shot_min: int = 4
-@export var combo_shot_damage: int = 25
-@export var combo_shot_power_use: int = 50
-@export var combo_shot_velocity: Vector3 = Vector3(0, 0, -60)
-@export var combo_shot_cooldown: float = 0.35
 ## Maks. czas życia muzzle flash (s) — krótki, żeby nie zostawał w świecie za graczem.
 const MUZZLE_FLASH_MAX_LIFETIME := 0.12
 
@@ -58,29 +52,39 @@ func load_weapon_config():
 func set_firing(firing: bool):
 	is_firing = firing
 
+func _get_combo_shot_data() -> WeaponComboShotData:
+	if weapon_data == null or not weapon_data.has_combo_shot():
+		return null
+	return weapon_data.combo_shot
+
+
 func can_shoot_combo() -> bool:
+	var combo_data := _get_combo_shot_data()
+	if combo_data == null:
+		return false
 	return (
-		HitComboManager.combo >= combo_shot_min
+		HitComboManager.combo >= combo_data.min_kill_combo
 		and _combo_shot_timer <= 0.0
 		and not player.is_dodging
 	)
 
+
 func shoot_combo() -> void:
+	if weapon_data == null:
+		load_weapon_config()
+	var combo_data := _get_combo_shot_data()
+	if combo_data == null:
+		return
 	if not can_shoot_combo():
 		return
-	if player.power < combo_shot_power_use:
+	if player.power < combo_data.power_use:
 		return
 
-	player.power -= combo_shot_power_use
-	var projectile := GameConstants.combo_projectile_scene.instantiate()
-	get_tree().current_scene.add_child(projectile)
-	projectile.global_position = muzzle.global_position
-	projectile.velocity = combo_shot_velocity
-	projectile.damage = combo_shot_damage
-	_spawn_muzzle_flash(combo_shot_velocity)
-	if weapon_data:
-		SoundManager.play_weapon_sound(weapon_data.sound)
-	_combo_shot_timer = combo_shot_cooldown
+	player.power -= combo_data.power_use
+	create_projectile(combo_data.projectile, combo_data.damage, combo_data.velocity)
+	_spawn_muzzle_flash(combo_data.velocity)
+	SoundManager.play_weapon_sound(weapon_data.sound)
+	_combo_shot_timer = combo_data.cooldown
 
 func shoot():
 	# Zabezpieczenie - jeśli brak danych broni, spróbuj załadować ponownie

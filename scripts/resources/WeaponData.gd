@@ -16,6 +16,8 @@ const POWER_LEVEL_COUNT := 10
 @export var power_level_8: WeaponPowerLevelData
 @export var power_level_9: WeaponPowerLevelData
 @export var power_level_10: WeaponPowerLevelData
+## Opcjonalny strzał combo — inny input, wymaga kill combo (HitComboManager).
+@export var combo_shot: WeaponComboShotData
 
 @export_group("Visual")
 ## Efekt przy lufie — przeciągnij scenę muzzle flash z FileSystem.
@@ -52,6 +54,10 @@ func _ensure_power_levels() -> void:
 		power_level_9 = WeaponPowerLevelData.new()
 	if power_level_10 == null:
 		power_level_10 = WeaponPowerLevelData.new()
+
+
+func has_combo_shot() -> bool:
+	return combo_shot != null and combo_shot.enabled
 
 
 func get_power_level_data(level: int) -> WeaponPowerLevelData:

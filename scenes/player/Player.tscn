@@ -27,7 +27,6 @@ script = ExtResource("2_524rm")
 
 [node name="WeaponSystem" type="Node" parent="." unique_id=228100423]
 script = ExtResource("3_tpg5x")
-combo_shot_damage = 150
 
 [node name="ShieldSystem" type="Node" parent="." unique_id=2026421891]
 script = ExtResource("4_c3xxp")
