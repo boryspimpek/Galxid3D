@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dd21l172sp65r"]
 
 [ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemy/EnemyPath3D.gd" id="1_cswtf"]
-[ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyFollow.gd" id="2_5avpn"]
+[ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyPathFollow.gd" id="2_bfune"]
 [ext_resource type="PackedScene" uid="uid://cxoxhipdefe5m" path="res://scenes/enemies/blaze_3.tscn" id="3_cswtf"]
 [ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="4_y2bup"]
 
 [sub_resource type="Curve3D" id="Curve3D_lu1cq"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.031471252, -0.122976065, 0.0071525574, 4.3476143, -0.58044434, -0.92110443, -4.3476143, 0.58044434, 0.92110443, -20.339264, 4.849169, 2.4883213, 2.720543, 0.00830555, -6.162807, -2.720543, -0.00830555, 6.162807, -33.899513, 5.282152, 11.356577, 0, 0, 0, 0, 0, 0, -35.396706, 5.278002, 32.581554),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.031471252, -0.122976065, 0.0071525574, 4.3476143, -0.58044434, -0.92110443, -4.3476143, 0.58044434, 0.92110443, -20.339264, 4.849169, 2.4883213, 2.720543, 0.00830555, -6.162807, -2.720543, -0.00830555, 6.162807, -33.899513, 5.282152, 11.356577, 0, 0, 0, 0, 0, 0, -35.66092, 5.278002, 38.041924),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
@@ -20,12 +20,11 @@ curve = SubResource("Curve3D_lu1cq")
 script = ExtResource("1_cswtf")
 activation_mode = 0
 speed = 10.0
-bank_enabled = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path" unique_id=310916544]
 transform = Transform3D(-0.09728137, 0.26288196, 0.9598831, -1.4900826e-08, 0.9644849, -0.2641274, -0.99523425, -0.025695989, -0.09382589, -0.031471252, -0.122976065, 0.0071525574)
 loop = false
-script = ExtResource("2_5avpn")
+script = ExtResource("2_bfune")
 
 [node name="blaze 3" parent="Path/PathFollow3D" unique_id=1897743314 instance=ExtResource("3_cswtf")]
 
@@ -33,7 +32,7 @@ script = ExtResource("2_5avpn")
 transform = Transform3D(-0.104602925, 0.25388414, 0.9615351, 0.0019785524, 0.9669144, -0.25507665, -0.99448484, -0.0247806, -0.10164465, -4.8356, 1.1713688, 0.49896803)
 progress = 5.0
 loop = false
-script = ExtResource("2_5avpn")
+script = ExtResource("2_bfune")
 
 [node name="blaze 3" parent="Path/PathFollow3D2" unique_id=599822296 instance=ExtResource("3_cswtf")]
 
@@ -41,15 +40,15 @@ script = ExtResource("2_5avpn")
 transform = Transform3D(-0.111769795, 0.24507605, 0.9630141, 0.003845606, 0.9692104, -0.24619427, -0.99368477, -0.023815297, -0.10927274, -9.647197, 2.4260564, 1.0251163)
 progress = 10.0
 loop = false
-script = ExtResource("2_5avpn")
+script = ExtResource("2_bfune")
 
 [node name="blaze 3" parent="Path/PathFollow3D3" unique_id=70216865 instance=ExtResource("3_cswtf")]
 
 [node name="PathFollow3D4" type="PathFollow3D" parent="Path" unique_id=914193793]
-transform = Transform3D(-0.1243118, 0.22966743, 0.9652682, 0.006946276, 0.9730202, -0.2306039, -0.9921998, -0.02196282, -0.12255199, -14.4675665, 3.622896, 1.6006685)
+transform = Transform3D(-0.12431176, 0.22966743, 0.9652682, 0.006946274, 0.9730202, -0.2306039, -0.99219954, -0.02196282, -0.12255199, -14.4675665, 3.622896, 1.6006685)
 progress = 15.0
 loop = false
-script = ExtResource("2_5avpn")
+script = ExtResource("2_bfune")
 
 [node name="blaze 3" parent="Path/PathFollow3D4" unique_id=153749245 instance=ExtResource("3_cswtf")]
 
@@ -57,7 +56,7 @@ script = ExtResource("2_5avpn")
 transform = Transform3D(-0.16683955, 0.17740385, 0.969861, 0.015909832, 0.98401797, -0.17725176, -0.9858236, -0.014142911, -0.16699865, -19.304426, 4.6812897, 2.2930176)
 progress = 20.0
 loop = false
-script = ExtResource("2_5avpn")
+script = ExtResource("2_bfune")
 
 [node name="blaze 3" parent="Path/PathFollow3D5" unique_id=714860725 instance=ExtResource("3_cswtf")]
 

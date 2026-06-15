@@ -1,9 +1,9 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1781513140
+::res://::1781516434
 default_bus_layout.tres::AudioBusLayout::2099548917964122130::1780403827::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile::-1::1781258865::0::1::::<><><>0<>0<><>::
-main.tscn::PackedScene::4604124130799878763::1781466011::0::1::::<><><>0<>0<><>::uid://h4tfxlaeefcu::::res://scenes/world/GameShell.gd<>uid://bte7ofi7pgn5b::::res://scenes/player/Player.tscn<>uid://bpnoq5bivk33d::::res://scenes/planets/sun.tscn<>uid://c1pq466qvcqtm::::res://scenes/planets/earth.tscn<>uid://1pup6o17egip::::res://scenes/asteroids/AsteroidSpawner.gd<>uid://4ur1b1tv52xs::::res://assets/planets/textures/solar system/8k_stars_milky_way.jpg<>uid://ci6qjvw4jlabt::::res://scenes/world/LevelScroll3D.gd<>uid://bdvg80h7a4nm8::::res://scenes/debug/LevelScrollRuler.tscn<>uid://c6bq1qkhotmeh::::res://scenes/enemies formations/formation1.tscn<>uid://dd21l172sp65r::::res://scenes/enemies formations/formation2.tscn<>uid://vj8mqc5fbe18::::res://scenes/enemies formations/formation3.tscn<>uid://c8keoramkser6::::res://scenes/enemies formations/formation4.tscn<>uid://dbqhlqawrvwa7::::res://scenes/enemies/voyager.tscn<>uid://mqfrdiaxtht5::::res://scenes/enemies formations/formation6.tscn<>uid://b5j3jumdkod3r::::res://scenes/enemies formations/formation7.tscn<>uid://c2vk2d14w4myt::::res://scenes/enemies formations/formation8.tscn<>uid://cdxl62tlyuy08::::res://scenes/enemies formations/formation5.tscn<>uid://dtprhja8af0to::::res://scenes/enemy/movement/LinearMoveData.gd<>uid://ceb36gc6o5uvc::::res://scenes/enemies/starfighter.tscn<>uid://pv4lucn5p30f::::res://scenes/ui/Hud.tscn
-README.md::TextFile::-1::1780507162::0::1::::<><><>0<>0<><>::
+main.tscn::PackedScene::4604124130799878763::1781515583::0::1::::<><><>0<>0<><>::uid://h4tfxlaeefcu::::res://scenes/world/GameShell.gd<>uid://bte7ofi7pgn5b::::res://scenes/player/Player.tscn<>uid://bpnoq5bivk33d::::res://scenes/planets/sun.tscn<>uid://c1pq466qvcqtm::::res://scenes/planets/earth.tscn<>uid://1pup6o17egip::::res://scenes/asteroids/AsteroidSpawner.gd<>uid://4ur1b1tv52xs::::res://assets/planets/textures/solar system/8k_stars_milky_way.jpg<>uid://ci6qjvw4jlabt::::res://scenes/world/LevelScroll3D.gd<>uid://bdvg80h7a4nm8::::res://scenes/debug/LevelScrollRuler.tscn<>uid://c6bq1qkhotmeh::::res://scenes/enemies formations/formation1.tscn<>uid://dd21l172sp65r::::res://scenes/enemies formations/formation2.tscn<>uid://vj8mqc5fbe18::::res://scenes/enemies formations/formation3.tscn<>uid://c8keoramkser6::::res://scenes/enemies formations/formation4.tscn<>uid://dbqhlqawrvwa7::::res://scenes/enemies/voyager.tscn<>uid://mqfrdiaxtht5::::res://scenes/enemies formations/formation6.tscn<>uid://b5j3jumdkod3r::::res://scenes/enemies formations/formation7.tscn<>uid://c2vk2d14w4myt::::res://scenes/enemies formations/formation8.tscn<>uid://cdxl62tlyuy08::::res://scenes/enemies formations/formation5.tscn<>uid://dtprhja8af0to::::res://scenes/enemy/movement/LinearMoveData.gd<>uid://ceb36gc6o5uvc::::res://scenes/enemies/starfighter.tscn<>uid://pv4lucn5p30f::::res://scenes/ui/Hud.tscn
+README.md::TextFile::-1::1781516113::0::1::::<><><>0<>0<><>::
 ::res://assets/::1781464712
 ::res://assets/asteroids/::1781349279
 asteroid2.glb::PackedScene::3835921654494331215::1780159094::1780206081::1::::<><><>0<>0<>ae8530816a35fb46e26851fba64417e0<>res://.godot/imported/asteroid2.glb-21e6d792a0e93e17841b88ff0ca05972.scn::
@@ -350,7 +350,7 @@ smoke_trail.gdshader::Shader::4155334668875545654::1780935276::0::1::::<><><>0<>
 story_studio_02_1k.hdr::CompressedTexture2D::288761612581108702::1780935276::1780937043::1::::<><><>0<>0<>a8dee0bd4a48b3385efe5ad13d1df5a0<>res://.godot/imported/story_studio_02_1k.hdr-6e28fc36b6eadb2fe0e50a21de2b4bfa.bptc.ctex<*>res://.godot/imported/story_studio_02_1k.hdr-6e28fc36b6eadb2fe0e50a21de2b4bfa.astc.ctex::
 suzanne.obj::Mesh::6741268920676256327::1780935276::1780937043::1::::<><><>0<>0<>e1f8767054b1ee6f519bf0dc194fc111<>res://.godot/imported/suzanne.obj-b4d2bffdbc318e21ee918b1bc5615208.mesh<*>res://.godot/imported/suzanne.obj-b4d2bffdbc318e21ee918b1bc5615208.mesh::
 ::res://assets/BinbunVFX_Vol2/shared/script/::1781045562
-VFXControllerBB.gd::GDScript::7702286028051362182::1781045562::0::1::::VFXControllerBB<>Node3D<><>0<>1<><>::
+VFXControllerBB.gd::GDScript::7702286028051362182::1781515453::0::1::::VFXControllerBB<>Node3D<><>0<>1<><>::
 VFXEmitterBB.gd::GDScript::7988374418965356895::1780935276::0::1::::VFXEmitterBB<>Node3D<><>0<>1<><>::
 VFXOmniLightBB.gd::GDScript::8407284229403902173::1780935276::0::1::::VFXOmniLightBB<>OmniLight3D<><>0<>1<><>::
 ::res://assets/BinbunVFX_Vol2/shared/shader/::1780935276
@@ -658,9 +658,9 @@ player_destroyed.png::CompressedTexture2D::4064491447939418541::1779131092::1779
 ::res://assets/projectiles/::1781464913
 fire bullet.png::CompressedTexture2D::2190448510149884845::1781434887::1781434954::1::::<><><>0<>0<>cb72425955c146f627deb13a309ca402<>res://.godot/imported/fire bullet.png-335a71cafad0284b24e46d36228a54b1.s3tc.ctex<*>res://.godot/imported/fire bullet.png-335a71cafad0284b24e46d36228a54b1.etc2.ctex::
 power projectile.png::CompressedTexture2D::7483363139827993163::1781464720::1781464913::1::::<><><>0<>0<>7ba6201d8c9a8033ac8fd9f5c15061e5<>res://.godot/imported/power projectile.png-43111c0eeee42ca5b0a2fb671fd5d833.s3tc.ctex<*>res://.godot/imported/power projectile.png-43111c0eeee42ca5b0a2fb671fd5d833.etc2.ctex::
-::res://assets/shaders/::1781432805
+::res://assets/shaders/::1781515539
 stylized.gdshader::Shader::5640836632797450115::1781432804::0::1::::<><><>0<>0<><>::
-toon.gdshader::Shader::7774145487081512526::1781432211::0::1::::<><><>0<>0<><>::
+toon.gdshader::Shader::7774145487081512526::1781515539::0::1::::<><><>0<>0<><>::
 ::res://assets/simple planet/::1779822838
 SimplePlanet.glb::PackedScene::2967307188115525617::1779821593::1779822838::1::::<><><>0<>0<>e0aa1b09d5af865e2b4a37c638dde093<>res://.godot/imported/SimplePlanet.glb-41050a9cbe536012963724a2f2c52f84.scn::
 ::res://assets/skybox/::1781363151
@@ -769,23 +769,23 @@ satelite_2.tscn::PackedScene::1437441625703400048::1781260836::0::1::::<><><>0<>
 satellite.tscn::PackedScene::5266517633187276535::1781265315::0::1::::<><><>0<>0<><>::uid://c3de3aei70kw1::::res://scenes/enemy/Enemy.tscn<>uid://f4qnlqxwm7yv::::res://assets/enemies/satelite1/satelite_model.tscn<>uid://chqijevfxuhpd::::res://assets/BinbunVFX_Vol2/ExplosionFX/effects/ground/vfx_ground_explosion_01.tscn<>uid://eo6qejm2h6hl::::res://scenes/enemy/weapons/EnemyWeaponData.gd
 starfighter.tscn::PackedScene::5057416874759023692::1781447543::0::1::::<><><>0<>0<><>::uid://c3de3aei70kw1::::res://scenes/enemy/Enemy.tscn<>uid://cj06xe1qfw8ch::::res://assets/enemies/starfighter/starfighter_model.tscn<>uid://dtprhja8af0to::::res://scenes/enemy/movement/LinearMoveData.gd<>uid://6okj4uhag0tm::::res://assets/BinbunVFX_Vol2/ExplosionFX/effects/air/vfx_air_explosion_01.tscn<>uid://eo6qejm2h6hl::::res://scenes/enemy/weapons/EnemyWeaponData.gd<>uid://dp6fn641cy82u::::res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/impact/vfx_impact_01.tscn
 voyager.tscn::PackedScene::7262926442861361264::1781464141::0::1::::<><><>0<>0<><>::uid://c3de3aei70kw1::::res://scenes/enemy/Enemy.tscn<>uid://cr7rlbbhoidnb::::res://assets/enemies/voyager/voyager_model.tscn<>uid://cr2knbmonx42w::::res://scenes/enemy/facing/FacePlayer.gd<>uid://s6dwn56csbw1::::res://assets/BinbunVFX_Vol2/ExplosionFX/effects/nuke/vfx_nuke_explosion_01.tscn<>uid://bs5humyuxa5j2::::res://scenes/enemy/weapons/BurstEnemyWeaponData.gd
-::res://scenes/enemies formations/::1781453631
-formation1.tscn::PackedScene::6951778656604220439::1781452860::0::1::::<><><>0<>0<><>::uid://braxpml2y0f6o::::res://scenes/enemy/EnemyPath3D.gd<>uid://de0wqltyclsk0::::res://scenes/enemy/EnemyFollow.gd<>uid://bh3x5gquu3djc::::res://scenes/enemies/blaze_5.tscn<>uid://b47pkgi0u300c::::res://scenes/enemies/blaze_2.tscn<>uid://cxoxhipdefe5m::::res://scenes/enemies/blaze_3.tscn<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn<>uid://bgg0um4kjhgkp::::res://scenes/enemies/blaze_4.tscn
-formation2.tscn::PackedScene::7427166483190178177::1781452818::0::1::::<><><>0<>0<><>::uid://braxpml2y0f6o::::res://scenes/enemy/EnemyPath3D.gd<>uid://de0wqltyclsk0::::res://scenes/enemy/EnemyFollow.gd<>uid://cxoxhipdefe5m::::res://scenes/enemies/blaze_3.tscn<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn
-formation3.tscn::PackedScene::1494571051306370493::1781451910::0::1::::<><><>0<>0<><>::uid://braxpml2y0f6o::::res://scenes/enemy/EnemyPath3D.gd<>uid://de0wqltyclsk0::::res://scenes/enemy/EnemyFollow.gd<>uid://cxoxhipdefe5m::::res://scenes/enemies/blaze_3.tscn<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn
-formation4.tscn::PackedScene::7109985747523856545::1781453631::0::1::::<><><>0<>0<><>::uid://braxpml2y0f6o::::res://scenes/enemy/EnemyPath3D.gd<>uid://de0wqltyclsk0::::res://scenes/enemy/EnemyFollow.gd<>uid://bh3x5gquu3djc::::res://scenes/enemies/blaze_5.tscn<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn
-formation5.tscn::PackedScene::5031613281189571219::1781453615::0::1::::<><><>0<>0<><>::uid://braxpml2y0f6o::::res://scenes/enemy/EnemyPath3D.gd<>uid://de0wqltyclsk0::::res://scenes/enemy/EnemyFollow.gd<>uid://b47pkgi0u300c::::res://scenes/enemies/blaze_2.tscn<>uid://cxoxhipdefe5m::::res://scenes/enemies/blaze_3.tscn<>uid://bgg0um4kjhgkp::::res://scenes/enemies/blaze_4.tscn<>uid://bh3x5gquu3djc::::res://scenes/enemies/blaze_5.tscn<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn
-formation6.tscn::PackedScene::875630281141537608::1781449315::0::1::::<><><>0<>0<><>::uid://braxpml2y0f6o::::res://scenes/enemy/EnemyPath3D.gd<>uid://de0wqltyclsk0::::res://scenes/enemy/EnemyFollow.gd<>uid://bh3x5gquu3djc::::res://scenes/enemies/blaze_5.tscn<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn
-formation7.tscn::PackedScene::4512382609718095813::1781450552::0::1::::<><><>0<>0<><>::uid://braxpml2y0f6o::::res://scenes/enemy/EnemyPath3D.gd<>uid://de0wqltyclsk0::::res://scenes/enemy/EnemyFollow.gd<>uid://b47pkgi0u300c::::res://scenes/enemies/blaze_2.tscn<>uid://cxoxhipdefe5m::::res://scenes/enemies/blaze_3.tscn<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn<>uid://bgg0um4kjhgkp::::res://scenes/enemies/blaze_4.tscn<>uid://bh3x5gquu3djc::::res://scenes/enemies/blaze_5.tscn
-formation8.tscn::PackedScene::6711947663894575067::1781452446::0::1::::<><><>0<>0<><>::uid://braxpml2y0f6o::::res://scenes/enemy/EnemyPath3D.gd<>uid://de0wqltyclsk0::::res://scenes/enemy/EnemyFollow.gd<>uid://bh3x5gquu3djc::::res://scenes/enemies/blaze_5.tscn<>uid://b47pkgi0u300c::::res://scenes/enemies/blaze_2.tscn<>uid://cxoxhipdefe5m::::res://scenes/enemies/blaze_3.tscn<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn<>uid://bgg0um4kjhgkp::::res://scenes/enemies/blaze_4.tscn
-::res://scenes/enemy/::1781448946
-Enemy.gd::GDScript::4605400125416299353::1781206247::0::1::::<>Area3D<><>0<>0<><>::
+::res://scenes/enemies formations/::1781516422
+formation1.tscn::PackedScene::6951778656604220439::1781516274::0::1::::<><><>0<>0<><>::uid://braxpml2y0f6o::::res://scenes/enemy/EnemyPath3D.gd<>res://scenes/enemy/EnemyPathFollow.gd<>res://scenes/enemy/EnemyFollow.gd<>uid://bh3x5gquu3djc::::res://scenes/enemies/blaze_5.tscn<>uid://b47pkgi0u300c::::res://scenes/enemies/blaze_2.tscn<>uid://cxoxhipdefe5m::::res://scenes/enemies/blaze_3.tscn<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn<>uid://bgg0um4kjhgkp::::res://scenes/enemies/blaze_4.tscn
+formation2.tscn::PackedScene::7427166483190178177::1781516274::0::1::::<><><>0<>0<><>::uid://braxpml2y0f6o::::res://scenes/enemy/EnemyPath3D.gd<>res://scenes/enemy/EnemyFollow.gd<>res://scenes/enemy/EnemyPathFollow.gd<>uid://cxoxhipdefe5m::::res://scenes/enemies/blaze_3.tscn<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn
+formation3.tscn::PackedScene::1494571051306370493::1781516273::0::1::::<><><>0<>0<><>::uid://braxpml2y0f6o::::res://scenes/enemy/EnemyPath3D.gd<>res://scenes/enemy/EnemyFollow.gd<>res://scenes/enemy/EnemyPathFollow.gd<>uid://cxoxhipdefe5m::::res://scenes/enemies/blaze_3.tscn<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn
+formation4.tscn::PackedScene::7109985747523856545::1781516422::0::1::::<><><>0<>0<><>::uid://braxpml2y0f6o::::res://scenes/enemy/EnemyPath3D.gd<>res://scenes/enemy/EnemyFollow.gd<>res://scenes/enemy/EnemyPathFollow.gd<>uid://bh3x5gquu3djc::::res://scenes/enemies/blaze_5.tscn<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn
+formation5.tscn::PackedScene::5031613281189571219::1781516422::0::1::::<><><>0<>0<><>::uid://braxpml2y0f6o::::res://scenes/enemy/EnemyPath3D.gd<>res://scenes/enemy/EnemyFollow.gd<>res://scenes/enemy/EnemyPathFollow.gd<>uid://b47pkgi0u300c::::res://scenes/enemies/blaze_2.tscn<>uid://cxoxhipdefe5m::::res://scenes/enemies/blaze_3.tscn<>uid://bgg0um4kjhgkp::::res://scenes/enemies/blaze_4.tscn<>uid://bh3x5gquu3djc::::res://scenes/enemies/blaze_5.tscn<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn
+formation6.tscn::PackedScene::875630281141537608::1781516422::0::1::::<><><>0<>0<><>::uid://braxpml2y0f6o::::res://scenes/enemy/EnemyPath3D.gd<>res://scenes/enemy/EnemyFollow.gd<>res://scenes/enemy/EnemyPathFollow.gd<>uid://bh3x5gquu3djc::::res://scenes/enemies/blaze_5.tscn<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn
+formation7.tscn::PackedScene::4512382609718095813::1781516422::0::1::::<><><>0<>0<><>::uid://braxpml2y0f6o::::res://scenes/enemy/EnemyPath3D.gd<>res://scenes/enemy/EnemyPathFollow.gd<>res://scenes/enemy/EnemyFollow.gd<>uid://b47pkgi0u300c::::res://scenes/enemies/blaze_2.tscn<>uid://cxoxhipdefe5m::::res://scenes/enemies/blaze_3.tscn<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn<>uid://bgg0um4kjhgkp::::res://scenes/enemies/blaze_4.tscn<>uid://bh3x5gquu3djc::::res://scenes/enemies/blaze_5.tscn
+formation8.tscn::PackedScene::6711947663894575067::1781516422::0::1::::<><><>0<>0<><>::uid://braxpml2y0f6o::::res://scenes/enemy/EnemyPath3D.gd<>res://scenes/enemy/EnemyFollow.gd<>res://scenes/enemy/EnemyPathFollow.gd<>uid://bh3x5gquu3djc::::res://scenes/enemies/blaze_5.tscn<>uid://b47pkgi0u300c::::res://scenes/enemies/blaze_2.tscn<>uid://cxoxhipdefe5m::::res://scenes/enemies/blaze_3.tscn<>uid://bv4qai58b1rya::::res://scenes/debug/PlayAreaFrame.tscn<>uid://bgg0um4kjhgkp::::res://scenes/enemies/blaze_4.tscn
+::res://scenes/enemy/::1781516201
+Enemy.gd::GDScript::4605400125416299353::1781516082::0::1::::<>Area3D<><>0<>0<><>::
 Enemy.tscn::PackedScene::6744614999300149878::1781441192::0::1::::<><><>0<>0<><>::uid://b6u5jc5l8dstd::::res://scenes/enemy/Enemy.gd<>uid://dpntm33m1fs4l::::res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/big_impact/vfx_big_impact_01.tscn
-EnemyFollow.gd::GDScript::7492991824227979501::1781267406::0::1::::EnemyPath<>PathFollow3D<><>0<>0<><>::
-EnemyPath3D.gd::GDScript::3581054951814721960::1781448946::0::1::::EnemyPath3D<>Path3D<><>0<>0<><>::
+EnemyPath3D.gd::GDScript::3581054951814721960::1781516201::0::1::::EnemyPath3D<>Path3D<><>0<>0<><>::
+EnemyPathFollow.gd::GDScript::7492991824227979501::1781516062::0::1::::EnemyPathFollow<>PathFollow3D<><>0<>0<><>::
 ::res://scenes/enemy/facing/::1781182369
-EnemyFacing.gd::GDScript::4430952913393421200::1781181889::0::1::::EnemyFacing<>Node<><>0<>0<><>::
-FacePlayer.gd::GDScript::6022420365556204776::1781181891::0::1::::FacePlayer<>EnemyFacing<><>0<>0<><>::
+EnemyFacing.gd::GDScript::4430952913393421200::1781516086::0::1::::EnemyFacing<>Node<><>0<>0<><>::
+FacePlayer.gd::GDScript::6022420365556204776::1781516084::0::1::::FacePlayer<>EnemyFacing<><>0<>0<><>::
 ::res://scenes/enemy/movement/::1780851257
 LinearMoveData.gd::GDScript::8524860910156925632::1781445622::0::1::::LinearMoveData<>MovementData<><>0<>0<><>::
 MovementData.gd::GDScript::8093530923128800492::1781186592::0::1::::MovementData<>Resource<><>0<>0<><>::
@@ -818,16 +818,13 @@ simple_planet.tscn::PackedScene::526280271132995432::1781009084::0::1::::<><><>0
 sun.tscn::PackedScene::3466970437304854283::1781439471::0::1::::<><><>0<>0<><>::uid://d3xat8pb6cbaw::::res://assets/planets/textures/solar system/2k_sun.jpg
 uranus.tscn::PackedScene::6816480709904786975::1780816644::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn<>uid://di04bmwek8try::::res://assets/shaders/toon.gdshader<>uid://ci60g26otd6rf::::res://assets/planets/textures/solar system/2k_uranus.jpg
 venus.tscn::PackedScene::8582344818790218131::1780816644::0::1::::<><><>0<>0<><>::uid://hq602uu7kt7m::::res://scenes/planets/simple_planet.tscn<>uid://di04bmwek8try::::res://assets/shaders/toon.gdshader<>uid://3787wj2faykh::::res://assets/planets/textures/solar system/2k_venus_surface.jpg
-::res://scenes/player/::1781465835
+::res://scenes/player/::1781514664
 blaze_model.tscn::PackedScene::1100442965543308182::1781438984::0::1::::<><><>0<>0<><>::uid://dolawyjb77dno::::res://assets/enemies/blaze/blaze1/Meshy_AI_Blaze_Starfighter_0529133509_texture.glb<>uid://nbrlnglbjbhx::::res://assets/enemies/blaze/blaze1/Meshy_AI_Blaze_Starfighter_0529133509_texture_0.jpg
 DamageSystem.gd::GDScript::2289176751178949268::1781456725::0::1::::<>Node<><>0<>0<><>::
-DamageSystem.tscn::PackedScene::-1::1779131093::0::1::::<><><>0<>0<><>::res://scenes/player/DamageSystem.gd
 Player.gd::GDScript::8437104023902913178::1781465362::0::1::::<>CharacterBody3D<><>0<>0<><>::
 Player.tscn::PackedScene::3730234445164567377::1781465835::0::1::::<><><>0<>0<><>::uid://dsg84un7uak4y::::res://scenes/player/Player.gd<>uid://7u5n3csl0xpc::::res://scenes/player/DamageSystem.gd<>uid://b00wb11f44ov::::res://scenes/player/WeaponSystem.gd<>uid://cta2hho80ojdn::::res://scenes/player/ShieldSystem.gd<>uid://pxcet508nmj3::::res://scenes/player/blaze_model.tscn
 ShieldSystem.gd::GDScript::6108081646694897207::1781176357::0::1::::<>Node<><>0<>0<><>::
-ShieldSystem.tscn::PackedScene::-1::1779131093::0::1::::<><><>0<>0<><>::res://scenes/player/ShieldSystem.gd
 WeaponSystem.gd::GDScript::123355593652037597::1781465364::0::1::::<>Node<><>0<>0<><>::
-WeaponSystem.tscn::PackedScene::-1::1779131093::0::1::::<><><>0<>0<><>::res://scenes/player/WeaponSystem.gd
 ::res://scenes/projectile/::1781465961
 Projectile2.tscn::PackedScene::4061135435519992803::1780949614::0::1::::<><><>0<>0<><>::uid://cxso55pxdnnn3::::res://scenes/projectile/projectile.gd<>uid://l3mk56ty44tw::::res://assets/BinbunVFX/magic_projectiles/effects/mprojectile_javelin/mprojectile_javelin_vfx_01.tscn
 Projectile3.tscn::PackedScene::636199427922551397::1780949614::0::1::::<><><>0<>0<><>::uid://cxso55pxdnnn3::::res://scenes/projectile/projectile.gd<>uid://l3mk56ty44tw::::res://assets/BinbunVFX/magic_projectiles/effects/mprojectile_javelin/mprojectile_javelin_vfx_01.tscn
@@ -843,17 +840,17 @@ DamagePopup.gd::GDScript::1097805116821895480::1781199471::0::1::::DamagePopup<>
 DamagePopup.tscn::PackedScene::208706072634307896::1781199473::0::1::::<><><>0<>0<><>::uid://pv1xprfd8c53::::res://scenes/ui/DamagePopup.gd<>uid://dqyf02xb4hxr::::res://assets/fonts/Bangers-Regular.ttf
 Hud.gd::GDScript::1753618438092089704::1781202202::0::1::::<>CanvasLayer<><>0<>0<><>::
 Hud.tscn::PackedScene::1097966078116907455::1781202206::0::1::::<><><>0<>0<><>::uid://y8p3sop88mb5::::res://scenes/ui/Hud.gd
-::res://scenes/world/::1781352114
+::res://scenes/world/::1781516093
 GameShell.gd::GDScript::552352637201457804::1780828597::0::1::::<>Control<><>0<>0<><>::
-GameViewportHelper.gd::GDScript::5208497074893984072::1780826290::0::1::::GameViewportHelper<>RefCounted<><>0<>0<><>::
-LevelScroll3D.gd::GDScript::5399336509201858621::1780839887::0::1::::LevelScroll3D<>Node3D<><>0<>0<><>::
-negative sun.gd::GDScript::1155677011833650755::1781352114::0::1::::<>DirectionalLight3D<><>0<>0<><>::
+LevelScroll3D.gd::GDScript::5399336509201858621::1781516088::0::1::::LevelScroll3D<>Node3D<><>0<>0<><>::
+negative_sun.gd::GDScript::1155677011833650755::1781516063::0::1::::<>DirectionalLight3D<><>0<>0<><>::
 NoiseBackground.gd::GDScript::8842678781878126347::1781045562::0::1::::<>MeshInstance3D<><>0<>0<><>::
 NoiseBackground.tscn::PackedScene::7314067290829715995::1781045562::0::1::::<><><>0<>0<><>::uid://dx8pvlroqpk00::::res://scenes/world/NoiseBackground.gd
 ::res://scripts/::1781189189
-::res://scripts/core/::1780945609
-DataManager.gd::GDScript::1970122233642260559::1780854065::0::1::::<>Node<><>0<>0<><>::
+::res://scripts/core/::1781514652
+DataManager.gd::GDScript::1970122233642260559::1781514661::0::1::::<>Node<><>0<>0<><>::
 GameConstants.gd::GDScript::8986126702042359166::1781465359::0::1::::<>Node<><>0<>0<><>::
+GameViewportHelper.gd::GDScript::5208497074893984072::1781514652::0::1::::GameViewportHelper<>RefCounted<><>0<>0<><>::
 ::res://scripts/managers/::1781203425
 HitComboManager.gd::GDScript::2952296680288543847::1781202199::0::1::::<>Node<><>0<>0<><>::
 SoundManager.gd::GDScript::5357820178277045046::1780403707::0::1::::<>Node<><>0<>0<><>::

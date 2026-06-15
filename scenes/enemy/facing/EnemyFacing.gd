@@ -9,7 +9,7 @@ class_name EnemyFacing
 #
 # Komponent jest OPCJONALNY - dodaj węzeł "Facing" tylko tym wrogom, którzy
 # mają się obracać. Na Path3D: FacePlayer (w stronę gracza) lub FacePath
-# (wzdłuż ścieżki). Bez Facing EnemyPath obraca PathFollow (ROTATION_ORIENTED).
+# (wzdłuż ścieżki). Bez Facing EnemyPathFollow obraca PathFollow (ROTATION_ORIENTED).
 # ============================================================================
 
 var _enemy: Node3D

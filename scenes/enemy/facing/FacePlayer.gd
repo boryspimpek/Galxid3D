@@ -3,8 +3,8 @@ class_name FacePlayer
 
 # ============================================================================
 # FACE PLAYER - płynnie obraca wroga (yaw wokół Y) w stronę gracza.
-# Działa też na wrogach pod PathFollow3D (EnemyPath) — dodaj węzeł „Facing”
-# ze skryptem FacePlayer; EnemyFollow wtedy nie obraca PathFollow za wrogiem.
+# Działa też na wrogach pod PathFollow3D (EnemyPathFollow) — dodaj węzeł „Facing”
+# ze skryptem FacePlayer; EnemyPathFollow wtedy nie obraca PathFollow za wrogiem.
 # ============================================================================
 
 ## Szybkość wygładzania obrotu (większe = szybciej dogania gracza).

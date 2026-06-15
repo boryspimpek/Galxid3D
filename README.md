@@ -35,7 +35,7 @@ Projekt gry 3D w **Godot 4.6** (renderer: **Forward+**). Repo zawiera sceny, skr
 - `3dworld.tscn`: główna scena gry (`Node3D` o nazwie `Game`) z m.in.:
   - `Player` (`res://scenes/player/Player.tscn`)
   - `PlanetSpawner` (`res://scenes/planets/PlanetSpawner.gd`)
-  - `Path3D` ze skryptem `EnemyPath3D.gd` (ustawienia fali) + `PathFollow3D*` ze skryptem `EnemyPath.gd` (ruch wroga)
+  - `Path3D` ze skryptem `EnemyPath3D.gd` (ustawienia fali) + `PathFollow3D*` ze skryptem `EnemyPathFollow.gd` (ruch wroga)
   - instancje przeciwników `res://scenes/enemies/starfighter.tscn`
   - `PlayAreaFrame` (`res://scenes/debug/PlayAreaFrame.tscn`)
   - `LevelScrollRuler` (`res://scenes/debug/LevelScrollRuler.tscn`) — podziałka Z + czas scrolla pod `LevelScroll`
@@ -60,7 +60,7 @@ Plik: `scenes/enemy/Enemy.gd`.
 - **`LevelScroll`** (`scenes/world/LevelScroll3D.gd`): przesuwa dzieci wzdłuż **+Z** (`scroll_speed`). Pod nim trzymaj Path3D, planety, tło — gracz i kamera zostają na root sceny.
 - **Wszyscy wrogowie**: aktywacja gdy `global_position.z >= scroll_activation_z` (górna krawędź kadru). Pozycja startowa: `z = scroll_activation_z - odległość`. Czas do startu ≈ `odległość / scroll_speed`.
 - **`EnemySpawner`** (`scenes/enemies/EnemySpawner.gd`): losowy spawn wrogów nad linią aktywacji — umieść pod `LevelScroll`. Pola jak w `PlanetSpawner`: `spawn_interval`, `preprocess_time`, lista `enemy_scenes` (pusta = domyślna pula wszystkich typów).
-- **`EnemyPath.gd`**: start ścieżki po `combat_activated` wroga lub po `wave_activated` z `EnemyPath3D` (tryb `SCENE_SCROLL_LINE` — jak `animation.gd` / formation).
+- **`EnemyPathFollow.gd`**: start ścieżki po `combat_activated` wroga lub po `wave_activated` z `EnemyPath3D` (tryb `SCENE_SCROLL_LINE` — jak `animation.gd` / formation).
 
 ## Notatki dla pracy z AI (żeby szybciej startować rozmowy)
 

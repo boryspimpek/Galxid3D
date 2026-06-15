@@ -1,5 +1,10 @@
-res://scripts/core/DataManager.gd
-res://assets/BinbunVFX_Vol2/shared/script/VFXControllerBB.gd
-res://scenes/enemy/Enemy.gd
-res://main.tscn
+res://scenes/enemies formations/formation1.tscn
 res://assets/shaders/toon.gdshader
+res://scenes/enemies formations/formation2.tscn
+res://scenes/enemies formations/formation3.tscn
+res://scenes/enemies formations/formation4.tscn
+res://scenes/enemies formations/formation5.tscn
+res://scenes/enemies formations/formation6.tscn
+res://scenes/enemies formations/formation7.tscn
+res://scenes/enemies formations/formation8.tscn
+res://main.tscn

@@ -1,5 +1,5 @@
 extends PathFollow3D
-class_name EnemyPath
+class_name EnemyPathFollow
 
 const SCROLL_COMPENSATOR_NAME := "ScrollCompensator"
 

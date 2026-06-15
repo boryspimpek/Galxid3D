@@ -4,7 +4,7 @@ class_name LevelScroll3D
 const SCRIPT_FILE := "LevelScroll3D.gd"
 
 ## Podciąga fale / slide w stronę gracza (oś Z), aż wejdą w kadr i się aktywują.
-## Po aktywacji wrogowie odpinają się (EnemyPath / animation) — scroll ich już nie rusza.
+## Po aktywacji wrogowie odpinają się (EnemyPathFollow) — scroll ich już nie rusza.
 
 @export var scroll_speed: float = 1.0
 @export var start_offset_z: float = 0.0

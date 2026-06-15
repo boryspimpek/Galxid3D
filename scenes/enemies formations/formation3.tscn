@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://vj8mqc5fbe18"]
 
 [ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemy/EnemyPath3D.gd" id="1_knp4y"]
-[ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyFollow.gd" id="2_a3xl8"]
+[ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemy/EnemyPathFollow.gd" id="2_pyold"]
 [ext_resource type="PackedScene" uid="uid://cxoxhipdefe5m" path="res://scenes/enemies/blaze_3.tscn" id="3_cswtf"]
 [ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="4_a3xl8"]
 
@@ -20,13 +20,11 @@ curve = SubResource("Curve3D_lu1cq")
 script = ExtResource("1_knp4y")
 activation_mode = 0
 speed = 10.0
-bank_enabled = true
-bank_lookahead = 10.0
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path" unique_id=310916544]
 transform = Transform3D(-0.52577287, 3.7674673e-07, 0.8505734, -1.421031e-14, 0.99999386, -4.4289462e-07, -0.8505798, -2.328802e-07, -0.52576894, -0.0027618408, -0.0020946413, 0.0072021484)
 loop = false
-script = ExtResource("2_a3xl8")
+script = ExtResource("2_pyold")
 
 [node name="blaze 3" parent="Path/PathFollow3D" unique_id=1897743314 instance=ExtResource("3_cswtf")]
 
@@ -34,7 +32,7 @@ script = ExtResource("2_a3xl8")
 transform = Transform3D(-0.5195883, 3.722489e-07, 0.8543644, -3.1917233e-09, 0.99998826, -4.376106e-07, -0.8543622, -2.301224e-07, -0.5195896, -4.267254, -0.0020924434, 2.6170068)
 progress = 5.0
 loop = false
-script = ExtResource("2_a3xl8")
+script = ExtResource("2_pyold")
 
 [node name="blaze 3" parent="Path/PathFollow3D2" unique_id=599822296 instance=ExtResource("3_cswtf")]
 
@@ -42,7 +40,7 @@ script = ExtResource("2_a3xl8")
 transform = Transform3D(-0.51546675, 3.692636e-07, 0.85684985, -5.2836233e-09, 0.99999356, -4.3409995e-07, -0.8568213, -2.2831682e-07, -0.5154839, -8.545705, -0.0020902639, 5.204925)
 progress = 10.0
 loop = false
-script = ExtResource("2_a3xl8")
+script = ExtResource("2_pyold")
 
 [node name="blaze 3" parent="Path/PathFollow3D3" unique_id=70216865 instance=ExtResource("3_cswtf")]
 
@@ -50,7 +48,7 @@ script = ExtResource("2_a3xl8")
 transform = Transform3D(-0.51111823, 3.660781e-07, 0.85946435, -7.490459e-09, 0.99999696, -4.303512e-07, -0.85949534, -2.2641149e-07, -0.51109976, -12.836589, -0.0020881023, 7.7717304)
 progress = 15.0
 loop = false
-script = ExtResource("2_a3xl8")
+script = ExtResource("2_pyold")
 
 [node name="blaze 3" parent="Path/PathFollow3D4" unique_id=153749245 instance=ExtResource("3_cswtf")]
 
@@ -58,7 +56,7 @@ script = ExtResource("2_a3xl8")
 transform = Transform3D(-0.50597906, 3.6233598e-07, 0.86249244, -1.00377e-08, 0.99995315, -4.2597267e-07, -0.86249375, -2.2420065e-07, -0.5059783, -17.141466, -0.0020859612, 10.314958)
 progress = 20.0
 loop = false
-script = ExtResource("2_a3xl8")
+script = ExtResource("2_pyold")
 
 [node name="blaze 3" parent="Path/PathFollow3D5" unique_id=714860725 instance=ExtResource("3_cswtf")]
 
