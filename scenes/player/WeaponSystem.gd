@@ -81,6 +81,7 @@ func shoot_combo() -> void:
 		return
 
 	player.power -= combo_data.power_use
+	player.notify_power_changed()
 	create_projectile(combo_data.projectile, combo_data.damage, combo_data.velocity)
 	_spawn_muzzle_flash(combo_data.velocity)
 	SoundManager.play_weapon_sound(weapon_data.sound)
@@ -100,6 +101,7 @@ func shoot():
 		return
 	
 	player.power -= power_use
+	player.notify_power_changed()
 	
 	create_projectile(
 		power_level_data.projectile,

@@ -1,5 +1,7 @@
 extends Node
 
+signal shield_changed(current: float, maximum: float)
+
 var player: CharacterBody3D
 
 var shield: float = 0.0
@@ -31,6 +33,7 @@ func load_shield_config():
 		)
 	else:
 		push_warning("ShieldSystem: brak danych tarczy (shield_id=%d)" % player.shield_id)
+	_emit_shield_changed()
 
 func _physics_process(delta: float):
 	if _wait_timer > 0.0:
@@ -41,6 +44,8 @@ func _physics_process(delta: float):
 			player.power -= shield_regen_cost
 			shield = minf(shield + shield_regen_amount, shield_max)
 			_wait_timer = shield_wait
+			player.notify_power_changed()
+			_emit_shield_changed()
 
 func reload():
 	load_shield_config()
@@ -48,3 +53,8 @@ func reload():
 func take_shield_damage(amount: float):
 	shield = max(shield - amount, 0.0)
 	SoundManager.play_hit_sound(_hit_sound)
+	_emit_shield_changed()
+
+
+func _emit_shield_changed() -> void:
+	shield_changed.emit(shield, shield_max)

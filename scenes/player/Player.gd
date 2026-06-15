@@ -42,6 +42,10 @@ enum DodgePhase { GROUNDED, DESCENDING, UNDER, ASCENDING, COOLDOWN }
 
 const PLAYER_COLLISION_LAYER := 1
 
+signal score_changed(score: int)
+signal armor_changed(current: int, maximum: int)
+signal power_changed(current: float, maximum: float)
+
 var is_dodging := false
 
 @onready var weapon_system: Node = $WeaponSystem
@@ -100,12 +104,25 @@ func load_ship_data():
 func apply_ship_stats():
 	armor = ship_data.armor if ship_data else 10
 	max_armor = armor
+	notify_armor_changed()
 
 func init_power_regeneration():
 	var regeneration = DataManager.get_generator_regeneration(generator_id)
 	regen = regeneration
 	max_power = DataManager.get_generator_power(generator_id)
 	power = max_power
+	notify_power_changed()
+
+func notify_score_changed() -> void:
+	score_changed.emit(score)
+
+
+func notify_armor_changed() -> void:
+	armor_changed.emit(armor, max_armor)
+
+
+func notify_power_changed() -> void:
+	power_changed.emit(power, max_power)
 
 func _log_connected_joypads() -> void:
 	var pads := Input.get_connected_joypads()
@@ -241,6 +258,7 @@ func _physics_process(delta: float):
 	if Input.is_action_just_pressed("combo_shot"):
 		weapon_system.shoot_combo()
 	_update_tilt(velocity_x, delta)
+	notify_power_changed()
 
 func _update_dodge(delta: float) -> void:
 	match _dodge_phase:
@@ -303,9 +321,10 @@ func take_damage(amount: int) -> void:
 		return
 	push_warning("Player: Brak DamageSystem — obrażenia pominięte")
 
-## Zbieranie lootu wyrzuconego przez wrogów (HUD odczytuje score co klatkę).
+## Zbieranie lootu wyrzuconego przez wrogów.
 func collect_pickup(amount: int) -> void:
 	score += amount
+	notify_score_changed()
 
 func die() -> void:
 	queue_free()

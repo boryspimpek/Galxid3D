@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-@export var show_fps: bool = true
 @export var min_combo_to_show: int = 2
 @export var panel_width: float = 300.0:
 	set(value):
@@ -19,11 +18,11 @@ extends CanvasLayer
 @onready var _restart_button: Button = %RestartButton
 @onready var _restart_confirm: Control = %RestartConfirm
 @onready var _game_over: Control = %GameOver
-@onready var _fps_label: Label = %FpsLabel
 @onready var _combo_label: Label = %ComboLabel
 
 var _player: CharacterBody3D
 var _shield_system: Node
+var _player_bound: bool = false
 
 
 func _ready() -> void:
@@ -35,21 +34,43 @@ func _ready() -> void:
 	%RestartConfirmNo.pressed.connect(_hide_restart_confirm)
 	%GameOverRestartButton.pressed.connect(_restart_run)
 	HitComboManager.combo_changed.connect(_on_combo_changed)
-	call_deferred("_bind_player")
-	call_deferred("_enable_game_viewport_render_timing")
 	_update_combo_label(HitComboManager.combo)
+	call_deferred("_bind_player")
 
 
-func _enable_game_viewport_render_timing() -> void:
-	var vp := get_tree().get_first_node_in_group("game_viewport") as SubViewport
-	if vp:
-		RenderingServer.viewport_set_measure_render_time(vp.get_viewport_rid(), true)
+func _process(_delta: float) -> void:
+	if not _player_bound:
+		_bind_player()
 
 
 func _bind_player() -> void:
-	_player = get_tree().get_first_node_in_group("player") as CharacterBody3D
-	if _player:
-		_shield_system = _player.get_node_or_null("ShieldSystem")
+	if _player_bound:
+		return
+	var player := get_tree().get_first_node_in_group("player") as CharacterBody3D
+	if player == null:
+		return
+
+	_player = player
+	_shield_system = _player.get_node_or_null("ShieldSystem")
+	_player.score_changed.connect(_on_score_changed)
+	_player.armor_changed.connect(_on_armor_changed)
+	_player.power_changed.connect(_on_power_changed)
+	if _shield_system:
+		_shield_system.shield_changed.connect(_on_shield_changed)
+
+	_refresh_all_stats()
+	_player_bound = true
+	set_process(false)
+
+
+func _refresh_all_stats() -> void:
+	if _player == null:
+		return
+	_on_score_changed(_player.score)
+	_on_armor_changed(_player.armor, _player.max_armor)
+	_on_power_changed(_player.power, _player.max_power)
+	if _shield_system:
+		_on_shield_changed(_shield_system.shield, _shield_system.shield_max)
 
 
 func _apply_panel_width() -> void:
@@ -101,31 +122,30 @@ func _unhandled_input(event: InputEvent) -> void:
 		_restart_run()
 
 
-func _process(delta: float) -> void:
-	_update_fps(delta)
+func _on_score_changed(score: int) -> void:
+	_score_label.text = str(score)
 
-	if _player == null:
-		_bind_player()
-		return
 
-	_score_label.text = str(_player.score)
-
-	var max_hp := maxi(1, _player.max_armor)
-	var hp := clampi(_player.armor, 0, max_hp)
+func _on_armor_changed(current: int, maximum: int) -> void:
+	var max_hp := maxi(1, maximum)
+	var hp := clampi(current, 0, max_hp)
 	_health_bar.max_value = max_hp
 	_health_bar.value = hp
 	_health_label.text = "%d / %d" % [hp, max_hp]
 
-	if _shield_system:
-		var max_sh := maxf(1.0, float(_shield_system.shield_max))
-		var sh := clampf(float(_shield_system.shield), 0.0, max_sh)
-		_shield_bar.max_value = max_sh
-		_shield_bar.value = sh
-		_shield_label.text = "%d / %d" % [int(roundf(sh)), int(roundf(max_sh))]
-		_shield_row.visible = float(_shield_system.shield_max) > 0.0
 
-	var max_pwr := maxf(1.0, float(_player.max_power))
-	var pwr := clampf(_player.power, 0.0, max_pwr)
+func _on_shield_changed(current: float, maximum: float) -> void:
+	var max_sh := maxf(1.0, maximum)
+	var sh := clampf(current, 0.0, max_sh)
+	_shield_bar.max_value = max_sh
+	_shield_bar.value = sh
+	_shield_label.text = "%d / %d" % [int(roundf(sh)), int(roundf(max_sh))]
+	_shield_row.visible = maximum > 0.0
+
+
+func _on_power_changed(current: float, maximum: float) -> void:
+	var max_pwr := maxf(1.0, maximum)
+	var pwr := clampf(current, 0.0, max_pwr)
 	_energy_bar.max_value = max_pwr
 	_energy_bar.value = pwr
 	_energy_label.text = "%d / %d" % [int(roundf(pwr)), int(roundf(max_pwr))]
@@ -143,28 +163,3 @@ func _update_combo_label(combo: int) -> void:
 		return
 	_combo_label.visible = true
 	_combo_label.text = "COMBO x%d" % combo
-
-
-func _update_fps(delta: float) -> void:
-	if _fps_label == null:
-		return
-	_fps_label.visible = show_fps
-	if not show_fps:
-		return
-	var fps := Engine.get_frames_per_second()
-	var frame_ms := delta * 1000.0
-	var render_ms := _get_game_render_ms()
-	var logic_ms := maxf(0.0, frame_ms - render_ms)
-	_fps_label.text = "FPS: %d | logika: %.1f ms | gfx: %.1f ms" % [fps, logic_ms, render_ms]
-
-
-func _get_game_render_ms() -> float:
-	var vp := get_tree().get_first_node_in_group("game_viewport") as SubViewport
-	if vp == null:
-		return 0.0
-	var rid := vp.get_viewport_rid()
-	# CPU (przygotowanie) + GPU (rysowanie) SubViewport gry — w ms.
-	return (
-		RenderingServer.viewport_get_measured_render_time_cpu(rid)
-		+ RenderingServer.viewport_get_measured_render_time_gpu(rid)
-	)

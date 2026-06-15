@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="2_d13ii"]
 [ext_resource type="PackedScene" uid="uid://bpnoq5bivk33d" path="res://scenes/planets/sun.tscn" id="3_1u8w0"]
 [ext_resource type="PackedScene" uid="uid://c1pq466qvcqtm" path="res://scenes/planets/earth.tscn" id="4_0odxb"]
-[ext_resource type="Script" uid="uid://1pup6o17egip" path="res://scenes/asteroids/AsteroidSpawner.gd" id="5_lswn8"]
 [ext_resource type="Texture2D" uid="uid://4ur1b1tv52xs" path="res://assets/planets/textures/solar system/8k_stars_milky_way.jpg" id="6_a6jrf"]
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="7_xuqvo"]
 [ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="8_qsp4k"]
@@ -118,17 +117,6 @@ transform = Transform3D(0.15, 0, 0, 0, -0.12057852, 0.08922344, 0, -0.08922344, 
 [node name="earth" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=1975713936 instance=ExtResource("4_0odxb")]
 transform = Transform3D(0.305, 0, 0, 0, 0.17537662, 0.24953564, 0, -0.24953566, 0.1753766, 21.065, -26.265, -15.67)
 speed = 0.5
-
-[node name="AsteroidSpawner" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=1122324284]
-visible = false
-script = ExtResource("5_lswn8")
-spawn_interval_2 = 1.0
-asteroid_speed_2 = 30.0
-edge_parallax_2 = 0.76
-spawn_interval_3 = 1.0
-asteroid_speed_3 = 10.0
-scale_3 = 0.45
-edge_parallax_3 = 0.14
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=327984543]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -65, 0)

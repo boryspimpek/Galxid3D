@@ -30,6 +30,7 @@ func take_damage(amount: int):
 		if player.armor <= 0:
 			player.armor = 0
 			_on_player_death()
+		player.notify_armor_changed()
 
 func _on_player_death():
 	if get_tree():

@@ -1,49 +1,7 @@
-res://scenes/enemies formations/formation1.tscn
-res://assets/shaders/toon.gdshader
-res://scenes/enemies formations/formation2.tscn
-res://scenes/enemies formations/formation3.tscn
-res://scenes/enemies formations/formation4.tscn
-res://scenes/enemies formations/formation5.tscn
-res://scenes/enemies formations/formation6.tscn
-res://scenes/enemies formations/formation7.tscn
-res://scenes/enemies formations/formation8.tscn
 res://main.tscn
-res://scenes/enemies/formations/formation4.tscn
-res://scenes/enemies/types/satellite_2.tscn
-res://assets/enemies/satelite2/satellite_2_model.tscn
-res://data/weapons/weapon_1.tres
-res://scenes/player/Player.tscn
-res://scenes/player/WeaponSystem.gd
-res://scripts/core/GameConstants.gd
-res://scripts/resources/WeaponData.gd
-res://scripts/resources/WeaponComboShotData.gd
-res://scenes/player/ShieldSystem.gd
-res://scripts/resources/ShieldData.gd
-res://scenes/debug/LevelScrollRuler.gd
-res://scenes/debug/LevelScrollRuler.tscn
-res://scenes/debug/PlayAreaFrame.gd
-res://scenes/debug/PlayAreaFrame.tscn
-res://scenes/enemies/base/Enemy.gd
-res://scenes/enemies/formations/formation2.tscn
-res://scenes/enemies/formations/formation3.tscn
-res://scenes/player/Player.gd
-res://scripts/core/DataManager.gd
-res://scripts/resources/enemies/weapons/EnemyWeaponData.gd
-res://scripts/managers/SceneRegistry.gd
-res://scenes/enemies/base/Enemy.tscn
-res://scenes/enemy_projectile/EnemyProjectile.gd
-res://scenes/enemy_projectile/EnemyProjectile.tscn
-res://scenes/pickup/Pickup.gd
-res://scenes/pickup/Pickup.tscn
-res://scenes/projectile/projectile.gd
-res://scenes/projectile/Projectile.tscn
-res://scenes/enemies/types/voyager.tscn
-res://scenes/enemies/types/starfighter.tscn
-res://scenes/enemies/types/blaze_2.tscn
+res://assets/shaders/toon.gdshader
 res://scenes/player/DamageSystem.gd
-res://scripts/resources/ShipData.gd
-res://data/shields/shield_001.tres
-res://data/ships/ship_001.tres
-res://scenes/enemies/base/EnemyPath3D.gd
-res://scenes/enemies/formations/formation1.tscn
-res://data/play_area/default.tres
+res://scenes/player/Player.gd
+res://scenes/player/ShieldSystem.gd
+res://scenes/player/WeaponSystem.gd
+res://scenes/ui/Hud.gd
