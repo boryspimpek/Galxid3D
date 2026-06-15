@@ -1,6 +1,10 @@
 extends CanvasLayer
 
 @export var min_combo_to_show: int = 2
+@export_group("Combo display")
+@export var combo_pop_scale: float = 1.42
+@export var combo_pop_duration: float = 0.2
+@export var combo_hide_duration: float = 0.24
 @export var panel_width: float = 300.0:
 	set(value):
 		panel_width = maxf(180.0, value)
@@ -23,6 +27,8 @@ extends CanvasLayer
 var _player: CharacterBody3D
 var _shield_system: Node
 var _player_bound: bool = false
+var _combo_tween: Tween
+var _combo_base_modulate: Color = Color.WHITE
 
 
 func _ready() -> void:
@@ -34,6 +40,9 @@ func _ready() -> void:
 	%RestartConfirmNo.pressed.connect(_hide_restart_confirm)
 	%GameOverRestartButton.pressed.connect(_restart_run)
 	HitComboManager.combo_changed.connect(_on_combo_changed)
+	_combo_base_modulate = _combo_label.modulate
+	_combo_label.visible = false
+	_combo_label.scale = Vector2.ONE
 	_update_combo_label(HitComboManager.combo)
 	call_deferred("_bind_player")
 
@@ -159,7 +168,106 @@ func _update_combo_label(combo: int) -> void:
 	if _combo_label == null:
 		return
 	if combo < min_combo_to_show:
-		_combo_label.visible = false
+		_hide_combo_animated()
 		return
-	_combo_label.visible = true
+
+	var first_show := not _combo_label.visible
 	_combo_label.text = "COMBO x%d" % combo
+	_combo_label.visible = true
+	call_deferred("_play_combo_feedback", combo, first_show)
+
+
+func _play_combo_feedback(combo: int, first_show: bool) -> void:
+	if _combo_label == null or not _combo_label.visible:
+		return
+
+	_kill_combo_tween()
+	_combo_label.reset_size()
+	_combo_label.pivot_offset = _combo_label.size * 0.5
+
+	var peak_scale := combo_pop_scale + minf(0.18, float(combo - min_combo_to_show) * 0.025)
+	var start_scale := 0.55 if first_show else 0.88
+	_combo_label.scale = Vector2.ONE * start_scale
+	_combo_label.rotation_degrees = randf_range(-5.0, 5.0) if not first_show else 0.0
+	_combo_label.modulate = _combo_base_modulate
+
+	var flash_color := _combo_flash_color(combo)
+	var pop_in := combo_pop_duration * 0.55
+	var settle := combo_pop_duration * 0.45
+
+	_combo_tween = create_tween()
+	_combo_tween.set_parallel(true)
+	(
+		_combo_tween.tween_property(_combo_label, "scale", Vector2.ONE * peak_scale, pop_in)
+		.set_trans(Tween.TRANS_BACK)
+		.set_ease(Tween.EASE_OUT)
+	)
+	(
+		_combo_tween.tween_property(_combo_label, "modulate", flash_color, pop_in * 0.65)
+		.set_trans(Tween.TRANS_QUAD)
+		.set_ease(Tween.EASE_OUT)
+	)
+	if not first_show:
+		(
+			_combo_tween.tween_property(_combo_label, "rotation_degrees", 0.0, pop_in)
+			.set_trans(Tween.TRANS_QUAD)
+			.set_ease(Tween.EASE_OUT)
+		)
+
+	_combo_tween.chain().set_parallel(true)
+	(
+		_combo_tween.tween_property(_combo_label, "scale", Vector2.ONE, settle)
+		.set_trans(Tween.TRANS_QUAD)
+		.set_ease(Tween.EASE_OUT)
+	)
+	(
+		_combo_tween.tween_property(_combo_label, "modulate", _combo_base_modulate, settle)
+		.set_trans(Tween.TRANS_QUAD)
+		.set_ease(Tween.EASE_OUT)
+	)
+
+
+func _hide_combo_animated() -> void:
+	if _combo_label == null or not _combo_label.visible:
+		return
+
+	_kill_combo_tween()
+	_combo_label.pivot_offset = _combo_label.size * 0.5
+
+	_combo_tween = create_tween()
+	_combo_tween.set_parallel(true)
+	(
+		_combo_tween.tween_property(_combo_label, "scale", Vector2(0.55, 0.55), combo_hide_duration)
+		.set_trans(Tween.TRANS_BACK)
+		.set_ease(Tween.EASE_IN)
+	)
+	(
+		_combo_tween.tween_property(_combo_label, "modulate:a", 0.0, combo_hide_duration)
+		.set_trans(Tween.TRANS_QUAD)
+		.set_ease(Tween.EASE_IN)
+	)
+	_combo_tween.tween_property(_combo_label, "rotation_degrees", randf_range(-8.0, 8.0), combo_hide_duration)
+	_combo_tween.chain().tween_callback(_reset_combo_label)
+
+
+func _reset_combo_label() -> void:
+	if _combo_label == null:
+		return
+	_combo_label.visible = false
+	_combo_label.scale = Vector2.ONE
+	_combo_label.rotation_degrees = 0.0
+	_combo_label.modulate = _combo_base_modulate
+
+
+func _kill_combo_tween() -> void:
+	if _combo_tween != null and _combo_tween.is_valid():
+		_combo_tween.kill()
+	_combo_tween = null
+
+
+func _combo_flash_color(combo: int) -> Color:
+	if combo >= 10:
+		return _combo_base_modulate * Color(1.45, 0.55, 0.35, 1.0)
+	if combo >= 5:
+		return _combo_base_modulate * Color(1.35, 1.15, 0.5, 1.0)
+	return _combo_base_modulate * Color(1.25, 1.05, 0.75, 1.0)

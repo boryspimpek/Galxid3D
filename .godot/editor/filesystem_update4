@@ -5,3 +5,5 @@ res://scenes/player/Player.gd
 res://scenes/player/ShieldSystem.gd
 res://scenes/player/WeaponSystem.gd
 res://scenes/ui/Hud.gd
+res://scenes/enemies/base/Enemy.gd
+res://scenes/ui/Hud.tscn
