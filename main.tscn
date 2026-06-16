@@ -36,6 +36,10 @@ albedo_texture = ExtResource("5_cegan")
 material = SubResource("StandardMaterial3D_rbxkt")
 size = Vector2(260, 130)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cegan"]
+albedo_color = Color(1, 0.5343461, 0.7283159, 1)
+albedo_texture = ExtResource("5_cegan")
+
 [sub_resource type="Resource" id="Resource_vivmo"]
 script = ExtResource("19_d13ii")
 zmove = 1.0
@@ -119,6 +123,7 @@ transform = Transform3D(0.305, 0, 0, 0, 0.17537662, 0.24953564, 0, -0.24953566, 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=327984543]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -65, 0)
 mesh = SubResource("QuadMesh_ncxdr")
+surface_material_override/0 = SubResource("StandardMaterial3D_cegan")
 
 [node name="LevelScroll" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=2113647570]
 script = ExtResource("7_xuqvo")
