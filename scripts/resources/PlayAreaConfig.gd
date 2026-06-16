@@ -11,15 +11,15 @@ extends Resource
 
 @export_group("Visible play area")
 ## Ramka PlayAreaFrame — widoczny kadr kamery na osi X (±).
-@export var frame_half_x: float = 23.0
+@export var frame_half_x: float = 27.0
 ## Ramka PlayAreaFrame — widoczny kadr kamery na osi Z (±).
-@export var frame_half_z: float = 15.45
+@export var frame_half_z: float = 15.0
 
 @export_group("Level scroll ruler")
 ## Szerokość szyn linijki (±X) — może być węższa niż frame dla czytelności podziałki.
-@export var ruler_half_x: float = 20.0
+@export var ruler_half_x: float = 27.0
 ## Podświetlona strefa gry na linijce (±Z).
-@export var ruler_play_half_z: float = 15.45
+@export var ruler_play_half_z: float = 15.0
 
 @export_group("Enemy activation")
 ## Wróg aktywuje się gdy global_position.z >= ta wartość (ujemna Z = wjazd z góry kadru).

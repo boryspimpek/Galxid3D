@@ -118,7 +118,6 @@ transform = Transform3D(0.305, 0, 0, 0, 0.17537662, 0.24953564, 0, -0.24953566, 
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=327984543]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -65, 0)
-visible = false
 mesh = SubResource("QuadMesh_ncxdr")
 
 [node name="LevelScroll" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=2113647570]
@@ -136,13 +135,13 @@ scroll_speed = 6.0
 [node name="Blaze Formations" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1725707103]
 
 [node name="Formation1" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=1730415998 instance=ExtResource("9_kq58d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.629349, 0, -113.99316)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, -113.993)
 
 [node name="Formation2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=2052678689 instance=ExtResource("10_seu75")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.493332, 0, -138.00381)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, -138.004)
 
 [node name="Formation3" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=1007223106 instance=ExtResource("11_htxhm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.031452, 0, -168.02531)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, -168.025)
 
 [node name="Formation2_1" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=2092377521 instance=ExtResource("10_seu75")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.534943, 0, -203.08551)

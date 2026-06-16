@@ -14,3 +14,8 @@ res://data/weapons/weapon_1.tres
 res://scenes/planets/earth.tscn
 res://scenes/planets/earth_base.gd
 res://data/play_area/default.tres
+res://scenes/enemies/formations/formation1.tscn
+res://scripts/resources/PlayAreaConfig.gd
+res://scenes/enemies/formations/formation2.tscn
+res://scenes/enemies/formations/formation3.tscn
+res://scenes/enemies/formations/formation4.tscn

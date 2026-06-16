@@ -15,7 +15,7 @@ point_count = 4
 [node name="Formation" type="Node3D" unique_id=1730415998]
 
 [node name="Path" type="Path3D" parent="." unique_id=1730415999]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.714905, 0, -6.565695)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.92751, 0, -6.565695)
 curve = SubResource("Curve3D_lu1cq")
 script = ExtResource("1_knp4y")
 activation_mode = 0
@@ -61,4 +61,5 @@ script = ExtResource("2_pyold")
 [node name="blaze 3" parent="Path/PathFollow3D5" unique_id=714860725 instance=ExtResource("3_cswtf")]
 
 [node name="PlayAreaFrame" parent="." unique_id=2025243004 instance=ExtResource("4_a3xl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, 15)
 visible = false

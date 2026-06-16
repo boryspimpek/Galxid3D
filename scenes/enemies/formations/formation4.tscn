@@ -7,7 +7,7 @@
 
 [sub_resource type="Curve3D" id="Curve3D_t6a12"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.0050640106, -0.000546813, 0.007091522, -13.423569, 0, -0.110025406, 13.423569, 0, 0.110025406, 44.545364, -0.00048828125, 6.0262985, 0, 0, 0, 0, 0, 0, 75.79367, -0.00048828125, 2.72542),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.0050640106, -0.000546813, 0.007091522, -13.423569, 0, -0.110025406, 13.423569, 0, 0.110025406, 44.545364, -0.00048828125, 6.0262985, 0, 0, 0, 0, 0, 0, 82.18009, -0.00048828125, 1.5913315),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
@@ -15,7 +15,7 @@ point_count = 3
 [node name="Formation" type="Node3D" unique_id=1730415998]
 
 [node name="Path2" type="Path3D" parent="." unique_id=1551101873]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.033997, 0, 17.789)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.183496, 0, 17.789)
 curve = SubResource("Curve3D_t6a12")
 script = ExtResource("1_y850x")
 activation_mode = 0
@@ -61,4 +61,5 @@ script = ExtResource("2_litrc")
 [node name="blaze 5" parent="Path2/PathFollow3D5" unique_id=1791976939 instance=ExtResource("3_d2sn8")]
 
 [node name="PlayAreaFrame" parent="." unique_id=616916982 instance=ExtResource("4_mto47")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 15)
 visible = false
