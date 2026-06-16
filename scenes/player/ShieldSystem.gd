@@ -50,8 +50,11 @@ func _physics_process(delta: float):
 func reload():
 	load_shield_config()
 
-func take_shield_damage(amount: float):
-	shield = max(shield - amount, 0.0)
+func take_shield_damage(amount: float) -> void:
+	if amount <= 0.0:
+		return
+	shield = maxf(shield - amount, 0.0)
+	_wait_timer = shield_wait
 	SoundManager.play_hit_sound(_hit_sound)
 	_emit_shield_changed()
 

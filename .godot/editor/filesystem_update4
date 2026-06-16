@@ -7,3 +7,6 @@ res://scenes/enemies/types/blaze_2.tscn
 res://scenes/enemies/types/blaze_3.tscn
 res://scenes/enemies/types/blaze_4.tscn
 res://scenes/enemies/types/blaze_5.tscn
+res://scenes/enemies/types/starfighter.tscn
+res://scenes/enemies/types/voyager.tscn
+res://scenes/player/ShieldSystem.gd

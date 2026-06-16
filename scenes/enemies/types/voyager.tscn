@@ -8,7 +8,6 @@
 
 [sub_resource type="Resource" id="Weapon_voyager"]
 script = ExtResource("5_weapon_data")
-damage = 8
 fire_rate = 3.0
 fire_on_activate = true
 projectile_velocity = Vector3(0, 0, 20)
@@ -17,7 +16,7 @@ sound = 5
 
 [node name="voyager" unique_id=1897743314 instance=ExtResource("1_mmrnp")]
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0)
-armor = 120
+armor = 12
 weapon_data = SubResource("Weapon_voyager")
 value = 50
 explosion_scene = ExtResource("4_nuke")

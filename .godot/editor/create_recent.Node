@@ -1,3 +1,4 @@
+Label
 TextureProgressBar
 ProgressBar
 MeshInstance3D
@@ -12,4 +13,3 @@ PathFollow3D
 Path3D
 WorldEnvironment
 CollisionShape3D
-VisibleOnScreenNotifier3D

@@ -17,6 +17,13 @@ font_color = Color(1, 0.84, 0.2, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 0.85)
 
+[sub_resource type="LabelSettings" id="LabelSettings_ipyef"]
+font = ExtResource("2_7v63g")
+font_size = 63
+font_color = Color(1, 0.54901963, 0.14901961, 1)
+outline_size = 22
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_combo"]
 font = ExtResource("2_7v63g")
 font_size = 44
@@ -66,21 +73,46 @@ layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_score")
 
+[node name="HealtHLabel" type="Label" parent="Root" unique_id=80257096]
+layout_mode = 0
+offset_left = 1445.0
+offset_top = 115.815
+offset_right = 1767.0
+offset_bottom = 183.81506
+rotation = 0.2617994
+text = "HEALTH"
+label_settings = SubResource("LabelSettings_ipyef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="HealthBar" type="TextureRect" parent="Root" unique_id=832822483]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -394.0
-offset_top = 20.0
-offset_right = -24.0
-offset_bottom = 185.0
+offset_left = -395.0
+offset_top = -10.0
+offset_right = -25.0
+offset_bottom = 154.99997
 grow_horizontal = 0
+rotation = 0.18325958
 mouse_filter = 2
 texture = ExtResource("3_health")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="ShieldLabel" type="Label" parent="Root" unique_id=747297794]
+layout_mode = 0
+offset_left = 1445.0
+offset_top = 300.0
+offset_right = 1767.0
+offset_bottom = 368.00024
+rotation = 0.2617994
+text = "SHIELD"
+label_settings = SubResource("LabelSettings_ipyef")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ShieldBar" type="TextureRect" parent="Root" unique_id=503056336]
 unique_name_in_owner = true
@@ -88,11 +120,12 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -394.0
-offset_top = 193.0
-offset_right = -24.0
-offset_bottom = 358.0
+offset_left = -395.0
+offset_top = 175.0
+offset_right = -25.0
+offset_bottom = 339.99945
 grow_horizontal = 0
+rotation = 0.18325958
 mouse_filter = 2
 texture = ExtResource("4_shield")
 expand_mode = 1

@@ -8,11 +8,6 @@ const SHIELD_BAR_PATH := "res://assets/shield bar/shield_%02d.png"
 @export var combo_pop_scale: float = 1.42
 @export var combo_pop_duration: float = 0.2
 @export var combo_hide_duration: float = 0.24
-@export_group("Status bars")
-@export var health_bar_scale: float = 0.5
-@export var shield_bar_scale: float = 0.5
-@export var status_bar_margin: Vector2 = Vector2(24.0, 20.0)
-@export var status_bar_spacing: float = 8.0
 
 @onready var _health_bar: TextureRect = %HealthBar
 @onready var _shield_bar: TextureRect = %ShieldBar
@@ -33,7 +28,6 @@ func _ready() -> void:
 	add_to_group("hud")
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	_load_status_bar_textures()
-	_apply_status_bars_layout()
 	%GameOverRestartButton.pressed.connect(_restart_run)
 	HitComboManager.combo_changed.connect(_on_combo_changed)
 	_combo_base_modulate = _combo_label.modulate
@@ -58,26 +52,6 @@ func _load_status_bar_textures() -> void:
 		_health_bar.texture = _health_textures[0]
 	if _shield_textures.size() > 0:
 		_shield_bar.texture = _shield_textures[0]
-
-
-func _apply_status_bars_layout() -> void:
-	if not is_node_ready() or _health_textures.is_empty() or _shield_textures.is_empty():
-		return
-
-	var health_size := _health_textures[0].get_size() * health_bar_scale
-	var shield_size := _shield_textures[0].get_size() * shield_bar_scale
-
-	_health_bar.custom_minimum_size = health_size
-	_health_bar.offset_left = -health_size.x - status_bar_margin.x
-	_health_bar.offset_top = status_bar_margin.y
-	_health_bar.offset_right = -status_bar_margin.x
-	_health_bar.offset_bottom = status_bar_margin.y + health_size.y
-
-	_shield_bar.custom_minimum_size = shield_size
-	_shield_bar.offset_left = -shield_size.x - status_bar_margin.x
-	_shield_bar.offset_top = status_bar_margin.y + health_size.y + status_bar_spacing
-	_shield_bar.offset_right = -status_bar_margin.x
-	_shield_bar.offset_bottom = status_bar_margin.y + health_size.y + status_bar_spacing + shield_size.y
 
 
 func _bind_player() -> void:
