@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bt8wkhiqnvfrx"]
+
+[ext_resource type="PackedScene" uid="uid://7qdl7kb7uo2d" path="res://assets/asteroids/asteroids.glb" id="1_lmtl7"]
+[ext_resource type="ArrayMesh" uid="uid://6cxh61fn0gkp" path="res://scenes/asteroids/asteroid_array_mesh.tres" id="2_bitqi"]
+
+[node name="asteroids" unique_id=1422838677 instance=ExtResource("1_lmtl7")]
+
+[node name="rock_01" parent="." index="0" unique_id=561132847]
+mesh = ExtResource("2_bitqi")

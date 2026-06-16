@@ -1,15 +1,14 @@
+MultiMeshInstance3D
+MeshInstance3D
 Label
 TextureProgressBar
 ProgressBar
-MeshInstance3D
 Sprite3D
 Camera3D
 TextureRect
-MultiMeshInstance3D
 DirectionalLight3D
 MeshInstance2D
 Node3D
 PathFollow3D
 Path3D
 WorldEnvironment
-CollisionShape3D
