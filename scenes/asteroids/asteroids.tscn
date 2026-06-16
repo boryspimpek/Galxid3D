@@ -1,9 +1,32 @@
 [gd_scene format=3 uid="uid://bt8wkhiqnvfrx"]
 
 [ext_resource type="PackedScene" uid="uid://7qdl7kb7uo2d" path="res://assets/asteroids/asteroids.glb" id="1_lmtl7"]
-[ext_resource type="ArrayMesh" uid="uid://6cxh61fn0gkp" path="res://scenes/asteroids/asteroid_array_mesh.tres" id="2_bitqi"]
+[ext_resource type="Material" uid="uid://c8k3m2asteroidmat" path="res://scenes/asteroids/asteroid_material.tres" id="2_mat"]
 
-[node name="asteroids" unique_id=1422838677 instance=ExtResource("1_lmtl7")]
+[node name="AsteroidMeshes" type="Node3D"]
 
-[node name="rock_01" parent="." index="0" unique_id=561132847]
-mesh = ExtResource("2_bitqi")
+[node name="asteroids" parent="." instance=ExtResource("1_lmtl7")]
+
+[node name="rock_01" parent="asteroids" index="0"]
+layers = 16
+surface_material_override/0 = ExtResource("2_mat")
+
+[node name="rock_02" parent="asteroids" index="1"]
+layers = 16
+surface_material_override/0 = ExtResource("2_mat")
+
+[node name="rock_03" parent="asteroids" index="2"]
+layers = 16
+surface_material_override/0 = ExtResource("2_mat")
+
+[node name="rock_04" parent="asteroids" index="3"]
+layers = 16
+surface_material_override/0 = ExtResource("2_mat")
+
+[node name="rock_05" parent="asteroids" index="4"]
+layers = 16
+surface_material_override/0 = ExtResource("2_mat")
+
+[node name="rock_06" parent="asteroids" index="5"]
+layers = 16
+surface_material_override/0 = ExtResource("2_mat")

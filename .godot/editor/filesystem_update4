@@ -20,3 +20,5 @@ res://scenes/enemies/formations/formation2.tscn
 res://scenes/enemies/formations/formation3.tscn
 res://scenes/enemies/formations/formation4.tscn
 res://scenes/asteroids/asteroids.tscn
+res://scenes/planets/PlanetOrbit.gd
+res://scenes/asteroids/asteroid_material.tres
