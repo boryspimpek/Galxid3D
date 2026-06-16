@@ -1,23 +1,15 @@
 extends Control
 
-## Dzieli ekran: gra w SubViewport (lewa strona), HUD poza obszarem gry (prawa).
-
-@export var hud_panel_width: float = 300.0:
-	set(value):
-		hud_panel_width = maxf(180.0, value)
-		_apply_layout()
+## Pełnoekranowa gra w SubViewport; HUD jako CanvasLayer na wierzchu.
 
 @onready var _viewport_container: SubViewportContainer = $GameViewportContainer
 @onready var _game_viewport: SubViewport = $GameViewportContainer/GameViewport
-@onready var _hud: CanvasLayer = $Hud
 
 
 func _ready() -> void:
 	add_to_group("game_shell")
 	_game_viewport.add_to_group("game_viewport")
 	get_viewport().size_changed.connect(_apply_layout)
-	if _hud:
-		_hud.panel_width = hud_panel_width
 	call_deferred("_apply_layout")
 
 
@@ -26,18 +18,10 @@ func _apply_layout() -> void:
 		return
 
 	_viewport_container.set_anchors_preset(Control.PRESET_FULL_RECT)
-	_viewport_container.offset_right = -hud_panel_width
-
-	if _hud:
-		_hud.panel_width = hud_panel_width
 
 
 func get_game_viewport() -> SubViewport:
 	return _game_viewport
-
-
-func get_hud_panel_width() -> float:
-	return hud_panel_width
 
 
 func is_point_in_game_area(root_pos: Vector2) -> bool:

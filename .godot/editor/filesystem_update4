@@ -1,3 +1,9 @@
 res://scenes/ui/Hud.tscn
 res://assets/shaders/toon.gdshader
 res://main.tscn
+res://scenes/ui/Hud.gd
+res://scenes/world/GameShell.gd
+res://scenes/enemies/types/blaze_2.tscn
+res://scenes/enemies/types/blaze_3.tscn
+res://scenes/enemies/types/blaze_4.tscn
+res://scenes/enemies/types/blaze_5.tscn

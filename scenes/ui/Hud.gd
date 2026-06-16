@@ -1,29 +1,27 @@
 extends CanvasLayer
 
+const HEALTH_BAR_PATH := "res://assets/health bar/health_%02d.png"
+const SHIELD_BAR_PATH := "res://assets/shield bar/shield_%02d.png"
+
 @export var min_combo_to_show: int = 2
 @export_group("Combo display")
 @export var combo_pop_scale: float = 1.42
 @export var combo_pop_duration: float = 0.2
 @export var combo_hide_duration: float = 0.24
-@export var panel_width: float = 300.0:
-	set(value):
-		panel_width = maxf(180.0, value)
-		_apply_panel_width()
+@export_group("Status bars")
+@export var health_bar_scale: float = 0.5
+@export var shield_bar_scale: float = 0.5
+@export var status_bar_margin: Vector2 = Vector2(24.0, 20.0)
+@export var status_bar_spacing: float = 8.0
 
-@onready var _side_panel: PanelContainer = $Root/SidePanel
-@onready var _health_bar: ProgressBar = %HealthBar
-@onready var _shield_bar: ProgressBar = %ShieldBar
-@onready var _energy_bar: ProgressBar = %EnergyBar
-@onready var _health_label: Label = %HealthValue
-@onready var _shield_label: Label = %ShieldValue
-@onready var _energy_label: Label = %EnergyValue
+@onready var _health_bar: TextureRect = %HealthBar
+@onready var _shield_bar: TextureRect = %ShieldBar
 @onready var _score_label: Label = %ScoreValue
-@onready var _shield_row: VBoxContainer = %ShieldRow
-@onready var _restart_button: Button = %RestartButton
-@onready var _restart_confirm: Control = %RestartConfirm
 @onready var _game_over: Control = %GameOver
 @onready var _combo_label: Label = %ComboLabel
 
+var _health_textures: Array[Texture2D] = []
+var _shield_textures: Array[Texture2D] = []
 var _player: CharacterBody3D
 var _shield_system: Node
 var _player_bound: bool = false
@@ -34,10 +32,8 @@ var _combo_base_modulate: Color = Color.WHITE
 func _ready() -> void:
 	add_to_group("hud")
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	_apply_panel_width()
-	_restart_button.pressed.connect(_on_restart_button_pressed)
-	%RestartConfirmYes.pressed.connect(_restart_run)
-	%RestartConfirmNo.pressed.connect(_hide_restart_confirm)
+	_load_status_bar_textures()
+	_apply_status_bars_layout()
 	%GameOverRestartButton.pressed.connect(_restart_run)
 	HitComboManager.combo_changed.connect(_on_combo_changed)
 	_combo_base_modulate = _combo_label.modulate
@@ -52,6 +48,38 @@ func _process(_delta: float) -> void:
 		_bind_player()
 
 
+func _load_status_bar_textures() -> void:
+	_health_textures.clear()
+	_shield_textures.clear()
+	for index in range(11):
+		_health_textures.append(load(HEALTH_BAR_PATH % index) as Texture2D)
+		_shield_textures.append(load(SHIELD_BAR_PATH % index) as Texture2D)
+	if _health_textures.size() > 0:
+		_health_bar.texture = _health_textures[0]
+	if _shield_textures.size() > 0:
+		_shield_bar.texture = _shield_textures[0]
+
+
+func _apply_status_bars_layout() -> void:
+	if not is_node_ready() or _health_textures.is_empty() or _shield_textures.is_empty():
+		return
+
+	var health_size := _health_textures[0].get_size() * health_bar_scale
+	var shield_size := _shield_textures[0].get_size() * shield_bar_scale
+
+	_health_bar.custom_minimum_size = health_size
+	_health_bar.offset_left = -health_size.x - status_bar_margin.x
+	_health_bar.offset_top = status_bar_margin.y
+	_health_bar.offset_right = -status_bar_margin.x
+	_health_bar.offset_bottom = status_bar_margin.y + health_size.y
+
+	_shield_bar.custom_minimum_size = shield_size
+	_shield_bar.offset_left = -shield_size.x - status_bar_margin.x
+	_shield_bar.offset_top = status_bar_margin.y + health_size.y + status_bar_spacing
+	_shield_bar.offset_right = -status_bar_margin.x
+	_shield_bar.offset_bottom = status_bar_margin.y + health_size.y + status_bar_spacing + shield_size.y
+
+
 func _bind_player() -> void:
 	if _player_bound:
 		return
@@ -63,51 +91,25 @@ func _bind_player() -> void:
 	_shield_system = _player.get_node_or_null("ShieldSystem")
 	_player.score_changed.connect(_on_score_changed)
 	_player.armor_changed.connect(_on_armor_changed)
-	_player.power_changed.connect(_on_power_changed)
 	if _shield_system:
 		_shield_system.shield_changed.connect(_on_shield_changed)
 
-	_refresh_all_stats()
+	_on_score_changed(_player.score)
+	_on_armor_changed(_player.armor, _player.max_armor)
+	if _shield_system:
+		call_deferred("_refresh_shield_bar")
 	_player_bound = true
 	set_process(false)
 
 
-func _refresh_all_stats() -> void:
-	if _player == null:
-		return
-	_on_score_changed(_player.score)
-	_on_armor_changed(_player.armor, _player.max_armor)
-	_on_power_changed(_player.power, _player.max_power)
+func _refresh_shield_bar() -> void:
 	if _shield_system:
 		_on_shield_changed(_shield_system.shield, _shield_system.shield_max)
 
 
-func _apply_panel_width() -> void:
-	if not is_node_ready() or _side_panel == null:
-		return
-	_side_panel.offset_left = -panel_width
-
-
 func show_game_over() -> void:
-	_hide_restart_confirm()
-	_restart_button.visible = false
 	_game_over.visible = true
 	get_tree().paused = true
-
-
-func _on_restart_button_pressed() -> void:
-	_show_restart_confirm()
-
-
-func _show_restart_confirm() -> void:
-	_restart_confirm.visible = true
-	get_tree().paused = true
-
-
-func _hide_restart_confirm() -> void:
-	_restart_confirm.visible = false
-	if not _game_over.visible:
-		get_tree().paused = false
 
 
 func _restart_run() -> void:
@@ -116,8 +118,6 @@ func _restart_run() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if _restart_confirm.visible:
-		return
 	if not _game_over.visible:
 		return
 
@@ -135,29 +135,21 @@ func _on_score_changed(score: int) -> void:
 	_score_label.text = str(score)
 
 
-func _on_armor_changed(current: int, maximum: int) -> void:
-	var max_hp := maxi(1, maximum)
-	var hp := clampi(current, 0, max_hp)
-	_health_bar.max_value = max_hp
-	_health_bar.value = hp
-	_health_label.text = "%d / %d" % [hp, max_hp]
+func _on_armor_changed(current: int, _maximum: int) -> void:
+	var index := clampi(current, 0, 10)
+	if index < _health_textures.size():
+		_health_bar.texture = _health_textures[index]
 
 
 func _on_shield_changed(current: float, maximum: float) -> void:
-	var max_sh := maxf(1.0, maximum)
-	var sh := clampf(current, 0.0, max_sh)
-	_shield_bar.max_value = max_sh
-	_shield_bar.value = sh
-	_shield_label.text = "%d / %d" % [int(roundf(sh)), int(roundf(max_sh))]
-	_shield_row.visible = maximum > 0.0
+	var has_shield := maximum > 0.0
+	_shield_bar.visible = has_shield
+	if not has_shield:
+		return
 
-
-func _on_power_changed(current: float, maximum: float) -> void:
-	var max_pwr := maxf(1.0, maximum)
-	var pwr := clampf(current, 0.0, max_pwr)
-	_energy_bar.max_value = max_pwr
-	_energy_bar.value = pwr
-	_energy_label.text = "%d / %d" % [int(roundf(pwr)), int(roundf(max_pwr))]
+	var index := clampi(int(round(current)), 0, 10)
+	if index < _shield_textures.size():
+		_shield_bar.texture = _shield_textures[index]
 
 
 func _on_combo_changed(combo: int) -> void:
