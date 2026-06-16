@@ -1,10 +1,29 @@
 [gd_scene format=3 uid="uid://pxcet508nmj3"]
 
 [ext_resource type="PackedScene" uid="uid://dolawyjb77dno" path="res://assets/enemies/blaze/blaze1/Meshy_AI_Blaze_Starfighter_0529133509_texture.glb" id="1_model"]
+[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://assets/shaders/toon.gdshader" id="2_ls3h8"]
 [ext_resource type="Texture2D" uid="uid://nbrlnglbjbhx" path="res://assets/enemies/blaze/blaze1/Meshy_AI_Blaze_Starfighter_0529133509_texture_0.jpg" id="3_16ihu"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6jds1"]
-albedo_texture = ExtResource("3_16ihu")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ls3h8"]
+cull_mode = 1
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.03
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v6ixx"]
+render_priority = 0
+next_pass = SubResource("StandardMaterial3D_ls3h8")
+shader = ExtResource("2_ls3h8")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = ExtResource("3_16ihu")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/metallic = 0.3790000180025
+shader_parameter/clearcoat = 0.698000033155
+shader_parameter/clearcoat_roughness = 0.7090000336775
+shader_parameter/shadow_threshold = 0.2330000110675
+shader_parameter/shadow_softness = 0.0
+shader_parameter/ambient_fill = 0.0170000008075
+shader_parameter/hdr_cap = 16.0
 
 [node name="Blaze" unique_id=700868063 instance=ExtResource("1_model")]
 layers = 16
@@ -12,4 +31,4 @@ layers = 16
 [node name="Mesh" parent="." index="0" unique_id=447750538]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 layers = 16
-surface_material_override/0 = SubResource("StandardMaterial3D_6jds1")
+surface_material_override/0 = SubResource("ShaderMaterial_v6ixx")

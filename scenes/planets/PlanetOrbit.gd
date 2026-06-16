@@ -22,9 +22,11 @@ var _fixed_basis: Basis
 
 
 func _ready() -> void:
+	physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_OFF
 	_load_meshes()
 	_spawn_orbiters()
 	call_deferred("_capture_world_orientation")
+	reset_physics_interpolation()
 
 
 func _capture_world_orientation() -> void:
@@ -52,18 +54,13 @@ func _process(delta: float) -> void:
 func _load_meshes() -> void:
 	_meshes.clear()
 	var root := asteroid_meshes_scene.instantiate()
-	_collect_meshes(root)
+	for mesh_instance: MeshInstance3D in root.find_children("*", "MeshInstance3D", true, false):
+		if mesh_instance.mesh != null:
+			_meshes.append(mesh_instance.mesh)
 	root.queue_free()
 
 	if _meshes.is_empty():
 		push_error("PlanetOrbit: Nie znaleziono meshy w scenie: " + asteroid_meshes_scene.resource_path)
-
-
-func _collect_meshes(node: Node) -> void:
-	if node is MeshInstance3D and node.mesh != null:
-		_meshes.append(node.mesh)
-	for child in node.get_children():
-		_collect_meshes(child)
 
 
 func _spawn_orbiters() -> void:
@@ -96,7 +93,8 @@ func _spawn_orbiters() -> void:
 
 		var mm_instance := MultiMeshInstance3D.new()
 		mm_instance.name = "Asteroids_%02d" % (mesh_idx + 1)
-		mm_instance.layers = 4
+		mm_instance.layers = 16
+		mm_instance.physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_OFF
 		mm_instance.material_override = asteroid_material
 		mm_instance.multimesh = multimesh
 		add_child(mm_instance)
@@ -134,6 +132,10 @@ func _spawn_orbiters() -> void:
 			local_idx,
 			_make_transform(angle, radius, height, spin)
 		)
+
+	for child in get_children():
+		if child is MultiMeshInstance3D:
+			child.reset_physics_interpolation()
 
 
 func _make_transform(angle: float, radius: float, height: float, spin: float) -> Transform3D:

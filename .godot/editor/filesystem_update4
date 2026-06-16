@@ -22,3 +22,6 @@ res://scenes/enemies/formations/formation4.tscn
 res://scenes/asteroids/asteroids.tscn
 res://scenes/planets/PlanetOrbit.gd
 res://scenes/asteroids/asteroid_material.tres
+res://scenes/player/blaze_model.tscn
+res://data/ships/ship_001.tres
+res://data/shields/shield_001.tres
