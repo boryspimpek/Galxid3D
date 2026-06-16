@@ -10,3 +10,4 @@ res://scenes/enemies/types/blaze_5.tscn
 res://scenes/enemies/types/starfighter.tscn
 res://scenes/enemies/types/voyager.tscn
 res://scenes/player/ShieldSystem.gd
+res://data/weapons/weapon_1.tres

@@ -53,6 +53,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="ScoreRow" type="VBoxContainer" parent="Root" unique_id=611002030]
+visible = false
 layout_mode = 1
 offset_left = 24.0
 offset_top = 20.0
@@ -76,9 +77,9 @@ label_settings = SubResource("LabelSettings_score")
 [node name="HealtHLabel" type="Label" parent="Root" unique_id=80257096]
 layout_mode = 0
 offset_left = 1445.0
-offset_top = 115.815
+offset_top = 75.0
 offset_right = 1767.0
-offset_bottom = 183.81506
+offset_bottom = 143.00006
 rotation = 0.2617994
 text = "HEALTH"
 label_settings = SubResource("LabelSettings_ipyef")
@@ -92,9 +93,9 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -395.0
-offset_top = -10.0
+offset_top = -50.0
 offset_right = -25.0
-offset_bottom = 154.99997
+offset_bottom = 114.99997
 grow_horizontal = 0
 rotation = 0.18325958
 mouse_filter = 2
@@ -105,9 +106,9 @@ stretch_mode = 5
 [node name="ShieldLabel" type="Label" parent="Root" unique_id=747297794]
 layout_mode = 0
 offset_left = 1445.0
-offset_top = 300.0
+offset_top = 260.0
 offset_right = 1767.0
-offset_bottom = 368.00024
+offset_bottom = 328.00024
 rotation = 0.2617994
 text = "SHIELD"
 label_settings = SubResource("LabelSettings_ipyef")
@@ -121,9 +122,9 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -395.0
-offset_top = 175.0
+offset_top = 130.0
 offset_right = -25.0
-offset_bottom = 339.99945
+offset_bottom = 294.99945
 grow_horizontal = 0
 rotation = 0.18325958
 mouse_filter = 2
@@ -133,6 +134,7 @@ stretch_mode = 5
 
 [node name="ComboLabel" type="Label" parent="Root" unique_id=-1447774245]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
