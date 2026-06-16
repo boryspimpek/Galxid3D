@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="2_d13ii"]
 [ext_resource type="PackedScene" uid="uid://bpnoq5bivk33d" path="res://scenes/planets/sun.tscn" id="3_1u8w0"]
 [ext_resource type="PackedScene" uid="uid://c1pq466qvcqtm" path="res://scenes/planets/earth.tscn" id="4_0odxb"]
-[ext_resource type="Texture2D" uid="uid://4ur1b1tv52xs" path="res://assets/planets/textures/solar system/8k_stars_milky_way.jpg" id="6_a6jrf"]
+[ext_resource type="Texture2D" uid="uid://na3nvl7jvpdi" path="res://assets/planets/Gemini_Generated_Image_ (2).png" id="5_cegan"]
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="7_xuqvo"]
 [ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="8_qsp4k"]
 [ext_resource type="PackedScene" uid="uid://c6bq1qkhotmeh" path="res://scenes/enemies/formations/formation1.tscn" id="9_kq58d"]
@@ -30,7 +30,7 @@ adjustment_saturation = 1.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rbxkt"]
 shading_mode = 0
-albedo_texture = ExtResource("6_a6jrf")
+albedo_texture = ExtResource("5_cegan")
 
 [sub_resource type="QuadMesh" id="QuadMesh_ncxdr"]
 material = SubResource("StandardMaterial3D_rbxkt")
