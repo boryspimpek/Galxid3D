@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://c1pq466qvcqtm"]
 
-[ext_resource type="Script" uid="uid://blylchano3pbx" path="res://scenes/planets/earth_base.gd" id="1_cwnmv"]
 [ext_resource type="Script" uid="uid://c42gpfswfidnt" path="res://scenes/planets/PlanetOrbit.gd" id="1_orbit"]
 [ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://assets/shaders/toon.gdshader" id="2_5i67w"]
 [ext_resource type="Texture2D" uid="uid://tg5dtkq5slv1" path="res://assets/planets/textures/solar system/2k_venus_atmosphere.jpg" id="4_pa0cx"]
@@ -48,15 +47,54 @@ shader_parameter/shadow_softness = 0.0
 shader_parameter/ambient_fill = 0.010000000475
 shader_parameter/hdr_cap = 16.0
 
-[node name="earth" type="Node3D" unique_id=1975713936]
-script = ExtResource("1_cwnmv")
+[sub_resource type="Animation" id="Animation_reset"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlanetSpin:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1264017003]
+[sub_resource type="Animation" id="Animation_spin"]
+resource_name = "spin"
+length = 62.831852
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlanetSpin:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 62.831852),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_earth"]
+_data = {
+&"RESET": SubResource("Animation_reset"),
+&"spin": SubResource("Animation_spin")
+}
+
+[node name="earth" type="Node3D" unique_id=1975713936]
+
+[node name="PlanetSpin" type="Node3D" parent="." unique_id=984512340]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlanetSpin" unique_id=1264017003]
 layers = 4
 mesh = SubResource("SphereMesh_cwnmv")
 surface_material_override/0 = SubResource("ShaderMaterial_pa0cx")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=539177]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="PlanetSpin" unique_id=539177]
 transform = Transform3D(1, 0, 0, 0, 0.049809735, -0.08715574, 0, 0.004357787, 0.9961947, 0, 0, 0)
 layers = 8
 mesh = SubResource("TorusMesh_xbhfj")
@@ -71,3 +109,8 @@ orbit_radius_max = 200.0
 belt_thickness = 35.0
 orbit_speed = 0.035
 asteroid_scale = 2.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=741205811]
+libraries/ = SubResource("AnimationLibrary_earth")
+autoplay = &"spin"
+speed_scale = 5.0

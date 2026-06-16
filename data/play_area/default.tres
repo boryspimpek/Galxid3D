@@ -4,3 +4,5 @@
 
 [resource]
 script = ExtResource("1")
+frame_half_x = 21.0
+ruler_half_x = 30.0

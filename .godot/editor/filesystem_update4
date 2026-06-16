@@ -11,3 +11,6 @@ res://scenes/enemies/types/starfighter.tscn
 res://scenes/enemies/types/voyager.tscn
 res://scenes/player/ShieldSystem.gd
 res://data/weapons/weapon_1.tres
+res://scenes/planets/earth.tscn
+res://scenes/planets/earth_base.gd
+res://data/play_area/default.tres
