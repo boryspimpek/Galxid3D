@@ -152,7 +152,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, -168.025)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.534943, 0, -203.08551)
 
 [node name="Formation4" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=2046449321 instance=ExtResource("12_jq2sk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.85358, 0, -264.61053)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.030579, 0, -264.61053)
 
 [node name="Formation1_1" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=841152969 instance=ExtResource("9_kq58d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.79084, 0, -318.00354)
