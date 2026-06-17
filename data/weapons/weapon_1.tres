@@ -8,9 +8,9 @@
 
 [sub_resource type="Resource" id="combo_1"]
 script = ExtResource("3_combo")
-damage = 150
-power_use = 0
-cooldown = 0.1
+damage = 2
+power_use = 40
+cooldown = 0.15
 
 [sub_resource type="Resource" id="Resource_soco3"]
 script = ExtResource("1_b7n3p")
@@ -27,25 +27,25 @@ spawn_offset = Vector3(-1, 0, 0)
 
 [sub_resource type="Resource" id="Resource_l2tde"]
 script = ExtResource("3_combo")
-damage = 150
-power_use = 0
-cooldown = 0.1
+damage = 1
+power_use = 40
+cooldown = 0.15
 projectile = 2
 pellets = Array[ExtResource("1_b7n3p")]([SubResource("Resource_soco3"), SubResource("Resource_ohelg"), SubResource("Resource_e8eac")])
 metadata/_custom_type_script = "uid://cx0dkobw5wnj7"
 
 [sub_resource type="Resource" id="Resource_b7n3p"]
 script = ExtResource("3_combo")
-damage = 150
-power_use = 0
-cooldown = 0.1
+damage = 5
+power_use = 40
+cooldown = 0.05
 projectile = 3
 metadata/_custom_type_script = "uid://cx0dkobw5wnj7"
 
 [sub_resource type="Resource" id="Resource_b7xww"]
 script = ExtResource("3_combo")
-damage = 150
-power_use = 0
+damage = 10
+power_use = 60
 cooldown = 0.1
 projectile = 4
 delivery_mode = 1
@@ -62,9 +62,8 @@ metadata/_custom_type_script = "uid://cx0dkobw5wnj7"
 
 [sub_resource type="Resource" id="pl_1"]
 script = ExtResource("2_pl")
-damage = 15
-fire_rate = 0.1
-power_use = 0
+fire_rate = 0.25
+power_use = 50
 velocity = Vector3(0, 0, -60)
 
 [sub_resource type="Resource" id="pl_10"]

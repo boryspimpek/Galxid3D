@@ -6,7 +6,7 @@
 script = ExtResource("1")
 shield_index = 1
 shield_name = "Structural Integrity Field"
-protection = 10
+protection = 2
 shield_regen_cost = 100
 shield_regen_amount = 1.0
 cost = 100

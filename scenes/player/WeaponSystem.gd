@@ -27,9 +27,10 @@ var _beam_power_timer: float = 0.0
 var _locked_combo_shot: WeaponComboShotData = null
 var _combo_active_timer: float = 0.0
 var _combo_session_duration: float = 0.0
+var _combo_session_tier_combo: int = 0
 var _was_combo_firing: bool = false
 
-signal combo_session_changed(remaining: float, total: float, active: bool)
+signal combo_session_changed(remaining: float, total: float, active: bool, tier_combo: int)
 ## Maks. czas życia muzzle flash (s) — krótki, żeby nie zostawał w świecie za graczem.
 const MUZZLE_FLASH_MAX_LIFETIME := 0.12
 
@@ -64,6 +65,7 @@ func load_weapon_config():
 	_locked_combo_shot = null
 	_combo_active_timer = 0.0
 	_combo_session_duration = 0.0
+	_combo_session_tier_combo = 0
 	_notify_combo_session()
 
 func set_firing(firing: bool):
@@ -127,10 +129,12 @@ func _tick_combo_session(delta: float) -> void:
 
 
 func _try_start_combo_session() -> void:
+	var combo_at_activation := HitComboManager.combo
 	var available := _try_lock_combo_shot()
 	if available == null:
 		return
 	_locked_combo_shot = available
+	_combo_session_tier_combo = combo_at_activation
 	_combo_session_duration = maxf(available.active_duration, 0.01)
 	_combo_active_timer = _combo_session_duration
 	HitComboManager.spend_combo()
@@ -164,6 +168,7 @@ func _clear_combo_session() -> void:
 	_locked_combo_shot = null
 	_combo_active_timer = 0.0
 	_combo_session_duration = 0.0
+	_combo_session_tier_combo = 0
 	_despawn_beam()
 	_notify_combo_session()
 
@@ -174,6 +179,7 @@ func _notify_combo_session() -> void:
 		_combo_active_timer if active else 0.0,
 		_combo_session_duration,
 		active,
+		_combo_session_tier_combo,
 	)
 
 

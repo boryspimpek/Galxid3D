@@ -27,6 +27,8 @@ var _player: CharacterBody3D
 var _shield_system: Node
 var _player_bound: bool = false
 var _combo_tween: Tween
+var _combo_label_settings: LabelSettings
+var _combo_bar_fill_style: StyleBoxFlat
 var _combo_base_modulate: Color = Color.WHITE
 
 
@@ -36,10 +38,16 @@ func _ready() -> void:
 	_load_status_bar_textures()
 	%GameOverRestartButton.pressed.connect(_restart_run)
 	HitComboManager.combo_changed.connect(_on_combo_changed)
-	_combo_base_modulate = _combo_label.modulate
+	if _combo_label.label_settings:
+		_combo_label_settings = _combo_label.label_settings.duplicate()
+	else:
+		_combo_label_settings = LabelSettings.new()
+	_combo_base_modulate = Color.WHITE
+	_combo_label.modulate = _combo_base_modulate
 	_combo_label.visible = false
 	_combo_label.scale = Vector2.ONE
 	_combo_session_bar.visible = false
+	_setup_combo_session_bar()
 	_update_combo_label(HitComboManager.combo)
 	call_deferred("_bind_player")
 
@@ -153,7 +161,12 @@ func _on_combo_changed(combo: int) -> void:
 	_update_combo_label(combo)
 
 
-func _on_combo_session_changed(remaining: float, total: float, active: bool) -> void:
+func _on_combo_session_changed(
+	remaining: float,
+	total: float,
+	active: bool,
+	tier_combo: int,
+) -> void:
 	if _combo_session_bar == null:
 		return
 	_combo_session_bar.visible = active
@@ -161,6 +174,7 @@ func _on_combo_session_changed(remaining: float, total: float, active: bool) -> 
 		return
 	_combo_session_bar.max_value = total
 	_combo_session_bar.value = remaining
+	_apply_combo_session_bar_color(tier_combo)
 
 
 func _update_combo_label(combo: int) -> void:
@@ -171,7 +185,8 @@ func _update_combo_label(combo: int) -> void:
 		return
 
 	var first_show := not _combo_label.visible
-	_combo_label.text = "COMBO x%d" % combo
+	_combo_label.text = "HIT x%d" % combo
+	_apply_combo_label_color(combo)
 	_combo_label.visible = true
 	call_deferred("_play_combo_feedback", combo, first_show)
 
@@ -190,7 +205,7 @@ func _play_combo_feedback(combo: int, first_show: bool) -> void:
 	_combo_label.rotation_degrees = randf_range(-5.0, 5.0) if not first_show else 0.0
 	_combo_label.modulate = _combo_base_modulate
 
-	var flash_color := _combo_flash_color(combo)
+	var flash_modulate := Color(1.35, 1.35, 1.35, 1.0)
 	var pop_in := combo_pop_duration * 0.55
 	var settle := combo_pop_duration * 0.45
 
@@ -202,7 +217,7 @@ func _play_combo_feedback(combo: int, first_show: bool) -> void:
 		.set_ease(Tween.EASE_OUT)
 	)
 	(
-		_combo_tween.tween_property(_combo_label, "modulate", flash_color, pop_in * 0.65)
+		_combo_tween.tween_property(_combo_label, "modulate", flash_modulate, pop_in * 0.65)
 		.set_trans(Tween.TRANS_QUAD)
 		.set_ease(Tween.EASE_OUT)
 	)
@@ -264,9 +279,38 @@ func _kill_combo_tween() -> void:
 	_combo_tween = null
 
 
-func _combo_flash_color(combo: int) -> Color:
+func _combo_tier_color(combo: int) -> Color:
+	if combo >= 25:
+		return Color(1.0, 1.0, 1.0, 1.0)
+	if combo >= 20:
+		return Color(1.0, 0.28, 0.22, 1.0)
+	if combo >= 15:
+		return Color(0.35, 0.72, 1.0, 1.0)
 	if combo >= 10:
-		return _combo_base_modulate * Color(1.45, 0.55, 0.35, 1.0)
+		return Color(0.32, 1.0, 0.42, 1.0)
 	if combo >= 5:
-		return _combo_base_modulate * Color(1.35, 1.15, 0.5, 1.0)
-	return _combo_base_modulate * Color(1.25, 1.05, 0.75, 1.0)
+		return Color(1.0, 0.9, 0.18, 1.0)
+	return Color(0.72, 0.38, 1.0, 1.0)
+
+
+func _apply_combo_label_color(combo: int) -> void:
+	if _combo_label_settings == null:
+		return
+	_combo_label_settings.font_color = _combo_tier_color(combo)
+	_combo_label.label_settings = _combo_label_settings
+
+
+func _setup_combo_session_bar() -> void:
+	var fill := _combo_session_bar.get_theme_stylebox("fill")
+	if fill is StyleBoxFlat:
+		_combo_bar_fill_style = fill.duplicate() as StyleBoxFlat
+	else:
+		_combo_bar_fill_style = StyleBoxFlat.new()
+		_combo_bar_fill_style.set_corner_radius_all(5)
+	_combo_session_bar.add_theme_stylebox_override("fill", _combo_bar_fill_style)
+
+
+func _apply_combo_session_bar_color(combo: int) -> void:
+	if _combo_bar_fill_style == null:
+		return
+	_combo_bar_fill_style.bg_color = _combo_tier_color(combo)

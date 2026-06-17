@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dbq1haxfor3uc" path="res://assets/enemies/blaze/blaze5/blaze_5_model.tscn" id="2_rqi3e"]
 
 [node name="blaze 5" unique_id=1897743314 instance=ExtResource("1_72qgj")]
+value = 0
 explosion_scene = ExtResource("2_h1v31")
 
 [node name="Blaze 5" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1983750910 instance=ExtResource("2_rqi3e")]
