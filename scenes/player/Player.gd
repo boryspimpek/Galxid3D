@@ -254,9 +254,9 @@ func _physics_process(delta: float):
 			or _touch_firing
 		)
 	)
+	var is_combo_firing := not is_dodging and Input.is_action_pressed("combo_shot")
 	weapon_system.set_firing(is_firing)
-	if Input.is_action_just_pressed("combo_shot"):
-		weapon_system.shoot_combo()
+	weapon_system.set_combo_firing(is_combo_firing)
 	_update_tilt(velocity_x, delta)
 	notify_power_changed()
 

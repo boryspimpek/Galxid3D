@@ -1,6 +1,11 @@
 class_name WeaponComboShotData
 extends Resource
 
+enum ComboDeliveryMode {
+	BURST,
+	BEAM,
+}
+
 @export var enabled: bool = true
 ## Próg combo ustala slot w WeaponData (combo_shot_1 = 5, _2 = 10, …). Pole zachowane dla kompatybilności zasobów.
 @export var min_kill_combo: int = 5
@@ -12,3 +17,7 @@ extends Resource
 @export var projectile: int = 1
 ## Wzorzec salwy. Pusta tablica = jeden pocisk (velocity + projectile powyżej).
 @export var pellets: Array[WeaponShotPelletData] = []
+## BURST = salwy przy trzymaniu fire/combo_shot; BEAM = stały promień przy aktywnym progu combo.
+@export var delivery_mode: ComboDeliveryMode = ComboDeliveryMode.BURST
+## Odstęp między tikami obrażeń (tylko BEAM).
+@export var beam_damage_interval: float = 0.08

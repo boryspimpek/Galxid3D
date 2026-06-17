@@ -11,6 +11,8 @@ script = ExtResource("3_combo")
 damage = 150
 power_use = 0
 cooldown = 0.1
+projectile = 4
+delivery_mode = 1
 
 [sub_resource type="Resource" id="Resource_soco3"]
 script = ExtResource("1_b7n3p")
@@ -48,6 +50,7 @@ damage = 150
 power_use = 0
 cooldown = 0.1
 projectile = 4
+delivery_mode = 1
 metadata/_custom_type_script = "uid://cx0dkobw5wnj7"
 
 [sub_resource type="Resource" id="Resource_n7nwy"]

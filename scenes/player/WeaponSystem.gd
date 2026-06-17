@@ -18,8 +18,12 @@ var current_weapon_index: int = 1
 # --- Konfiguracja strzelania ---
 var fire_timer: float = 0.0
 var is_firing: bool = false
+var is_combo_firing: bool = false
 var _ready_to_fire: bool = false
 var _combo_shot_timer: float = 0.0
+var _active_beam: Area3D = null
+var _active_beam_projectile_id: int = -1
+var _beam_power_timer: float = 0.0
 ## Maks. czas życia muzzle flash (s) — krótki, żeby nie zostawał w świecie za graczem.
 const MUZZLE_FLASH_MAX_LIFETIME := 0.12
 
@@ -37,6 +41,7 @@ func _physics_process(delta: float):
 	_combo_shot_timer = max(0.0, _combo_shot_timer - delta)
 	if is_firing and fire_timer <= 0.0:
 		shoot()
+	_process_combo(delta)
 		
 func load_weapon_config():
 	current_weapon_index = player.front_weapon_index
@@ -48,9 +53,14 @@ func load_weapon_config():
 		push_error("WeaponSystem: Nie znaleziono broni o ID: ", current_weapon_index)
 	else:
 		print("WeaponSystem: Załadowano broń - weapon_id=", current_weapon_index)
+	_despawn_beam()
 
 func set_firing(firing: bool):
 	is_firing = firing
+
+
+func set_combo_firing(firing: bool):
+	is_combo_firing = firing
 
 func _get_combo_shot_data() -> WeaponComboShotData:
 	if weapon_data == null or not weapon_data.has_combo_shot():
@@ -62,6 +72,70 @@ func can_shoot_combo() -> bool:
 	if _get_combo_shot_data() == null:
 		return false
 	return _combo_shot_timer <= 0.0 and not player.is_dodging
+
+
+func _wants_combo_fire() -> bool:
+	return is_combo_firing
+
+
+func _process_combo(delta: float) -> void:
+	var combo_data := _get_combo_shot_data()
+	if combo_data == null:
+		_despawn_beam()
+		return
+
+	if combo_data.delivery_mode == WeaponComboShotData.ComboDeliveryMode.BEAM:
+		_update_beam(combo_data, delta)
+		return
+
+	_despawn_beam()
+	if not _wants_combo_fire() or not can_shoot_combo():
+		return
+	shoot_combo()
+
+
+func _update_beam(combo_data: WeaponComboShotData, delta: float) -> void:
+	if player.is_dodging:
+		if _active_beam:
+			_active_beam.visible = false
+		return
+
+	if combo_data.power_use > 0:
+		_beam_power_timer = maxf(0.0, _beam_power_timer - delta)
+		if player.power < combo_data.power_use:
+			_despawn_beam()
+			return
+		if _beam_power_timer <= 0.0:
+			player.power -= combo_data.power_use
+			player.notify_power_changed()
+			_beam_power_timer = combo_data.beam_damage_interval
+
+	_ensure_beam_instance(combo_data)
+	if _active_beam == null:
+		return
+	_active_beam.visible = true
+	if _active_beam.has_method("configure"):
+		_active_beam.configure(combo_data.damage, combo_data.beam_damage_interval)
+
+
+func _ensure_beam_instance(combo_data: WeaponComboShotData) -> void:
+	if _active_beam != null and _active_beam_projectile_id == combo_data.projectile:
+		return
+	_despawn_beam()
+	var scene := SceneRegistry.get_player_combo_projectile_scene(combo_data.projectile)
+	_active_beam = scene.instantiate() as Area3D
+	muzzle.add_child(_active_beam)
+	_active_beam_projectile_id = combo_data.projectile
+	if _active_beam.has_method("configure"):
+		_active_beam.configure(combo_data.damage, combo_data.beam_damage_interval)
+
+
+func _despawn_beam() -> void:
+	if _active_beam:
+		_active_beam.queue_free()
+	_active_beam = null
+	_active_beam_projectile_id = -1
+	_beam_power_timer = 0.0
 
 
 func shoot_combo() -> void:
