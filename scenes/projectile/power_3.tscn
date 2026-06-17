@@ -1,15 +1,21 @@
 [gd_scene format=3 uid="uid://jcgd2boq21bd"]
 
-[ext_resource type="Script" uid="uid://cxso55pxdnnn3" path="res://scenes/projectile/projectile.gd" id="1_uj3nw"]
-[ext_resource type="Texture2D" uid="uid://cn3pqyl6cxtb" path="res://assets/projectiles/01_white.png" id="2_v17j1"]
+[ext_resource type="Script" uid="uid://cxso55pxdnnn3" path="res://scenes/projectile/projectile.gd" id="1_ejcuq"]
+[ext_resource type="Texture2D" uid="uid://cn3pqyl6cxtb" path="res://assets/projectiles/01_white.png" id="2_2fic8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v17j1"]
 height = 3.7817383
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y2j0i"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(2.454227, 2.454227, 2.454227, 1)
+albedo_texture = ExtResource("2_2fic8")
+
 [node name="Projectile2" type="Area3D" unique_id=1517421005]
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("1_uj3nw")
+script = ExtResource("1_ejcuq")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1313357752]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
@@ -20,8 +26,9 @@ aabb = AABB(-0.4872241, -0.102447845, -1.8831612, 0.9744482, 0.20489569, 3.76632
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1961393296]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.635)
+material_override = SubResource("StandardMaterial3D_y2j0i")
 axis = 1
-texture = ExtResource("2_v17j1")
+texture = ExtResource("2_2fic8")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

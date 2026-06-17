@@ -3,6 +3,12 @@
 [ext_resource type="Script" uid="uid://cxso55pxdnnn3" path="res://scenes/projectile/projectile.gd" id="1_ef782"]
 [ext_resource type="Texture2D" uid="uid://dvv0nphus7cj7" path="res://assets/projectiles/01_green.png" id="2_sjh64"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ef782"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(2.454227, 2.454227, 2.454227, 1)
+albedo_texture = ExtResource("2_sjh64")
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n8s58"]
 height = 5.376587
 
@@ -13,6 +19,7 @@ script = ExtResource("1_ef782")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=918965328]
 transform = Transform3D(1.525, 0, 0, 0, 1.525, 0, 0, 0, 1.525, 0.125, 0, 0)
+material_override = SubResource("StandardMaterial3D_ef782")
 axis = 1
 texture = ExtResource("2_sjh64")
 

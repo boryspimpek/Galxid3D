@@ -3,7 +3,7 @@ extends Node
 signal combo_changed(combo: int)
 
 ## Maks. czas (s) między zabójstwami — po przekroczeniu combo zeruje się.
-@export var combo_window_sec: float = 3.0
+@export var combo_window_sec: float = 10.0
 
 var combo: int = 0
 
