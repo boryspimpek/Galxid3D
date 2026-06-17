@@ -19,5 +19,7 @@ enum ComboDeliveryMode {
 @export var pellets: Array[WeaponShotPelletData] = []
 ## BURST = salwy przy trzymaniu fire/combo_shot; BEAM = stały promień przy aktywnym progu combo.
 @export var delivery_mode: ComboDeliveryMode = ComboDeliveryMode.BURST
+## Czas działania broni po aktywacji (s). Po upływie sesja się kończy — trzeba puścić i ponownie nacisnąć kwadrat.
+@export var active_duration: float = 2.5
 ## Odstęp między tikami obrażeń (tylko BEAM).
 @export var beam_damage_interval: float = 0.08

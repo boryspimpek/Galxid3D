@@ -2,3 +2,6 @@ res://scenes/projectile/power_4.tscn
 res://assets/shaders/toon.gdshader
 res://data/weapons/weapon_1.tres
 res://main.tscn
+res://scenes/player/WeaponSystem.gd
+res://scripts/managers/HitComboManager.gd
+res://scripts/resources/WeaponComboShotData.gd
