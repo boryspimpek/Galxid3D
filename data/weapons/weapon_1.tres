@@ -7,8 +7,27 @@
 
 [sub_resource type="Resource" id="combo_1"]
 script = ExtResource("3_combo")
-min_kill_combo = 5
 damage = 150
+
+[sub_resource type="Resource" id="Resource_l2tde"]
+script = ExtResource("3_combo")
+projectile = 2
+metadata/_custom_type_script = "uid://cx0dkobw5wnj7"
+
+[sub_resource type="Resource" id="Resource_b7n3p"]
+script = ExtResource("3_combo")
+projectile = 3
+metadata/_custom_type_script = "uid://cx0dkobw5wnj7"
+
+[sub_resource type="Resource" id="Resource_b7xww"]
+script = ExtResource("3_combo")
+projectile = 4
+metadata/_custom_type_script = "uid://cx0dkobw5wnj7"
+
+[sub_resource type="Resource" id="Resource_n7nwy"]
+script = ExtResource("3_combo")
+projectile = 5
+metadata/_custom_type_script = "uid://cx0dkobw5wnj7"
 
 [sub_resource type="Resource" id="pl_1"]
 script = ExtResource("2_pl")
@@ -101,6 +120,10 @@ power_level_7 = SubResource("pl_7")
 power_level_8 = SubResource("pl_8")
 power_level_9 = SubResource("pl_9")
 power_level_10 = SubResource("pl_10")
-combo_shot = SubResource("combo_1")
+combo_shot_1 = SubResource("combo_1")
+combo_shot_2 = SubResource("Resource_l2tde")
+combo_shot_3 = SubResource("Resource_b7n3p")
+combo_shot_4 = SubResource("Resource_b7xww")
+combo_shot_5 = SubResource("Resource_n7nwy")
 muzzle_flash_scene = ExtResource("1_jns5a")
 sound = 25

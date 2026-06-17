@@ -55,18 +55,13 @@ func set_firing(firing: bool):
 func _get_combo_shot_data() -> WeaponComboShotData:
 	if weapon_data == null or not weapon_data.has_combo_shot():
 		return null
-	return weapon_data.combo_shot
+	return weapon_data.get_best_available_combo_shot(HitComboManager.combo)
 
 
 func can_shoot_combo() -> bool:
-	var combo_data := _get_combo_shot_data()
-	if combo_data == null:
+	if _get_combo_shot_data() == null:
 		return false
-	return (
-		HitComboManager.combo >= combo_data.min_kill_combo
-		and _combo_shot_timer <= 0.0
-		and not player.is_dodging
-	)
+	return _combo_shot_timer <= 0.0 and not player.is_dodging
 
 
 func shoot_combo() -> void:

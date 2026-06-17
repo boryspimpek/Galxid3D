@@ -2,8 +2,8 @@ class_name WeaponComboShotData
 extends Resource
 
 @export var enabled: bool = true
-## Minimalne combo zabójstw (HitComboManager) wymagane do strzału.
-@export var min_kill_combo: int = 4
+## Próg combo ustala slot w WeaponData (combo_shot_1 = 5, _2 = 10, …). Pole zachowane dla kompatybilności zasobów.
+@export var min_kill_combo: int = 5
 @export var damage: int = 25
 @export var power_use: int = 50
 @export var velocity: Vector3 = Vector3(0, 0, -60)

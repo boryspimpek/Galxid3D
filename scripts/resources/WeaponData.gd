@@ -2,6 +2,9 @@ class_name WeaponData
 extends Resource
 
 const POWER_LEVEL_COUNT := 10
+const COMBO_SHOT_COUNT := 5
+## Próg combo dla combo_shot_N = N * COMBO_SHOT_KILL_COMBO_STEP (5 → 10 → 15 → 20 → 25).
+const COMBO_SHOT_KILL_COMBO_STEP := 5
 
 @export_group("Combat")
 @export var weapon_index: int = 100
@@ -16,8 +19,12 @@ const POWER_LEVEL_COUNT := 10
 @export var power_level_8: WeaponPowerLevelData
 @export var power_level_9: WeaponPowerLevelData
 @export var power_level_10: WeaponPowerLevelData
-## Opcjonalny strzał combo — inny input, wymaga kill combo (HitComboManager).
-@export var combo_shot: WeaponComboShotData
+## Opcjonalne strzały combo — ten sam input; wyższy slot wymaga większego kill combo.
+@export var combo_shot_1: WeaponComboShotData
+@export var combo_shot_2: WeaponComboShotData
+@export var combo_shot_3: WeaponComboShotData
+@export var combo_shot_4: WeaponComboShotData
+@export var combo_shot_5: WeaponComboShotData
 
 @export_group("Visual")
 ## Efekt przy lufie — przeciągnij scenę muzzle flash z FileSystem.
@@ -56,8 +63,40 @@ func _ensure_power_levels() -> void:
 		power_level_10 = WeaponPowerLevelData.new()
 
 
+func get_combo_shot(slot: int) -> WeaponComboShotData:
+	match clampi(slot, 1, COMBO_SHOT_COUNT):
+		1: return combo_shot_1
+		2: return combo_shot_2
+		3: return combo_shot_3
+		4: return combo_shot_4
+		_: return combo_shot_5
+
+
+func get_combo_shot_kill_threshold(slot: int) -> int:
+	return clampi(slot, 1, COMBO_SHOT_COUNT) * COMBO_SHOT_KILL_COMBO_STEP
+
+
 func has_combo_shot() -> bool:
-	return combo_shot != null and combo_shot.enabled
+	for slot in range(1, COMBO_SHOT_COUNT + 1):
+		var shot := get_combo_shot(slot)
+		if shot != null and shot.enabled:
+			return true
+	return false
+
+
+func get_best_available_combo_shot(kill_combo: int) -> WeaponComboShotData:
+	var best: WeaponComboShotData = null
+	var best_slot := 0
+	for slot in range(1, COMBO_SHOT_COUNT + 1):
+		var shot := get_combo_shot(slot)
+		if shot == null or not shot.enabled:
+			continue
+		if kill_combo < get_combo_shot_kill_threshold(slot):
+			continue
+		if slot > best_slot:
+			best = shot
+			best_slot = slot
+	return best
 
 
 func get_power_level_data(level: int) -> WeaponPowerLevelData:
