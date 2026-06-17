@@ -5,3 +5,4 @@ res://main.tscn
 res://scenes/player/WeaponSystem.gd
 res://scripts/managers/HitComboManager.gd
 res://scripts/resources/WeaponComboShotData.gd
+res://scenes/ui/Hud.gd

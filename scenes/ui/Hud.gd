@@ -6,7 +6,7 @@ const POWER_BAR_PATH := "res://assets/power bar/power_%02d.png"
 const POWER_PER_LEVEL := 50
 const POWER_BAR_MAX_INDEX := 14
 
-@export var min_combo_to_show: int = 2
+@export var min_combo_to_show: int = 5
 @export_group("Combo display")
 @export var combo_pop_scale: float = 1.42
 @export var combo_pop_duration: float = 0.2
@@ -18,6 +18,7 @@ const POWER_BAR_MAX_INDEX := 14
 @onready var _score_label: Label = %ScoreValue
 @onready var _game_over: Control = %GameOver
 @onready var _combo_label: Label = %ComboLabel
+@onready var _combo_session_bar: ProgressBar = %ComboSessionBar
 
 var _health_textures: Array[Texture2D] = []
 var _shield_textures: Array[Texture2D] = []
@@ -38,6 +39,7 @@ func _ready() -> void:
 	_combo_base_modulate = _combo_label.modulate
 	_combo_label.visible = false
 	_combo_label.scale = Vector2.ONE
+	_combo_session_bar.visible = false
 	_update_combo_label(HitComboManager.combo)
 	call_deferred("_bind_player")
 
@@ -73,6 +75,9 @@ func _bind_player() -> void:
 
 	_player = player
 	_shield_system = _player.get_node_or_null("ShieldSystem")
+	var weapon_system := _player.get_node_or_null("WeaponSystem")
+	if weapon_system:
+		weapon_system.combo_session_changed.connect(_on_combo_session_changed)
 	_player.score_changed.connect(_on_score_changed)
 	_player.armor_changed.connect(_on_armor_changed)
 	_player.power_changed.connect(_on_power_changed)
@@ -146,6 +151,16 @@ func _on_power_changed(current: float, _maximum: float) -> void:
 
 func _on_combo_changed(combo: int) -> void:
 	_update_combo_label(combo)
+
+
+func _on_combo_session_changed(remaining: float, total: float, active: bool) -> void:
+	if _combo_session_bar == null:
+		return
+	_combo_session_bar.visible = active
+	if not active:
+		return
+	_combo_session_bar.max_value = total
+	_combo_session_bar.value = remaining
 
 
 func _update_combo_label(combo: int) -> void:
