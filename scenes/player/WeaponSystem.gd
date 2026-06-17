@@ -84,12 +84,16 @@ func _process_combo(delta: float) -> void:
 		_despawn_beam()
 		return
 
+	if not _wants_combo_fire():
+		_despawn_beam()
+		return
+
 	if combo_data.delivery_mode == WeaponComboShotData.ComboDeliveryMode.BEAM:
 		_update_beam(combo_data, delta)
 		return
 
 	_despawn_beam()
-	if not _wants_combo_fire() or not can_shoot_combo():
+	if not can_shoot_combo():
 		return
 	shoot_combo()
 
