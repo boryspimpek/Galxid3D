@@ -21,3 +21,4 @@ res://scenes/projectile/power_2.tscn
 res://scenes/projectile/projectile.gd
 res://scripts/managers/HitComboManager.gd
 res://scenes/projectile/power_3.tscn
+res://scenes/projectile/power_4.tscn
