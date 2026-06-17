@@ -7,3 +7,5 @@ extends Resource
 ## Indeks sceny projectile_N.tscn (1 = projectile_1.tscn, 2 = projectile_2.tscn, …).
 @export var projectile: int = 1
 @export var velocity: Vector3 = Vector3(0, 0, -50)
+## Wzorzec salwy. Pusta tablica = jeden pocisk (velocity + projectile powyżej).
+@export var pellets: Array[WeaponShotPelletData] = []

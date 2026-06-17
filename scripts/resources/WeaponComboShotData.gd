@@ -10,3 +10,5 @@ extends Resource
 @export var cooldown: float = 0.35
 ## Indeks sceny power_N.tscn (1 = power_1.tscn, 2 = power_2.tscn, …).
 @export var projectile: int = 1
+## Wzorzec salwy. Pusta tablica = jeden pocisk (velocity + projectile powyżej).
+@export var pellets: Array[WeaponShotPelletData] = []

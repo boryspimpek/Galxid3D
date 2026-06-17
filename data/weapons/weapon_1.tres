@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://b4jqk5h3n8kxy"]
 
+[ext_resource type="Script" uid="uid://bingydioab5yk" path="res://scripts/resources/WeaponShotPelletData.gd" id="1_b7n3p"]
 [ext_resource type="PackedScene" uid="uid://db4vd2isl5vb1" path="res://assets/BinbunVFX/muzzle_flash/effects/big_flash/big_flash_01.tscn" id="1_jns5a"]
 [ext_resource type="Script" uid="uid://ml3ennlcxw0v" path="res://scripts/resources/WeaponData.gd" id="1_weapon"]
 [ext_resource type="Script" uid="uid://datij7ugn8eej" path="res://scripts/resources/WeaponPowerLevelData.gd" id="2_pl"]
@@ -10,7 +11,19 @@ script = ExtResource("3_combo")
 damage = 150
 power_use = 0
 cooldown = 0.1
-projectile = 1
+
+[sub_resource type="Resource" id="Resource_soco3"]
+script = ExtResource("1_b7n3p")
+
+[sub_resource type="Resource" id="Resource_ohelg"]
+script = ExtResource("1_b7n3p")
+angle_deg = -20.0
+spawn_offset = Vector3(-1, 0, 0)
+
+[sub_resource type="Resource" id="Resource_e8eac"]
+script = ExtResource("1_b7n3p")
+angle_deg = 20.0
+spawn_offset = Vector3(1, 0, 0)
 
 [sub_resource type="Resource" id="Resource_l2tde"]
 script = ExtResource("3_combo")
@@ -18,6 +31,7 @@ damage = 150
 power_use = 0
 cooldown = 0.1
 projectile = 2
+pellets = Array[ExtResource("1_b7n3p")]([SubResource("Resource_soco3"), SubResource("Resource_ohelg"), SubResource("Resource_e8eac")])
 metadata/_custom_type_script = "uid://cx0dkobw5wnj7"
 
 [sub_resource type="Resource" id="Resource_b7n3p"]

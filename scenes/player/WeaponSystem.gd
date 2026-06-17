@@ -77,8 +77,13 @@ func shoot_combo() -> void:
 
 	player.power -= combo_data.power_use
 	player.notify_power_changed()
-	create_projectile(combo_data.projectile, combo_data.damage, combo_data.velocity, true)
-	_spawn_muzzle_flash(combo_data.velocity)
+	spawn_shot(
+		combo_data.projectile,
+		combo_data.damage,
+		combo_data.velocity,
+		combo_data.pellets,
+		true,
+	)
 	SoundManager.play_weapon_sound(weapon_data.sound)
 	_combo_shot_timer = combo_data.cooldown
 
@@ -98,24 +103,66 @@ func shoot():
 	player.power -= power_use
 	player.notify_power_changed()
 	
-	create_projectile(
+	spawn_shot(
 		power_level_data.projectile,
 		power_level_data.damage,
-		power_level_data.velocity
+		power_level_data.velocity,
+		power_level_data.pellets,
 	)
-	_spawn_muzzle_flash(power_level_data.velocity)
 	SoundManager.play_weapon_sound(weapon_data.sound)
 	fire_timer = power_level_data.fire_rate
 
-func create_projectile(projectile_id: int, damage: int, velocity: Vector3, combo_shot: bool = false):
+
+func spawn_shot(
+	projectile_id: int,
+	damage: int,
+	base_velocity: Vector3,
+	pellets: Array[WeaponShotPelletData],
+	combo_shot: bool = false,
+) -> void:
+	if pellets.is_empty():
+		_spawn_single_projectile(
+			muzzle.global_position,
+			base_velocity,
+			projectile_id,
+			damage,
+			combo_shot,
+		)
+		_spawn_muzzle_flash(base_velocity)
+		return
+
+	for pellet in pellets:
+		var velocity := _pellet_velocity(base_velocity, pellet)
+		var spawn_pos: Vector3 = muzzle.global_position + muzzle.global_basis * pellet.spawn_offset
+		_spawn_single_projectile(spawn_pos, velocity, projectile_id, damage, combo_shot)
+	_spawn_muzzle_flash(base_velocity)
+
+
+func _spawn_single_projectile(
+	spawn_position: Vector3,
+	velocity: Vector3,
+	projectile_id: int,
+	damage: int,
+	combo_shot: bool = false,
+) -> void:
 	var projectile_scene := SceneRegistry.get_player_combo_projectile_scene(projectile_id) \
 		if combo_shot \
 		else SceneRegistry.get_player_projectile_scene(projectile_id)
 	var projectile = projectile_scene.instantiate()
 	get_tree().current_scene.add_child(projectile)
-	projectile.global_position = muzzle.global_position
+	projectile.global_position = spawn_position
 	projectile.velocity = velocity
 	projectile.damage = damage
+
+
+func _pellet_velocity(base_velocity: Vector3, pellet: WeaponShotPelletData) -> Vector3:
+	var direction := base_velocity
+	if direction.length_squared() < 0.0001:
+		direction = Vector3(0.0, 0.0, -1.0)
+	else:
+		direction = direction.normalized()
+	var speed: float = base_velocity.length() * pellet.velocity_scale
+	return direction.rotated(Vector3.UP, deg_to_rad(pellet.angle_deg)) * speed
 
 
 func _spawn_muzzle_flash(velocity: Vector3) -> void:
