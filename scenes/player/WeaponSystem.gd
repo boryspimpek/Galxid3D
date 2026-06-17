@@ -26,7 +26,7 @@ var _active_beam_projectile_id: int = -1
 var _beam_power_timer: float = 0.0
 var _locked_combo_shot: WeaponComboShotData = null
 var _combo_active_timer: float = 0.0
-var _combo_session_exhausted: bool = false
+var _was_combo_firing: bool = false
 ## Maks. czas życia muzzle flash (s) — krótki, żeby nie zostawał w świecie za graczem.
 const MUZZLE_FLASH_MAX_LIFETIME := 0.12
 
@@ -45,6 +45,7 @@ func _physics_process(delta: float):
 	if is_firing and fire_timer <= 0.0:
 		shoot()
 	_process_combo(delta)
+	_was_combo_firing = is_combo_firing
 		
 func load_weapon_config():
 	current_weapon_index = player.front_weapon_index
@@ -59,15 +60,12 @@ func load_weapon_config():
 	_despawn_beam()
 	_locked_combo_shot = null
 	_combo_active_timer = 0.0
-	_combo_session_exhausted = false
 
 func set_firing(firing: bool):
 	is_firing = firing
 
 
 func set_combo_firing(firing: bool) -> void:
-	if not firing:
-		_combo_session_exhausted = false
 	is_combo_firing = firing
 
 func _get_combo_shot_data() -> WeaponComboShotData:
@@ -84,34 +82,61 @@ func _wants_combo_fire() -> bool:
 	return is_combo_firing
 
 
+func _combo_just_pressed() -> bool:
+	return is_combo_firing and not _was_combo_firing
+
+
 func _try_lock_combo_shot() -> WeaponComboShotData:
 	if weapon_data == null:
 		return null
 	return weapon_data.get_best_available_combo_shot(HitComboManager.combo)
 
 
+func _has_combo_session() -> bool:
+	return _locked_combo_shot != null
+
+
 func _process_combo(delta: float) -> void:
-	if not _wants_combo_fire():
-		_clear_combo_session()
-		return
+	_tick_combo_session(delta)
 
-	if _combo_session_exhausted:
-		return
-
-	if _locked_combo_shot == null:
-		var available := _try_lock_combo_shot()
-		if available == null:
+	if not _has_combo_session():
+		if not _combo_just_pressed():
 			return
-		_locked_combo_shot = available
-		_combo_active_timer = maxf(available.active_duration, 0.01)
-		HitComboManager.spend_combo()
+		_try_start_combo_session()
+		return
 
+	if not _wants_combo_fire():
+		_pause_combo_fire()
+		return
+
+	_fire_locked_combo(delta)
+
+
+func _tick_combo_session(delta: float) -> void:
+	if not _has_combo_session():
+		return
 	_combo_active_timer = maxf(0.0, _combo_active_timer - delta)
 	if _combo_active_timer <= 0.0:
 		_end_combo_session()
-		return
 
+
+func _try_start_combo_session() -> void:
+	var available := _try_lock_combo_shot()
+	if available == null:
+		return
+	_locked_combo_shot = available
+	_combo_active_timer = maxf(available.active_duration, 0.01)
+	HitComboManager.spend_combo()
+
+
+func _pause_combo_fire() -> void:
+	_despawn_beam()
+
+
+func _fire_locked_combo(delta: float) -> void:
 	var combo_data := _locked_combo_shot
+	if combo_data == null:
+		return
 
 	if combo_data.delivery_mode == WeaponComboShotData.ComboDeliveryMode.BEAM:
 		_update_beam(combo_data, delta)
@@ -124,7 +149,6 @@ func _process_combo(delta: float) -> void:
 
 
 func _end_combo_session() -> void:
-	_combo_session_exhausted = true
 	_clear_combo_session()
 
 
