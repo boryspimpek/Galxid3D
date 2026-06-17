@@ -1,8 +1,8 @@
+MeshInstance3D
 Sprite3D
 CollisionShape3D
 VisibleOnScreenNotifier3D
 MultiMeshInstance3D
-MeshInstance3D
 Label
 TextureProgressBar
 ProgressBar

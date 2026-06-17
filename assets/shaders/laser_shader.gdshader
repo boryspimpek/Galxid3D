@@ -1,22 +1,4 @@
-[gd_scene format=3 uid="uid://chxau4p516mpu"]
-
-[ext_resource type="Script" uid="uid://cve6wgs3ih2hu" path="res://scenes/projectile/player_beam.gd" id="1_beam"]
-[ext_resource type="Texture2D" uid="uid://kjjblvylbups" path="res://assets/projectiles/red_laser.png" id="2_5jqb4"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_beam"]
-size = Vector3(2.0970254, 0.3, 30.016281)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jqb4"]
-albedo_texture = ExtResource("2_5jqb4")
-
-[sub_resource type="QuadMesh" id="QuadMesh_xrhut"]
-material = SubResource("StandardMaterial3D_5jqb4")
-size = Vector2(2, 30)
-center_offset = Vector3(0, 0, -15.56)
-orientation = 1
-
-[sub_resource type="Shader" id="Shader_5jqb4"]
-code = "// NOTE: Zoptymalizowany i ożywiony shader dla lasera przestrzennego (Godot 4.6+)
+// NOTE: Zoptymalizowany i ożywiony shader dla lasera przestrzennego (Godot 4.6+)
 shader_type spatial;
 render_mode blend_mix, depth_draw_opaque, cull_disabled, unshaded; // Wyłączyłem culling, żeby laser był widoczny z obu stron quada
 
@@ -45,7 +27,7 @@ void fragment() {
 	// 1. Losowe błyskawice / zniekształcenie krawędzi (Deformacja UV)
 	// Modulujemy oś X (szerokość) w zależności od pozycji Y i czasu
 	float distortion = sin(base_uv.y * distortion_frequency + TIME * distortion_speed) * distortion_strength;
-	// Dodatkowa, szybsza warstwa szumu dla efektu \"bzyczenia\" prądu
+	// Dodatkowa, szybsza warstwa szumu dla efektu "bzyczenia" prądu
 	distortion += cos(base_uv.y * (distortion_frequency * 1.5) - TIME * (distortion_speed * 1.3)) * (distortion_strength * 0.4);
 	
 	base_uv.x += distortion;
@@ -74,31 +56,4 @@ void fragment() {
 	
 	// Spłaszczamy alphę i bierzemy pod uwagę deformację
 	ALPHA = albedo.a * albedo_tex.a;
-}"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xrhut"]
-render_priority = 0
-shader = SubResource("Shader_5jqb4")
-shader_parameter/albedo = Color(1.8247963, 1.8247963, 1.8247963, 1)
-shader_parameter/texture_albedo = ExtResource("2_5jqb4")
-shader_parameter/scroll_speed = -0.49999954875000086
-shader_parameter/distortion_strength = 0.010000000475
-shader_parameter/distortion_frequency = 5.0000002375
-shader_parameter/distortion_speed = 15.0000007125
-shader_parameter/pulse_speed = 20.0
-shader_parameter/pulse_intensity = 0.50000002375
-shader_parameter/core_glow_speed = 0.0
-
-[node name="PlayerBeam" type="Area3D" unique_id=1517421005]
-collision_layer = 4
-collision_mask = 2
-script = ExtResource("1_beam")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1313357752]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.565207)
-shape = SubResource("BoxShape3D_beam")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=961263965]
-transform = Transform3D(2.265, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("QuadMesh_xrhut")
-surface_material_override/0 = SubResource("ShaderMaterial_xrhut")
+}

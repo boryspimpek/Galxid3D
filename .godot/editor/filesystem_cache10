@@ -679,10 +679,10 @@ power_14.png::CompressedTexture2D::3430228124061000291::1781620029::1781620029::
 fire bullet.png::CompressedTexture2D::2190448510149884845::1781434887::1781434954::1::::<><><>0<>0<>cb72425955c146f627deb13a309ca402<>res://.godot/imported/fire bullet.png-335a71cafad0284b24e46d36228a54b1.s3tc.ctex<*>res://.godot/imported/fire bullet.png-335a71cafad0284b24e46d36228a54b1.etc2.ctex::
 laser_beam.png::CompressedTexture2D::785327920299175099::1781709223::1781709267::1::::<><><>0<>0<>a5bb7bd1644f2ac0484c744a1bc2aaed<>res://.godot/imported/laser_beam.png-c1a5bcec416028ca0e9b13b4a2b3c9b2.s3tc.ctex<*>res://.godot/imported/laser_beam.png-c1a5bcec416028ca0e9b13b4a2b3c9b2.etc2.ctex::
 power projectile.png::CompressedTexture2D::7483363139827993163::1781464720::1781464913::1::::<><><>0<>0<>7ba6201d8c9a8033ac8fd9f5c15061e5<>res://.godot/imported/power projectile.png-43111c0eeee42ca5b0a2fb671fd5d833.s3tc.ctex<*>res://.godot/imported/power projectile.png-43111c0eeee42ca5b0a2fb671fd5d833.etc2.ctex::
-red_laser.png::CompressedTexture2D::721016686198622040::1781710339::1781710342::1::::<><><>0<>0<>c570aa994bd8a85913ed3f8e09e288fd<>res://.godot/imported/red_laser.png-fc505afa2acf1e66bfef4ed4ee9677bd.s3tc.ctex<*>res://.godot/imported/red_laser.png-fc505afa2acf1e66bfef4ed4ee9677bd.etc2.ctex::
-::res://assets/shaders/::1781699003
+red_laser.png::CompressedTexture2D::721016686198622040::1781713775::1781713777::1::::<><><>0<>0<>c570aa994bd8a85913ed3f8e09e288fd<>res://.godot/imported/red_laser.png-fc505afa2acf1e66bfef4ed4ee9677bd.s3tc.ctex<*>res://.godot/imported/red_laser.png-fc505afa2acf1e66bfef4ed4ee9677bd.etc2.ctex::
+::res://assets/shaders/::1781712356
 stylized.gdshader::Shader::5640836632797450115::1781432804::0::1::::<><><>0<>0<><>::
-toon.gdshader::Shader::7774145487081512526::1781699003::0::1::::<><><>0<>0<><>::
+toon.gdshader::Shader::7774145487081512526::1781712356::0::1::::<><><>0<>0<><>::
 ::res://assets/shield bar/::1781616167
 shield_00.png::CompressedTexture2D::5814443955268054770::1781616166::1781616167::1::::<><><>0<>0<>c87b46e4c1571a80926575986dd75e05<>res://.godot/imported/shield_00.png-696d67d9ddd98e4dc1787c635f1c39b1.ctex::
 shield_01.png::CompressedTexture2D::8404043402508286541::1781616166::1781616167::1::::<><><>0<>0<>2f24fc3d2c182d13b004db5975cb0d2c<>res://.godot/imported/shield_01.png-1c61edb63013f944c7f40ea45aab84ec.ctex::
@@ -834,13 +834,13 @@ DamageSystem.gd::GDScript::2289176751178949268::1781533344::0::1::::<>Node<><>0<
 Player.gd::GDScript::8437104023902913178::1781711247::0::1::::<>CharacterBody3D<><>0<>0<><>::
 Player.tscn::PackedScene::3730234445164567377::1781527130::0::1::::<><><>0<>0<><>::uid://dsg84un7uak4y::::res://scenes/player/Player.gd<>uid://7u5n3csl0xpc::::res://scenes/player/DamageSystem.gd<>uid://b00wb11f44ov::::res://scenes/player/WeaponSystem.gd<>uid://cta2hho80ojdn::::res://scenes/player/ShieldSystem.gd<>uid://pxcet508nmj3::::res://scenes/player/blaze_model.tscn
 ShieldSystem.gd::GDScript::6108081646694897207::1781618241::0::1::::<>Node<><>0<>0<><>::
-WeaponSystem.gd::GDScript::123355593652037597::1781711247::0::1::::<>Node<><>0<>0<><>::
-::res://scenes/projectile/::1781711543
+WeaponSystem.gd::GDScript::123355593652037597::1781711792::0::1::::<>Node<><>0<>0<><>::
+::res://scenes/projectile/::1781713742
 player_beam.gd::GDScript::6256986453272558886::1781710626::0::1::::<>Area3D<><>0<>0<><>::
 power_1.tscn::PackedScene::5270760878045313870::1781701024::0::1::::<><><>0<>0<><>::uid://cxso55pxdnnn3::::res://scenes/projectile/projectile.gd<>uid://deu85ruqmwoit::::res://assets/projectiles/power projectile.png
 power_2.tscn::PackedScene::4061135435519992803::1781707283::0::1::::<><><>0<>0<><>::uid://cxso55pxdnnn3::::res://scenes/projectile/projectile.gd<>uid://dvv0nphus7cj7::::res://assets/projectiles/01_green.png
 power_3.tscn::PackedScene::636199427922551397::1781707370::0::1::::<><><>0<>0<><>::uid://cxso55pxdnnn3::::res://scenes/projectile/projectile.gd<>uid://cn3pqyl6cxtb::::res://assets/projectiles/01_white.png
-power_4.tscn::PackedScene::5311681224822162266::1781711543::0::1::::<><><>0<>0<><>::uid://cve6wgs3ih2hu::::res://scenes/projectile/player_beam.gd<>uid://kjjblvylbups::::res://assets/projectiles/red_laser.png
+power_4.tscn::PackedScene::5311681224822162266::1781713742::0::1::::<><><>0<>0<><>::uid://cve6wgs3ih2hu::::res://scenes/projectile/player_beam.gd<>uid://kjjblvylbups::::res://assets/projectiles/red_laser.png
 projectile.gd::GDScript::6425248782272021058::1781706400::0::1::::<>Area3D<><>0<>0<><>::
 projectile_1.tscn::PackedScene::4830469851084639637::1781705360::0::1::::<><><>0<>0<><>::uid://cxso55pxdnnn3::::res://scenes/projectile/projectile.gd<>uid://6hcmqf7vlpeb::::res://assets/projectiles/fire bullet.png
 ::res://scenes/ui/::1781699572
