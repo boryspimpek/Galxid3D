@@ -4,8 +4,8 @@ extends Node
 # SCENE REGISTRY - Preload scen gameplayowych i resolver ścieżek pocisków gracza.
 # ============================================================================
 
-const DEFAULT_PLAYER_PROJECTILE := preload("res://scenes/projectile/Projectile.tscn")
-const COMBO_PLAYER_PROJECTILE_PATH := "res://scenes/projectile/ProjectileX.tscn"
+const DEFAULT_PLAYER_PROJECTILE := preload("res://scenes/projectile/projectile_1.tscn")
+const DEFAULT_COMBO_PROJECTILE := preload("res://scenes/projectile/power_1.tscn")
 
 var enemy_projectile_scene: PackedScene
 var pickup_scene: PackedScene
@@ -16,17 +16,30 @@ func _ready():
 	pickup_scene = preload("res://scenes/pickup/Pickup.tscn")
 
 func get_player_projectile_scene(projectile_id: int) -> PackedScene:
-	var id: int = int(projectile_id)
-	if id == 1:
-		return DEFAULT_PLAYER_PROJECTILE
+	return _resolve_player_projectile_scene(
+		projectile_id,
+		"projectile",
+		DEFAULT_PLAYER_PROJECTILE
+	)
 
-	var path: String
-	if id == 0:
-		path = COMBO_PLAYER_PROJECTILE_PATH
-	else:
-		path = "res://scenes/projectile/Projectile%d.tscn" % id
-		if not ResourceLoader.exists(path):
-			return DEFAULT_PLAYER_PROJECTILE
+
+func get_player_combo_projectile_scene(projectile_id: int) -> PackedScene:
+	return _resolve_player_projectile_scene(
+		projectile_id,
+		"power",
+		DEFAULT_COMBO_PROJECTILE
+	)
+
+
+func _resolve_player_projectile_scene(
+	projectile_id: int,
+	scene_prefix: String,
+	default_scene: PackedScene
+) -> PackedScene:
+	var id := maxi(int(projectile_id), 1)
+	var path := "res://scenes/projectile/%s_%d.tscn" % [scene_prefix, id]
+	if not ResourceLoader.exists(path):
+		return default_scene
 
 	if _player_projectile_scene_cache.has(path):
 		return _player_projectile_scene_cache[path]

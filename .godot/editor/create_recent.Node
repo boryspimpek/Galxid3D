@@ -1,14 +1,14 @@
+Sprite3D
+CollisionShape3D
+VisibleOnScreenNotifier3D
 MultiMeshInstance3D
 MeshInstance3D
 Label
 TextureProgressBar
 ProgressBar
-Sprite3D
 Camera3D
 TextureRect
 DirectionalLight3D
 MeshInstance2D
 Node3D
 PathFollow3D
-Path3D
-WorldEnvironment

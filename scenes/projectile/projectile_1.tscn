@@ -1,35 +1,35 @@
 [gd_scene format=3 uid="uid://ca26ern58wgjl"]
 
-[ext_resource type="Script" uid="uid://cxso55pxdnnn3" path="res://scenes/projectile/projectile.gd" id="1_opwgi"]
-[ext_resource type="Texture2D" uid="uid://6hcmqf7vlpeb" path="res://assets/projectiles/fire bullet.png" id="2_cm8q0"]
+[ext_resource type="Script" uid="uid://cxso55pxdnnn3" path="res://scenes/projectile/projectile.gd" id="1_6yce5"]
+[ext_resource type="Texture2D" uid="uid://6hcmqf7vlpeb" path="res://assets/projectiles/fire bullet.png" id="2_xio8u"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nskuf"]
-radius = 0.10058594
-height = 0.49856567
+radius = 0.43603516
+height = 2.9732742
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cm8q0"]
 transparency = 1
 shading_mode = 0
 albedo_color = Color(1.5720325, 1.5720325, 1.5720325, 1)
-albedo_texture = ExtResource("2_cm8q0")
+albedo_texture = ExtResource("2_xio8u")
 
 [node name="Projectile" type="Area3D" unique_id=1517421005]
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("1_opwgi")
+script = ExtResource("1_6yce5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1719570957]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.2672634e-11, -0.000289917)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_nskuf")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1682580241]
-aabb = AABB(-0.10498387, -0.102447845, -0.25066954, 0.20996775, 0.20489569, 0.5013391)
+aabb = AABB(-0.40667695, -0.102447845, -1.4953173, 0.8133539, 0.20489569, 2.9906347)
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=680446642]
-transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, 0.006, 0, 0.014)
+transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, 0.04, 0, 0.17)
 material_override = SubResource("StandardMaterial3D_cm8q0")
 axis = 1
-texture = ExtResource("2_cm8q0")
+texture = ExtResource("2_xio8u")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bx4ikphqjjb3p"]
+
+[ext_resource type="Script" uid="uid://cxso55pxdnnn3" path="res://scenes/projectile/projectile.gd" id="1_ef782"]
+[ext_resource type="Texture2D" uid="uid://dvv0nphus7cj7" path="res://assets/projectiles/01_green.png" id="2_sjh64"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n8s58"]
+height = 5.376587
+
+[node name="Projectile2" type="Area3D" unique_id=1517421005]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_ef782")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=918965328]
+transform = Transform3D(1.525, 0, 0, 0, 1.525, 0, 0, 0, 1.525, 0.125, 0, 0)
+axis = 1
+texture = ExtResource("2_sjh64")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1097666259]
+aabb = AABB(-0.5681691, -1, -4.115444, 1.1363382, 2, 8.230888)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=769084988]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.37963867, 0.031555176)
+shape = SubResource("CapsuleShape3D_n8s58")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

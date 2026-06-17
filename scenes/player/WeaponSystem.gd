@@ -77,7 +77,7 @@ func shoot_combo() -> void:
 
 	player.power -= combo_data.power_use
 	player.notify_power_changed()
-	create_projectile(combo_data.projectile, combo_data.damage, combo_data.velocity)
+	create_projectile(combo_data.projectile, combo_data.damage, combo_data.velocity, true)
 	_spawn_muzzle_flash(combo_data.velocity)
 	SoundManager.play_weapon_sound(weapon_data.sound)
 	_combo_shot_timer = combo_data.cooldown
@@ -107,8 +107,10 @@ func shoot():
 	SoundManager.play_weapon_sound(weapon_data.sound)
 	fire_timer = power_level_data.fire_rate
 
-func create_projectile(projectile_id: int, damage: int, velocity: Vector3):
-	var projectile_scene = SceneRegistry.get_player_projectile_scene(projectile_id)
+func create_projectile(projectile_id: int, damage: int, velocity: Vector3, combo_shot: bool = false):
+	var projectile_scene := SceneRegistry.get_player_combo_projectile_scene(projectile_id) \
+		if combo_shot \
+		else SceneRegistry.get_player_projectile_scene(projectile_id)
 	var projectile = projectile_scene.instantiate()
 	get_tree().current_scene.add_child(projectile)
 	projectile.global_position = muzzle.global_position
