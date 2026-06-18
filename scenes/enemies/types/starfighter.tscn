@@ -11,8 +11,7 @@
 script = ExtResource("4_weapon_data")
 fire_rate = 2.5
 fire_on_activate = true
-projectile_velocity = Vector3(0, 0, 5)
-aim = 10
+projectile_velocity = Vector3(0, 0, 10)
 sound = 3
 
 [sub_resource type="Resource" id="Resource_a7w8t"]
@@ -20,7 +19,7 @@ script = ExtResource("3_q8gre")
 
 [node name="starfighter" unique_id=1897743314 instance=ExtResource("1_3ym5w")]
 transform = Transform3D(1.5, 0, 0, 0, 1.4672215, 0.31186754, 0, -0.31186754, 1.4672215, 0, 0, 0)
-armor = 12
+armor = 8
 weapon_data = SubResource("Weapon_starfighter")
 movement_data = SubResource("Resource_a7w8t")
 value = 20

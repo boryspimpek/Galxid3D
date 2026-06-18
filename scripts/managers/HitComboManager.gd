@@ -21,5 +21,5 @@ func spend_combo() -> void:
 	combo_changed.emit(0)
 
 
-func _on_scene_changed(_scene: Node) -> void:
+func _on_scene_changed() -> void:
 	spend_combo()

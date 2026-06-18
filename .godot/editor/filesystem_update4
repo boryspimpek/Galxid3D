@@ -25,3 +25,4 @@ res://scenes/enemies/types/starfighter.tscn
 res://scenes/enemies/formations/starfighter_strike.tscn
 res://scenes/enemies/base/EnemyPath3D.gd
 res://scenes/enemies/formations/starfighter_strike1.tscn
+res://scripts/managers/HitComboManager.gd
