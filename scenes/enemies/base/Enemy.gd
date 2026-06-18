@@ -34,7 +34,8 @@ var _facing: EnemyFacing
 @export var despawn_off_screen: bool = true
 
 var _screen_notifier: VisibleOnScreenNotifier3D
-var _scroll_activation_z: float = -17.0
+var _scroll_activation_z: float
+var _scroll_activation_ready: bool = false
 
 signal combat_activated
 signal combat_deactivated
@@ -44,8 +45,11 @@ func _ready() -> void:
 	physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_ON
 
 	var play_area := DataManager.get_play_area_config()
-	if play_area:
+	if play_area == null:
+		push_error("%s: brak PlayAreaConfig — aktywacja po scrollu wyłączona." % name)
+	else:
 		_scroll_activation_z = play_area.scroll_activation_z
+		_scroll_activation_ready = true
 
 	add_to_group("enemies")
 
@@ -102,6 +106,8 @@ func activate_combat() -> void:
 
 
 func get_scroll_distance_remaining() -> float:
+	if not _scroll_activation_ready:
+		return 0.0
 	return _scroll_activation_z - global_position.z
 
 
@@ -223,6 +229,8 @@ func _find_facing() -> EnemyFacing:
 
 
 func _refresh_activation() -> void:
+	if not _scroll_activation_ready:
+		return
 	if global_position.z >= _scroll_activation_z:
 		_activate()
 	else:

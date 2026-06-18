@@ -1,8 +1,8 @@
 extends Path3D
 class_name EnemyPath3D
 
-## SCENE_SCROLL_LINE: start, gdy punkt aktywacji minie scroll_activation_z.
-## Punkt: węzeł „ActivationOrigin”, rodzic Node3D (root sceny) lub ten Path3D.
+## SCENE_SCROLL_LINE: start, gdy punkt aktywacji minie scroll_activation_z (PlayAreaConfig).
+## Punkt aktywacji: węzeł „ActivationOrigin”, rodzic Node3D (root sceny) lub ten Path3D.
 ## Dla packed scene użyj root Node3D + opcjonalny ActivationOrigin (jak animation.gd).
 ## ENEMY_SCROLL_LINE: każdy wróg aktywuje się po swojej pozycji Z (domyślne fale).
 enum ActivationMode {
@@ -16,9 +16,6 @@ const ACTIVATION_ORIGIN_NAME := "ActivationOrigin"
 
 @export_group("Aktywacja")
 @export var activation_mode: ActivationMode = ActivationMode.ENEMY_SCROLL_LINE
-## Opcjonalnie: inny węzeł niż ActivationOrigin / rodzic Node3D (ścieżka od tego Path3D).
-@export var activation_origin: NodePath
-@export var warn_if_active_on_spawn: bool = true
 
 @export_group("Ruch")
 @export var speed: float = 6.0 # jednostki 3D na sekundę wzdłuż krzywej
@@ -40,7 +37,7 @@ const ACTIVATION_ORIGIN_NAME := "ActivationOrigin"
 
 var _awaiting_scene_activation: bool = false
 var _wave_activated: bool = false
-var _scroll_activation_z: float = -17.0
+var _scroll_activation_z: float
 
 
 func _ready() -> void:
@@ -57,8 +54,10 @@ func is_wave_activated() -> bool:
 
 func _setup_activation() -> void:
 	var play_area := DataManager.get_play_area_config()
-	if play_area:
-		_scroll_activation_z = play_area.scroll_activation_z
+	if play_area == null:
+		push_error("%s: brak PlayAreaConfig — aktywacja fali wyłączona." % name)
+		return
+	_scroll_activation_z = play_area.scroll_activation_z
 
 	if activation_mode != ActivationMode.SCENE_SCROLL_LINE:
 		return
@@ -68,13 +67,12 @@ func _setup_activation() -> void:
 		if enemy.is_combat_active():
 			enemy._deactivate()
 
-	if warn_if_active_on_spawn:
-		var remaining: float = _scroll_activation_z - _get_activation_origin().global_position.z
-		if remaining <= 0.0:
-			push_warning(
-				"%s: punkt aktywacji już za linią (%.1f). Przesuń root sceny lub ActivationOrigin w -Z."
-				% [name, remaining]
-			)
+	var remaining: float = _scroll_activation_z - _get_activation_origin().global_position.z
+	if remaining <= 0.0:
+		push_warning(
+			"%s: punkt aktywacji już za linią (%.1f). Przesuń root sceny lub ActivationOrigin w -Z."
+			% [name, remaining]
+		)
 
 	_awaiting_scene_activation = true
 	_wave_activated = false
@@ -89,11 +87,6 @@ func _process(_delta: float) -> void:
 
 
 func _get_activation_origin() -> Node3D:
-	if not activation_origin.is_empty():
-		var custom := get_node_or_null(activation_origin) as Node3D
-		if custom:
-			return custom
-
 	var parent := get_parent()
 	if parent:
 		var marker := parent.get_node_or_null(ACTIVATION_ORIGIN_NAME) as Node3D

@@ -1,4 +1,5 @@
 Node3D
+Node
 PathFollow3D
 EnemyPath3D
 Path3D
@@ -11,5 +12,3 @@ Label
 TextureProgressBar
 ProgressBar
 Camera3D
-TextureRect
-DirectionalLight3D
