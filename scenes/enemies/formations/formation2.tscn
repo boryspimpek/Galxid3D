@@ -7,7 +7,7 @@
 
 [sub_resource type="Curve3D" id="Curve3D_lu1cq"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.031471252, -0.122976065, 0.0071525574, 4.5376186, -0.0017089844, -1.3727252, -4.5376186, 0.0017089844, 1.3727252, -28.305305, 0.0012207031, 0.7939043, 1.6015167, 0.008300781, -5.8340836, -1.6015167, -0.008300781, 5.8340836, -34.825752, 0.014526367, 11.508789, 0, 0, 0, 0, 0, 0, -35.842674, 0.00012207031, 32.52525),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.031471252, -0.122976065, 0.0071525574, 0, 0, 0, 0, 0, 0, -20.15082, -0.0031738281, 0.0046920776, 2.8812943, 0.008300781, -5.1040044, -2.8812943, -0.008300781, 5.1040044, -34.96248, 0.014526367, 4.8165293, 0, 0, 0, 0, 0, 0, -36.773575, 0.00012207031, 32.22997),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
@@ -20,16 +20,18 @@ curve = SubResource("Curve3D_lu1cq")
 script = ExtResource("1_cswtf")
 activation_mode = 0
 speed = 10.0
+bank_enabled = true
+bank_lookahead = 2.0
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path" unique_id=310916544]
-transform = Transform3D(0.024678366, 0.0051570977, 0.99962497, 0, 0.9999738, -0.0051584407, -0.99965453, 0.00012731273, 0.024677638, -0.031471252, -0.122976065, 0.0071525574)
+transform = Transform3D(0.00012225985, 0.005954388, 0.99992335, 0, 0.9999682, -0.0059541212, -0.9999578, 7.280134e-07, 0.00012225565, -0.031471252, -0.122976065, 0.0071525574)
 loop = false
 script = ExtResource("2_bfune")
 
 [node name="blaze 3" parent="Path/PathFollow3D" unique_id=1897743314 instance=ExtResource("3_cswtf")]
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Path" unique_id=2110210760]
-transform = Transform3D(0.012282291, 0.0049773785, 0.999866, 6.2843945e-05, 0.99997276, -0.004978371, -0.99988246, 0.00012399042, 0.012281776, -5.030532, -0.09771883, -0.07933662)
+transform = Transform3D(0.0001222594, 0.005954378, 0.9999345, -4.237332e-08, 0.9999664, -0.0059541883, -0.99995613, 6.856369e-07, 0.000122257, -5.0313215, -0.09320406, 0.006541105)
 progress = 5.0
 loop = false
 script = ExtResource("2_bfune")
@@ -37,7 +39,7 @@ script = ExtResource("2_bfune")
 [node name="blaze 3" parent="Path/PathFollow3D2" unique_id=599822296 instance=ExtResource("3_cswtf")]
 
 [node name="PathFollow3D3" type="PathFollow3D" parent="Path" unique_id=956187911]
-transform = Transform3D(0.0021250658, 0.004830144, 0.99994594, 0.00011266167, 0.99997604, -0.0048302594, -0.99995065, 0.00012292941, 0.0021245116, -10.030376, -0.07318397, -0.11615896)
+transform = Transform3D(0.00012237801, 0.0059543923, 0.9999405, -4.3071573e-08, 0.9999688, -0.0059542237, -0.99995136, 6.8564987e-07, 0.00012237695, -10.031297, -0.06343133, 0.005929637)
 progress = 10.0
 loop = false
 script = ExtResource("2_bfune")
@@ -45,7 +47,7 @@ script = ExtResource("2_bfune")
 [node name="blaze 3" parent="Path/PathFollow3D3" unique_id=70216865 instance=ExtResource("3_cswtf")]
 
 [node name="PathFollow3D4" type="PathFollow3D" parent="Path" unique_id=914193793]
-transform = Transform3D(-0.011485376, 0.004632853, 0.9998771, 0.00017705439, 0.9999813, -0.0046309475, -0.9999023, 0.00012385313, -0.011485906, -15.030284, -0.04949749, -0.094930425)
+transform = Transform3D(0.00012226067, 0.005954418, 0.9999345, -4.260658e-08, 0.9999732, -0.005954188, -0.99996644, 6.854087e-07, 0.000122257, -15.03129, -0.03365847, 0.005318166)
 progress = 15.0
 loop = false
 script = ExtResource("2_bfune")
@@ -53,7 +55,7 @@ script = ExtResource("2_bfune")
 [node name="blaze 3" parent="Path/PathFollow3D4" unique_id=153749245 instance=ExtResource("3_cswtf")]
 
 [node name="PathFollow3D5" type="PathFollow3D" parent="Path" unique_id=1922970098]
-transform = Transform3D(-0.033906672, 0.0043076277, 0.9993603, 0.0002772199, 0.99994475, -0.0043006605, -0.99937224, 0.00013122961, -0.033907466, -20.02897, -0.027081564, 0.012802604)
+transform = Transform3D(0.0001222581, 0.0059541906, 0.9999249, -4.7494872e-08, 0.999935, -0.0059541306, -0.9999457, 6.8049314e-07, 0.00012225583, -20.037317, -0.0038496857, 0.004705958)
 progress = 20.0
 loop = false
 script = ExtResource("2_bfune")

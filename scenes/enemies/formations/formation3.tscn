@@ -7,7 +7,7 @@
 
 [sub_resource type="Curve3D" id="Curve3D_lu1cq"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.0027618408, -0.0020946413, 0.0072021484, 4.680992, 0, -0.031375885, -4.680992, 0, 0.031375885, -42.02958, -0.0020751953, 23.12333, 2.080284, 0, 5.5633335, -2.080284, 0, -5.5633335, -58.52027, -0.0020751953, 13.8720255, 0, 0, 0, 0, 0, 0, -59.54471, -0.0020751953, -1.153038),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.0027618408, -0.0020946413, 0.0072021484, 2.854473, 0, -0.105083466, -2.854473, 0, 0.105083466, -42.02958, -0.0020751953, 23.12333, 1.0455971, 0, 2.137988, -1.0455971, 0, -2.137988, -58.52027, -0.0020751953, 13.8720255, 0, 0, 0, 0, 0, 0, -59.54471, -0.0020751953, -1.153038),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
@@ -20,16 +20,18 @@ curve = SubResource("Curve3D_lu1cq")
 script = ExtResource("1_knp4y")
 activation_mode = 0
 speed = 10.0
+bank_enabled = true
+bank_lookahead = 2.0
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path" unique_id=310916544]
-transform = Transform3D(-0.52577287, 3.7674673e-07, 0.8505734, -1.421031e-14, 0.99999386, -4.4289462e-07, -0.8505798, -2.328802e-07, -0.52576894, -0.0027618408, -0.0020946413, 0.0072021484)
+transform = Transform3D(-0.50648457, 3.6906425e-07, 0.86219597, 0, 0.99999386, -4.2801315e-07, -0.86220294, -2.167997e-07, -0.5064805, -0.0027618408, -0.0020946413, 0.0072021484)
 loop = false
 script = ExtResource("2_pyold")
 
 [node name="blaze 3" parent="Path/PathFollow3D" unique_id=1897743314 instance=ExtResource("3_cswtf")]
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Path" unique_id=2110210760]
-transform = Transform3D(-0.5195883, 3.722489e-07, 0.8543644, -3.1917233e-09, 0.99998826, -4.376106e-07, -0.8543622, -2.301224e-07, -0.5195896, -4.267254, -0.0020924434, 2.6170068)
+transform = Transform3D(-0.50316906, 3.664323e-07, 0.8641345, -1.6360735e-09, 0.99998826, -4.249645e-07, -0.86413187, -2.1526048e-07, -0.5031706, -4.319673, -0.0020925107, 2.5294015)
 progress = 5.0
 loop = false
 script = ExtResource("2_pyold")
@@ -37,7 +39,7 @@ script = ExtResource("2_pyold")
 [node name="blaze 3" parent="Path/PathFollow3D2" unique_id=599822296 instance=ExtResource("3_cswtf")]
 
 [node name="PathFollow3D3" type="PathFollow3D" parent="Path" unique_id=956187911]
-transform = Transform3D(-0.51546675, 3.692636e-07, 0.85684985, -5.2836233e-09, 0.99999356, -4.3409995e-07, -0.8568213, -2.2831682e-07, -0.5154839, -8.545705, -0.0020902639, 5.204925)
+transform = Transform3D(-0.50095594, 3.6468828e-07, 0.86541146, -2.7136502e-09, 0.99999356, -4.2294045e-07, -0.8653829, -2.1424783e-07, -0.5009725, -8.643937, -0.0020903908, 5.039983)
 progress = 10.0
 loop = false
 script = ExtResource("2_pyold")
@@ -45,7 +47,7 @@ script = ExtResource("2_pyold")
 [node name="blaze 3" parent="Path/PathFollow3D3" unique_id=70216865 instance=ExtResource("3_cswtf")]
 
 [node name="PathFollow3D4" type="PathFollow3D" parent="Path" unique_id=914193793]
-transform = Transform3D(-0.51111823, 3.660781e-07, 0.85946435, -7.490459e-09, 0.99999696, -4.303512e-07, -0.85949534, -2.2641149e-07, -0.51109976, -12.836589, -0.0020881023, 7.7717304)
+transform = Transform3D(-0.498643, 3.6282782e-07, 0.86675805, -3.8557415e-09, 0.99999696, -4.2077937e-07, -0.8667891, -2.1317446e-07, -0.49862513, -12.974537, -0.002088281, 7.539229)
 progress = 15.0
 loop = false
 script = ExtResource("2_pyold")
@@ -53,7 +55,7 @@ script = ExtResource("2_pyold")
 [node name="blaze 3" parent="Path/PathFollow3D4" unique_id=153749245 instance=ExtResource("3_cswtf")]
 
 [node name="PathFollow3D5" type="PathFollow3D" parent="Path" unique_id=1922970098]
-transform = Transform3D(-0.50597906, 3.6233598e-07, 0.86249244, -1.00377e-08, 0.99995315, -4.2597267e-07, -0.86249375, -2.2420065e-07, -0.5059783, -17.141466, -0.0020859612, 10.314958)
+transform = Transform3D(-0.49588686, 3.6063562e-07, 0.868332, -5.180733e-09, 0.99995315, -4.1825817e-07, -0.86833245, -2.1191762e-07, -0.49588662, -17.31236, -0.0020861835, 10.025852)
 progress = 20.0
 loop = false
 script = ExtResource("2_pyold")

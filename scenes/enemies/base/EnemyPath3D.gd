@@ -27,7 +27,7 @@ const ACTIVATION_ORIGIN_NAME := "ActivationOrigin"
 ## Wymusza "przechył" (roll/bank) na zakrętach nawet dla płaskiej ścieżki (top-down).
 @export var bank_enabled: bool = false
 ## Maksymalny przechył w stopniach.
-@export_range(0.0, 89.0, 0.1) var bank_max_degrees: float = 45.0
+@export_range(0.0, 89.0, 0.1) var bank_max_degrees: float = 89.0
 ## Jak mocno bank reaguje na zakręt (większe = mocniej).
 @export_range(0.0, 10.0, 0.01) var bank_strength: float = 2.0
 ## Dystans (w jednostkach progress) użyty do estymacji skrętu.

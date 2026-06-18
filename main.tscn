@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://c2vk2d14w4myt" path="res://scenes/enemies/formations/formation8.tscn" id="15_ok6jj"]
 [ext_resource type="PackedScene" uid="uid://cdxl62tlyuy08" path="res://scenes/enemies/formations/formation5.tscn" id="15_yaehf"]
 [ext_resource type="PackedScene" uid="uid://c1g448hbitcf1" path="res://scenes/enemies/formations/starfighter_strike1.tscn" id="16_82xsv"]
+[ext_resource type="PackedScene" uid="uid://dohxvkx4dbxqp" path="res://scenes/enemies/formations/formation9.tscn" id="16_getpj"]
 [ext_resource type="Script" uid="uid://dtprhja8af0to" path="res://scripts/resources/enemies/movement/LinearMoveData.gd" id="19_d13ii"]
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="22_d2t1y"]
 
@@ -119,7 +120,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_cegan")
 [node name="LevelScroll" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=2113647570]
 script = ExtResource("7_xuqvo")
 scroll_speed = 6.0
-start_offset_z = 100.0
 
 [node name="LevelScrollRuler" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=552135128 instance=ExtResource("8_qsp4k")]
 z_min = -600.0
@@ -129,18 +129,10 @@ major_tick_every = 1
 scroll_speed = 6.0
 
 [node name="Blaze Formations" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1725707103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 92.73052)
 
 [node name="Formation1" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=1730415998 instance=ExtResource("9_kq58d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, -113.993)
-
-[node name="Formation9" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=456422686 instance=ExtResource("9_kq58d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, -166.0924)
-
-[node name="Formation10" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=1673497605 instance=ExtResource("9_kq58d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, -221.54585)
-
-[node name="Formation11" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=1154546401 instance=ExtResource("9_kq58d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, -293.3223)
 
 [node name="Formation2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=2052678689 instance=ExtResource("10_seu75")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, -138.004)
@@ -148,56 +140,65 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, -138.004)
 [node name="Formation3" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=1007223106 instance=ExtResource("11_htxhm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, -168.025)
 
-[node name="Formation2_1" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=2092377521 instance=ExtResource("10_seu75")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.534943, 0, -203.08551)
-
-[node name="Formation2_3" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=2013085379 instance=ExtResource("10_seu75")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.534943, 0, -264.12903)
-
-[node name="Formation2_4" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=1991416168 instance=ExtResource("10_seu75")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.534943, 0, -319.5825)
-
 [node name="Formation4" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=2046449321 instance=ExtResource("12_jq2sk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.030579, 0, -264.61053)
-
-[node name="Formation1_1" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=841152969 instance=ExtResource("9_kq58d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.79084, 0, -351.5439)
-
-[node name="Formation2_2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=992575544 instance=ExtResource("10_seu75")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.534943, 0, -383.95465)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.030579, 0, -217.75948)
 
 [node name="Formation5" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=453809063 instance=ExtResource("15_yaehf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.263128, 0, -398.4262)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.066885, 0, -317.93845)
 
 [node name="Formation6" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=1260110716 instance=ExtResource("13_4k2k6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.063099, 0, -473.99506)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.959248, 0, -375.48764)
 
 [node name="Formation7" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=214272725 instance=ExtResource("14_0rl1p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.876265, 0, -507.1468)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.01193, 0, -450.04617)
 
 [node name="Formation8" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=488993475 instance=ExtResource("15_ok6jj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.125921, 0, -566.64087)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.133879, 0, -407.0175)
+
+[node name="Formation9" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Blaze Formations" unique_id=71393993 instance=ExtResource("16_getpj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.116978, 0, -262.4403)
 
 [node name="voyager" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1670029183 instance=ExtResource("13_2cqfq")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 7.312557, 0, -173.4498)
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 7.312557, 0, -80.71928)
 movement_data = SubResource("Resource_yaehf")
 
 [node name="voyager2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1897743314 instance=ExtResource("13_2cqfq")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -12.378208, 0, -246.58694)
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -12.378208, 0, -153.85641)
 movement_data = SubResource("Resource_yaehf")
 
-[node name="Node3D" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1546265027]
+[node name="voyager3" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=137749597 instance=ExtResource("13_2cqfq")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 13.417873, 0, -232.40042)
+movement_data = SubResource("Resource_yaehf")
 
-[node name="starfighter_strike1_1" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Node3D" unique_id=1434653841 instance=ExtResource("16_82xsv")]
+[node name="voyager4" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1962502028 instance=ExtResource("13_2cqfq")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -14.8790245, 0, -232.40042)
+movement_data = SubResource("Resource_yaehf")
+
+[node name="voyager5" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=783720756 instance=ExtResource("13_2cqfq")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 12.688107, 0, -348.66995)
+movement_data = SubResource("Resource_yaehf")
+
+[node name="voyager6" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1416887312 instance=ExtResource("13_2cqfq")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -13.753834, 0, -329.54175)
+movement_data = SubResource("Resource_yaehf")
+
+[node name="voyager7" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=814178974 instance=ExtResource("13_2cqfq")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 2.3738518, 0, -336.85547)
+movement_data = SubResource("Resource_yaehf")
+
+[node name="Starfighter Strike" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1546265027]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 92.73052)
+
+[node name="starfighter_strike1_1" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Starfighter Strike" unique_id=1434653841 instance=ExtResource("16_82xsv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.25161, 0, -145.0453)
 
-[node name="starfighter_strike1_2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Node3D" unique_id=1648438408 instance=ExtResource("16_82xsv")]
+[node name="starfighter_strike1_2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Starfighter Strike" unique_id=1648438408 instance=ExtResource("16_82xsv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.705622, 0, -217.84885)
 
-[node name="starfighter_strike1_3" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Node3D" unique_id=52990539 instance=ExtResource("16_82xsv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1665888, 0, -439.08408)
+[node name="starfighter_strike1_3" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Starfighter Strike" unique_id=52990539 instance=ExtResource("16_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7390375, 0, -296.97614)
 
-[node name="starfighter_strike1_4" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Node3D" unique_id=1667256007 instance=ExtResource("16_82xsv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.093966, 0, -540.8874)
+[node name="starfighter_strike1_4" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Starfighter Strike" unique_id=1667256007 instance=ExtResource("16_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.093966, 0, -373.6781)
 
 [node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("22_d2t1y")]

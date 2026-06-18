@@ -47,35 +47,32 @@ velocity = Vector3(0, 0, -60)
 script = ExtResource("2_pl")
 velocity = Vector3(0, 0, -60)
 
-[sub_resource type="Resource" id="special_1"]
-script = ExtResource("3_special")
-damage = 10
-power_use = 80
-velocity = Vector3(0, 0, -25)
-cooldown = 0.5
-
-[sub_resource type="Resource" id="Resource_soco3"]
+[sub_resource type="Resource" id="Resource_uqjdg"]
 script = ExtResource("1_b7n3p")
+metadata/_custom_type_script = "uid://bingydioab5yk"
 
-[sub_resource type="Resource" id="Resource_ohelg"]
+[sub_resource type="Resource" id="Resource_2t4l7"]
 script = ExtResource("1_b7n3p")
 angle_deg = 20.0
 spawn_offset = Vector3(1, 0, 0)
+metadata/_custom_type_script = "uid://bingydioab5yk"
 
-[sub_resource type="Resource" id="Resource_e8eac"]
+[sub_resource type="Resource" id="Resource_os848"]
 script = ExtResource("1_b7n3p")
 angle_deg = -20.0
 spawn_offset = Vector3(-1, 0, 0)
+metadata/_custom_type_script = "uid://bingydioab5yk"
 
-[sub_resource type="Resource" id="Resource_l2tde"]
+[sub_resource type="Resource" id="special_1"]
 script = ExtResource("3_special")
+power_use = 25
 projectile = 2
-pellets = Array[ExtResource("1_b7n3p")]([SubResource("Resource_soco3"), SubResource("Resource_ohelg"), SubResource("Resource_e8eac")])
+pellets = Array[ExtResource("1_b7n3p")]([SubResource("Resource_uqjdg"), SubResource("Resource_2t4l7"), SubResource("Resource_os848")])
 
 [sub_resource type="Resource" id="Resource_b7n3p"]
 script = ExtResource("3_special")
 damage = 5
-power_use = 40
+power_use = 20
 cooldown = 0.05
 projectile = 3
 
@@ -102,7 +99,6 @@ power_level_8 = SubResource("pl_8")
 power_level_9 = SubResource("pl_9")
 power_level_10 = SubResource("pl_10")
 special_shot_1 = SubResource("special_1")
-special_shot_2 = SubResource("Resource_l2tde")
 special_shot_3 = SubResource("Resource_b7n3p")
 special_shot_4 = SubResource("Resource_b7xww")
 muzzle_flash_scene = ExtResource("1_jns5a")
