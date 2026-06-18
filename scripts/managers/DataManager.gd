@@ -5,6 +5,8 @@ var ships_cache: Array = []
 var weapons_cache: Array = []
 var generators_cache: Array = []
 
+const DataCatalogClass = preload("res://scripts/resources/DataCatalog.gd")
+const DATA_CATALOG_PATH := "res://data/data_catalog.tres"
 const PLAY_AREA_CONFIG_PATH := "res://data/play_area/default.tres"
 var play_area_config: PlayAreaConfig
 
@@ -18,39 +20,26 @@ func _load_all():
 		return
 	_loaded = true
 
-	ships_cache = _load_tres_from_dir("res://data/ships", ShipData)
+	var catalog := load(DATA_CATALOG_PATH) as DataCatalogClass
+	if catalog == null:
+		push_error("DataManager: Nie załadowano katalogu danych: ", DATA_CATALOG_PATH)
+		return
+
+	ships_cache = catalog.ships.duplicate()
 	ships_cache.sort_custom(func(a, b): return a.ship_index < b.ship_index)
 	print("DataManager: Załadowano ", ships_cache.size(), " statków")
 
-	weapons_cache = _load_tres_from_dir("res://data/weapons", WeaponData)
+	weapons_cache = catalog.weapons.duplicate()
 	weapons_cache.sort_custom(func(a, b): return a.weapon_index < b.weapon_index)
 	print("DataManager: Załadowano ", weapons_cache.size(), " broni")
 
-	generators_cache = _load_tres_from_dir("res://data/generators", GeneratorData)
+	generators_cache = catalog.generators.duplicate()
 	generators_cache.sort_custom(func(a, b): return a.generator_index < b.generator_index)
 	print("DataManager: Załadowano ", generators_cache.size(), " generatorów")
 
 	play_area_config = load(PLAY_AREA_CONFIG_PATH) as PlayAreaConfig
 	if play_area_config == null:
 		push_error("DataManager: Nie załadowano PlayAreaConfig: ", PLAY_AREA_CONFIG_PATH)
-
-
-func _load_tres_from_dir(dir_path: String, type) -> Array:
-	var cache: Array = []
-	var dir := DirAccess.open(dir_path)
-	if dir == null:
-		push_error("DataManager: Nie można otworzyć katalogu: ", dir_path)
-		return cache
-
-	for file_name in dir.get_files():
-		if not file_name.ends_with(".tres"):
-			continue
-		var path: String = dir_path.path_join(file_name)
-		var res = load(path)
-		if res != null and is_instance_of(res, type):
-			cache.append(res)
-
-	return cache
 
 func get_ship_by_id(id: int) -> ShipData:
 	for ship in ships_cache:
