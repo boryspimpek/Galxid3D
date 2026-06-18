@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 const HEALTH_BAR_PATH := "res://assets/health bar/health_%02d.png"
-const SHIELD_BAR_PATH := "res://assets/shield bar/shield_%02d.png"
 const POWER_BAR_PATH := "res://assets/power bar/power_%02d.png"
 const POWER_PER_LEVEL := 50
 const POWER_BAR_MAX_INDEX := 14
@@ -13,17 +12,14 @@ const POWER_BAR_MAX_INDEX := 14
 @export var combo_hide_duration: float = 0.24
 
 @onready var _health_bar: TextureRect = %HealthBar
-@onready var _shield_bar: TextureRect = %ShieldBar
 @onready var _power_bar: TextureRect = %PowerBar
 @onready var _score_label: Label = %ScoreValue
 @onready var _game_over: Control = %GameOver
 @onready var _combo_label: Label = %ComboLabel
 
 var _health_textures: Array[Texture2D] = []
-var _shield_textures: Array[Texture2D] = []
 var _power_textures: Array[Texture2D] = []
 var _player: CharacterBody3D
-var _shield_system: Node
 var _player_bound: bool = false
 var _combo_tween: Tween
 var _combo_label_settings: LabelSettings
@@ -55,17 +51,13 @@ func _process(_delta: float) -> void:
 
 func _load_status_bar_textures() -> void:
 	_health_textures.clear()
-	_shield_textures.clear()
 	_power_textures.clear()
 	for index in range(11):
 		_health_textures.append(load(HEALTH_BAR_PATH % index) as Texture2D)
-		_shield_textures.append(load(SHIELD_BAR_PATH % index) as Texture2D)
 	for index in range(POWER_BAR_MAX_INDEX + 1):
 		_power_textures.append(load(POWER_BAR_PATH % index) as Texture2D)
 	if _health_textures.size() > 0:
 		_health_bar.texture = _health_textures[0]
-	if _shield_textures.size() > 0:
-		_shield_bar.texture = _shield_textures[0]
 	if _power_textures.size() > 0:
 		_power_bar.texture = _power_textures[0]
 
@@ -78,25 +70,15 @@ func _bind_player() -> void:
 		return
 
 	_player = player
-	_shield_system = _player.get_node_or_null("ShieldSystem")
 	_player.score_changed.connect(_on_score_changed)
 	_player.armor_changed.connect(_on_armor_changed)
 	_player.power_changed.connect(_on_power_changed)
-	if _shield_system:
-		_shield_system.shield_changed.connect(_on_shield_changed)
 
 	_on_score_changed(_player.score)
 	_on_armor_changed(_player.armor, _player.max_armor)
 	_on_power_changed(_player.power, _player.max_power)
-	if _shield_system:
-		call_deferred("_refresh_shield_bar")
 	_player_bound = true
 	set_process(false)
-
-
-func _refresh_shield_bar() -> void:
-	if _shield_system:
-		_on_shield_changed(_shield_system.shield, _shield_system.shield_max)
 
 
 func show_game_over() -> void:
@@ -131,17 +113,6 @@ func _on_armor_changed(current: int, _maximum: int) -> void:
 	var index := clampi(current, 0, 10)
 	if index < _health_textures.size():
 		_health_bar.texture = _health_textures[index]
-
-
-func _on_shield_changed(current: float, maximum: float) -> void:
-	var has_shield := maximum > 0.0
-	_shield_bar.visible = has_shield
-	if not has_shield:
-		return
-
-	var index := clampi(int(round(current)), 0, 10)
-	if index < _shield_textures.size():
-		_shield_bar.texture = _shield_textures[index]
 
 
 func _on_power_changed(current: float, _maximum: float) -> void:

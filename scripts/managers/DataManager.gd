@@ -3,7 +3,6 @@ extends Node
 # Cache danych
 var ships_cache: Array = []
 var weapons_cache: Array = []
-var shields_cache: Array = []
 var generators_cache: Array = []
 
 const PLAY_AREA_CONFIG_PATH := "res://data/play_area/default.tres"
@@ -26,10 +25,6 @@ func _load_all():
 	weapons_cache = _load_tres_from_dir("res://data/weapons", WeaponData)
 	weapons_cache.sort_custom(func(a, b): return a.weapon_index < b.weapon_index)
 	print("DataManager: Załadowano ", weapons_cache.size(), " broni")
-
-	shields_cache = _load_tres_from_dir("res://data/shields", ShieldData)
-	shields_cache.sort_custom(func(a, b): return a.shield_index < b.shield_index)
-	print("DataManager: Załadowano ", shields_cache.size(), " tarcz")
 
 	generators_cache = _load_tres_from_dir("res://data/generators", GeneratorData)
 	generators_cache.sort_custom(func(a, b): return a.generator_index < b.generator_index)
@@ -71,13 +66,6 @@ func get_weapon_by_id(id: int) -> WeaponData:
 	push_error("DataManager: Nie znaleziono broni o ID=", id)
 	return null
 
-func get_shield_by_id(id: int) -> ShieldData:
-	for shield in shields_cache:
-		if shield.shield_index == id:
-			return shield
-	push_error("DataManager: Nie znaleziono tarczy o ID=", id)
-	return null
-
 func get_generator_by_id(id: int) -> GeneratorData:
 	for generator in generators_cache:
 		if generator.generator_index == id:
@@ -113,5 +101,4 @@ func get_play_area_config() -> PlayAreaConfig:
 func clear_cache():
 	ships_cache.clear()
 	weapons_cache.clear()
-	shields_cache.clear()
 	generators_cache.clear()

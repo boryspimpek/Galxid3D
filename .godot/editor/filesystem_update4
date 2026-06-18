@@ -16,3 +16,7 @@ res://scripts/resources/ShipData.gd
 res://data/ships/ship_002.tres
 res://data/ships/ship_003.tres
 res://data/ships/ship_004.tres
+res://data/shields/shield_004.tres
+res://scenes/player/DamageSystem.gd
+res://scenes/player/Player.tscn
+res://scenes/ui/Hud.tscn
