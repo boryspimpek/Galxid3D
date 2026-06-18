@@ -99,6 +99,10 @@ func get_generator_power(generator_id: int) -> float:
 	var generator = get_generator_by_id(generator_id)
 	return generator.power if generator else 0
 
+func get_generator_power_per_kill(generator_id: int) -> float:
+	var generator = get_generator_by_id(generator_id)
+	return generator.power_per_kill if generator else 0.0
+
 func get_play_area_config() -> PlayAreaConfig:
 	return play_area_config
 

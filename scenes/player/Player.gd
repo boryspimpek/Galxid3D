@@ -19,6 +19,7 @@ var max_armor: int = 0
 var regen: float = 0.0
 var max_power: float = 0
 var power: float = 0
+var _power_per_kill: float = 0.0
 var ship_data: ShipData = null
 
 @export var play_area: PlayAreaConfig
@@ -109,11 +110,20 @@ func apply_ship_stats():
 	notify_armor_changed()
 
 func init_power_regeneration():
-	var regeneration = DataManager.get_generator_regeneration(generator_id)
-	regen = regeneration
+	regen = DataManager.get_generator_regeneration(generator_id)
 	max_power = DataManager.get_generator_power(generator_id)
-	power = max_power
+	_power_per_kill = DataManager.get_generator_power_per_kill(generator_id)
+	power = 0.0
 	notify_power_changed()
+
+
+func add_power_from_kill() -> void:
+	if _power_per_kill <= 0.0:
+		return
+	var previous := power
+	power = minf(max_power, power + _power_per_kill)
+	if power != previous:
+		notify_power_changed()
 
 func notify_score_changed() -> void:
 	score_changed.emit(score)

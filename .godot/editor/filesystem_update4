@@ -8,3 +8,11 @@ res://data/weapons/weapon_1.tres
 res://main.tscn
 res://scripts/resources/WeaponPowerLevelData.gd
 res://scripts/resources/WeaponSpecialShotData.gd
+res://data/generators/generator_001.tres
+res://scenes/enemies/base/Enemy.gd
+res://scripts/resources/GeneratorData.gd
+res://data/ships/ship_001.tres
+res://scripts/resources/ShipData.gd
+res://data/ships/ship_002.tres
+res://data/ships/ship_003.tres
+res://data/ships/ship_004.tres

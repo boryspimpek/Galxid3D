@@ -118,6 +118,9 @@ func take_damage(amount: int, hit_world_position: Variant = null) -> void:
 
 func die() -> void:
 	HitComboManager.register_kill()
+	var player := get_tree().get_first_node_in_group("player")
+	if player and player.has_method("add_power_from_kill"):
+		player.add_power_from_kill()
 	SoundManager.play_sound(explosion_sound)
 	if explosion_scene:
 		var death_pos := global_position

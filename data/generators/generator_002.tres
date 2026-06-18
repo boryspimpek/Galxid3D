@@ -6,6 +6,7 @@
 script = ExtResource("1")
 generator_index = 2
 generator_name = "Advanced MR-12"
-power = 420
-regeneration = 150
+power = 450
+regeneration = 0
+power_per_kill = 10.0
 cost = 2000

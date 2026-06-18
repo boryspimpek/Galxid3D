@@ -3,10 +3,10 @@ extends Resource
 
 @export var ship_index: int = 0
 @export var ship_name: String = ""
-@export var speed: int = 0
-@export var armor: int = 0
+@export var speed: int = 300
+@export var armor: int = 2
 @export var cost: int = 0
 
 @export_group("Audio")
 ## ID dźwięku przy trafieniu w pancerz (SoundManager, bus Impacts). 0 = cisza.
-@export var hit_sound: int = 19
+@export var hit_sound: int = 4
