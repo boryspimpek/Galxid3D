@@ -20,3 +20,6 @@ res://data/shields/shield_004.tres
 res://scenes/player/DamageSystem.gd
 res://scenes/player/Player.tscn
 res://scenes/ui/Hud.tscn
+res://data/generators/generator_004.tres
+res://scenes/enemies/types/starfighter.tscn
+res://scenes/enemies/formations/starfighter_strike.tscn

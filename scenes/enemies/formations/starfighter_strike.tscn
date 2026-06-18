@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://c1g448hbitcf1"]
+
+[ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemies/base/EnemyPath3D.gd" id="1_4mh04"]
+[ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemies/base/EnemyPathFollow.gd" id="2_7oxad"]
+[ext_resource type="PackedScene" uid="uid://ceb36gc6o5uvc" path="res://scenes/enemies/types/starfighter.tscn" id="3_yqvtv"]
+[ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="4_6igok"]
+[ext_resource type="Script" uid="uid://cr2knbmonx42w" path="res://scenes/enemies/base/facing/FacePlayer.gd" id="5_n2gvt"]
+
+[sub_resource type="Curve3D" id="Curve3D_3c7k4"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.002487965, 0, -0.018155575, 5.1773634, 0, -1.3718786, -5.1773634, 0, 1.3718786, 0.041170835, 0, 12.684238, 0, 0, 0, 0, 0, 0, -4.108465, 0, 13.562828),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_4mh04"]
+_limits = [0.0, 4.0, 0.0, 1.0]
+_data = [Vector2(0, 4), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_4mh04"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.002487965, 0, -0.018155575, 5.1773634, 0, -1.3718786, -5.1773634, 0, 1.3718786, 0.3332591, 0, 10.0086155, 0, 0, 0, 0, 0, 0, -4.880293, 0, 11.185871),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_7oxad"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.002487965, 0, -0.018155575, 5.1773634, 0, -1.3718786, -5.1773634, 0, 1.3718786, 0.3332591, 0, 10.0086155, 0, 0, 0, 0, 0, 0, -4.880293, 0, 11.185871),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[node name="starfighter_strike" type="Node3D" unique_id=1434653841]
+
+[node name="Path3D" type="Path3D" parent="." unique_id=181213353]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+curve = SubResource("Curve3D_3c7k4")
+script = ExtResource("1_4mh04")
+speed_curve = SubResource("Curve_4mh04")
+bank_lookahead = 5.0
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=210417187]
+transform = Transform3D(-0.90820956, 0, -0.4184967, 0, 1, 0, 0.4184967, 0, -0.90820956, -0.002487965, 0, -0.018155575)
+script = ExtResource("2_7oxad")
+
+[node name="starfighter" parent="Path3D/PathFollow3D" unique_id=1897743314 instance=ExtResource("3_yqvtv")]
+
+[node name="Facing" type="Node3D" parent="Path3D/PathFollow3D" unique_id=1646792388]
+transform = Transform3D(-0.8962707, 0, 0.44351417, 0, 1, 0, -0.44351417, 0, -0.8962707, 2.493541, 0, -5.0446544)
+script = ExtResource("5_n2gvt")
+
+[node name="Path3D2" type="Path3D" parent="." unique_id=833158198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -15)
+curve = SubResource("Curve3D_4mh04")
+script = ExtResource("1_4mh04")
+speed_curve = SubResource("Curve_4mh04")
+bank_lookahead = 5.0
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2" unique_id=1534755618]
+transform = Transform3D(-0.84341383, 0, -0.5372492, 0, 1, 0, 0.5372492, 0, -0.84341383, -0.002487965, 0, -0.018155575)
+script = ExtResource("2_7oxad")
+
+[node name="starfighter" parent="Path3D2/PathFollow3D" unique_id=1319727399 instance=ExtResource("3_yqvtv")]
+
+[node name="Facing" type="Node3D" parent="Path3D2/PathFollow3D" unique_id=449140887]
+transform = Transform3D(-0.8962707, 0, 0.44351417, 0, 1, 0, -0.44351417, 0, -0.8962707, 2.493541, 0, -5.0446544)
+script = ExtResource("5_n2gvt")
+
+[node name="Path3D3" type="Path3D" parent="." unique_id=557909758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -10)
+curve = SubResource("Curve3D_7oxad")
+script = ExtResource("1_4mh04")
+speed_curve = SubResource("Curve_4mh04")
+bank_lookahead = 5.0
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D3" unique_id=149441810]
+transform = Transform3D(-0.84341395, 0, -0.53724927, 0, 1, 0, 0.53724927, 0, -0.84341395, -0.002487965, 0, -0.018155575)
+script = ExtResource("2_7oxad")
+
+[node name="starfighter" parent="Path3D3/PathFollow3D" unique_id=703253076 instance=ExtResource("3_yqvtv")]
+
+[node name="Facing" type="Node3D" parent="Path3D3/PathFollow3D" unique_id=612661124]
+transform = Transform3D(-0.8962707, 0, 0.44351417, 0, 1, 0, -0.44351417, 0, -0.8962707, 2.493541, 0, -5.0446544)
+script = ExtResource("5_n2gvt")
+
+[node name="PlayAreaFrame" parent="." unique_id=784318850 instance=ExtResource("4_6igok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)

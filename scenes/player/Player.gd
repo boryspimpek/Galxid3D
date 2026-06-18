@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-# --- Loadout ---
+@export_group("Loadout")
 @export var ship_id: int = 1
 @export var front_weapon_index: int = 1
 @export var front_power_level: int = 1
@@ -21,9 +21,7 @@ var power: float = 0
 var _power_per_kill: float = 0.0
 var ship_data: ShipData = null
 
-@export var play_area: PlayAreaConfig
-var max_bound_x: float = 40.0
-var max_bound_z: float = 20.0
+@export_group("Gamepad movement")
 @export var gamepad_move_speed: float = 30.0
 @export var gamepad_l2_move_speed: float = 12.0
 @export var gamepad_acceleration: float = 70.0
@@ -31,6 +29,7 @@ var max_bound_z: float = 20.0
 @export_range(1.0, 3.0, 0.05) var gamepad_response_exponent: float = 1.4
 @export var tilt_velocity_factor: float = 0.025
 
+@export_group("Dodge")
 @export var dodge_depth: float = 1.0
 @export var dodge_descend_speed: float = 12.0
 @export var dodge_duration: float = 0.4
@@ -74,25 +73,10 @@ func _ready():
 	main_camera = GameViewportHelper.get_game_camera(get_tree())
 	Input.joy_connection_changed.connect(_on_joy_connection_changed)
 	await get_tree().process_frame
-	_apply_play_area_bounds()
 	load_ship_data()
 	apply_ship_stats()
 	init_power_regeneration()
 	_log_connected_joypads()
-
-func _resolve_play_area() -> PlayAreaConfig:
-	if play_area != null:
-		return play_area
-	return DataManager.get_play_area_config()
-
-
-func _apply_play_area_bounds() -> void:
-	var area := _resolve_play_area()
-	if area == null:
-		return
-	max_bound_x = area.player_half_x
-	max_bound_z = area.player_half_z
-
 
 func load_ship_data():
 	var s_id = ship_id
@@ -341,8 +325,11 @@ func _update_tilt(velocity_x: float, delta: float) -> void:
 	ship_model.rotation.z = lerpf(ship_model.rotation.z, target, delta * 10.0)
 
 func _clamp_to_screen():
-	var clamped_x := clampf(global_position.x, -max_bound_x, max_bound_x)
-	var clamped_z := clampf(global_position.z, -max_bound_z, max_bound_z)
+	var area := DataManager.get_play_area_config()
+	if area == null:
+		return
+	var clamped_x := clampf(global_position.x, -area.player_half_x, area.player_half_x)
+	var clamped_z := clampf(global_position.z, -area.player_half_z, area.player_half_z)
 	if clamped_x != global_position.x:
 		_gamepad_velocity.x = 0.0
 	if clamped_z != global_position.z:
