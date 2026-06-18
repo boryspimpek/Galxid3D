@@ -4,13 +4,53 @@
 [ext_resource type="PackedScene" uid="uid://db4vd2isl5vb1" path="res://assets/BinbunVFX/muzzle_flash/effects/big_flash/big_flash_01.tscn" id="1_jns5a"]
 [ext_resource type="Script" uid="uid://ml3ennlcxw0v" path="res://scripts/resources/WeaponData.gd" id="1_weapon"]
 [ext_resource type="Script" uid="uid://datij7ugn8eej" path="res://scripts/resources/WeaponPowerLevelData.gd" id="2_pl"]
-[ext_resource type="Script" uid="uid://cx0dkobw5wnj7" path="res://scripts/resources/WeaponComboShotData.gd" id="3_combo"]
+[ext_resource type="Script" uid="uid://c3u16xp46xtww" path="res://scripts/resources/WeaponSpecialShotData.gd" id="3_special"]
 
-[sub_resource type="Resource" id="combo_1"]
-script = ExtResource("3_combo")
-damage = 2
-power_use = 40
-cooldown = 0.15
+[sub_resource type="Resource" id="pl_1"]
+script = ExtResource("2_pl")
+velocity = Vector3(0, 0, -60)
+
+[sub_resource type="Resource" id="pl_10"]
+script = ExtResource("2_pl")
+fire_rate = 0.15
+velocity = Vector3(0, 0, -60)
+
+[sub_resource type="Resource" id="pl_2"]
+script = ExtResource("2_pl")
+velocity = Vector3(0, 0, -60)
+
+[sub_resource type="Resource" id="pl_3"]
+script = ExtResource("2_pl")
+velocity = Vector3(0, 0, -60)
+
+[sub_resource type="Resource" id="pl_4"]
+script = ExtResource("2_pl")
+velocity = Vector3(0, 0, -60)
+
+[sub_resource type="Resource" id="Resource_n7nwy"]
+script = ExtResource("2_pl")
+metadata/_custom_type_script = "uid://datij7ugn8eej"
+
+[sub_resource type="Resource" id="pl_6"]
+script = ExtResource("2_pl")
+velocity = Vector3(0, 0, -60)
+
+[sub_resource type="Resource" id="pl_7"]
+script = ExtResource("2_pl")
+velocity = Vector3(0, 0, -60)
+
+[sub_resource type="Resource" id="pl_8"]
+script = ExtResource("2_pl")
+velocity = Vector3(0, 0, -60)
+
+[sub_resource type="Resource" id="pl_9"]
+script = ExtResource("2_pl")
+velocity = Vector3(0, 0, -60)
+
+[sub_resource type="Resource" id="special_1"]
+script = ExtResource("3_special")
+damage = 3
+power_use = 80
 
 [sub_resource type="Resource" id="Resource_soco3"]
 script = ExtResource("1_b7n3p")
@@ -26,107 +66,24 @@ angle_deg = -20.0
 spawn_offset = Vector3(-1, 0, 0)
 
 [sub_resource type="Resource" id="Resource_l2tde"]
-script = ExtResource("3_combo")
-damage = 1
-power_use = 40
-cooldown = 0.15
+script = ExtResource("3_special")
 projectile = 2
 pellets = Array[ExtResource("1_b7n3p")]([SubResource("Resource_soco3"), SubResource("Resource_ohelg"), SubResource("Resource_e8eac")])
-metadata/_custom_type_script = "uid://cx0dkobw5wnj7"
 
 [sub_resource type="Resource" id="Resource_b7n3p"]
-script = ExtResource("3_combo")
+script = ExtResource("3_special")
 damage = 5
 power_use = 40
 cooldown = 0.05
 projectile = 3
-metadata/_custom_type_script = "uid://cx0dkobw5wnj7"
 
 [sub_resource type="Resource" id="Resource_b7xww"]
-script = ExtResource("3_combo")
+script = ExtResource("3_special")
 damage = 10
 power_use = 60
 cooldown = 0.1
 projectile = 4
 delivery_mode = 1
-beam_damage_interval = 0.05
-metadata/_custom_type_script = "uid://cx0dkobw5wnj7"
-
-[sub_resource type="Resource" id="Resource_n7nwy"]
-script = ExtResource("3_combo")
-damage = 150
-power_use = 0
-cooldown = 0.1
-projectile = 5
-metadata/_custom_type_script = "uid://cx0dkobw5wnj7"
-
-[sub_resource type="Resource" id="pl_1"]
-script = ExtResource("2_pl")
-fire_rate = 0.25
-power_use = 50
-velocity = Vector3(0, 0, -60)
-
-[sub_resource type="Resource" id="pl_10"]
-script = ExtResource("2_pl")
-damage = 10
-fire_rate = 0.15
-power_use = 150
-velocity = Vector3(0, 0, -60)
-
-[sub_resource type="Resource" id="pl_2"]
-script = ExtResource("2_pl")
-fire_rate = 0.15
-power_use = 35
-velocity = Vector3(0, 0, -60)
-
-[sub_resource type="Resource" id="pl_3"]
-script = ExtResource("2_pl")
-damage = 3
-fire_rate = 0.15
-power_use = 40
-velocity = Vector3(0, 0, -60)
-
-[sub_resource type="Resource" id="pl_4"]
-script = ExtResource("2_pl")
-damage = 4
-fire_rate = 0.15
-power_use = 45
-velocity = Vector3(0, 0, -60)
-
-[sub_resource type="Resource" id="pl_5"]
-script = ExtResource("2_pl")
-damage = 5
-fire_rate = 0.15
-power_use = 50
-velocity = Vector3(0, 0, -60)
-
-[sub_resource type="Resource" id="pl_6"]
-script = ExtResource("2_pl")
-damage = 6
-fire_rate = 0.15
-power_use = 60
-velocity = Vector3(0, 0, -60)
-
-[sub_resource type="Resource" id="pl_7"]
-script = ExtResource("2_pl")
-damage = 7
-fire_rate = 0.15
-power_use = 65
-velocity = Vector3(0, 0, -60)
-
-[sub_resource type="Resource" id="pl_8"]
-script = ExtResource("2_pl")
-damage = 8
-fire_rate = 0.15
-power_use = 75
-velocity = Vector3(0, 0, -60)
-
-[sub_resource type="Resource" id="pl_9"]
-script = ExtResource("2_pl")
-damage = 9
-fire_rate = 0.15
-power_use = 85
-velocity = Vector3(0, 0, -60)
 
 [resource]
 script = ExtResource("1_weapon")
@@ -136,16 +93,15 @@ power_level_1 = SubResource("pl_1")
 power_level_2 = SubResource("pl_2")
 power_level_3 = SubResource("pl_3")
 power_level_4 = SubResource("pl_4")
-power_level_5 = SubResource("pl_5")
+power_level_5 = SubResource("Resource_n7nwy")
 power_level_6 = SubResource("pl_6")
 power_level_7 = SubResource("pl_7")
 power_level_8 = SubResource("pl_8")
 power_level_9 = SubResource("pl_9")
 power_level_10 = SubResource("pl_10")
-combo_shot_1 = SubResource("combo_1")
-combo_shot_2 = SubResource("Resource_l2tde")
-combo_shot_3 = SubResource("Resource_b7n3p")
-combo_shot_4 = SubResource("Resource_b7xww")
-combo_shot_5 = SubResource("Resource_n7nwy")
+special_shot_1 = SubResource("special_1")
+special_shot_2 = SubResource("Resource_l2tde")
+special_shot_3 = SubResource("Resource_b7n3p")
+special_shot_4 = SubResource("Resource_b7xww")
 muzzle_flash_scene = ExtResource("1_jns5a")
 sound = 25

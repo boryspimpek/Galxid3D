@@ -18,7 +18,6 @@ const POWER_BAR_MAX_INDEX := 14
 @onready var _score_label: Label = %ScoreValue
 @onready var _game_over: Control = %GameOver
 @onready var _combo_label: Label = %ComboLabel
-@onready var _combo_session_bar: ProgressBar = %ComboSessionBar
 
 var _health_textures: Array[Texture2D] = []
 var _shield_textures: Array[Texture2D] = []
@@ -28,7 +27,6 @@ var _shield_system: Node
 var _player_bound: bool = false
 var _combo_tween: Tween
 var _combo_label_settings: LabelSettings
-var _combo_bar_fill_style: StyleBoxFlat
 var _combo_base_modulate: Color = Color.WHITE
 
 
@@ -46,8 +44,6 @@ func _ready() -> void:
 	_combo_label.modulate = _combo_base_modulate
 	_combo_label.visible = false
 	_combo_label.scale = Vector2.ONE
-	_combo_session_bar.visible = false
-	_setup_combo_session_bar()
 	_update_combo_label(HitComboManager.combo)
 	call_deferred("_bind_player")
 
@@ -83,9 +79,6 @@ func _bind_player() -> void:
 
 	_player = player
 	_shield_system = _player.get_node_or_null("ShieldSystem")
-	var weapon_system := _player.get_node_or_null("WeaponSystem")
-	if weapon_system:
-		weapon_system.combo_session_changed.connect(_on_combo_session_changed)
 	_player.score_changed.connect(_on_score_changed)
 	_player.armor_changed.connect(_on_armor_changed)
 	_player.power_changed.connect(_on_power_changed)
@@ -159,22 +152,6 @@ func _on_power_changed(current: float, _maximum: float) -> void:
 
 func _on_combo_changed(combo: int) -> void:
 	_update_combo_label(combo)
-
-
-func _on_combo_session_changed(
-	remaining: float,
-	total: float,
-	active: bool,
-	tier_combo: int,
-) -> void:
-	if _combo_session_bar == null:
-		return
-	_combo_session_bar.visible = active
-	if not active:
-		return
-	_combo_session_bar.max_value = total
-	_combo_session_bar.value = remaining
-	_apply_combo_session_bar_color(tier_combo)
 
 
 func _update_combo_label(combo: int) -> void:
@@ -298,19 +275,3 @@ func _apply_combo_label_color(combo: int) -> void:
 		return
 	_combo_label_settings.font_color = _combo_tier_color(combo)
 	_combo_label.label_settings = _combo_label_settings
-
-
-func _setup_combo_session_bar() -> void:
-	var fill := _combo_session_bar.get_theme_stylebox("fill")
-	if fill is StyleBoxFlat:
-		_combo_bar_fill_style = fill.duplicate() as StyleBoxFlat
-	else:
-		_combo_bar_fill_style = StyleBoxFlat.new()
-		_combo_bar_fill_style.set_corner_radius_all(5)
-	_combo_session_bar.add_theme_stylebox_override("fill", _combo_bar_fill_style)
-
-
-func _apply_combo_session_bar_color(combo: int) -> void:
-	if _combo_bar_fill_style == null:
-		return
-	_combo_bar_fill_style.bg_color = _combo_tier_color(combo)

@@ -5,7 +5,7 @@ extends Node
 # ============================================================================
 
 const DEFAULT_PLAYER_PROJECTILE := preload("res://scenes/projectile/projectile_1.tscn")
-const DEFAULT_COMBO_PROJECTILE := preload("res://scenes/projectile/power_1.tscn")
+const DEFAULT_SPECIAL_PROJECTILE := preload("res://scenes/projectile/power_1.tscn")
 
 var enemy_projectile_scene: PackedScene
 var pickup_scene: PackedScene
@@ -23,11 +23,11 @@ func get_player_projectile_scene(projectile_id: int) -> PackedScene:
 	)
 
 
-func get_player_combo_projectile_scene(projectile_id: int) -> PackedScene:
+func get_player_special_projectile_scene(projectile_id: int) -> PackedScene:
 	return _resolve_player_projectile_scene(
 		projectile_id,
 		"power",
-		DEFAULT_COMBO_PROJECTILE
+		DEFAULT_SPECIAL_PROJECTILE
 	)
 
 

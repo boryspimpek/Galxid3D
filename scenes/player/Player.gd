@@ -37,6 +37,8 @@ var max_bound_z: float = 20.0
 @export var dodge_ascend_speed: float = 10.0
 @export var dodge_cooldown: float = 0.6
 @export var dodge_pitch: float = -0.4
+## Minimalne wciśnięcie R2 (0–1), żeby dodge nie odpalał się od lekkiego dotknięcia spustu.
+@export_range(0.3, 0.95, 0.05) var dodge_trigger_threshold: float = 0.65
 
 enum DodgePhase { GROUNDED, DESCENDING, UNDER, ASCENDING, COOLDOWN }
 
@@ -57,12 +59,12 @@ var main_camera: Camera3D
 
 # ── Dotyk: cel w świecie + offset (palec nie musi być nad modelem) ──
 var touch_target := Vector3.ZERO
-var is_firing := false
 var _touch_firing := false
 var _touch_grab_offset := Vector3.ZERO  # różnica palec↔statek w momencie dotknięcia
 var _gamepad_velocity := Vector2.ZERO
 var _dodge_phase: DodgePhase = DodgePhase.GROUNDED
 var _dodge_timer: float = 0.0
+var _dodge_trigger_armed: bool = true
 
 # ============================================================================
 # 1. INICJALIZACJA
@@ -246,7 +248,7 @@ func _physics_process(delta: float):
 	else:
 		velocity_x = _gamepad_velocity.x
 
-	is_firing = (
+	var primary_input := (
 		not is_dodging
 		and (
 			Input.is_action_pressed("fire")
@@ -254,16 +256,45 @@ func _physics_process(delta: float):
 			or _touch_firing
 		)
 	)
-	var is_combo_firing := not is_dodging and Input.is_action_pressed("combo_shot")
-	weapon_system.set_firing(is_firing)
-	weapon_system.set_combo_firing(is_combo_firing)
+	weapon_system.set_fire_mode(_resolve_fire_mode(primary_input))
 	_update_tilt(velocity_x, delta)
 	notify_power_changed()
+
+func _resolve_fire_mode(primary_input: bool) -> int:
+	if is_dodging:
+		return weapon_system.FireMode.NONE
+	if Input.is_action_pressed("special_shot_4"):
+		return weapon_system.FireMode.SPECIAL_4
+	if Input.is_action_pressed("special_shot_3"):
+		return weapon_system.FireMode.SPECIAL_3
+	if Input.is_action_pressed("special_shot_2"):
+		return weapon_system.FireMode.SPECIAL_2
+	if Input.is_action_pressed("special_shot_1"):
+		return weapon_system.FireMode.SPECIAL_1
+	if primary_input:
+		return weapon_system.FireMode.PRIMARY
+	return weapon_system.FireMode.NONE
+
+
+func _is_dodge_trigger_pressed() -> bool:
+	return Input.get_action_raw_strength("dodge") >= dodge_trigger_threshold
+
+
+func _consume_dodge_trigger_press() -> bool:
+	var pressed := _is_dodge_trigger_pressed()
+	if not pressed:
+		_dodge_trigger_armed = true
+		return false
+	if not _dodge_trigger_armed:
+		return false
+	_dodge_trigger_armed = false
+	return true
+
 
 func _update_dodge(delta: float) -> void:
 	match _dodge_phase:
 		DodgePhase.GROUNDED:
-			if Input.is_action_just_pressed("dodge"):
+			if _consume_dodge_trigger_press():
 				_dodge_phase = DodgePhase.DESCENDING
 				is_dodging = true
 		DodgePhase.DESCENDING:
