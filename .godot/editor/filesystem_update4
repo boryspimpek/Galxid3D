@@ -2,3 +2,5 @@ res://scenes/enemy_projectile/EnemyProjectile.tscn
 res://data/weapons/weapon_1.tres
 res://scenes/enemy_projectile/EnemyProjectile.gdshader
 res://main.tscn
+res://assets/BinbunVFX/shared/script/vfx_controller.gd
+res://assets/BinbunVFX_Vol2/StylizedHitFX/script/VFXImpactBB.gd
