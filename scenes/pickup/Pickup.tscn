@@ -17,12 +17,13 @@ material = SubResource("StandardMaterial3D_t8d0u")
 orientation = 2
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pickup"]
-radius = 0.8
+radius = 0.6961932
 
 [node name="Pickup" type="Area3D" unique_id=553133865]
 collision_layer = 0
-collision_mask = 1
 script = ExtResource("1_pickup")
+magnet_range = 5.0
+magnet_speed = 16.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=175517102]
 mesh = SubResource("PlaneMesh_b6opp")
