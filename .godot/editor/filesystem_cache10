@@ -1,7 +1,7 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1781785837
+::res://::1781863736
 default_bus_layout.tres::AudioBusLayout::2099548917964122130::1780403827::0::1::::<><><>0<>0<><>::
-export_presets.cfg::TextFile::-1::1781784824::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile::-1::1781786826::0::1::::<><><>0<>0<><>::
 main.tscn::PackedScene::4604124130799878763::1781785829::0::1::::<><><>0<>0<><>::uid://h4tfxlaeefcu::::res://scenes/world/GameShell.gd<>uid://bte7ofi7pgn5b::::res://scenes/player/Player.tscn<>uid://bpnoq5bivk33d::::res://scenes/planets/sun.tscn<>uid://c1pq466qvcqtm::::res://scenes/planets/earth.tscn<>uid://na3nvl7jvpdi::::res://assets/planets/Gemini_Generated_Image_ (2).png<>uid://ci6qjvw4jlabt::::res://scenes/world/LevelScroll3D.gd<>uid://bdvg80h7a4nm8::::res://scenes/debug/LevelScrollRuler.tscn<>uid://c6bq1qkhotmeh::::res://scenes/enemies/formations/formation1.tscn<>uid://dd21l172sp65r::::res://scenes/enemies/formations/formation2.tscn<>uid://vj8mqc5fbe18::::res://scenes/enemies/formations/formation3.tscn<>uid://c8keoramkser6::::res://scenes/enemies/formations/formation4.tscn<>uid://dbqhlqawrvwa7::::res://scenes/enemies/types/voyager.tscn<>uid://mqfrdiaxtht5::::res://scenes/enemies/formations/formation6.tscn<>uid://b5j3jumdkod3r::::res://scenes/enemies/formations/formation7.tscn<>uid://c2vk2d14w4myt::::res://scenes/enemies/formations/formation8.tscn<>uid://cdxl62tlyuy08::::res://scenes/enemies/formations/formation5.tscn<>uid://c1g448hbitcf1::::res://scenes/enemies/formations/starfighter_strike1.tscn<>uid://dohxvkx4dbxqp::::res://scenes/enemies/formations/formation9.tscn<>uid://dtprhja8af0to::::res://scripts/resources/enemies/movement/LinearMoveData.gd<>uid://pv4lucn5p30f::::res://scenes/ui/Hud.tscn
 README.md::TextFile::-1::1781522563::0::1::::<><><>0<>0<><>::
 ::res://assets/::1781632531
@@ -370,7 +370,7 @@ four_point_star.gdshader::Shader::6851756601414523768::1780948249::0::1::::<><><
 glow.gdshader::Shader::9097338943976341703::1780948249::0::1::::<><><>0<>0<><>::
 impact_core.gdshader::Shader::730673271215027559::1780948249::0::1::::<><><>0<>0<><>::
 impact_slash.gdshader::Shader::5632487298323033739::1780948249::0::1::::<><><>0<>0<><>::
-impact_sphere.gdshader::Shader::5083610198897939115::1780948249::0::1::::<><><>0<>0<><>::
+impact_sphere.gdshader::Shader::5083610198897939115::1781786656::0::1::::<><><>0<>0<><>::
 spiral_dust.gdshader::Shader::4335447478178937622::1780948249::0::1::::<><><>0<>0<><>::
 streaks.gdshader::Shader::2818007475354981708::1780948249::0::1::::<><><>0<>0<><>::
 ::res://assets/BinbunVFX_Vol2/StylizedHitFX/shader/util/::1780948438
@@ -673,9 +673,11 @@ power_11.png::CompressedTexture2D::4521469375087022715::1781620029::1781620029::
 power_12.png::CompressedTexture2D::7312342635315230923::1781620029::1781620029::1::::<><><>0<>0<>6844f1e63270f5a6b53d2b1c9b5f9bc2<>res://.godot/imported/power_12.png-89d079c1a1ba9e76572d8b948a602da7.ctex::
 power_13.png::CompressedTexture2D::582094485754117922::1781620029::1781620029::1::::<><><>0<>0<>da3251b9160d219989fb947263e28533<>res://.godot/imported/power_13.png-ab2820e22eb672bb0b5e95025e0bb13e.ctex::
 power_14.png::CompressedTexture2D::3430228124061000291::1781620029::1781620029::1::::<><><>0<>0<>a8b0048460ec2f8963269d2116ff12a6<>res://.godot/imported/power_14.png-f381ab5f16d7627858cebe8f3ee40e61.ctex::
-::res://assets/projectiles/::1781713777
+::res://assets/projectiles/::1781866950
 01_green.png::CompressedTexture2D::8678121640051069754::1781703838::1781703847::1::::<><><>0<>0<>2c7133ad4a40c1414d1a7a8616a3b20b<>res://.godot/imported/01_green.png-34ae75a71c1c76237159c57e079e30a8.s3tc.ctex<*>res://.godot/imported/01_green.png-34ae75a71c1c76237159c57e079e30a8.etc2.ctex::
 01_white.png::CompressedTexture2D::168942338775106499::1781704518::1781704545::1::::<><><>0<>0<>6c7605c477b7a87ca771d02159f2d2b8<>res://.godot/imported/01_white.png-944b7f70bbdfa17ad90c4754520e19b0.s3tc.ctex<*>res://.godot/imported/01_white.png-944b7f70bbdfa17ad90c4754520e19b0.etc2.ctex::
+ChatGPT Image 19 cze 2026, 12_45_16.png::CompressedTexture2D::250990820214875223::1781866328::1781866804::1::::<><><>0<>0<>b7be23024109eb0d68da614ed2b3ac69<>res://.godot/imported/ChatGPT Image 19 cze 2026, 12_45_16.png-45c7c8202838c97d87491c3d0293d79b.s3tc.ctex<*>res://.godot/imported/ChatGPT Image 19 cze 2026, 12_45_16.png-45c7c8202838c97d87491c3d0293d79b.etc2.ctex::
+ChatGPT Image 19 cze 2026, 13_02_14.png::CompressedTexture2D::1827708051956674787::1781866949::1781866956::1::::<><><>0<>0<>219da9259a42b35ba66c77b815624546<>res://.godot/imported/ChatGPT Image 19 cze 2026, 13_02_14.png-959bb0c82d191e08289e4c3ecb5a059c.s3tc.ctex<*>res://.godot/imported/ChatGPT Image 19 cze 2026, 13_02_14.png-959bb0c82d191e08289e4c3ecb5a059c.etc2.ctex::
 fire bullet.png::CompressedTexture2D::2190448510149884845::1781434887::1781434954::1::::<><><>0<>0<>cb72425955c146f627deb13a309ca402<>res://.godot/imported/fire bullet.png-335a71cafad0284b24e46d36228a54b1.s3tc.ctex<*>res://.godot/imported/fire bullet.png-335a71cafad0284b24e46d36228a54b1.etc2.ctex::
 laser_beam.png::CompressedTexture2D::785327920299175099::1781709223::1781709267::1::::<><><>0<>0<>a5bb7bd1644f2ac0484c744a1bc2aaed<>res://.godot/imported/laser_beam.png-c1a5bcec416028ca0e9b13b4a2b3c9b2.s3tc.ctex<*>res://.godot/imported/laser_beam.png-c1a5bcec416028ca0e9b13b4a2b3c9b2.etc2.ctex::
 power projectile.png::CompressedTexture2D::7483363139827993163::1781464720::1781464913::1::::<><><>0<>0<>7ba6201d8c9a8033ac8fd9f5c15061e5<>res://.godot/imported/power projectile.png-43111c0eeee42ca5b0a2fb671fd5d833.s3tc.ctex<*>res://.godot/imported/power projectile.png-43111c0eeee42ca5b0a2fb671fd5d833.etc2.ctex::

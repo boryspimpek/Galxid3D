@@ -24,9 +24,7 @@ export function getDefaultGameData() {
 }
 
 export let gameData = getDefaultGameData();
-export let currentSimEnergy = 300;
 export let editingGeneratorId = null;
-export let editingWeaponId = null;
 export let editingEnemyId = null;
 export let editingShipId = null;
 export let editingShieldId = null;
@@ -34,7 +32,6 @@ export let pendingFormRestore = null;
 
 export function resetEditingIds() {
     editingGeneratorId = null;
-    editingWeaponId = null;
     editingEnemyId = null;
     editingShipId = null;
     editingShieldId = null;
@@ -53,8 +50,6 @@ export function clearPendingFormRestore() {
 }
 
 export function setEditingGeneratorId(id) { editingGeneratorId = id; }
-export function setEditingWeaponId(id) { editingWeaponId = id; }
 export function setEditingEnemyId(id) { editingEnemyId = id; }
 export function setEditingShipId(id) { editingShipId = id; }
 export function setEditingShieldId(id) { editingShieldId = id; }
-export function setCurrentSimEnergy(value) { currentSimEnergy = value; }

@@ -207,3 +207,51 @@ th { background: #252530; color: #4fc3f7; font-weight: 600; position: sticky; to
 }
 .enemies-edit-table .enemy-delete-btn:hover { background: #c62828; color: #fff; border-color: #c62828; }
 .enemies-edit-table tr[data-enemy-row] .enemy-row-actions { cursor: default; }
+
+.weapons-edit-table tr[data-weapon-row] .weapon-name-input,
+.weapons-edit-table tr[data-weapon-row] .weapon-generator-select,
+.weapons-edit-table tr[data-weapon-row] .num-spinner { cursor: default; }
+
+.weapon-name-input {
+    width: 100%; min-width: 100px; background: #141419; border: 1px solid #3f3f52;
+    color: #fff; padding: 6px 8px; border-radius: 4px; box-sizing: border-box; font-size: 0.85rem;
+}
+.weapon-name-input:focus { border-color: #4fc3f7; outline: none; }
+
+.weapon-generator-select {
+    width: 100%; min-width: 120px; padding: 6px 8px; font-size: 0.85rem;
+}
+
+.weapon-panel-desc { font-size: 0.9rem; color: #aaaaab; margin-bottom: 12px; }
+.weapon-panel-actions { margin-bottom: 12px; }
+.weapon-panel-actions button { width: auto; flex: 0 0 auto; min-width: 140px; }
+.weapons-table-wrapper { max-height: 420px; }
+.weapons-formula { margin-top: 10px; }
+
+.weapons-edit-table tr[data-weapon-row] { cursor: default; }
+.weapon-actions-col { width: 46px; padding: 6px !important; }
+.weapon-actions-cell { width: 46px; padding: 6px !important; vertical-align: middle; }
+.weapon-row-actions {
+    display: flex; align-items: center; justify-content: center; gap: 5px;
+}
+.weapon-reorder {
+    display: flex; flex-direction: column; align-items: center; gap: 1px; line-height: 1;
+}
+.weapons-edit-table .weapon-move-btn,
+.weapons-edit-table .weapon-delete-btn {
+    width: auto; margin: 0; margin-top: 0; font-weight: normal; line-height: 1;
+}
+.weapons-edit-table .weapon-move-btn {
+    min-width: 18px; height: 14px; padding: 0 2px;
+    background: none; border: none; color: #8a8a9a;
+    font-size: 9px; border-radius: 0; cursor: pointer;
+}
+.weapons-edit-table .weapon-move-btn:hover:not(:disabled) { background: none; color: #4fc3f7; }
+.weapons-edit-table .weapon-move-btn:disabled { opacity: 0.3; cursor: default; }
+.weapons-edit-table .weapon-delete-btn {
+    width: 20px; min-width: 20px; height: 20px; padding: 0; flex-shrink: 0;
+    background: transparent; color: #e57373; border: 1px solid #4a4a58;
+    font-size: 0.85rem; border-radius: 3px; cursor: pointer;
+}
+.weapons-edit-table .weapon-delete-btn:hover { background: #c62828; color: #fff; border-color: #c62828; }
+.weapons-edit-table tr[data-weapon-row] .weapon-row-actions { cursor: default; }

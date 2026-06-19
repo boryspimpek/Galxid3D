@@ -1,1 +1,4 @@
-res://assets/BinbunVFX_Vol2/StylizedHitFX/shader/impact_sphere.gdshader
+res://scenes/enemy_projectile/EnemyProjectile.tscn
+res://data/weapons/weapon_1.tres
+res://scenes/enemy_projectile/EnemyProjectile.gdshader
+res://main.tscn

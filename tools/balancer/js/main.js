@@ -12,8 +12,7 @@ import {
     loadGeneratorIntoForm
 } from './generators.js';
 import {
-    updateSliders, newWeaponForm, addWeapon, saveWeaponChanges, loadWeaponIntoForm,
-    onWeaponGeneratorChange, startEnergySimulation
+    addNewWeapon, handleWeaponTableInteraction, handleWeaponTableChange
 } from './weapons.js';
 import {
     addNewEnemy, onEnemyPanelLoadoutChange, onGlobalWeaponChange, syncPanelFromEnemy,
@@ -24,8 +23,7 @@ import { editingEnemyId } from './state.js';
 const TABLE_LOADERS = {
     'ships-table': loadShipIntoForm,
     'shields-table': loadShieldIntoForm,
-    'generators-table': loadGeneratorIntoForm,
-    'weapons-table': loadWeaponIntoForm
+    'generators-table': loadGeneratorIntoForm
 };
 
 function bindEvents() {
@@ -33,10 +31,6 @@ function bindEvents() {
     document.getElementById('shield-value').addEventListener('input', updateShieldSliders);
     document.getElementById('g-max-energy').addEventListener('input', updateGeneratorSliders);
     document.getElementById('g-regen').addEventListener('input', updateGeneratorSliders);
-    document.getElementById('w-dmg').addEventListener('input', updateSliders);
-    document.getElementById('w-cooldown').addEventListener('input', updateSliders);
-    document.getElementById('w-cost').addEventListener('input', updateSliders);
-    document.getElementById('w-generator-select').addEventListener('change', onWeaponGeneratorChange);
     document.getElementById('e-ship-select').addEventListener('change', onEnemyPanelLoadoutChange);
     document.getElementById('e-shield-select').addEventListener('change', onEnemyPanelLoadoutChange);
     document.getElementById('e-weapon-select').addEventListener('change', onGlobalWeaponChange);
@@ -50,13 +44,17 @@ function bindEvents() {
     document.getElementById('btn-new-generator').addEventListener('click', newGeneratorForm);
     document.getElementById('btn-add-generator').addEventListener('click', addGenerator);
     document.getElementById('btn-save-generator').addEventListener('click', saveGeneratorChanges);
-    document.getElementById('btn-new-weapon').addEventListener('click', newWeaponForm);
-    document.getElementById('btn-add-weapon').addEventListener('click', addWeapon);
-    document.getElementById('btn-save-weapon').addEventListener('click', saveWeaponChanges);
+    document.getElementById('btn-new-weapon').addEventListener('click', addNewWeapon);
     document.getElementById('btn-new-enemy').addEventListener('click', addNewEnemy);
     document.getElementById('btn-import-json').addEventListener('click', importFromJson);
     document.getElementById('btn-download-json').addEventListener('click', downloadJson);
     document.getElementById('btn-reset-data').addEventListener('click', resetAllData);
+
+    const weaponsTable = document.getElementById('weapons-table');
+    weaponsTable.addEventListener('click', handleWeaponTableInteraction);
+    weaponsTable.addEventListener('input', handleWeaponTableChange);
+    weaponsTable.addEventListener('change', handleWeaponTableChange);
+    weaponsTable.addEventListener('blur', handleWeaponTableChange, true);
 
     const enemiesTable = document.getElementById('enemies-table');
     enemiesTable.addEventListener('click', handleEnemyTableInteraction);
@@ -77,7 +75,6 @@ function bindEvents() {
 function init() {
     initTabs();
     bindEvents();
-    startEnergySimulation();
 
     const savedForm = loadState();
     if (savedForm && typeof savedForm === 'object') {
@@ -93,7 +90,6 @@ function init() {
     }
     updateShipSliders();
     updateShieldSliders();
-    updateSliders();
 }
 
 document.addEventListener('DOMContentLoaded', init);

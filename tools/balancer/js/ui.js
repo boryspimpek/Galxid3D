@@ -1,8 +1,8 @@
 import {
-    gameData, pendingFormRestore, editingGeneratorId, editingWeaponId,
+    gameData, pendingFormRestore, editingGeneratorId,
     editingShipId, editingShieldId, clearPendingFormRestore
 } from './state.js';
-import { getGeneratorById, populateSelect, getExportGameData } from './utils.js';
+import { populateSelect, getExportGameData } from './utils.js';
 import { persistState } from './persistence.js';
 import {
     highlightShipRow, updateShipFormMode,
@@ -10,7 +10,7 @@ import {
     getPlayerEffectiveHp
 } from './player.js';
 import { highlightGeneratorRow, updateGeneratorFormMode } from './generators.js';
-import { highlightWeaponRow, updateWeaponFormMode, onWeaponGeneratorChange } from './weapons.js';
+import { renderWeaponsTable } from './weapons.js';
 import { highlightEnemyRow, renderEnemiesTable } from './enemies.js';
 
 function escapeHtml(text) {
@@ -69,31 +69,16 @@ export function updateTables() {
             `<td><b>${escapeHtml(g.name)}</b></td><td><span class="badge badge-green">${g.maxEnergy}</span></td><td><span class="badge badge-blue">${g.regen}/s</span></td>`);
     });
 
-    const currentGenSelect = document.getElementById('w-generator-select').value;
-    populateSelect('w-generator-select', gameData.generators, 'id', g => `${g.name} (${g.maxEnergy} E, ${g.regen} regen)`, currentGenSelect);
-
-    const wTable = document.getElementById('weapons-table');
-    wTable.innerHTML = '';
     const currentWeaponSelect = document.getElementById('e-weapon-select').value;
 
-    gameData.weapons.forEach(w => {
-        const gen = getGeneratorById(w.generatorId);
-        const genName = gen ? gen.name : '—';
-        const rowClass = w.id === editingWeaponId ? 'row-selected' : '';
-        wTable.innerHTML += buildRow(rowClass, w.id,
-            `<td><b>${escapeHtml(w.name)}</b></td><td>${escapeHtml(genName)}</td><td>${w.dmg}</td><td>${w.cooldown}s</td><td><span class="badge badge-purple">${w.cost} E</span></td><td><span class="badge badge-blue">${w.dps.toFixed(0)}/s</span></td>`);
-    });
+    renderWeaponsTable();
 
-    populateSelect('e-weapon-select', gameData.weapons, 'id', w => `${w.name} (${w.dps.toFixed(0)} DPS)`);
     if (currentWeaponSelect && gameData.weapons.some(w => w.id === currentWeaponSelect)) {
         document.getElementById('e-weapon-select').value = currentWeaponSelect;
     }
 
     renderEnemiesTable();
 
-    if (pendingFormRestore?.weapon?.generatorId) {
-        document.getElementById('w-generator-select').value = pendingFormRestore.weapon.generatorId;
-    }
     const playerWeapon = pendingFormRestore?.enemy?.playerWeaponId
         ?? pendingFormRestore?.enemy?.weaponAnchor;
     if (playerWeapon) {
@@ -110,13 +95,10 @@ export function updateTables() {
     highlightShipRow();
     highlightShieldRow();
     highlightGeneratorRow();
-    highlightWeaponRow();
     highlightEnemyRow();
     updateShipFormMode();
     updateShieldFormMode();
     updateGeneratorFormMode();
-    updateWeaponFormMode();
-    onWeaponGeneratorChange();
     document.getElementById('json-preview').value = JSON.stringify(getExportGameData(), null, 2);
     updateStatusBar();
     persistState();

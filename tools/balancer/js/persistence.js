@@ -1,20 +1,18 @@
 import {
-    STORAGE_KEY, gameData, editingGeneratorId, editingWeaponId, editingEnemyId,
+    STORAGE_KEY, gameData, editingGeneratorId, editingEnemyId,
     editingShipId, editingShieldId, setGameData, resetEditingIds, getDefaultGameData,
-    setEditingGeneratorId, setEditingWeaponId, setEditingEnemyId,
+    setEditingGeneratorId, setEditingEnemyId,
     setEditingShipId, setEditingShieldId
 } from './state.js';
 import { ensureGameDataArrays, getExportGameData, isValidGameData } from './utils.js';
 import { updateTables } from './ui.js';
 import { newShipForm, newShieldForm } from './player.js';
 import { newGeneratorForm } from './generators.js';
-import { newWeaponForm } from './weapons.js';
 import { initEnemyPanel } from './enemies.js';
 
 export function collectFormState() {
     return {
         editingGeneratorId,
-        editingWeaponId,
         editingEnemyId,
         editingShipId,
         editingShieldId,
@@ -31,13 +29,6 @@ export function collectFormState() {
             maxEnergy: parseFloat(document.getElementById('g-max-energy').value),
             regen: parseFloat(document.getElementById('g-regen').value)
         },
-        weapon: {
-            name: document.getElementById('w-name').value,
-            generatorId: document.getElementById('w-generator-select').value,
-            dmg: parseFloat(document.getElementById('w-dmg').value),
-            cooldown: parseFloat(document.getElementById('w-cooldown').value),
-            cost: parseFloat(document.getElementById('w-cost').value)
-        },
         enemy: {
             playerWeaponId: document.getElementById('e-weapon-select').value,
             shipId: document.getElementById('e-ship-select').value,
@@ -50,7 +41,6 @@ export function applyFormState(form) {
     if (!form) return null;
 
     setEditingGeneratorId(form.editingGeneratorId ?? null);
-    setEditingWeaponId(form.editingWeaponId ?? null);
     setEditingEnemyId(form.editingEnemyId ?? null);
     setEditingShipId(form.editingShipId ?? null);
     setEditingShieldId(form.editingShieldId ?? null);
@@ -67,12 +57,6 @@ export function applyFormState(form) {
         document.getElementById('g-name').value = form.generator.name ?? '';
         document.getElementById('g-max-energy').value = form.generator.maxEnergy ?? 300;
         document.getElementById('g-regen').value = form.generator.regen ?? 30;
-    }
-    if (form.weapon) {
-        document.getElementById('w-name').value = form.weapon.name ?? '';
-        document.getElementById('w-dmg').value = form.weapon.dmg ?? 10;
-        document.getElementById('w-cooldown').value = form.weapon.cooldown ?? 0.2;
-        document.getElementById('w-cost').value = form.weapon.cost ?? 10;
     }
     return form;
 }
@@ -148,7 +132,6 @@ export function resetAllData() {
     newShipForm();
     newShieldForm();
     newGeneratorForm();
-    newWeaponForm();
     resetEditingIds();
     initEnemyPanel();
     updateTables();

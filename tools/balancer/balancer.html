@@ -119,76 +119,21 @@
 
                 <div class="panel">
                     <h2>Projektowanie Broni</h2>
+                    <p class="weapon-panel-desc">Edytuj parametry bezpośrednio w tabeli — DPS przelicza się automatycznie po zmianie DMG, CS lub kosztu.</p>
 
-                    <div class="form-group">
-                        <label>Nazwa broni</label>
-                        <input type="text" id="w-name" value="Laser Plazmowy T1">
+                    <div class="form-actions weapon-panel-actions">
+                        <button type="button" class="btn-secondary" id="btn-new-weapon">➕ Nowa broń</button>
                     </div>
 
-                    <div class="form-group">
-                        <label>Generator</label>
-                        <select id="w-generator-select"></select>
-                        <div class="generator-info" id="w-generator-info">—</div>
-                    </div>
-
-                    <div class="grid-2">
-                        <div class="form-group">
-                            <label>Obrażenia (DMG): <span id="lbl-dmg">10</span></label>
-                            <input type="range" id="w-dmg" min="1" max="200" value="10">
-                        </div>
-                        <div class="form-group">
-                            <label>Szybkostrzelność (CD): <span id="lbl-cd">0.20s</span></label>
-                            <input type="range" id="w-cooldown" min="0.05" max="1.0" value="0.20" step="0.05">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Koszt strzału: <span id="lbl-cost">10</span></label>
-                        <input type="range" id="w-cost" min="1" max="100" value="10">
-                    </div>
-
-                    <h3>Wskaźniki Wydajności</h3>
-                    <div class="live-sandbox">
-                        <div class="stat-row">
-                            <div>Czysty Burst DPS broni:</div>
-                            <div class="stat-val stat-dps" id="stat-dps">50 DMG/s</div>
-                        </div>
-                        <div class="stat-row">
-                            <div>Zużycie energii (Drain):</div>
-                            <div class="stat-val" id="stat-drain">50 E/s</div>
-                        </div>
-                        <div class="stat-row">
-                            <div>Bilans energetyczny netto:</div>
-                            <div class="stat-val stat-bilans-deficit" id="stat-bilans">-20 E/s</div>
-                        </div>
-                        <div class="stat-row">
-                            <div>Czas do rozładowania:</div>
-                            <div class="stat-val stat-depletion" id="stat-depletion">15.0s</div>
-                        </div>
-
-                        <div class="energy-bar-container">
-                            <div class="energy-bar" id="energy-bar"></div>
-                            <div class="energy-text" id="energy-text">⚡ ENERGIA GENERATORA: 300 / 300</div>
-                        </div>
-                    </div>
-
-                    <p class="form-mode form-mode-new" id="weapon-form-mode">Nowa broń</p>
-                    <div class="form-actions">
-                        <button type="button" class="btn-secondary" id="btn-new-weapon">➕ Nowa</button>
-                        <button type="button" id="btn-add-weapon">Dodaj broń</button>
-                        <button type="button" id="btn-save-weapon" hidden>Zapisz zmiany</button>
-                    </div>
-
-                    <h3>Zapisane Bronie</h3>
-                    <p class="table-hint">Kliknij wiersz, aby edytować istniejącą broń</p>
-                    <div class="table-wrapper">
-                        <table>
+                    <div class="table-wrapper weapons-table-wrapper">
+                        <table class="weapons-edit-table">
                             <thead>
-                                <tr><th>Nazwa</th><th>Generator</th><th>DMG</th><th>CD</th><th>Koszt</th><th>DPS</th></tr>
+                                <tr><th>Nazwa</th><th>Generator</th><th>DMG</th><th>CS</th><th>Koszt</th><th>DPS</th><th class="weapon-actions-col"></th></tr>
                             </thead>
                             <tbody id="weapons-table"></tbody>
                         </table>
                     </div>
+                    <p class="sandbox-formula weapons-formula">DPS = DMG ÷ CS &nbsp;·&nbsp; Drain = Koszt ÷ CS</p>
                 </div>
             </div>
         </div>
