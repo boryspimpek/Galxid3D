@@ -12,3 +12,15 @@ res://scenes/enemies/formations/formation12.tscn
 res://scenes/enemies/formations/formation13.tscn
 res://scenes/enemies/formations/formation14.tscn
 res://scenes/ui/Hud.tscn
+res://assets/power bar/power_00.png
+res://assets/power bar/power_01.png
+res://assets/power bar/power_02.png
+res://assets/power bar/power_03.png
+res://assets/power bar/power_04.png
+res://assets/power bar/power_05.png
+res://assets/power bar/power_06.png
+res://assets/power bar/power_07.png
+res://assets/power bar/power_08.png
+res://assets/power bar/power_09.png
+res://assets/power bar/power_10.png
+res://scenes/ui/Hud.gd

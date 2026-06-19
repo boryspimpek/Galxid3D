@@ -3,7 +3,7 @@ extends CanvasLayer
 const HEALTH_BAR_PATH := "res://assets/health bar/health_%02d.png"
 const POWER_BAR_PATH := "res://assets/power bar/power_%02d.png"
 const POWER_PER_LEVEL := 50
-const POWER_BAR_MAX_INDEX := 14
+const POWER_BAR_MAX_INDEX := 10
 
 @export var min_combo_to_show: int = 5
 @export_group("Combo display")
