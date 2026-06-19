@@ -16,7 +16,7 @@ size = Vector2(0.7, 0.7)
 orientation = 1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ljfmw"]
-render_priority = 0
+render_priority = 127
 shader = ExtResource("3_ixmjk")
 shader_parameter/projectile_texture = ExtResource("2_8eh4e")
 shader_parameter/tint_color = Color(2, 2, 0, 1)

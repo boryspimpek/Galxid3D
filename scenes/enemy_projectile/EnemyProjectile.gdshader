@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode blend_mix, unshaded, cull_disabled;
+render_mode blend_mix, unshaded, cull_disabled, depth_test_disabled, depth_draw_never;
 
 uniform sampler2D projectile_texture : source_color;
 

@@ -1,9 +1,0 @@
-game.js:467 WARNING: Sub-emitter modes other than SUB_EMITTER_DISABLED are not supported in the Compatibility renderer.
-
-game.js:467    at: set_sub_emitter_mode (scene/resources/particle_process_material.cpp:1955)
-game.js:467 WARNING: The Compatibility renderer does not support particle trails.
-game.js:467    at: particles_set_trails (drivers/gles3/storage/particles_storage.cpp:303)
-game.js:467 WARNING: The Compatibility renderer does not support particle trails.
-game.js:467    at: particles_set_trail_bind_poses (drivers/gles3/storage/particles_storage.cpp:309)
-game.js:467 WARNING: The Compatibility renderer does not support particle sub-emitters.
-game.js:467    at: particles_set_subemitter (drivers/gles3/storage/particles_storage.cpp:373)
