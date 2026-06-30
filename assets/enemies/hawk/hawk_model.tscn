@@ -1,17 +1,10 @@
-[gd_scene format=3 uid="uid://ct1wv266vmcqa"]
+[gd_scene format=3 uid="uid://bb3pa0pc34hht"]
 
-[ext_resource type="PackedScene" uid="uid://85bvydeyenkw" path="res://assets/enemies/hawk/Meshy_AI_Azure_Starfighter_04_0629121026_texture.glb" id="1_s44y1"]
-[ext_resource type="Texture2D" uid="uid://dwp6gvgmi2x57" path="res://assets/enemies/hawk/Meshy_AI_Azure_Starfighter_04_0629121026_texture_0.jpg" id="2_xlaaw"]
+[ext_resource type="PackedScene" uid="uid://dm7fnikypodrv" path="res://assets/enemies/hawk/Meshy_AI_Azure_Voyager_0630111929_texture.glb" id="1_h7tlj"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xlaaw"]
-diffuse_mode = 3
-specular_mode = 1
-albedo_texture = ExtResource("2_xlaaw")
-
-[node name="Hawk" unique_id=492768409 instance=ExtResource("1_s44y1")]
+[node name="hawk" unique_id=1431754817 instance=ExtResource("1_h7tlj")]
 layers = 16
 
-[node name="Mesh" parent="." index="0" unique_id=239824155]
+[node name="Mesh" parent="." index="0" unique_id=1041143874]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 layers = 16
-surface_material_override/0 = SubResource("StandardMaterial3D_xlaaw")

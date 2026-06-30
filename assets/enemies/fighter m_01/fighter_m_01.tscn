@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cg1ukck7ckc0w"]
+
+[ext_resource type="PackedScene" uid="uid://hgximytks8ho" path="res://assets/enemies/fighter m_01/Meshy_AI_Blue_Comet_Jet_0630111534_texture.glb" id="1_fenvf"]
+
+[node name="fighter_m_01" unique_id=1118901528 instance=ExtResource("1_fenvf")]
+layers = 16
+
+[node name="Mesh" parent="." index="0" unique_id=422202156]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+layers = 16

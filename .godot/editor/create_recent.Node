@@ -1,4 +1,5 @@
 MeshInstance3D
+SubViewport
 Node3D
 Sprite3D
 Node
@@ -11,4 +12,3 @@ MultiMeshInstance3D
 Label
 TextureProgressBar
 ProgressBar
-Camera3D

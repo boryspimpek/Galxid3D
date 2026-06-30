@@ -1,3 +1,7 @@
 res://main.tscn
 res://scenes/enemy_projectile/EnemyProjectile.gdshader
 res://assets/shaders/toon.gdshader
+res://data/play_area/default.tres
+res://scenes/enemies/formations/formation7.tscn
+res://scenes/enemies/formations/formation12.tscn
+res://scenes/enemies/formations/formation14.tscn
