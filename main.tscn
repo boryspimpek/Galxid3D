@@ -129,15 +129,12 @@ gamepad_deceleration = 500.0
 
 [node name="Sun" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=145217065 instance=ExtResource("3_1u8w0")]
 transform = Transform3D(0.15, 0, 0, 0, -0.12057852, 0.08922344, 0, -0.08922344, -0.12057852, -45.875, -52.06, -26.895)
-visible = false
 
 [node name="earth" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=1975713936 instance=ExtResource("4_0odxb")]
 transform = Transform3D(0.305, 0, 0, 0, 0.17537662, 0.24953564, 0, -0.24953566, 0.1753766, 21.065, -26.265, -15.67)
-visible = false
 
 [node name="Nebula" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=327984543]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -65, 0)
-visible = false
 mesh = SubResource("QuadMesh_ncxdr")
 surface_material_override/0 = SubResource("StandardMaterial3D_cegan")
 
@@ -147,6 +144,7 @@ scroll_speed = 5.0
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=152210955]
 transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, -10, -84)
+visible = false
 layers = 16
 mesh = SubResource("QuadMesh_seu75")
 
@@ -167,40 +165,40 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, -115)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, -140)
 
 [node name="Formation3" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=1007223106 instance=ExtResource("11_htxhm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.010979, 0, -170)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.127327, 0, -170)
 
 [node name="Formation4" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=2046449321 instance=ExtResource("12_jq2sk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.031, 0, -215)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.02408, 0, -215)
 
 [node name="Formation5" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=453809063 instance=ExtResource("15_yaehf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.067, 0, -315)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.192278, 0, -315)
 
 [node name="Formation6" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=1260110716 instance=ExtResource("13_4k2k6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.959, 0, -360)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.084282, 0, -360)
 
 [node name="Formation7" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=214272725 instance=ExtResource("14_0rl1p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.842445, 0, -450.04617)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.820934, 0, -450.04617)
 
 [node name="Formation8" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=488993475 instance=ExtResource("15_ok6jj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.134, 0, -405)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.316927, 0, -405)
 
 [node name="Formation9" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=71393993 instance=ExtResource("16_getpj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.117, 0, -260)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.023197, 0, -260)
 
 [node name="Formation10" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=1583358061 instance=ExtResource("17_getpj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.038, 0, -510)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.944193, 0, -510)
 
 [node name="Formation11" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=1842371745 instance=ExtResource("22_ryguw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.025, 0, -565)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.12554, 0, -565)
 
 [node name="Formation12" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=1206591873 instance=ExtResource("19_1u8w0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.413885, 0, -600)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.31671, 0, -600)
 
 [node name="Formation13" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=1047275917 instance=ExtResource("20_1u8w0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.017, 0, -645)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.923193, 0, -645)
 
 [node name="Formation14" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=1500253911 instance=ExtResource("21_0odxb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.024107, 0, -690)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.152893, 0, -690)
 
 [node name="Starfighter Strike" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1546265027]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 92.73052)

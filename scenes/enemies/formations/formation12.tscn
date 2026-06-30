@@ -78,5 +78,5 @@ script = ExtResource("2_7n2mq")
 [node name="arrow" parent="Path/PathFollow3D6" unique_id=1216288679 instance=ExtResource("3_svuay")]
 
 [node name="PlayAreaFrame" parent="." unique_id=616916982 instance=ExtResource("7_61m1d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.494045, 0, 11.498014)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.918213, 0, 11.498014)
 visible = false

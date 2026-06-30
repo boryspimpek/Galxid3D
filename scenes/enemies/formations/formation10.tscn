@@ -7,7 +7,7 @@
 
 [sub_resource type="Curve3D" id="Curve3D_lu1cq"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.0050640106, -0.000546813, 0.007091522, 0, 0, 0, 0, 0, 0, 19.85097, -0.00048828125, 0.05483818, 0, 0, 0, 0, 0, 0, 57.183777, -0.00048828125, -0.028905869, 0.090774536, 0, 9.9848585, -0.090774536, 0, -9.9848585, 72.79647, -0.00048828125, -9.92299, 0, 0, 0, 0, 0, 0, 57.151295, -0.00048828125, -19.065277, 0, 0, 0, 0, 0, 0, 14.339659, -0.00048828125, -19.000134),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.0050640106, -0.000546813, 0.007091522, 0, 0, 0, 0, 0, 0, 19.85097, -0.00048828125, 0.05483818, 0, 0, 0, 0, 0, 0, 46.755733, -0.00048828125, 0.099508286, 0.077819824, 0, 7.003969, -0.077819824, 0, -7.003969, 60.218918, -0.00048828125, -6.593174, 0, 0, 0, 0, 0, 0, 46.444447, -0.00048828125, -12.818924, 0, 0, 0, 0, 0, 0, 14.615301, -0.00048828125, -12.896746),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
 }
 point_count = 6
@@ -20,7 +20,7 @@ point_count = 8
 [node name="Formation" type="Node3D" unique_id=1730415998]
 
 [node name="Path" type="Path3D" parent="." unique_id=1730415999]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.931183, 0, 24.760124)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.840412, 0, 17.861492)
 curve = SubResource("Curve3D_lu1cq")
 script = ExtResource("1_eg7w0")
 activation_mode = 0
@@ -30,14 +30,14 @@ bank_enabled = true
 bank_lookahead = 10.0
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path" unique_id=310916544]
-transform = Transform3D(-0.002404295, -2.947766e-06, -0.9998652, 2.2734371e-13, 0.99999183, -2.94741e-06, 0.9998652, -7.088482e-09, -0.002404295, -0.0050640106, -0.000546813, 0.007091522)
+transform = Transform3D(-0.0024042225, -2.947766e-06, -0.9998351, 2.2733687e-13, 0.99999183, -2.9473213e-06, 0.9998351, -7.088482e-09, -0.0024042225, -0.0050640106, -0.000546813, 0.007091522)
 loop = false
 script = ExtResource("2_wix5w")
 
 [node name="arrow" parent="Path/PathFollow3D" unique_id=1897743314 instance=ExtResource("3_enepk")]
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Path" unique_id=2110210760]
-transform = Transform3D(-0.002404295, -2.9477576e-06, -0.9998652, 3.4101555e-13, 0.9999891, -2.9474095e-06, 0.9998652, -7.088575e-09, -0.002404295, 3.9947917, -0.00053502223, 0.016709745)
+transform = Transform3D(-0.0024042225, -2.9477576e-06, -0.9998351, 3.4100527e-13, 0.9999891, -2.9473208e-06, 0.9998351, -7.088575e-09, -0.0024042225, 3.9947917, -0.00053502223, 0.016709745)
 progress = 4.0
 loop = false
 script = ExtResource("2_wix5w")
@@ -45,7 +45,7 @@ script = ExtResource("2_wix5w")
 [node name="arrow" parent="Path/PathFollow3D2" unique_id=1985715586 instance=ExtResource("3_enepk")]
 
 [node name="PathFollow3D3" type="PathFollow3D" parent="Path" unique_id=956187911]
-transform = Transform3D(-0.0024042942, -2.9477605e-06, -0.99986494, 1.1367183e-13, 0.99999, -2.9474093e-06, 0.99986494, -7.088355e-09, -0.0024042942, 7.994882, -0.0005232307, 0.026328532)
+transform = Transform3D(-0.0024042218, -2.9477605e-06, -0.99983484, 1.13668406e-13, 0.99999, -2.9473206e-06, 0.99983484, -7.088355e-09, -0.0024042218, 7.994882, -0.0005232307, 0.026328532)
 progress = 8.0
 loop = false
 script = ExtResource("2_wix5w")
@@ -53,7 +53,7 @@ script = ExtResource("2_wix5w")
 [node name="arrow" parent="Path/PathFollow3D3" unique_id=1714961556 instance=ExtResource("3_enepk")]
 
 [node name="PathFollow3D4" type="PathFollow3D" parent="Path" unique_id=914193793]
-transform = Transform3D(-0.0024042954, -2.9477683e-06, -0.9998654, 2.2734377e-13, 0.9999926, -2.9474106e-06, 0.9998654, -7.088487e-09, -0.0024042954, 11.994917, -0.0005114394, 0.03594719)
+transform = Transform3D(-0.002404223, -2.9477683e-06, -0.9998353, 2.2733692e-13, 0.9999926, -2.947322e-06, 0.9998353, -7.088487e-09, -0.002404223, 11.994917, -0.0005114394, 0.03594719)
 progress = 12.0
 loop = false
 script = ExtResource("2_wix5w")
@@ -61,7 +61,7 @@ script = ExtResource("2_wix5w")
 [node name="arrow" parent="Path/PathFollow3D4" unique_id=1176518187 instance=ExtResource("3_enepk")]
 
 [node name="PathFollow3D5" type="PathFollow3D" parent="Path" unique_id=1922970098]
-transform = Transform3D(-0.0024042956, -2.9477583e-06, -0.9998655, 2.2734378e-13, 0.9999892, -2.9474108e-06, 0.9998655, -7.088463e-09, -0.0024042956, 15.995103, -0.00049964763, 0.045566194)
+transform = Transform3D(-0.0024042232, -2.9477583e-06, -0.9998354, 2.2733693e-13, 0.9999892, -2.9473222e-06, 0.9998354, -7.088463e-09, -0.0024042232, 15.995103, -0.00049964763, 0.045566194)
 progress = 16.0
 loop = false
 script = ExtResource("2_wix5w")
@@ -69,7 +69,7 @@ script = ExtResource("2_wix5w")
 [node name="arrow" parent="Path/PathFollow3D5" unique_id=1869608451 instance=ExtResource("3_enepk")]
 
 [node name="PathFollow3D6" type="PathFollow3D" parent="Path" unique_id=828054985]
-transform = Transform3D(0.0022428567, -1.536697e-11, -0.99988216, 6.849701e-09, 0.99998915, -6.9207483e-16, 0.99988204, -6.8504002e-09, 0.002242857, 19.991743, -0.00048828125, 0.054522395)
+transform = Transform3D(-0.0016601961, 1.8310626e-12, -0.999882, 1.1026768e-09, 0.99998915, -4.7699333e-18, 0.99988186, -1.1027921e-09, -0.0016601962, 19.991753, -0.00048828125, 0.05507192)
 progress = 20.0
 loop = false
 script = ExtResource("2_wix5w")
@@ -77,5 +77,5 @@ script = ExtResource("2_wix5w")
 [node name="arrow" parent="Path/PathFollow3D6" unique_id=1216288679 instance=ExtResource("3_enepk")]
 
 [node name="PlayAreaFrame" parent="." unique_id=616916982 instance=ExtResource("7_8da7s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.919819, 0, 11.45991)
 visible = false
