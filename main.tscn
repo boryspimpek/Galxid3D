@@ -5,27 +5,38 @@
 [ext_resource type="PackedScene" uid="uid://bpnoq5bivk33d" path="res://scenes/planets/sun.tscn" id="3_1u8w0"]
 [ext_resource type="PackedScene" uid="uid://c1pq466qvcqtm" path="res://scenes/planets/earth.tscn" id="4_0odxb"]
 [ext_resource type="Texture2D" uid="uid://na3nvl7jvpdi" path="res://assets/planets/Gemini_Generated_Image_ (2).png" id="5_cegan"]
+[ext_resource type="Texture2D" uid="uid://chnxf3mxqjopg" path="res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_29_46.png" id="7_a6jrf"]
+[ext_resource type="Script" uid="uid://barctovhkpey4" path="res://scenes/world/LevelScrollParallax3D.gd" id="7_parallax"]
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="7_xuqvo"]
 [ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="8_qsp4k"]
+[ext_resource type="Texture2D" uid="uid://cudy4ugsaspgm" path="res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_30_55.png" id="9_facbu"]
 [ext_resource type="PackedScene" uid="uid://c6bq1qkhotmeh" path="res://scenes/enemies/formations/formation1.tscn" id="9_kq58d"]
+[ext_resource type="Texture2D" uid="uid://rndh1h608vgb" path="res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_33_29.png" id="10_b1qrp"]
 [ext_resource type="PackedScene" uid="uid://dd21l172sp65r" path="res://scenes/enemies/formations/formation2.tscn" id="10_seu75"]
+[ext_resource type="Texture2D" uid="uid://ct47u3inf3u2o" path="res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_34_58.png" id="11_come4"]
 [ext_resource type="PackedScene" uid="uid://vj8mqc5fbe18" path="res://scenes/enemies/formations/formation3.tscn" id="11_htxhm"]
+[ext_resource type="Texture2D" uid="uid://dykum6mefaj8w" path="res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 18_24_49.png" id="12_facbu"]
 [ext_resource type="PackedScene" uid="uid://c8keoramkser6" path="res://scenes/enemies/formations/formation4.tscn" id="12_jq2sk"]
 [ext_resource type="PackedScene" uid="uid://dbqhlqawrvwa7" path="res://scenes/enemies/types/voyager.tscn" id="13_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://mqfrdiaxtht5" path="res://scenes/enemies/formations/formation6.tscn" id="13_4k2k6"]
+[ext_resource type="Texture2D" uid="uid://b2myuamsxgqq8" path="res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_37_42.png" id="13_4lmeg"]
+[ext_resource type="Texture2D" uid="uid://bh05c4rww7scc" path="res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_39_20.png" id="14_0cp0l"]
 [ext_resource type="PackedScene" uid="uid://b5j3jumdkod3r" path="res://scenes/enemies/formations/formation7.tscn" id="14_0rl1p"]
+[ext_resource type="Texture2D" uid="uid://c8ljyegjvle47" path="res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_40_28.png" id="15_d2t1y"]
 [ext_resource type="PackedScene" uid="uid://c2vk2d14w4myt" path="res://scenes/enemies/formations/formation8.tscn" id="15_ok6jj"]
 [ext_resource type="PackedScene" uid="uid://cdxl62tlyuy08" path="res://scenes/enemies/formations/formation5.tscn" id="15_yaehf"]
 [ext_resource type="PackedScene" uid="uid://c1g448hbitcf1" path="res://scenes/enemies/formations/starfighter_strike1.tscn" id="16_82xsv"]
 [ext_resource type="PackedScene" uid="uid://dohxvkx4dbxqp" path="res://scenes/enemies/formations/formation9.tscn" id="16_getpj"]
+[ext_resource type="Texture2D" uid="uid://didhw24nqkrbm" path="res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_41_47.png" id="16_gngh3"]
+[ext_resource type="Texture2D" uid="uid://djuc447cv6vu1" path="res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_44_29.png" id="17_0n3wm"]
 [ext_resource type="PackedScene" uid="uid://6lh1105x60we" path="res://scenes/enemies/formations/formation10.tscn" id="17_getpj"]
+[ext_resource type="Texture2D" uid="uid://cvvvcsf3f2ede" path="res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_45_31.png" id="18_qnost"]
 [ext_resource type="PackedScene" uid="uid://dqangjy33apv6" path="res://scenes/enemies/formations/formation12.tscn" id="19_1u8w0"]
 [ext_resource type="Script" uid="uid://dtprhja8af0to" path="res://scripts/resources/enemies/movement/LinearMoveData.gd" id="19_d13ii"]
 [ext_resource type="PackedScene" uid="uid://cy5gkjlxnagsa" path="res://scenes/enemies/formations/formation13.tscn" id="20_1u8w0"]
 [ext_resource type="PackedScene" uid="uid://b0rfpep11t06i" path="res://scenes/enemies/formations/formation14.tscn" id="21_0odxb"]
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="22_d2t1y"]
 [ext_resource type="PackedScene" uid="uid://dbshlgj36klhl" path="res://scenes/enemies/formations/formation11.tscn" id="22_ryguw"]
-[ext_resource type="Texture2D" uid="uid://km84q16wtua8" path="res://assets/background 2d/u8868487388_expand_top_of_the_image_--ar_35134_--profile_5nyego_fe72409b-f0f3-4c52-bf58-0b65d3f52e26.png" id="28_qsp4k"]
 
 [sub_resource type="Environment" id="Environment_2y1ty"]
 background_energy_multiplier = 0.8
@@ -47,17 +58,180 @@ size = Vector2(260, 130)
 albedo_color = Color(1, 0.5343461, 0.7283159, 1)
 albedo_texture = ExtResource("5_cegan")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kq58d"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qsp4k"]
+diffuse_mode = 3
 specular_mode = 1
 albedo_color = Color(0.6266563, 0.6589727, 0.735357, 1)
-albedo_texture = ExtResource("28_qsp4k")
-roughness = 0.6
+albedo_texture = ExtResource("7_a6jrf")
+metallic = 0.55
+roughness = 0.4
+emission_enabled = true
 normal_enabled = true
 normal_scale = -16.0
 
-[sub_resource type="QuadMesh" id="QuadMesh_seu75"]
-material = SubResource("StandardMaterial3D_kq58d")
-size = Vector2(560, 2114)
+[sub_resource type="QuadMesh" id="QuadMesh_kq58d"]
+material = SubResource("StandardMaterial3D_qsp4k")
+size = Vector2(1672, 941)
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnkbs"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.6266563, 0.6589727, 0.735357, 1)
+albedo_texture = ExtResource("9_facbu")
+metallic = 0.55
+roughness = 0.4
+emission_enabled = true
+normal_enabled = true
+normal_scale = -16.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_f6a44"]
+material = SubResource("StandardMaterial3D_wnkbs")
+size = Vector2(1672, 941)
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0cbny"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.6266563, 0.6589727, 0.735357, 1)
+albedo_texture = ExtResource("10_b1qrp")
+metallic = 0.55
+roughness = 0.4
+emission_enabled = true
+normal_enabled = true
+normal_scale = -16.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_hrvbo"]
+material = SubResource("StandardMaterial3D_0cbny")
+size = Vector2(1672, 941)
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uypp3"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.6266563, 0.6589727, 0.735357, 1)
+albedo_texture = ExtResource("11_come4")
+metallic = 0.55
+roughness = 0.4
+emission_enabled = true
+normal_enabled = true
+normal_scale = -16.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_blkrb"]
+material = SubResource("StandardMaterial3D_uypp3")
+size = Vector2(1672, 944)
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_abqjc"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.6266563, 0.6589727, 0.735357, 1)
+albedo_texture = ExtResource("12_facbu")
+metallic = 0.55
+roughness = 0.4
+emission_enabled = true
+normal_enabled = true
+normal_scale = -16.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_6iyjs"]
+material = SubResource("StandardMaterial3D_abqjc")
+size = Vector2(1672, 941)
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4w656"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.6266563, 0.6589727, 0.735357, 1)
+albedo_texture = ExtResource("13_4lmeg")
+metallic = 0.55
+roughness = 0.4
+emission_enabled = true
+normal_enabled = true
+normal_scale = -16.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_e71vb"]
+material = SubResource("StandardMaterial3D_4w656")
+size = Vector2(1672, 941)
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rnkwl"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.6266563, 0.6589727, 0.735357, 1)
+albedo_texture = ExtResource("14_0cp0l")
+metallic = 0.55
+roughness = 0.4
+emission_enabled = true
+normal_enabled = true
+normal_scale = -16.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_vke2r"]
+material = SubResource("StandardMaterial3D_rnkwl")
+size = Vector2(1672, 941)
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uit24"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.6266563, 0.6589727, 0.735357, 1)
+albedo_texture = ExtResource("15_d2t1y")
+metallic = 0.55
+roughness = 0.4
+emission_enabled = true
+normal_enabled = true
+normal_scale = -16.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_ruth0"]
+material = SubResource("StandardMaterial3D_uit24")
+size = Vector2(1672, 941)
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rm4vd"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.6266563, 0.6589727, 0.735357, 1)
+albedo_texture = ExtResource("16_gngh3")
+metallic = 0.55
+roughness = 0.4
+emission_enabled = true
+normal_enabled = true
+normal_scale = -16.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_pjyto"]
+material = SubResource("StandardMaterial3D_rm4vd")
+size = Vector2(1672, 941)
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sm6fg"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.6266563, 0.6589727, 0.735357, 1)
+albedo_texture = ExtResource("17_0n3wm")
+metallic = 0.55
+roughness = 0.4
+emission_enabled = true
+normal_enabled = true
+normal_scale = -16.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_b17eg"]
+material = SubResource("StandardMaterial3D_sm6fg")
+size = Vector2(1672, 941)
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntx8l"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.6266563, 0.6589727, 0.735357, 1)
+albedo_texture = ExtResource("18_qnost")
+metallic = 0.55
+roughness = 0.4
+emission_enabled = true
+normal_enabled = true
+normal_scale = -16.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_uatky"]
+material = SubResource("StandardMaterial3D_ntx8l")
+size = Vector2(1672, 941)
 orientation = 1
 
 [sub_resource type="Resource" id="Resource_yaehf"]
@@ -131,7 +305,7 @@ gamepad_deceleration = 500.0
 transform = Transform3D(0.15, 0, 0, 0, -0.12057852, 0.08922344, 0, -0.08922344, -0.12057852, -45.875, -52.06, -26.895)
 
 [node name="earth" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=1975713936 instance=ExtResource("4_0odxb")]
-transform = Transform3D(0.305, 0, 0, 0, 0.17537662, 0.24953564, 0, -0.24953566, 0.1753766, 21.065, -26.265, -15.67)
+transform = Transform3D(0.305, 0, 0, 0, 0.17537662, 0.24953564, 0, -0.24953566, 0.1753766, 21.065, -26.265, -6.575)
 
 [node name="Nebula" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=327984543]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -65, 0)
@@ -140,13 +314,76 @@ surface_material_override/0 = SubResource("StandardMaterial3D_cegan")
 
 [node name="LevelScroll" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=2113647570]
 script = ExtResource("7_xuqvo")
-scroll_speed = 5.0
+scroll_speed = 6.0
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=152210955]
-transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, -10, -84)
+[node name="Node3D" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=642860565]
 visible = false
+
+[node name="1" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Node3D" unique_id=1280645185]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0, -10, -0.031)
 layers = 16
-mesh = SubResource("QuadMesh_seu75")
+mesh = SubResource("QuadMesh_kq58d")
+script = ExtResource("7_parallax")
+
+[node name="2" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Node3D" unique_id=1154023887]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0, -10, -38.374607)
+layers = 16
+mesh = SubResource("QuadMesh_f6a44")
+script = ExtResource("7_parallax")
+
+[node name="3" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Node3D" unique_id=1829858656]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.3199768, -10, -76.874504)
+layers = 16
+mesh = SubResource("QuadMesh_hrvbo")
+script = ExtResource("7_parallax")
+
+[node name="4" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Node3D" unique_id=1690784612]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.3199768, -10, -115.39719)
+layers = 16
+mesh = SubResource("QuadMesh_blkrb")
+script = ExtResource("7_parallax")
+
+[node name="5" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Node3D" unique_id=1532398219]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.51909065, -10, -154.04276)
+layers = 16
+mesh = SubResource("QuadMesh_6iyjs")
+script = ExtResource("7_parallax")
+
+[node name="6" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Node3D" unique_id=598019587]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 1.9010124, -10, -192.6106)
+layers = 16
+mesh = SubResource("QuadMesh_e71vb")
+script = ExtResource("7_parallax")
+
+[node name="7" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Node3D" unique_id=1701782301]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.048210144, -10, -231.14444)
+layers = 16
+mesh = SubResource("QuadMesh_vke2r")
+script = ExtResource("7_parallax")
+
+[node name="8" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Node3D" unique_id=942603969]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.5444815, -10, -269.62054)
+layers = 16
+mesh = SubResource("QuadMesh_ruth0")
+script = ExtResource("7_parallax")
+
+[node name="9" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Node3D" unique_id=1444827439]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.73841834, -10, -308.11124)
+layers = 16
+mesh = SubResource("QuadMesh_pjyto")
+script = ExtResource("7_parallax")
+
+[node name="10" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Node3D" unique_id=835637350]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.58580184, -10, -346.62778)
+layers = 16
+mesh = SubResource("QuadMesh_b17eg")
+script = ExtResource("7_parallax")
+
+[node name="11" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Node3D" unique_id=864667072]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.5971985, -10, -385.10303)
+layers = 16
+mesh = SubResource("QuadMesh_uatky")
+script = ExtResource("7_parallax")
 
 [node name="LevelScrollRuler" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=552135128 instance=ExtResource("8_qsp4k")]
 z_min = -600.0
