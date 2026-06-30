@@ -59,7 +59,7 @@ transform = Transform3D(-0.84341383, 0, -0.5372492, 0, 1, 0, 0.5372492, 0, -0.84
 loop = false
 script = ExtResource("2_7oxad")
 
-[node name="starfighter" parent="Path3D2/PathFollow3D" unique_id=1319727399 instance=ExtResource("3_yqvtv")]
+[node name="starfighter" parent="Path3D2/PathFollow3D" unique_id=799160854 instance=ExtResource("3_yqvtv")]
 
 [node name="Path3D3" type="Path3D" parent="." unique_id=557909758]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.416745, 0, -15)
@@ -73,7 +73,7 @@ transform = Transform3D(-0.84341395, 0, -0.53724927, 0, 1, 0, 0.53724927, 0, -0.
 loop = false
 script = ExtResource("2_7oxad")
 
-[node name="starfighter" parent="Path3D3/PathFollow3D" unique_id=703253076 instance=ExtResource("3_yqvtv")]
+[node name="starfighter" parent="Path3D3/PathFollow3D" unique_id=1445962394 instance=ExtResource("3_yqvtv")]
 
 [node name="PlayAreaFrame" parent="." unique_id=784318850 instance=ExtResource("4_6igok")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)

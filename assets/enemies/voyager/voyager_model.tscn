@@ -1,34 +1,84 @@
-[gd_scene format=3 uid="uid://cr7rlbbhoidnb"]
+[gd_scene format=3 uid="uid://b4l5nq3ukm053"]
 
-[ext_resource type="PackedScene" uid="uid://qbdkbnujc3rn" path="res://assets/enemies/voyager/Meshy_AI_Neon_Voyager_0529140031_texture.glb" id="1_ord55"]
-[ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://assets/shaders/toon.gdshader" id="2_5loqc"]
-[ext_resource type="Texture2D" uid="uid://dnfn8gjjtk5xg" path="res://assets/enemies/voyager/Meshy_AI_Neon_Voyager_0529140031_texture_0.jpg" id="3_ipb1q"]
+[ext_resource type="PackedScene" uid="uid://cwhhk2nwvk4ep" path="res://assets/enemies/voyager/Meshy_AI_Neon_Voyager_0630102944_texture.glb" id="1_74ugx"]
+[ext_resource type="Texture2D" uid="uid://dm8e8iftm3ry5" path="res://assets/enemies/voyager/Meshy_AI_Neon_Voyager_0630102944_texture_0.jpg" id="2_h0xid"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_moel4"]
-cull_mode = 1
-albedo_color = Color(0, 0, 0, 1)
-grow = true
-grow_amount = 0.02
+[sub_resource type="Shader" id="Shader_74ugx"]
+code = "shader_type spatial;
+render_mode ambient_light_disabled;
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_q3ahd"]
+// --- TWOJE TEKSTURY I KOLORY ---
+uniform vec4 albedo_color : source_color = vec4(1.0, 1.0, 1.0, 1.0); // DODANE: Jednolity kolor
+uniform sampler2D albedo_texture : source_color, hint_default_white; // MODYFIKACJA: Dodany hint_default_white
+uniform vec4 line_color : source_color = vec4(0.0, 0.0, 0.0, 1.0);
+
+uniform float metallic : hint_range(0.0, 1.0) = 0.0;
+uniform float clearcoat : hint_range(0.0, 1.0) = 0.0;
+uniform float clearcoat_roughness : hint_range(0.0, 1.0) = 0.2;
+uniform float shadow_threshold : hint_range(0.0, 1.0) = 0.5;
+uniform float shadow_softness : hint_range(0.0, 1.0) = 0.02;
+uniform float ambient_fill : hint_range(0.0, 1.0) = 0.0;
+// 16.0 = wyłączony limit (jak bez hdr_cap). Niżej = mniej globalnego glow.
+uniform float hdr_cap : hint_range(0.0, 16.0) = 16;
+
+vec3 cap_hdr(vec3 color) {
+	if (hdr_cap >= 16.0) {
+		return color;
+	}
+	float peak = max(max(color.r, color.g), color.b);
+	if (peak > hdr_cap) {
+		return color * (hdr_cap / peak);
+	}
+	return color;
+}
+
+void fragment() {
+	vec4 tex = texture(albedo_texture, UV);
+	
+	ALBEDO = albedo_color.rgb * tex.rgb;
+	METALLIC = metallic;
+	ROUGHNESS = 1.0;
+	SPECULAR = 0.0;
+	EMISSION = cap_hdr(ALBEDO * ambient_fill);
+}
+
+void light() {
+	// --- 1. OSTRY CIEŃ (TOON DIFFUSE) ---
+	float ndotl = max(dot(NORMAL, LIGHT), 0.0);
+	float toon_diffuse = smoothstep(shadow_threshold - shadow_softness, shadow_threshold + shadow_softness, ndotl);
+	vec3 lit_color = ALBEDO * LIGHT_COLOR;
+	vec3 shadow_color = ALBEDO * line_color.rgb;
+	vec3 diffuse_color = mix(shadow_color, lit_color, toon_diffuse);
+	
+	// --- 2. CLEARCOAT (prosty dodatkowy highlight) ---
+	vec3 half_vector = normalize(VIEW + LIGHT);
+	float cc_ndoth = max(dot(NORMAL, half_vector), 0.0);
+	float cc_exponent = mix(32.0, 1024.0, 1.0 - clearcoat_roughness);
+	float cc_spec = pow(cc_ndoth, cc_exponent) * clearcoat;
+	
+	// --- 3. FINALNE ŁĄCZENIE ---
+	DIFFUSE_LIGHT += cap_hdr(diffuse_color * ATTENUATION);
+	SPECULAR_LIGHT += cap_hdr(cc_spec * LIGHT_COLOR * ATTENUATION);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h0xid"]
 render_priority = 0
-next_pass = SubResource("StandardMaterial3D_moel4")
-shader = ExtResource("2_5loqc")
+shader = SubResource("Shader_74ugx")
 shader_parameter/albedo_color = Color(1, 1, 1, 1)
-shader_parameter/albedo_texture = ExtResource("3_ipb1q")
+shader_parameter/albedo_texture = ExtResource("2_h0xid")
 shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/metallic = 0.0
 shader_parameter/clearcoat = 0.0
-shader_parameter/clearcoat_roughness = 0.0
-shader_parameter/shadow_threshold = 0.2230000105925
-shader_parameter/shadow_softness = 0.0
-shader_parameter/ambient_fill = 0.0190000009025
+shader_parameter/clearcoat_roughness = 0.2
+shader_parameter/shadow_threshold = 0.1850000087875
+shader_parameter/shadow_softness = 0.0850000040375
+shader_parameter/ambient_fill = 0.03200000152
 shader_parameter/hdr_cap = 16.0
 
-[node name="Voyager" unique_id=549098316 instance=ExtResource("1_ord55")]
-layers = 2
+[node name="voyager" unique_id=727094181 instance=ExtResource("1_74ugx")]
+layers = 16
 
-[node name="Mesh" parent="." index="0" unique_id=896543670]
+[node name="Mesh" parent="." index="0" unique_id=1712003984]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 layers = 16
-surface_material_override/0 = SubResource("ShaderMaterial_q3ahd")
+surface_material_override/0 = SubResource("ShaderMaterial_h0xid")
