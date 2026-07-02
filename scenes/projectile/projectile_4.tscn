@@ -1,35 +1,35 @@
-[gd_scene format=3 uid="uid://ca26ern58wgjl"]
+[gd_scene format=3 uid="uid://brneh54oj28c2"]
 
-[ext_resource type="Script" uid="uid://cxso55pxdnnn3" path="res://scenes/projectile/projectile.gd" id="1_6yce5"]
-[ext_resource type="Texture2D" uid="uid://6hcmqf7vlpeb" path="res://assets/projectiles/fire bullet.png" id="2_xio8u"]
+[ext_resource type="Script" uid="uid://cxso55pxdnnn3" path="res://scenes/projectile/projectile.gd" id="1_25vx5"]
+[ext_resource type="Texture2D" uid="uid://c3gntgoat81j4" path="res://assets/projectiles/ChatGPT Image 1 lip 2026, 18_52_47.png" id="2_25vx5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nskuf"]
-radius = 0.43603516
-height = 2.9732742
+radius = 0.422585
+height = 1.830189
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cm8q0"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_my8ws"]
 transparency = 1
 shading_mode = 0
 albedo_color = Color(1.5720325, 1.5720325, 1.5720325, 1)
-albedo_texture = ExtResource("2_xio8u")
+albedo_texture = ExtResource("2_25vx5")
 
 [node name="Projectile" type="Area3D" unique_id=1517421005]
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("1_6yce5")
+script = ExtResource("1_25vx5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1719570957]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_nskuf")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1682580241]
-aabb = AABB(-0.40667695, -0.102447845, -1.4953173, 0.8133539, 0.20489569, 2.9906347)
+aabb = AABB(-0.4195383, -0.102447845, -0.93157315, 0.8390766, 0.20489569, 1.8631463)
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=680446642]
-transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, 0.04, 0, 0.17)
-material_override = SubResource("StandardMaterial3D_cm8q0")
+transform = Transform3D(-5.9010374e-09, 0, 0.135, 0, 0.135, 0, -0.135, 0, -5.9010374e-09, 0.04, 0, 0)
+material_override = SubResource("StandardMaterial3D_my8ws")
 axis = 1
-texture = ExtResource("2_xio8u")
+texture = ExtResource("2_25vx5")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

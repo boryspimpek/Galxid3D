@@ -7,3 +7,5 @@ extends Resource
 @export var spawn_offset: Vector3 = Vector3.ZERO
 ## Mnożnik prędkości bazowego velocity (1.0 = bez zmian).
 @export var velocity_scale: float = 1.0
+## Indeks sceny pocisku dla tego pelletu (0 = użyj bazowego z WeaponPowerLevelData).
+@export var projectile_override: int = 0

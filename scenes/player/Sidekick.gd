@@ -83,7 +83,8 @@ func _spawn_fire(pld: WeaponPowerLevelDataClass) -> void:
 		var speed: float = pld.velocity.length() * pellet.velocity_scale
 		var vel := dir.rotated(Vector3.UP, deg_to_rad(pellet.angle_deg)) * speed
 		var spawn_pos: Vector3 = _muzzle.global_position + _muzzle.global_basis * pellet.spawn_offset
-		_spawn_single_projectile(spawn_pos, vel, pld.projectile, pld.damage, pld.homing, pld.homing_turn_speed)
+		var pid := pellet.projectile_override if pellet.projectile_override > 0 else pld.projectile
+		_spawn_single_projectile(spawn_pos, vel, pid, pld.damage, pld.homing, pld.homing_turn_speed)
 	_spawn_muzzle_flash(pld.velocity)
 
 

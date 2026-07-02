@@ -261,7 +261,8 @@ func spawn_shot(
 	for pellet in pellets:
 		var velocity := _pellet_velocity(base_velocity, pellet)
 		var spawn_pos: Vector3 = from_muzzle.global_position + from_muzzle.global_basis * pellet.spawn_offset
-		_spawn_single_projectile(spawn_pos, velocity, projectile_id, damage, special_shot, homing, homing_turn_speed)
+		var pid := pellet.projectile_override if pellet.projectile_override > 0 else projectile_id
+		_spawn_single_projectile(spawn_pos, velocity, pid, damage, special_shot, homing, homing_turn_speed)
 	_spawn_muzzle_flash(base_velocity, from_muzzle, weapon_data_ref)
 
 

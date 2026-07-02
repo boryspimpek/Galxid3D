@@ -1,5 +1,5 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1782994491
+::res://::1782994583
 default_bus_layout.tres::AudioBusLayout::2099548917964122130::1780403827::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile::-1::1781786826::0::1::::<><><>0<>0<><>::
 main.tscn::PackedScene::4604124130799878763::1782981443::0::1::::<><><>0<>0<><>::uid://h4tfxlaeefcu::::res://scenes/world/GameShell.gd<>uid://bte7ofi7pgn5b::::res://scenes/player/Player.tscn<>uid://bpnoq5bivk33d::::res://scenes/planets/sun.tscn<>uid://c1pq466qvcqtm::::res://scenes/planets/earth.tscn<>uid://na3nvl7jvpdi::::res://assets/planets/Gemini_Generated_Image_ (2).png<>uid://chnxf3mxqjopg::::res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_29_46.png<>uid://barctovhkpey4::::res://scenes/world/LevelScrollParallax3D.gd<>uid://ci6qjvw4jlabt::::res://scenes/world/LevelScroll3D.gd<>uid://bdvg80h7a4nm8::::res://scenes/debug/LevelScrollRuler.tscn<>uid://cudy4ugsaspgm::::res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_30_55.png<>uid://c6bq1qkhotmeh::::res://scenes/enemies/formations/formation1.tscn<>uid://rndh1h608vgb::::res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_33_29.png<>uid://dd21l172sp65r::::res://scenes/enemies/formations/formation2.tscn<>uid://ct47u3inf3u2o::::res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_34_58.png<>uid://vj8mqc5fbe18::::res://scenes/enemies/formations/formation3.tscn<>uid://dykum6mefaj8w::::res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 18_24_49.png<>uid://c8keoramkser6::::res://scenes/enemies/formations/formation4.tscn<>uid://mqfrdiaxtht5::::res://scenes/enemies/formations/formation6.tscn<>uid://b2myuamsxgqq8::::res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_37_42.png<>uid://bh05c4rww7scc::::res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_39_20.png<>uid://b5j3jumdkod3r::::res://scenes/enemies/formations/formation7.tscn<>uid://c8ljyegjvle47::::res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_40_28.png<>uid://c2vk2d14w4myt::::res://scenes/enemies/formations/formation8.tscn<>uid://cdxl62tlyuy08::::res://scenes/enemies/formations/formation5.tscn<>uid://c1g448hbitcf1::::res://scenes/enemies/formations/starfighter_strike1.tscn<>uid://dohxvkx4dbxqp::::res://scenes/enemies/formations/formation9.tscn<>uid://didhw24nqkrbm::::res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_41_47.png<>uid://djuc447cv6vu1::::res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_44_29.png<>uid://6lh1105x60we::::res://scenes/enemies/formations/formation10.tscn<>uid://cvvvcsf3f2ede::::res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_45_31.png<>uid://dqangjy33apv6::::res://scenes/enemies/formations/formation12.tscn<>uid://dtprhja8af0to::::res://scripts/resources/enemies/movement/LinearMoveData.gd<>uid://cy5gkjlxnagsa::::res://scenes/enemies/formations/formation13.tscn<>uid://b0rfpep11t06i::::res://scenes/enemies/formations/formation14.tscn<>uid://pv4lucn5p30f::::res://scenes/ui/Hud.tscn<>uid://dbshlgj36klhl::::res://scenes/enemies/formations/formation11.tscn<>uid://cv5pl4svkf8ft::::res://scenes/enemies/types/hawk.tscn
@@ -617,21 +617,22 @@ power_11.png::CompressedTexture2D::4521469375087022715::1781620029::1781620029::
 power_12.png::CompressedTexture2D::7312342635315230923::1781620029::1781620029::1::::<><><>0<>0<>6844f1e63270f5a6b53d2b1c9b5f9bc2<>res://.godot/imported/power_12.png-89d079c1a1ba9e76572d8b948a602da7.ctex::
 power_13.png::CompressedTexture2D::582094485754117922::1781620029::1781620029::1::::<><><>0<>0<>da3251b9160d219989fb947263e28533<>res://.godot/imported/power_13.png-ab2820e22eb672bb0b5e95025e0bb13e.ctex::
 power_14.png::CompressedTexture2D::3430228124061000291::1781620029::1781620029::1::::<><><>0<>0<>a8b0048460ec2f8963269d2116ff12a6<>res://.godot/imported/power_14.png-f381ab5f16d7627858cebe8f3ee40e61.ctex::
-::res://assets/projectiles/::1782990921
+::res://assets/projectiles/::1782995966
 01_green.png::CompressedTexture2D::8678121640051069754::1781703838::1781703847::1::::<><><>0<>0<>2c7133ad4a40c1414d1a7a8616a3b20b<>res://.godot/imported/01_green.png-34ae75a71c1c76237159c57e079e30a8.s3tc.ctex<*>res://.godot/imported/01_green.png-34ae75a71c1c76237159c57e079e30a8.etc2.ctex::
 01_white.png::CompressedTexture2D::168942338775106499::1781704518::1781704545::1::::<><><>0<>0<>6c7605c477b7a87ca771d02159f2d2b8<>res://.godot/imported/01_white.png-944b7f70bbdfa17ad90c4754520e19b0.s3tc.ctex<*>res://.godot/imported/01_white.png-944b7f70bbdfa17ad90c4754520e19b0.etc2.ctex::
 ChatGPT Image 1 lip 2026, 18_52_47.png::CompressedTexture2D::6751338843559705071::1782981285::1782981328::1::::<><><>0<>0<>be4fd4e76c451adee7987df413a63470<>res://.godot/imported/ChatGPT Image 1 lip 2026, 18_52_47.png-9bdc08366223e8d6811754a2b20462be.s3tc.ctex<*>res://.godot/imported/ChatGPT Image 1 lip 2026, 18_52_47.png-9bdc08366223e8d6811754a2b20462be.etc2.ctex::
 ChatGPT Image 2 lip 2026, 10_53_36.png::CompressedTexture2D::8858966841300811907::1782982450::1782982465::1::::<><><>0<>0<>c90da627b130a4bb3f904a9e53642823<>res://.godot/imported/ChatGPT Image 2 lip 2026, 10_53_36.png-df8131c0cca1c3e4fa1a4e5b14070e28.s3tc.ctex<*>res://.godot/imported/ChatGPT Image 2 lip 2026, 10_53_36.png-df8131c0cca1c3e4fa1a4e5b14070e28.etc2.ctex::
 ChatGPT Image 2 lip 2026, 13_14_34.png::CompressedTexture2D::3645459734557635001::1782990911::1782990921::1::::<><><>0<>0<>6432428dccad149187484243eebb924c<>res://.godot/imported/ChatGPT Image 2 lip 2026, 13_14_34.png-1107975501bcdca702d12d90be477093.s3tc.ctex<*>res://.godot/imported/ChatGPT Image 2 lip 2026, 13_14_34.png-1107975501bcdca702d12d90be477093.etc2.ctex::
+ChatGPT Image 2 lip 2026, 14_38_30.png::CompressedTexture2D::2829879545844457539::1782995965::1782996006::1::::<><><>0<>0<>7af54d9d12d362c398287d07a8fa89d9<>res://.godot/imported/ChatGPT Image 2 lip 2026, 14_38_30.png-47d0d03e237b993070a1bdcc87a1906c.s3tc.ctex<*>res://.godot/imported/ChatGPT Image 2 lip 2026, 14_38_30.png-47d0d03e237b993070a1bdcc87a1906c.etc2.ctex::
 ChatGPT Image 19 cze 2026, 12_45_16.png::CompressedTexture2D::250990820214875223::1781866328::1781866804::1::::<><><>0<>0<>b7be23024109eb0d68da614ed2b3ac69<>res://.godot/imported/ChatGPT Image 19 cze 2026, 12_45_16.png-45c7c8202838c97d87491c3d0293d79b.s3tc.ctex<*>res://.godot/imported/ChatGPT Image 19 cze 2026, 12_45_16.png-45c7c8202838c97d87491c3d0293d79b.etc2.ctex::
 ChatGPT Image 19 cze 2026, 13_02_14.png::CompressedTexture2D::1827708051956674787::1781866949::1781866956::1::::<><><>0<>0<>219da9259a42b35ba66c77b815624546<>res://.godot/imported/ChatGPT Image 19 cze 2026, 13_02_14.png-959bb0c82d191e08289e4c3ecb5a059c.s3tc.ctex<*>res://.godot/imported/ChatGPT Image 19 cze 2026, 13_02_14.png-959bb0c82d191e08289e4c3ecb5a059c.etc2.ctex::
 fire bullet.png::CompressedTexture2D::2190448510149884845::1781434887::1781434954::1::::<><><>0<>0<>cb72425955c146f627deb13a309ca402<>res://.godot/imported/fire bullet.png-335a71cafad0284b24e46d36228a54b1.s3tc.ctex<*>res://.godot/imported/fire bullet.png-335a71cafad0284b24e46d36228a54b1.etc2.ctex::
 power projectile.png::CompressedTexture2D::7483363139827993163::1781464720::1781464913::1::::<><><>0<>0<>7ba6201d8c9a8033ac8fd9f5c15061e5<>res://.godot/imported/power projectile.png-43111c0eeee42ca5b0a2fb671fd5d833.s3tc.ctex<*>res://.godot/imported/power projectile.png-43111c0eeee42ca5b0a2fb671fd5d833.etc2.ctex::
 red_laser.png::CompressedTexture2D::721016686198622040::1781713775::1781713777::1::::<><><>0<>0<>c570aa994bd8a85913ed3f8e09e288fd<>res://.godot/imported/red_laser.png-fc505afa2acf1e66bfef4ed4ee9677bd.s3tc.ctex<*>res://.godot/imported/red_laser.png-fc505afa2acf1e66bfef4ed4ee9677bd.etc2.ctex::
-::res://assets/shaders/::1782980043
+::res://assets/shaders/::1782995044
 laser_shader.gdshader::Shader::8906966040070196260::1781714065::0::1::::<><><>0<>0<><>::
 stylized.gdshader::Shader::5640836632797450115::1781432804::0::1::::<><><>0<>0<><>::
-toon.gdshader::Shader::7774145487081512526::1782980043::0::1::::<><><>0<>0<><>::
+toon.gdshader::Shader::7774145487081512526::1782995044::0::1::::<><><>0<>0<><>::
 ::res://assets/shield bar/::1781876473
 ::res://assets/sidekicks/::1782988519
 ::res://assets/sidekicks/golden core/::1782993585
@@ -701,8 +702,8 @@ ship_004.tres::Resource/ShipData::6748476240789214430::1782819473::0::1::::<><><
 ::res://data/sidekicks/::1782994300
 golden_core.tres::Resource/SidekickData::1927857412622104568::1782994209::0::1::::<><><>0<>0<><>::uid://c8h5m648mrxgn::::res://scripts/resources/SidekickData.gd
 green_core.tres::Resource/SidekickData::4729898639899226126::1782994300::0::1::::<><><>0<>0<><>::uid://c8h5m648mrxgn::::res://scripts/resources/SidekickData.gd
-::res://data/weapons/::1782994311
-front_1.tres::Resource/WeaponData::4441467466610899430::1782994311::0::1::::<><><>0<>0<><>::uid://db4vd2isl5vb1::::res://assets/BinbunVFX/muzzle_flash/effects/big_flash/big_flash_01.tscn<>uid://bingydioab5yk::::res://scripts/resources/WeaponShotPelletData.gd<>uid://datij7ugn8eej::::res://scripts/resources/WeaponPowerLevelData.gd<>uid://ml3ennlcxw0v::::res://scripts/resources/WeaponData.gd<>uid://c3u16xp46xtww::::res://scripts/resources/WeaponSpecialShotData.gd
+::res://data/weapons/::1782995765
+front_1.tres::Resource/WeaponData::4441467466610899430::1782995765::0::1::::<><><>0<>0<><>::uid://db4vd2isl5vb1::::res://assets/BinbunVFX/muzzle_flash/effects/big_flash/big_flash_01.tscn<>uid://bingydioab5yk::::res://scripts/resources/WeaponShotPelletData.gd<>uid://datij7ugn8eej::::res://scripts/resources/WeaponPowerLevelData.gd<>uid://ml3ennlcxw0v::::res://scripts/resources/WeaponData.gd<>uid://c3u16xp46xtww::::res://scripts/resources/WeaponSpecialShotData.gd
 rear1.tres::Resource/WeaponData::6400227695324696531::1782990122::0::1::::<><><>0<>0<><>::uid://bingydioab5yk::::res://scripts/resources/WeaponShotPelletData.gd<>uid://datij7ugn8eej::::res://scripts/resources/WeaponPowerLevelData.gd<>uid://ml3ennlcxw0v::::res://scripts/resources/WeaponData.gd
 sidekick_left.tres::Resource/WeaponData::5853292456194798763::1782992861::0::1::::<><><>0<>0<><>::uid://bingydioab5yk::::res://scripts/resources/WeaponShotPelletData.gd<>uid://datij7ugn8eej::::res://scripts/resources/WeaponPowerLevelData.gd<>uid://ml3ennlcxw0v::::res://scripts/resources/WeaponData.gd
 sidekick_right.tres::Resource/WeaponData::5012380147181164889::1782993722::0::1::::<><><>0<>0<><>::uid://bingydioab5yk::::res://scripts/resources/WeaponShotPelletData.gd<>uid://datij7ugn8eej::::res://scripts/resources/WeaponPowerLevelData.gd<>uid://ml3ennlcxw0v::::res://scripts/resources/WeaponData.gd
@@ -749,9 +750,9 @@ fighter_s_01.tscn::PackedScene::8273696537258026905::1782819369::0::1::::<><><>0
 hawk.tscn::PackedScene::6309670366982502057::1782842305::0::1::::<><><>0<>0<><>::uid://c3de3aei70kw1::::res://scenes/enemies/base/Enemy.tscn<>uid://bs5humyuxa5j2::::res://scripts/resources/enemies/weapons/BurstEnemyWeaponData.gd<>uid://bb3pa0pc34hht::::res://assets/enemies/hawk/hawk_model.tscn<>uid://s6dwn56csbw1::::res://assets/BinbunVFX_Vol2/ExplosionFX/effects/nuke/vfx_nuke_explosion_01.tscn<>uid://cr2knbmonx42w::::res://scenes/enemies/base/facing/FacePlayer.gd
 starfighter.tscn::PackedScene::5057416874759023692::1782842585::0::1::::<><><>0<>0<><>::uid://c3de3aei70kw1::::res://scenes/enemies/base/Enemy.tscn<>uid://dtprhja8af0to::::res://scripts/resources/enemies/movement/LinearMoveData.gd<>uid://eo6qejm2h6hl::::res://scripts/resources/enemies/weapons/EnemyWeaponData.gd<>uid://dp6fn641cy82u::::res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/impact/vfx_impact_01.tscn<>uid://bv4oshda8t6g7::::res://assets/enemies/starfighter/starfighter_model.tscn
 voyager.tscn::PackedScene::7262926442861361264::1782815892::0::1::::<><><>0<>0<><>::uid://c3de3aei70kw1::::res://scenes/enemies/base/Enemy.tscn<>uid://b4l5nq3ukm053::::res://assets/enemies/voyager/voyager_model.tscn<>uid://cr2knbmonx42w::::res://scenes/enemies/base/facing/FacePlayer.gd<>uid://s6dwn56csbw1::::res://assets/BinbunVFX_Vol2/ExplosionFX/effects/nuke/vfx_nuke_explosion_01.tscn<>uid://bs5humyuxa5j2::::res://scripts/resources/enemies/weapons/BurstEnemyWeaponData.gd
-::res://scenes/enemy_projectile/::1782980043
+::res://scenes/enemy_projectile/::1782995044
 EnemyProjectile.gd::GDScript::8392561708853174740::1781527145::0::1::::<>Area3D<><>0<>0<><>::
-EnemyProjectile.gdshader::Shader::6290722636671745208::1782980043::0::1::::<><><>0<>0<><>::
+EnemyProjectile.gdshader::Shader::6290722636671745208::1782995044::0::1::::<><><>0<>0<><>::
 EnemyProjectile.tscn::PackedScene::394493233188443304::1781869105::0::1::::<><><>0<>0<><>::uid://drtojasqrdy7m::::res://scenes/enemy_projectile/EnemyProjectile.gd<>uid://dtt1ufgeoqsd::::res://assets/projectiles/ChatGPT Image 19 cze 2026, 12_45_16.png<>uid://cvvjju32romua::::res://scenes/enemy_projectile/EnemyProjectile.gdshader
 ::res://scenes/pickup/::1781870305
 Pickup.gd::GDScript::4734261907121622875::1781869871::0::1::::<>Area3D<><>0<>0<><>::
@@ -767,18 +768,20 @@ Golden_core.tscn::PackedScene::8964841190835855211::1782994311::0::1::::<><><>0<
 Green_core.tscn::PackedScene::4756725338716444870::1782993722::0::1::::<><><>0<>0<><>::uid://bxbui8n1m07qy::::res://scenes/player/Sidekick.gd<>uid://bq5wylaj6hgr1::::res://assets/sidekicks/golden core/green_core_model.tscn
 Player.gd::GDScript::8437104023902913178::1782994055::0::1::::<>CharacterBody3D<><>0<>0<><>::
 Player.tscn::PackedScene::3730234445164567377::1782993722::0::1::::<><><>0<>0<><>::uid://dsg84un7uak4y::::res://scenes/player/Player.gd<>uid://7u5n3csl0xpc::::res://scenes/player/DamageSystem.gd<>uid://b00wb11f44ov::::res://scenes/player/WeaponSystem.gd<>uid://pxcet508nmj3::::res://scenes/player/blaze_model.tscn
-Sidekick.gd::GDScript::4004058845879863488::1782989912::0::1::::<>CharacterBody3D<><>0<>0<><>::
-WeaponSystem.gd::GDScript::123355593652037597::1782986590::0::1::::<>Node<><>0<>0<><>::
-::res://scenes/projectile/::1782992061
+Sidekick.gd::GDScript::4004058845879863488::1782995394::0::1::::<>CharacterBody3D<><>0<>0<><>::
+WeaponSystem.gd::GDScript::123355593652037597::1782995384::0::1::::<>Node<><>0<>0<><>::
+::res://scenes/projectile/::1782995980
 player_beam.gd::GDScript::6256986453272558886::1781710626::0::1::::<>Area3D<><>0<>0<><>::
 power_1.tscn::PackedScene::5270760878045313870::1781701024::0::1::::<><><>0<>0<><>::uid://cxso55pxdnnn3::::res://scenes/projectile/projectile.gd<>uid://deu85ruqmwoit::::res://assets/projectiles/power projectile.png
 power_2.tscn::PackedScene::4061135435519992803::1781707283::0::1::::<><><>0<>0<><>::uid://cxso55pxdnnn3::::res://scenes/projectile/projectile.gd<>uid://dvv0nphus7cj7::::res://assets/projectiles/01_green.png
 power_3.tscn::PackedScene::636199427922551397::1781707370::0::1::::<><><>0<>0<><>::uid://cxso55pxdnnn3::::res://scenes/projectile/projectile.gd<>uid://cn3pqyl6cxtb::::res://assets/projectiles/01_white.png
 power_4.tscn::PackedScene::5311681224822162266::1781714282::0::1::::<><><>0<>0<><>::uid://cve6wgs3ih2hu::::res://scenes/projectile/player_beam.gd<>uid://kjjblvylbups::::res://assets/projectiles/red_laser.png
 projectile.gd::GDScript::6425248782272021058::1782986282::0::1::::<>Area3D<><>0<>0<><>::
-projectile_1.tscn::PackedScene::4830469851084639637::1782986831::0::1::::<><><>0<>0<><>::uid://cxso55pxdnnn3::::res://scenes/projectile/projectile.gd<>uid://6hcmqf7vlpeb::::res://assets/projectiles/fire bullet.png<>uid://c3gntgoat81j4::::res://assets/projectiles/ChatGPT Image 1 lip 2026, 18_52_47.png
+projectile_1.tscn::PackedScene::4830469851084639637::1782995571::0::1::::<><><>0<>0<><>::uid://cxso55pxdnnn3::::res://scenes/projectile/projectile.gd<>uid://6hcmqf7vlpeb::::res://assets/projectiles/fire bullet.png
 projectile_2.tscn::PackedScene::6572104352641577503::1782987358::0::1::::<><><>0<>0<><>::uid://cxso55pxdnnn3::::res://scenes/projectile/projectile.gd<>uid://dyhl5ilpxu24n::::res://assets/projectiles/ChatGPT Image 2 lip 2026, 10_53_36.png
 projectile_3.tscn::PackedScene::7249826539919289911::1782992061::0::1::::<><><>0<>0<><>::uid://cxso55pxdnnn3::::res://scenes/projectile/projectile.gd<>uid://br65go0djjgub::::res://assets/projectiles/ChatGPT Image 2 lip 2026, 13_14_34.png
+projectile_4.tscn::PackedScene::3606724926019883595::1782995765::0::1::::<><><>0<>0<><>::uid://cxso55pxdnnn3::::res://scenes/projectile/projectile.gd<>uid://br65go0djjgub::::res://assets/projectiles/ChatGPT Image 2 lip 2026, 13_14_34.png
+projectile_5.tscn::PackedScene::740333786499692991::1782995980::0::1::::<><><>0<>0<><>::uid://cxso55pxdnnn3::::res://scenes/projectile/projectile.gd<>uid://br65go0djjgub::::res://assets/projectiles/ChatGPT Image 2 lip 2026, 13_14_34.png
 ::res://scenes/ui/::1781877318
 DamagePopup.gd::GDScript::1097805116821895480::1781724196::0::1::::DamagePopup<>Node3D<><>0<>0<><>::
 DamagePopup.tscn::PackedScene::208706072634307896::1781199473::0::1::::<><><>0<>0<><>::uid://pv1xprfd8c53::::res://scenes/ui/DamagePopup.gd<>uid://dqyf02xb4hxr::::res://assets/fonts/Bangers-Regular.ttf
@@ -806,7 +809,7 @@ ShipData.gd::GDScript::4629697214114682470::1781772985::0::1::::ShipData<>Resour
 SidekickData.gd::GDScript::7105368465568824413::1782993992::0::1::::SidekickData<>Resource<><>0<>0<><>::
 WeaponData.gd::GDScript::866682201313528631::1781770835::0::1::::WeaponData<>Resource<><>0<>0<><>::
 WeaponPowerLevelData.gd::GDScript::7198988748428294329::1782985862::0::1::::WeaponPowerLevelData<>Resource<><>0<>0<><>::
-WeaponShotPelletData.gd::GDScript::2975175675175110010::1781705990::0::1::::WeaponShotPelletData<>Resource<><>0<>0<><>::
+WeaponShotPelletData.gd::GDScript::2975175675175110010::1782995372::0::1::::WeaponShotPelletData<>Resource<><>0<>0<><>::
 WeaponSpecialShotData.gd::GDScript::6781051778324384214::1781771258::0::1::::WeaponSpecialShotData<>Resource<><>0<>0<><>::
 ::res://scripts/resources/enemies/::1781522009
 ::res://scripts/resources/enemies/movement/::1781522009
