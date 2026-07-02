@@ -84,15 +84,19 @@ func _ready():
 func _spawn_sidekicks() -> void:
 	_sidekicks.clear()
 	if left_sidekick_id > 0:
-		var sk := SceneRegistry.get_sidekick_scene(left_sidekick_id).instantiate()
-		sk.formation_offset = Vector3(-2.0, 0.0, 0.0)
-		add_child(sk)
-		_sidekicks.append(sk)
+		var scene := SceneRegistry.get_sidekick_scene(left_sidekick_id)
+		if scene != null:
+			var sk := scene.instantiate()
+			sk.formation_offset = Vector3(-2.0, 0.0, 0.0)
+			add_child(sk)
+			_sidekicks.append(sk)
 	if right_sidekick_id > 0:
-		var sk := SceneRegistry.get_sidekick_scene(right_sidekick_id).instantiate()
-		sk.formation_offset = Vector3(2.0, 0.0, 0.0)
-		add_child(sk)
-		_sidekicks.append(sk)
+		var scene := SceneRegistry.get_sidekick_scene(right_sidekick_id)
+		if scene != null:
+			var sk := scene.instantiate()
+			sk.formation_offset = Vector3(2.0, 0.0, 0.0)
+			add_child(sk)
+			_sidekicks.append(sk)
 
 
 func load_ship_data():

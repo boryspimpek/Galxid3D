@@ -4,6 +4,7 @@ extends Node
 var ships_cache: Array = []
 var weapons_cache: Array = []
 var generators_cache: Array = []
+var sidekicks_cache: Array = []
 
 const DataCatalogClass = preload("res://scripts/resources/DataCatalog.gd")
 const DATA_CATALOG_PATH := "res://data/data_catalog.tres"
@@ -37,6 +38,10 @@ func _load_all():
 	generators_cache.sort_custom(func(a, b): return a.generator_index < b.generator_index)
 	print("DataManager: Załadowano ", generators_cache.size(), " generatorów")
 
+	sidekicks_cache = catalog.sidekicks.duplicate()
+	sidekicks_cache.sort_custom(func(a, b): return a.sidekick_index < b.sidekick_index)
+	print("DataManager: Załadowano ", sidekicks_cache.size(), " sidekicków")
+
 	play_area_config = load(PLAY_AREA_CONFIG_PATH) as PlayAreaConfig
 	if play_area_config == null:
 		push_error("DataManager: Nie załadowano PlayAreaConfig: ", PLAY_AREA_CONFIG_PATH)
@@ -61,6 +66,14 @@ func get_generator_by_id(id: int) -> GeneratorData:
 			return generator
 	push_error("DataManager: Nie znaleziono generatora o ID=", id)
 	return null
+
+func get_sidekick_by_id(id: int) -> Resource:
+	for sk in sidekicks_cache:
+		if sk.sidekick_index == id:
+			return sk
+	push_error("DataManager: Nie znaleziono sidekicka o ID=", id)
+	return null
+
 
 func get_weapon_power_use(weapon_index: int, power_level: int = 1) -> int:
 	var weapon = get_weapon_by_id(weapon_index)
@@ -91,3 +104,4 @@ func clear_cache():
 	ships_cache.clear()
 	weapons_cache.clear()
 	generators_cache.clear()
+	sidekicks_cache.clear()

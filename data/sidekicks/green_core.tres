@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SidekickData" format=3 uid="uid://b8ng0e6mmlxry"]
+
+[ext_resource type="Script" uid="uid://c8h5m648mrxgn" path="res://scripts/resources/SidekickData.gd" id="1_gpoe5"]
+
+[resource]
+script = ExtResource("1_gpoe5")
+sidekick_index = 2
+scene_path = "uid://b81gtoq3ep0x3"
