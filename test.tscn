@@ -112,9 +112,10 @@ gamepad_deceleration = 500.0
 
 [node name="golden_core" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1698169203 instance=ExtResource("16_uty7l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8895645, 0, 1.1052152)
+collision_layer = 1
+script = null
 
 [node name="Background" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=240733446]
-visible = false
 
 [node name="Sun" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=145217065 instance=ExtResource("3_dvnpp")]
 transform = Transform3D(0.15, 0, 0, 0, -0.12057852, 0.08922344, 0, -0.08922344, -0.12057852, -45.875, -52.06, -26.895)
@@ -209,6 +210,7 @@ transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -15.754918, 0, -23.6489
 
 [node name="1" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1280645185]
 transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0, -10, -0.031)
+visible = false
 layers = 16
 mesh = SubResource("QuadMesh_kq58d")
 script = ExtResource("8_1f472")

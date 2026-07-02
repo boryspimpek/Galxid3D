@@ -17,6 +17,8 @@ front_power_level = 10
 rear_weapon_index = 2
 rear_power_level = 10
 generator_id = 4
+left_sidekick_id = 1
+right_sidekick_id = 1
 
 [node name="Blaze" parent="." unique_id=700868063 instance=ExtResource("6_c3xxp")]
 transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, 0, 0, 0)

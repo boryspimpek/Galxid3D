@@ -1,12 +1,58 @@
 [gd_scene format=3 uid="uid://d0yvvicuckvx0"]
 
+[ext_resource type="Script" uid="uid://bxbui8n1m07qy" path="res://scenes/player/Sidekick.gd" id="1_sidekick"]
 [ext_resource type="PackedScene" uid="uid://dtidgxekckfij" path="res://assets/sidekicks/golden core/golden_core_model.tscn" id="3_42l07"]
 
+[sub_resource type="Animation" id="Animation_8cs7o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ukx2a"]
+resource_name = "rotate"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 3.1415927), Vector3(0, 0, 6.2831855)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_31eh4"]
+_data = {
+&"RESET": SubResource("Animation_8cs7o"),
+&"rotate": SubResource("Animation_ukx2a")
+}
+
 [node name="golden_core" type="CharacterBody3D" unique_id=1811810025]
+collision_layer = 0
 collision_mask = 0
+script = ExtResource("1_sidekick")
+weapon_index = 3
+power_level = 10
 
 [node name="Meshy_AI_Golden_Triad_Core_0702103359_texture" parent="." unique_id=465295637 instance=ExtResource("3_42l07")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.71, 0, 0, 0)
 
 [node name="Muzzle" type="Marker3D" parent="." unique_id=807064709]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5002748)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2015165018]
+libraries/ = SubResource("AnimationLibrary_31eh4")

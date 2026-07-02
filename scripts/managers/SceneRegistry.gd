@@ -6,10 +6,12 @@ extends Node
 
 const DEFAULT_PLAYER_PROJECTILE := preload("res://scenes/projectile/projectile_1.tscn")
 const DEFAULT_SPECIAL_PROJECTILE := preload("res://scenes/projectile/power_1.tscn")
+const DEFAULT_SIDEKICK := preload("res://scenes/player/Golden_core.tscn")
 
 var enemy_projectile_scene: PackedScene
 var pickup_scene: PackedScene
 var _player_projectile_scene_cache: Dictionary = {}
+var _sidekick_scene_cache: Dictionary = {}
 
 func _ready():
 	enemy_projectile_scene = preload("res://scenes/enemy_projectile/EnemyProjectile.tscn")
@@ -21,6 +23,18 @@ func get_player_projectile_scene(projectile_id: int) -> PackedScene:
 		"projectile",
 		DEFAULT_PLAYER_PROJECTILE
 	)
+
+
+func get_sidekick_scene(sidekick_id: int) -> PackedScene:
+	var id := maxi(int(sidekick_id), 1)
+	var path := "res://scenes/player/sidekick_%d.tscn" % id
+	if not ResourceLoader.exists(path):
+		return DEFAULT_SIDEKICK
+	if _sidekick_scene_cache.has(path):
+		return _sidekick_scene_cache[path]
+	var scene := load(path) as PackedScene
+	_sidekick_scene_cache[path] = scene
+	return scene
 
 
 func get_player_special_projectile_scene(projectile_id: int) -> PackedScene:

@@ -16,3 +16,7 @@ res://assets/sidekicks/golden core/golden_core_model.tscn
 res://scenes/player/Sidekick.tscn
 res://test.tscn
 res://scenes/player/Golden_core.tscn
+res://scenes/player/Player.gd
+res://scenes/player/Sidekick.gd
+res://data/weapons/sidekick_1.tres
+res://scenes/projectile/projectile_3.tscn

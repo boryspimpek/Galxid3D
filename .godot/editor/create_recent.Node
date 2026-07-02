@@ -1,5 +1,6 @@
-MeshInstance3D
+AnimationPlayer
 Node3D
+MeshInstance3D
 SubViewport
 Sprite3D
 Node

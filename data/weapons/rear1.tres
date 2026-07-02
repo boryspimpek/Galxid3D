@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://cxgk2yhabxq1x"]
 
-[ext_resource type="PackedScene" uid="uid://db4vd2isl5vb1" path="res://assets/BinbunVFX/muzzle_flash/effects/big_flash/big_flash_01.tscn" id="1_cdhkh"]
 [ext_resource type="Script" uid="uid://bingydioab5yk" path="res://scripts/resources/WeaponShotPelletData.gd" id="2_uc71u"]
 [ext_resource type="Script" uid="uid://datij7ugn8eej" path="res://scripts/resources/WeaponPowerLevelData.gd" id="3_62ge4"]
 [ext_resource type="Script" uid="uid://ml3ennlcxw0v" path="res://scripts/resources/WeaponData.gd" id="4_athg3"]
 
 [sub_resource type="Resource" id="pl_1"]
 script = ExtResource("3_62ge4")
+fire_rate = 0.5
 projectile = 2
 velocity = Vector3(0, 0, -60)
 
@@ -74,5 +74,4 @@ power_level_7 = SubResource("pl_7")
 power_level_8 = SubResource("pl_8")
 power_level_9 = SubResource("pl_9")
 power_level_10 = SubResource("pl_10")
-muzzle_flash_scene = ExtResource("1_cdhkh")
 sound = 25

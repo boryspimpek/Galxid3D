@@ -53,6 +53,8 @@ var is_dodging := false
 @onready var damage_system: Node = $DamageSystem
 @onready var ship_model: Node3D = $Blaze
 
+var _sidekicks: Array[Node] = []
+
 var main_camera: Camera3D
 
 # ── Dotyk: cel w świecie + offset (palec nie musi być nad modelem) ──
@@ -77,6 +79,21 @@ func _ready():
 	apply_ship_stats()
 	init_power_regeneration()
 	_log_connected_joypads()
+	_spawn_sidekicks()
+
+func _spawn_sidekicks() -> void:
+	_sidekicks.clear()
+	if left_sidekick_id > 0:
+		var sk := SceneRegistry.get_sidekick_scene(left_sidekick_id).instantiate()
+		sk.formation_offset = Vector3(-2.0, 0.0, 0.0)
+		add_child(sk)
+		_sidekicks.append(sk)
+	if right_sidekick_id > 0:
+		var sk := SceneRegistry.get_sidekick_scene(right_sidekick_id).instantiate()
+		sk.formation_offset = Vector3(2.0, 0.0, 0.0)
+		add_child(sk)
+		_sidekicks.append(sk)
+
 
 func load_ship_data():
 	var s_id = ship_id
@@ -249,6 +266,9 @@ func _physics_process(delta: float):
 		)
 	)
 	weapon_system.set_fire_mode(_resolve_fire_mode(primary_input))
+	if primary_input and not is_dodging:
+		for sk in _sidekicks:
+			sk.shoot()
 	_update_tilt(velocity_x, delta)
 	notify_power_changed()
 
