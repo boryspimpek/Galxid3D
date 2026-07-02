@@ -1,0 +1,216 @@
+[gd_scene format=3 uid="uid://bvto813hjntxj"]
+
+[ext_resource type="Script" uid="uid://h4tfxlaeefcu" path="res://scenes/world/GameShell.gd" id="1_2h37t"]
+[ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="2_adp8l"]
+[ext_resource type="PackedScene" uid="uid://bpnoq5bivk33d" path="res://scenes/planets/sun.tscn" id="3_dvnpp"]
+[ext_resource type="PackedScene" uid="uid://c1pq466qvcqtm" path="res://scenes/planets/earth.tscn" id="4_ffwl0"]
+[ext_resource type="Texture2D" uid="uid://na3nvl7jvpdi" path="res://assets/planets/Gemini_Generated_Image_ (2).png" id="5_yg34o"]
+[ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="6_21gct"]
+[ext_resource type="Texture2D" uid="uid://chnxf3mxqjopg" path="res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_29_46.png" id="7_svjfs"]
+[ext_resource type="Script" uid="uid://barctovhkpey4" path="res://scenes/world/LevelScrollParallax3D.gd" id="8_1f472"]
+[ext_resource type="PackedScene" uid="uid://5qq7y15vdal6" path="res://scenes/enemies/types/arrow.tscn" id="11_uty7l"]
+[ext_resource type="PackedScene" uid="uid://bwk6nsjdxk422" path="res://scenes/enemies/types/fighter_m_01.tscn" id="12_45l4g"]
+[ext_resource type="PackedScene" uid="uid://dp43tqty7td6x" path="res://scenes/enemies/types/fighter_s_01.tscn" id="13_4uo0j"]
+[ext_resource type="PackedScene" uid="uid://cv5pl4svkf8ft" path="res://scenes/enemies/types/hawk.tscn" id="14_vxl6d"]
+[ext_resource type="PackedScene" uid="uid://ceb36gc6o5uvc" path="res://scenes/enemies/types/starfighter.tscn" id="15_eski5"]
+[ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="19_t77du"]
+[ext_resource type="PackedScene" uid="uid://dbqhlqawrvwa7" path="res://scenes/enemies/types/voyager.tscn" id="35_gojgw"]
+[ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="37_k13tm"]
+
+[sub_resource type="Environment" id="Environment_2y1ty"]
+background_energy_multiplier = 0.8
+glow_enabled = true
+adjustment_enabled = true
+adjustment_brightness = 1.12
+adjustment_contrast = 1.065
+adjustment_saturation = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rbxkt"]
+shading_mode = 0
+albedo_texture = ExtResource("5_yg34o")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ncxdr"]
+material = SubResource("StandardMaterial3D_rbxkt")
+size = Vector2(260, 130)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cegan"]
+albedo_texture = ExtResource("5_yg34o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qsp4k"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.6266563, 0.6589727, 0.735357, 1)
+albedo_texture = ExtResource("7_svjfs")
+metallic = 0.87
+roughness = 0.4
+emission_enabled = true
+normal_enabled = true
+normal_scale = -16.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_kq58d"]
+material = SubResource("StandardMaterial3D_qsp4k")
+size = Vector2(1672, 941)
+orientation = 1
+
+[node name="GameShell" type="Control" unique_id=616589222]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2h37t")
+
+[node name="GameViewportContainer" type="SubViewportContainer" parent="." unique_id=616589223]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="GameViewport" type="SubViewport" parent="GameViewportContainer" unique_id=616589224]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="GameWorld" type="Node3D" parent="GameViewportContainer/GameViewport" unique_id=616589225]
+
+[node name="World" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=435478258]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=2090551855]
+environment = SubResource("Environment_2y1ty")
+
+[node name="Light ring" type="DirectionalLight3D" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=1961031784]
+transform = Transform3D(1, 0, 0, 0, -0.6427876, -0.7660444, 0, 0.7660444, -0.6427876, 0, 0, 0)
+light_cull_mask = 8
+shadow_enabled = true
+
+[node name="Light earth" type="DirectionalLight3D" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=801004506]
+transform = Transform3D(0.39440814, 0.098476686, -0.91364354, -0.03463931, -0.9919415, -0.12186935, -0.91828215, 0.07971425, -0.3878187, 0, 15, 0)
+light_cull_mask = 4
+shadow_enabled = true
+
+[node name="Light action" type="DirectionalLight3D" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=1129389940]
+transform = Transform3D(-4.371139e-08, 0.7071067, -0.7071067, 0, 0.7071067, 0.7071067, 1, 3.0908616e-08, -3.0908616e-08, 0, 15, 0)
+light_cull_mask = 16
+shadow_enabled = true
+shadow_opacity = 0.73
+shadow_blur = 4.507
+
+[node name="Camera3D" type="Camera3D" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=1430056658]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 15, 0)
+
+[node name="Player" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1811810025 instance=ExtResource("2_adp8l")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.093774796, 0, 1.1087775)
+ship_id = 4
+front_power_level = 10
+generator_id = 4
+gamepad_move_speed = 15.0
+gamepad_l2_move_speed = 30.0
+gamepad_acceleration = 500.0
+gamepad_deceleration = 500.0
+
+[node name="Background" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=240733446]
+visible = false
+
+[node name="Sun" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=145217065 instance=ExtResource("3_dvnpp")]
+transform = Transform3D(0.15, 0, 0, 0, -0.12057852, 0.08922344, 0, -0.08922344, -0.12057852, -45.875, -52.06, -26.895)
+
+[node name="earth" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=1975713936 instance=ExtResource("4_ffwl0")]
+transform = Transform3D(0.305, 0, 0, 0, 0.17537662, 0.24953564, 0, -0.24953566, 0.1753766, 21.065, -26.265, -6.575)
+
+[node name="Nebula" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=327984543]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -65, 0)
+mesh = SubResource("QuadMesh_ncxdr")
+surface_material_override/0 = SubResource("StandardMaterial3D_cegan")
+
+[node name="LevelScroll" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=2113647570]
+script = ExtResource("6_21gct")
+scroll_speed = 0.0
+
+[node name="LevelScrollRuler" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=552135128 instance=ExtResource("19_t77du")]
+z_min = -600.0
+z_max = 10.0
+tick_spacing = 6.0
+major_tick_every = 1
+scroll_speed = 6.0
+
+[node name="arrow" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1897743314 instance=ExtResource("11_uty7l")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -12.660038, 0, -6.4009933)
+
+[node name="arrow2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1396708976 instance=ExtResource("11_uty7l")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -3.1575317, 0, -6.4009933)
+
+[node name="arrow3" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1444532161 instance=ExtResource("11_uty7l")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.3399124, 0, -6.4009933)
+
+[node name="arrow4" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1725756116 instance=ExtResource("11_uty7l")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 4.36528, 0, -6.4009933)
+
+[node name="arrow5" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=2116388910 instance=ExtResource("11_uty7l")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 9.050541, 0, -6.4009933)
+
+[node name="arrow6" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=201243057 instance=ExtResource("11_uty7l")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 13.471848, 0, -6.4009933)
+
+[node name="arrow7" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=702082197 instance=ExtResource("11_uty7l")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -9.492535, 0, -6.4009933)
+
+[node name="arrow8" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=663248656 instance=ExtResource("11_uty7l")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -16.553425, 0, -6.4009933)
+
+[node name="arrow9" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=132192107 instance=ExtResource("11_uty7l")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -6.3250313, 0, -6.4009933)
+
+[node name="arrow10" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=628738772 instance=ExtResource("11_uty7l")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -8.634674, 0, -2.6395855)
+
+[node name="arrow11" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1924053026 instance=ExtResource("11_uty7l")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.8678322, 0, -2.6395855)
+
+[node name="arrow12" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=2073409272 instance=ExtResource("11_uty7l")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 4.3652763, 0, -2.6395855)
+
+[node name="arrow13" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=444318513 instance=ExtResource("11_uty7l")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 8.390644, 0, -2.6395855)
+
+[node name="arrow14" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=619264144 instance=ExtResource("11_uty7l")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 13.075905, 0, -2.6395855)
+
+[node name="arrow15" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=537520880 instance=ExtResource("11_uty7l")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 17.497211, 0, -2.6395855)
+
+[node name="arrow16" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=490601317 instance=ExtResource("11_uty7l")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -5.4671707, 0, -2.6395855)
+
+[node name="arrow17" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=2063607204 instance=ExtResource("11_uty7l")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -12.528061, 0, -2.6395855)
+
+[node name="arrow18" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=281972535 instance=ExtResource("11_uty7l")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -2.2996674, 0, -2.6395855)
+
+[node name="fighter_m_01" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=663520587 instance=ExtResource("12_45l4g")]
+transform = Transform3D(1.5, 0, 0, 0, 1.4488888, 0.38822857, 0, -0.38822857, 1.4488888, 5.8102345, 0, -24.324675)
+
+[node name="fighter_s_01" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=279741322 instance=ExtResource("13_4uo0j")]
+transform = Transform3D(1.5, 0, 0, 0, 1.4488888, 0.38822857, 0, -0.38822857, 1.4488888, 0.6146469, 0, -24.198326)
+
+[node name="hawk" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=43868383 instance=ExtResource("14_vxl6d")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -4.20417, 0, -23.441422)
+
+[node name="starfighter" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1301015323 instance=ExtResource("15_eski5")]
+transform = Transform3D(1.5, 0, 0, 0, 1.4672215, 0.31186754, 0, -0.31186754, 1.4672215, -9.723484, 0, -23.53843)
+
+[node name="voyager" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=451649937 instance=ExtResource("35_gojgw")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -15.754918, 0, -23.64897)
+
+[node name="1" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1280645185]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0, -10, -0.031)
+layers = 16
+mesh = SubResource("QuadMesh_kq58d")
+script = ExtResource("8_1f472")
+scroll_factor = -1.0
+
+[node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("37_k13tm")]

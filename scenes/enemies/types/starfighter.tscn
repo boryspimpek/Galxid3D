@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_3ym5w"]
 [ext_resource type="Script" uid="uid://dtprhja8af0to" path="res://scripts/resources/enemies/movement/LinearMoveData.gd" id="3_q8gre"]
-[ext_resource type="PackedScene" uid="uid://6okj4uhag0tm" path="res://assets/BinbunVFX_Vol2/ExplosionFX/effects/air/vfx_air_explosion_01.tscn" id="4_q8gre"]
 [ext_resource type="Script" uid="uid://eo6qejm2h6hl" path="res://scripts/resources/enemies/weapons/EnemyWeaponData.gd" id="4_weapon_data"]
 [ext_resource type="PackedScene" uid="uid://dp6fn641cy82u" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/impact/vfx_impact_01.tscn" id="5_sqqeh"]
 [ext_resource type="PackedScene" uid="uid://bv4oshda8t6g7" path="res://assets/enemies/starfighter/starfighter_model.tscn" id="7_txy0d"]
@@ -18,12 +17,11 @@ sound = 3
 script = ExtResource("3_q8gre")
 
 [node name="starfighter" unique_id=1897743314 instance=ExtResource("1_3ym5w")]
-transform = Transform3D(1.5, 0, 0, 0, 1.4672215, 0.31186754, 0, -0.31186754, 1.4672215, 0, 0, 0)
+transform = Transform3D(1.2, 0, 0, 0, 1.1737772, 0.24949403, 0, -0.24949403, 1.1737772, 0, 0, 0)
 armor = 8
 weapon_data = SubResource("Weapon_starfighter")
 movement_data = SubResource("Resource_a7w8t")
 value = 20
-explosion_scene = ExtResource("4_q8gre")
 hit_effect_scene = ExtResource("5_sqqeh")
 
 [node name="starfighter" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=561581840 instance=ExtResource("7_txy0d")]

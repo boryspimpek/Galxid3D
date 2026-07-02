@@ -1,10 +1,26 @@
 [gd_scene format=3 uid="uid://cv5pl4svkf8ft"]
 
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_sd1qh"]
+[ext_resource type="Script" uid="uid://bs5humyuxa5j2" path="res://scripts/resources/enemies/weapons/BurstEnemyWeaponData.gd" id="2_eqm3m"]
 [ext_resource type="PackedScene" uid="uid://bb3pa0pc34hht" path="res://assets/enemies/hawk/hawk_model.tscn" id="2_ma2l7"]
+[ext_resource type="PackedScene" uid="uid://s6dwn56csbw1" path="res://assets/BinbunVFX_Vol2/ExplosionFX/effects/nuke/vfx_nuke_explosion_01.tscn" id="3_vnjca"]
+[ext_resource type="Script" uid="uid://cr2knbmonx42w" path="res://scenes/enemies/base/facing/FacePlayer.gd" id="5_vnjca"]
+
+[sub_resource type="Resource" id="Resource_rlt0p"]
+script = ExtResource("2_eqm3m")
+fire_rate = 3.0
+fire_on_activate = true
+projectile_velocity = Vector3(0, 0, 20)
+aim = 10
+sound = 5
+metadata/_custom_type_script = "uid://bs5humyuxa5j2"
 
 [node name="hawk" unique_id=1897743314 instance=ExtResource("1_sd1qh")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+armor = 12
+weapon_data = SubResource("Resource_rlt0p")
+value = 50
+explosion_scene = ExtResource("3_vnjca")
 
 [node name="hawk" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1431754817 instance=ExtResource("2_ma2l7")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
@@ -15,11 +31,8 @@ transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.3
 [node name="Muzzle" parent="." index="3" unique_id=1704985833]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1139097, 0, 0.6066782)
 
-[node name="Muzzle2" type="Marker3D" parent="." index="4" unique_id=1390911343]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8177511, 0, 0.6066782)
+[node name="Muzzle2" type="Marker3D" parent="." index="4" unique_id=599481735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1139103, 0, 0.6066782)
 
-[node name="Muzzle3" type="Marker3D" parent="." index="5" unique_id=599481735]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8133311, 0, 0.6066782)
-
-[node name="Muzzle4" type="Marker3D" parent="." index="6" unique_id=1086327015]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.127171, 0, 0.6066782)
+[node name="Facing" type="Node3D" parent="." index="5" unique_id=2029072942]
+script = ExtResource("5_vnjca")
