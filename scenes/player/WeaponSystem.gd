@@ -235,6 +235,8 @@ func spawn_shot(
 	special_shot: bool = false,
 	from_muzzle: Marker3D = null,
 	weapon_data_ref: WeaponData = null,
+	homing: bool = false,
+	homing_turn_speed: float = 3.0,
 ) -> void:
 	if from_muzzle == null:
 		from_muzzle = muzzle
@@ -245,6 +247,8 @@ func spawn_shot(
 			projectile_id,
 			damage,
 			special_shot,
+			homing,
+			homing_turn_speed,
 		)
 		_spawn_muzzle_flash(base_velocity, from_muzzle, weapon_data_ref)
 		return
@@ -252,7 +256,7 @@ func spawn_shot(
 	for pellet in pellets:
 		var velocity := _pellet_velocity(base_velocity, pellet)
 		var spawn_pos: Vector3 = from_muzzle.global_position + from_muzzle.global_basis * pellet.spawn_offset
-		_spawn_single_projectile(spawn_pos, velocity, projectile_id, damage, special_shot)
+		_spawn_single_projectile(spawn_pos, velocity, projectile_id, damage, special_shot, homing, homing_turn_speed)
 	_spawn_muzzle_flash(base_velocity, from_muzzle, weapon_data_ref)
 
 
@@ -262,6 +266,8 @@ func _spawn_single_projectile(
 	projectile_id: int,
 	damage: int,
 	special_shot: bool = false,
+	homing: bool = false,
+	homing_turn_speed: float = 3.0,
 ) -> void:
 	var projectile_scene := SceneRegistry.get_player_special_projectile_scene(projectile_id) \
 		if special_shot \
@@ -271,6 +277,9 @@ func _spawn_single_projectile(
 	projectile.global_position = spawn_position
 	projectile.velocity = velocity
 	projectile.damage = damage
+	if homing:
+		projectile.homing = true
+		projectile.turn_speed = homing_turn_speed
 
 
 func _spawn_weapon_fire(
@@ -287,6 +296,8 @@ func _spawn_weapon_fire(
 		special_shot,
 		from_muzzle,
 		weapon_data_ref,
+		power_level_data.homing,
+		power_level_data.homing_turn_speed,
 	)
 
 func _pellet_velocity(base_velocity: Vector3, pellet: WeaponShotPelletData) -> Vector3:

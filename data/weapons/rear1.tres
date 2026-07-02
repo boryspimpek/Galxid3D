@@ -1,65 +1,67 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://cxgk2yhabxq1x"]
 
-[ext_resource type="Script" uid="uid://bingydioab5yk" path="res://scripts/resources/WeaponShotPelletData.gd" id="1_b7n3p"]
-[ext_resource type="PackedScene" uid="uid://db4vd2isl5vb1" path="res://assets/BinbunVFX/muzzle_flash/effects/big_flash/big_flash_01.tscn" id="1_jns5a"]
-[ext_resource type="Script" uid="uid://ml3ennlcxw0v" path="res://scripts/resources/WeaponData.gd" id="1_weapon"]
-[ext_resource type="Script" uid="uid://datij7ugn8eej" path="res://scripts/resources/WeaponPowerLevelData.gd" id="2_pl"]
+[ext_resource type="PackedScene" uid="uid://db4vd2isl5vb1" path="res://assets/BinbunVFX/muzzle_flash/effects/big_flash/big_flash_01.tscn" id="1_cdhkh"]
+[ext_resource type="Script" uid="uid://bingydioab5yk" path="res://scripts/resources/WeaponShotPelletData.gd" id="2_uc71u"]
+[ext_resource type="Script" uid="uid://datij7ugn8eej" path="res://scripts/resources/WeaponPowerLevelData.gd" id="3_62ge4"]
+[ext_resource type="Script" uid="uid://ml3ennlcxw0v" path="res://scripts/resources/WeaponData.gd" id="4_athg3"]
 
 [sub_resource type="Resource" id="pl_1"]
-script = ExtResource("2_pl")
+script = ExtResource("3_62ge4")
 projectile = 2
 velocity = Vector3(0, 0, -60)
 
 [sub_resource type="Resource" id="pl_10"]
-script = ExtResource("2_pl")
-damage = 10
-fire_rate = 1.0
+script = ExtResource("3_62ge4")
+damage = 0
+fire_rate = 3.0
 projectile = 2
 velocity = Vector3(0, 0, -60)
+homing = true
+homing_turn_speed = 10.0
 
 [sub_resource type="Resource" id="pl_2"]
-script = ExtResource("2_pl")
+script = ExtResource("3_62ge4")
 projectile = 2
 velocity = Vector3(0, 0, -60)
 
 [sub_resource type="Resource" id="pl_3"]
-script = ExtResource("2_pl")
+script = ExtResource("3_62ge4")
 projectile = 2
 velocity = Vector3(0, 0, -60)
 
 [sub_resource type="Resource" id="pl_4"]
-script = ExtResource("2_pl")
+script = ExtResource("3_62ge4")
 projectile = 2
 velocity = Vector3(0, 0, -60)
 
 [sub_resource type="Resource" id="Resource_n7nwy"]
-script = ExtResource("2_pl")
+script = ExtResource("3_62ge4")
 projectile = 2
 metadata/_custom_type_script = "uid://datij7ugn8eej"
 
 [sub_resource type="Resource" id="pl_6"]
-script = ExtResource("2_pl")
+script = ExtResource("3_62ge4")
 projectile = 2
 velocity = Vector3(0, 0, -60)
 
 [sub_resource type="Resource" id="pl_7"]
-script = ExtResource("2_pl")
+script = ExtResource("3_62ge4")
 projectile = 2
 velocity = Vector3(0, 0, -60)
 
 [sub_resource type="Resource" id="pl_8"]
-script = ExtResource("2_pl")
+script = ExtResource("3_62ge4")
 projectile = 2
 velocity = Vector3(0, 0, -60)
 
 [sub_resource type="Resource" id="pl_9"]
-script = ExtResource("2_pl")
+script = ExtResource("3_62ge4")
 damage = 2
 projectile = 2
 velocity = Vector3(0, 0, -60)
 
 [resource]
-script = ExtResource("1_weapon")
+script = ExtResource("4_athg3")
 weapon_index = 2
 weapon_name = "Pulse Cannon 2"
 power_level_1 = SubResource("pl_1")
@@ -72,5 +74,5 @@ power_level_7 = SubResource("pl_7")
 power_level_8 = SubResource("pl_8")
 power_level_9 = SubResource("pl_9")
 power_level_10 = SubResource("pl_10")
-muzzle_flash_scene = ExtResource("1_jns5a")
+muzzle_flash_scene = ExtResource("1_cdhkh")
 sound = 25

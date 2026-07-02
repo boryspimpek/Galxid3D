@@ -7,3 +7,8 @@ res://scenes/player/Player.tscn
 res://data/weapons/weapon_2.tres
 res://scenes/projectile/projectile_2.tscn
 res://scenes/player/WeaponSystem.gd
+res://scripts/managers/SceneRegistry.gd
+res://scripts/resources/WeaponPowerLevelData.gd
+res://data/weapons/front_1.tres
+res://data/weapons/rear1.tres
+res://scenes/projectile/projectile.gd
