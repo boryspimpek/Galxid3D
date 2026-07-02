@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dtidgxekckfij"]
+
+[ext_resource type="PackedScene" uid="uid://dcw2k8v4luojd" path="res://assets/sidekicks/golden core/Meshy_AI_Golden_Triad_Core_0702103359_texture.glb" id="1_md1lq"]
+
+[node name="Meshy_AI_Golden_Triad_Core_0702103359_texture" unique_id=1089688135 instance=ExtResource("1_md1lq")]
+layers = 16
+
+[node name="Mesh" parent="." index="0" unique_id=1768416604]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+layers = 16

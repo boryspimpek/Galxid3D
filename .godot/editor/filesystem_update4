@@ -12,3 +12,7 @@ res://scripts/resources/WeaponPowerLevelData.gd
 res://data/weapons/front_1.tres
 res://data/weapons/rear1.tres
 res://scenes/projectile/projectile.gd
+res://assets/sidekicks/golden core/golden_core_model.tscn
+res://scenes/player/Sidekick.tscn
+res://test.tscn
+res://scenes/player/Golden_core.tscn

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d0yvvicuckvx0"]
+
+[ext_resource type="PackedScene" uid="uid://dtidgxekckfij" path="res://assets/sidekicks/golden core/golden_core_model.tscn" id="3_42l07"]
+
+[node name="golden_core" type="CharacterBody3D" unique_id=1811810025]
+collision_mask = 0
+
+[node name="Meshy_AI_Golden_Triad_Core_0702103359_texture" parent="." unique_id=465295637 instance=ExtResource("3_42l07")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.71, 0, 0, 0)
+
+[node name="Muzzle" type="Marker3D" parent="." unique_id=807064709]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5002748)
