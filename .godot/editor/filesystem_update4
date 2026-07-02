@@ -20,3 +20,6 @@ res://scenes/player/Player.gd
 res://scenes/player/Sidekick.gd
 res://data/weapons/sidekick_1.tres
 res://scenes/projectile/projectile_3.tscn
+res://assets/sidekicks/golden core/green_core_model.tscn
+res://scenes/player/Green_core.tscn
+res://data/weapons/sidekick_right.tres

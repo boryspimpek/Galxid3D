@@ -11,7 +11,7 @@
 [ext_resource type="Resource" uid="uid://b4jqk5h3n8kxy" path="res://data/weapons/front_1.tres" id="9_weapon_1"]
 [ext_resource type="Resource" uid="uid://cxgk2yhabxq1x" path="res://data/weapons/rear1.tres" id="9_weapon_2"]
 [ext_resource type="Resource" uid="uid://cpnm4vsppml3x" path="res://data/weapons/sidekick_1.tres" id="9_weapon_3"]
-
+[ext_resource type="Resource" uid="uid://cdobf0a3elmxd" path="res://data/weapons/sidekick_2.tres" id="9_weapon_4"]
 [ext_resource type="Resource" uid="uid://1ykk86kri22i" path="res://data/generators/generator_001.tres" id="10_generator_001"]
 [ext_resource type="Resource" uid="uid://emuy2h84wbl5" path="res://data/generators/generator_002.tres" id="11_generator_002"]
 [ext_resource type="Resource" path="res://data/generators/generator_003.tres" id="12_generator_003"]
@@ -20,5 +20,5 @@
 [resource]
 script = ExtResource("1_catalog")
 ships = Array[ExtResource("2_ship_type")]([ExtResource("5_ship_001"), ExtResource("6_ship_002"), ExtResource("7_ship_003"), ExtResource("8_ship_004")])
-weapons = Array[ExtResource("3_weapon_type")]([ExtResource("9_weapon_1"), ExtResource("9_weapon_2"), ExtResource("9_weapon_3")])
+weapons = Array[ExtResource("3_weapon_type")]([ExtResource("9_weapon_1"), ExtResource("9_weapon_2"), ExtResource("9_weapon_3"), ExtResource("9_weapon_4")])
 generators = Array[ExtResource("4_generator_type")]([ExtResource("10_generator_001"), ExtResource("11_generator_002"), ExtResource("12_generator_003"), ExtResource("13_generator_004")])

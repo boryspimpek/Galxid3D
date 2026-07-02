@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://dp43tqty7td6x" path="res://scenes/enemies/types/fighter_s_01.tscn" id="13_4uo0j"]
 [ext_resource type="PackedScene" uid="uid://cv5pl4svkf8ft" path="res://scenes/enemies/types/hawk.tscn" id="14_vxl6d"]
 [ext_resource type="PackedScene" uid="uid://ceb36gc6o5uvc" path="res://scenes/enemies/types/starfighter.tscn" id="15_eski5"]
-[ext_resource type="PackedScene" uid="uid://d0yvvicuckvx0" path="res://scenes/player/Golden_core.tscn" id="16_uty7l"]
 [ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="19_t77du"]
 [ext_resource type="PackedScene" uid="uid://dbqhlqawrvwa7" path="res://scenes/enemies/types/voyager.tscn" id="35_gojgw"]
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="37_k13tm"]
@@ -109,11 +108,6 @@ gamepad_move_speed = 15.0
 gamepad_l2_move_speed = 30.0
 gamepad_acceleration = 500.0
 gamepad_deceleration = 500.0
-
-[node name="golden_core" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1698169203 instance=ExtResource("16_uty7l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8895645, 0, 1.1052152)
-collision_layer = 1
-script = null
 
 [node name="Background" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=240733446]
 
