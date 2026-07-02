@@ -17,14 +17,14 @@ metadata/_custom_type_script = "uid://bingydioab5yk"
 
 [sub_resource type="Resource" id="Resource_tm823"]
 script = ExtResource("2_v1yuy")
-angle_deg = -5.0
+angle_deg = -2.0
 spawn_offset = Vector3(1.2, 0, 0.8)
 projectile_override = 4
 metadata/_custom_type_script = "uid://bingydioab5yk"
 
 [sub_resource type="Resource" id="Resource_v1yuy"]
 script = ExtResource("2_v1yuy")
-angle_deg = 5.0
+angle_deg = 2.0
 spawn_offset = Vector3(-1.2, 0, 0.8)
 projectile_override = 4
 metadata/_custom_type_script = "uid://bingydioab5yk"
@@ -104,14 +104,14 @@ pellets = Array[ExtResource("2_v1yuy")]([SubResource("Resource_uqjdg"), SubResou
 
 [sub_resource type="Resource" id="Resource_b7n3p"]
 script = ExtResource("5_4ythj")
-damage = 5
+damage = 4
 power_use = 15
 cooldown = 0.05
 projectile = 3
 
 [sub_resource type="Resource" id="Resource_b7xww"]
 script = ExtResource("5_4ythj")
-damage = 10
+damage = 100
 power_use = 60
 cooldown = 0.1
 projectile = 4

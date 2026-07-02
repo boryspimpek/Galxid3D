@@ -6,5 +6,5 @@
 script = ExtResource("1")
 ship_index = 3
 ship_name = "Gencore Phoenix"
-armor = 6
+armor = 10
 cost = 12000

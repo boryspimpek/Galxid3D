@@ -1,6 +1,16 @@
 [gd_scene format=3 uid="uid://cg1ukck7ckc0w"]
 
 [ext_resource type="PackedScene" uid="uid://hgximytks8ho" path="res://assets/enemies/fighter m_01/Meshy_AI_Blue_Comet_Jet_0630111534_texture.glb" id="1_fenvf"]
+[ext_resource type="Texture2D" uid="uid://cfsytrcf0cdml" path="res://assets/enemies/fighter m_01/Meshy_AI_Blue_Comet_Jet_0630111534_texture_0.jpg" id="2_kmfvu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0ovv"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("2_kmfvu")
+metallic = 0.31
+metallic_specular = 0.0
+roughness = 0.0
+clearcoat_enabled = true
 
 [node name="fighter_m_01" unique_id=1118901528 instance=ExtResource("1_fenvf")]
 layers = 16
@@ -8,3 +18,4 @@ layers = 16
 [node name="Mesh" parent="." index="0" unique_id=422202156]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 layers = 16
+material_override = SubResource("StandardMaterial3D_k0ovv")

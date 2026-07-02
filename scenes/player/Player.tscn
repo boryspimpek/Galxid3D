@@ -12,7 +12,7 @@ height = 1.5536003
 [node name="Player" type="CharacterBody3D" unique_id=1811810025]
 collision_mask = 0
 script = ExtResource("1_onrkg")
-ship_id = 4
+ship_id = 3
 front_power_level = 10
 rear_weapon_index = 2
 rear_power_level = 10

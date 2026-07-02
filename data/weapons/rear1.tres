@@ -15,7 +15,7 @@ script = ExtResource("3_62ge4")
 damage = 5
 fire_rate = 1.0
 projectile = 2
-velocity = Vector3(0, 0, -60)
+velocity = Vector3(0, 0, -40)
 homing = true
 homing_turn_speed = 10.0
 

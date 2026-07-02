@@ -17,7 +17,7 @@ metadata/_custom_type_script = "uid://bs5humyuxa5j2"
 
 [node name="hawk" unique_id=1897743314 instance=ExtResource("1_sd1qh")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
-armor = 12
+armor = 35
 weapon_data = SubResource("Resource_rlt0p")
 value = 50
 explosion_scene = ExtResource("3_vnjca")
