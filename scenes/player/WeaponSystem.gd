@@ -17,9 +17,13 @@ enum FireMode {
 
 # --- Referencje ---
 var player: CharacterBody3D
+var front_muzzle: Marker3D
+var rear_muzzle: Marker3D
 var muzzle: Marker3D
 
 # --- Dane broni ---
+var front_weapon_data: WeaponDataClass
+var rear_weapon_data: WeaponDataClass
 var weapon_data: WeaponDataClass
 var current_weapon_index: int = 1
 
@@ -38,7 +42,9 @@ const MUZZLE_FLASH_MAX_LIFETIME := 0.12
 
 func _ready():
 	player = get_parent()
-	muzzle = player.get_node("Muzzle")
+	front_muzzle = player.get_node("Muzzle")
+	rear_muzzle = player.get_node_or_null("Muzzle2")
+	muzzle = front_muzzle
 	await get_tree().process_frame
 	load_weapon_config()
 	_ready_to_fire = true
@@ -54,15 +60,23 @@ func _physics_process(delta: float):
 
 
 func load_weapon_config():
+	front_weapon_data = DataManager.get_weapon_by_id(player.front_weapon_index)
+	rear_weapon_data = DataManager.get_weapon_by_id(player.rear_weapon_index)
+	weapon_data = front_weapon_data
 	current_weapon_index = player.front_weapon_index
 	print("WeaponSystem: próbuję załadować broń ID=", current_weapon_index)
 
-	weapon_data = DataManager.get_weapon_by_id(current_weapon_index)
-
-	if weapon_data == null:
-		push_error("WeaponSystem: Nie znaleziono broni o ID: ", current_weapon_index)
+	if front_weapon_data == null:
+		push_error("WeaponSystem: Nie znaleziono broni frontowej o ID: ", current_weapon_index)
 	else:
-		print("WeaponSystem: Załadowano broń - weapon_id=", current_weapon_index)
+		print("WeaponSystem: Załadowano broń frontową - weapon_id=", current_weapon_index)
+
+	if player.rear_weapon_index != 0:
+		if rear_weapon_data == null:
+			push_error("WeaponSystem: Nie znaleziono broni tylnej o ID: ", player.rear_weapon_index)
+		else:
+			print("WeaponSystem: Załadowano broń tylną - weapon_id=", player.rear_weapon_index)
+
 	_despawn_beam()
 	for i in WeaponDataClass.SPECIAL_SHOT_COUNT:
 		_special_shot_timers[i] = 0.0
@@ -149,28 +163,29 @@ func shoot_special(slot: int) -> void:
 
 
 func shoot():
-	if weapon_data == null:
-		push_error("WeaponSystem: weapon_data jest null, próbuję załadować ponownie...")
+	if front_weapon_data == null:
+		push_error("WeaponSystem: front_weapon_data jest null, próbuję załadować ponownie...")
 		load_weapon_config()
-		if weapon_data == null:
+		if front_weapon_data == null:
 			return
 
-	var power_level_data = weapon_data.get_power_level_data(player.front_power_level)
-	var power_use = power_level_data.power_use
-	if player.power < power_use:
+	var front_power_level_data = front_weapon_data.get_power_level_data(player.front_power_level)
+	var front_cost = front_power_level_data.power_use
+	if player.power < front_cost:
 		return
 
-	player.power -= power_use
-	player.notify_power_changed()
+	player.power -= front_cost
+	_spawn_weapon_fire(front_muzzle, front_weapon_data, front_power_level_data)
+	SoundManager.play_weapon_sound(front_weapon_data.sound)
+	fire_timer = front_power_level_data.fire_rate
 
-	spawn_shot(
-		power_level_data.projectile,
-		power_level_data.damage,
-		power_level_data.velocity,
-		power_level_data.pellets,
-	)
-	SoundManager.play_weapon_sound(weapon_data.sound)
-	fire_timer = power_level_data.fire_rate
+	if rear_weapon_data != null and rear_muzzle != null:
+		var rear_power_level_data = rear_weapon_data.get_power_level_data(player.rear_power_level)
+		if player.power >= rear_power_level_data.power_use:
+			player.power -= rear_power_level_data.power_use
+			_spawn_weapon_fire(rear_muzzle, rear_weapon_data, rear_power_level_data)
+
+	player.notify_power_changed()
 
 
 func _update_beam(shot_data: WeaponSpecialShotData, delta: float) -> void:
@@ -218,23 +233,27 @@ func spawn_shot(
 	base_velocity: Vector3,
 	pellets: Array[WeaponShotPelletData],
 	special_shot: bool = false,
+	from_muzzle: Marker3D = null,
+	weapon_data_ref: WeaponData = null,
 ) -> void:
+	if from_muzzle == null:
+		from_muzzle = muzzle
 	if pellets.is_empty():
 		_spawn_single_projectile(
-			muzzle.global_position,
+			from_muzzle.global_position,
 			base_velocity,
 			projectile_id,
 			damage,
 			special_shot,
 		)
-		_spawn_muzzle_flash(base_velocity)
+		_spawn_muzzle_flash(base_velocity, from_muzzle, weapon_data_ref)
 		return
 
 	for pellet in pellets:
 		var velocity := _pellet_velocity(base_velocity, pellet)
-		var spawn_pos: Vector3 = muzzle.global_position + muzzle.global_basis * pellet.spawn_offset
+		var spawn_pos: Vector3 = from_muzzle.global_position + from_muzzle.global_basis * pellet.spawn_offset
 		_spawn_single_projectile(spawn_pos, velocity, projectile_id, damage, special_shot)
-	_spawn_muzzle_flash(base_velocity)
+	_spawn_muzzle_flash(base_velocity, from_muzzle, weapon_data_ref)
 
 
 func _spawn_single_projectile(
@@ -254,6 +273,22 @@ func _spawn_single_projectile(
 	projectile.damage = damage
 
 
+func _spawn_weapon_fire(
+	from_muzzle: Marker3D,
+	weapon_data_ref: WeaponData,
+	power_level_data: WeaponPowerLevelData,
+	special_shot: bool = false,
+) -> void:
+	spawn_shot(
+		power_level_data.projectile,
+		power_level_data.damage,
+		power_level_data.velocity,
+		power_level_data.pellets,
+		special_shot,
+		from_muzzle,
+		weapon_data_ref,
+	)
+
 func _pellet_velocity(base_velocity: Vector3, pellet: WeaponShotPelletData) -> Vector3:
 	var direction := base_velocity
 	if direction.length_squared() < 0.0001:
@@ -264,17 +299,25 @@ func _pellet_velocity(base_velocity: Vector3, pellet: WeaponShotPelletData) -> V
 	return direction.rotated(Vector3.UP, deg_to_rad(pellet.angle_deg)) * speed
 
 
-func _spawn_muzzle_flash(velocity: Vector3) -> void:
-	if weapon_data == null:
+func _spawn_muzzle_flash(
+	velocity: Vector3,
+	from_muzzle: Marker3D = null,
+	weapon_data_ref: WeaponData = null,
+) -> void:
+	if weapon_data_ref == null:
+		weapon_data_ref = weapon_data
+	if weapon_data_ref == null:
 		return
-	var scene := weapon_data.muzzle_flash_scene
+	if from_muzzle == null:
+		from_muzzle = muzzle
+	var scene := weapon_data_ref.muzzle_flash_scene
 	if scene == null:
 		return
 
 	var flash := scene.instantiate()
-	muzzle.add_child(flash)
+	from_muzzle.add_child(flash)
 	if flash is Node3D:
-		(flash as Node3D).transform = _muzzle_flash_local_transform(velocity)
+		(flash as Node3D).transform = _muzzle_flash_local_transform(velocity, from_muzzle)
 
 	_try_play_vfx_flash(flash)
 	_schedule_flash_cleanup(flash)
@@ -304,9 +347,9 @@ func _schedule_flash_cleanup(flash: Node) -> void:
 	get_tree().create_timer(MUZZLE_FLASH_MAX_LIFETIME).timeout.connect(cleanup, CONNECT_ONE_SHOT)
 
 
-func _muzzle_flash_local_transform(velocity: Vector3) -> Transform3D:
+func _muzzle_flash_local_transform(velocity: Vector3, from_muzzle: Marker3D) -> Transform3D:
 	var world_basis := _muzzle_flash_basis(velocity)
-	var local_basis := muzzle.global_basis.inverse() * world_basis
+	var local_basis := from_muzzle.global_basis.inverse() * world_basis
 	return Transform3D(local_basis, Vector3.ZERO)
 
 

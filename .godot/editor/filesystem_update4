@@ -6,3 +6,4 @@ res://data/weapons/weapon_1.tres
 res://scenes/player/Player.tscn
 res://data/weapons/weapon_2.tres
 res://scenes/projectile/projectile_2.tscn
+res://scenes/player/WeaponSystem.gd
