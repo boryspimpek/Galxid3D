@@ -31,3 +31,4 @@ res://assets/enemies/satellite/satellite_model.tscn
 res://scenes/enemies/types/satellite.tscn
 res://data/ships/ship_004.tres
 res://assets/ElectricDischargeVFX/ElectricDischarge.gd
+res://scenes/enemies/formations/formation15.tscn
