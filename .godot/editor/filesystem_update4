@@ -4,3 +4,5 @@ res://assets/shaders/toon.gdshader
 res://scenes/projectile/projectile_1.tscn
 res://data/weapons/weapon_1.tres
 res://scenes/player/Player.tscn
+res://data/weapons/weapon_2.tres
+res://scenes/projectile/projectile_2.tscn

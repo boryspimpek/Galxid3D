@@ -1,28 +1,17 @@
 [gd_scene format=3 uid="uid://c0vtul4d2cdul"]
 
 [ext_resource type="Script" uid="uid://cxso55pxdnnn3" path="res://scenes/projectile/projectile.gd" id="1_ah7ep"]
-[ext_resource type="Texture2D" uid="uid://6hcmqf7vlpeb" path="res://assets/projectiles/fire bullet.png" id="2_mcblh"]
-[ext_resource type="Texture2D" uid="uid://c3gntgoat81j4" path="res://assets/projectiles/ChatGPT Image 1 lip 2026, 18_52_47.png" id="3_uwhg4"]
+[ext_resource type="Texture2D" uid="uid://dyhl5ilpxu24n" path="res://assets/projectiles/ChatGPT Image 2 lip 2026, 10_53_36.png" id="2_5ou4f"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nskuf"]
 radius = 0.43603516
 height = 2.9732742
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xio8u"]
-radius = 0.38232422
-height = 2.1942463
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cm8q0"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ah7ep"]
 transparency = 1
 shading_mode = 0
 albedo_color = Color(1.5720325, 1.5720325, 1.5720325, 1)
-albedo_texture = ExtResource("2_mcblh")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ed3fj"]
-transparency = 1
-shading_mode = 0
-albedo_color = Color(1.5720325, 1.5720325, 1.5720325, 1)
-albedo_texture = ExtResource("3_uwhg4")
+albedo_texture = ExtResource("2_5ou4f")
 
 [node name="Projectile" type="Area3D" unique_id=1517421005]
 collision_layer = 4
@@ -33,34 +22,14 @@ script = ExtResource("1_ah7ep")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_nskuf")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=344136238]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.0002661, 8.983845e-10, 0.8015468)
-shape = SubResource("CapsuleShape3D_xio8u")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=643040899]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1.2008907, 8.983845e-10, 0.8015468)
-shape = SubResource("CapsuleShape3D_xio8u")
-
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1682580241]
 aabb = AABB(-0.40667695, -0.102447845, -1.4953173, 0.8133539, 0.20489569, 2.9906347)
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=680446642]
-transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, 0.04, 0, 0.17)
-material_override = SubResource("StandardMaterial3D_cm8q0")
+transform = Transform3D(-2.1855694e-08, 0, 0.215, 0, 0.5, 0, -0.5, 0, -9.397948e-09, 0.04, 0, 0.17)
+material_override = SubResource("StandardMaterial3D_ah7ep")
 axis = 1
-texture = ExtResource("2_mcblh")
-
-[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=2089243657]
-transform = Transform3D(-1.3113417e-08, 0, 0.605, 0, 0.5, 0, -0.3, 0, -2.644539e-08, 1.1, 0, 0.8)
-material_override = SubResource("StandardMaterial3D_ed3fj")
-axis = 1
-texture = ExtResource("2_mcblh")
-
-[node name="Sprite3D3" type="Sprite3D" parent="." unique_id=1660096602]
-transform = Transform3D(-1.3113417e-08, 0, 0.605, 0, 0.5, 0, -0.3, 0, -2.644539e-08, -1.1, 0, 0.8)
-material_override = SubResource("StandardMaterial3D_ed3fj")
-axis = 1
-texture = ExtResource("2_mcblh")
+texture = ExtResource("2_5ou4f")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

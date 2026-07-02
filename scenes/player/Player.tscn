@@ -14,6 +14,11 @@ height = 1.5536003
 [node name="Player" type="CharacterBody3D" unique_id=1811810025]
 collision_mask = 0
 script = ExtResource("1_onrkg")
+ship_id = 4
+front_power_level = 10
+rear_weapon_index = 2
+rear_power_level = 10
+generator_id = 4
 
 [node name="Blaze" parent="." unique_id=700868063 instance=ExtResource("6_c3xxp")]
 transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, 0, 0, 0)
@@ -30,6 +35,9 @@ script = ExtResource("3_tpg5x")
 
 [node name="Muzzle" type="Marker3D" parent="." unique_id=807064709]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.4)
+
+[node name="Muzzle2" type="Marker3D" parent="." unique_id=2118624562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.30915558)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1720371486]
 visible = false
