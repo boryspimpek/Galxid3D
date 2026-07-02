@@ -115,8 +115,9 @@ func _on_armor_changed(current: int, _maximum: int) -> void:
 		_health_bar.texture = _health_textures[index]
 
 
-func _on_power_changed(current: float, _maximum: float) -> void:
-	var index := clampi(floori(current / float(POWER_PER_LEVEL)), 0, POWER_BAR_MAX_INDEX)
+func _on_power_changed(current: float, maximum: float) -> void:
+	var max_val := maximum if maximum > 0.0 else float(POWER_PER_LEVEL * POWER_BAR_MAX_INDEX)
+	var index := clampi(floori((current / max_val) * POWER_BAR_MAX_INDEX), 0, POWER_BAR_MAX_INDEX)
 	if index < _power_textures.size():
 		_power_bar.texture = _power_textures[index]
 

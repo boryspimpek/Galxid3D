@@ -26,3 +26,4 @@ res://scenes/enemies/types/fighter_m_01.tscn
 res://scenes/enemies/formations/m_fighter_1.tscn
 res://scenes/enemies/formations/m_fighter_2.tscn
 res://scenes/enemies/formations/formation5.tscn
+res://scenes/ui/Hud.gd
