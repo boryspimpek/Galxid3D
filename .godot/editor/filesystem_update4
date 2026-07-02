@@ -10,3 +10,5 @@ res://scenes/projectile/projectile_5.tscn
 res://scenes/player/Player.tscn
 res://data/weapons/sidekick_left.tres
 res://scenes/projectile/projectile_2.tscn
+res://scenes/player/Green_core.tscn
+res://scenes/projectile/projectile_3.tscn

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bq5wylaj6hgr1" path="res://assets/sidekicks/golden core/green_core_model.tscn" id="2_ycjuk"]
 
 [sub_resource type="Animation" id="Animation_8cs7o"]
-length = 0.001
+length = 7.3333335
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

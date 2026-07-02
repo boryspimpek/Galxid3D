@@ -13,45 +13,7 @@ shading_mode = 0
 albedo_color = Color(0, 1.0644869, 2.454227, 1)
 albedo_texture = ExtResource("2_5ou4f")
 
-[sub_resource type="Animation" id="Animation_5ou4f"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1, 1, 0.25)]
-}
-
-[sub_resource type="Animation" id="Animation_ah7ep"]
-resource_name = "grow"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(1, 1, 0.25), Vector3(1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_mcblh"]
-_data = {
-&"RESET": SubResource("Animation_5ou4f"),
-&"grow": SubResource("Animation_ah7ep")
-}
-
 [node name="Projectile" type="Area3D" unique_id=1517421005]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.25, 0, 0, 0)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_ah7ep")
@@ -68,9 +30,6 @@ transform = Transform3D(-1.2239188e-08, 0, 0.135, 0, 0.5, 0, -0.28, 0, -5.901037
 material_override = SubResource("StandardMaterial3D_ah7ep")
 axis = 1
 texture = ExtResource("2_5ou4f")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=206397006]
-libraries/ = SubResource("AnimationLibrary_mcblh")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

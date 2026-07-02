@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dbj4t38t87ocl"]
 
 [ext_resource type="Script" uid="uid://cxso55pxdnnn3" path="res://scenes/projectile/projectile.gd" id="1_yd5ht"]
-[ext_resource type="Texture2D" uid="uid://br65go0djjgub" path="res://assets/projectiles/ChatGPT Image 2 lip 2026, 13_14_34.png" id="2_yd5ht"]
+[ext_resource type="Texture2D" uid="uid://buwjf2udcc8bs" path="res://assets/projectiles/ChatGPT Image 2 lip 2026, 15_02_33.png" id="2_yd5ht"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nskuf"]
-radius = 0.28681386
-height = 0.5736277
+radius = 0.16455078
+height = 1.2168932
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wcqr7"]
 transparency = 1
@@ -23,7 +23,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0
 shape = SubResource("CapsuleShape3D_nskuf")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1682580241]
-aabb = AABB(-0.2885927, -0.102447845, -0.2810459, 0.5771854, 0.20489569, 0.5620918)
+aabb = AABB(-0.16456449, -0.102447845, -0.6016477, 0.32912898, 0.20489569, 1.2032954)
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=680446642]
 transform = Transform3D(-3.934025e-09, 0, 0.09, 0, 0.09, 0, -0.09, 0, -3.934025e-09, 0.025, 0, 0)
