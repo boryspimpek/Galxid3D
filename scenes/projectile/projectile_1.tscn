@@ -34,11 +34,11 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0
 shape = SubResource("CapsuleShape3D_nskuf")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=344136238]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.0002661, 8.983845e-10, 0.8015468)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.0002661, 8.983845e-10, 1.3087614)
 shape = SubResource("CapsuleShape3D_xio8u")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=643040899]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1.2008907, 8.983845e-10, 0.8015468)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1.2008907, 8.983845e-10, 1.2984097)
 shape = SubResource("CapsuleShape3D_xio8u")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1682580241]
@@ -51,13 +51,13 @@ axis = 1
 texture = ExtResource("2_xio8u")
 
 [node name="Sprite3D2" type="Sprite3D" parent="." unique_id=2089243657]
-transform = Transform3D(-1.3113417e-08, 0, 0.605, 0, 0.5, 0, -0.3, 0, -2.644539e-08, 1.1, 0, 0.8)
+transform = Transform3D(-1.3113417e-08, 0, 0.605, 0, 0.5, 0, -0.3, 0, -2.644539e-08, 1.1, 0, 1.3072145)
 material_override = SubResource("StandardMaterial3D_ed3fj")
 axis = 1
 texture = ExtResource("2_xio8u")
 
 [node name="Sprite3D3" type="Sprite3D" parent="." unique_id=1660096602]
-transform = Transform3D(-1.3113417e-08, 0, 0.605, 0, 0.5, 0, -0.3, 0, -2.644539e-08, -1.1, 0, 0.8)
+transform = Transform3D(-1.3113417e-08, 0, 0.605, 0, 0.5, 0, -0.3, 0, -2.644539e-08, -1.1, 0, 1.2968628)
 material_override = SubResource("StandardMaterial3D_ed3fj")
 axis = 1
 texture = ExtResource("2_xio8u")

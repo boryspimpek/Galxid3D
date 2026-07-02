@@ -12,8 +12,8 @@ velocity = Vector3(0, 0, -60)
 
 [sub_resource type="Resource" id="pl_10"]
 script = ExtResource("3_62ge4")
-damage = 0
-fire_rate = 3.0
+damage = 5
+fire_rate = 1.0
 projectile = 2
 velocity = Vector3(0, 0, -60)
 homing = true

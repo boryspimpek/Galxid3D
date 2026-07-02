@@ -30,6 +30,7 @@ var current_weapon_index: int = 1
 # --- Strzelanie ---
 var fire_mode: FireMode = FireMode.NONE
 var fire_timer: float = 0.0
+var rear_fire_timer: float = 0.0
 var _ready_to_fire: bool = false
 var _special_shot_timers: Array[float] = [0.0, 0.0, 0.0, 0.0]
 var _active_beam: Area3D = null
@@ -54,6 +55,7 @@ func _physics_process(delta: float):
 	if not _ready_to_fire:
 		return
 	fire_timer = maxf(0.0, fire_timer - delta)
+	rear_fire_timer = maxf(0.0, rear_fire_timer - delta)
 	for i in WeaponDataClass.SPECIAL_SHOT_COUNT:
 		_special_shot_timers[i] = maxf(0.0, _special_shot_timers[i] - delta)
 	_process_fire_mode(delta)
@@ -78,6 +80,8 @@ func load_weapon_config():
 			print("WeaponSystem: Załadowano broń tylną - weapon_id=", player.rear_weapon_index)
 
 	_despawn_beam()
+	fire_timer = 0.0
+	rear_fire_timer = 0.0
 	for i in WeaponDataClass.SPECIAL_SHOT_COUNT:
 		_special_shot_timers[i] = 0.0
 
@@ -179,11 +183,12 @@ func shoot():
 	SoundManager.play_weapon_sound(front_weapon_data.sound)
 	fire_timer = front_power_level_data.fire_rate
 
-	if rear_weapon_data != null and rear_muzzle != null:
+	if rear_weapon_data != null and rear_muzzle != null and rear_fire_timer <= 0.0:
 		var rear_power_level_data = rear_weapon_data.get_power_level_data(player.rear_power_level)
 		if player.power >= rear_power_level_data.power_use:
 			player.power -= rear_power_level_data.power_use
 			_spawn_weapon_fire(rear_muzzle, rear_weapon_data, rear_power_level_data)
+			rear_fire_timer = rear_power_level_data.fire_rate
 
 	player.notify_power_changed()
 

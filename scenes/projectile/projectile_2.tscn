@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://dyhl5ilpxu24n" path="res://assets/projectiles/ChatGPT Image 2 lip 2026, 10_53_36.png" id="2_5ou4f"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nskuf"]
-radius = 0.43603516
-height = 2.9732742
+radius = 0.29052734
+height = 1.9639444
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ah7ep"]
 transparency = 1
 shading_mode = 0
-albedo_color = Color(1.5720325, 1.5720325, 1.5720325, 1)
+albedo_color = Color(0, 1.0644869, 2.454227, 1)
 albedo_texture = ExtResource("2_5ou4f")
 
 [node name="Projectile" type="Area3D" unique_id=1517421005]
@@ -19,14 +19,14 @@ collision_mask = 2
 script = ExtResource("1_ah7ep")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1719570957]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.1745808e-07, -1.1039826)
 shape = SubResource("CapsuleShape3D_nskuf")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1682580241]
-aabb = AABB(-0.40667695, -0.102447845, -1.4953173, 0.8133539, 0.20489569, 2.9906347)
+aabb = AABB(-0.40667695, -0.102447845, -2.0870018, 0.8133539, 0.20489569, 4.1740036)
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=680446642]
-transform = Transform3D(-2.1855694e-08, 0, 0.215, 0, 0.5, 0, -0.5, 0, -9.397948e-09, 0.04, 0, 0.17)
+transform = Transform3D(-1.2239188e-08, 0, 0.135, 0, 0.5, 0, -0.28, 0, -5.9010374e-09, 0, 0, -0.112)
 material_override = SubResource("StandardMaterial3D_ah7ep")
 axis = 1
 texture = ExtResource("2_5ou4f")
