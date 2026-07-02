@@ -127,6 +127,12 @@ func _on_target_lost() -> void:
 	var end_dying := is_instance_valid(end_target) and end_target.is_queued_for_deletion()
 	if start_dying or end_dying:
 		_remove_bolt()
+		return
+	# Cel przeżył — był tylko reparentowany (detach ze scrolla). Ponownie podłącz sygnał.
+	if is_instance_valid(start_target) and not start_target.tree_exiting.is_connected(_on_target_lost):
+		start_target.tree_exiting.connect(_on_target_lost)
+	if is_instance_valid(end_target) and not end_target.tree_exiting.is_connected(_on_target_lost):
+		end_target.tree_exiting.connect(_on_target_lost)
 
 
 func _remove_bolt() -> void:
