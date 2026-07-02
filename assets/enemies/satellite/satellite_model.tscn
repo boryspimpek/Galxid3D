@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cdplw1dhq6i5i"]
+
+[ext_resource type="PackedScene" uid="uid://0rln1el3hxiv" path="res://assets/enemies/satellite/Meshy_AI_Blue_Solar_Satellite_0702164042_texture.glb" id="1_po8f8"]
+
+[node name="Meshy_AI_Blue_Solar_Satellite_0702164042_texture" unique_id=1689330155 instance=ExtResource("1_po8f8")]
+layers = 16
+
+[node name="Mesh" parent="." index="0" unique_id=110034449]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+layers = 16

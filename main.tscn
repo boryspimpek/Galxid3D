@@ -39,6 +39,8 @@
 [ext_resource type="PackedScene" uid="uid://cv5pl4svkf8ft" path="res://scenes/enemies/types/hawk.tscn" id="37_b1qrp"]
 [ext_resource type="PackedScene" uid="uid://hvk51yey612d" path="res://scenes/enemies/formations/m_fighter_1.tscn" id="38_b1qrp"]
 [ext_resource type="PackedScene" uid="uid://b8efiwixoqn41" path="res://scenes/enemies/formations/m_fighter_2.tscn" id="39_come4"]
+[ext_resource type="PackedScene" uid="uid://ls2pig7p4d3o" path="res://scenes/enemies/types/satellite.tscn" id="40_h8e4i"]
+[ext_resource type="PackedScene" uid="uid://ryp1is7xr46v" path="res://assets/ElectricDischargeVFX/electric_discharge_3d.tscn" id="41_4lmeg"]
 
 [sub_resource type="Environment" id="Environment_2y1ty"]
 background_energy_multiplier = 0.8
@@ -240,6 +242,12 @@ script = ExtResource("19_d13ii")
 zmove = 1.5
 metadata/_custom_type_script = "uid://dtprhja8af0to"
 
+[sub_resource type="Resource" id="Resource_4lmeg"]
+script = ExtResource("19_d13ii")
+xmove = -1.0
+zmove = 3.0
+metadata/_custom_type_script = "uid://dtprhja8af0to"
+
 [node name="GameShell" type="Control" unique_id=616589222]
 layout_mode = 3
 anchors_preset = 15
@@ -294,6 +302,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1
 
 [node name="Player" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1811810025 instance=ExtResource("2_d13ii")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.093774796, 0, 1.1087775)
+ship_id = 4
 gamepad_move_speed = 15.0
 gamepad_l2_move_speed = 30.0
 gamepad_acceleration = 500.0
@@ -315,6 +324,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_cegan")
 [node name="LevelScroll" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=2113647570]
 script = ExtResource("7_xuqvo")
 scroll_speed = 6.0
+start_offset_z = 690.0
 
 [node name="Background" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=642860565]
 visible = false
@@ -386,7 +396,7 @@ mesh = SubResource("QuadMesh_uatky")
 script = ExtResource("7_parallax")
 
 [node name="LevelScrollRuler" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=552135128 instance=ExtResource("8_qsp4k")]
-z_min = -600.0
+z_min = -1000.0
 z_max = 10.0
 tick_spacing = 6.0
 major_tick_every = 1
@@ -559,3 +569,50 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.896004, 0, -359.68784)
 
 [node name="m_fighter_12" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/m fighter" unique_id=980003772 instance=ExtResource("39_come4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.581396, 0, -396.4764)
+
+[node name="Electric1" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=353480998]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7424345, 0, -714.06537)
+
+[node name="Satellite" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Electric1" unique_id=1983868945 instance=ExtResource("40_h8e4i")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -7.3376303, 0, 0.048461914)
+
+[node name="Satellite2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Electric1" unique_id=17173613 instance=ExtResource("40_h8e4i")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 7.228759, 0, 0.048461914)
+
+[node name="ElectricDischarge" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Electric1" unique_id=1340476580 node_paths=PackedStringArray("start_target", "end_target") instance=ExtResource("41_4lmeg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15972328, 0, 0.395813)
+start_target = NodePath("../Satellite")
+end_target = NodePath("../Satellite2")
+
+[node name="Electric2" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1779190558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.595824, 0, -744.3125)
+
+[node name="Satellite" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Electric2" unique_id=1406147853 instance=ExtResource("40_h8e4i")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -7.3376303, 0, -16.475525)
+armor = 80
+
+[node name="Satellite2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Electric2" unique_id=775931971 instance=ExtResource("40_h8e4i")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 7.228759, 0, -16.475525)
+armor = 80
+
+[node name="ElectricDischarge" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Electric2" unique_id=1320659591 node_paths=PackedStringArray("start_target", "end_target") instance=ExtResource("41_4lmeg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15972328, 0, 0.395813)
+start_target = NodePath("../Satellite")
+end_target = NodePath("../Satellite2")
+
+[node name="Electric3" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=603023460]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6289606, 0, -776.2777)
+
+[node name="Satellite" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Electric3" unique_id=944111052 instance=ExtResource("40_h8e4i")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -7.3376303, 0, -39.532288)
+armor = 80
+
+[node name="Satellite2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Electric3" unique_id=619897595 instance=ExtResource("40_h8e4i")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 17.605728, 0, -39.532288)
+armor = 80
+movement_data = SubResource("Resource_4lmeg")
+
+[node name="ElectricDischarge" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Electric3" unique_id=829947550 node_paths=PackedStringArray("start_target", "end_target") instance=ExtResource("41_4lmeg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15972328, 0, 0.395813)
+start_target = NodePath("../Satellite")
+end_target = NodePath("../Satellite2")
