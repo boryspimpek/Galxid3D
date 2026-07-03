@@ -38,7 +38,6 @@
 [ext_resource type="PackedScene" uid="uid://cv5pl4svkf8ft" path="res://scenes/enemies/types/hawk.tscn" id="37_b1qrp"]
 [ext_resource type="PackedScene" uid="uid://hvk51yey612d" path="res://scenes/enemies/formations/protector1strike.tscn" id="38_b1qrp"]
 [ext_resource type="PackedScene" uid="uid://b8efiwixoqn41" path="res://scenes/enemies/formations/protector2strike.tscn" id="39_come4"]
-[ext_resource type="PackedScene" uid="uid://dv65p1uld6w72" path="res://scenes/enemies/types/bulldog.tscn" id="40_0cp0l"]
 [ext_resource type="PackedScene" uid="uid://ls2pig7p4d3o" path="res://scenes/enemies/types/satellite.tscn" id="40_h8e4i"]
 [ext_resource type="PackedScene" uid="uid://ryp1is7xr46v" path="res://assets/ElectricDischargeVFX/electric_discharge_3d.tscn" id="41_4lmeg"]
 [ext_resource type="PackedScene" uid="uid://bq1ohabm84y61" path="res://scenes/enemies/formations/formation15.tscn" id="42_0cp0l"]
@@ -303,6 +302,8 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1
 
 [node name="Player" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1811810025 instance=ExtResource("2_d13ii")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.093774796, 0, 1.1087775)
+ship_id = 4
+generator_id = 3
 gamepad_move_speed = 15.0
 gamepad_l2_move_speed = 30.0
 gamepad_acceleration = 500.0
@@ -520,11 +521,9 @@ movement_data = SubResource("Resource_come4")
 
 [node name="hawk10" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Hawk" unique_id=210536571 instance=ExtResource("37_b1qrp")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 9.409879, 0, -748.20703)
-movement_data = SubResource("Resource_come4")
 
 [node name="hawk11" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Hawk" unique_id=864293272 instance=ExtResource("37_b1qrp")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -8.367051, 0, -756.62976)
-movement_data = SubResource("Resource_come4")
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -8.367051, 0, -772.0783)
 
 [node name="hawk12" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Hawk" unique_id=1598481304 instance=ExtResource("37_b1qrp")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 11.120429, 0, -796.5172)
@@ -535,12 +534,10 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -5.8186884, 0, -823.125
 movement_data = SubResource("Resource_come4")
 
 [node name="hawk5" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Hawk" unique_id=858068719 instance=ExtResource("37_b1qrp")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -8.8509445, 0, -897.9922)
-movement_data = SubResource("Resource_d2t1y")
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -8.8509445, 0, -905.6185)
 
 [node name="hawk7" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Hawk" unique_id=1270281973 instance=ExtResource("37_b1qrp")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 9.311134, 0, -946.66656)
-movement_data = SubResource("Resource_d2t1y")
 
 [node name="hawk15" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Hawk" unique_id=1777100117 instance=ExtResource("37_b1qrp")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -5.663395, 0, -997.27814)
@@ -589,9 +586,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.896004, 0, -377.5017)
 
 [node name="m_fighter_12" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/m fighter" unique_id=980003772 instance=ExtResource("39_come4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.581396, 0, -414.29028)
-
-[node name="Enemy" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/m fighter" unique_id=492473149 instance=ExtResource("40_0cp0l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07116902, 0, -1.5472943)
 
 [node name="Satellite" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1420455491]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -701.76794)

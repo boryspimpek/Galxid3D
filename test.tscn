@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c1pq466qvcqtm" path="res://scenes/planets/earth.tscn" id="4_ffwl0"]
 [ext_resource type="Texture2D" uid="uid://na3nvl7jvpdi" path="res://assets/planets/Gemini_Generated_Image_ (2).png" id="5_yg34o"]
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="6_21gct"]
-[ext_resource type="PackedScene" uid="uid://18f6vqmvxr50" path="res://scenes/enemies/formations/hank_strike.tscn" id="8_xersf"]
+[ext_resource type="PackedScene" uid="uid://5qq7y15vdal6" path="res://scenes/enemies/types/arrow.tscn" id="8_xersf"]
 [ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="19_t77du"]
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="37_k13tm"]
 
@@ -110,7 +110,8 @@ tick_spacing = 6.0
 major_tick_every = 1
 scroll_speed = 6.0
 
-[node name="bulldog_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1434653841 instance=ExtResource("8_xersf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.067272, 0, -17.396725)
+[node name="arrow" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1897743314 instance=ExtResource("8_xersf")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -7.8282614, 0, -5.300384)
+armor = 999999
 
 [node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("37_k13tm")]

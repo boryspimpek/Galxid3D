@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "godotengine.godot-tools",
+    "ms-vscode.cpptools",
+    "bradlc.vscode-tailwindcss",
+    "esbenp.prettier-vscode"
+  ]
+}

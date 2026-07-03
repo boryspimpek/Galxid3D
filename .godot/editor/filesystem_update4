@@ -22,3 +22,10 @@ res://scenes/enemies/formations/hank_strike.tscn
 res://scenes/enemies/base/Enemy.gd
 res://scripts/resources/enemies/weapons/EnemyWeaponData.gd
 res://scenes/enemies/types/hawk.tscn
+res://scenes/player/WeaponSystem.gd
+res://scripts/resources/WeaponSpecialShotData.gd
+res://data/weapons/front_1.tres
+res://data/generators/generator_004.tres
+res://data/generators/generator_003.tres
+res://scenes/projectile/projectile.gd
+res://scenes/enemies/formations/formation4.tscn

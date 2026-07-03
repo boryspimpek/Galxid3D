@@ -161,6 +161,11 @@ func shoot_special(slot: int) -> void:
 		shot_data.velocity,
 		shot_data.pellets,
 		true,
+		null,
+		null,
+		shot_data.homing,
+		shot_data.homing_turn_speed,
+		shot_data.homing_angle_deg,
 	)
 	SoundManager.play_weapon_sound(weapon_data.sound)
 	_special_shot_timers[slot - 1] = shot_data.cooldown
@@ -242,6 +247,7 @@ func spawn_shot(
 	weapon_data_ref: WeaponData = null,
 	homing: bool = false,
 	homing_turn_speed: float = 3.0,
+	homing_angle_deg: float = 360.0,
 ) -> void:
 	if from_muzzle == null:
 		from_muzzle = muzzle
@@ -254,6 +260,7 @@ func spawn_shot(
 			special_shot,
 			homing,
 			homing_turn_speed,
+			homing_angle_deg,
 		)
 		_spawn_muzzle_flash(base_velocity, from_muzzle, weapon_data_ref)
 		return
@@ -262,7 +269,7 @@ func spawn_shot(
 		var velocity := _pellet_velocity(base_velocity, pellet)
 		var spawn_pos: Vector3 = from_muzzle.global_position + from_muzzle.global_basis * pellet.spawn_offset
 		var pid := pellet.projectile_override if pellet.projectile_override > 0 else projectile_id
-		_spawn_single_projectile(spawn_pos, velocity, pid, damage, special_shot, homing, homing_turn_speed)
+		_spawn_single_projectile(spawn_pos, velocity, pid, damage, special_shot, homing, homing_turn_speed, homing_angle_deg)
 	_spawn_muzzle_flash(base_velocity, from_muzzle, weapon_data_ref)
 
 
@@ -274,6 +281,7 @@ func _spawn_single_projectile(
 	special_shot: bool = false,
 	homing: bool = false,
 	homing_turn_speed: float = 3.0,
+	homing_angle_deg: float = 360.0,
 ) -> void:
 	var projectile_scene := SceneRegistry.get_player_special_projectile_scene(projectile_id) \
 		if special_shot \
@@ -286,6 +294,7 @@ func _spawn_single_projectile(
 	if homing:
 		projectile.homing = true
 		projectile.turn_speed = homing_turn_speed
+		projectile.homing_angle_deg = homing_angle_deg
 
 
 func _spawn_weapon_fire(

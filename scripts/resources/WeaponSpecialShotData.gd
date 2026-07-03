@@ -19,3 +19,9 @@ enum SpecialDeliveryMode {
 @export var delivery_mode: SpecialDeliveryMode = SpecialDeliveryMode.BURST
 ## Odstęp między tikami obrażeń (tylko BEAM).
 @export var beam_damage_interval: float = 0.05
+@export_group("Homing")
+@export var homing: bool = false
+## Szybkość skrętu pocisku (rad/s). Działa tylko gdy homing = true.
+@export var homing_turn_speed: float = 3.0
+## Maksymalny kąt stożka dociągania (stopnie). Pocisk przyciąga tylko wrogów w tym kącie przed sobą.
+@export var homing_angle_deg: float = 20.0

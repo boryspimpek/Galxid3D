@@ -13,6 +13,7 @@ var _velocity: Vector3 = Vector3.ZERO
 @export var damage: int = 3
 var homing: bool = false
 var turn_speed: float = 3.0
+var homing_angle_deg: float = 360.0
 
 func _ready():
 	for child in get_children():
@@ -26,7 +27,7 @@ func _physics_process(delta: float):
 
 
 func _steer_towards_nearest_enemy(delta: float) -> void:
-	var target := _find_nearest_enemy()
+	var target := _find_enemy_in_cone()
 	if target == null:
 		return
 	var speed := _velocity.length()
@@ -38,13 +39,16 @@ func _steer_towards_nearest_enemy(delta: float) -> void:
 	_align_to_velocity()
 
 
-func _find_nearest_enemy() -> Node3D:
+func _find_enemy_in_cone() -> Node3D:
 	var nearest: Node3D = null
 	var nearest_dist := INF
+	var cos_half := cos(deg_to_rad(homing_angle_deg * 0.5))
+	var forward := _velocity.normalized() if _velocity.length_squared() > 0.0001 else Vector3(0, 0, -1)
 	for e in get_tree().get_nodes_in_group("enemies"):
 		if e is Node3D:
-			var d := global_position.distance_squared_to((e as Node3D).global_position)
-			if d < nearest_dist:
+			var to_e := (e as Node3D).global_position - global_position
+			var d := to_e.length_squared()
+			if d < nearest_dist and to_e.normalized().dot(forward) >= cos_half:
 				nearest_dist = d
 				nearest = e as Node3D
 	return nearest

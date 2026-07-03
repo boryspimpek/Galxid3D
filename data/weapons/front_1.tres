@@ -97,7 +97,7 @@ metadata/_custom_type_script = "uid://bingydioab5yk"
 
 [sub_resource type="Resource" id="special_1"]
 script = ExtResource("5_4ythj")
-damage = 2
+damage = 5
 power_use = 20
 projectile = 2
 pellets = Array[ExtResource("2_v1yuy")]([SubResource("Resource_uqjdg"), SubResource("Resource_2t4l7"), SubResource("Resource_os848"), SubResource("Resource_soco3"), SubResource("Resource_ohelg")])
@@ -108,6 +108,9 @@ damage = 4
 power_use = 15
 cooldown = 0.05
 projectile = 3
+homing = true
+homing_turn_speed = 5.0
+homing_angle_deg = 40.0
 
 [sub_resource type="Resource" id="Resource_b7xww"]
 script = ExtResource("5_4ythj")
