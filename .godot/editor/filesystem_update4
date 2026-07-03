@@ -19,3 +19,6 @@ res://assets/enemies/hank/hank_model.tscn
 res://scenes/enemies/types/hank.tscn
 res://test.tscn
 res://scenes/enemies/formations/hank_strike.tscn
+res://scenes/enemies/base/Enemy.gd
+res://scripts/resources/enemies/weapons/EnemyWeaponData.gd
+res://scenes/enemies/types/hawk.tscn

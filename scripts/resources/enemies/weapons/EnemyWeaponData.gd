@@ -11,6 +11,8 @@ class_name EnemyWeaponData
 @export var damage: int = 1
 @export var fire_rate: float = 250.0
 @export var fire_on_activate: bool = false
+## Czas (w sekundach) od aktywacji do pierwszego strzału. Wartość ujemna oznacza fallback do fire_rate.
+@export var initial_fire_delay: float = -1.0
 @export var projectile_velocity: Vector3 = Vector3(0, 0, 8)
 @export_range(0, 10, 1) var aim: int = 0
 @export var sound: int = 1
@@ -32,6 +34,11 @@ func fire(enemy: Node3D, muzzles: Array[Marker3D], _state: Dictionary) -> void:
 ## Odstęp do kolejnego strzału (sekundy).
 func get_next_fire_delay(_state: Dictionary) -> float:
 	return fire_rate
+
+
+## Czas od aktywacji do pierwszego strzału (sekundy). Wartość ujemna = fallback do fire_rate.
+func get_initial_fire_delay(_state: Dictionary) -> float:
+	return initial_fire_delay if initial_fire_delay >= 0.0 else fire_rate
 
 
 func spawn_projectile(enemy: Node3D, from_muzzle: Marker3D) -> void:

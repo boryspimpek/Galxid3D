@@ -91,7 +91,7 @@ func _physics_process(delta: float) -> void:
 func set_firing(firing: bool) -> void:
 	if firing and not _weapon_firing and weapon_data:
 		weapon_data.on_begin_firing(_weapon_state)
-		_fire_timer = 0.0 if weapon_data.fire_on_activate else weapon_data.fire_rate
+		_fire_timer = 0.0 if weapon_data.fire_on_activate else weapon_data.get_initial_fire_delay(_weapon_state)
 	_weapon_firing = firing
 
 

@@ -6,8 +6,8 @@
 
 [sub_resource type="Resource" id="Resource_7ntlt"]
 script = ExtResource("2_eb1c4")
-fire_rate = 1.0
-projectile_velocity = Vector3(0, 0, 40)
+fire_rate = 0.5
+projectile_velocity = Vector3(0, 0, 10)
 aim = 10
 metadata/_custom_type_script = "uid://eo6qejm2h6hl"
 

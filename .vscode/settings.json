@@ -7,5 +7,6 @@
   "search.exclude": {
     "**/*.uid": true,
     "**/*.import": true
-  }
+  },
+  "workbench.colorTheme": "Default Dark+"
 }
