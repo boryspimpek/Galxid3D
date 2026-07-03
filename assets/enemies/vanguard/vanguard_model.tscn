@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bukgo2nxinswb"]
+
+[ext_resource type="PackedScene" uid="uid://clqiyro5jpba" path="res://assets/enemies/vanguard/Meshy_AI_Crimson_Zephyr_Jet_0703091558_texture.glb" id="1_3mlyl"]
+
+[node name="Meshy_AI_Crimson_Zephyr_Jet_0703091558_texture" unique_id=363266910 instance=ExtResource("1_3mlyl")]
+layers = 16
+
+[node name="Mesh" parent="." index="0" unique_id=141035747]
+layers = 16

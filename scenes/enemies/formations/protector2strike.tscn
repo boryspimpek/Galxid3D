@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://b8efiwixoqn41"]
+
+[ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemies/base/EnemyPath3D.gd" id="1_so4s5"]
+[ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemies/base/EnemyPathFollow.gd" id="2_egtxn"]
+[ext_resource type="PackedScene" uid="uid://c185raa5p20gw" path="res://scenes/enemies/types/protector.tscn" id="3_so4s5"]
+[ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="4_2xm1q"]
+
+[sub_resource type="Curve3D" id="Curve3D_twc8a"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.039871216, 0, 0.017368317, 0, 0, 0, 0, 0, 0, 3.6812687, 0, -0.060408354, -4.1126776, 0, -1.74513, 4.1126776, 0, 1.74513, 18.496588, 0, -0.6939601, -2.6615715, 0, -1.805594, 2.6615715, 0, 1.805594, 21.499043, 0, 6.914998, -1.3210182, 0, 3.963057, 1.3210182, 0, -3.963057, 32.777676, 0, 4.546121, 0, 0, 0, 0, 0, 0, 29.878769, 0, -5.2881317, 0, 0, 0, 0, 0, 0, 29.807203, 0, -6.616609),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[sub_resource type="Curve" id="Curve_ndy41"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(1e-05, 3), 0.0, 0.0, 0, 0, Vector2(0.33695653, 3), 0.0, 0.0, 0, 0, Vector2(0.44409937, 0.07114649), 0.17272732, 0.17272732, 0, 0, Vector2(0.5139752, 3), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="m_fighter_1" type="Node3D" unique_id=718698068]
+
+[node name="Path3D" type="Path3D" parent="." unique_id=1371922915]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.022297, 0, 2.3704672)
+curve = SubResource("Curve3D_twc8a")
+script = ExtResource("1_so4s5")
+activation_mode = 0
+speed = 8.0
+speed_curve = SubResource("Curve_ndy41")
+bank_enabled = true
+bank_max_degrees = 45.0
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1602774950]
+transform = Transform3D(0.021351289, 0, -0.9996413, 0, 1, 0, 0.9996413, 0, 0.021351289, 0.039871216, 0, 0.017368317)
+loop = false
+script = ExtResource("2_egtxn")
+
+[node name="protector" parent="Path3D/PathFollow3D" unique_id=1897743314 instance=ExtResource("3_so4s5")]
+
+[node name="PlayAreaFrame" parent="." unique_id=784318850 instance=ExtResource("4_2xm1q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.988926, 0, 11.351738)
+visible = false

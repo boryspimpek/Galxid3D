@@ -1,4 +1,6 @@
 Node3D
+EnemyPathFollow
+EnemyPath3D
 MeshInstance3D
 PathFollow3D
 Path3D
@@ -6,9 +8,7 @@ AnimationPlayer
 SubViewport
 Sprite3D
 Node
-EnemyPath3D
 CollisionShape3D
 VisibleOnScreenNotifier3D
 MultiMeshInstance3D
 Label
-TextureProgressBar

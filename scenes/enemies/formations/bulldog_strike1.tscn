@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://c1g448hbitcf1"]
+
+[ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemies/base/EnemyPath3D.gd" id="1_4mh04"]
+[ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemies/base/EnemyPathFollow.gd" id="2_7oxad"]
+[ext_resource type="PackedScene" uid="uid://dv65p1uld6w72" path="res://scenes/enemies/types/bulldog.tscn" id="3_2tjlk"]
+[ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="4_6igok"]
+
+[sub_resource type="Curve3D" id="Curve3D_3c7k4"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.002487965, 0, -0.018155575, 2.819975, 0, -0.45806694, -2.819975, 0, 0.45806694, 1.5320506, 0, 6.41074, 1.4457746, 0, -0.4437523, -1.4457746, 0, 0.4437523, -2.62885, 0, 5.506464, 0, 0, 0, 0, 0, 0, -4, 0, 7.459, 0, 0, 0, 0, 0, 0, -4, 0, 9.377),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Curve" id="Curve_4mh04"]
+_limits = [0.0, 4.0, 0.0, 1.0]
+_data = [Vector2(0, 4), 0.0, 0.0, 0, 0, Vector2(1, 0.61340404), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_uinmj"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.002487965, 0, -0.018155575, 2.2396097, 0, -0.37002325, -2.2396097, 0, 0.37002325, -2.6426582, 0, 3.6702898, 1.6164136, 0, 0.058424473, -1.6164136, 0, -0.058424473, -7.1403265, 0, 1.7621882, 0, 0, 0, 0, 0, 0, -8.623159, 0, 3.6545079, 0, 0, 0, 0, 0, 0, -8.6383505, 0, 6.344359),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="bulldog_strike" type="Node3D" unique_id=1434653841]
+
+[node name="Path3D" type="Path3D" parent="." unique_id=181213353]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.974821, 0, -1.3215904)
+curve = SubResource("Curve3D_3c7k4")
+script = ExtResource("1_4mh04")
+speed_curve = SubResource("Curve_4mh04")
+bank_enabled = true
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=210417187]
+transform = Transform3D(-0.8079461, 0, -0.5892336, 0, 1, 0, 0.5892336, 0, -0.8079461, -0.002487965, 0, -0.018155575)
+loop = false
+script = ExtResource("2_7oxad")
+
+[node name="bulldog" parent="Path3D/PathFollow3D" unique_id=1897743314 instance=ExtResource("3_2tjlk")]
+
+[node name="Path3D2" type="Path3D" parent="." unique_id=1962035290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.682869, 0, -6.17241)
+curve = SubResource("Curve3D_uinmj")
+script = ExtResource("1_4mh04")
+speed_curve = SubResource("Curve_4mh04")
+bank_enabled = true
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2" unique_id=2072199063]
+transform = Transform3D(-0.99277705, 0, 0.11983619, 0, 1, 0, -0.11983619, 0, -0.99277705, -0.002487965, 0, -0.018155575)
+loop = false
+script = ExtResource("2_7oxad")
+
+[node name="bulldog" parent="Path3D2/PathFollow3D" unique_id=468929778 instance=ExtResource("3_2tjlk")]
+
+[node name="Path3D3" type="Path3D" parent="." unique_id=895540075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.973595, 0, -10.425915)
+curve = SubResource("Curve3D_uinmj")
+script = ExtResource("1_4mh04")
+speed_curve = SubResource("Curve_4mh04")
+bank_enabled = true
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D3" unique_id=1502469807]
+transform = Transform3D(-0.99277705, 0, 0.11983619, 0, 1, 0, -0.11983619, 0, -0.99277705, -0.002487965, 0, -0.018155575)
+loop = false
+script = ExtResource("2_7oxad")
+
+[node name="bulldog" parent="Path3D3/PathFollow3D" unique_id=401070803 instance=ExtResource("3_2tjlk")]
+
+[node name="PlayAreaFrame" parent="." unique_id=784318850 instance=ExtResource("4_6igok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.077911, 0, 11.5)
+visible = false

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dkr2l1i1ougrm"]
+
+[ext_resource type="PackedScene" uid="uid://n0370686yuoc" path="res://assets/enemies/devastator/Meshy_AI_Crimson_Violet_Starfi_0703084741_texture.glb" id="1_sydjs"]
+
+[node name="Meshy_AI_Crimson_Violet_Starfi_0703084741_texture" unique_id=549763497 instance=ExtResource("1_sydjs")]
+layers = 16
+
+[node name="Mesh" parent="." index="0" unique_id=247012324]
+layers = 16

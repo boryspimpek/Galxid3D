@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bqwcqe640yhb"]
+
+[ext_resource type="PackedScene" uid="uid://bhy2grka68305" path="res://assets/enemies/toy/Meshy_AI_Sunburst_Toy_Spacecra_0703084654_texture.glb" id="1_1wura"]
+
+[node name="Meshy_AI_Sunburst_Toy_Spacecra_0703084654_texture" unique_id=1736312894 instance=ExtResource("1_1wura")]
+layers = 16
+
+[node name="Mesh" parent="." index="0" unique_id=1924008878]
+layers = 16

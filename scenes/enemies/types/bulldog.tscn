@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dv65p1uld6w72"]
+
+[ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_wt7by"]
+[ext_resource type="Script" uid="uid://eo6qejm2h6hl" path="res://scripts/resources/enemies/weapons/EnemyWeaponData.gd" id="2_04xar"]
+[ext_resource type="PackedScene" uid="uid://coe2iryjehfxm" path="res://assets/enemies/bulldog/bulldog_model.tscn" id="2_qoyld"]
+[ext_resource type="Script" uid="uid://dtprhja8af0to" path="res://scripts/resources/enemies/movement/LinearMoveData.gd" id="3_t12dc"]
+[ext_resource type="PackedScene" uid="uid://dp6fn641cy82u" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/impact/vfx_impact_01.tscn" id="4_wfpjj"]
+
+[sub_resource type="Resource" id="Resource_3xtg6"]
+script = ExtResource("2_04xar")
+fire_rate = 2.5
+projectile_velocity = Vector3(0, 0, 10)
+sound = 3
+metadata/_custom_type_script = "uid://eo6qejm2h6hl"
+
+[sub_resource type="Resource" id="Resource_iiwra"]
+script = ExtResource("3_t12dc")
+metadata/_custom_type_script = "uid://dtprhja8af0to"
+
+[node name="bulldog" unique_id=1897743314 instance=ExtResource("1_wt7by")]
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
+armor = 18
+weapon_data = SubResource("Resource_3xtg6")
+movement_data = SubResource("Resource_iiwra")
+value = 20
+hit_effect_scene = ExtResource("4_wfpjj")
+
+[node name="Meshy_AI_Rainbow_Starfighter_0703084727_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1524853600 instance=ExtResource("2_qoyld")]
+
+[node name="CollisionShape3D" parent="." index="1" unique_id=324662688]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 3.6177148e-09, -3.6177148e-09, 0.08276367)
+
+[node name="Muzzle" parent="." index="3" unique_id=1704985833]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -0.43612146, 0, 0.6052299)
+
+[node name="Muzzle2" type="Marker3D" parent="." index="4" unique_id=558783719]
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0.42722112, 0, 0.6052299)

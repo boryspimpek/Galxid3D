@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c44fys6ngxdh8"]
+
+[ext_resource type="PackedScene" uid="uid://nivbxkc5i6dj" path="res://assets/enemies/guardian/Meshy_AI_Azure_Voyager_0703084750_texture.glb" id="1_1bjqt"]
+[ext_resource type="Texture2D" uid="uid://dcul10v2hwqd2" path="res://assets/enemies/guardian/Meshy_AI_Azure_Voyager_0703084750_texture_0.jpg" id="2_o8sw7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yx8ff"]
+cull_mode = 1
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_afjt7"]
+next_pass = SubResource("StandardMaterial3D_yx8ff")
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+albedo_texture = ExtResource("2_o8sw7")
+metallic = 0.48
+roughness = 0.0
+
+[node name="Meshy_AI_Azure_Voyager_0703084750_texture" unique_id=861765093 instance=ExtResource("1_1bjqt")]
+layers = 16
+
+[node name="Mesh" parent="." index="0" unique_id=501080869]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+layers = 16
+surface_material_override/0 = SubResource("StandardMaterial3D_afjt7")

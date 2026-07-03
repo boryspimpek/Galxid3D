@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dhnwqprlfj6w7"]
+
+[ext_resource type="PackedScene" uid="uid://bdko7huo826vy" path="res://assets/enemies/twinblade/Meshy_AI_Azure_Voyager_0703084733_texture.glb" id="1_12mvl"]
+
+[node name="Meshy_AI_Azure_Voyager_0703084733_texture" unique_id=1371960032 instance=ExtResource("1_12mvl")]
+layers = 16
+
+[node name="Mesh" parent="." index="0" unique_id=341166944]
+layers = 16

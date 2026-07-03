@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dt6f0hmhx06ha"]
+
+[ext_resource type="PackedScene" uid="uid://d2popxr1gee1f" path="res://assets/enemies/rocketer/Meshy_AI_Rainbow_Rocket_Ship_0703084711_texture.glb" id="1_cpkdt"]
+
+[node name="Meshy_AI_Rainbow_Rocket_Ship_0703084711_texture" unique_id=317114264 instance=ExtResource("1_cpkdt")]
+layers = 16
+
+[node name="Mesh" parent="." index="0" unique_id=2125292820]
+layers = 16

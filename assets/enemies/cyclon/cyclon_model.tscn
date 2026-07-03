@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dlyy41r5qfdjn"]
+
+[ext_resource type="PackedScene" uid="uid://75wt6lao8ob0" path="res://assets/enemies/cyclon/Meshy_AI_Golden_Cyclone_Interc_0703084642_texture.glb" id="1_s5lo6"]
+
+[node name="Meshy_AI_Golden_Cyclone_Interc_0703084642_texture" unique_id=208588012 instance=ExtResource("1_s5lo6")]
+layers = 16
+
+[node name="Mesh" parent="." index="0" unique_id=999268129]
+layers = 16

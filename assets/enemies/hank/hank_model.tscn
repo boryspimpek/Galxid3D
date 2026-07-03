@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://iy8ueg1om5rv"]
+
+[ext_resource type="PackedScene" uid="uid://cpeddp83os0fc" path="res://assets/enemies/hank/Meshy_AI_Emerald_Starfighter_0703084718_texture.glb" id="1_xa8e6"]
+[ext_resource type="Texture2D" uid="uid://ck11chaab7dha" path="res://assets/enemies/hank/Meshy_AI_Emerald_Starfighter_0703084718_texture_0.jpg" id="2_mbeub"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mbeub"]
+cull_mode = 1
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wh6wf"]
+next_pass = SubResource("StandardMaterial3D_mbeub")
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+albedo_texture = ExtResource("2_mbeub")
+metallic = 0.64
+roughness = 0.0
+clearcoat_enabled = true
+clearcoat = 0.52
+clearcoat_roughness = 0.69
+
+[node name="Meshy_AI_Emerald_Starfighter_0703084718_texture" unique_id=831271934 instance=ExtResource("1_xa8e6")]
+layers = 16
+
+[node name="Mesh" parent="." index="0" unique_id=1789684176]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+layers = 16
+surface_material_override/0 = SubResource("StandardMaterial3D_wh6wf")
