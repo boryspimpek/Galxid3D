@@ -1,8 +1,8 @@
 Node3D
-EnemyPathFollow
-EnemyPath3D
-MeshInstance3D
 PathFollow3D
+EnemyPath3D
+EnemyPathFollow
+MeshInstance3D
 Path3D
 AnimationPlayer
 SubViewport

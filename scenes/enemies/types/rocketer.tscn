@@ -2,9 +2,24 @@
 
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_8ngvd"]
 [ext_resource type="PackedScene" uid="uid://dt6f0hmhx06ha" path="res://assets/enemies/rocketer/rocketer_model.tscn" id="2_n0ky6"]
+[ext_resource type="Script" uid="uid://0lspj842eewa" path="res://scripts/resources/enemies/weapons/HomingEnemyWeaponData.gd" id="2_u3yas"]
+[ext_resource type="PackedScene" uid="uid://dp6fn641cy82u" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/impact/vfx_impact_01.tscn" id="3_u3yas"]
+
+[sub_resource type="Resource" id="Resource_s4afp"]
+script = ExtResource("2_u3yas")
+homing_turn_speed = 10.0
+homing_duration = 1.0
+fire_rate = 2.0
+initial_fire_delay = 2.0
+projectile_velocity = Vector3(0, 0, 25)
+aim = 10
+metadata/_custom_type_script = "uid://0lspj842eewa"
 
 [node name="rocketer" unique_id=1897743314 instance=ExtResource("1_8ngvd")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+armor = 100
+weapon_data = SubResource("Resource_s4afp")
+hit_effect_scene = ExtResource("3_u3yas")
 
 [node name="Meshy_AI_Rainbow_Rocket_Ship_0703084711_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=317114264 instance=ExtResource("2_n0ky6")]
 
