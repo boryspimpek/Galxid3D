@@ -85,6 +85,7 @@ gamepad_move_speed = 15.0
 gamepad_l2_move_speed = 30.0
 gamepad_acceleration = 500.0
 gamepad_deceleration = 500.0
+dodge_duration = 0.7
 
 [node name="Background" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=240733446]
 

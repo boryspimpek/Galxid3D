@@ -29,3 +29,5 @@ res://data/generators/generator_004.tres
 res://data/generators/generator_003.tres
 res://scenes/projectile/projectile.gd
 res://scenes/enemies/formations/formation4.tscn
+res://scenes/player/Player.gd
+res://scenes/player/Golden_core.tscn

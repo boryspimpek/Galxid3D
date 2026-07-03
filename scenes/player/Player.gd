@@ -30,16 +30,12 @@ var ship_data: ShipData = null
 @export var tilt_velocity_factor: float = 0.025
 
 @export_group("Dodge")
-@export var dodge_depth: float = 1.0
-@export var dodge_descend_speed: float = 12.0
-@export var dodge_duration: float = 0.4
-@export var dodge_ascend_speed: float = 10.0
+@export var dodge_duration: float = 0.35
 @export var dodge_cooldown: float = 0.6
-@export var dodge_pitch: float = -0.4
 ## Minimalne wciśnięcie R2 (0–1), żeby dodge nie odpalał się od lekkiego dotknięcia spustu.
 @export_range(0.3, 0.95, 0.05) var dodge_trigger_threshold: float = 0.65
 
-enum DodgePhase { GROUNDED, DESCENDING, UNDER, ASCENDING, COOLDOWN }
+enum DodgePhase { GROUNDED, ROLLING, COOLDOWN }
 
 const PLAYER_COLLISION_LAYER := 1
 
@@ -311,24 +307,13 @@ func _update_dodge(delta: float) -> void:
 	match _dodge_phase:
 		DodgePhase.GROUNDED:
 			if _consume_dodge_trigger_press():
-				_dodge_phase = DodgePhase.DESCENDING
-				is_dodging = true
-		DodgePhase.DESCENDING:
-			global_position.y = move_toward(
-				global_position.y, -dodge_depth, dodge_descend_speed * delta
-			)
-			if global_position.y <= -dodge_depth + 0.001:
-				global_position.y = -dodge_depth
-				_dodge_phase = DodgePhase.UNDER
+				_dodge_phase = DodgePhase.ROLLING
 				_dodge_timer = dodge_duration
-		DodgePhase.UNDER:
+				is_dodging = true
+		DodgePhase.ROLLING:
 			_dodge_timer -= delta
 			if _dodge_timer <= 0.0:
-				_dodge_phase = DodgePhase.ASCENDING
-		DodgePhase.ASCENDING:
-			global_position.y = move_toward(global_position.y, 0.0, dodge_ascend_speed * delta)
-			if global_position.y >= -0.001:
-				global_position.y = 0.0
+				_dodge_timer = 0.0
 				is_dodging = false
 				_dodge_phase = DodgePhase.COOLDOWN
 				_dodge_timer = dodge_cooldown
@@ -338,13 +323,18 @@ func _update_dodge(delta: float) -> void:
 				_dodge_phase = DodgePhase.GROUNDED
 
 	collision_layer = 0 if is_dodging else PLAYER_COLLISION_LAYER
-	_update_dodge_pitch(delta)
+	_update_dodge_roll()
 
-func _update_dodge_pitch(delta: float) -> void:
-	var target_pitch: float = dodge_pitch if is_dodging else 0.0
-	ship_model.rotation.x = lerpf(ship_model.rotation.x, target_pitch, delta * 10.0)
+func _update_dodge_roll() -> void:
+	if _dodge_phase == DodgePhase.ROLLING and dodge_duration > 0.0:
+		var progress := 1.0 - (_dodge_timer / dodge_duration)
+		ship_model.rotation.z = progress * TAU
+	else:
+		ship_model.rotation.z = lerpf(ship_model.rotation.z, 0.0, 0.25)
 
 func _update_tilt(velocity_x: float, delta: float) -> void:
+	if is_dodging:
+		return
 	var target: float = clampf(velocity_x * tilt_velocity_factor, -0.8, 0.8)
 	ship_model.rotation.z = lerpf(ship_model.rotation.z, target, delta * 10.0)
 
