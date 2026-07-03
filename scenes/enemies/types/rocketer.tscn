@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bn34u3k8ydghw"]
+
+[ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_8ngvd"]
+[ext_resource type="PackedScene" uid="uid://dt6f0hmhx06ha" path="res://assets/enemies/rocketer/rocketer_model.tscn" id="2_n0ky6"]
+
+[node name="rocketer" unique_id=1897743314 instance=ExtResource("1_8ngvd")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Meshy_AI_Rainbow_Rocket_Ship_0703084711_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=317114264 instance=ExtResource("2_n0ky6")]
+
+[node name="Muzzle" parent="." index="3" unique_id=1704985833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61876166, 0, 0.42655057)
+
+[node name="Muzzle2" type="Marker3D" parent="." index="4" unique_id=185332975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6292937, 0, 0.42655057)

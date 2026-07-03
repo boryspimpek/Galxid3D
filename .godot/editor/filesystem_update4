@@ -31,3 +31,4 @@ res://scenes/projectile/projectile.gd
 res://scenes/enemies/formations/formation4.tscn
 res://scenes/player/Player.gd
 res://scenes/player/Golden_core.tscn
+res://assets/enemies/rocketer/rocketer_model.tscn

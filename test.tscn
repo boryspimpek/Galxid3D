@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://na3nvl7jvpdi" path="res://assets/planets/Gemini_Generated_Image_ (2).png" id="5_yg34o"]
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="6_21gct"]
 [ext_resource type="PackedScene" uid="uid://5qq7y15vdal6" path="res://scenes/enemies/types/arrow.tscn" id="8_xersf"]
+[ext_resource type="PackedScene" uid="uid://bn34u3k8ydghw" path="res://scenes/enemies/types/rocketer.tscn" id="9_00tp4"]
+[ext_resource type="Script" uid="uid://c7cpjam6npoyw" path="res://scripts/resources/enemies/weapons/CircleEnemyWeaponData.gd" id="10_77dp3"]
 [ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="19_t77du"]
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="37_k13tm"]
 
@@ -28,6 +30,11 @@ size = Vector2(260, 130)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cegan"]
 albedo_texture = ExtResource("5_yg34o")
+
+[sub_resource type="Resource" id="Resource_5tkv4"]
+script = ExtResource("10_77dp3")
+fire_rate = 5.0
+metadata/_custom_type_script = "uid://c7cpjam6npoyw"
 
 [node name="GameShell" type="Control" unique_id=616589222]
 layout_mode = 3
@@ -114,5 +121,10 @@ scroll_speed = 6.0
 [node name="arrow" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1897743314 instance=ExtResource("8_xersf")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -7.8282614, 0, -5.300384)
 armor = 999999
+
+[node name="rocketer" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1617792005 instance=ExtResource("9_00tp4")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.049114, 0, -6.3029823)
+armor = 100
+weapon_data = SubResource("Resource_5tkv4")
 
 [node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("37_k13tm")]
