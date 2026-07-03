@@ -5,12 +5,10 @@
 
 [node name="arrow" unique_id=1897743314 instance=ExtResource("1_37nbq")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+armor = 5
 value = 0
 
 [node name="arrow" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1182223721 instance=ExtResource("2_1vonn")]
-
-[node name="CollisionShape3D" parent="." index="1" unique_id=324662688]
-transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 0, 0, 0)
 
 [node name="Muzzle" parent="." index="3" unique_id=1704985833]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.7)

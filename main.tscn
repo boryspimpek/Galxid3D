@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://rndh1h608vgb" path="res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_33_29.png" id="10_b1qrp"]
 [ext_resource type="PackedScene" uid="uid://dd21l172sp65r" path="res://scenes/enemies/formations/formation2.tscn" id="10_seu75"]
 [ext_resource type="Texture2D" uid="uid://ct47u3inf3u2o" path="res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_34_58.png" id="11_come4"]
-[ext_resource type="PackedScene" uid="uid://vj8mqc5fbe18" path="res://scenes/enemies/formations/formation3.tscn" id="11_htxhm"]
 [ext_resource type="Texture2D" uid="uid://dykum6mefaj8w" path="res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 18_24_49.png" id="12_facbu"]
 [ext_resource type="PackedScene" uid="uid://c8keoramkser6" path="res://scenes/enemies/formations/formation4.tscn" id="12_jq2sk"]
 [ext_resource type="PackedScene" uid="uid://mqfrdiaxtht5" path="res://scenes/enemies/formations/formation6.tscn" id="13_4k2k6"]
@@ -36,9 +35,9 @@
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="22_d2t1y"]
 [ext_resource type="PackedScene" uid="uid://dbshlgj36klhl" path="res://scenes/enemies/formations/formation11.tscn" id="22_ryguw"]
 [ext_resource type="PackedScene" uid="uid://cv5pl4svkf8ft" path="res://scenes/enemies/types/hawk.tscn" id="37_b1qrp"]
-[ext_resource type="PackedScene" uid="uid://hvk51yey612d" path="res://scenes/enemies/formations/protector1strike.tscn" id="38_b1qrp"]
-[ext_resource type="PackedScene" uid="uid://b8efiwixoqn41" path="res://scenes/enemies/formations/protector2strike.tscn" id="39_come4"]
+[ext_resource type="PackedScene" uid="uid://di8tdeuy0i86i" path="res://scenes/enemies/formations/protector_strike.tscn" id="40_4lmeg"]
 [ext_resource type="PackedScene" uid="uid://ls2pig7p4d3o" path="res://scenes/enemies/types/satellite.tscn" id="40_h8e4i"]
+[ext_resource type="PackedScene" uid="uid://0gvcpa8yx6vi" path="res://scenes/enemies/formations/rocketer_strike.tscn" id="41_0cp0l"]
 [ext_resource type="PackedScene" uid="uid://ryp1is7xr46v" path="res://assets/ElectricDischargeVFX/electric_discharge_3d.tscn" id="41_4lmeg"]
 [ext_resource type="PackedScene" uid="uid://bq1ohabm84y61" path="res://scenes/enemies/formations/formation15.tscn" id="42_0cp0l"]
 [ext_resource type="PackedScene" uid="uid://18f6vqmvxr50" path="res://scenes/enemies/formations/hank_strike.tscn" id="43_d2t1y"]
@@ -410,23 +409,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.791367, 0, -122.78079)
 [node name="Formation2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=2052678689 instance=ExtResource("10_seu75")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.847641, 0, -134.88257)
 
-[node name="Formation3" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=1007223106 instance=ExtResource("11_htxhm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.127327, 0, -170)
-
 [node name="Formation4" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=2046449321 instance=ExtResource("12_jq2sk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.02408, 0, -215)
-
-[node name="Formation5" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=453809063 instance=ExtResource("15_yaehf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.192278, 0, -329.4551)
-
-[node name="Formation6" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=1260110716 instance=ExtResource("13_4k2k6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.084282, 0, -334.68546)
-
-[node name="Formation10" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=1619569397 instance=ExtResource("15_yaehf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.192278, 0, -415.41406)
-
-[node name="Formation20" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=359380580 instance=ExtResource("13_4k2k6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.084282, 0, -420.6444)
 
 [node name="Formation7" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=214272725 instance=ExtResource("14_0rl1p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.820934, 0, -740.8844)
@@ -495,21 +479,6 @@ movement_data = SubResource("Resource_come4")
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 3.7124805, 0, -140.737)
 movement_data = SubResource("Resource_come4")
 
-[node name="hawk3" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Hawk" unique_id=1951610040 instance=ExtResource("37_b1qrp")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -8.744679, 0, -240.78276)
-movement_data = SubResource("Resource_come4")
-
-[node name="hawk4" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Hawk" unique_id=1921881001 instance=ExtResource("37_b1qrp")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10.838258, 0, -243.9439)
-movement_data = SubResource("Resource_come4")
-
-[node name="hawk6" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Hawk" unique_id=149148879 instance=ExtResource("37_b1qrp")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -11.530513, 0, -392.30783)
-
-[node name="hawk14" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Hawk" unique_id=1075473689 instance=ExtResource("37_b1qrp")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10.564599, 0, -364.95496)
-movement_data = SubResource("Resource_come4")
-
 [node name="hawk8" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Hawk" unique_id=172250006 instance=ExtResource("37_b1qrp")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -14.430257, 0, -700.59735)
 movement_data = SubResource("Resource_come4")
@@ -543,48 +512,6 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -5.663395, 0, -997.2781
 movement_data = SubResource("Resource_d2t1y")
 
 [node name="m fighter" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1933397230]
-
-[node name="m_fighter_1" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/m fighter" unique_id=718698068 instance=ExtResource("38_b1qrp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.494827, 0, -202.96881)
-
-[node name="m_fighter_2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/m fighter" unique_id=9111982 instance=ExtResource("39_come4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.322218, 0, -194.66006)
-
-[node name="m_fighter_13" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/m fighter" unique_id=2017247219 instance=ExtResource("38_b1qrp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.097534, 0, -275.3464)
-
-[node name="m_fighter_14" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/m fighter" unique_id=820057175 instance=ExtResource("39_come4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.28813, 0, -284.56464)
-
-[node name="m_fighter_3" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/m fighter" unique_id=1124900158 instance=ExtResource("38_b1qrp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.173462, 0, -185.13179)
-
-[node name="m_fighter_4" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/m fighter" unique_id=1915099516 instance=ExtResource("39_come4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.489286, 0, -212.67834)
-
-[node name="m_fighter_5" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/m fighter" unique_id=2028404334 instance=ExtResource("38_b1qrp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.404449, 0, -354.7682)
-
-[node name="m_fighter_6" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/m fighter" unique_id=311196567 instance=ExtResource("39_come4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.416937, 0, -306.11478)
-
-[node name="m_fighter_7" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/m fighter" unique_id=2056518968 instance=ExtResource("38_b1qrp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.045086, 0, -297.54977)
-
-[node name="m_fighter_8" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/m fighter" unique_id=1629386515 instance=ExtResource("39_come4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.490047, 0, -367.0964)
-
-[node name="m_fighter_9" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/m fighter" unique_id=611294077 instance=ExtResource("38_b1qrp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.550297, 0, -397.83585)
-
-[node name="m_fighter_10" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/m fighter" unique_id=1858744162 instance=ExtResource("39_come4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.204578, 0, -386.7093)
-
-[node name="m_fighter_11" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/m fighter" unique_id=1853043225 instance=ExtResource("38_b1qrp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.896004, 0, -377.5017)
-
-[node name="m_fighter_12" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/m fighter" unique_id=980003772 instance=ExtResource("39_come4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.581396, 0, -414.29028)
 
 [node name="Satellite" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1420455491]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -701.76794)
@@ -635,3 +562,9 @@ end_target = NodePath("../Satellite8")
 
 [node name="hank_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=834211707 instance=ExtResource("43_d2t1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.190403, 0, -457.49976)
+
+[node name="protector_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1693192339 instance=ExtResource("40_4lmeg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.963444, 0, -163.54004)
+
+[node name="rocketer_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=83218953 instance=ExtResource("41_0cp0l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7558, 0, -330.79602)
