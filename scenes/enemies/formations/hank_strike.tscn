@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemies/base/EnemyPathFollow.gd" id="3_83kqy"]
 [ext_resource type="PackedScene" uid="uid://cv5pl4svkf8ft" path="res://scenes/enemies/types/hawk.tscn" id="5_83kqy"]
 [ext_resource type="PackedScene" uid="uid://c2vk2d14w4myt" path="res://scenes/enemies/formations/formation8.tscn" id="6_amssh"]
-[ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="7_vdkc8"]
 
 [sub_resource type="Curve3D" id="Curve3D_7sc5t"]
 _data = {
@@ -196,11 +195,6 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10.926342, 0, -121.0989
 
 [node name="hawk2" parent="." unique_id=1396232869 instance=ExtResource("5_83kqy")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 31.957432, 0, -131.36096)
-
-[node name="LevelScrollRuler" parent="." unique_id=757392858 instance=ExtResource("7_vdkc8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.94598, 0, 11.481616)
-visible = false
-z_min = -200.0
 
 [node name="Formation" parent="." unique_id=1730415998 instance=ExtResource("6_amssh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11539459, 0, -97.05165)

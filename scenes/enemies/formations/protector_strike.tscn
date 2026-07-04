@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemies/base/EnemyPath3D.gd" id="5_cai3x"]
 [ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemies/base/EnemyPathFollow.gd" id="6_jyjfp"]
 [ext_resource type="PackedScene" uid="uid://c185raa5p20gw" path="res://scenes/enemies/types/protector.tscn" id="7_lfkyf"]
-[ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="8_03ua2"]
 
 [sub_resource type="Resource" id="Resource_lrdry"]
 script = ExtResource("4_nbddf")
@@ -248,8 +247,3 @@ loop = false
 script = ExtResource("6_jyjfp")
 
 [node name="protector" parent="Path3D14/PathFollow3D" unique_id=81711683 instance=ExtResource("7_lfkyf")]
-
-[node name="LevelScrollRuler" parent="." unique_id=1787063611 instance=ExtResource("8_03ua2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.965723, 0, 11.346809)
-visible = false
-z_min = -300.0
