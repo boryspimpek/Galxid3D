@@ -7,7 +7,7 @@
 
 [sub_resource type="Curve3D" id="Curve3D_t6a12"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.0050640106, -0.000546813, 0.007091522, 14.414299, 0, 0.22564125, -14.414299, 0, -0.22564125, -39.849323, -0.00048828125, 4.853138, 0, 0, 0, 0, 0, 0, -71.284805, -0.00048828125, 1.5880003),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.0050640106, -0.000546813, 0.007091522, -12.406319, 0, 0.1820569, 12.406319, 0, -0.1820569, 43.859962, -0.00048828125, -6.446841, 0, 0, 0, 0, 0, 0, 75.12389, -0.00048828125, 1.611567),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
@@ -15,7 +15,7 @@ point_count = 3
 [node name="Formation" type="Node3D" unique_id=1730415998]
 
 [node name="Path2" type="Path3D" parent="." unique_id=1551101873]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.138214, 0, 3.9086351)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.011856, 0, 13.6514015)
 curve = SubResource("Curve3D_t6a12")
 script = ExtResource("1_y850x")
 activation_mode = 0
@@ -25,14 +25,14 @@ bank_strength = 10.0
 bank_lookahead = 10.0
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path2" unique_id=468205134]
-transform = Transform3D(-0.19557874, 2.2136205e-06, 0.98065037, 0, 0.99999243, -2.2571487e-06, -0.9806518, -4.4147893e-07, -0.19557846, -0.0050640106, -0.000546813, 0.007091522)
+transform = Transform3D(0.1955126, -1.7894494e-06, -0.9806575, -5.684109e-14, 0.99999243, -1.8246016e-06, 0.9806594, 3.5675984e-07, 0.1955122, -0.0050640106, -0.000546813, 0.007091522)
 loop = false
 script = ExtResource("2_litrc")
 
 [node name="arrow" parent="Path2/PathFollow3D" unique_id=95247330 instance=ExtResource("3_d2sn8")]
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Path2" unique_id=215366715]
-transform = Transform3D(-0.17603259, 2.0091177e-06, 0.98434913, -4.283273e-08, 0.99999005, -2.0486e-06, -0.98435366, -4.0280491e-07, -0.17603178, -4.9198947, -0.00053616916, 0.9248189)
+transform = Transform3D(0.185022, -1.685491e-06, -0.98269105, -1.8933257e-08, 0.99999005, -1.7186143e-06, 0.98269576, 3.3661078e-07, 0.1850211, 4.9045434, -0.0005380163, -0.9381711)
 progress = 5.0
 loop = false
 script = ExtResource("2_litrc")
@@ -40,7 +40,7 @@ script = ExtResource("2_litrc")
 [node name="arrow" parent="Path2/PathFollow3D2" unique_id=843746355 instance=ExtResource("3_d2sn8")]
 
 [node name="PathFollow3D3" type="PathFollow3D" parent="Path2" unique_id=346911377]
-transform = Transform3D(-0.16312297, 1.8740559e-06, 0.98656917, -6.876891e-08, 0.99999034, -1.910819e-06, -0.98657846, -3.7956414e-07, -0.16312143, -9.847524, -0.00052627065, 1.7726939)
+transform = Transform3D(0.1780995, -1.6168931e-06, -0.9839692, -3.078711e-08, 0.99999034, -1.6486828e-06, 0.9839779, 3.2394493e-07, 0.17809793, 9.821582, -0.0005295978, -1.8460065)
 progress = 10.0
 loop = false
 script = ExtResource("2_litrc")
@@ -48,7 +48,7 @@ script = ExtResource("2_litrc")
 [node name="arrow" parent="Path2/PathFollow3D3" unique_id=1925773208 instance=ExtResource("3_d2sn8")]
 
 [node name="PathFollow3D4" type="PathFollow3D" parent="Path2" unique_id=2112659209]
-transform = Transform3D(-0.14943579, 1.7308721e-06, 0.9887262, -9.4235794e-08, 0.99999285, -1.7647052e-06, -0.98874193, -3.5690746e-07, -0.1494334, -14.7859535, -0.0005170746, 2.5547547)
+transform = Transform3D(0.17075999, -1.5441749e-06, -0.9852613, -4.2799787e-08, 0.99999285, -1.5745431e-06, 0.98527735, 3.1106245e-07, 0.17075722, 14.7448845, -0.0005215358, -2.7185354)
 progress = 15.0
 loop = false
 script = ExtResource("2_litrc")
@@ -56,7 +56,7 @@ script = ExtResource("2_litrc")
 [node name="arrow" parent="Path2/PathFollow3D4" unique_id=1313440504 instance=ExtResource("3_d2sn8")]
 
 [node name="PathFollow3D5" type="PathFollow3D" parent="Path2" unique_id=1822211169]
-transform = Transform3D(-0.13356182, 1.5648282e-06, 0.9910011, -1.2116985e-07, 0.9999908, -1.5952605e-06, -0.9909901, -3.3317187e-07, -0.13356331, -19.735477, -0.00050866144, 3.2634826)
+transform = Transform3D(0.16223957, -1.4597855e-06, -0.98670065, -5.6027275e-08, 0.9999908, -1.4885402e-06, 0.98668885, 2.9681266e-07, 0.1622415, 19.674969, -0.00051387114, -3.5517206)
 progress = 20.0
 loop = false
 script = ExtResource("2_litrc")

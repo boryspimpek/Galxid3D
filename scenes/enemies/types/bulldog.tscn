@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://coe2iryjehfxm" path="res://assets/enemies/bulldog/bulldog_model.tscn" id="2_qoyld"]
 [ext_resource type="Script" uid="uid://dtprhja8af0to" path="res://scripts/resources/enemies/movement/LinearMoveData.gd" id="3_t12dc"]
 [ext_resource type="PackedScene" uid="uid://dp6fn641cy82u" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/impact/vfx_impact_01.tscn" id="4_wfpjj"]
+[ext_resource type="Script" uid="uid://cr2knbmonx42w" path="res://scenes/enemies/base/facing/FacePlayer.gd" id="6_t12dc"]
 
 [sub_resource type="Resource" id="Resource_t12dc"]
 script = ExtResource("2_04xar")
@@ -37,3 +38,6 @@ transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -0.43
 
 [node name="Muzzle2" type="Marker3D" parent="." index="4" unique_id=558783719]
 transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0.42722112, 0, 0.6052299)
+
+[node name="Facing" type="Node3D" parent="." index="5" unique_id=600290050]
+script = ExtResource("6_t12dc")

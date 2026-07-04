@@ -5,3 +5,7 @@ res://scenes/enemies/types/bulldog.tscn
 res://scenes/enemies/types/hawk.tscn
 res://main.tscn
 res://scenes/enemies/formations/formation4.tscn
+res://scenes/enemies/formations/bulldog_strike1.tscn
+res://scenes/enemies/formations/bulldog_strike2.tscn
+res://scenes/enemies/formations/formation9.tscn
+res://scenes/enemies/types/arrow.tscn
