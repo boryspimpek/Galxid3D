@@ -8,6 +8,10 @@ var _hit_player: AudioStreamPlayer      # kanał trafień (osobny bus do ścisza
 var _cache: Dictionary = {}      # sound_id -> AudioStream or null
 var _path_map: Dictionary = {}   # sound_id -> file path
 
+## Minimalny odstęp między dźwiękami trafień (ms) — tłumi spam przy salwach wielopociskowych.
+const HIT_SOUND_MIN_INTERVAL_MS := 90
+var _last_hit_sound_ms: int = -HIT_SOUND_MIN_INTERVAL_MS
+
 func _ready():
 	_weapon_player = AudioStreamPlayer.new()
 	_weapon_player.bus = "Weapons"
@@ -62,6 +66,10 @@ func play_sound(sound_id: int) -> void:
 	_play_on(_impact_player, sound_id)
 
 func play_hit_sound(sound_id: int) -> void:
+	var now := Time.get_ticks_msec()
+	if now - _last_hit_sound_ms < HIT_SOUND_MIN_INTERVAL_MS:
+		return
+	_last_hit_sound_ms = now
 	_play_on(_hit_player, sound_id)
 
 func _play_on(player: AudioStreamPlayer, sound_id: int) -> void:

@@ -14,3 +14,4 @@ res://data/weapons/front_1.tres
 res://scenes/enemies/base/Enemy.gd
 res://scenes/player/WeaponSystem.gd
 res://scenes/projectile/projectile.gd
+res://scripts/managers/SoundManager.gd
