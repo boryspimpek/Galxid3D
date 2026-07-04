@@ -24,6 +24,7 @@ DataManager="*res://scripts/managers/DataManager.gd"
 SceneRegistry="*res://scripts/managers/SceneRegistry.gd"
 SoundManager="*res://scripts/managers/SoundManager.gd"
 HitComboManager="*res://scripts/managers/HitComboManager.gd"
+CameraShakeManager="*res://scripts/managers/CameraShakeManager.gd"
 
 [display]
 

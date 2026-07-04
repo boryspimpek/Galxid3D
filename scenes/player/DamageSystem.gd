@@ -19,6 +19,7 @@ func take_damage(amount: int):
 	if player.armor > 0:
 		var hit_sound: int = player.ship_data.hit_sound if player.ship_data else 19
 		SoundManager.play_hit_sound(hit_sound)
+		CameraShakeManager.shake(0.4, 0.25)
 	if player.armor <= 0:
 		player.armor = 0
 		_on_player_death()
