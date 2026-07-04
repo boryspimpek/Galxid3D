@@ -1,9 +1,21 @@
 [gd_scene format=3 uid="uid://bukgo2nxinswb"]
 
 [ext_resource type="PackedScene" uid="uid://clqiyro5jpba" path="res://assets/enemies/vanguard/Meshy_AI_Crimson_Zephyr_Jet_0703091558_texture.glb" id="1_3mlyl"]
+[ext_resource type="Texture2D" uid="uid://d8nedsymapoc" path="res://assets/enemies/vanguard/Meshy_AI_Crimson_Zephyr_Jet_0703091558_texture_0.jpg" id="2_hldp4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y424e"]
+diffuse_mode = 3
+specular_mode = 2
+disable_ambient_light = true
+albedo_texture = ExtResource("2_hldp4")
+roughness = 0.0
+clearcoat_enabled = true
+clearcoat_roughness = 1.0
 
 [node name="Meshy_AI_Crimson_Zephyr_Jet_0703091558_texture" unique_id=363266910 instance=ExtResource("1_3mlyl")]
 layers = 16
 
-[node name="Mesh" parent="." index="0" unique_id=141035747]
+[node name="Mesh" parent="." index="0" unique_id=2102637278]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 layers = 16
+surface_material_override/0 = SubResource("StandardMaterial3D_y424e")

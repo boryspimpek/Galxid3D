@@ -2,9 +2,28 @@
 
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_r8xxm"]
 [ext_resource type="PackedScene" uid="uid://dkr2l1i1ougrm" path="res://assets/enemies/devastator/devastator_model.tscn" id="2_4qrup"]
+[ext_resource type="Script" uid="uid://cr2knbmonx42w" path="res://scenes/enemies/base/facing/FacePlayer.gd" id="3_4qrup"]
 
 [node name="devastator" unique_id=1897743314 instance=ExtResource("1_r8xxm")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-armor = 200
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
+armor = 500
+hit_effect_scene = null
 
 [node name="Meshy_AI_Crimson_Violet_Starfi_0703084741_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=549763497 instance=ExtResource("2_4qrup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, 0, 0)
+
+[node name="CollisionShape3D" parent="." index="1" unique_id=324662688]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, -6.0935554e-09, 6.0935554e-09, -0.1394043)
+
+[node name="Muzzle" parent="." index="3" unique_id=1704985833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1920929e-07, 0, 0.6630415)
+
+[node name="Muzzle2" type="Marker3D" parent="." index="4" unique_id=1226092898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7227155, 0, 0.10608649)
+
+[node name="Muzzle3" type="Marker3D" parent="." index="5" unique_id=44029095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7127694, 0, 0.10608649)
+
+[node name="Facing" type="Node3D" parent="." index="6" unique_id=1591251084]
+script = ExtResource("3_4qrup")
+turn_smooth = 1.0
