@@ -1,13 +1,7 @@
 res://test.tscn
 res://scenes/enemy_projectile/EnemyProjectile.gdshader
 res://assets/shaders/toon.gdshader
-res://scenes/enemy_projectile/EnemyProjectile.gd
-res://scripts/resources/enemies/weapons/HomingEnemyWeaponData.gd
-res://scenes/enemies/formations/rocketer_strike.tscn
-res://scenes/enemies/types/rocketer.tscn
-res://scenes/enemies/base/EnemyPathFollow.gd
-res://scenes/enemies/formations/protector_strike.tscn
-res://scenes/enemies/types/protector.tscn
+res://scenes/enemies/types/bulldog.tscn
+res://scenes/enemies/types/hawk.tscn
 res://main.tscn
-res://scenes/enemies/types/arrow.tscn
-res://scenes/enemies/formations/hank_strike.tscn
+res://scenes/enemies/formations/formation4.tscn

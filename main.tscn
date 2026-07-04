@@ -40,6 +40,7 @@
 [ext_resource type="PackedScene" uid="uid://0gvcpa8yx6vi" path="res://scenes/enemies/formations/rocketer_strike.tscn" id="41_0cp0l"]
 [ext_resource type="PackedScene" uid="uid://ryp1is7xr46v" path="res://assets/ElectricDischargeVFX/electric_discharge_3d.tscn" id="41_4lmeg"]
 [ext_resource type="PackedScene" uid="uid://bq1ohabm84y61" path="res://scenes/enemies/formations/formation15.tscn" id="42_0cp0l"]
+[ext_resource type="PackedScene" uid="uid://dv65p1uld6w72" path="res://scenes/enemies/types/bulldog.tscn" id="42_d2t1y"]
 [ext_resource type="PackedScene" uid="uid://18f6vqmvxr50" path="res://scenes/enemies/formations/hank_strike.tscn" id="43_d2t1y"]
 
 [sub_resource type="Environment" id="Environment_2y1ty"]
@@ -301,6 +302,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1
 
 [node name="Player" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1811810025 instance=ExtResource("2_d13ii")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.093774796, 0, 1.1087775)
+ship_id = 4
 generator_id = 3
 gamepad_move_speed = 15.0
 gamepad_l2_move_speed = 30.0
@@ -472,7 +474,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.881594, 0, -879.5965)
 [node name="Hawk" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=795467366]
 
 [node name="hawk" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Hawk" unique_id=1971833822 instance=ExtResource("37_b1qrp")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 1.5713301, 0, -80.85964)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10.34354, 0, -80.85964)
 movement_data = SubResource("Resource_come4")
 
 [node name="hawk2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Hawk" unique_id=1897743314 instance=ExtResource("37_b1qrp")]
@@ -568,3 +570,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.272804, 0, -330.79602)
 
 [node name="protector_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1693192339 instance=ExtResource("40_4lmeg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.963444, 0, -163.54004)
+
+[node name="bulldog" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=85497565 instance=ExtResource("42_d2t1y")]
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -0.48622167, 0, -9.001163)

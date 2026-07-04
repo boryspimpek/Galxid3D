@@ -15,7 +15,7 @@ point_count = 3
 [node name="Formation" type="Node3D" unique_id=1730415998]
 
 [node name="Path2" type="Path3D" parent="." unique_id=1551101873]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.138214, 0, 13.128443)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.138214, 0, 3.9086351)
 curve = SubResource("Curve3D_t6a12")
 script = ExtResource("1_y850x")
 activation_mode = 0

@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c1pq466qvcqtm" path="res://scenes/planets/earth.tscn" id="4_ffwl0"]
 [ext_resource type="Texture2D" uid="uid://na3nvl7jvpdi" path="res://assets/planets/Gemini_Generated_Image_ (2).png" id="5_yg34o"]
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="6_21gct"]
-[ext_resource type="PackedScene" uid="uid://di8tdeuy0i86i" path="res://scenes/enemies/formations/protector_strike.tscn" id="8_xersf"]
+[ext_resource type="Script" uid="uid://62asvta6vqik" path="res://scripts/resources/enemies/weapons/SpreadEnemyWeaponData.gd" id="9_00tp4"]
+[ext_resource type="PackedScene" uid="uid://dbqhlqawrvwa7" path="res://scenes/enemies/types/voyager.tscn" id="9_xersf"]
 [ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="19_t77du"]
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="37_k13tm"]
 
@@ -28,6 +29,11 @@ size = Vector2(260, 130)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cegan"]
 albedo_texture = ExtResource("5_yg34o")
+
+[sub_resource type="Resource" id="Resource_77dp3"]
+script = ExtResource("9_00tp4")
+fire_rate = 1.0
+metadata/_custom_type_script = "uid://62asvta6vqik"
 
 [node name="GameShell" type="Control" unique_id=616589222]
 layout_mode = 3
@@ -113,7 +119,8 @@ tick_spacing = 6.0
 major_tick_every = 1
 scroll_speed = 6.0
 
-[node name="protector_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1693192339 instance=ExtResource("8_xersf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.170593, 0, 0)
+[node name="voyager" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1897743314 instance=ExtResource("9_xersf")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -0.5390308, 0, -9.342539)
+weapon_data = SubResource("Resource_77dp3")
 
 [node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("37_k13tm")]
