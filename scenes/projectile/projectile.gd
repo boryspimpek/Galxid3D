@@ -14,6 +14,7 @@ var _velocity: Vector3 = Vector3.ZERO
 var homing: bool = false
 var turn_speed: float = 3.0
 var homing_angle_deg: float = 360.0
+var is_special: bool = false
 
 func _ready():
 	for child in get_children():
@@ -65,7 +66,7 @@ func _align_to_velocity() -> void:
 
 func _on_area_entered(area: Area3D):
 	if area.is_in_group("enemies"):
-		area.take_damage(damage, global_position)
+		area.take_damage(damage, global_position, is_special)
 		queue_free()
 
 func _on_body_entered(_body: Node3D):

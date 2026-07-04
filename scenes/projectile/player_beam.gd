@@ -24,4 +24,4 @@ func _physics_process(delta: float) -> void:
 		if not area.is_in_group("enemies"):
 			continue
 		if area.has_method("take_damage"):
-			area.take_damage(damage, global_position)
+			area.take_damage(damage, global_position, true)

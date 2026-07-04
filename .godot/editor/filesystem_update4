@@ -11,3 +11,6 @@ res://scenes/enemies/formations/arrow formations/striker1.tscn
 res://scenes/enemies/formations/striker formations/striker1.tscn
 res://scenes/enemies/formations/striker formations/striker2.tscn
 res://data/weapons/front_1.tres
+res://scenes/enemies/base/Enemy.gd
+res://scenes/player/WeaponSystem.gd
+res://scenes/projectile/projectile.gd

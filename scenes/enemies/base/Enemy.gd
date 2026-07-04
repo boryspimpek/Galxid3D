@@ -2,6 +2,8 @@ extends Area3D
 
 @export_group("Combat")
 @export var armor: int = 1
+## true = obrażenia zadają tylko special shoty gracza (podstawowe bronie odbijają się).
+@export var immune_to_basic_weapons: bool = false
 @export var weapon_data: EnemyWeaponData
 @export var hit_sound: int = 3
 @export var explosion_sound: int = 9
@@ -111,7 +113,11 @@ func get_scroll_distance_remaining() -> float:
 	return _scroll_activation_z - global_position.z
 
 
-func take_damage(amount: int, hit_world_position: Variant = null) -> void:
+func take_damage(amount: int, hit_world_position: Variant = null, is_special: bool = false) -> void:
+	if immune_to_basic_weapons and not is_special:
+		_spawn_hit_effect(hit_world_position)
+		SoundManager.play_hit_sound(hit_sound)
+		return
 	_spawn_damage_popup(amount, hit_world_position)
 	var will_die := armor - amount <= 0
 	if not will_die:

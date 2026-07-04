@@ -291,6 +291,7 @@ func _spawn_single_projectile(
 	projectile.global_position = spawn_position
 	projectile.velocity = velocity
 	projectile.damage = damage
+	projectile.is_special = special_shot
 	if homing:
 		projectile.homing = true
 		projectile.turn_speed = homing_turn_speed

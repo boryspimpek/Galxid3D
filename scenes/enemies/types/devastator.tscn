@@ -74,6 +74,7 @@ transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 0, 0, 0)
 script = ExtResource("2_po5ue")
 weapon_phases = Array[ExtResource("3_xoaj6")]([SubResource("Resource_my2ao"), SubResource("Resource_kqngm"), SubResource("Resource_hlwsm")])
 armor = 500
+immune_to_basic_weapons = true
 movement_data = SubResource("Resource_fvgfw")
 explosion_scene = null
 hit_effect_scene = null
