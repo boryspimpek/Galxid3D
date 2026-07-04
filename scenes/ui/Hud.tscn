@@ -19,20 +19,6 @@ font_color = Color(1, 0.84, 0.2, 1)
 outline_size = 12
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_ipyef"]
-font = ExtResource("2_7v63g")
-font_size = 63
-font_color = Color(1, 0.23921569, 0.09019608, 1)
-outline_size = 22
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_f1iev"]
-font = ExtResource("2_7v63g")
-font_size = 63
-font_color = Color(0, 0.4745098, 1, 1)
-outline_size = 22
-outline_color = Color(0, 0, 0, 1)
-
 [sub_resource type="LabelSettings" id="LabelSettings_combo"]
 font = ExtResource("2_7v63g")
 font_size = 44
@@ -87,42 +73,19 @@ label_settings = SubResource("LabelSettings_score")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HealtHLabel" type="Label" parent="Root" unique_id=80257096]
-layout_mode = 0
-offset_left = 1475.0
-offset_top = 75.0
-offset_right = 1797.0
-offset_bottom = 143.00006
-rotation = 0.2617994
-text = "HEALTH"
-label_settings = SubResource("LabelSettings_ipyef")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PoweLabel" type="Label" parent="Root" unique_id=630368540]
-layout_mode = 0
-offset_left = 128.0
-offset_top = 162.0
-offset_right = 443.05005
-offset_bottom = 230.0
-rotation = -0.2617994
-text = "Power"
-label_settings = SubResource("LabelSettings_f1iev")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="HealthBar" type="TextureRect" parent="Root" unique_id=832822483]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -365.0
-offset_top = -50.0
-offset_right = 5.0
-offset_bottom = 114.99997
+offset_left = -274.59998
+offset_top = -48.415
+offset_right = 95.400024
+offset_bottom = 116.58497
 grow_horizontal = 0
 rotation = 0.18325958
+scale = Vector2(0.75, 0.75)
 mouse_filter = 2
 texture = ExtResource("3_health")
 expand_mode = 1
@@ -134,12 +97,13 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 3.9999933
-offset_top = -522.0
-offset_right = 374.0
-offset_bottom = -357.0
+offset_left = 4.185
+offset_top = -535.825
+offset_right = 374.185
+offset_bottom = -370.825
 grow_vertical = 2
 rotation = -0.19198622
+scale = Vector2(0.75, 0.75)
 mouse_filter = 2
 texture = ExtResource("5_power")
 expand_mode = 1

@@ -15,3 +15,8 @@ res://scenes/enemies/base/Enemy.gd
 res://scenes/player/WeaponSystem.gd
 res://scenes/projectile/projectile.gd
 res://scripts/managers/SoundManager.gd
+res://scenes/enemies/base/Boss.gd
+res://scenes/ui/Hud.tscn
+res://scenes/player/Green_core.tscn
+res://data/weapons/sidekick_right.tres
+res://data/weapons/sidekick_left.tres
