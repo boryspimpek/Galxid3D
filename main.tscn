@@ -563,7 +563,7 @@ end_target = NodePath("../Satellite8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.190403, 0, -457.49976)
 
 [node name="rocketer_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=83218953 instance=ExtResource("41_0cp0l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.272804, 0, -330.79602)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.272804, 0, -396.66965)
 
 [node name="protector_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1693192339 instance=ExtResource("40_4lmeg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.963444, 0, -163.54004)

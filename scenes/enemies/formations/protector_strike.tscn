@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemies/base/EnemyPath3D.gd" id="5_cai3x"]
 [ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemies/base/EnemyPathFollow.gd" id="6_jyjfp"]
 [ext_resource type="PackedScene" uid="uid://c185raa5p20gw" path="res://scenes/enemies/types/protector.tscn" id="7_lfkyf"]
+[ext_resource type="PackedScene" uid="uid://bn34u3k8ydghw" path="res://scenes/enemies/types/rocketer.tscn" id="7_r38a5"]
+[ext_resource type="Script" uid="uid://fm1cgecs4881" path="res://scripts/resources/enemies/movement/TimedMoveData.gd" id="8_o3ubw"]
 
 [sub_resource type="Resource" id="Resource_lrdry"]
 script = ExtResource("4_nbddf")
@@ -36,17 +38,22 @@ _limits = [0.0, 3.0, 0.0, 1.0]
 _data = [Vector2(1e-05, 3), 0.0, 0.0, 0, 0, Vector2(0.33695653, 3), 0.0, 0.0, 0, 0, Vector2(0.44409937, 0.07114649), 0.17272732, 0.17272732, 0, 0, Vector2(0.5139752, 3), 0.0, 0.0, 0, 0]
 point_count = 4
 
+[sub_resource type="Resource" id="Resource_kpwlq"]
+script = ExtResource("8_o3ubw")
+zmove = 1.5
+metadata/_custom_type_script = "uid://fm1cgecs4881"
+
 [node name="protector_strike" type="Node3D" unique_id=1693192339]
 
 [node name="Formation5" parent="." unique_id=1730415998 instance=ExtResource("1_r38a5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22655487, 0, -106.997604)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22655487, 0, -127.38657)
 
 [node name="hawk3" parent="." unique_id=1897743314 instance=ExtResource("3_kpwlq")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 11.221044, 0, -70.35514)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 11.221044, 0, -50.42581)
 movement_data = SubResource("Resource_lrdry")
 
 [node name="hawk4" parent="." unique_id=1755697315 instance=ExtResource("3_kpwlq")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 30.80398, 0, -73.51627)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 30.80398, 0, -52.782707)
 movement_data = SubResource("Resource_lrdry")
 
 [node name="hawk6" parent="." unique_id=411547534 instance=ExtResource("3_kpwlq")]
@@ -247,3 +254,7 @@ loop = false
 script = ExtResource("6_jyjfp")
 
 [node name="protector" parent="Path3D14/PathFollow3D" unique_id=81711683 instance=ExtResource("7_lfkyf")]
+
+[node name="rocketer" parent="." unique_id=656617696 instance=ExtResource("7_r38a5")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.121204, 0, -82.30659)
+movement_data = SubResource("Resource_kpwlq")

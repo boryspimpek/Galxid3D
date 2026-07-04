@@ -8,7 +8,8 @@
 [sub_resource type="Resource" id="Resource_s4afp"]
 script = ExtResource("2_u3yas")
 homing_turn_speed = 10.0
-fire_rate = 2.0
+homing_duration = 1.0
+fire_rate = 3.0
 initial_fire_delay = 2.0
 projectile_velocity = Vector3(0, 0, 15)
 aim = 10
@@ -16,7 +17,7 @@ metadata/_custom_type_script = "uid://0lspj842eewa"
 
 [node name="rocketer" unique_id=1897743314 instance=ExtResource("1_8ngvd")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-armor = 75
+armor = 90
 weapon_data = SubResource("Resource_s4afp")
 hit_effect_scene = ExtResource("3_u3yas")
 

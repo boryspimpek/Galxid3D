@@ -20,18 +20,6 @@ _limits = [0.0, 3.0, 0.0, 1.0]
 _data = [Vector2(0, 3), 0.0, 0.0, 0, 0, Vector2(1e-05, 3), 0.0, 0.0, 0, 0, Vector2(1, 1.2255001), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="Curve3D" id="Curve3D_ob4yq"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.033237457, 0, -0.0619545, 0, 0, 0, 0, 0, 0, -1.4353409, 0, 1.5090065, -1.311039, 0, -0.7999573, 1.311039, 0, 0.7999573, -1.2575731, 0, 3.8199902, 0, 0, 0, 0, 0, 0, 4.9198637, 0, 4.642166, 0, 0, 0, 0, 0, 0, 8.475223, 0, 4.597725),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
-}
-point_count = 5
-
-[sub_resource type="Curve" id="Curve_dq0jp"]
-_limits = [0.0, 3.0, 0.0, 1.0]
-_data = [Vector2(0, 3), 0.0, 0.0, 0, 0, Vector2(1e-05, 3), 0.0, 0.0, 0, 0, Vector2(1, 1.2255001), 0.0, 0.0, 0, 0]
-point_count = 3
-
 [sub_resource type="Curve3D" id="Curve3D_pialv"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.033237457, 0, -0.0619545, 0, 0, 0, 0, 0, 0, -1.7502747, 0, 1.7379532, -1.1554928, 0, -1.6665745, 1.1554928, 0, 1.6665745, -2.856083, 0, 5.8034725, 0, 0, 0, 0, 0, 0, 1.2548027, 0, 7.203396, 0, 0, 0, 0, 0, 0, 4.07687, 0, 7.181175),
@@ -47,7 +35,7 @@ point_count = 3
 [node name="rocketer_strike" type="Node3D" unique_id=83218953]
 
 [node name="EnemyPath3D" type="Path3D" parent="." unique_id=1490466417]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.57225, 0, -56.024254)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.57225, 0, 12.872803)
 curve = SubResource("Curve3D_0wl48")
 script = ExtResource("2_gp6nd")
 speed_curve = SubResource("Curve_pialv")
@@ -66,28 +54,8 @@ script = ExtResource("3_0wl48")
 [node name="Facing" type="Node3D" parent="EnemyPath3D/PathFollow3D/rocketer" unique_id=1954745796]
 script = ExtResource("5_pialv")
 
-[node name="EnemyPath3D3" type="Path3D" parent="." unique_id=1306218079]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.916688, 0, -87.923744)
-curve = SubResource("Curve3D_ob4yq")
-script = ExtResource("2_gp6nd")
-speed_curve = SubResource("Curve_dq0jp")
-bank_enabled = true
-bank_max_degrees = 45.0
-bank_lookahead = 5.0
-metadata/_custom_type_script = "uid://braxpml2y0f6o"
-
-[node name="PathFollow3D" type="PathFollow3D" parent="EnemyPath3D3" unique_id=558507318]
-transform = Transform3D(-0.7305, 0, 0.6828918, 0, 1, 0, -0.6828918, 0, -0.7305, 0.033237457, 0, -0.0619545)
-loop = false
-script = ExtResource("3_0wl48")
-
-[node name="rocketer" parent="EnemyPath3D3/PathFollow3D" unique_id=1770230932 instance=ExtResource("3_pialv")]
-
-[node name="Facing" type="Node3D" parent="EnemyPath3D3/PathFollow3D/rocketer" unique_id=884163722]
-script = ExtResource("5_pialv")
-
 [node name="EnemyPath3D4" type="Path3D" parent="." unique_id=1893489262]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.082157, 0, -115.76585)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.082157, 0, -46.86879)
 curve = SubResource("Curve3D_pialv")
 script = ExtResource("2_gp6nd")
 speed_curve = SubResource("Curve_0wl48")
@@ -107,10 +75,10 @@ script = ExtResource("3_0wl48")
 script = ExtResource("5_pialv")
 
 [node name="Formation3" parent="." unique_id=448126082 instance=ExtResource("8_swp0o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19433975, 0, -49.337395)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19433975, 0, 19.559662)
 
 [node name="Formation4" parent="." unique_id=1730415998 instance=ExtResource("8_dq0jp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018047333, 0, -102.07862)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018047333, 0, -33.181564)
 
 [node name="PlayAreaFrame" parent="." unique_id=784318850 instance=ExtResource("1_n3tjs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.080858, 0, 11.44706)
