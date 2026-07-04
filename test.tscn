@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c1pq466qvcqtm" path="res://scenes/planets/earth.tscn" id="4_ffwl0"]
 [ext_resource type="Texture2D" uid="uid://na3nvl7jvpdi" path="res://assets/planets/Gemini_Generated_Image_ (2).png" id="5_yg34o"]
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="6_21gct"]
-[ext_resource type="PackedScene" uid="uid://o7vsl5ns4wxb" path="res://scenes/enemies/types/devastator.tscn" id="9_xersf"]
+[ext_resource type="PackedScene" uid="uid://b53d3bd1fnprc" path="res://scenes/enemies/formations/boss_devastator.tscn" id="8_xersf"]
 [ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="19_t77du"]
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="37_k13tm"]
 
@@ -113,7 +113,7 @@ tick_spacing = 6.0
 major_tick_every = 1
 scroll_speed = 6.0
 
-[node name="devastator" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1897743314 instance=ExtResource("9_xersf")]
-transform = Transform3D(12, 0, 0, 0, 11.276312, 4.104242, 0, -4.104242, 11.276312, 0.43749356, 0, -3.9429896)
+[node name="devastator" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1971914927 instance=ExtResource("8_xersf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.07865, 0, -31.223574)
 
 [node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("37_k13tm")]

@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cyu6r2yllmynr" path="res://scripts/resources/enemies/weapons/BossWeaponPhase.gd" id="3_xoaj6"]
 [ext_resource type="Script" uid="uid://bs5humyuxa5j2" path="res://scripts/resources/enemies/weapons/BurstEnemyWeaponData.gd" id="4_2h2ch"]
 [ext_resource type="Script" uid="uid://62asvta6vqik" path="res://scripts/resources/enemies/weapons/SpreadEnemyWeaponData.gd" id="6_po5ue"]
+[ext_resource type="Script" uid="uid://fm1cgecs4881" path="res://scripts/resources/enemies/movement/TimedMoveData.gd" id="7_xoaj6"]
 
 [sub_resource type="Resource" id="Resource_dk4p7"]
 script = ExtResource("4_2h2ch")
@@ -21,41 +22,28 @@ metadata/_custom_type_script = "uid://bs5humyuxa5j2"
 script = ExtResource("3_xoaj6")
 weapon = SubResource("Resource_dk4p7")
 duration = 4.0
-cooldown_after = 2.0
+cooldown_after = 3.0
 muzzle_indices = Array[int]([1, 2])
 
 [sub_resource type="Resource" id="Resource_5ptkc"]
 script = ExtResource("2_pnxrq")
-circle_speed = 10.0
+circle_speed = 3.0
 rotate_per_salvo_deg = 5.0
 spawn_from_center = false
-fire_rate = 0.25
+fire_rate = 1.15
 metadata/_custom_type_script = "uid://c7cpjam6npoyw"
 
 [sub_resource type="Resource" id="Resource_kqngm"]
 script = ExtResource("3_xoaj6")
 weapon = SubResource("Resource_5ptkc")
-duration = 2.0
-cooldown_after = 2.0
-muzzle_indices = Array[int]([0])
-
-[sub_resource type="Resource" id="Resource_po5ue"]
-script = ExtResource("2_pnxrq")
-bullet_count = 10
-rotate_per_salvo_deg = -4.0
-spawn_from_center = false
-fire_rate = 0.2
-metadata/_custom_type_script = "uid://c7cpjam6npoyw"
-
-[sub_resource type="Resource" id="Resource_xoaj6"]
-script = ExtResource("3_xoaj6")
-weapon = SubResource("Resource_po5ue")
-duration = 2.0
-cooldown_after = 2.0
+duration = 8.0
+cooldown_after = 5.0
 muzzle_indices = Array[int]([0])
 
 [sub_resource type="Resource" id="Resource_2h2ch"]
 script = ExtResource("6_po5ue")
+bullet_count = 4
+spread_speed = 6.0
 spawn_from_center = false
 fire_rate = 0.5
 aim = 10
@@ -64,23 +52,14 @@ metadata/_custom_type_script = "uid://62asvta6vqik"
 [sub_resource type="Resource" id="Resource_hlwsm"]
 script = ExtResource("3_xoaj6")
 weapon = SubResource("Resource_2h2ch")
-cooldown_after = 2.0
+cooldown_after = 5.0
 muzzle_indices = Array[int]([0])
 
-[sub_resource type="Resource" id="Resource_vt1fx"]
-script = ExtResource("6_po5ue")
-bullet_count = 4
-spread_speed = 15.0
-spawn_from_center = false
-fire_rate = 0.5
-aim = 10
-metadata/_custom_type_script = "uid://62asvta6vqik"
-
-[sub_resource type="Resource" id="Resource_sydue"]
-script = ExtResource("3_xoaj6")
-weapon = SubResource("Resource_vt1fx")
-cooldown_after = 2.0
-muzzle_indices = Array[int]([0])
+[sub_resource type="Resource" id="Resource_fvgfw"]
+script = ExtResource("7_xoaj6")
+limit = 1.0
+zmove = 6.0
+metadata/_custom_type_script = "uid://fm1cgecs4881"
 
 [sub_resource type="SphereMesh" id="SphereMesh_po5ue"]
 radius = 0.1
@@ -91,10 +70,11 @@ shading_mode = 0
 albedo_color = Color(1.353256, 1.353256, 0, 1)
 
 [node name="devastator" unique_id=1897743314 instance=ExtResource("1_r8xxm")]
-transform = Transform3D(12, 0, 0, 0, 11.276312, 4.1042414, 0, -4.1042414, 11.276312, 0, 0, 0)
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 0, 0, 0)
 script = ExtResource("2_po5ue")
-weapon_phases = Array[ExtResource("3_xoaj6")]([SubResource("Resource_my2ao"), SubResource("Resource_kqngm"), SubResource("Resource_xoaj6"), SubResource("Resource_hlwsm"), SubResource("Resource_sydue")])
+weapon_phases = Array[ExtResource("3_xoaj6")]([SubResource("Resource_my2ao"), SubResource("Resource_kqngm"), SubResource("Resource_hlwsm")])
 armor = 500
+movement_data = SubResource("Resource_fvgfw")
 explosion_scene = null
 hit_effect_scene = null
 

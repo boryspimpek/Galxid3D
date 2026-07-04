@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://b53d3bd1fnprc"]
+
+[ext_resource type="PackedScene" uid="uid://o7vsl5ns4wxb" path="res://scenes/enemies/types/devastator.tscn" id="1_5yylu"]
+[ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="3_q64u0"]
+[ext_resource type="PackedScene" uid="uid://bncfbdv7kbrhj" path="res://scenes/enemies/formations/striker formations/striker2.tscn" id="4_8urob"]
+[ext_resource type="PackedScene" uid="uid://ccivqisb7t18b" path="res://scenes/enemies/formations/striker formations/striker1.tscn" id="9_cqgpi"]
+
+[node name="devastator" type="Node3D" unique_id=1971914927]
+
+[node name="devastator" parent="." unique_id=1897743314 instance=ExtResource("1_5yylu")]
+transform = Transform3D(6, 0, 0, 0, 5.638156, 2.0521207, 0, -2.0521207, 5.638156, 18.596464, 0, 11.848787)
+
+[node name="LevelScrollRuler" parent="." unique_id=1797920958 instance=ExtResource("3_q64u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.994823, 0, 11.416186)
+z_min = -300.0
+z_max = 0.0
+
+[node name="striker formation" parent="." unique_id=1730415998 instance=ExtResource("9_cqgpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16274643, 0, 9.058765)
+
+[node name="striker formation4" parent="." unique_id=333262162 instance=ExtResource("9_cqgpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16274643, 0, -55.342876)
+
+[node name="striker formation5" parent="." unique_id=1643495572 instance=ExtResource("9_cqgpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16274643, 0, -107.83736)
+
+[node name="striker formation2" parent="." unique_id=1102933270 instance=ExtResource("4_8urob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12594986, 0, -16.198252)
+
+[node name="striker formation3" parent="." unique_id=1232404052 instance=ExtResource("4_8urob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12594986, 0, -129.47372)
+
+[node name="striker formation6" parent="." unique_id=1369197184 instance=ExtResource("4_8urob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12594986, 0, -72.475006)

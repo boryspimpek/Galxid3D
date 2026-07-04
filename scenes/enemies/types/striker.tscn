@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bodq11cxfj5hj"]
+
+[ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_aypmb"]
+[ext_resource type="PackedScene" uid="uid://cvu3wbwmtadui" path="res://assets/enemies/striker/striker_model.tscn" id="2_2vxm4"]
+
+[node name="striker" unique_id=1897743314 instance=ExtResource("1_aypmb")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="Meshy_AI_Blue_Orange_Toy_Space_0703084701_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=394875078 instance=ExtResource("2_2vxm4")]
+
+[node name="Muzzle" parent="." index="3" unique_id=1704985833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.76028746)

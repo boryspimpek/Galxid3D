@@ -5,8 +5,8 @@
 [ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemies/base/EnemyPathFollow.gd" id="3_0wl48"]
 [ext_resource type="PackedScene" uid="uid://bn34u3k8ydghw" path="res://scenes/enemies/types/rocketer.tscn" id="3_pialv"]
 [ext_resource type="Script" uid="uid://bkmgjk3jummqx" path="res://scenes/enemies/base/facing/DelayedFacePlayer.gd" id="5_pialv"]
-[ext_resource type="PackedScene" uid="uid://cy5gkjlxnagsa" path="res://scenes/enemies/formations/formation13.tscn" id="8_dq0jp"]
-[ext_resource type="PackedScene" uid="uid://b5j3jumdkod3r" path="res://scenes/enemies/formations/formation7.tscn" id="8_swp0o"]
+[ext_resource type="PackedScene" uid="uid://cy5gkjlxnagsa" path="res://scenes/enemies/formations/arrow formations/formation13.tscn" id="8_dq0jp"]
+[ext_resource type="PackedScene" uid="uid://b5j3jumdkod3r" path="res://scenes/enemies/formations/arrow formations/formation7.tscn" id="8_swp0o"]
 
 [sub_resource type="Curve3D" id="Curve3D_0wl48"]
 _data = {
