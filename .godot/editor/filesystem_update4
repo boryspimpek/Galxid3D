@@ -1,11 +1,5 @@
-res://scenes/player/DamageSystem.gd
-res://scripts/managers/CameraShakeManager.gd
-res://main.tscn
+res://test.tscn
 res://scenes/enemy_projectile/EnemyProjectile.gdshader
 res://assets/shaders/toon.gdshader
-res://assets/enemies/vanguard/vanguard_model.tscn
-res://scenes/player/Player.tscn
-res://scenes/player/Player.gd
-res://test.tscn
 res://scenes/enemies/types/devastator.tscn
 res://assets/enemies/devastator/devastator_model.tscn

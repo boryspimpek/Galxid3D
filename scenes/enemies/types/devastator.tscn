@@ -2,11 +2,100 @@
 
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_r8xxm"]
 [ext_resource type="PackedScene" uid="uid://dkr2l1i1ougrm" path="res://assets/enemies/devastator/devastator_model.tscn" id="2_4qrup"]
+[ext_resource type="Script" uid="uid://c7cpjam6npoyw" path="res://scripts/resources/enemies/weapons/CircleEnemyWeaponData.gd" id="2_pnxrq"]
+[ext_resource type="Script" uid="uid://bk8covuxr0uq1" path="res://scenes/enemies/base/Boss.gd" id="2_po5ue"]
 [ext_resource type="Script" uid="uid://cr2knbmonx42w" path="res://scenes/enemies/base/facing/FacePlayer.gd" id="3_4qrup"]
+[ext_resource type="Script" uid="uid://cyu6r2yllmynr" path="res://scripts/resources/enemies/weapons/BossWeaponPhase.gd" id="3_xoaj6"]
+[ext_resource type="Script" uid="uid://bs5humyuxa5j2" path="res://scripts/resources/enemies/weapons/BurstEnemyWeaponData.gd" id="4_2h2ch"]
+[ext_resource type="Script" uid="uid://62asvta6vqik" path="res://scripts/resources/enemies/weapons/SpreadEnemyWeaponData.gd" id="6_po5ue"]
+
+[sub_resource type="Resource" id="Resource_dk4p7"]
+script = ExtResource("4_2h2ch")
+burst_count = 10
+burst_interval = 0.1
+fire_rate = 1.0
+aim = 10
+metadata/_custom_type_script = "uid://bs5humyuxa5j2"
+
+[sub_resource type="Resource" id="Resource_my2ao"]
+script = ExtResource("3_xoaj6")
+weapon = SubResource("Resource_dk4p7")
+duration = 4.0
+cooldown_after = 2.0
+muzzle_indices = Array[int]([1, 2])
+
+[sub_resource type="Resource" id="Resource_5ptkc"]
+script = ExtResource("2_pnxrq")
+circle_speed = 10.0
+rotate_per_salvo_deg = 5.0
+spawn_from_center = false
+fire_rate = 0.25
+metadata/_custom_type_script = "uid://c7cpjam6npoyw"
+
+[sub_resource type="Resource" id="Resource_kqngm"]
+script = ExtResource("3_xoaj6")
+weapon = SubResource("Resource_5ptkc")
+duration = 2.0
+cooldown_after = 2.0
+muzzle_indices = Array[int]([0])
+
+[sub_resource type="Resource" id="Resource_po5ue"]
+script = ExtResource("2_pnxrq")
+bullet_count = 10
+rotate_per_salvo_deg = -4.0
+spawn_from_center = false
+fire_rate = 0.2
+metadata/_custom_type_script = "uid://c7cpjam6npoyw"
+
+[sub_resource type="Resource" id="Resource_xoaj6"]
+script = ExtResource("3_xoaj6")
+weapon = SubResource("Resource_po5ue")
+duration = 2.0
+cooldown_after = 2.0
+muzzle_indices = Array[int]([0])
+
+[sub_resource type="Resource" id="Resource_2h2ch"]
+script = ExtResource("6_po5ue")
+spawn_from_center = false
+fire_rate = 0.5
+aim = 10
+metadata/_custom_type_script = "uid://62asvta6vqik"
+
+[sub_resource type="Resource" id="Resource_hlwsm"]
+script = ExtResource("3_xoaj6")
+weapon = SubResource("Resource_2h2ch")
+cooldown_after = 2.0
+muzzle_indices = Array[int]([0])
+
+[sub_resource type="Resource" id="Resource_vt1fx"]
+script = ExtResource("6_po5ue")
+bullet_count = 4
+spread_speed = 15.0
+spawn_from_center = false
+fire_rate = 0.5
+aim = 10
+metadata/_custom_type_script = "uid://62asvta6vqik"
+
+[sub_resource type="Resource" id="Resource_sydue"]
+script = ExtResource("3_xoaj6")
+weapon = SubResource("Resource_vt1fx")
+cooldown_after = 2.0
+muzzle_indices = Array[int]([0])
+
+[sub_resource type="SphereMesh" id="SphereMesh_po5ue"]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xoaj6"]
+shading_mode = 0
+albedo_color = Color(1.353256, 1.353256, 0, 1)
 
 [node name="devastator" unique_id=1897743314 instance=ExtResource("1_r8xxm")]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
+transform = Transform3D(12, 0, 0, 0, 11.276312, 4.1042414, 0, -4.1042414, 11.276312, 0, 0, 0)
+script = ExtResource("2_po5ue")
+weapon_phases = Array[ExtResource("3_xoaj6")]([SubResource("Resource_my2ao"), SubResource("Resource_kqngm"), SubResource("Resource_xoaj6"), SubResource("Resource_hlwsm"), SubResource("Resource_sydue")])
 armor = 500
+explosion_scene = null
 hit_effect_scene = null
 
 [node name="Meshy_AI_Crimson_Violet_Starfi_0703084741_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=549763497 instance=ExtResource("2_4qrup")]
@@ -19,11 +108,71 @@ transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1920929e-07, 0, 0.6630415)
 
 [node name="Muzzle2" type="Marker3D" parent="." index="4" unique_id=1226092898]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7227155, 0, 0.10608649)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7188911, -0.16044419, 0.24370182)
 
 [node name="Muzzle3" type="Marker3D" parent="." index="5" unique_id=44029095]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7127694, 0, 0.10608649)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7127694, -0.16054134, 0.23544478)
 
 [node name="Facing" type="Node3D" parent="." index="6" unique_id=1591251084]
 script = ExtResource("3_4qrup")
 turn_smooth = 1.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="7" unique_id=277952962]
+transform = Transform3D(0.8000001, 0, 0, 0, 0.8000001, 0, 0, 0, 0.8000001, -0.41342148, 0.090268835, -0.4675609)
+mesh = SubResource("SphereMesh_po5ue")
+surface_material_override/0 = SubResource("StandardMaterial3D_xoaj6")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="8" unique_id=1260788512]
+transform = Transform3D(0.8000001, 0, 0, 0, 0.79999995, -2.9802322e-08, 0, 2.9802322e-08, 0.79999995, 0.4185307, 0.09920606, -0.4522252)
+mesh = SubResource("SphereMesh_po5ue")
+surface_material_override/0 = SubResource("StandardMaterial3D_xoaj6")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." index="9" unique_id=844844426]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -0.7151901, -0.16194837, 0.22814254)
+mesh = SubResource("SphereMesh_po5ue")
+surface_material_override/0 = SubResource("StandardMaterial3D_xoaj6")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." index="10" unique_id=1759712695]
+transform = Transform3D(0.28000003, 0, 0, 0, 0.28000003, 0, 0, 0, 0.28000003, -0.5870513, -0.17676446, 0.19271243)
+mesh = SubResource("SphereMesh_po5ue")
+surface_material_override/0 = SubResource("StandardMaterial3D_xoaj6")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." index="11" unique_id=1218607826]
+transform = Transform3D(0.31, 0, 0, 0, 0.31, 0, 0, 0, 0.31, -0.851596, -0.17493944, 0.19566493)
+mesh = SubResource("SphereMesh_po5ue")
+surface_material_override/0 = SubResource("StandardMaterial3D_xoaj6")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." index="12" unique_id=254816525]
+transform = Transform3D(0.31, 0, 0, 0, 0.31, 0, 0, 0, 0.31, -0.79536, -0.049613506, 0.19566493)
+mesh = SubResource("SphereMesh_po5ue")
+surface_material_override/0 = SubResource("StandardMaterial3D_xoaj6")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="." index="13" unique_id=941917091]
+transform = Transform3D(0.31, 0, 0, 0, 0.31, 0, 0, 0, 0.31, -0.63870263, -0.049613506, 0.19566493)
+mesh = SubResource("SphereMesh_po5ue")
+surface_material_override/0 = SubResource("StandardMaterial3D_xoaj6")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="." index="14" unique_id=52281696]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0.7138449, -0.16194837, 0.22814254)
+mesh = SubResource("SphereMesh_po5ue")
+surface_material_override/0 = SubResource("StandardMaterial3D_xoaj6")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="." index="15" unique_id=1423245960]
+transform = Transform3D(0.28000003, 0, 0, 0, 0.28000003, 0, 0, 0, 0.28000003, 0.84473884, -0.17676446, 0.20166636)
+mesh = SubResource("SphereMesh_po5ue")
+surface_material_override/0 = SubResource("StandardMaterial3D_xoaj6")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="." index="16" unique_id=365141564]
+transform = Transform3D(0.31, 0, 0, 0, 0.31, 0, 0, 0, 0.31, 0.5850153, -0.17493944, 0.19359866)
+mesh = SubResource("SphereMesh_po5ue")
+surface_material_override/0 = SubResource("StandardMaterial3D_xoaj6")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="." index="17" unique_id=361080855]
+transform = Transform3D(0.31, 0, 0, 0, 0.31, 0, 0, 0, 0.31, 0.63643, -0.049613506, 0.19566493)
+mesh = SubResource("SphereMesh_po5ue")
+surface_material_override/0 = SubResource("StandardMaterial3D_xoaj6")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="." index="18" unique_id=1721608305]
+transform = Transform3D(0.31, 0, 0, 0, 0.31, 0, 0, 0, 0.31, 0.7930874, -0.049613506, 0.19566493)
+mesh = SubResource("SphereMesh_po5ue")
+surface_material_override/0 = SubResource("StandardMaterial3D_xoaj6")

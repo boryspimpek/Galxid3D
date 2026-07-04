@@ -15,6 +15,6 @@ roughness = 0.0
 layers = 16
 
 [node name="Mesh" parent="." index="0" unique_id=247012324]
-transform = Transform3D(-4.222196e-08, -1.131334e-08, 1, -0.25881904, 0.9659258, 0, -0.9659258, -0.25881904, -4.371139e-08, 0.018188477, 0.046875, -0.15844727)
+transform = Transform3D(-4.3711385e-08, 0, 1, 0, 0.99999994, 0, -0.99999994, 0, -4.371139e-08, 0.018188477, 0.046875, -0.15844727)
 layers = 16
 surface_material_override/0 = SubResource("StandardMaterial3D_hlx34")

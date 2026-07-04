@@ -6,8 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c1pq466qvcqtm" path="res://scenes/planets/earth.tscn" id="4_ffwl0"]
 [ext_resource type="Texture2D" uid="uid://na3nvl7jvpdi" path="res://assets/planets/Gemini_Generated_Image_ (2).png" id="5_yg34o"]
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="6_21gct"]
-[ext_resource type="Script" uid="uid://c7cpjam6npoyw" path="res://scripts/resources/enemies/weapons/CircleEnemyWeaponData.gd" id="9_00tp4"]
-[ext_resource type="PackedScene" uid="uid://o7vsl5ns4wxb" path="res://scenes/enemies/types/devastator.tscn" id="10_77dp3"]
+[ext_resource type="PackedScene" uid="uid://o7vsl5ns4wxb" path="res://scenes/enemies/types/devastator.tscn" id="9_xersf"]
 [ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="19_t77du"]
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="37_k13tm"]
 
@@ -29,11 +28,6 @@ size = Vector2(260, 130)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cegan"]
 albedo_texture = ExtResource("5_yg34o")
-
-[sub_resource type="Resource" id="Resource_77dp3"]
-script = ExtResource("9_00tp4")
-fire_rate = 0.5
-metadata/_custom_type_script = "uid://c7cpjam6npoyw"
 
 [node name="GameShell" type="Control" unique_id=616589222]
 layout_mode = 3
@@ -119,8 +113,7 @@ tick_spacing = 6.0
 major_tick_every = 1
 scroll_speed = 6.0
 
-[node name="devastator" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1932295765 instance=ExtResource("10_77dp3")]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0.33132935, 0, -5.127043)
-weapon_data = SubResource("Resource_77dp3")
+[node name="devastator" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1897743314 instance=ExtResource("9_xersf")]
+transform = Transform3D(12, 0, 0, 0, 11.276312, 4.104242, 0, -4.104242, 11.276312, 0.43749356, 0, -3.9429896)
 
 [node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("37_k13tm")]

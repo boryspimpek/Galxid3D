@@ -208,12 +208,14 @@ func _process_weapon(delta: float) -> void:
 
 func _collect_muzzles() -> void:
 	_muzzles.clear()
-	var m1 := get_node_or_null("Muzzle") as Marker3D
-	if m1:
-		_muzzles.append(m1)
-	var m2 := get_node_or_null("Muzzle2") as Marker3D
-	if m2:
-		_muzzles.append(m2)
+	var index := 1
+	while true:
+		var node_name := "Muzzle" if index == 1 else "Muzzle%d" % index
+		var muzzle := get_node_or_null(node_name) as Marker3D
+		if muzzle == null:
+			break
+		_muzzles.append(muzzle)
+		index += 1
 
 
 func _find_facing() -> EnemyFacing:
