@@ -1,4 +1,7 @@
 res://scenes/stations/
+res://assets/stations/station06/
+res://assets/stations/station03/
+res://assets/stations/station02/
 res://assets/stations/station05/
 res://assets/stations/
 res://scenes/enemies/formations/
@@ -17,8 +20,5 @@ res://assets/enemies/cyclon/
 res://assets/enemies/bulldog/
 res://assets/enemies/satellite/
 res://scenes/player/
-res://data/sidekicks/
-res://assets/sidekicks/golden core/
-res://assets/enemies/hawk/
 C:/Users/borys/Desktop/
 C:/Program Files/Java/jdk-26.0.1/bin/

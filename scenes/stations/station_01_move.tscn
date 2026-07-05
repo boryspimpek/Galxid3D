@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cawe6yvy6gvob"]
+
+[ext_resource type="PackedScene" uid="uid://c6q6woux5lj8n" path="res://scenes/stations/station_01.tscn" id="1_3a7un"]
+[ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="2_83mvv"]
+
+[node name="station01_move" type="Node3D" unique_id=1733867515]
+
+[node name="station01" parent="." unique_id=1039112788 instance=ExtResource("1_3a7un")]
+transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, 21.39193, 0, -15.5300865)
+speed = -4.0
+
+[node name="PlayAreaFrame" parent="." unique_id=784318850 instance=ExtResource("2_83mvv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.00871, 0, 11.426542)

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dnl6poy0tmbqj"]
+
+[ext_resource type="PackedScene" uid="uid://bhiybacqyc8hl" path="res://assets/stations/station06/station06.glb" id="1_c4bpq"]
+
+[node name="station06" unique_id=406179903 instance=ExtResource("1_c4bpq")]

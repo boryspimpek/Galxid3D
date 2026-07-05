@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bbfyhtvu72ak4"]
+
+[ext_resource type="PackedScene" uid="uid://b1lr52ym504kq" path="res://assets/stations/station02/station_02_model.tscn" id="1_22g8p"]
+[ext_resource type="Script" uid="uid://c05y6n8bhy001" path="res://scenes/stations/move_station.gd" id="1_oy53f"]
+
+[sub_resource type="Animation" id="Animation_oy53f"]
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_t0daq"]
+resource_name = "spin"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pg0jk"]
+_data = {
+&"RESET": SubResource("Animation_oy53f"),
+&"spin": SubResource("Animation_t0daq")
+}
+
+[node name="station02" type="Node3D" unique_id=1978895495]
+script = ExtResource("1_oy53f")
+
+[node name="station02" parent="." unique_id=440479157 instance=ExtResource("1_22g8p")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2011150493]
+libraries/ = SubResource("AnimationLibrary_pg0jk")
+autoplay = &"spin"

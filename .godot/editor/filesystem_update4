@@ -11,3 +11,7 @@ res://assets/stations/station01/station_01_model.tscn
 res://scenes/stations/station_05.tscn
 res://assets/stations/station05/station_05_model.tscn
 res://assets/enemies/bulldog/bulldog_model.tscn
+res://assets/stations/station02/station_02_model.tscn
+res://scenes/stations/station_02.tscn
+res://scenes/stations/station_01_move.tscn
+res://scenes/enemies/formations/begining.tscn
