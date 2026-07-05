@@ -24,7 +24,6 @@
 [ext_resource type="PackedScene" uid="uid://c2vk2d14w4myt" path="res://scenes/enemies/formations/arrow formations/formation8.tscn" id="15_ok6jj"]
 [ext_resource type="PackedScene" uid="uid://cdxl62tlyuy08" path="res://scenes/enemies/formations/arrow formations/formation5.tscn" id="15_yaehf"]
 [ext_resource type="PackedScene" uid="uid://c1g448hbitcf1" path="res://scenes/enemies/formations/bulldog_strike1.tscn" id="16_82xsv"]
-[ext_resource type="PackedScene" uid="uid://dohxvkx4dbxqp" path="res://scenes/enemies/formations/arrow formations/formation9.tscn" id="16_getpj"]
 [ext_resource type="Texture2D" uid="uid://didhw24nqkrbm" path="res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_41_47.png" id="16_gngh3"]
 [ext_resource type="Texture2D" uid="uid://djuc447cv6vu1" path="res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_44_29.png" id="17_0n3wm"]
 [ext_resource type="Texture2D" uid="uid://cvvvcsf3f2ede" path="res://assets/background 2d/hd/ChatGPT Image 30 cze 2026, 17_45_31.png" id="18_qnost"]
@@ -40,7 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://0gvcpa8yx6vi" path="res://scenes/enemies/formations/rocketer_strike.tscn" id="41_0cp0l"]
 [ext_resource type="PackedScene" uid="uid://ryp1is7xr46v" path="res://assets/ElectricDischargeVFX/electric_discharge_3d.tscn" id="41_4lmeg"]
 [ext_resource type="PackedScene" uid="uid://bq1ohabm84y61" path="res://scenes/enemies/formations/arrow formations/formation15.tscn" id="42_0cp0l"]
-[ext_resource type="PackedScene" uid="uid://cnrb4pusjssyn" path="res://scenes/enemies/formations/bulldog_strike2.tscn" id="42_d2t1y"]
+[ext_resource type="PackedScene" uid="uid://clbkkfabpgdpv" path="res://scenes/enemies/formations/begining.tscn" id="42_d2t1y"]
 [ext_resource type="PackedScene" uid="uid://18f6vqmvxr50" path="res://scenes/enemies/formations/hank_strike.tscn" id="43_d2t1y"]
 [ext_resource type="PackedScene" uid="uid://b53d3bd1fnprc" path="res://scenes/enemies/formations/boss_devastator.tscn" id="43_gngh3"]
 
@@ -395,9 +394,339 @@ layers = 16
 mesh = SubResource("QuadMesh_uatky")
 script = ExtResource("7_parallax")
 
+[node name="12" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=303469208]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0, -10, -423.8062)
+layers = 16
+mesh = SubResource("QuadMesh_kq58d")
+script = ExtResource("7_parallax")
+
+[node name="13" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=615236737]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0, -10, -462.1498)
+layers = 16
+mesh = SubResource("QuadMesh_f6a44")
+script = ExtResource("7_parallax")
+
+[node name="14" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=953695481]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.3199768, -10, -500.64972)
+layers = 16
+mesh = SubResource("QuadMesh_hrvbo")
+script = ExtResource("7_parallax")
+
+[node name="15" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=1304389793]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.3199768, -10, -539.1724)
+layers = 16
+mesh = SubResource("QuadMesh_blkrb")
+script = ExtResource("7_parallax")
+
+[node name="16" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=1808373394]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.51909065, -10, -577.81793)
+layers = 16
+mesh = SubResource("QuadMesh_6iyjs")
+script = ExtResource("7_parallax")
+
+[node name="17" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=100307462]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 1.9010124, -10, -616.3858)
+layers = 16
+mesh = SubResource("QuadMesh_e71vb")
+script = ExtResource("7_parallax")
+
+[node name="18" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=653537433]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.048210144, -10, -654.9196)
+layers = 16
+mesh = SubResource("QuadMesh_vke2r")
+script = ExtResource("7_parallax")
+
+[node name="19" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=1860078934]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.5444815, -10, -693.39575)
+layers = 16
+mesh = SubResource("QuadMesh_ruth0")
+script = ExtResource("7_parallax")
+
+[node name="20" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=1905245417]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.73841834, -10, -731.8864)
+layers = 16
+mesh = SubResource("QuadMesh_pjyto")
+script = ExtResource("7_parallax")
+
+[node name="21" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=481111596]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.58580184, -10, -770.403)
+layers = 16
+mesh = SubResource("QuadMesh_b17eg")
+script = ExtResource("7_parallax")
+
+[node name="22" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=237055582]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.5971985, -10, -808.87823)
+layers = 16
+mesh = SubResource("QuadMesh_uatky")
+script = ExtResource("7_parallax")
+
+[node name="23" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=783220592]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0, -10, -846.5083)
+layers = 16
+mesh = SubResource("QuadMesh_kq58d")
+script = ExtResource("7_parallax")
+
+[node name="24" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=971956794]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0, -10, -884.85187)
+layers = 16
+mesh = SubResource("QuadMesh_f6a44")
+script = ExtResource("7_parallax")
+
+[node name="25" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=983503313]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.3199768, -10, -923.3518)
+layers = 16
+mesh = SubResource("QuadMesh_hrvbo")
+script = ExtResource("7_parallax")
+
+[node name="26" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=2023586424]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.3199768, -10, -961.8745)
+layers = 16
+mesh = SubResource("QuadMesh_blkrb")
+script = ExtResource("7_parallax")
+
+[node name="27" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=207482856]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.51909065, -10, -1000.52)
+layers = 16
+mesh = SubResource("QuadMesh_6iyjs")
+script = ExtResource("7_parallax")
+
+[node name="28" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=1166794438]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 1.9010124, -10, -1039.0879)
+layers = 16
+mesh = SubResource("QuadMesh_e71vb")
+script = ExtResource("7_parallax")
+
+[node name="29" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=608732007]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.048210144, -10, -1077.6217)
+layers = 16
+mesh = SubResource("QuadMesh_vke2r")
+script = ExtResource("7_parallax")
+
+[node name="30" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=2043345986]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.5444815, -10, -1116.0978)
+layers = 16
+mesh = SubResource("QuadMesh_ruth0")
+script = ExtResource("7_parallax")
+
+[node name="31" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=296217808]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.73841834, -10, -1154.5885)
+layers = 16
+mesh = SubResource("QuadMesh_pjyto")
+script = ExtResource("7_parallax")
+
+[node name="32" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=1939647032]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.58580184, -10, -1193.1051)
+layers = 16
+mesh = SubResource("QuadMesh_b17eg")
+script = ExtResource("7_parallax")
+
+[node name="33" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=480025637]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.5971985, -10, -1231.5803)
+layers = 16
+mesh = SubResource("QuadMesh_uatky")
+script = ExtResource("7_parallax")
+
+[node name="34" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=77971025]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0, -10, -1268.1012)
+layers = 16
+mesh = SubResource("QuadMesh_kq58d")
+script = ExtResource("7_parallax")
+
+[node name="35" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=406627317]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0, -10, -1306.4448)
+layers = 16
+mesh = SubResource("QuadMesh_f6a44")
+script = ExtResource("7_parallax")
+
+[node name="36" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=134380293]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.3199768, -10, -1344.9447)
+layers = 16
+mesh = SubResource("QuadMesh_hrvbo")
+script = ExtResource("7_parallax")
+
+[node name="37" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=1697937411]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.3199768, -10, -1383.4674)
+layers = 16
+mesh = SubResource("QuadMesh_blkrb")
+script = ExtResource("7_parallax")
+
+[node name="38" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=630532230]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.51909065, -10, -1422.1129)
+layers = 16
+mesh = SubResource("QuadMesh_6iyjs")
+script = ExtResource("7_parallax")
+
+[node name="39" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=1672815012]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 1.9010124, -10, -1460.6808)
+layers = 16
+mesh = SubResource("QuadMesh_e71vb")
+script = ExtResource("7_parallax")
+
+[node name="40" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=1070876249]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.048210144, -10, -1499.2146)
+layers = 16
+mesh = SubResource("QuadMesh_vke2r")
+script = ExtResource("7_parallax")
+
+[node name="41" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=825682533]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.5444815, -10, -1537.6908)
+layers = 16
+mesh = SubResource("QuadMesh_ruth0")
+script = ExtResource("7_parallax")
+
+[node name="42" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=900265972]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.73841834, -10, -1576.1814)
+layers = 16
+mesh = SubResource("QuadMesh_pjyto")
+script = ExtResource("7_parallax")
+
+[node name="43" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=1888828387]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.58580184, -10, -1614.698)
+layers = 16
+mesh = SubResource("QuadMesh_b17eg")
+script = ExtResource("7_parallax")
+
+[node name="44" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=207742659]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.5971985, -10, -1653.1732)
+layers = 16
+mesh = SubResource("QuadMesh_uatky")
+script = ExtResource("7_parallax")
+
+[node name="45" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=1275336368]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0, -10, -1691.8763)
+layers = 16
+mesh = SubResource("QuadMesh_kq58d")
+script = ExtResource("7_parallax")
+
+[node name="46" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=41099388]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0, -10, -1730.22)
+layers = 16
+mesh = SubResource("QuadMesh_f6a44")
+script = ExtResource("7_parallax")
+
+[node name="47" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=2047945994]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.3199768, -10, -1768.7198)
+layers = 16
+mesh = SubResource("QuadMesh_hrvbo")
+script = ExtResource("7_parallax")
+
+[node name="48" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=853078234]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.3199768, -10, -1807.2426)
+layers = 16
+mesh = SubResource("QuadMesh_blkrb")
+script = ExtResource("7_parallax")
+
+[node name="49" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=8621018]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.51909065, -10, -1845.8881)
+layers = 16
+mesh = SubResource("QuadMesh_6iyjs")
+script = ExtResource("7_parallax")
+
+[node name="50" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=59181698]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 1.9010124, -10, -1884.4559)
+layers = 16
+mesh = SubResource("QuadMesh_e71vb")
+script = ExtResource("7_parallax")
+
+[node name="51" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=611518229]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.048210144, -10, -1922.9899)
+layers = 16
+mesh = SubResource("QuadMesh_vke2r")
+script = ExtResource("7_parallax")
+
+[node name="52" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=909617656]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.5444815, -10, -1961.466)
+layers = 16
+mesh = SubResource("QuadMesh_ruth0")
+script = ExtResource("7_parallax")
+
+[node name="53" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=1778367167]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.73841834, -10, -1999.9567)
+layers = 16
+mesh = SubResource("QuadMesh_pjyto")
+script = ExtResource("7_parallax")
+
+[node name="54" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=952107211]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.58580184, -10, -2038.4733)
+layers = 16
+mesh = SubResource("QuadMesh_b17eg")
+script = ExtResource("7_parallax")
+
+[node name="55" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=845452931]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.5971985, -10, -2076.9482)
+layers = 16
+mesh = SubResource("QuadMesh_uatky")
+script = ExtResource("7_parallax")
+
+[node name="56" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=1616968405]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0, -10, -2114.5786)
+layers = 16
+mesh = SubResource("QuadMesh_kq58d")
+script = ExtResource("7_parallax")
+
+[node name="57" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=1456577885]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0, -10, -2152.9219)
+layers = 16
+mesh = SubResource("QuadMesh_f6a44")
+script = ExtResource("7_parallax")
+
+[node name="58" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=1135669379]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.3199768, -10, -2191.4219)
+layers = 16
+mesh = SubResource("QuadMesh_hrvbo")
+script = ExtResource("7_parallax")
+
+[node name="59" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=2077804356]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.3199768, -10, -2229.9448)
+layers = 16
+mesh = SubResource("QuadMesh_blkrb")
+script = ExtResource("7_parallax")
+
+[node name="60" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=48313750]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.51909065, -10, -2268.5903)
+layers = 16
+mesh = SubResource("QuadMesh_6iyjs")
+script = ExtResource("7_parallax")
+
+[node name="61" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=878887321]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 1.9010124, -10, -2307.1582)
+layers = 16
+mesh = SubResource("QuadMesh_e71vb")
+script = ExtResource("7_parallax")
+
+[node name="62" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=23500373]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.048210144, -10, -2345.692)
+layers = 16
+mesh = SubResource("QuadMesh_vke2r")
+script = ExtResource("7_parallax")
+
+[node name="63" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=1157014411]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.5444815, -10, -2384.168)
+layers = 16
+mesh = SubResource("QuadMesh_ruth0")
+script = ExtResource("7_parallax")
+
+[node name="64" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=1545136450]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.73841834, -10, -2422.6587)
+layers = 16
+mesh = SubResource("QuadMesh_pjyto")
+script = ExtResource("7_parallax")
+
+[node name="65" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=850346633]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.58580184, -10, -2461.1753)
+layers = 16
+mesh = SubResource("QuadMesh_b17eg")
+script = ExtResource("7_parallax")
+
+[node name="66" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Background" unique_id=37528729]
+transform = Transform3D(0.041, 0, 0, 0, 0.041, 0, 0, 0, 0.041, 0.5971985, -10, -2499.6504)
+layers = 16
+mesh = SubResource("QuadMesh_uatky")
+script = ExtResource("7_parallax")
+
 [node name="LevelScrollRuler" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=552135128 instance=ExtResource("8_qsp4k")]
 z_min = -1000.0
-z_max = 10.0
+z_max = 0.0
 tick_spacing = 6.0
 major_tick_every = 1
 scroll_speed = 6.0
@@ -405,23 +734,11 @@ scroll_speed = 6.0
 [node name="Arrow Formations" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1725707103]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 92.73052)
 
-[node name="Formation" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=1730415998 instance=ExtResource("9_kq58d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.791367, 0, -122.78079)
-
-[node name="Formation2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=2052678689 instance=ExtResource("10_seu75")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.847641, 0, -134.88257)
-
-[node name="Formation4" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=2046449321 instance=ExtResource("12_jq2sk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.02408, 0, -215)
-
 [node name="Formation7" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=214272725 instance=ExtResource("14_0rl1p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.820934, 0, -1000.8844)
 
 [node name="Formation8" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=488993475 instance=ExtResource("15_ok6jj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.316927, 0, -998.16876)
-
-[node name="Formation9" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=71393993 instance=ExtResource("16_getpj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.023197, 0, -239.427)
 
 [node name="Formation11" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=1842371745 instance=ExtResource("22_ryguw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.12554, 0, -1067.2434)
@@ -459,9 +776,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.875252, 0, -1353.72)
 [node name="Starfighter Strike" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1546265027]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 92.73052)
 
-[node name="starfighter_strike1_2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Starfighter Strike" unique_id=1648438408 instance=ExtResource("16_82xsv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.780045, 0, -212.63904)
-
 [node name="starfighter_strike1_6" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Starfighter Strike" unique_id=1703312208 instance=ExtResource("16_82xsv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.891108, 0, -1032.2434)
 
@@ -469,14 +783,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.891108, 0, -1032.2434)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.881594, 0, -1139.5964)
 
 [node name="Hawk" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=795467366]
-
-[node name="hawk" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Hawk" unique_id=1971833822 instance=ExtResource("37_b1qrp")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10.34354, 0, -80.85964)
-movement_data = SubResource("Resource_come4")
-
-[node name="hawk2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Hawk" unique_id=1897743314 instance=ExtResource("37_b1qrp")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -11.700148, 0, -140.737)
-movement_data = SubResource("Resource_come4")
 
 [node name="hawk8" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Hawk" unique_id=172250006 instance=ExtResource("37_b1qrp")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -14.430257, 0, -960.59735)
@@ -561,13 +867,13 @@ end_target = NodePath("../Satellite8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.190403, 0, -717.49976)
 
 [node name="rocketer_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=83218953 instance=ExtResource("41_0cp0l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.272804, 0, -396.66965)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.272804, 0, -468.52664)
 
 [node name="protector_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1693192339 instance=ExtResource("40_4lmeg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.963444, 0, -163.54004)
-
-[node name="bulldog_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1434653841 instance=ExtResource("42_d2t1y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.010807, 0, -52.323624)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.963444, 0, -273.85587)
 
 [node name="boss devastator" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1971914927 instance=ExtResource("43_gngh3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -494.47852)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -583.5054)
+
+[node name="begining" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1436326208 instance=ExtResource("42_d2t1y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.975866, 0, -11.570137)

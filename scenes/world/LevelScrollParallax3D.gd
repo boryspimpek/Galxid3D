@@ -2,7 +2,7 @@ extends MeshInstance3D
 
 ## Współczynnik prędkości względem LevelScroll (oś Z):
 ## 0 = tło stoi w miejscu w świecie, 1 = jedzie razem z poziomem (jak zwykłe dziecko).
-@export_range(-1.0, 2.0, 0.01) var scroll_factor: float = 0.5
+@export_range(-1.0, 2.0, 0.01) var scroll_factor: float = 2
 
 var _level_scroll: LevelScroll3D
 

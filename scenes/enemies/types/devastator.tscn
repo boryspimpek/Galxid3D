@@ -22,7 +22,7 @@ metadata/_custom_type_script = "uid://bs5humyuxa5j2"
 script = ExtResource("3_xoaj6")
 weapon = SubResource("Resource_dk4p7")
 duration = 4.0
-cooldown_after = 3.0
+cooldown_after = 2.0
 muzzle_indices = Array[int]([1, 2])
 
 [sub_resource type="Resource" id="Resource_5ptkc"]
@@ -37,7 +37,7 @@ metadata/_custom_type_script = "uid://c7cpjam6npoyw"
 script = ExtResource("3_xoaj6")
 weapon = SubResource("Resource_5ptkc")
 duration = 8.0
-cooldown_after = 5.0
+cooldown_after = 3.0
 muzzle_indices = Array[int]([0])
 
 [sub_resource type="Resource" id="Resource_2h2ch"]
@@ -52,7 +52,7 @@ metadata/_custom_type_script = "uid://62asvta6vqik"
 [sub_resource type="Resource" id="Resource_hlwsm"]
 script = ExtResource("3_xoaj6")
 weapon = SubResource("Resource_2h2ch")
-cooldown_after = 5.0
+cooldown_after = 3.0
 muzzle_indices = Array[int]([0])
 
 [sub_resource type="Resource" id="Resource_fvgfw"]
@@ -73,7 +73,7 @@ albedo_color = Color(1.353256, 1.353256, 0, 1)
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 script = ExtResource("2_po5ue")
 weapon_phases = Array[ExtResource("3_xoaj6")]([SubResource("Resource_my2ao"), SubResource("Resource_kqngm"), SubResource("Resource_hlwsm")])
-armor = 500
+armor = 300
 movement_data = SubResource("Resource_fvgfw")
 explosion_scene = null
 hit_effect_scene = null

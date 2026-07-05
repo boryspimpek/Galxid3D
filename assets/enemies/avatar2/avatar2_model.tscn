@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cprrot16m4rnn"]
+
+[ext_resource type="PackedScene" uid="uid://cy8iv1lpbk1g1" path="res://assets/enemies/avatar2/Meshy_AI_Blue_and_Yellow_Toy_D_0705085958_texture.glb" id="1_1vjyl"]
+
+[node name="Meshy_AI_Blue_and_Yellow_Toy_D_0705085958_texture" unique_id=1806130743 instance=ExtResource("1_1vjyl")]
+layers = 16
+
+[node name="Mesh" parent="." index="0" unique_id=62752598]
+transform = Transform3D(-7.86805e-08, 0, 1.8, 0, 1.8, 0, -1.8, 0, -7.86805e-08, 0, 0, 0)
+layers = 16

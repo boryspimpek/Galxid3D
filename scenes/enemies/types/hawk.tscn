@@ -1,19 +1,17 @@
 [gd_scene format=3 uid="uid://cv5pl4svkf8ft"]
 
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_sd1qh"]
-[ext_resource type="Script" uid="uid://bs5humyuxa5j2" path="res://scripts/resources/enemies/weapons/BurstEnemyWeaponData.gd" id="2_eqm3m"]
 [ext_resource type="PackedScene" uid="uid://bb3pa0pc34hht" path="res://assets/enemies/hawk/hawk_model.tscn" id="2_ma2l7"]
+[ext_resource type="Script" uid="uid://eo6qejm2h6hl" path="res://scripts/resources/enemies/weapons/EnemyWeaponData.gd" id="2_rlt0p"]
 [ext_resource type="Script" uid="uid://dtprhja8af0to" path="res://scripts/resources/enemies/movement/LinearMoveData.gd" id="3_rlt0p"]
 [ext_resource type="PackedScene" uid="uid://s6dwn56csbw1" path="res://assets/BinbunVFX_Vol2/ExplosionFX/effects/nuke/vfx_nuke_explosion_01.tscn" id="3_vnjca"]
 [ext_resource type="Script" uid="uid://cr2knbmonx42w" path="res://scenes/enemies/base/facing/FacePlayer.gd" id="5_vnjca"]
 
-[sub_resource type="Resource" id="Resource_rlt0p"]
-script = ExtResource("2_eqm3m")
+[sub_resource type="Resource" id="Resource_aja6t"]
+script = ExtResource("2_rlt0p")
 fire_rate = 1.5
-fire_on_activate = true
 aim = 10
-sound = 5
-metadata/_custom_type_script = "uid://bs5humyuxa5j2"
+metadata/_custom_type_script = "uid://eo6qejm2h6hl"
 
 [sub_resource type="Resource" id="Resource_mh636"]
 script = ExtResource("3_rlt0p")
@@ -23,7 +21,7 @@ metadata/_custom_type_script = "uid://dtprhja8af0to"
 [node name="hawk" unique_id=1897743314 instance=ExtResource("1_sd1qh")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 armor = 35
-weapon_data = SubResource("Resource_rlt0p")
+weapon_data = SubResource("Resource_aja6t")
 movement_data = SubResource("Resource_mh636")
 value = 50
 explosion_scene = ExtResource("3_vnjca")

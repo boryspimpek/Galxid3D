@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bukgo2nxinswb" path="res://assets/enemies/vanguard/vanguard_model.tscn" id="5_tpg5x"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wr5hl"]
-radius = 0.79589844
-height = 3.30621
+radius = 0.39208984
+height = 1.9442283
 
 [node name="Player" type="CharacterBody3D" unique_id=1811810025]
 collision_mask = 0
@@ -24,7 +24,7 @@ dodge_duration = 0.5
 dodge_cooldown = 0.2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1950378145]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -1.512309e-08, 0.345976)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -1.2688375e-09, 0.02902764)
 shape = SubResource("CapsuleShape3D_wr5hl")
 
 [node name="DamageSystem" type="Node" parent="." unique_id=404747008]
@@ -34,10 +34,9 @@ script = ExtResource("2_524rm")
 script = ExtResource("3_tpg5x")
 
 [node name="Muzzle" type="Marker3D" parent="." unique_id=807064709]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5136902)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.8827091)
 
 [node name="Muzzle2" type="Marker3D" parent="." unique_id=2118624562]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.30915558)
 
 [node name="Vanguard" parent="." unique_id=363266910 instance=ExtResource("5_tpg5x")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

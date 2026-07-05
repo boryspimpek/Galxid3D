@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://di8tdeuy0i86i"]
 
+[ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="1_nbddf"]
 [ext_resource type="PackedScene" uid="uid://cdxl62tlyuy08" path="res://scenes/enemies/formations/arrow formations/formation5.tscn" id="1_r38a5"]
 [ext_resource type="PackedScene" uid="uid://cv5pl4svkf8ft" path="res://scenes/enemies/types/hawk.tscn" id="3_kpwlq"]
 [ext_resource type="Script" uid="uid://dtprhja8af0to" path="res://scripts/resources/enemies/movement/LinearMoveData.gd" id="4_nbddf"]
 [ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemies/base/EnemyPath3D.gd" id="5_cai3x"]
 [ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemies/base/EnemyPathFollow.gd" id="6_jyjfp"]
 [ext_resource type="PackedScene" uid="uid://c185raa5p20gw" path="res://scenes/enemies/types/protector.tscn" id="7_lfkyf"]
-[ext_resource type="PackedScene" uid="uid://bn34u3k8ydghw" path="res://scenes/enemies/types/rocketer.tscn" id="7_r38a5"]
-[ext_resource type="Script" uid="uid://fm1cgecs4881" path="res://scripts/resources/enemies/movement/TimedMoveData.gd" id="8_o3ubw"]
+[ext_resource type="PackedScene" uid="uid://ccivqisb7t18b" path="res://scenes/enemies/formations/striker formations/striker1.tscn" id="10_cai3x"]
+[ext_resource type="PackedScene" uid="uid://bhuckx38w4bp2" path="res://scenes/enemies/types/avatar_1.tscn" id="10_kpwlq"]
+[ext_resource type="PackedScene" uid="uid://bncfbdv7kbrhj" path="res://scenes/enemies/formations/striker formations/striker2.tscn" id="11_jyjfp"]
 
 [sub_resource type="Resource" id="Resource_lrdry"]
 script = ExtResource("4_nbddf")
@@ -38,18 +40,17 @@ _limits = [0.0, 3.0, 0.0, 1.0]
 _data = [Vector2(1e-05, 3), 0.0, 0.0, 0, 0, Vector2(0.33695653, 3), 0.0, 0.0, 0, 0, Vector2(0.44409937, 0.07114649), 0.17272732, 0.17272732, 0, 0, Vector2(0.5139752, 3), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="Resource" id="Resource_kpwlq"]
-script = ExtResource("8_o3ubw")
-zmove = 1.5
-metadata/_custom_type_script = "uid://fm1cgecs4881"
-
 [node name="protector_strike" type="Node3D" unique_id=1693192339]
 
+[node name="LevelScrollRuler" parent="." unique_id=335323414 instance=ExtResource("1_nbddf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.968716, 0, 0)
+z_max = 0.0
+
 [node name="Formation5" parent="." unique_id=1730415998 instance=ExtResource("1_r38a5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22655487, 0, -127.38657)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0744553, 0, -131.51122)
 
 [node name="hawk3" parent="." unique_id=1897743314 instance=ExtResource("3_kpwlq")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 11.221044, 0, -50.42581)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 11.221044, 0, -44.939377)
 movement_data = SubResource("Resource_lrdry")
 
 [node name="hawk4" parent="." unique_id=1755697315 instance=ExtResource("3_kpwlq")]
@@ -64,7 +65,7 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 30.530321, 0, -142.4974
 movement_data = SubResource("Resource_lrdry")
 
 [node name="Path3D" type="Path3D" parent="." unique_id=966650770]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.847973, 0, -11.63377)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.847973, 0, -18.883709)
 curve = SubResource("Curve3D_yg45b")
 script = ExtResource("5_cai3x")
 speed = 8.0
@@ -144,7 +145,7 @@ script = ExtResource("6_jyjfp")
 [node name="protector" parent="Path3D7/PathFollow3D" unique_id=584073756 instance=ExtResource("7_lfkyf")]
 
 [node name="Path3D8" type="Path3D" parent="." unique_id=2077782546]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.031515, 0, -21.700863)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.031515, 0, -28.950802)
 curve = SubResource("Curve3D_coi4e")
 script = ExtResource("5_cai3x")
 speed = 8.0
@@ -160,7 +161,7 @@ script = ExtResource("6_jyjfp")
 [node name="protector" parent="Path3D8/PathFollow3D" unique_id=1720394782 instance=ExtResource("7_lfkyf")]
 
 [node name="Path3D9" type="Path3D" parent="." unique_id=1832152077]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.724398, 0, -51.133556)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.724398, 0, -44.863342)
 curve = SubResource("Curve3D_coi4e")
 script = ExtResource("5_cai3x")
 speed = 8.0
@@ -254,7 +255,31 @@ loop = false
 script = ExtResource("6_jyjfp")
 
 [node name="protector" parent="Path3D14/PathFollow3D" unique_id=81711683 instance=ExtResource("7_lfkyf")]
+transform = Transform3D(1.5, 0, 0, 0, 1.4488888, 0.38822857, 0, -0.38822857, 1.4488888, 6.7155914, 0, 0.1434381)
 
-[node name="rocketer" parent="." unique_id=656617696 instance=ExtResource("7_r38a5")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.121204, 0, -82.30659)
-movement_data = SubResource("Resource_kpwlq")
+[node name="striker formation" parent="." unique_id=1703006359 instance=ExtResource("10_cai3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1280937, 0, -80.503)
+
+[node name="striker formation5" parent="." unique_id=1476844903 instance=ExtResource("10_cai3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1280937, 0, -57.773464)
+
+[node name="striker formation3" parent="." unique_id=1972565536 instance=ExtResource("10_cai3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1280937, 0, -106.80104)
+
+[node name="striker formation2" parent="." unique_id=992001039 instance=ExtResource("11_jyjfp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09062958, 0, -95.57569)
+
+[node name="striker formation6" parent="." unique_id=97827646 instance=ExtResource("11_jyjfp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09062958, 0, -67.555664)
+
+[node name="striker formation4" parent="." unique_id=968975903 instance=ExtResource("11_jyjfp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09062958, 0, -122.740845)
+
+[node name="avatar1" parent="." unique_id=201008915 instance=ExtResource("10_kpwlq")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 20, 0, -77.15022)
+
+[node name="avatar2" parent="." unique_id=742721006 instance=ExtResource("10_kpwlq")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 9.027115, 0, -115.35937)
+
+[node name="avatar3" parent="." unique_id=786799662 instance=ExtResource("10_kpwlq")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 23.331047, 0, -176.10208)

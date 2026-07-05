@@ -22,7 +22,7 @@ activation_mode = 0
 speed = 10.0
 bank_enabled = true
 bank_strength = 10.0
-bank_lookahead = 10.0
+bank_lookahead = 5.0
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path2" unique_id=468205134]
 transform = Transform3D(0.1955126, -1.7894494e-06, -0.9806575, -5.684109e-14, 0.99999243, -1.8246016e-06, 0.9806594, 3.5675984e-07, 0.1955122, -0.0050640106, -0.000546813, 0.007091522)
@@ -32,7 +32,7 @@ script = ExtResource("2_litrc")
 [node name="arrow" parent="Path2/PathFollow3D" unique_id=95247330 instance=ExtResource("3_d2sn8")]
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Path2" unique_id=215366715]
-transform = Transform3D(0.185022, -1.685491e-06, -0.98269105, -1.8933257e-08, 0.99999005, -1.7186143e-06, 0.98269576, 3.3661078e-07, 0.1850211, 4.9045434, -0.0005380163, -0.9381711)
+transform = Transform3D(0.185022, -1.685491e-06, -0.982691, -1.8933257e-08, 0.99999005, -1.7186142e-06, 0.98269576, 3.3661078e-07, 0.1850211, 4.9045434, -0.0005380163, -0.9381711)
 progress = 5.0
 loop = false
 script = ExtResource("2_litrc")

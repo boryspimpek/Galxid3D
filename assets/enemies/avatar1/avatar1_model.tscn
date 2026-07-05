@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://k63s3le8v6qy"]
+
+[ext_resource type="PackedScene" uid="uid://ctgsvatxhegc3" path="res://assets/enemies/avatar1/Meshy_AI_Lime_Green_Toy_Helico_0705085950_texture.glb" id="1_nhh1y"]
+[ext_resource type="Texture2D" uid="uid://5hyxsbk3flix" path="res://assets/enemies/avatar1/Meshy_AI_Lime_Green_Toy_Helico_0705085950_texture_0.jpg" id="2_1ua3a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l3w6j"]
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+albedo_texture = ExtResource("2_1ua3a")
+metallic = 0.3
+roughness = 0.25
+
+[node name="Meshy_AI_Lime_Green_Toy_Helico_0705085950_texture" unique_id=130721169 instance=ExtResource("1_nhh1y")]
+layers = 16
+
+[node name="Mesh" parent="." index="0" unique_id=1014978352]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+layers = 16
+surface_material_override/0 = SubResource("StandardMaterial3D_l3w6j")
