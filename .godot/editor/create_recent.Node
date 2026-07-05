@@ -1,3 +1,4 @@
+VisibleOnScreenNotifier3D
 EnemyPathFollow
 EnemyPath3D
 AnimationPlayer
@@ -9,6 +10,5 @@ SubViewport
 Sprite3D
 Node
 CollisionShape3D
-VisibleOnScreenNotifier3D
 MultiMeshInstance3D
 Label

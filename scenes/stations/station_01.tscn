@@ -44,7 +44,6 @@ _data = {
 [node name="station01" type="Node3D" unique_id=1039112788]
 transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, 0, 0, 0)
 script = ExtResource("1_s8jhv")
-speed = 2.0
 
 [node name="Node3D" type="Node3D" parent="." unique_id=1988021244]
 transform = Transform3D(0.9848077, -0.17364818, 0, 0.15038373, 0.8528685, 0.5, -0.08682409, -0.49240386, 0.8660254, 0, 0, 0)
@@ -54,3 +53,6 @@ transform = Transform3D(0.9848077, -0.17364818, 0, 0.15038373, 0.8528685, 0.5, -
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D" unique_id=2117003322]
 libraries/ = SubResource("AnimationLibrary_cj6sm")
 autoplay = &"spin"
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1056355874]
+aabb = AABB(-10.794813, -5.8512635, -8.7000885, 21.589626, 11.702527, 17.400177)

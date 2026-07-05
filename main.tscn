@@ -278,36 +278,36 @@ end_target = NodePath("../Satellite8")
 [node name="hank_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=834211707 instance=ExtResource("43_d2t1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.190403, 0, -717.49976)
 
+[node name="boss devastator" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1971914927 instance=ExtResource("43_gngh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -583.5054)
+
 [node name="rocketer_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=83218953 instance=ExtResource("41_0cp0l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.272804, 0, -468.52664)
 
 [node name="protector_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1693192339 instance=ExtResource("40_4lmeg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.963444, 0, -273.85587)
 
-[node name="boss devastator" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1971914927 instance=ExtResource("43_gngh3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -583.5054)
-
 [node name="begining" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1436326208 instance=ExtResource("42_d2t1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.975866, 0, -11.570137)
-visible = false
 
 [node name="station01" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1920943153 instance=ExtResource("6_0cp0l")]
 transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, -2.6638718, -20.334232, -25.30679)
 speed_z = -4.0
 
 [node name="station05" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1232938646 instance=ExtResource("7_d2t1y")]
-transform = Transform3D(0.8571673, 0, 0.5150381, 0, 1, 0, -0.5150381, 0, 0.8571673, -31.027893, -9.363728, -96.21418)
+transform = Transform3D(0.8571673, 0, 0.5150381, 0, 1, 0, -0.5150381, 0, 0.8571673, -45.940056, -9.363728, -229.23523)
 speed_z = -5.0
 speed_x = 4.0
+activate_on_scroll_line = true
 
 [node name="station02" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1978895495 instance=ExtResource("44_gngh3")]
-transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, -7.985817, -5.5307503, -152.74121)
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, -7.985817, -5.5307503, -345.45282)
 
 [node name="station03" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1151435253 instance=ExtResource("44_gngh3")]
-transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 1.5166798, -5.5307503, -173.6683)
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 1.5166798, -5.5307503, -366.3799)
 
 [node name="station04" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1148856747 instance=ExtResource("44_gngh3")]
-transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, -9.239618, -5.5307503, -195.09607)
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, -9.239618, -5.5307503, -387.80768)
 
 [node name="station06" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1190984386 instance=ExtResource("44_gngh3")]
-transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 11.547091, -5.5307503, -212.31592)
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 11.547091, -5.5307503, -405.02753)

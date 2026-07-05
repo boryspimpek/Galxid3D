@@ -16,3 +16,5 @@ res://scenes/stations/station_02.tscn
 res://scenes/stations/station_01_move.tscn
 res://scenes/enemies/formations/begining.tscn
 res://scenes/stations/move_station.gd
+res://data/play_area/default.tres
+res://scenes/enemies/formations/protector_strike.tscn

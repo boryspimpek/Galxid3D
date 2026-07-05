@@ -9,18 +9,21 @@ albedo_color = Color(0.11119685, 0.11119684, 0.11119684, 1)
 albedo_color = Color(0, 0.6392157, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wbjau"]
-albedo_color = Color(1, 0, 1, 1)
+shading_mode = 0
+albedo_color = Color(3.2944162, 0, 3.2944162, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svcri"]
 albedo_color = Color(0, 1, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oqr2e"]
-albedo_color = Color(0.41103694, 0.7017919, 5.7756904e-07, 1)
+shading_mode = 0
+albedo_color = Color(1.0551598, 1.7453662, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6qhp8"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1qros"]
+shading_mode = 0
 albedo_color = Color(0, 0, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3cx3f"]
