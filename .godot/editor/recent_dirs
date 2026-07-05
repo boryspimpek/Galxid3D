@@ -1,3 +1,5 @@
+res://scenes/stations/
+res://assets/stations/
 res://scenes/enemies/formations/
 res://scenes/enemies/types/
 res://assets/enemies/avatar2/
@@ -18,7 +20,5 @@ res://data/sidekicks/
 res://assets/sidekicks/golden core/
 res://assets/enemies/hawk/
 res://assets/enemies/arrow/
-res://assets/enemies/voyager/
-res://assets/enemies/starfighter/
 C:/Users/borys/Desktop/
 C:/Program Files/Java/jdk-26.0.1/bin/

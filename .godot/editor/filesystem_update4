@@ -2,3 +2,9 @@ res://main.tscn
 res://scenes/enemy_projectile/EnemyProjectile.gdshader
 res://assets/shaders/toon.gdshader
 res://scenes/planets/earth.tscn
+res://assets/stations/station_01.tscn
+res://scenes/planets/Earth.gd
+res://assets/enemies/vanguard/vanguard_model.tscn
+res://assets/stations/station_01_model.tscn
+res://scenes/stations/station_01.tscn
+res://assets/stations/station01/station_01_model.tscn

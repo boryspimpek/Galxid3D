@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c6q6woux5lj8n"]
+
+[ext_resource type="PackedScene" uid="uid://4mjmhdil61d3" path="res://assets/stations/station01/station_01_model.tscn" id="1_i8gua"]
+[ext_resource type="Script" uid="uid://c05y6n8bhy001" path="res://scenes/stations/move_station.gd" id="1_s8jhv"]
+
+[sub_resource type="Animation" id="Animation_s8jhv"]
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("station01:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7moft"]
+resource_name = "spin"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("station01:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cj6sm"]
+_data = {
+&"RESET": SubResource("Animation_s8jhv"),
+&"spin": SubResource("Animation_7moft")
+}
+
+[node name="station01" type="Node3D" unique_id=1039112788]
+script = ExtResource("1_s8jhv")
+speed = 2.0
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1988021244]
+transform = Transform3D(0.9848077, -0.17364818, 0, 0.15038373, 0.8528685, 0.5, -0.08682409, -0.49240386, 0.8660254, 0, 0, 0)
+
+[node name="station01" parent="Node3D" unique_id=1715289550 instance=ExtResource("1_i8gua")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D" unique_id=2117003322]
+libraries/ = SubResource("AnimationLibrary_cj6sm")
+autoplay = &"spin"

@@ -1,10 +1,10 @@
+AnimationPlayer
+Node3D
+MeshInstance3D
 EnemyPathFollow
 EnemyPath3D
-MeshInstance3D
-Node3D
 PathFollow3D
 Path3D
-AnimationPlayer
 SubViewport
 Sprite3D
 Node
