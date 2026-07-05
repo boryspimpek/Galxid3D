@@ -35,7 +35,7 @@ albedo_color = Color(0.3372549, 0, 1, 1)
 [node name="station01" unique_id=2131647178 instance=ExtResource("1_4a0qf")]
 
 [node name="Mesh_HD" parent="." index="0" unique_id=21602166]
-layers = 16
+layers = 32
 surface_material_override/0 = SubResource("StandardMaterial3D_oudcq")
 surface_material_override/1 = SubResource("StandardMaterial3D_5n1px")
 surface_material_override/2 = SubResource("StandardMaterial3D_wbjau")
