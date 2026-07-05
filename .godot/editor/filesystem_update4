@@ -1,17 +1,4 @@
+res://main.tscn
 res://scenes/enemy_projectile/EnemyProjectile.gdshader
 res://assets/shaders/toon.gdshader
-res://main.tscn
-res://scenes/enemies/types/rocketer.tscn
-res://test.tscn
-res://scenes/enemies/formations/protector_strike.tscn
-res://scenes/enemies/formations/rocketer_strike.tscn
-res://assets/enemies/avatar1/avatar1_model.tscn
-res://scenes/enemies/types/protector.tscn
-res://scenes/enemies/types/avatar_1.tscn
-res://scenes/enemies/types/hawk.tscn
-res://scenes/player/Player.tscn
-res://scenes/enemies/formations/boss_devastator.tscn
-res://scenes/enemies/formations/begining.tscn
-res://scenes/enemies/formations/arrow formations/formation4.tscn
-res://scenes/enemies/types/devastator.tscn
-res://scenes/world/LevelScrollParallax3D.gd
+res://scenes/planets/earth.tscn

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c1pq466qvcqtm"]
 
-[ext_resource type="Script" uid="uid://c42gpfswfidnt" path="res://scenes/planets/PlanetOrbit.gd" id="1_orbit"]
 [ext_resource type="Shader" uid="uid://di04bmwek8try" path="res://assets/shaders/toon.gdshader" id="2_5i67w"]
+[ext_resource type="Script" uid="uid://nfsfrndjwe5k" path="res://scenes/planets/Earth.gd" id="2_earth"]
 [ext_resource type="Texture2D" uid="uid://tg5dtkq5slv1" path="res://assets/planets/textures/solar system/2k_venus_atmosphere.jpg" id="4_pa0cx"]
 [ext_resource type="Texture2D" uid="uid://dldpelql0fhfb" path="res://assets/planets/textures/solar system/2k_neptune.jpg" id="4_xbhfj"]
 
@@ -86,6 +86,7 @@ _data = {
 }
 
 [node name="earth" type="Node3D" unique_id=1975713936]
+script = ExtResource("2_earth")
 
 [node name="PlanetSpin" type="Node3D" parent="." unique_id=984512340]
 
@@ -95,22 +96,12 @@ mesh = SubResource("SphereMesh_cwnmv")
 surface_material_override/0 = SubResource("ShaderMaterial_pa0cx")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="PlanetSpin" unique_id=539177]
-transform = Transform3D(1, 0, 0, 0, 0.049809735, -0.08715574, 0, 0.004357787, 0.9961947, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.049240388, -0.17364818, 0, 0.008682409, 0.9848077, 0, 0, 0)
 layers = 8
 mesh = SubResource("TorusMesh_xbhfj")
 surface_material_override/0 = SubResource("ShaderMaterial_fnp8i")
 
-[node name="AsteroidOrbit" type="Node3D" parent="." unique_id=167405076]
-transform = Transform3D(0.819152, -0.14845249, 0.55403227, 0, 0.96592575, 0.258819, -0.5735764, -0.21201214, 0.79124004, 0, 0, 0)
-script = ExtResource("1_orbit")
-asteroid_count = 100
-orbit_radius_min = 100.0
-orbit_radius_max = 200.0
-belt_thickness = 35.0
-orbit_speed = 0.035
-asteroid_scale = 2.0
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=741205811]
 libraries/ = SubResource("AnimationLibrary_earth")
 autoplay = &"spin"
-speed_scale = 5.0
+speed_scale = 8.0
