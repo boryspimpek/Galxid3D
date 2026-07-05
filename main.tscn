@@ -135,6 +135,7 @@ speed = 2.0
 [node name="LevelScroll" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=2113647570]
 script = ExtResource("7_xuqvo")
 scroll_speed = 6.0
+start_offset_z = 310.0
 
 [node name="LevelScrollRuler" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=552135128 instance=ExtResource("8_qsp4k")]
 z_min = -1000.0
@@ -301,13 +302,13 @@ speed_x = 4.0
 activate_on_scroll_line = true
 
 [node name="station02" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1978895495 instance=ExtResource("44_gngh3")]
-transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, -7.985817, -5.5307503, -345.45282)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -11.01495, -5.5307503, -316.16058)
+speed_z = -4.0
 
 [node name="station03" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1151435253 instance=ExtResource("44_gngh3")]
-transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 1.5166798, -5.5307503, -366.3799)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.086252, -5.5307503, -397.97104)
+speed_z = -4.0
 
 [node name="station04" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1148856747 instance=ExtResource("44_gngh3")]
-transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, -9.239618, -5.5307503, -387.80768)
-
-[node name="station06" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1190984386 instance=ExtResource("44_gngh3")]
-transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 11.547091, -5.5307503, -405.02753)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.239618, -5.5307503, -492.59064)
+speed_z = -4.0

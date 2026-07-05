@@ -31,6 +31,7 @@ point_count = 5
 
 [node name="LevelScrollRuler" parent="." unique_id=63278382 instance=ExtResource("1_ob4yq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.95423, 0, 0)
+visible = false
 z_min = -88.0
 z_max = 0.0
 

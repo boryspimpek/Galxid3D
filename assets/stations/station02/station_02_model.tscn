@@ -2,6 +2,40 @@
 
 [ext_resource type="PackedScene" uid="uid://bkkola5ohidaq" path="res://assets/stations/station02/station02.glb" id="1_nsgf2"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nsgf2"]
+albedo_color = Color(0.23031491, 0.23031494, 0.23031494, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mia5m"]
+albedo_color = Color(0.20871013, 0.20871016, 0.20871013, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_me5a4"]
+albedo_color = Color(0.103743516, 0.10374353, 0.103743516, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jhbnh"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2tbxp"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ylsd"]
+albedo_color = Color(0.91302836, 0.29045734, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2fewt"]
+albedo_color = Color(0.6872149, 0.68721503, 0.68721485, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5mfv2"]
+shading_mode = 0
+albedo_color = Color(0, 0.4342955, 1.8247963, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n4h8w"]
+albedo_color = Color(0.8819366, 0.8819366, 0.88193655, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kaq4h"]
+albedo_color = Color(0.3328807, 0.33288068, 0.33288068, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yfvtw"]
+albedo_color = Color(0, 1, 1, 1)
+
 [sub_resource type="Animation" id="Animation_nsgf2"]
 length = 0.001
 tracks/0/type = "value"
@@ -69,12 +103,23 @@ _data = {
 [node name="Base_HD" parent="." index="0" unique_id=1789173893]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 layers = 32
+surface_material_override/0 = SubResource("StandardMaterial3D_nsgf2")
+surface_material_override/1 = SubResource("StandardMaterial3D_mia5m")
+surface_material_override/2 = SubResource("StandardMaterial3D_me5a4")
+surface_material_override/3 = SubResource("StandardMaterial3D_jhbnh")
+surface_material_override/4 = SubResource("StandardMaterial3D_2tbxp")
+surface_material_override/5 = SubResource("StandardMaterial3D_7ylsd")
 
 [node name="Rotating_HD" parent="." index="1" unique_id=625107350]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 layers = 32
+surface_material_override/0 = SubResource("StandardMaterial3D_2fewt")
+surface_material_override/1 = SubResource("StandardMaterial3D_5mfv2")
+surface_material_override/2 = SubResource("StandardMaterial3D_n4h8w")
+surface_material_override/3 = SubResource("StandardMaterial3D_kaq4h")
+surface_material_override/4 = SubResource("StandardMaterial3D_yfvtw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2" unique_id=1362402663]
 libraries/ = SubResource("AnimationLibrary_me5a4")
-speed_scale = 2.0
 autoplay = &"spin"
+speed_scale = 2.0

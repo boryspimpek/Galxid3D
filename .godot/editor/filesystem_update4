@@ -18,3 +18,4 @@ res://scenes/enemies/formations/begining.tscn
 res://scenes/stations/move_station.gd
 res://data/play_area/default.tres
 res://scenes/enemies/formations/protector_strike.tscn
+res://scenes/enemies/formations/rocketer_strike.tscn
