@@ -6,12 +6,12 @@ extends Node3D
 
 @export_group("Activation")
 @export var activate_on_scroll_line: bool = false
+@export var scroll_activation_z: float = -20.0
 
 @export_group("Cleanup")
 @export var despawn_off_screen: bool = true
 @export var despawn_margin: float = 30.0
 
-var _scroll_activation_z: float = -12.0
 var _active: bool = false
 var _despawn_z: float = 12.0
 var _despawn_with_notifier: bool = false
@@ -20,7 +20,6 @@ var _despawn_with_notifier: bool = false
 func _ready() -> void:
 	var play_area := DataManager.get_play_area_config()
 	if play_area:
-		_scroll_activation_z = play_area.scroll_activation_z
 		_despawn_z = play_area.frame_half_z + despawn_margin
 
 	if not activate_on_scroll_line:
@@ -31,7 +30,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if activate_on_scroll_line and not _active:
-		if global_position.z >= _scroll_activation_z:
+		if global_position.z >= scroll_activation_z:
 			_active = true
 		else:
 			return

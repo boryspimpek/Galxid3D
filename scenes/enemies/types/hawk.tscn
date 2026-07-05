@@ -23,7 +23,7 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 armor = 35
 weapon_data = SubResource("Resource_aja6t")
 movement_data = SubResource("Resource_mh636")
-value = 50
+value = 5
 explosion_scene = ExtResource("3_vnjca")
 
 [node name="hawk" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1431754817 instance=ExtResource("2_ma2l7")]

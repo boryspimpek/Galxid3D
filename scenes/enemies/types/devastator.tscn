@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bs5humyuxa5j2" path="res://scripts/resources/enemies/weapons/BurstEnemyWeaponData.gd" id="4_2h2ch"]
 [ext_resource type="Script" uid="uid://62asvta6vqik" path="res://scripts/resources/enemies/weapons/SpreadEnemyWeaponData.gd" id="6_po5ue"]
 [ext_resource type="Script" uid="uid://fm1cgecs4881" path="res://scripts/resources/enemies/movement/TimedMoveData.gd" id="7_xoaj6"]
+[ext_resource type="PackedScene" uid="uid://s6dwn56csbw1" path="res://assets/BinbunVFX_Vol2/ExplosionFX/effects/nuke/vfx_nuke_explosion_01.tscn" id="8_hlwsm"]
 
 [sub_resource type="Resource" id="Resource_dk4p7"]
 script = ExtResource("4_2h2ch")
@@ -75,7 +76,8 @@ script = ExtResource("2_po5ue")
 weapon_phases = Array[ExtResource("3_xoaj6")]([SubResource("Resource_my2ao"), SubResource("Resource_kqngm"), SubResource("Resource_hlwsm")])
 armor = 300
 movement_data = SubResource("Resource_fvgfw")
-explosion_scene = null
+value = 50
+explosion_scene = ExtResource("8_hlwsm")
 hit_effect_scene = null
 
 [node name="Meshy_AI_Crimson_Violet_Starfi_0703084741_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=549763497 instance=ExtResource("2_4qrup")]

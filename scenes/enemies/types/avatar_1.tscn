@@ -25,5 +25,6 @@ transform = Transform3D(2.2, 0, 0, 0, 2.1250367, 0.5694019, 0, -0.5694019, 2.125
 armor = 50
 weapon_data = SubResource("Resource_g3mqj")
 movement_data = SubResource("Resource_ik470")
+value = 5
 
 [node name="Meshy_AI_Lime_Green_Toy_Helico_0705085950_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=130721169 instance=ExtResource("2_6yl2w")]

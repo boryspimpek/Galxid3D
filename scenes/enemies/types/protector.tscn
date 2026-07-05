@@ -16,5 +16,6 @@ metadata/_custom_type_script = "uid://eo6qejm2h6hl"
 transform = Transform3D(1.5, 0, 0, 0, 1.4488888, 0.38822857, 0, -0.38822857, 1.4488888, 0, 0, 0)
 armor = 10
 weapon_data = SubResource("Resource_7ntlt")
+value = 3
 
 [node name="Meshy_AI_Blue_Comet_Jet_0703091204_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=2002685 instance=ExtResource("2_2c46q")]

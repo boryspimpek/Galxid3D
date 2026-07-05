@@ -25,7 +25,7 @@ transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 armor = 18
 weapon_data = SubResource("Resource_t12dc")
 movement_data = SubResource("Resource_iiwra")
-value = 20
+value = 1
 hit_effect_scene = ExtResource("4_wfpjj")
 
 [node name="Meshy_AI_Rainbow_Starfighter_0703084727_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1524853600 instance=ExtResource("2_qoyld")]
