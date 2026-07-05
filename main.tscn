@@ -305,7 +305,7 @@ gamepad_deceleration = 500.0
 transform = Transform3D(0.15, 0, 0, 0, -0.12057852, 0.08922344, 0, -0.08922344, -0.12057852, -45.875, -52.06, -26.895)
 
 [node name="earth" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=1975713936 instance=ExtResource("4_0odxb")]
-transform = Transform3D(0.305, 0, 0, 0, 0.17537662, 0.24953564, 0, -0.24953566, 0.1753766, 21.065, -26.265, -53.744)
+transform = Transform3D(0.305, 0, 0, 0, 0.17537662, 0.24953564, 0, -0.24953566, 0.1753766, 21.065, -26.265, -73.21745)
 speed = 2.0
 
 [node name="station01" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=1039112788 instance=ExtResource("6_0cp0l")]
