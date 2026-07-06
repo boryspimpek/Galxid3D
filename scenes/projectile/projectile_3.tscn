@@ -26,7 +26,7 @@ shape = SubResource("CapsuleShape3D_nskuf")
 aabb = AABB(-0.16456449, -0.102447845, -0.6016477, 0.32912898, 0.20489569, 1.2032954)
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=680446642]
-transform = Transform3D(-3.934025e-09, 0, 0.09, 0, 0.09, 0, -0.09, 0, -3.934025e-09, 0.025, 0, 0)
+transform = Transform3D(-3.934025e-09, 0, 0.345, 0, 0.09, 0, -0.09, 0, -1.508043e-08, 0.1, 0, 0)
 material_override = SubResource("StandardMaterial3D_wcqr7")
 axis = 1
 texture = ExtResource("2_yd5ht")

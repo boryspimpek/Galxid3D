@@ -63,7 +63,7 @@ velocity = Vector3(0, 0, -60)
 [resource]
 script = ExtResource("3_jheio")
 weapon_index = 4
-weapon_name = "Side"
+weapon_name = "Side right"
 power_level_1 = SubResource("pl_1")
 power_level_2 = SubResource("pl_2")
 power_level_3 = SubResource("pl_3")

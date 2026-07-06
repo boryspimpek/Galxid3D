@@ -3,3 +3,10 @@ res://scenes/enemy_projectile/EnemyProjectile.gdshader
 res://assets/shaders/toon.gdshader
 res://main.tscn
 res://scenes/enemies/formations/begining.tscn
+res://scenes/enemies/base/Enemy.gd
+res://scenes/enemies/types/bulldog.tscn
+res://scenes/projectile/projectile_3.tscn
+res://data/weapons/front_1.tres
+res://data/weapons/sidekick_left.tres
+res://data/weapons/sidekick_right.tres
+res://data/weapons/rear_1.tres

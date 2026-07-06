@@ -1,8 +1,9 @@
+Node3D
+DelayedFacePlayer
 MeshInstance3D
 VisibleOnScreenNotifier3D
 EnemyPathFollow
 EnemyPath3D
-Node3D
 AnimationPlayer
 PathFollow3D
 Path3D
@@ -11,4 +12,3 @@ Sprite3D
 Node
 CollisionShape3D
 MultiMeshInstance3D
-Label
