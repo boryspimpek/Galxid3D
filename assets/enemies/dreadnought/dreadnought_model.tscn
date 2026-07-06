@@ -4,13 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://dqa6f7ai4qoa3" path="res://assets/enemies/dreadnought/Meshy_AI_Grey_Vanguard_Dreadno_0706101812_texture_0.jpg" id="2_otqm7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s2rbh"]
+disable_ambient_light = true
 albedo_color = Color(0.38857287, 0.38857287, 0.38857287, 1)
 albedo_texture = ExtResource("2_otqm7")
 
 [node name="Meshy_AI_Grey_Vanguard_Dreadno_0706101812_texture" unique_id=1019044186 instance=ExtResource("1_1bdik")]
 layers = 32
 
-[node name="Mesh" parent="." index="0" unique_id=1049960536]
+[node name="Mesh" parent="." index="0" unique_id=1137403147]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 layers = 32
 surface_material_override/0 = SubResource("StandardMaterial3D_s2rbh")

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bfylem1kva7em"]
+
+[ext_resource type="PackedScene" uid="uid://bvmlktrvl31k7" path="res://assets/fighter_752_model.tscn" id="1_rfu74"]
+[ext_resource type="Script" uid="uid://c05y6n8bhy001" path="res://scenes/stations/move_station.gd" id="2_5i14j"]
+
+[node name="fighter752" type="Node3D" unique_id=246527723]
+script = ExtResource("2_5i14j")
+speed_z = -2.0
+
+[node name="Fighter752" parent="." unique_id=848774295 instance=ExtResource("1_rfu74")]
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1370411095]
+visible = false
+aabb = AABB(-1.9990702, -0.8254867, -2.5295036, 3.9981403, 1.6509734, 5.059007)

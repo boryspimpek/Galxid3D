@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="22_d2t1y"]
 [ext_resource type="PackedScene" uid="uid://dbshlgj36klhl" path="res://scenes/enemies/formations/arrow formations/formation11.tscn" id="22_ryguw"]
 [ext_resource type="PackedScene" uid="uid://dl18q8lfjoe2t" path="res://scenes/stations/dreadnought.tscn" id="29_htxhm"]
+[ext_resource type="PackedScene" uid="uid://bfylem1kva7em" path="res://scenes/stations/fighter752.tscn" id="32_htxhm"]
 [ext_resource type="PackedScene" uid="uid://cv5pl4svkf8ft" path="res://scenes/enemies/types/hawk.tscn" id="37_b1qrp"]
 [ext_resource type="PackedScene" uid="uid://di8tdeuy0i86i" path="res://scenes/enemies/formations/protector_strike.tscn" id="40_4lmeg"]
 [ext_resource type="PackedScene" uid="uid://ls2pig7p4d3o" path="res://scenes/enemies/types/satellite.tscn" id="40_h8e4i"]
@@ -278,7 +279,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.963444, 0, -273.85587)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.975866, 0, -11.570137)
 
 [node name="dreadnought" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1938258404 instance=ExtResource("29_htxhm")]
-transform = Transform3D(289.035, 0, 0, 0, 158.969, 0, 0, 0, 158.969, 74.87212, -63.571, -225.89)
+transform = Transform3D(158, 0, 0, 0, 158, 0, 0, 0, 158, 44.096085, -63.571, -225.89)
 speed_z = 0.0
 activate_on_scroll_line = true
 
@@ -287,7 +288,14 @@ transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, -2.6638718, -20.3342
 speed_z = -4.0
 
 [node name="station05" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1232938646 instance=ExtResource("7_d2t1y")]
-transform = Transform3D(0.8571673, 0, 0.5150381, 0, 1, 0, -0.5150381, 0, 0.8571673, -45.940056, -9.363728, -229.23523)
+transform = Transform3D(0.8571673, 0, 0.5150381, 0, 1, 0, -0.5150381, 0, 0.8571673, -45.940056, -9.363728, -395.1712)
 speed_z = -5.0
 speed_x = 2.0
 activate_on_scroll_line = true
+
+[node name="fighter752" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=246527723 instance=ExtResource("32_htxhm")]
+transform = Transform3D(-4.9497476, 0, 4.9497476, 0, 7, 0, -4.9497476, 0, -4.9497476, -43.085, -10, -186.08261)
+speed_z = -7.0
+speed_x = 2.0
+activate_on_scroll_line = true
+scroll_activation_z = 17.0

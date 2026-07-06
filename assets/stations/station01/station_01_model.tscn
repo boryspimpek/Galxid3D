@@ -6,7 +6,7 @@
 albedo_color = Color(0.11119685, 0.11119684, 0.11119684, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5n1px"]
-albedo_color = Color(0, 0.6392157, 1, 1)
+albedo_color = Color(5.5350364e-07, 0.2768505, 0.4493134, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wbjau"]
 shading_mode = 0
@@ -24,16 +24,16 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1qros"]
 shading_mode = 0
-albedo_color = Color(0, 0, 1, 1)
+albedo_color = Color(3.970787e-07, 0, 0.28993887, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3cx3f"]
 albedo_color = Color(0.103743516, 0.10374353, 0.103743516, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6sj1"]
-albedo_color = Color(1, 0.38431373, 0.03529412, 1)
+albedo_color = Color(0.33660296, 0.105712034, 2.4065375e-08, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6avsc"]
-albedo_color = Color(0.3372549, 0, 1, 1)
+albedo_color = Color(0.15824658, 8.957133e-05, 0.51851726, 1)
 
 [node name="station01" unique_id=2131647178 instance=ExtResource("1_4a0qf")]
 

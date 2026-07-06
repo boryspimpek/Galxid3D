@@ -13,3 +13,6 @@ res://scenes/enemies/types/twinblade.tscn
 res://assets/enemies/dreadnought/dreadnought_model.tscn
 res://scenes/stations/station_01.tscn
 res://scenes/stations/dreadnought.tscn
+res://scenes/stations/fighter752.tscn
+res://assets/fighter_752_model.tscn
+res://assets/stations/station01/station_01_model.tscn
