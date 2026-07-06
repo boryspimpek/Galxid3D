@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://b5j3jumdkod3r" path="res://scenes/enemies/formations/arrow formations/formation7.tscn" id="14_0rl1p"]
 [ext_resource type="PackedScene" uid="uid://c2vk2d14w4myt" path="res://scenes/enemies/formations/arrow formations/formation8.tscn" id="15_ok6jj"]
 [ext_resource type="PackedScene" uid="uid://cdxl62tlyuy08" path="res://scenes/enemies/formations/arrow formations/formation5.tscn" id="15_yaehf"]
-[ext_resource type="PackedScene" uid="uid://c1g448hbitcf1" path="res://scenes/enemies/formations/bulldog_strike1.tscn" id="16_82xsv"]
 [ext_resource type="PackedScene" uid="uid://dqangjy33apv6" path="res://scenes/enemies/formations/arrow formations/formation12.tscn" id="19_1u8w0"]
 [ext_resource type="Script" uid="uid://dtprhja8af0to" path="res://scripts/resources/enemies/movement/LinearMoveData.gd" id="19_d13ii"]
 [ext_resource type="PackedScene" uid="uid://cy5gkjlxnagsa" path="res://scenes/enemies/formations/arrow formations/formation13.tscn" id="20_1u8w0"]
@@ -176,7 +175,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.113514, 0, -1324.1072)
 [node name="Formation17" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=1640009559 instance=ExtResource("15_yaehf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.46672, 0, -1380.1963)
 
-[node name="starfighter_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=705705049 instance=ExtResource("16_82xsv")]
+[node name="starfighter_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=705705049]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.155394, 0, -1364.9358)
 
 [node name="Formation18" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=217368119 instance=ExtResource("13_4k2k6")]
@@ -184,15 +183,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.699074, 0, -1274.4731)
 
 [node name="Formation19" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=1154345360 instance=ExtResource("42_0cp0l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.875252, 0, -1353.72)
-
-[node name="Starfighter Strike" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1546265027]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 92.73052)
-
-[node name="starfighter_strike1_6" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Starfighter Strike" unique_id=1703312208 instance=ExtResource("16_82xsv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.891108, 0, -1032.2434)
-
-[node name="starfighter_strike1_8" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Starfighter Strike" unique_id=379891095 instance=ExtResource("16_82xsv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.881594, 0, -1139.5964)
 
 [node name="Hawk" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=795467366]
 

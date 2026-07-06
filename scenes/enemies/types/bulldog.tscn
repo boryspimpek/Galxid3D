@@ -22,7 +22,7 @@ metadata/_custom_type_script = "uid://dtprhja8af0to"
 
 [node name="bulldog" unique_id=1897743314 instance=ExtResource("1_wt7by")]
 transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
-armor = 18
+armor = 10
 weapon_data = SubResource("Resource_t12dc")
 movement_data = SubResource("Resource_iiwra")
 value = 1

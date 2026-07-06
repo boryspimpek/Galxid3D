@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b76al3ql71a6h"]
+
+[ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_demcx"]
+[ext_resource type="Script" uid="uid://eo6qejm2h6hl" path="res://scripts/resources/enemies/weapons/EnemyWeaponData.gd" id="2_afgcn"]
+[ext_resource type="Script" uid="uid://dtprhja8af0to" path="res://scripts/resources/enemies/movement/LinearMoveData.gd" id="2_ipcmg"]
+[ext_resource type="PackedScene" uid="uid://cprrot16m4rnn" path="res://assets/enemies/avatar2/avatar2_model.tscn" id="2_x2qpq"]
+
+[sub_resource type="Resource" id="Resource_7u5k6"]
+script = ExtResource("2_afgcn")
+fire_rate = 1.0
+metadata/_custom_type_script = "uid://eo6qejm2h6hl"
+
+[sub_resource type="Resource" id="Resource_afgcn"]
+script = ExtResource("2_ipcmg")
+zmove = 4.0
+metadata/_custom_type_script = "uid://dtprhja8af0to"
+
+[node name="Enemy" unique_id=1897743314 instance=ExtResource("1_demcx")]
+transform = Transform3D(1.5, 0, 0, 0, 1.4488888, 0.38822857, 0, -0.38822857, 1.4488888, 0, 0, 0)
+armor = 10
+weapon_data = SubResource("Resource_7u5k6")
+movement_data = SubResource("Resource_afgcn")
+
+[node name="Meshy_AI_Blue_and_Yellow_Toy_D_0705085958_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1806130743 instance=ExtResource("2_x2qpq")]
+
+[node name="Muzzle" parent="." index="3" unique_id=1704985833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4388001)

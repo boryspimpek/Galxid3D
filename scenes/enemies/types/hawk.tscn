@@ -13,16 +13,16 @@ fire_rate = 1.5
 aim = 10
 metadata/_custom_type_script = "uid://eo6qejm2h6hl"
 
-[sub_resource type="Resource" id="Resource_mh636"]
+[sub_resource type="Resource" id="Resource_rlt0p"]
 script = ExtResource("3_rlt0p")
 zmove = 1.5
 metadata/_custom_type_script = "uid://dtprhja8af0to"
 
 [node name="hawk" unique_id=1897743314 instance=ExtResource("1_sd1qh")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
-armor = 35
+armor = 30
 weapon_data = SubResource("Resource_aja6t")
-movement_data = SubResource("Resource_mh636")
+movement_data = SubResource("Resource_rlt0p")
 value = 5
 explosion_scene = ExtResource("3_vnjca")
 

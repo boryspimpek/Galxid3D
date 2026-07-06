@@ -4,5 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dhnwqprlfj6w7" path="res://assets/enemies/twinblade/twinblade_model.tscn" id="2_vxmaa"]
 
 [node name="twinblade" unique_id=1897743314 instance=ExtResource("1_kxqoi")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+armor = 8
 
 [node name="Meshy_AI_Azure_Voyager_0703084733_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1371960032 instance=ExtResource("2_vxmaa")]

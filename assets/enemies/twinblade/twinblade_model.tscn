@@ -1,9 +1,22 @@
 [gd_scene format=3 uid="uid://dhnwqprlfj6w7"]
 
 [ext_resource type="PackedScene" uid="uid://bdko7huo826vy" path="res://assets/enemies/twinblade/Meshy_AI_Azure_Voyager_0703084733_texture.glb" id="1_12mvl"]
+[ext_resource type="Texture2D" uid="uid://cpcflejdu7ife" path="res://assets/enemies/twinblade/Meshy_AI_Azure_Voyager_0703084733_texture_0.jpg" id="2_h66ec"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_40i5i"]
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+albedo_texture = ExtResource("2_h66ec")
+metallic = 0.6
+roughness = 0.0
+clearcoat_enabled = true
+clearcoat_roughness = 1.0
 
 [node name="Meshy_AI_Azure_Voyager_0703084733_texture" unique_id=1371960032 instance=ExtResource("1_12mvl")]
 layers = 16
 
 [node name="Mesh" parent="." index="0" unique_id=341166944]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 layers = 16
+surface_material_override/0 = SubResource("StandardMaterial3D_40i5i")
