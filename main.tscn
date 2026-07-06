@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://b0rfpep11t06i" path="res://scenes/enemies/formations/arrow formations/formation14.tscn" id="21_0odxb"]
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="22_d2t1y"]
 [ext_resource type="PackedScene" uid="uid://dbshlgj36klhl" path="res://scenes/enemies/formations/arrow formations/formation11.tscn" id="22_ryguw"]
+[ext_resource type="PackedScene" uid="uid://dl18q8lfjoe2t" path="res://scenes/stations/dreadnought.tscn" id="29_htxhm"]
 [ext_resource type="PackedScene" uid="uid://cv5pl4svkf8ft" path="res://scenes/enemies/types/hawk.tscn" id="37_b1qrp"]
 [ext_resource type="PackedScene" uid="uid://di8tdeuy0i86i" path="res://scenes/enemies/formations/protector_strike.tscn" id="40_4lmeg"]
 [ext_resource type="PackedScene" uid="uid://ls2pig7p4d3o" path="res://scenes/enemies/types/satellite.tscn" id="40_h8e4i"]
@@ -30,7 +31,6 @@
 [ext_resource type="PackedScene" uid="uid://clbkkfabpgdpv" path="res://scenes/enemies/formations/begining.tscn" id="42_d2t1y"]
 [ext_resource type="PackedScene" uid="uid://18f6vqmvxr50" path="res://scenes/enemies/formations/hank_strike.tscn" id="43_d2t1y"]
 [ext_resource type="PackedScene" uid="uid://b53d3bd1fnprc" path="res://scenes/enemies/formations/boss_devastator.tscn" id="43_gngh3"]
-[ext_resource type="PackedScene" uid="uid://bbfyhtvu72ak4" path="res://scenes/stations/station_02.tscn" id="44_gngh3"]
 
 [sub_resource type="Environment" id="Environment_2y1ty"]
 background_mode = 2
@@ -175,9 +175,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.113514, 0, -1324.1072)
 [node name="Formation17" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=1640009559 instance=ExtResource("15_yaehf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.46672, 0, -1380.1963)
 
-[node name="starfighter_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=705705049]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.155394, 0, -1364.9358)
-
 [node name="Formation18" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/Arrow Formations" unique_id=217368119 instance=ExtResource("13_4k2k6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.699074, 0, -1274.4731)
 
@@ -280,6 +277,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.963444, 0, -273.85587)
 [node name="begining" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1436326208 instance=ExtResource("42_d2t1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.975866, 0, -11.570137)
 
+[node name="dreadnought" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1938258404 instance=ExtResource("29_htxhm")]
+transform = Transform3D(289.035, 0, 0, 0, 158.969, 0, 0, 0, 158.969, 74.87212, -63.571, -225.89)
+speed_z = 0.0
+activate_on_scroll_line = true
+
 [node name="station01" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1920943153 instance=ExtResource("6_0cp0l")]
 transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, -2.6638718, -20.334232, -25.30679)
 speed_z = -4.0
@@ -287,17 +289,5 @@ speed_z = -4.0
 [node name="station05" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1232938646 instance=ExtResource("7_d2t1y")]
 transform = Transform3D(0.8571673, 0, 0.5150381, 0, 1, 0, -0.5150381, 0, 0.8571673, -45.940056, -9.363728, -229.23523)
 speed_z = -5.0
-speed_x = 4.0
+speed_x = 2.0
 activate_on_scroll_line = true
-
-[node name="station02" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1978895495 instance=ExtResource("44_gngh3")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -11.01495, -5.5307503, -316.16058)
-speed_z = -4.0
-
-[node name="station03" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1151435253 instance=ExtResource("44_gngh3")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.086252, -5.5307503, -397.97104)
-speed_z = -4.0
-
-[node name="station04" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1148856747 instance=ExtResource("44_gngh3")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.239618, -5.5307503, -492.59064)
-speed_z = -4.0

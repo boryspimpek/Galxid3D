@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dl18q8lfjoe2t"]
+
+[ext_resource type="Script" uid="uid://c05y6n8bhy001" path="res://scenes/stations/move_station.gd" id="1_4pbbx"]
+[ext_resource type="PackedScene" uid="uid://ddqecqh1hhxf1" path="res://assets/enemies/dreadnought/dreadnought_model.tscn" id="2_k634d"]
+
+[node name="dreadnought" type="Node3D" unique_id=1938258404]
+script = ExtResource("1_4pbbx")
+speed_z = -8.0
+
+[node name="Meshy_AI_Grey_Vanguard_Dreadno_0706101812_texture" parent="." unique_id=1019044186 instance=ExtResource("2_k634d")]
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=941531217]
+visible = false
+aabb = AABB(-0.3016839, -0.34809682, -1, 0.6033678, 0.69619364, 2)

@@ -1,9 +1,9 @@
+VisibleOnScreenNotifier3D
+MeshInstance3D
 EnemyPathFollow
 EnemyPath3D
 Node3D
-VisibleOnScreenNotifier3D
 AnimationPlayer
-MeshInstance3D
 PathFollow3D
 Path3D
 SubViewport

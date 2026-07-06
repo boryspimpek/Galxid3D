@@ -10,3 +10,6 @@ res://scenes/enemies/types/avatar2.tscn
 res://assets/enemies/avatar2/avatar2_model.tscn
 res://assets/enemies/twinblade/twinblade_model.tscn
 res://scenes/enemies/types/twinblade.tscn
+res://assets/enemies/dreadnought/dreadnought_model.tscn
+res://scenes/stations/station_01.tscn
+res://scenes/stations/dreadnought.tscn
