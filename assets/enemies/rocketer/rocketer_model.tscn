@@ -3,12 +3,19 @@
 [ext_resource type="PackedScene" uid="uid://d2popxr1gee1f" path="res://assets/enemies/rocketer/Meshy_AI_Rainbow_Rocket_Ship_0703084711_texture.glb" id="1_cpkdt"]
 [ext_resource type="Texture2D" uid="uid://cx2wlgqdlykxs" path="res://assets/enemies/rocketer/Meshy_AI_Rainbow_Rocket_Ship_0703084711_texture_0.jpg" id="2_a85qg"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a85qg"]
+cull_mode = 1
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.01
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4rqfu"]
+next_pass = SubResource("StandardMaterial3D_a85qg")
+shading_mode = 0
 diffuse_mode = 3
 specular_mode = 1
 disable_ambient_light = true
 albedo_texture = ExtResource("2_a85qg")
-roughness = 0.0
 
 [node name="Meshy_AI_Rainbow_Rocket_Ship_0703084711_texture" unique_id=317114264 instance=ExtResource("1_cpkdt")]
 layers = 16

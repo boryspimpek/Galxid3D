@@ -17,7 +17,7 @@ _limits = [0.0, 3.0, 0.0, 1.0]
 _data = [Vector2(1e-05, 3), 0.0, 0.0, 0, 0, Vector2(0.44476745, 3), 0.0, 0.0, 0, 0, Vector2(0.53779066, 0.1166482), 0.17272732, 0.17272732, 0, 0, Vector2(0.6422872, 3), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[node name="m_fighter_1" type="Node3D" unique_id=718698068]
+[node name="protector" type="Node3D" unique_id=718698068]
 
 [node name="Path3D" type="Path3D" parent="." unique_id=1371922915]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.144585, 0, 3.0003345)

@@ -14,3 +14,11 @@ res://scenes/enemies/types/hawk.tscn
 res://test.tscn
 res://scenes/enemies/types/avatar2.tscn
 res://assets/enemies/avatar2/avatar2_model.tscn
+res://scenes/player/Player.tscn
+res://assets/enemies/avatar1/avatar1_model.tscn
+res://scenes/enemies/types/avatar_1.tscn
+res://scenes/enemies/formations/protector1strike.tscn
+res://assets/enemies/rocketer/rocketer_model.tscn
+res://assets/enemies/striker/striker_model.tscn
+res://assets/enemies/twinblade/twinblade_model.tscn
+res://assets/enemies/toy/toy_model.tscn

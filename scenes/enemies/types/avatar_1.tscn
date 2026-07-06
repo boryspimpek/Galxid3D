@@ -28,3 +28,6 @@ movement_data = SubResource("Resource_ik470")
 value = 5
 
 [node name="Meshy_AI_Lime_Green_Toy_Helico_0705085950_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=130721169 instance=ExtResource("2_6yl2w")]
+
+[node name="Muzzle" parent="." index="3" unique_id=1704985833]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.23117718, 0.8627649)

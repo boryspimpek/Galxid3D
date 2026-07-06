@@ -3,7 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://bdko7huo826vy" path="res://assets/enemies/twinblade/Meshy_AI_Azure_Voyager_0703084733_texture.glb" id="1_12mvl"]
 [ext_resource type="Texture2D" uid="uid://cpcflejdu7ife" path="res://assets/enemies/twinblade/Meshy_AI_Azure_Voyager_0703084733_texture_0.jpg" id="2_h66ec"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h66ec"]
+cull_mode = 1
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.01
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_40i5i"]
+next_pass = SubResource("StandardMaterial3D_h66ec")
 diffuse_mode = 3
 specular_mode = 1
 disable_ambient_light = true
