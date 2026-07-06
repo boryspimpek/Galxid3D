@@ -279,7 +279,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.963444, 0, -273.85587)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.975866, 0, -11.570137)
 
 [node name="dreadnought" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1938258404 instance=ExtResource("29_htxhm")]
-transform = Transform3D(158, 0, 0, 0, 158, 0, 0, 0, 158, 44.096085, -63.571, -225.89)
+transform = Transform3D(300, 0, 0, 0, 158, 0, 0, 0, 158, 75.3174, -63.571, -225.89)
 speed_z = 0.0
 activate_on_scroll_line = true
 

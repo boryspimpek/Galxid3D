@@ -268,7 +268,7 @@ func _deactivate() -> void:
 func _on_screen_exited() -> void:
 	_deactivate()
 	if despawn_off_screen:
-		print("[Enemy] despawn off-screen: ", name, " @ z=", global_position.z)
+		# print("[Enemy] despawn off-screen: ", name, " @ z=", global_position.z)
 		queue_free()
 
 

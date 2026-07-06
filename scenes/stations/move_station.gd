@@ -40,6 +40,7 @@ func _process(delta: float) -> void:
 	rotation.y += speed_y * delta
 
 	if despawn_off_screen and not _despawn_with_notifier and global_position.z > _despawn_z:
+		print("[Station] queue_free by z position: ", name, " z=", global_position.z, " _despawn_z=", _despawn_z)
 		queue_free()
 
 
@@ -55,4 +56,5 @@ func _setup_despawn_notifier() -> bool:
 
 func _on_screen_exited() -> void:
 	if despawn_off_screen:
+		print("[Station] queue_free by screen exited: ", name, " z=", global_position.z)
 		queue_free()

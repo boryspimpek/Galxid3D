@@ -45,7 +45,7 @@ metadata/_custom_type_script = "uid://dtprhja8af0to"
 
 [sub_resource type="Curve3D" id="Curve3D_1edqy"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.002487965, 0, -0.018155575, 3.0433464, 0, -2.5618057, -3.0433464, 0, 2.5618057, 3.103468, 0, 6.128779, 1.8876467, 0, 0.038523674, -1.8876467, 0, -0.038523674, -2.4528294, 0, 2.130516, 0, 0, 0, 0, 0, 0, -4.130064, 0, 4.227062, 0, 0, 0, 0, 0, 0, -4.1482954, 0, 5.3756027),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.002487965, 0, -0.018155575, 3.0433464, 0, -2.5618057, -3.0433464, 0, 2.5618057, 3.103468, 0, 6.128779, 1.8876467, 0, 0.038523674, -1.8876467, 0, -0.038523674, -2.454629, 0, 2.1689167, 0, 0, 0, 0, 0, 0, -4.130064, 0, 4.227062, 0, 0, 0, 0, 0, 0, -4.1872873, 0, 6.583637),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
@@ -117,7 +117,7 @@ point_count = 4
 
 [sub_resource type="Curve3D" id="Curve3D_3rbv3"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.12399101, 0, -0.0581131, 3.142353, 0, -4.8343925, -3.142353, 0, 4.8343925, 10.170404, 0, 9.351479, 0, 0, 0, 0, 0, 0, -13.457687, 0, 12.13126),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.12399101, 0, -0.0581131, 3.142353, 0, -4.8343925, -3.142353, 0, 4.8343925, 10.170404, 0, 9.351479, 0, 0, 0, 0, 0, 0, -9.110069, 0, 29.80782),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
@@ -391,16 +391,18 @@ movement_data = SubResource("Resource_0ker1")
 [node name="bulldog" type="Node3D" parent="." unique_id=1371535652]
 
 [node name="Path3D" type="Path3D" parent="bulldog" unique_id=309500172]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.928164, 0, -38.14879)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.928164, 0, -32.579987)
 curve = SubResource("Curve3D_1edqy")
 script = ExtResource("11_rcaes")
 speed_curve = SubResource("Curve_0ker1")
 bank_enabled = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="bulldog/Path3D" unique_id=371040522]
-transform = Transform3D(-0.50365674, 0, -0.8638848, 0, 1, 0, 0.8638848, 0, -0.50365674, -0.002487965, 0, -0.018155575)
+transform = Transform3D(0.50365674, 0, 0.8638848, 0, 1, 0, -0.8638848, 0, 0.50365674, -0.002487965, 0, -0.018155575)
+use_model_front = true
 loop = false
 script = ExtResource("12_yuv4d")
+enemy_yaw_offset_degrees = 0.0
 
 [node name="bulldog" parent="bulldog/Path3D/PathFollow3D" unique_id=472451605 instance=ExtResource("14_k2es2")]
 
@@ -483,7 +485,7 @@ speed_curve = SubResource("Curve_p4asr")
 bank_enabled = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="bulldog/Path3D6" unique_id=1954151273]
-transform = Transform3D(-0.0013242904, 0, -0.99996215, 0, 1, 0, 0.99996215, 0, -0.0013242904, -0.12625313, 0, 0.14987183)
+transform = Transform3D(-0.0013242903, 0, -0.9999621, 0, 1, 0, 0.9999621, 0, -0.0013242903, -0.12625313, 0, 0.14987183)
 loop = false
 script = ExtResource("12_yuv4d")
 
@@ -551,7 +553,7 @@ enemy_yaw_offset_degrees = 0.0
 [node name="bulldog" parent="bulldog/Path3D12/PathFollow3D" unique_id=488809789 instance=ExtResource("14_k2es2")]
 
 [node name="EnemyPath3D5" type="Path3D" parent="." unique_id=188075762]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.819134, 0, -67.88281)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.389456, 0, -67.88281)
 curve = SubResource("Curve3D_3rbv3")
 script = ExtResource("11_rcaes")
 speed = 12.0
@@ -570,7 +572,7 @@ metadata/_custom_type_script = "uid://de0wqltyclsk0"
 [node name="twinblade" parent="EnemyPath3D5/EnemyPathFollow" unique_id=2061412180 instance=ExtResource("16_x8433")]
 
 [node name="EnemyPath3D12" type="Path3D" parent="." unique_id=1291682499]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.819134, 0, -71.97573)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.389456, 0, -71.97573)
 curve = SubResource("Curve3D_3rbv3")
 script = ExtResource("11_rcaes")
 speed = 12.0
@@ -590,7 +592,7 @@ metadata/_custom_type_script = "uid://de0wqltyclsk0"
 armor = 6
 
 [node name="EnemyPath3D13" type="Path3D" parent="." unique_id=1304363635]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.819134, 0, -76.27588)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.389456, 0, -76.27588)
 curve = SubResource("Curve3D_3rbv3")
 script = ExtResource("11_rcaes")
 speed = 12.0
