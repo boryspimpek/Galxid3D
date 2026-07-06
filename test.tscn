@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c1pq466qvcqtm" path="res://scenes/planets/earth.tscn" id="4_ffwl0"]
 [ext_resource type="Texture2D" uid="uid://na3nvl7jvpdi" path="res://assets/planets/Gemini_Generated_Image_ (2).png" id="5_yg34o"]
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="6_21gct"]
-[ext_resource type="PackedScene" uid="uid://di8tdeuy0i86i" path="res://scenes/enemies/formations/protector_strike.tscn" id="8_xersf"]
-[ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="19_t77du"]
+[ext_resource type="PackedScene" uid="uid://b76al3ql71a6h" path="res://scenes/enemies/types/avatar2.tscn" id="8_ehkex"]
+[ext_resource type="Script" uid="uid://dtprhja8af0to" path="res://scripts/resources/enemies/movement/LinearMoveData.gd" id="8_xersf"]
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="37_k13tm"]
 
 [sub_resource type="Environment" id="Environment_2y1ty"]
@@ -28,6 +28,11 @@ size = Vector2(260, 130)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cegan"]
 albedo_texture = ExtResource("5_yg34o")
+
+[sub_resource type="Resource" id="Resource_00tp4"]
+script = ExtResource("8_xersf")
+zmove = 1.0
+metadata/_custom_type_script = "uid://dtprhja8af0to"
 
 [node name="GameShell" type="Control" unique_id=616589222]
 layout_mode = 3
@@ -105,14 +110,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_cegan")
 script = ExtResource("6_21gct")
 scroll_speed = 6.0
 
-[node name="LevelScrollRuler" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=552135128 instance=ExtResource("19_t77du")]
-z_min = -600.0
-z_max = 10.0
-tick_spacing = 6.0
-major_tick_every = 1
-scroll_speed = 6.0
-
-[node name="protector_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1693192339 instance=ExtResource("8_xersf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.060839, 0, 0)
+[node name="avatar2" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1897743314 instance=ExtResource("8_ehkex")]
+transform = Transform3D(1.5, 0, 0, 0, 1.4488888, 0.38822857, 0, -0.38822857, 1.4488888, 0, 0, -7.15)
+armor = 20
+movement_data = SubResource("Resource_00tp4")
 
 [node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("37_k13tm")]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dbj4t38t87ocl"]
 
 [ext_resource type="Script" uid="uid://cxso55pxdnnn3" path="res://scenes/projectile/projectile.gd" id="1_yd5ht"]
-[ext_resource type="Texture2D" uid="uid://buwjf2udcc8bs" path="res://assets/projectiles/ChatGPT Image 2 lip 2026, 15_02_33.png" id="2_yd5ht"]
+[ext_resource type="Texture2D" uid="uid://bqdu3rly00he7" path="res://assets/projectiles/ChatGPT Image 6 lip 2026, 16_37_38.png" id="2_yd5ht"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nskuf"]
 radius = 0.16455078

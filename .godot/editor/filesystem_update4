@@ -10,3 +10,7 @@ res://data/weapons/front_1.tres
 res://data/weapons/sidekick_left.tres
 res://data/weapons/sidekick_right.tres
 res://data/weapons/rear_1.tres
+res://scenes/enemies/types/hawk.tscn
+res://test.tscn
+res://scenes/enemies/types/avatar2.tscn
+res://assets/enemies/avatar2/avatar2_model.tscn
