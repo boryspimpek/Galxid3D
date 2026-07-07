@@ -16,7 +16,7 @@ zmove = 4.0
 metadata/_custom_type_script = "uid://dtprhja8af0to"
 
 [node name="avatar2" unique_id=1897743314 instance=ExtResource("1_demcx")]
-transform = Transform3D(1.5, 0, 0, 0, 1.4488888, 0.38822857, 0, -0.38822857, 1.4488888, 0, 0, 0)
+transform = Transform3D(1.7, 0, 0, 0, 1.6420739, 0.43999228, 0, -0.43999228, 1.6420739, 0, 0, 0)
 armor = 10
 weapon_data = SubResource("Resource_7u5k6")
 movement_data = SubResource("Resource_afgcn")

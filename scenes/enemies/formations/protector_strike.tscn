@@ -9,7 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://c185raa5p20gw" path="res://scenes/enemies/types/protector.tscn" id="7_lfkyf"]
 [ext_resource type="PackedScene" uid="uid://ccivqisb7t18b" path="res://scenes/enemies/formations/striker formations/striker1.tscn" id="10_cai3x"]
 [ext_resource type="PackedScene" uid="uid://bhuckx38w4bp2" path="res://scenes/enemies/types/avatar_1.tscn" id="10_kpwlq"]
+[ext_resource type="PackedScene" uid="uid://ber2ljlg4ph4w" path="res://scenes/enemies/formations/striker formations/striker3.tscn" id="11_cai3x"]
 [ext_resource type="PackedScene" uid="uid://bncfbdv7kbrhj" path="res://scenes/enemies/formations/striker formations/striker2.tscn" id="11_jyjfp"]
+[ext_resource type="PackedScene" uid="uid://cv5c6y16vv5yk" path="res://scenes/enemies/formations/striker formations/striker4.tscn" id="12_jyjfp"]
 
 [sub_resource type="Resource" id="Resource_lrdry"]
 script = ExtResource("4_nbddf")
@@ -18,7 +20,7 @@ metadata/_custom_type_script = "uid://dtprhja8af0to"
 
 [sub_resource type="Curve3D" id="Curve3D_yg45b"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.039871216, 0, 0.017368317, 0, 0, 0, 0, 0, 0, -3.8120613, 0, -0.039885283, 2.2723484, 0, -2.3468533, -2.2723484, 0, 2.3468533, -16.861769, 0, 2.5023203, 3.203638, 0, -0.85678625, -3.203638, 0, 0.85678625, -19.61839, 0, 7.680296, 2.025505, 0, 2.9929097, -2.025505, 0, -2.9929097, -29.211887, 0, 1.0072699, 0, 0, 0, 0, 0, 0, -30.283789, 0, -4.6990576),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.039871216, 0, 0.017368317, 0, 0, 0, 0, 0, 0, -3.8120613, 0, -0.039885283, 2.2723484, 0, -2.3468533, -2.2723484, 0, 2.3468533, -16.861769, 0, 2.5023203, 3.203638, 0, -0.85678625, -3.203638, 0, 0.85678625, -19.61839, 0, 7.680296, 2.025505, 0, 2.9929097, -2.025505, 0, -2.9929097, -29.211887, 0, 1.0072699, 0, 0, 0, 0, 0, 0, -30.615362, 0, -8.4147),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
 }
 point_count = 6
@@ -51,7 +53,7 @@ z_max = 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0744553, 0, -131.51122)
 
 [node name="hawk3" parent="." unique_id=1897743314 instance=ExtResource("3_kpwlq")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 11.221044, 0, -44.939377)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 9.889279, 0, -44.939377)
 movement_data = SubResource("Resource_lrdry")
 
 [node name="hawk4" parent="." unique_id=1755697315 instance=ExtResource("3_kpwlq")]
@@ -258,9 +260,6 @@ script = ExtResource("6_jyjfp")
 [node name="protector" parent="Path3D14/PathFollow3D" unique_id=81711683 instance=ExtResource("7_lfkyf")]
 transform = Transform3D(1.5, 0, 0, 0, 1.4488888, 0.38822857, 0, -0.38822857, 1.4488888, 6.7155914, 0, 0.1434381)
 
-[node name="striker formation" parent="." unique_id=1703006359 instance=ExtResource("10_cai3x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1280937, 0, -80.503)
-
 [node name="striker formation5" parent="." unique_id=1476844903 instance=ExtResource("10_cai3x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1280937, 0, -57.773464)
 
@@ -273,9 +272,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09062958, 0, -95.57569)
 [node name="striker formation6" parent="." unique_id=97827646 instance=ExtResource("11_jyjfp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09062958, 0, -67.555664)
 
-[node name="striker formation4" parent="." unique_id=968975903 instance=ExtResource("11_jyjfp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09062958, 0, -122.740845)
-
 [node name="avatar1" parent="." unique_id=201008915 instance=ExtResource("10_kpwlq")]
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 20, 0, -77.15022)
 
@@ -284,3 +280,9 @@ transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 9.027115, 0, -115.35937
 
 [node name="avatar3" parent="." unique_id=786799662 instance=ExtResource("10_kpwlq")]
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 23.331047, 0, -176.10208)
+
+[node name="striker formation7" parent="." unique_id=2090182606 instance=ExtResource("11_cai3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08386612, 0, -80.40234)
+
+[node name="striker formation" parent="." unique_id=46930885 instance=ExtResource("12_jyjfp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14009476, 0, -123.31462)

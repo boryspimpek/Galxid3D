@@ -2,32 +2,19 @@
 
 [ext_resource type="Script" uid="uid://h4tfxlaeefcu" path="res://scenes/world/GameShell.gd" id="1_2h37t"]
 [ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="2_adp8l"]
-[ext_resource type="PackedScene" uid="uid://bpnoq5bivk33d" path="res://scenes/planets/sun.tscn" id="3_dvnpp"]
-[ext_resource type="PackedScene" uid="uid://c1pq466qvcqtm" path="res://scenes/planets/earth.tscn" id="4_ffwl0"]
-[ext_resource type="Texture2D" uid="uid://na3nvl7jvpdi" path="res://assets/planets/Gemini_Generated_Image_ (2).png" id="5_yg34o"]
+[ext_resource type="PackedScene" uid="uid://b53d3bd1fnprc" path="res://scenes/enemies/formations/boss_devastator.tscn" id="5_g14j6"]
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="6_21gct"]
 [ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="6_vbegm"]
-[ext_resource type="PackedScene" uid="uid://dohxvkx4dbxqp" path="res://scenes/enemies/formations/arrow formations/formation9.tscn" id="9_xersf"]
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="37_k13tm"]
 
 [sub_resource type="Environment" id="Environment_2y1ty"]
+background_mode = 2
 background_energy_multiplier = 0.8
 glow_enabled = true
 adjustment_enabled = true
 adjustment_brightness = 1.12
 adjustment_contrast = 1.065
 adjustment_saturation = 1.5
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rbxkt"]
-shading_mode = 0
-albedo_texture = ExtResource("5_yg34o")
-
-[sub_resource type="QuadMesh" id="QuadMesh_ncxdr"]
-material = SubResource("StandardMaterial3D_rbxkt")
-size = Vector2(260, 130)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cegan"]
-albedo_texture = ExtResource("5_yg34o")
 
 [node name="GameShell" type="Control" unique_id=616589222]
 layout_mode = 3
@@ -88,26 +75,14 @@ gamepad_acceleration = 500.0
 gamepad_deceleration = 500.0
 dodge_duration = 0.7
 
-[node name="Background" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=240733446]
-
-[node name="Sun" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=145217065 instance=ExtResource("3_dvnpp")]
-transform = Transform3D(0.15, 0, 0, 0, -0.12057852, 0.08922344, 0, -0.08922344, -0.12057852, -45.875, -52.06, -26.895)
-
-[node name="earth" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=1975713936 instance=ExtResource("4_ffwl0")]
-transform = Transform3D(0.305, 0, 0, 0, 0.17537662, 0.24953564, 0, -0.24953566, 0.1753766, 21.065, -26.265, -6.575)
-
-[node name="Nebula" type="MeshInstance3D" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=327984543]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -65, 0)
-mesh = SubResource("QuadMesh_ncxdr")
-surface_material_override/0 = SubResource("StandardMaterial3D_cegan")
-
 [node name="PlayAreaFrame" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=784318850 instance=ExtResource("6_vbegm")]
 
 [node name="LevelScroll3D" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=322751963]
 script = ExtResource("6_21gct")
+scroll_speed = 6.0
 metadata/_custom_type_script = "uid://ci6qjvw4jlabt"
 
-[node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("37_k13tm")]
+[node name="boss devastator" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll3D" unique_id=1971914927 instance=ExtResource("5_g14j6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.910545, 0, -28.210907)
 
-[node name="Formation6" parent="." unique_id=1730415998 instance=ExtResource("9_xersf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.66762, 0, -7.1299977)
+[node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("37_k13tm")]

@@ -283,19 +283,34 @@ transform = Transform3D(300, 0, 0, 0, 158, 0, 0, 0, 158, 75.3174, -63.571, -225.
 speed_z = 0.0
 activate_on_scroll_line = true
 
+[node name="dreadnought2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=384642539 instance=ExtResource("29_htxhm")]
+transform = Transform3D(144.55737, 0, 76.13348, 0, 107.669, 0, -144.55737, 0, 76.13348, -102.679504, -30.427534, -921.1435)
+speed_z = 0.0
+speed_x = 6.0
+activate_on_scroll_line = true
+scroll_activation_z = -120.0
+
 [node name="station01" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1920943153 instance=ExtResource("6_0cp0l")]
 transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, -2.6638718, -20.334232, -25.30679)
 speed_z = -4.0
 
 [node name="station05" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1232938646 instance=ExtResource("7_d2t1y")]
-transform = Transform3D(0.8571673, 0, 0.5150381, 0, 1, 0, -0.5150381, 0, 0.8571673, -45.940056, -9.363728, -395.1712)
-speed_z = -5.0
-speed_x = 2.0
+transform = Transform3D(0.8571673, 0, 0.5150381, 0, 1, 0, -0.5150381, 0, 0.8571673, -51.582558, -9.363728, -651.5623)
+speed_z = -7.0
+speed_x = 3.0
 activate_on_scroll_line = true
+scroll_activation_z = 0.0
 
 [node name="fighter752" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=246527723 instance=ExtResource("32_htxhm")]
-transform = Transform3D(-4.9497476, 0, 4.9497476, 0, 7, 0, -4.9497476, 0, -4.9497476, -43.085, -10, -186.08261)
+transform = Transform3D(-3.7094352, 0, 5.936336, 0, 7, 0, -5.936336, 0, -3.7094352, -43.085, -10, -275.0253)
 speed_z = -7.0
-speed_x = 2.0
+speed_x = 3.0
+activate_on_scroll_line = true
+scroll_activation_z = 17.0
+
+[node name="fighter753" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1875678727 instance=ExtResource("32_htxhm")]
+transform = Transform3D(-3.7094352, 0, -5.936336, 0, 7, 0, 5.936336, 0, -3.7094352, 53.22056, -10, -455.85834)
+speed_z = -7.0
+speed_x = -3.0
 activate_on_scroll_line = true
 scroll_activation_z = 17.0

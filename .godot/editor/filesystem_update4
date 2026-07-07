@@ -18,3 +18,20 @@ res://scripts/resources/WeaponShotPelletData.gd
 res://scripts/resources/WeaponPowerLevelData.gd
 res://scripts/resources/WeaponSpecialShotData.gd
 res://data/weapons/middle_1.tres
+res://scenes/enemies/types/arrow.tscn
+res://scenes/enemies/formations/striker formations/striker2.tscn
+res://scenes/enemies/formations/striker formations/striker1.tscn
+res://scenes/enemies/formations/striker formations/striker3.tscn
+res://scenes/enemies/formations/striker formations/striker4.tscn
+res://scenes/enemies/formations/protector_strike.tscn
+res://scenes/enemies/types/striker.tscn
+res://scenes/enemies/formations/rocketer_strike.tscn
+res://scenes/enemies/formations/striker formations/striker5.tscn
+res://scenes/enemies/formations/striker formations/striker6.tscn
+res://scenes/enemies/formations/boss_devastator.tscn
+res://scenes/enemies/types/devastator.tscn
+res://scenes/enemies/types/twinblade.tscn
+res://scenes/enemies/types/avatar2.tscn
+res://assets/stations/station05/station_05_model.tscn
+res://assets/enemies/dreadnought/dreadnought_model.tscn
+res://scenes/stations/dreadnought.tscn
