@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bfylem1kva7em"]
 
-[ext_resource type="PackedScene" uid="uid://bvmlktrvl31k7" path="res://assets/fighter_752_model.tscn" id="1_rfu74"]
+[ext_resource type="PackedScene" uid="uid://bvmlktrvl31k7" path="res://assets/stations/fighter_752_model.tscn" id="1_rfu74"]
 [ext_resource type="Script" uid="uid://c05y6n8bhy001" path="res://scenes/stations/move_station.gd" id="2_5i14j"]
 
 [node name="fighter752" type="Node3D" unique_id=246527723]

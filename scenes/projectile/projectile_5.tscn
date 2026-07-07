@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://ksvgo3h1n8rr"]
+
+[ext_resource type="Script" uid="uid://cxso55pxdnnn3" path="res://scenes/projectile/projectile.gd" id="1_oprgx"]
+[ext_resource type="Texture2D" uid="uid://ih2tjjd4pdgy" path="res://assets/projectiles/Gemini_Generated_Image_mpdg42mpdg42mpdg-removebg-preview.png" id="1_warf7"]
+[ext_resource type="Texture2D" uid="uid://bqdu3rly00he7" path="res://assets/projectiles/ChatGPT Image 6 lip 2026, 16_37_38.png" id="3_n15fh"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nskuf"]
+radius = 2.2661133
+height = 9.732216
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cm8q0"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1.5720325, 1.5720325, 1.5720325, 1)
+albedo_texture = ExtResource("1_warf7")
+
+[node name="Projectile" type="Area3D" unique_id=1517421005]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_oprgx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1719570957]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_nskuf")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1682580241]
+aabb = AABB(-2.5919993, -0.102447845, -4.899931, 5.1839986, 0.20489569, 9.799862)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=680446642]
+transform = Transform3D(-3.1909313e-08, 0, -1, 0, 1, 0, 0.73, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_cm8q0")
+axis = 1
+texture = ExtResource("3_n15fh")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

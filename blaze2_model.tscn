@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dbwkjkyvor653"]
+
+[ext_resource type="PackedScene" uid="uid://dcs6thoancqxa" path="res://assets/enemies/blaze/blaze2/Meshy_AI_Emerald_Void_Intercep_0707094557_texture.glb" id="1_cx0k2"]
+
+[node name="Meshy_AI_Emerald_Void_Intercep_0707094557_texture" unique_id=625533971 instance=ExtResource("1_cx0k2")]
+layers = 16
+
+[node name="Mesh" parent="." index="0" unique_id=106352127]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+layers = 16

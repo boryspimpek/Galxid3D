@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bckg8cydvccoh"
-path="res://.godot/imported/Fighter75.glb-ad396305ea94c20758c3d4dd3c1dccc6.scn"
+path="res://.godot/imported/Fighter75.glb-accacf1bb52b9bdce085b259d0e4826f.scn"
 
 [deps]
 
-source_file="res://assets/Fighter75.glb"
-dest_files=["res://.godot/imported/Fighter75.glb-ad396305ea94c20758c3d4dd3c1dccc6.scn"]
+source_file="res://assets/stations/Fighter75.glb"
+dest_files=["res://.godot/imported/Fighter75.glb-accacf1bb52b9bdce085b259d0e4826f.scn"]
 
 [params]
 

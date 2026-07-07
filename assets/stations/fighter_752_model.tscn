@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bvmlktrvl31k7"]
 
-[ext_resource type="PackedScene" uid="uid://bckg8cydvccoh" path="res://assets/Fighter75.glb" id="1_yoggb"]
-[ext_resource type="Texture2D" uid="uid://dds6xa8wtkbua" path="res://assets/Fighter75_Fighter75_BaseColor.jpg" id="2_ijnuo"]
-[ext_resource type="Texture2D" uid="uid://bgnut83qs183p" path="res://assets/Fighter75_Fighter75_Metalness-Fighter75_Roughness.png" id="3_ds78v"]
-[ext_resource type="Texture2D" uid="uid://bi2ska0pd8vl" path="res://assets/Fighter75_Fighter75_Normal.jpg" id="4_13tnu"]
+[ext_resource type="PackedScene" uid="uid://bckg8cydvccoh" path="res://assets/stations/Fighter75.glb" id="1_yoggb"]
+[ext_resource type="Texture2D" uid="uid://bkc41cxbfvxbf" path="res://assets/stations/Fighter75_Fighter75_BaseColor.jpg" id="2_ijnuo"]
+[ext_resource type="Texture2D" uid="uid://muwo8mer2b6n" path="res://assets/stations/Fighter75_Fighter75_Metalness-Fighter75_Roughness.png" id="3_ds78v"]
+[ext_resource type="Texture2D" uid="uid://kxgn3fuaxnsc" path="res://assets/stations/Fighter75_Fighter75_Normal.jpg" id="4_13tnu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4c3c"]
 disable_ambient_light = true

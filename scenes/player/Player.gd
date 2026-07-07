@@ -47,7 +47,7 @@ var is_dodging := false
 
 @onready var weapon_system: Node = $WeaponSystem
 @onready var damage_system: Node = $DamageSystem
-@onready var ship_model: Node3D = $Vanguard
+@onready var ship_model: Node3D = $Blaze
 
 var _sidekicks: Array[Node] = []
 

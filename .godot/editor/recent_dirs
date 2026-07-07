@@ -1,12 +1,13 @@
+res://scenes/projectile/
+res://
+res://assets/stations/
 res://scenes/
 res://assets/enemies/dreadnought/
-res://
 res://scenes/stations/
 res://assets/stations/station06/
 res://assets/stations/station03/
 res://assets/stations/station02/
 res://assets/stations/station05/
-res://assets/stations/
 res://scenes/enemies/formations/
 res://scenes/enemies/types/
 res://assets/enemies/avatar2/
@@ -19,6 +20,5 @@ res://assets/enemies/rocketer/
 res://assets/enemies/protector/
 res://assets/enemies/hank/
 res://assets/enemies/guardian/
-res://assets/enemies/cyclon/
 C:/Users/borys/Desktop/
 C:/Program Files/Java/jdk-26.0.1/bin/

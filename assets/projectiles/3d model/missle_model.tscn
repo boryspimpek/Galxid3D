@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dsrhlo14a88vf"]
+
+[ext_resource type="PackedScene" uid="uid://btnbsh633itmu" path="res://assets/projectiles/3d model/Meshy_AI_Crimson_Orbit_Capsule_0707103850_texture.glb" id="1_ynapx"]
+
+[node name="Meshy_AI_Crimson_Orbit_Capsule_0707103850_texture" unique_id=507324821 instance=ExtResource("1_ynapx")]
+layers = 16
+
+[node name="Mesh" parent="." index="0" unique_id=1530902309]
+layers = 16

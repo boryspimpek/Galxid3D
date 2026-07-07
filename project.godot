@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GALAXID FREE"
-run/main_scene="uid://b6ujitbkngsqd"
+run/main_scene="uid://bvto813hjntxj"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [audio]

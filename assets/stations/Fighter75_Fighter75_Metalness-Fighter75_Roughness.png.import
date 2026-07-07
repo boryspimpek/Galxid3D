@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dds6xa8wtkbua"
-path.s3tc="res://.godot/imported/Fighter75_Fighter75_BaseColor.jpg-fcaa87e3e0796bce825d9d595eff069d.s3tc.ctex"
-path.etc2="res://.godot/imported/Fighter75_Fighter75_BaseColor.jpg-fcaa87e3e0796bce825d9d595eff069d.etc2.ctex"
+uid="uid://muwo8mer2b6n"
+path.s3tc="res://.godot/imported/Fighter75_Fighter75_Metalness-Fighter75_Roughness.png-e13b3a3e923756c7c198e6c4b570d913.s3tc.ctex"
+path.etc2="res://.godot/imported/Fighter75_Fighter75_Metalness-Fighter75_Roughness.png-e13b3a3e923756c7c198e6c4b570d913.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "097bf45133b2c16a30e5aa3ba35a737d"
+"md5": "f5958384ee2a55908ab3d1156a797033"
 }
 
 [deps]
 
-source_file="res://assets/Fighter75_Fighter75_BaseColor.jpg"
-dest_files=["res://.godot/imported/Fighter75_Fighter75_BaseColor.jpg-fcaa87e3e0796bce825d9d595eff069d.s3tc.ctex", "res://.godot/imported/Fighter75_Fighter75_BaseColor.jpg-fcaa87e3e0796bce825d9d595eff069d.etc2.ctex"]
+source_file="res://assets/stations/Fighter75_Fighter75_Metalness-Fighter75_Roughness.png"
+dest_files=["res://.godot/imported/Fighter75_Fighter75_Metalness-Fighter75_Roughness.png-e13b3a3e923756c7c198e6c4b570d913.s3tc.ctex", "res://.godot/imported/Fighter75_Fighter75_Metalness-Fighter75_Roughness.png-e13b3a3e923756c7c198e6c4b570d913.etc2.ctex"]
 
 [params]
 

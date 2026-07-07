@@ -2,21 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgnut83qs183p"
-path.s3tc="res://.godot/imported/Fighter75_Fighter75_Metalness-Fighter75_Roughness.png-40f017a96fe1551edaa56b5f6c74d662.s3tc.ctex"
-path.etc2="res://.godot/imported/Fighter75_Fighter75_Metalness-Fighter75_Roughness.png-40f017a96fe1551edaa56b5f6c74d662.etc2.ctex"
+uid="uid://ih2tjjd4pdgy"
+path.s3tc="res://.godot/imported/Gemini_Generated_Image_mpdg42mpdg42mpdg-removebg-preview.png-2f86d014a8891f42a89e1f3b47bdc4b9.s3tc.ctex"
+path.etc2="res://.godot/imported/Gemini_Generated_Image_mpdg42mpdg42mpdg-removebg-preview.png-2f86d014a8891f42a89e1f3b47bdc4b9.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "f5958384ee2a55908ab3d1156a797033"
-}
 
 [deps]
 
-source_file="res://assets/Fighter75_Fighter75_Metalness-Fighter75_Roughness.png"
-dest_files=["res://.godot/imported/Fighter75_Fighter75_Metalness-Fighter75_Roughness.png-40f017a96fe1551edaa56b5f6c74d662.s3tc.ctex", "res://.godot/imported/Fighter75_Fighter75_Metalness-Fighter75_Roughness.png-40f017a96fe1551edaa56b5f6c74d662.etc2.ctex"]
+source_file="res://assets/projectiles/Gemini_Generated_Image_mpdg42mpdg42mpdg-removebg-preview.png"
+dest_files=["res://.godot/imported/Gemini_Generated_Image_mpdg42mpdg42mpdg-removebg-preview.png-2f86d014a8891f42a89e1f3b47bdc4b9.s3tc.ctex", "res://.godot/imported/Gemini_Generated_Image_mpdg42mpdg42mpdg-removebg-preview.png-2f86d014a8891f42a89e1f3b47bdc4b9.etc2.ctex"]
 
 [params]
 
