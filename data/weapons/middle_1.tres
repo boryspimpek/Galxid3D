@@ -1,0 +1,120 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://cnrm6odldgtf4"]
+
+[ext_resource type="Script" uid="uid://bingydioab5yk" path="res://scripts/resources/WeaponShotPelletData.gd" id="1_8oym1"]
+[ext_resource type="Script" uid="uid://datij7ugn8eej" path="res://scripts/resources/WeaponPowerLevelData.gd" id="1_pl"]
+[ext_resource type="Script" uid="uid://ml3ennlcxw0v" path="res://scripts/resources/WeaponData.gd" id="2_weapon"]
+
+[sub_resource type="Resource" id="pl_1"]
+script = ExtResource("1_pl")
+damage = 2
+fire_rate = 0.8
+projectile = 3
+velocity = Vector3(0, 0, -40)
+homing = true
+homing_turn_speed = 10.0
+
+[sub_resource type="Resource" id="Resource_8oym1"]
+script = ExtResource("1_8oym1")
+spawn_offset = Vector3(-1.5, 0, 0)
+projectile_override = 5
+metadata/_custom_type_script = "uid://bingydioab5yk"
+
+[sub_resource type="Resource" id="Resource_cbnai"]
+script = ExtResource("1_8oym1")
+spawn_offset = Vector3(1.5, 0, 0)
+projectile_override = 5
+metadata/_custom_type_script = "uid://bingydioab5yk"
+
+[sub_resource type="Resource" id="pl_10"]
+script = ExtResource("1_pl")
+fire_rate = 2.5
+velocity = Vector3(0, 0, -20)
+pellets = Array[ExtResource("1_8oym1")]([SubResource("Resource_8oym1"), SubResource("Resource_cbnai")])
+
+[sub_resource type="Resource" id="pl_2"]
+script = ExtResource("1_pl")
+damage = 2
+fire_rate = 0.8
+projectile = 3
+velocity = Vector3(0, 0, -40)
+homing = true
+homing_turn_speed = 10.0
+
+[sub_resource type="Resource" id="pl_3"]
+script = ExtResource("1_pl")
+damage = 2
+fire_rate = 0.7
+projectile = 3
+velocity = Vector3(0, 0, -40)
+homing = true
+homing_turn_speed = 10.0
+
+[sub_resource type="Resource" id="pl_4"]
+script = ExtResource("1_pl")
+damage = 3
+fire_rate = 0.7
+projectile = 3
+velocity = Vector3(0, 0, -40)
+homing = true
+homing_turn_speed = 10.0
+
+[sub_resource type="Resource" id="pl_5"]
+script = ExtResource("1_pl")
+damage = 3
+fire_rate = 0.7
+projectile = 3
+velocity = Vector3(0, 0, -40)
+homing = true
+homing_turn_speed = 10.0
+
+[sub_resource type="Resource" id="pl_6"]
+script = ExtResource("1_pl")
+damage = 3
+fire_rate = 0.6
+projectile = 3
+velocity = Vector3(0, 0, -40)
+homing = true
+homing_turn_speed = 10.0
+
+[sub_resource type="Resource" id="pl_7"]
+script = ExtResource("1_pl")
+damage = 4
+fire_rate = 0.6
+projectile = 3
+velocity = Vector3(0, 0, -40)
+homing = true
+homing_turn_speed = 10.0
+
+[sub_resource type="Resource" id="pl_8"]
+script = ExtResource("1_pl")
+damage = 4
+fire_rate = 0.6
+projectile = 3
+velocity = Vector3(0, 0, -40)
+homing = true
+homing_turn_speed = 10.0
+
+[sub_resource type="Resource" id="pl_9"]
+script = ExtResource("1_pl")
+damage = 4
+fire_rate = 0.5
+projectile = 3
+velocity = Vector3(0, 0, -40)
+homing = true
+homing_turn_speed = 10.0
+
+[resource]
+script = ExtResource("2_weapon")
+weapon_index = 5
+weapon_name = "Seeker"
+power_level_1 = SubResource("pl_1")
+power_level_2 = SubResource("pl_2")
+power_level_3 = SubResource("pl_3")
+power_level_4 = SubResource("pl_4")
+power_level_5 = SubResource("pl_5")
+power_level_6 = SubResource("pl_6")
+power_level_7 = SubResource("pl_7")
+power_level_8 = SubResource("pl_8")
+power_level_9 = SubResource("pl_9")
+power_level_10 = SubResource("pl_10")
+sound = 25

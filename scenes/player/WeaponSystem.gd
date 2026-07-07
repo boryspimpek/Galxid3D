@@ -15,22 +15,33 @@ enum FireMode {
 	SPECIAL_4,
 }
 
+## Sloty broni głównej — każdy strzela niezależnie (własny timer, koszt energii i homing).
+enum WeaponSlot {
+	FRONT,
+	MIDDLE,
+	REAR,
+}
+
+const WEAPON_SLOT_COUNT := 3
+
 # --- Referencje ---
 var player: CharacterBody3D
 var front_muzzle: Marker3D
+var middle_muzzle: Marker3D
 var rear_muzzle: Marker3D
 var muzzle: Marker3D
 
 # --- Dane broni ---
 var front_weapon_data: WeaponDataClass
+var middle_weapon_data: WeaponDataClass
 var rear_weapon_data: WeaponDataClass
+## Broń frontowa — źródło special shotów i domyślnego muzzle flasha.
 var weapon_data: WeaponDataClass
 var current_weapon_index: int = 1
 
 # --- Strzelanie ---
 var fire_mode: FireMode = FireMode.NONE
-var fire_timer: float = 0.0
-var rear_fire_timer: float = 0.0
+var _slot_fire_timers: Array[float] = [0.0, 0.0, 0.0]
 var _ready_to_fire: bool = false
 var _special_shot_timers: Array[float] = [0.0, 0.0, 0.0, 0.0]
 var _active_beam: Area3D = null
@@ -44,6 +55,7 @@ const MUZZLE_FLASH_MAX_LIFETIME := 0.12
 func _ready():
 	player = get_parent()
 	front_muzzle = player.get_node("Muzzle")
+	middle_muzzle = player.get_node_or_null("MuzzleMiddle")
 	rear_muzzle = player.get_node_or_null("Muzzle2")
 	muzzle = front_muzzle
 	await get_tree().process_frame
@@ -54,36 +66,37 @@ func _ready():
 func _physics_process(delta: float):
 	if not _ready_to_fire:
 		return
-	fire_timer = maxf(0.0, fire_timer - delta)
-	rear_fire_timer = maxf(0.0, rear_fire_timer - delta)
+	for i in WEAPON_SLOT_COUNT:
+		_slot_fire_timers[i] = maxf(0.0, _slot_fire_timers[i] - delta)
 	for i in WeaponDataClass.SPECIAL_SHOT_COUNT:
 		_special_shot_timers[i] = maxf(0.0, _special_shot_timers[i] - delta)
 	_process_fire_mode(delta)
 
 
 func load_weapon_config():
-	front_weapon_data = DataManager.get_weapon_by_id(player.front_weapon_index)
-	rear_weapon_data = DataManager.get_weapon_by_id(player.rear_weapon_index)
+	front_weapon_data = _load_slot_weapon(player.front_weapon_index, "frontowej")
+	middle_weapon_data = _load_slot_weapon(player.middle_weapon_index, "środkowej")
+	rear_weapon_data = _load_slot_weapon(player.rear_weapon_index, "tylnej")
 	weapon_data = front_weapon_data
 	current_weapon_index = player.front_weapon_index
-	print("WeaponSystem: próbuję załadować broń ID=", current_weapon_index)
-
-	if front_weapon_data == null:
-		push_error("WeaponSystem: Nie znaleziono broni frontowej o ID: ", current_weapon_index)
-	else:
-		print("WeaponSystem: Załadowano broń frontową - weapon_id=", current_weapon_index)
-
-	if player.rear_weapon_index != 0:
-		if rear_weapon_data == null:
-			push_error("WeaponSystem: Nie znaleziono broni tylnej o ID: ", player.rear_weapon_index)
-		else:
-			print("WeaponSystem: Załadowano broń tylną - weapon_id=", player.rear_weapon_index)
 
 	_despawn_beam()
-	fire_timer = 0.0
-	rear_fire_timer = 0.0
+	for i in WEAPON_SLOT_COUNT:
+		_slot_fire_timers[i] = 0.0
 	for i in WeaponDataClass.SPECIAL_SHOT_COUNT:
 		_special_shot_timers[i] = 0.0
+
+
+## Ładuje broń slotu; indeks 0 = slot pusty (bez błędu).
+func _load_slot_weapon(weapon_index: int, slot_name: String) -> WeaponDataClass:
+	if weapon_index == 0:
+		return null
+	var data := DataManager.get_weapon_by_id(weapon_index)
+	if data == null:
+		push_error("WeaponSystem: Nie znaleziono broni %s o ID: %d" % [slot_name, weapon_index])
+	else:
+		print("WeaponSystem: Załadowano broń %s - weapon_id=%d" % [slot_name, weapon_index])
+	return data
 
 
 func set_fire_mode(mode: FireMode) -> void:
@@ -98,8 +111,7 @@ func _process_fire_mode(delta: float) -> void:
 	match fire_mode:
 		FireMode.PRIMARY:
 			_despawn_beam()
-			if fire_timer <= 0.0:
-				shoot()
+			shoot()
 		FireMode.SPECIAL_1:
 			_process_special_shot(1, delta)
 		FireMode.SPECIAL_2:
@@ -178,24 +190,38 @@ func shoot():
 		if front_weapon_data == null:
 			return
 
-	var front_power_level_data = front_weapon_data.get_power_level_data(player.front_power_level)
-	var front_cost = front_power_level_data.power_use
-	if player.power < front_cost:
-		return
+	var fired_any := false
+	if _try_fire_slot(WeaponSlot.FRONT, front_weapon_data, front_muzzle, player.front_power_level):
+		fired_any = true
+	if _try_fire_slot(WeaponSlot.MIDDLE, middle_weapon_data, middle_muzzle, player.middle_power_level):
+		fired_any = true
+	if _try_fire_slot(WeaponSlot.REAR, rear_weapon_data, rear_muzzle, player.rear_power_level):
+		fired_any = true
 
-	player.power -= front_cost
-	_spawn_weapon_fire(front_muzzle, front_weapon_data, front_power_level_data)
-	SoundManager.play_weapon_sound(front_weapon_data.sound)
-	fire_timer = front_power_level_data.fire_rate
+	if fired_any:
+		player.notify_power_changed()
 
-	if rear_weapon_data != null and rear_muzzle != null and rear_fire_timer <= 0.0:
-		var rear_power_level_data = rear_weapon_data.get_power_level_data(player.rear_power_level)
-		if player.power >= rear_power_level_data.power_use:
-			player.power -= rear_power_level_data.power_use
-			_spawn_weapon_fire(rear_muzzle, rear_weapon_data, rear_power_level_data)
-			rear_fire_timer = rear_power_level_data.fire_rate
 
-	player.notify_power_changed()
+## Próbuje wystrzelić z jednego slotu — własny timer i koszt energii, niezależnie od pozostałych.
+func _try_fire_slot(
+	slot: WeaponSlot,
+	data: WeaponDataClass,
+	from_muzzle: Marker3D,
+	power_level: int,
+) -> bool:
+	if data == null or from_muzzle == null:
+		return false
+	if _slot_fire_timers[slot] > 0.0:
+		return false
+	var power_level_data = data.get_power_level_data(power_level)
+	if player.power < power_level_data.power_use:
+		return false
+
+	player.power -= power_level_data.power_use
+	_spawn_weapon_fire(from_muzzle, data, power_level_data)
+	SoundManager.play_weapon_sound(data.sound)
+	_slot_fire_timers[slot] = power_level_data.fire_rate
+	return true
 
 
 func _update_beam(shot_data: WeaponSpecialShotData, delta: float) -> void:
@@ -344,7 +370,7 @@ func _spawn_muzzle_flash(
 	var flash := scene.instantiate()
 	from_muzzle.add_child(flash)
 	if flash is Node3D:
-		(flash as Node3D).transform = _muzzle_flash_local_transform(velocity, from_muzzle)
+		(flash as Node3D).transform = _muzzle_flash_local_transform(velocity, from_muzzle, weapon_data_ref)
 
 	_try_play_vfx_flash(flash)
 	_schedule_flash_cleanup(flash)
@@ -374,13 +400,17 @@ func _schedule_flash_cleanup(flash: Node) -> void:
 	get_tree().create_timer(MUZZLE_FLASH_MAX_LIFETIME).timeout.connect(cleanup, CONNECT_ONE_SHOT)
 
 
-func _muzzle_flash_local_transform(velocity: Vector3, from_muzzle: Marker3D) -> Transform3D:
-	var world_basis := _muzzle_flash_basis(velocity)
+func _muzzle_flash_local_transform(
+	velocity: Vector3,
+	from_muzzle: Marker3D,
+	weapon_data_ref: WeaponData,
+) -> Transform3D:
+	var world_basis := _muzzle_flash_basis(velocity, weapon_data_ref)
 	var local_basis := from_muzzle.global_basis.inverse() * world_basis
 	return Transform3D(local_basis, Vector3.ZERO)
 
 
-func _muzzle_flash_basis(velocity: Vector3) -> Basis:
+func _muzzle_flash_basis(velocity: Vector3, weapon_data_ref: WeaponData) -> Basis:
 	var direction := velocity
 	if direction.length_squared() < 0.0001:
 		direction = Vector3(0.0, 0.0, -1.0)
@@ -397,7 +427,7 @@ func _muzzle_flash_basis(velocity: Vector3) -> Basis:
 	var y_axis := z_axis.cross(x_axis).normalized()
 
 	var basis := Basis(x_axis, y_axis, z_axis)
-	var offset := weapon_data.muzzle_flash_rotation_offset
+	var offset := weapon_data_ref.muzzle_flash_rotation_offset
 	if offset != Vector3.ZERO:
 		basis = basis * Basis.from_euler(Vector3(
 			deg_to_rad(offset.x),

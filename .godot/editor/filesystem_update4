@@ -17,3 +17,4 @@ res://scenes/player/WeaponSystem.gd
 res://scripts/resources/WeaponShotPelletData.gd
 res://scripts/resources/WeaponPowerLevelData.gd
 res://scripts/resources/WeaponSpecialShotData.gd
+res://data/weapons/middle_1.tres
