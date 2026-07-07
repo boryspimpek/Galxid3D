@@ -13,3 +13,7 @@ res://assets/projectiles/3d model/missle_model.tscn
 res://scenes/projectile/projectyle5.tscn
 res://data/weapons/rear_1.tres
 res://scenes/projectile/projectile_5.tscn
+res://scenes/player/WeaponSystem.gd
+res://scripts/resources/WeaponShotPelletData.gd
+res://scripts/resources/WeaponPowerLevelData.gd
+res://scripts/resources/WeaponSpecialShotData.gd
