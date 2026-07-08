@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dt6f0hmhx06ha" path="res://assets/enemies/rocketer/rocketer_model.tscn" id="2_n0ky6"]
 [ext_resource type="Script" uid="uid://0lspj842eewa" path="res://scripts/resources/enemies/weapons/HomingEnemyWeaponData.gd" id="2_u3yas"]
 [ext_resource type="PackedScene" uid="uid://dp6fn641cy82u" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/impact/vfx_impact_01.tscn" id="3_u3yas"]
+[ext_resource type="Shader" uid="uid://luwc3n46o4pd" path="res://assets/shaders/jet_engine.gdshader" id="5_s4afp"]
 
 [sub_resource type="Resource" id="Resource_s4afp"]
 script = ExtResource("2_u3yas")
@@ -15,6 +16,39 @@ projectile_velocity = Vector3(0, 0, 10)
 aim = 10
 metadata/_custom_type_script = "uid://0lspj842eewa"
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kns3w"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2tpeb"]
+noise = SubResource("FastNoiseLite_kns3w")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ng3hx"]
+render_priority = 0
+shader = ExtResource("5_s4afp")
+shader_parameter/model_height = 1.9649999999999999
+shader_parameter/dissolve_start = 0.001
+shader_parameter/dissolve_length = 0.610000028975
+shader_parameter/gradient_bias = 0.5220000215351199
+shader_parameter/noise_speed = 1.0
+shader_parameter/noise_strength = -0.435
+shader_parameter/stretch_factor = 0.6
+shader_parameter/noise_direction = Vector2(0, -1)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_2tpeb")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/power_factor = 2.0
+shader_parameter/fresnel_factor = 2.0
+shader_parameter/fresnel_amplification = 1.0
+shader_parameter/fresnel_power = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mqkr7"]
+material = SubResource("ShaderMaterial_ng3hx")
+top_radius = 0.0
+bottom_radius = 1.2
+height = 5.0
+rings = 0
+cap_top = false
+cap_bottom = false
+
 [node name="rocketer" unique_id=1897743314 instance=ExtResource("1_8ngvd")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 armor = 75
@@ -24,8 +58,18 @@ hit_effect_scene = ExtResource("3_u3yas")
 
 [node name="Meshy_AI_Rainbow_Rocket_Ship_0703084711_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=317114264 instance=ExtResource("2_n0ky6")]
 
+[node name="CollisionShape3D" parent="." index="1" unique_id=324662688]
+visible = false
+
+[node name="VisibleOnScreenNotifier3D" parent="." index="2" unique_id=1484925388]
+visible = false
+
 [node name="Muzzle" parent="." index="3" unique_id=1704985833]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61876166, 0, 0.42655057)
 
 [node name="Muzzle2" type="Marker3D" parent="." index="4" unique_id=185332975]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6292937, 0, 0.42655057)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="5" unique_id=78228707]
+transform = Transform3D(0.37500003, 0, 0, 0, -1.6391771e-08, 0.37500003, 0, -0.37500003, -1.6391771e-08, -0.0010955147, -0.035269175, -1.0875059)
+mesh = SubResource("CylinderMesh_mqkr7")

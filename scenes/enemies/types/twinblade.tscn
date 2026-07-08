@@ -2,9 +2,56 @@
 
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_kxqoi"]
 [ext_resource type="PackedScene" uid="uid://dhnwqprlfj6w7" path="res://assets/enemies/twinblade/twinblade_model.tscn" id="2_vxmaa"]
+[ext_resource type="Shader" uid="uid://luwc3n46o4pd" path="res://assets/shaders/jet_engine.gdshader" id="3_vxmaa"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8n3fc"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yetqb"]
+noise = SubResource("FastNoiseLite_8n3fc")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0qro2"]
+render_priority = 0
+shader = ExtResource("3_vxmaa")
+shader_parameter/model_height = 1.2
+shader_parameter/dissolve_start = 0.001
+shader_parameter/dissolve_length = 0.610000028975
+shader_parameter/gradient_bias = 0.5220000215351199
+shader_parameter/noise_speed = 1.0
+shader_parameter/noise_strength = -0.435
+shader_parameter/stretch_factor = 0.6
+shader_parameter/noise_direction = Vector2(0, -1)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_yetqb")
+shader_parameter/color = Color(0, 0, 1, 1)
+shader_parameter/power_factor = 2.0
+shader_parameter/fresnel_factor = 2.0
+shader_parameter/fresnel_amplification = 1.0
+shader_parameter/fresnel_power = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_587u4"]
+material = SubResource("ShaderMaterial_0qro2")
+top_radius = 0.0
+height = 5.0
+rings = 0
+cap_top = false
+cap_bottom = false
 
 [node name="twinblade" unique_id=1897743314 instance=ExtResource("1_kxqoi")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 armor = 8
 
 [node name="Meshy_AI_Azure_Voyager_0703084733_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1371960032 instance=ExtResource("2_vxmaa")]
+
+[node name="CollisionShape3D" parent="." index="1" unique_id=324662688]
+visible = false
+
+[node name="VisibleOnScreenNotifier3D" parent="." index="2" unique_id=1484925388]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="4" unique_id=1915907440]
+transform = Transform3D(0.37499994, 0, 0, 0, -1.6391771e-08, 0.37499994, 0, -0.37499994, -1.6391771e-08, -0.2703481, 0.0015201076, -0.97476405)
+mesh = SubResource("CylinderMesh_587u4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="5" unique_id=1995059203]
+transform = Transform3D(0.37499994, 0, 0, 0, -1.6391771e-08, 0.37499994, 0, -0.37499994, -1.6391771e-08, 0.27153546, 0.0015201076, -0.97476405)
+mesh = SubResource("CylinderMesh_587u4")

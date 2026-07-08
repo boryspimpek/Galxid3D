@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c1wct2h0tua1o"]
+
+[ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_q4dxd"]
+[ext_resource type="Script" uid="uid://bs5humyuxa5j2" path="res://scripts/resources/enemies/weapons/BurstEnemyWeaponData.gd" id="2_2mb42"]
+[ext_resource type="PackedScene" uid="uid://b3xflm6g63f22" path="res://assets/cannon/simple canon/simple_canon_model.tscn" id="2_u7c6i"]
+[ext_resource type="Script" uid="uid://cr2knbmonx42w" path="res://scenes/enemies/base/facing/FacePlayer.gd" id="4_2mb42"]
+
+[sub_resource type="Resource" id="Resource_xt0n3"]
+script = ExtResource("2_2mb42")
+burst_count = 10
+fire_rate = 1.5
+initial_fire_delay = 3.0
+projectile_velocity = Vector3(0, 0, 10)
+aim = 10
+metadata/_custom_type_script = "uid://bs5humyuxa5j2"
+
+[node name="simple_cannon" unique_id=1897743314 instance=ExtResource("1_q4dxd")]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, 0)
+weapon_data = SubResource("Resource_xt0n3")
+
+[node name="Meshy_AI_Chromatic_Nozzle_0708100700_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1450167519 instance=ExtResource("2_u7c6i")]
+
+[node name="Muzzle" parent="." index="3" unique_id=1704985833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.92466944)
+
+[node name="Facing" type="Node3D" parent="." index="4" unique_id=43415484]
+script = ExtResource("4_2mb42")

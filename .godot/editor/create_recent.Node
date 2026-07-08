@@ -1,3 +1,6 @@
+EnemyPathFollow
+EnemyPath3D
+EnemyFacing
 MeshInstance3D
 Node3D
 VisibleOnScreenNotifier3D
@@ -7,8 +10,5 @@ Area3D
 MultiMeshInstance3D
 LevelScroll3D
 FacePlayer
-EnemyPathFollow
-EnemyPath3D
 DelayedFacePlayer
 AnimationPlayer
-PathFollow3D

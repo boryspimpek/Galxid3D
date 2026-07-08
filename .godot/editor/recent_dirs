@@ -1,3 +1,5 @@
+res://scenes/enemies/types/
+res://assets/shaders/
 res://scenes/projectile/
 res://
 res://assets/stations/
@@ -9,7 +11,6 @@ res://assets/stations/station03/
 res://assets/stations/station02/
 res://assets/stations/station05/
 res://scenes/enemies/formations/
-res://scenes/enemies/types/
 res://assets/enemies/avatar2/
 res://assets/enemies/avatar1/
 res://assets/enemies/vanguard/
@@ -18,7 +19,5 @@ res://assets/enemies/toy/
 res://assets/enemies/striker/
 res://assets/enemies/rocketer/
 res://assets/enemies/protector/
-res://assets/enemies/hank/
-res://assets/enemies/guardian/
 C:/Users/borys/Desktop/
 C:/Program Files/Java/jdk-26.0.1/bin/

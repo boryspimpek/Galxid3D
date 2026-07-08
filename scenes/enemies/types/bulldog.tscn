@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://coe2iryjehfxm" path="res://assets/enemies/bulldog/bulldog_model.tscn" id="2_qoyld"]
 [ext_resource type="Script" uid="uid://dtprhja8af0to" path="res://scripts/resources/enemies/movement/LinearMoveData.gd" id="3_t12dc"]
 [ext_resource type="PackedScene" uid="uid://dp6fn641cy82u" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/impact/vfx_impact_01.tscn" id="4_wfpjj"]
+[ext_resource type="Shader" uid="uid://luwc3n46o4pd" path="res://assets/shaders/jet_engine.gdshader" id="6_t12dc"]
 
 [sub_resource type="Resource" id="Resource_t12dc"]
 script = ExtResource("2_04xar")
@@ -19,6 +20,39 @@ metadata/_custom_type_script = "uid://62asvta6vqik"
 script = ExtResource("3_t12dc")
 metadata/_custom_type_script = "uid://dtprhja8af0to"
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_t12dc"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wfpjj"]
+noise = SubResource("FastNoiseLite_t12dc")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wfpjj"]
+render_priority = 0
+shader = ExtResource("6_t12dc")
+shader_parameter/model_height = 1.2
+shader_parameter/dissolve_start = 0.001
+shader_parameter/dissolve_length = 0.610000028975
+shader_parameter/gradient_bias = 0.5220000215351199
+shader_parameter/noise_speed = 1.0
+shader_parameter/noise_strength = -0.435
+shader_parameter/stretch_factor = 0.6
+shader_parameter/noise_direction = Vector2(0, -1)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_wfpjj")
+shader_parameter/color = Color(1, 1, 0, 1)
+shader_parameter/power_factor = 2.0
+shader_parameter/fresnel_factor = 2.0
+shader_parameter/fresnel_amplification = 1.0
+shader_parameter/fresnel_power = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3xtg6"]
+material = SubResource("ShaderMaterial_wfpjj")
+top_radius = 0.0
+bottom_radius = 0.83
+height = 5.0
+rings = 0
+cap_top = false
+cap_bottom = false
+
 [node name="bulldog" unique_id=1897743314 instance=ExtResource("1_wt7by")]
 transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 armor = 10
@@ -31,9 +65,17 @@ hit_effect_scene = ExtResource("4_wfpjj")
 
 [node name="CollisionShape3D" parent="." index="1" unique_id=324662688]
 transform = Transform3D(1.9106855e-15, 4.3711402e-08, 1.0000002, 1.0000002, -4.3711402e-08, 0, 4.3711402e-08, 1.0000002, -4.3711402e-08, 2.9827472e-09, -2.9827472e-09, 0.06823729)
+visible = false
+
+[node name="VisibleOnScreenNotifier3D" parent="." index="2" unique_id=1484925388]
+visible = false
 
 [node name="Muzzle" parent="." index="3" unique_id=1704985833]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -0.43612146, 0, 0.6052299)
 
 [node name="Muzzle2" type="Marker3D" parent="." index="4" unique_id=558783719]
 transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0.42722112, 0, 0.6052299)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="5" unique_id=587425981]
+transform = Transform3D(0.37500003, 0, 0, 0, -1.6391771e-08, 0.37500003, 0, -0.37500003, -1.6391771e-08, -0.0010955147, -0.035269175, -0.79432446)
+mesh = SubResource("CylinderMesh_3xtg6")

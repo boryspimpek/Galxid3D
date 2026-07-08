@@ -13,10 +13,13 @@ grow_amount = 0.01
 next_pass = SubResource("StandardMaterial3D_0e5ha")
 diffuse_mode = 3
 specular_mode = 1
+disable_ambient_light = true
 albedo_texture = ExtResource("2_crfef")
-metallic = 0.04
-metallic_specular = 0.0
-roughness = 0.0
+metallic = 0.45
+metallic_specular = 0.55
+roughness = 0.4
+clearcoat_enabled = true
+clearcoat_roughness = 1.0
 
 [node name="Meshy_AI_Rainbow_Starfighter_0703084727_texture" unique_id=1524853600 instance=ExtResource("1_72kbj")]
 layers = 16

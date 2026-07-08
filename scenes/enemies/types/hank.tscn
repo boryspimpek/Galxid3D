@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_56jh4"]
 [ext_resource type="PackedScene" uid="uid://iy8ueg1om5rv" path="res://assets/enemies/hank/hank_model.tscn" id="2_a28lh"]
 [ext_resource type="Script" uid="uid://bs5humyuxa5j2" path="res://scripts/resources/enemies/weapons/BurstEnemyWeaponData.gd" id="2_p4y1l"]
+[ext_resource type="Shader" uid="uid://luwc3n46o4pd" path="res://assets/shaders/jet_engine.gdshader" id="4_p4y1l"]
 
 [sub_resource type="Resource" id="Resource_iq8ng"]
 script = ExtResource("2_p4y1l")
@@ -12,6 +13,39 @@ fire_rate = 1.0
 projectile_velocity = Vector3(0, 0, 3)
 metadata/_custom_type_script = "uid://bs5humyuxa5j2"
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_iq8ng"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_k8kp8"]
+noise = SubResource("FastNoiseLite_iq8ng")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fgqrh"]
+render_priority = 0
+shader = ExtResource("4_p4y1l")
+shader_parameter/model_height = 2.0
+shader_parameter/dissolve_start = 0.001
+shader_parameter/dissolve_length = 0.610000028975
+shader_parameter/gradient_bias = 0.5220000215351199
+shader_parameter/noise_speed = 1.0
+shader_parameter/noise_strength = -0.435
+shader_parameter/stretch_factor = 0.6
+shader_parameter/noise_direction = Vector2(0, -1)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_k8kp8")
+shader_parameter/color = Color(0, 0, 1, 1)
+shader_parameter/power_factor = 2.0
+shader_parameter/fresnel_factor = 2.0
+shader_parameter/fresnel_amplification = 1.0
+shader_parameter/fresnel_power = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_al4d5"]
+material = SubResource("ShaderMaterial_fgqrh")
+top_radius = 0.0
+bottom_radius = 0.65
+height = 5.0
+rings = 0
+cap_top = false
+cap_bottom = false
+
 [node name="hank" unique_id=1897743314 instance=ExtResource("1_56jh4")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 armor = 20
@@ -20,5 +54,19 @@ value = 5
 
 [node name="Meshy_AI_Emerald_Starfighter_0703084718_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=831271934 instance=ExtResource("2_a28lh")]
 
+[node name="CollisionShape3D" parent="." index="1" unique_id=324662688]
+visible = false
+
+[node name="VisibleOnScreenNotifier3D" parent="." index="2" unique_id=1484925388]
+visible = false
+
 [node name="Muzzle" parent="." index="3" unique_id=1704985833]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, -0.24553113, 0.91633475)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="4" unique_id=680875652]
+transform = Transform3D(0.37499994, 0, 0, 0, -1.6391771e-08, 0.37499994, 0, -0.37499994, -1.6391771e-08, -0.3533532, -0.045725293, -1.1664273)
+mesh = SubResource("CylinderMesh_al4d5")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="5" unique_id=454135195]
+transform = Transform3D(0.37499994, 0, 0, 0, -1.6391771e-08, 0.37499994, 0, -0.37499994, -1.6391771e-08, 0.35557705, -0.045725293, -1.1664273)
+mesh = SubResource("CylinderMesh_al4d5")

@@ -191,10 +191,10 @@ script = ExtResource("3_83kqy")
 [node name="hank" parent="Path3D15/PathFollow3D" unique_id=1320496088 instance=ExtResource("2_yrdlw")]
 
 [node name="hawk" parent="." unique_id=1067629342 instance=ExtResource("5_83kqy")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10.926342, 0, -121.09899)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 10.926342, 0, -121.09899)
 
 [node name="hawk2" parent="." unique_id=1396232869 instance=ExtResource("5_83kqy")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 31.957432, 0, -131.36096)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 31.957432, 0, -131.36096)
 
 [node name="Formation" parent="." unique_id=1730415998 instance=ExtResource("6_amssh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11539459, 0, -97.05165)

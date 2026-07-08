@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dtprhja8af0to" path="res://scripts/resources/enemies/movement/LinearMoveData.gd" id="3_rlt0p"]
 [ext_resource type="PackedScene" uid="uid://s6dwn56csbw1" path="res://assets/BinbunVFX_Vol2/ExplosionFX/effects/nuke/vfx_nuke_explosion_01.tscn" id="3_vnjca"]
 [ext_resource type="Script" uid="uid://cr2knbmonx42w" path="res://scenes/enemies/base/facing/FacePlayer.gd" id="5_vnjca"]
+[ext_resource type="Shader" uid="uid://luwc3n46o4pd" path="res://assets/shaders/jet_engine.gdshader" id="7_mh636"]
 
 [sub_resource type="Resource" id="Resource_aja6t"]
 script = ExtResource("2_rlt0p")
@@ -19,8 +20,41 @@ script = ExtResource("3_rlt0p")
 zmove = 1.5
 metadata/_custom_type_script = "uid://dtprhja8af0to"
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_aja6t"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ejegc"]
+noise = SubResource("FastNoiseLite_aja6t")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jxap2"]
+render_priority = 0
+shader = ExtResource("7_mh636")
+shader_parameter/model_height = 2.335
+shader_parameter/dissolve_start = 0.0
+shader_parameter/dissolve_length = 0.6000000285
+shader_parameter/gradient_bias = 0.5520000229601201
+shader_parameter/noise_speed = 1.0
+shader_parameter/noise_strength = -0.435
+shader_parameter/stretch_factor = 0.6
+shader_parameter/noise_direction = Vector2(0, -1)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ejegc")
+shader_parameter/color = Color(0, 1, 1, 1)
+shader_parameter/power_factor = 2.0
+shader_parameter/fresnel_factor = 2.0
+shader_parameter/fresnel_amplification = 1.0
+shader_parameter/fresnel_power = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wv8g0"]
+material = SubResource("ShaderMaterial_jxap2")
+top_radius = 0.0
+bottom_radius = 1.0
+height = 5.0
+rings = 0
+cap_top = false
+cap_bottom = false
+
 [node name="hawk" unique_id=1897743314 instance=ExtResource("1_sd1qh")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
 armor = 30
 weapon_data = SubResource("Resource_aja6t")
 movement_data = SubResource("Resource_rlt0p")
@@ -38,3 +72,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1139103, 0, 0.6066782)
 
 [node name="Facing" type="Node3D" parent="." index="5" unique_id=2029072942]
 script = ExtResource("5_vnjca")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="6" unique_id=1138712048]
+transform = Transform3D(0.3750001, 0, 0, 0, -1.6391771e-08, 0.3750001, 0, -0.3750001, -1.6391771e-08, -0.31897125, 0.25987518, -1.853755)
+mesh = SubResource("CylinderMesh_wv8g0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="7" unique_id=667554177]
+transform = Transform3D(0.3750001, 0, 0, 0, -1.6391771e-08, 0.3750001, 0, -0.3750001, -1.6391771e-08, 0.32865152, 0.25987518, -1.853755)
+mesh = SubResource("CylinderMesh_wv8g0")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." index="8" unique_id=1034302152]
+transform = Transform3D(0.3750001, 0, 0, 0, -1.6391771e-08, 0.3750001, 0, -0.3750001, -1.6391771e-08, -0.31897125, -0.24233425, -1.853755)
+mesh = SubResource("CylinderMesh_wv8g0")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." index="9" unique_id=637420343]
+transform = Transform3D(0.3750001, 0, 0, 0, -1.6391771e-08, 0.3750001, 0, -0.3750001, -1.6391771e-08, 0.32865152, -0.24233425, -1.853755)
+mesh = SubResource("CylinderMesh_wv8g0")

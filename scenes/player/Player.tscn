@@ -4,10 +4,43 @@
 [ext_resource type="Script" uid="uid://7u5n3csl0xpc" path="res://scenes/player/DamageSystem.gd" id="2_524rm"]
 [ext_resource type="PackedScene" uid="uid://dbwkjkyvor653" path="res://blaze2_model.tscn" id="2_tpg5x"]
 [ext_resource type="Script" uid="uid://b00wb11f44ov" path="res://scenes/player/WeaponSystem.gd" id="3_tpg5x"]
+[ext_resource type="Shader" uid="uid://luwc3n46o4pd" path="res://assets/shaders/jet_engine.gdshader" id="5_tpg5x"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wr5hl"]
 radius = 0.38623047
 height = 1.8703613
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tpg5x"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_c3xxp"]
+noise = SubResource("FastNoiseLite_tpg5x")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c3xxp"]
+render_priority = 0
+shader = ExtResource("5_tpg5x")
+shader_parameter/model_height = 5.0
+shader_parameter/dissolve_start = 0.001
+shader_parameter/dissolve_length = 1.0
+shader_parameter/gradient_bias = 0.5220000215351199
+shader_parameter/noise_speed = 1.0
+shader_parameter/noise_strength = -0.435
+shader_parameter/stretch_factor = 0.6
+shader_parameter/noise_direction = Vector2(0, -1)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_c3xxp")
+shader_parameter/color = Color(0, 0.47058824, 1, 1)
+shader_parameter/power_factor = 2.0
+shader_parameter/fresnel_factor = 2.0
+shader_parameter/fresnel_amplification = 1.0
+shader_parameter/fresnel_power = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_npwbq"]
+material = SubResource("ShaderMaterial_c3xxp")
+top_radius = 0.0
+height = 5.0
+rings = 0
+cap_top = false
+cap_bottom = false
 
 [node name="Player" type="CharacterBody3D" unique_id=1811810025]
 transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
@@ -27,9 +60,11 @@ dodge_duration = 0.5
 dodge_cooldown = 0.2
 
 [node name="Blaze" parent="." unique_id=1568008591 instance=ExtResource("2_tpg5x")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1950378145]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.1)
+visible = false
 shape = SubResource("CapsuleShape3D_wr5hl")
 
 [node name="DamageSystem" type="Node" parent="." unique_id=404747008]
@@ -44,3 +79,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.8827091)
 [node name="Muzzle2" type="Marker3D" parent="." unique_id=2118624562]
 
 [node name="MuzzleMiddle" type="Marker3D" parent="." unique_id=437035532]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1676635647]
+transform = Transform3D(0.375, 0, 0, 0, -1.639177e-08, -0.375, 0, 0.375, -1.639177e-08, -0.274773, -0.051174376, 2.0629482)
+mesh = SubResource("CylinderMesh_npwbq")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=2144682191]
+transform = Transform3D(0.375, 0, 0, 0, -1.639177e-08, -0.375, 0, 0.375, -1.639177e-08, 0.28900638, -0.051174376, 2.0629482)
+mesh = SubResource("CylinderMesh_npwbq")

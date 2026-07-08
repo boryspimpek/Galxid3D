@@ -3,23 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://b7jeucyrtdem0" path="res://assets/enemies/arrow/Meshy_AI_Skullfire_Colossus_0630104021_texture.glb" id="1_kse17"]
 [ext_resource type="Texture2D" uid="uid://obat26h3q7rs" path="res://assets/enemies/arrow/Meshy_AI_Skullfire_Colossus_0630104021_texture_0.jpg" id="2_kse17"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0gsc"]
-cull_mode = 1
-albedo_color = Color(0, 0, 0, 1)
-grow = true
-grow_amount = 0.01
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2o537"]
-next_pass = SubResource("StandardMaterial3D_d0gsc")
 diffuse_mode = 3
 specular_mode = 1
-disable_ambient_light = true
 albedo_texture = ExtResource("2_kse17")
-metallic = 0.3
-metallic_specular = 0.0
-roughness = 0.0
+metallic = 0.26
+metallic_specular = 1.0
+roughness = 0.07
 clearcoat_enabled = true
-clearcoat_roughness = 0.0
 
 [node name="arrow" unique_id=1182223721 instance=ExtResource("1_kse17")]
 layers = 16

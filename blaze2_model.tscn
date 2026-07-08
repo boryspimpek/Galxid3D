@@ -1,6 +1,26 @@
 [gd_scene format=3 uid="uid://dbwkjkyvor653"]
 
 [ext_resource type="PackedScene" uid="uid://dcs6thoancqxa" path="res://assets/enemies/blaze/blaze2/Meshy_AI_Emerald_Void_Intercep_0707094557_texture.glb" id="1_cx0k2"]
+[ext_resource type="Texture2D" uid="uid://b5n1qdf7wji7b" path="res://assets/enemies/blaze/blaze2/Meshy_AI_Emerald_Void_Intercep_0707094557_texture_0.jpg" id="2_14g1t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_14g1t"]
+cull_mode = 1
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ueisq"]
+next_pass = SubResource("StandardMaterial3D_14g1t")
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+albedo_texture = ExtResource("2_14g1t")
+metallic = 0.46
+roughness = 0.4
+normal_enabled = true
+normal_scale = 16.0
+clearcoat_enabled = true
+clearcoat_roughness = 1.0
 
 [node name="Meshy_AI_Emerald_Void_Intercep_0707094557_texture" unique_id=625533971 instance=ExtResource("1_cx0k2")]
 layers = 16
@@ -8,3 +28,4 @@ layers = 16
 [node name="Mesh" parent="." index="0" unique_id=106352127]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 layers = 16
+surface_material_override/0 = SubResource("StandardMaterial3D_ueisq")

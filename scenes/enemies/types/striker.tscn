@@ -2,6 +2,40 @@
 
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_aypmb"]
 [ext_resource type="PackedScene" uid="uid://cvu3wbwmtadui" path="res://assets/enemies/striker/striker_model.tscn" id="2_2vxm4"]
+[ext_resource type="Shader" uid="uid://luwc3n46o4pd" path="res://assets/shaders/jet_engine.gdshader" id="3_2vxm4"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_w4ywh"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_s1v0w"]
+noise = SubResource("FastNoiseLite_w4ywh")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8rheo"]
+render_priority = 0
+shader = ExtResource("3_2vxm4")
+shader_parameter/model_height = 1.94
+shader_parameter/dissolve_start = 0.001
+shader_parameter/dissolve_length = 0.610000028975
+shader_parameter/gradient_bias = 0.5220000215351199
+shader_parameter/noise_speed = 1.0
+shader_parameter/noise_strength = -0.435
+shader_parameter/stretch_factor = 0.6
+shader_parameter/noise_direction = Vector2(0, -1)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_s1v0w")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/power_factor = 2.0
+shader_parameter/fresnel_factor = 2.0
+shader_parameter/fresnel_amplification = 1.0
+shader_parameter/fresnel_power = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_gpxok"]
+material = SubResource("ShaderMaterial_8rheo")
+top_radius = 0.0
+bottom_radius = 0.9
+height = 5.0
+rings = 0
+cap_top = false
+cap_bottom = false
 
 [node name="striker" unique_id=1897743314 instance=ExtResource("1_aypmb")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
@@ -9,5 +43,19 @@ value = 0
 
 [node name="Meshy_AI_Blue_Orange_Toy_Space_0703084701_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=394875078 instance=ExtResource("2_2vxm4")]
 
+[node name="CollisionShape3D" parent="." index="1" unique_id=324662688]
+visible = false
+
+[node name="VisibleOnScreenNotifier3D" parent="." index="2" unique_id=1484925388]
+visible = false
+
 [node name="Muzzle" parent="." index="3" unique_id=1704985833]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.76028746)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="4" unique_id=258405982]
+transform = Transform3D(0.37500003, 0, 0, 0, -1.6391771e-08, 0.37500003, 0, -0.37500003, -1.6391771e-08, -0.24577291, 0.017080365, -1.1521064)
+mesh = SubResource("CylinderMesh_gpxok")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="5" unique_id=936070496]
+transform = Transform3D(0.37500003, 0, 0, 0, -1.6391771e-08, 0.37500003, 0, -0.37500003, -1.6391771e-08, 0.24713014, 0.017080365, -1.1521064)
+mesh = SubResource("CylinderMesh_gpxok")

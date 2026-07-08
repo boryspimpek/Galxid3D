@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_hmch0"]
 [ext_resource type="PackedScene" uid="uid://bvvxj5buown16" path="res://assets/enemies/protector/protector_model.tscn" id="2_2c46q"]
 [ext_resource type="Script" uid="uid://eo6qejm2h6hl" path="res://scripts/resources/enemies/weapons/EnemyWeaponData.gd" id="2_eb1c4"]
+[ext_resource type="Shader" uid="uid://luwc3n46o4pd" path="res://assets/shaders/jet_engine.gdshader" id="4_eb1c4"]
 
 [sub_resource type="Resource" id="Resource_7ntlt"]
 script = ExtResource("2_eb1c4")
@@ -12,6 +13,39 @@ projectile_velocity = Vector3(0, 0, 10)
 aim = 10
 metadata/_custom_type_script = "uid://eo6qejm2h6hl"
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_eb1c4"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7ntlt"]
+noise = SubResource("FastNoiseLite_eb1c4")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_smw12"]
+render_priority = 0
+shader = ExtResource("4_eb1c4")
+shader_parameter/model_height = 1.9300000000000002
+shader_parameter/dissolve_start = 0.001
+shader_parameter/dissolve_length = 0.610000028975
+shader_parameter/gradient_bias = 0.5220000215351199
+shader_parameter/noise_speed = 1.0
+shader_parameter/noise_strength = -0.435
+shader_parameter/stretch_factor = 0.6
+shader_parameter/noise_direction = Vector2(0, -1)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_7ntlt")
+shader_parameter/color = Color(1, 1, 0, 1)
+shader_parameter/power_factor = 2.0
+shader_parameter/fresnel_factor = 2.0
+shader_parameter/fresnel_amplification = 1.0
+shader_parameter/fresnel_power = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_53flr"]
+material = SubResource("ShaderMaterial_smw12")
+top_radius = 0.0
+bottom_radius = 0.75
+height = 5.0
+rings = 0
+cap_top = false
+cap_bottom = false
+
 [node name="protector" unique_id=1897743314 instance=ExtResource("1_hmch0")]
 transform = Transform3D(1.5, 0, 0, 0, 1.4488888, 0.38822857, 0, -0.38822857, 1.4488888, 0, 0, 0)
 armor = 10
@@ -19,3 +53,17 @@ weapon_data = SubResource("Resource_7ntlt")
 value = 3
 
 [node name="Meshy_AI_Blue_Comet_Jet_0703091204_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=2002685 instance=ExtResource("2_2c46q")]
+
+[node name="CollisionShape3D" parent="." index="1" unique_id=324662688]
+visible = false
+
+[node name="VisibleOnScreenNotifier3D" parent="." index="2" unique_id=1484925388]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="4" unique_id=1729866019]
+transform = Transform3D(0.3750001, 0, 0, 0, -7.450581e-09, 0.37500033, 0, -0.37500033, -7.450581e-09, -0.44254646, 0.2151557, -0.98587656)
+mesh = SubResource("CylinderMesh_53flr")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="5" unique_id=113103142]
+transform = Transform3D(0.3750001, 0, 0, 0, -7.450581e-09, 0.37500036, 0, -0.37500036, -7.450581e-09, 0.44569105, 0.2151557, -0.98587656)
+mesh = SubResource("CylinderMesh_53flr")
