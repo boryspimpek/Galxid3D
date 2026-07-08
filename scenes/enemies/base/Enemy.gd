@@ -7,6 +7,8 @@ extends Area3D
 @export var weapon_data: EnemyWeaponData
 @export var hit_sound: int = 3
 @export var explosion_sound: int = 9
+## Opcjonalny "master" — gdy wskazany wróg zginie, ten wróg ginie razem z nim.
+@export var die_with: NodePath
 
 @export_group("Movement")
 @export var movement_data: MovementData
@@ -41,6 +43,7 @@ var _scroll_activation_ready: bool = false
 
 signal combat_activated
 signal combat_deactivated
+signal died
 
 
 func _ready() -> void:
@@ -64,6 +67,8 @@ func _ready() -> void:
 	if _screen_notifier:
 		_screen_notifier.visible = true
 		_screen_notifier.screen_exited.connect(_on_screen_exited)
+
+	_setup_death_link()
 
 	set_physics_process(true)
 	if activate_on_scroll_line:
@@ -130,7 +135,20 @@ func take_damage(amount: int, hit_world_position: Variant = null, is_special: bo
 		die()
 
 
+## Łączy się z sygnałem `died` mastera (die_with) — referencja przeżywa
+## późniejsze reparentowanie PathFollow3D przy aktywacji.
+func _setup_death_link() -> void:
+	if die_with.is_empty():
+		return
+	var master_enemy := get_node_or_null(die_with)
+	if master_enemy == null or not master_enemy.has_signal("died"):
+		push_warning("%s: die_with nie wskazuje na wroga z sygnałem 'died'." % name)
+		return
+	master_enemy.died.connect(die, CONNECT_ONE_SHOT)
+
+
 func die() -> void:
+	died.emit()
 	HitComboManager.register_kill()
 	var player := get_tree().get_first_node_in_group("player")
 	if player and player.has_method("add_power_from_kill"):

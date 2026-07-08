@@ -6,8 +6,6 @@
 [ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemies/base/EnemyPath3D.gd" id="5_cai3x"]
 [ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemies/base/EnemyPathFollow.gd" id="6_jyjfp"]
 [ext_resource type="PackedScene" uid="uid://c185raa5p20gw" path="res://scenes/enemies/types/protector.tscn" id="7_lfkyf"]
-[ext_resource type="PackedScene" uid="uid://ccivqisb7t18b" path="res://scenes/enemies/formations/striker formations/striker1.tscn" id="10_cai3x"]
-[ext_resource type="PackedScene" uid="uid://bncfbdv7kbrhj" path="res://scenes/enemies/formations/striker formations/striker2.tscn" id="11_jyjfp"]
 [ext_resource type="PackedScene" uid="uid://c27vcaqyrgpdf" path="res://scenes/enemies/formations/avatar_1_formation1.tscn" id="13_jyjfp"]
 [ext_resource type="PackedScene" uid="uid://dd21l172sp65r" path="res://scenes/enemies/formations/arrow formations/formation2.tscn" id="13_lfkyf"]
 [ext_resource type="PackedScene" uid="uid://cxxn6qt34vm4t" path="res://scenes/enemies/formations/avatar_1_formation2.tscn" id="14_03ua2"]
@@ -49,11 +47,11 @@ z_min = -200.0
 z_max = 0.0
 
 [node name="hawk3" parent="." unique_id=1897743314 instance=ExtResource("3_kpwlq")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 6.1546335, 0, -60.935883)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 25.511555, 0, -60.935883)
 movement_data = SubResource("Resource_lrdry")
 
 [node name="hawk4" parent="." unique_id=1755697315 instance=ExtResource("3_kpwlq")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 14.644957, 0, -100.540886)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 10.146521, 0, -84.910225)
 movement_data = SubResource("Resource_lrdry")
 
 [node name="Path3D" type="Path3D" parent="." unique_id=966650770]
@@ -88,17 +86,11 @@ script = ExtResource("6_jyjfp")
 
 [node name="protector" parent="Path3D2/PathFollow3D" unique_id=97888846 instance=ExtResource("7_lfkyf")]
 
-[node name="striker formation5" parent="." unique_id=1476844903 instance=ExtResource("10_cai3x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8627396, 0, -124.56401)
-
-[node name="striker formation6" parent="." unique_id=97827646 instance=ExtResource("11_jyjfp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8252754, 0, -115.31385)
-
 [node name="avatar_1_formation1" parent="." unique_id=892321208 instance=ExtResource("13_jyjfp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0838757, 0, -196.49149)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0838757, 0, -172.06488)
 
 [node name="Formation" parent="." unique_id=1782404031 instance=ExtResource("14_03ua2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3477345, 0, -137.39279)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3477345, 0, -112.96618)
 
 [node name="protector" type="Node3D" parent="." unique_id=261957712]
 
@@ -248,4 +240,4 @@ script = ExtResource("6_jyjfp")
 transform = Transform3D(1.5, 0, 0, 0, 1.4488888, 0.38822857, 0, -0.38822857, 1.4488888, 6.7155914, 0, 0.1434381)
 
 [node name="Formation3" parent="." unique_id=1616195707 instance=ExtResource("13_lfkyf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.473465, 0, -196.84052)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.473465, 0, -157.99037)

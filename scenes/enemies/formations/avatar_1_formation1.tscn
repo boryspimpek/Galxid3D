@@ -43,6 +43,7 @@ script = ExtResource("2_jfaha")
 
 [node name="simple_cannon" parent="Path/PathFollow3D2" unique_id=533235820 instance=ExtResource("4_btxtt")]
 transform = Transform3D(0.45, -3.1244673e-23, -1.4551915e-11, 0, 0.45, -9.662029e-13, 1.4551915e-11, 9.662029e-13, 0.45, 0, 0.49420607, -1.9550323e-05)
+die_with = NodePath("../../PathFollow3D/avatar1")
 
 [node name="PlayAreaFrame" parent="." unique_id=616916982 instance=ExtResource("5_ht36s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.084358, 0, 11.418688)
