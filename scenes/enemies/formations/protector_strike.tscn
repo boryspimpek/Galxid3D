@@ -43,19 +43,20 @@ point_count = 4
 
 [node name="LevelScrollRuler" parent="." unique_id=335323414 instance=ExtResource("1_nbddf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.922722, 0, 11.467625)
+visible = false
 z_min = -200.0
 z_max = 0.0
 
 [node name="hawk3" parent="." unique_id=1897743314 instance=ExtResource("3_kpwlq")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 25.511555, 0, -60.935883)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 25.511555, 0, -32.419777)
 movement_data = SubResource("Resource_lrdry")
 
 [node name="hawk4" parent="." unique_id=1755697315 instance=ExtResource("3_kpwlq")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 10.146521, 0, -84.910225)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 10.146521, 0, -56.39412)
 movement_data = SubResource("Resource_lrdry")
 
 [node name="Path3D" type="Path3D" parent="." unique_id=966650770]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.113327, 0, -66.64189)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.113327, 0, -38.125786)
 curve = SubResource("Curve3D_yg45b")
 script = ExtResource("5_cai3x")
 speed = 8.0
@@ -71,7 +72,7 @@ script = ExtResource("6_jyjfp")
 [node name="protector" parent="Path3D/PathFollow3D" unique_id=350049906 instance=ExtResource("7_lfkyf")]
 
 [node name="Path3D2" type="Path3D" parent="." unique_id=1046467007]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.903145, 0, -81.80323)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.903145, 0, -53.287125)
 curve = SubResource("Curve3D_yg45b")
 script = ExtResource("5_cai3x")
 speed = 8.0
@@ -86,16 +87,16 @@ script = ExtResource("6_jyjfp")
 
 [node name="protector" parent="Path3D2/PathFollow3D" unique_id=97888846 instance=ExtResource("7_lfkyf")]
 
-[node name="avatar_1_formation1" parent="." unique_id=892321208 instance=ExtResource("13_jyjfp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0838757, 0, -172.06488)
+[node name="avatar_1" parent="." unique_id=892321208 instance=ExtResource("13_jyjfp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0838757, 0, -143.54877)
 
-[node name="Formation" parent="." unique_id=1782404031 instance=ExtResource("14_03ua2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3477345, 0, -112.96618)
+[node name="avatar_12" parent="." unique_id=1782404031 instance=ExtResource("14_03ua2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3477345, 0, -84.45007)
 
 [node name="protector" type="Node3D" parent="." unique_id=261957712]
 
 [node name="Path3D5" type="Path3D" parent="protector" unique_id=1975361674]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.00916, 0, -14.075581)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.00916, 0, 14.440525)
 curve = SubResource("Curve3D_yg45b")
 script = ExtResource("5_cai3x")
 speed = 8.0
@@ -111,7 +112,7 @@ script = ExtResource("6_jyjfp")
 [node name="protector" parent="protector/Path3D5/PathFollow3D" unique_id=759264947 instance=ExtResource("7_lfkyf")]
 
 [node name="Path3D6" type="Path3D" parent="protector" unique_id=1034663086]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.365772, 0, -46.16541)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.365772, 0, -17.649303)
 curve = SubResource("Curve3D_yg45b")
 script = ExtResource("5_cai3x")
 speed = 8.0
@@ -127,7 +128,7 @@ script = ExtResource("6_jyjfp")
 [node name="protector" parent="protector/Path3D6/PathFollow3D" unique_id=1699494082 instance=ExtResource("7_lfkyf")]
 
 [node name="Path3D7" type="Path3D" parent="protector" unique_id=1025278300]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.04408, 0, -57.33938)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.04408, 0, -28.823273)
 curve = SubResource("Curve3D_yg45b")
 script = ExtResource("5_cai3x")
 speed = 8.0
@@ -143,7 +144,7 @@ script = ExtResource("6_jyjfp")
 [node name="protector" parent="protector/Path3D7/PathFollow3D" unique_id=584073756 instance=ExtResource("7_lfkyf")]
 
 [node name="Path3D9" type="Path3D" parent="protector" unique_id=1832152077]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.459044, 0, -17.761173)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.459044, 0, 10.754932)
 curve = SubResource("Curve3D_coi4e")
 script = ExtResource("5_cai3x")
 speed = 8.0
@@ -159,7 +160,7 @@ script = ExtResource("6_jyjfp")
 [node name="protector" parent="protector/Path3D9/PathFollow3D" unique_id=1624493730 instance=ExtResource("7_lfkyf")]
 
 [node name="Path3D12" type="Path3D" parent="protector" unique_id=225333379]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.773958, 0, -27.040958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.773958, 0, 1.4751472)
 curve = SubResource("Curve3D_coi4e")
 script = ExtResource("5_cai3x")
 speed = 8.0
@@ -175,7 +176,7 @@ script = ExtResource("6_jyjfp")
 [node name="protector" parent="protector/Path3D12/PathFollow3D" unique_id=1188285981 instance=ExtResource("7_lfkyf")]
 
 [node name="Path3D13" type="Path3D" parent="protector" unique_id=196131076]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.934805, 0, -55.59835)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.934805, 0, -27.082245)
 curve = SubResource("Curve3D_coi4e")
 script = ExtResource("5_cai3x")
 speed = 8.0
@@ -191,7 +192,7 @@ script = ExtResource("6_jyjfp")
 [node name="protector" parent="protector/Path3D13/PathFollow3D" unique_id=769171366 instance=ExtResource("7_lfkyf")]
 
 [node name="Path3D10" type="Path3D" parent="protector" unique_id=761205440]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.365772, 0, -30.409595)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.365772, 0, -1.8934898)
 curve = SubResource("Curve3D_yg45b")
 script = ExtResource("5_cai3x")
 speed = 8.0
@@ -207,7 +208,7 @@ script = ExtResource("6_jyjfp")
 [node name="protector" parent="protector/Path3D10/PathFollow3D" unique_id=125204188 instance=ExtResource("7_lfkyf")]
 
 [node name="Path3D15" type="Path3D" parent="protector" unique_id=164745377]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.934805, 0, -39.842533)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.934805, 0, -11.326427)
 curve = SubResource("Curve3D_coi4e")
 script = ExtResource("5_cai3x")
 speed = 8.0
@@ -223,7 +224,7 @@ script = ExtResource("6_jyjfp")
 [node name="protector" parent="protector/Path3D15/PathFollow3D" unique_id=1576462076 instance=ExtResource("7_lfkyf")]
 
 [node name="Path3D14" type="Path3D" parent="protector" unique_id=89631032]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2215805, 0, -74.63656)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2215805, 0, -46.120453)
 curve = SubResource("Curve3D_coi4e")
 script = ExtResource("5_cai3x")
 speed = 8.0
@@ -240,4 +241,4 @@ script = ExtResource("6_jyjfp")
 transform = Transform3D(1.5, 0, 0, 0, 1.4488888, 0.38822857, 0, -0.38822857, 1.4488888, 6.7155914, 0, 0.1434381)
 
 [node name="Formation3" parent="." unique_id=1616195707 instance=ExtResource("13_lfkyf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.473465, 0, -157.99037)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.473465, 0, -129.47427)

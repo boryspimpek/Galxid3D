@@ -48,7 +48,7 @@ cap_bottom = false
 
 [node name="hank" unique_id=1897743314 instance=ExtResource("1_56jh4")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
-armor = 20
+armor = 15
 weapon_data = SubResource("Resource_iq8ng")
 value = 5
 

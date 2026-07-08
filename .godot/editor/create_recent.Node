@@ -1,4 +1,5 @@
 Node3D
+Node
 EnemyPathFollow
 EnemyPath3D
 EnemyFacing
@@ -11,4 +12,3 @@ MultiMeshInstance3D
 LevelScroll3D
 FacePlayer
 DelayedFacePlayer
-AnimationPlayer

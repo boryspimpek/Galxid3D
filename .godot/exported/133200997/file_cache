@@ -1,19 +1,18 @@
 res://data/generators/generator_001.tres::7badfb991585fb85a28bf1a455901a38::1781772998::res://.godot/exported/133200997/export-6025116d1604a218c62e0d17d3ddcebf-generator_001.res
 res://data/generators/generator_002.tres::1e6722af33caa40598468f1c6ad30b5a::1781772379::res://.godot/exported/133200997/export-576663c33f018df8c1c150430dae9e95-generator_002.res
-res://data/generators/generator_003.tres::4e150937dc49d13ac89c04a70f551245::1781772379::res://.godot/exported/133200997/export-a93c5c0a8a47df886122e875f5f1d7ac-generator_003.res
-res://data/generators/generator_004.tres::f5556e8051ba784eacaef20557e726d7::1781774528::res://.godot/exported/133200997/export-73ee339e70f5f606a5fefd2ca4120b76-generator_004.res
+res://data/generators/generator_003.tres::fac44add2fbf524c35a999fd7be96b32::1783093606::res://.godot/exported/133200997/export-a93c5c0a8a47df886122e875f5f1d7ac-generator_003.res
+res://data/generators/generator_004.tres::3c2bfab0bd241021e5f679a042905347::1783091227::res://.godot/exported/133200997/export-73ee339e70f5f606a5fefd2ca4120b76-generator_004.res
 res://data/ships/ship_001.tres::bdd3e6f863067b37ba6cf4b49017b743::1781772948::res://.godot/exported/133200997/export-80be45240b9b99d80669c7600a2f8b1a-ship_001.res
 res://data/ships/ship_002.tres::d0c3547a3b024225c1772a3cd43e510a::1781772998::res://.godot/exported/133200997/export-e84ba840365ae94e98f6c3c6ac36ed98-ship_002.res
-res://data/ships/ship_003.tres::7226b399f4855aa4c7a70dd8aee7ee25::1781772999::res://.godot/exported/133200997/export-32325b357344187376245ab16a6988db-ship_003.res
-res://data/ships/ship_004.tres::37572e29f61e5c0de4df58ec1cbe2562::1781772999::res://.godot/exported/133200997/export-756b7b9a0ff66a6240fb15dad3ee771d-ship_004.res
-res://data/weapons/weapon_1.tres::28adc5b8978db00ededaa4b7bb2bdbab::1781780252::res://.godot/exported/133200997/export-9a607e99d06b6945c347a1a2fa4cdd1c-weapon_1.res
-res://scenes/enemy_projectile/EnemyProjectile.tscn::3d996e6d60d5cc32d482039d731d813d::1781527135::res://.godot/exported/133200997/export-9a1129f3dc6a9276c1498149693e8b72-EnemyProjectile.scn
-res://scenes/player/Player.tscn::b9732242d0e82508f44b3e3d69df3716::1781773428::res://.godot/exported/133200997/export-a4e9bb150591131ae307f440fab940ce-Player.scn
+res://data/ships/ship_003.tres::ebedf2e6bf3751bcb9da777143786894::1782999753::res://.godot/exported/133200997/export-32325b357344187376245ab16a6988db-ship_003.res
+res://data/ships/ship_004.tres::2024f1027f677cd4bb352dd02c4c8caa::1783011196::res://.godot/exported/133200997/export-756b7b9a0ff66a6240fb15dad3ee771d-ship_004.res
+res://scenes/enemy_projectile/EnemyProjectile.tscn::3f72c9ca229be074648c11f9b5de738e::1783450272::res://.godot/exported/133200997/export-9a1129f3dc6a9276c1498149693e8b72-EnemyProjectile.scn
+res://scenes/player/Player.tscn::ee519a123afc950b348f91e28cd8f98a::1783502802::res://.godot/exported/133200997/export-a4e9bb150591131ae307f440fab940ce-Player.scn
 res://default_bus_layout.tres::b86178f342a004aa846553e9151b2ab6::1780403827::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
 res://scenes/debug/PlayAreaFrame.tscn::0c6c76a0316fc3965a9d54da332feca3::1781521416::res://.godot/exported/133200997/export-60f130f43cd0a34daf493c6300271137-PlayAreaFrame.scn
-res://scenes/planets/earth.tscn::f695b3e7ed1d1045a826580ce2803912::1781632325::res://.godot/exported/133200997/export-7bcc3330e5ae06f8cac6b604e27535fe-earth.scn
+res://scenes/planets/earth.tscn::2cf617b35178d3d8258f21d772f9ec97::1783253331::res://.godot/exported/133200997/export-7bcc3330e5ae06f8cac6b604e27535fe-earth.scn
 res://scenes/debug/LevelScrollRuler.tscn::baadd8b0e75397de0d45163b175e6242::1781521418::res://.godot/exported/133200997/export-1aff1a6b87ec0f04014eb9e4a36dc494-LevelScrollRuler.scn
-res://scenes/ui/Hud.tscn::ba68f1ebf77a7a4da3fa84512c76d74b::1781773430::res://.godot/exported/133200997/export-238d2d95588b0f33aac9dbb4f6518388-Hud.scn
+res://scenes/ui/Hud.tscn::779627d44aeb69f121fd0b1482ca33fd::1783180346::res://.godot/exported/133200997/export-238d2d95588b0f33aac9dbb4f6518388-Hud.scn
 res://scenes/world/NoiseBackground.tscn::63e39fd98420a837aae16b37c1f74fc5::1781045562::res://.godot/exported/133200997/export-b8c5c4260ccaa8be4871c5777cff7bff-NoiseBackground.scn
 res://assets/BinbunVFX/loot_effects/effects/floating/loot_vfx_common.tscn::f7a5c288e19be9c6974ef5849e7ebecd::1780949664::res://.godot/exported/133200997/export-a0f741b60ecb01db69f9c83f84abd293-loot_vfx_common.scn
 res://assets/BinbunVFX/loot_effects/effects/floating/loot_vfx_epic.tscn::87cd228fcd95e9208390c3315fd1d6f0::1780949664::res://.godot/exported/133200997/export-82e0c92c41fe4e7b150c3db7b46e56d9-loot_vfx_epic.scn
@@ -107,7 +106,7 @@ res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_01/flash_01_
 res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_01/flash_01_side.tres::5d4608877cedf9af613abfd2f7440136::1780949631::res://.godot/exported/133200997/export-0bc654d93fbf708df5f0cd6b39667cb3-flash_01_side.res
 res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_01/short_01_glow.tres::1cc29af947555d1e8b6dcd786e41957f::1780949624::res://.godot/exported/133200997/export-20467358ea67c5b15d9d7956bb929a0e-short_01_glow.res
 res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_01/wide_01_front.tres::a9c12d9ebc7ed72c2fc25e655ad3072c::1780949631::res://.godot/exported/133200997/export-65e20b5355f2f6e997f6cc6412730dd4-wide_01_front.res
-res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_01/wide_01_glow.tres::c2a77530ac80f0efcc2b474349bd3ac7::1780949624::res://.godot/exported/133200997/export-35eb8e637ee0f5f7e835ecaae4c0dd5c-wide_01_glow.res
+res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_01/wide_01_glow.tres::c2a77530ac80f0efcc2b474349bd3ac7::1782736943::res://.godot/exported/133200997/export-35eb8e637ee0f5f7e835ecaae4c0dd5c-wide_01_glow.res
 res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_02/flash_02_front.tres::4ec4209cdf541bd55e3fe28de9a66fb0::1780949631::res://.godot/exported/133200997/export-46ec160da2ebc8ee8ac3a54782e8bf13-flash_02_front.res
 res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_02/flash_02_glow.tres::58cb90d40c73e8158ebf49341dffdf27::1780949624::res://.godot/exported/133200997/export-852385602828568766e708d8deaa0245-flash_02_glow.res
 res://assets/BinbunVFX/muzzle_flash/src/material/muzzle_flash/flash_02/flash_02_long.tres::a75b6500c27f6cab36ba38b9fe0487ff::1780949631::res://.godot/exported/133200997/export-27a7f354dbf0999dee3eb50e3d834717-flash_02_long.res
@@ -209,44 +208,110 @@ res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/impact/vfx_impact_01.tscn::cc0
 res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/impact/vfx_impact_02.tscn::dea05d538fa130554a8c910cf8a69237::1780948580::res://.godot/exported/133200997/export-61ee8a2d5ad4117393355e3f0871447a-vfx_impact_02.scn
 res://assets/BinbunVFX_Vol2/StylizedHitFX/stylized_hit_vfx_scene_free.tscn::74b754b44317c53b52384ca2b9d45c5b::1780948249::res://.godot/exported/133200997/export-5f3029613cd14e2d034285f5d177a203-stylized_hit_vfx_scene_free.scn
 res://assets/ElectricDischargeVFX/electric_discharge_3d.tscn::ee6e0a4cda8968baf42f2e06074dad46::1781180436::res://.godot/exported/133200997/export-02669c87a3c258d9f73124f0ebb31a98-electric_discharge_3d.scn
-res://scenes/pickup/Pickup.tscn::f8f74523e10a88fd55cfa196ec6ac159::1781527137::res://.godot/exported/133200997/export-4b26a83f0f9638714a7790dea5926732-Pickup.scn
-res://scenes/player/blaze_model.tscn::5ee48a50a3599754c4981ba7cc474c4f::1781633306::res://.godot/exported/133200997/export-d57de2ee9ca0a4a40adc95229701c36d-blaze_model.scn
+res://scenes/pickup/Pickup.tscn::d32ed3c66c33cb9c38c5c85478528924::1783273727::res://.godot/exported/133200997/export-4b26a83f0f9638714a7790dea5926732-Pickup.scn
 res://scenes/ui/DamagePopup.tscn::f07d77f4a1158f6c7d9bd732aedd2afc::1781199473::res://.godot/exported/133200997/export-f1d3cd6d58dca4570a7ed43f679386e8-DamagePopup.scn
-res://assets/enemies/blaze/blaze2/blaze_2_model.tscn::770753cc4ab7af3a3d143cb9aa41dea2::1781371686::res://.godot/exported/133200997/export-4e8c96888fa635a828c51e8bd30a28a6-blaze_2_model.scn
-res://assets/enemies/blaze/blaze3/blaze_3_model.tscn::d93314d5411962151a35b4cbc182800f::1781371685::res://.godot/exported/133200997/export-10417f3539688fdbc44f3a60ad5250a1-blaze_3_model.scn
-res://assets/enemies/blaze/blaze4/blaze_4_model.tscn::9f08bf43f877c510bf9620220e8feb18::1781371684::res://.godot/exported/133200997/export-0386835407b1a62233e0390f5c53395c-blaze_4_model.scn
-res://assets/enemies/blaze/blaze5/blaze_5_model.tscn::0955d2eb64cdad1616309650931e5a08::1781371681::res://.godot/exported/133200997/export-c01eaf8756b73a43357c60e2e0a24573-blaze_5_model.scn
-res://assets/enemies/satelite1/satelite_model.tscn::d01fc08983550f1401b9eb17059768b3::1781045562::res://.godot/exported/133200997/export-5b4cf7a5bbf64a836e87fc2ae647ad13-satelite_model.scn
-res://assets/enemies/starfighter/starfighter_model.tscn::029742f49e98357ccc4ed9a7cb0a6264::1781371393::res://.godot/exported/133200997/export-980e13076f08aa649c0523b0ca600098-starfighter_model.scn
-res://assets/enemies/voyager/voyager_model.tscn::cea1b469e991731ea152f61ad59d0fd9::1781446506::res://.godot/exported/133200997/export-e8baa2b4e440de400fd116af0b3d75b7-voyager_model.scn
+res://assets/enemies/starfighter/starfighter_model.tscn::92d9a3c067c7bdc2cd8651eb97b32655::1782846178::res://.godot/exported/133200997/export-980e13076f08aa649c0523b0ca600098-starfighter_model.scn
+res://assets/enemies/voyager/voyager_model.tscn::26343a165e038cc5a93f62a50dd73eac::1782815774::res://.godot/exported/133200997/export-e8baa2b4e440de400fd116af0b3d75b7-voyager_model.scn
 res://scenes/planets/sun.tscn::175bbfc54372d1bebc33bce11932f1b6::1781439471::res://.godot/exported/133200997/export-b1f770e5dbdbc6d7e32ae230776b8e02-sun.scn
-res://assets/enemies/satelite2/satellite_2_model.tscn::87ae2e3708b292d14caefde680e07659::1781518460::res://.godot/exported/133200997/export-fa94b5b8eda12286b65d2b1daf02c73f-satellite_2_model.scn
-res://data/play_area/default.tres::d2849f7dfa439ea471f2f837e7a833b2::1781623821::res://.godot/exported/133200997/export-e78178ba38e7d08f113ab9d412c09708-default.res
+res://data/play_area/default.tres::a1719d89533bf85b4c93e6f3bdcecbc5::1783510173::res://.godot/exported/133200997/export-e78178ba38e7d08f113ab9d412c09708-default.res
 res://scenes/asteroids/asteroids.tscn::f98cd27d5cd8c2f741033139d0ca0868::1781630374::res://.godot/exported/133200997/export-be401fdeb4fe02430e038f79c078fe76-asteroids.scn
-res://scenes/asteroids/asteroid_material.tres::6f03bad3cdd77b060d4959cf0de6e727::1781632079::res://.godot/exported/133200997/export-0d643f49c9c6955faa0d3af1cec61fe8-asteroid_material.res
-res://scenes/enemies/base/Enemy.tscn::4af6b77d6080ba92a7542a05ba30c470::1781529128::res://.godot/exported/133200997/export-340b6c02f22ce731acd14aca34f05856-Enemy.scn
-res://scenes/enemies/formations/formation1.tscn::bfbf9e320c573ea729b7db8731493087::1781781833::res://.godot/exported/133200997/export-835c7ff5165a2beb379c134fb0661148-formation1.scn
-res://scenes/enemies/formations/formation2.tscn::b38ae6d562d527830daf1017d6b1a8df::1781784063::res://.godot/exported/133200997/export-3a8674767132b64cf924524113cf42ab-formation2.scn
-res://scenes/enemies/formations/formation3.tscn::357fe3bfd18f834adf68ed01dee52a6b::1781782128::res://.godot/exported/133200997/export-34108b22667d2b05b7f7508815acb8c9-formation3.scn
-res://scenes/enemies/formations/formation4.tscn::27a732cac6bb86b12f00a541339cb816::1781782204::res://.godot/exported/133200997/export-230f7cd1e8d073d0cf185d8ea1ed18bf-formation4.scn
-res://scenes/enemies/formations/formation5.tscn::389b294847cd8057a2f8452159fbbeef::1781782535::res://.godot/exported/133200997/export-fcc0992d8cf8a1481c1354875a7b806a-formation5.scn
-res://scenes/enemies/formations/formation6.tscn::031aff352d2854cf050ba9ce71560412::1781784407::res://.godot/exported/133200997/export-180a48fc170d9f651c81856f555d8921-formation6.scn
-res://scenes/enemies/formations/formation7.tscn::991e681adb0ed0c853fdc1c843316bd3::1781783909::res://.godot/exported/133200997/export-a369f8002c942ed46c88487e1add2a89-formation7.scn
-res://scenes/enemies/formations/formation8.tscn::22b50e4c16f52bc1055d2de6ff49e6a6::1781783870::res://.godot/exported/133200997/export-555b93e965fa3c26b142c8a59e2078da-formation8.scn
-res://scenes/enemies/formations/formation9.tscn::93aca83a3742a09c991b9c5b6d4e5ef2::1781782366::res://.godot/exported/133200997/export-fd48558493b9e004ef56fda02bbae548-formation9.scn
-res://scenes/enemies/formations/starfighter_strike1.tscn::2c1c87049e23a9de3d8c51a631ff9224::1781778309::res://.godot/exported/133200997/export-8aeb56cf01e43952b0d547d5937b1a1c-starfighter_strike1.scn
-res://scenes/enemies/types/blaze_2.tscn::76290fb28bdc0b3c356da93eb23b87cc::1781721027::res://.godot/exported/133200997/export-4c5088e80c4b04d1ec8f018279a597cf-blaze_2.scn
-res://scenes/enemies/types/blaze_3.tscn::b2b2954b2a7b0f03af44249cfd1e022f::1781721027::res://.godot/exported/133200997/export-949a85ffbb1b918308afcef683dff908-blaze_3.scn
-res://scenes/enemies/types/blaze_4.tscn::0c5edfd6e7429fe84f944617c2f71d47::1781721027::res://.godot/exported/133200997/export-f26079639cff7c59e4d4b890ff825d3a-blaze_4.scn
-res://scenes/enemies/types/blaze_5.tscn::5dd19d71ad890df13ef7e134a1ad92e8::1781721027::res://.godot/exported/133200997/export-b1a8561bfa59fa75da7f57595affc1fc-blaze_5.scn
-res://scenes/enemies/types/satellite.tscn::4fe471a0dd2da34f193898b2170b7894::1781522024::res://.godot/exported/133200997/export-33f569de18e3bdd55bf53c2d337af5e8-satellite.scn
-res://scenes/enemies/types/satellite_2.tscn::8a5de1434b83d5f25ea3c8663235e912::1781522025::res://.godot/exported/133200997/export-59d8fdd977d2197ce56adfc88eda5b82-satellite_2.scn
-res://scenes/enemies/types/starfighter.tscn::1ce87c5df39c5f8ca45f3d87a172f80b::1781777686::res://.godot/exported/133200997/export-9c9c6079297ca265b1c52002771cfd67-starfighter.scn
-res://scenes/enemies/types/voyager.tscn::9fce9b6fe057a4aeec2233ec057b691e::1781618056::res://.godot/exported/133200997/export-cddae5e3d737fb504833df0424e655da-voyager.scn
+res://scenes/asteroids/asteroid_material.tres::6f03bad3cdd77b060d4959cf0de6e727::1782838048::res://.godot/exported/133200997/export-0d643f49c9c6955faa0d3af1cec61fe8-asteroid_material.res
+res://scenes/enemies/base/Enemy.tscn::9202f2f31d5f0043c00e691d4700a825::1783251312::res://.godot/exported/133200997/export-340b6c02f22ce731acd14aca34f05856-Enemy.scn
+res://scenes/enemies/types/satellite.tscn::d0fb4b9c7465743971c00e64bb516061::1783273890::res://.godot/exported/133200997/export-33f569de18e3bdd55bf53c2d337af5e8-satellite.scn
+res://scenes/enemies/types/voyager.tscn::73503f9d20635084dd091c67a4df323a::1783150949::res://.godot/exported/133200997/export-cddae5e3d737fb504833df0424e655da-voyager.scn
 res://scenes/projectile/power_1.tscn::d7616c545f2a4105395192285eaaa2ad::1781701024::res://.godot/exported/133200997/export-e06d5c421a13d3ab5ffa105dd1b62bcf-power_1.scn
 res://scenes/projectile/power_2.tscn::f7eac6d51d78db8929465b2dc77d23a3::1781707283::res://.godot/exported/133200997/export-c38cd193351ccf52463139689db1ffb1-power_2.scn
-res://scenes/projectile/power_3.tscn::f7e94015d3edd263f6f50f6da0458cab::1781707370::res://.godot/exported/133200997/export-95b8251c43465705f6525d08544f7d4a-power_3.scn
+res://scenes/projectile/power_3.tscn::f7e94015d3edd263f6f50f6da0458cab::1782997029::res://.godot/exported/133200997/export-95b8251c43465705f6525d08544f7d4a-power_3.scn
 res://scenes/projectile/power_4.tscn::741f0f035bcff91c8bddbc5a3ae4a2a8::1781714282::res://.godot/exported/133200997/export-80728e7687ff875805c95b84afc1c338-power_4.scn
-res://scenes/projectile/projectile_1.tscn::0d92acdeb175627b633f69af9c656112::1781705360::res://.godot/exported/133200997/export-625e2de1f8264b5a2f6f17d3d1aca145-projectile_1.scn
-res://main.tscn::61b93d795c73fc1ea2b6351edc663b63::1781785829::res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn
-res://data/data_catalog.tres::e609dbc18b76a826ccd1d03f0df11909::1781785829::res://.godot/exported/133200997/export-10ec6142f0b190ab30d3818359789bc4-data_catalog.res
+res://scenes/projectile/projectile_1.tscn::0d92acdeb175627b633f69af9c656112::1782995571::res://.godot/exported/133200997/export-625e2de1f8264b5a2f6f17d3d1aca145-projectile_1.scn
+res://main.tscn::a94e039257072247efce86fb25c11451::1783526193::res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn
+res://data/data_catalog.tres::b730a26895546322e33430860e99c682::1783427689::res://.godot/exported/133200997/export-10ec6142f0b190ab30d3818359789bc4-data_catalog.res
+res://assets/cannon/simple canon/simple_canon_model.tscn::a67ebf2f876b63a7027cd96eecd85439::1783509362::res://.godot/exported/133200997/export-7535cd7c7a3257e123accbc7c158874b-simple_canon_model.scn
+res://assets/enemies/arrow/arrow_model.tscn::6c895cc8ac925b9d67a0872e4dbc6232::1783451064::res://.godot/exported/133200997/export-aee955adb2b434f3a7718a28d7ef98fe-arrow_model.scn
+res://assets/enemies/avatar1/avatar1_model.tscn::393e5977835a5227bf5d7662eee3281e::1783350497::res://.godot/exported/133200997/export-1c566b1a0dcad54d7aa4f0dbe228dd30-avatar1_model.scn
+res://assets/enemies/avatar2/avatar2_model.tscn::1659a4ee37ef193df5d25a1ed53501cb::1783350369::res://.godot/exported/133200997/export-62b8fad8c0292b21ff23044a9a87ceb1-avatar2_model.scn
+res://assets/enemies/bulldog/bulldog_model.tscn::775825d45feabb6f5694d3613fd2deb8::1783451158::res://.godot/exported/133200997/export-6ce766bdb74c6c2788920f5806decc00-bulldog_model.scn
+res://assets/enemies/cyclon/cyclon_model.tscn::4dafbc8f1e33e69997876e6bf3ce70d6::1783069822::res://.godot/exported/133200997/export-2f5a16a23701262fbab7e342ee4c7549-cyclon_model.scn
+res://assets/enemies/devastator/devastator_model.tscn::1e97b313bca71486809d3077bb2b1138::1783167943::res://.godot/exported/133200997/export-9d2dda4b594ebac4a6935b098faadb06-devastator_model.scn
+res://assets/enemies/dreadnought/dreadnought_model.tscn::bd47948c4a80d2b2ce41b1fecb5b2b03::1783448444::res://.godot/exported/133200997/export-811296f8552ff19b486064371e604de7-dreadnought_model.scn
+res://assets/enemies/guardian/guardian_model.tscn::22ebbd6de8e03665059147d9e8c2f8b0::1783072185::res://.godot/exported/133200997/export-d2e7eb5f193db5019a5ee7db305633e2-guardian_model.scn
+res://assets/enemies/hank/hank_model.tscn::75ba4df89fc21c751c332e778e5c0b1b::1783074556::res://.godot/exported/133200997/export-7cb3f888e610713e2081e301019710ea-hank_model.scn
+res://assets/enemies/hawk/hawk_model.tscn::4244635bd5dc8a806a074b712d6273c9::1782845854::res://.godot/exported/133200997/export-48ddeac9daa37f694296b62d9076b279-hawk_model.scn
+res://assets/enemies/protector/protector_model.tscn::35f13996a96283443970b345dfbb4bd3::1783072683::res://.godot/exported/133200997/export-7a0aa33ad56241660a0720524f9db8f6-protector_model.scn
+res://assets/enemies/rocketer/rocketer_model.tscn::037a2d1d95c58429efaf6cbaae6c5c6e::1783353100::res://.godot/exported/133200997/export-4d8ba6c5d6cbbc30f3d48d01469fd39d-rocketer_model.scn
+res://assets/enemies/satellite/satellite_model.tscn::939a6480f8b2501935ad5919dde53511::1783010689::res://.godot/exported/133200997/export-e55c64f48a7bbdb9de4891df619ed713-satellite_model.scn
+res://assets/enemies/striker/striker_model.tscn::edc871e0f95143da2418065ec53b809d::1783353554::res://.godot/exported/133200997/export-46322507f9d35b6b36e5456a3e23c676-striker_model.scn
+res://assets/enemies/toy/toy_model.tscn::02a651b17c881f8afccf2e5d29c66384::1783354311::res://.godot/exported/133200997/export-ad5b12b7078000323870ab68262be2a8-toy_model.scn
+res://assets/enemies/twinblade/twinblade_model.tscn::b6a73884c91c3b2e2ed0157a533177b0::1783354005::res://.godot/exported/133200997/export-2e526da2119fd00f76e396922926cf53-twinblade_model.scn
+res://assets/enemies/vanguard/vanguard_model.tscn::d71a26dca5b340a078e123bfecd69b22::1783255813::res://.godot/exported/133200997/export-f536e73b9512ab954cea61c25e2ee80f-vanguard_model.scn
+res://assets/projectiles/3d model/missle_model.tscn::7f9a417c64903968fb5b030a9a8849d5::1783422516::res://.godot/exported/133200997/export-b90c427710ae8db8055a6d3e150c4273-missle_model.scn
+res://assets/sidekicks/golden core/golden_core_model.tscn::3ca50223fc5cec8a46edd7de92c2c60a::1782989054::res://.godot/exported/133200997/export-8b4a987ee49e70673bc88c708ad307b0-golden_core_model.scn
+res://assets/sidekicks/golden core/green_core_model.tscn::7798a3e8d799149d2ee3f6119aa573ba::1782993385::res://.godot/exported/133200997/export-731d7631dd15838bae3ec1b3bd8b1ecc-green_core_model.scn
+res://assets/stations/station01/station_01_model.tscn::44df36d21b8c0088fe25e1f4df787f94::1783339350::res://.godot/exported/133200997/export-47e5a33172b76af5a601dab842a0635f-station_01_model.scn
+res://assets/stations/station02/station_02_model.tscn::09ccb6dc6b2c7c7976b7649f1dbc3ede::1783272985::res://.godot/exported/133200997/export-2e379cfee54f2fa20914321a538e6c07-station_02_model.scn
+res://assets/stations/station03/station_03_model.tscn::792a5b12cf2870a151902bba70d427f0::1783263872::res://.godot/exported/133200997/export-0a7a3764e32f820d4579e985d0e6e97f-station_03_model.scn
+res://assets/stations/station05/station_05_model.tscn::1cfc8e35d83da23e56fbe83559232f34::1783432887::res://.godot/exported/133200997/export-2f1112b0325a3ec128066b9299e84fd9-station_05_model.scn
+res://assets/stations/station06/station_06_model.tscn::cea628660fac60fb8dd4aed79269075b::1783263918::res://.godot/exported/133200997/export-81085aae993aafc06845c5930ba328c4-station_06_model.scn
+res://assets/stations/fighter_752_model.tscn::0e0b71eb65b95230acfeb9ba5a2758c3::1783417396::res://.godot/exported/133200997/export-deccbbd1542104b3c7434e17a4cf4386-fighter_752_model.scn
+res://data/sidekicks/golden_core.tres::5cde0f5ff4575b979a9f18989178afef::1782994209::res://.godot/exported/133200997/export-0d9d55fa64a9218faa15a4178942ea23-golden_core.res
+res://data/sidekicks/green_core.tres::8a16453408b79558b45d4a91e560a5d0::1782994300::res://.godot/exported/133200997/export-7adb90ebc6d7380bdd7109da8ea390ea-green_core.res
+res://data/weapons/front_1.tres::9311534193be5aab3856de172bf97831::1783427987::res://.godot/exported/133200997/export-8925c2b78e3051e7c161828055ccb92b-front_1.res
+res://data/weapons/middle_1.tres::3d561aab437a95ed88d11465e1225914::1783428686::res://.godot/exported/133200997/export-2d77c80e26d08f3b96b1dbf985d85b78-middle_1.res
+res://data/weapons/rear_1.tres::54d917bd308f2121a867ad23341e631c::1783427834::res://.godot/exported/133200997/export-31b9d4ba3f421b3a1970925385cab3dc-rear_1.res
+res://data/weapons/sidekick_left.tres::ba231c885b3c03d3cce63b600c67e29e::1783425392::res://.godot/exported/133200997/export-02309ab7052397d3d53cd2f27d9c8a2b-sidekick_left.res
+res://data/weapons/sidekick_right.tres::5f6deb5c048b54015e0e4e9b1ef4b172::1783425392::res://.godot/exported/133200997/export-c87eecce706e602dd0074699c08bd271-sidekick_right.res
+res://scenes/enemies/formations/arrow formations/formation1.tscn::3c486c36bf9d340af282045eda1b4aa5::1782816769::res://.godot/exported/133200997/export-dbf56a242c0e6802ac70390c7c38cac0-formation1.scn
+res://scenes/enemies/formations/arrow formations/formation2.tscn::49762b6e5c1e80455602e99401563b0c::1782817277::res://.godot/exported/133200997/export-9f17dca8d61401196751fb9ebb5a2fae-formation2.scn
+res://scenes/enemies/formations/arrow formations/formation3.tscn::2e7dd9ae3f021ab0094ab45a668246e5::1782828507::res://.godot/exported/133200997/export-627528f9b46bf046173451cb111cb839-formation3.scn
+res://scenes/enemies/formations/arrow formations/formation4.tscn::cd20ffbc88df980047eb4d49071d7bea::1783247341::res://.godot/exported/133200997/export-2930430bf3c8fc267ae55e76c8c0700b-formation4.scn
+res://scenes/enemies/formations/arrow formations/formation5.tscn::4ffe7d4e4422b90d57cd6bf8047fde65::1783008365::res://.godot/exported/133200997/export-5e1d6aa0b4799ae073956504cd640694-formation5.scn
+res://scenes/enemies/formations/arrow formations/formation6.tscn::41649f632a4f94771a2d1de21be81a76::1782828332::res://.godot/exported/133200997/export-3a082816a16bc24744edd20393879e73-formation6.scn
+res://scenes/enemies/formations/arrow formations/formation7.tscn::b47f80a3d72e4fa91d86f6b55666ce42::1782828572::res://.godot/exported/133200997/export-dee2733973867ce8c47df6085bbe59e2-formation7.scn
+res://scenes/enemies/formations/arrow formations/formation8.tscn::a1ef9e200ab8225daae1ba3f832beda6::1782828264::res://.godot/exported/133200997/export-c8b92727305538bc415350e83d447a52-formation8.scn
+res://scenes/enemies/formations/arrow formations/formation9.tscn::ad503e786f2c999668b0746117d2353a::1783155151::res://.godot/exported/133200997/export-fb0c75a3a8477d65434acb0eb06cc908-formation9.scn
+res://scenes/enemies/formations/arrow formations/formation10.tscn::bad303af6680b66c76cb381f7c2c1d68::1782828665::res://.godot/exported/133200997/export-f0d99aa3d67d06b485df853679e7b353-formation10.scn
+res://scenes/enemies/formations/arrow formations/formation11.tscn::eebee251a3aa6cc7b3fd81cddb0649af::1782828735::res://.godot/exported/133200997/export-612d7a4ab864d957edc9fec2af6b1e08-formation11.scn
+res://scenes/enemies/formations/arrow formations/formation12.tscn::1ca7b015c2e42ac9c3e407a941f175c4::1782828920::res://.godot/exported/133200997/export-a4543be196912644babc873ef67e000f-formation12.scn
+res://scenes/enemies/formations/arrow formations/formation13.tscn::8e67fdad59b87d943b32bae35b5b98f1::1782828804::res://.godot/exported/133200997/export-6f2aca7444cca62e9091e0fa388e6c01-formation13.scn
+res://scenes/enemies/formations/arrow formations/formation14.tscn::a3db5c9e97a1288b440ff3824d40ccf8::1782828832::res://.godot/exported/133200997/export-0c3ed7d74f7ca9248d1dc677af445c23-formation14.scn
+res://scenes/enemies/formations/arrow formations/formation15.tscn::c007e6c91d68cb94a87cb04a9900dcdd::1783014520::res://.godot/exported/133200997/export-7e74683a95f3cee13f4d74baa79d99f9-formation15.scn
+res://scenes/enemies/formations/striker formations/striker1.tscn::94e9137bb94629f8ff4e5fc306c4e8e3::1783431276::res://.godot/exported/133200997/export-cfab24ecc04d86596574e8d626b9efbc-striker1.scn
+res://scenes/enemies/formations/striker formations/striker2.tscn::23707ec3bd98f41ffdccac047c099a02::1783429837::res://.godot/exported/133200997/export-16ad2770a2c3473c4aeedde8e46f432d-striker2.scn
+res://scenes/enemies/formations/striker formations/striker3.tscn::7de8443923520f7499f189a8cdefa5a3::1783429744::res://.godot/exported/133200997/export-02be9594526f38bfd64911192d67b947-striker3.scn
+res://scenes/enemies/formations/striker formations/striker4.tscn::7ad65a4c6bc65953180ee64520217e50::1783430230::res://.godot/exported/133200997/export-29a696be4edd14c75ad4e2b87c731ce9-striker4.scn
+res://scenes/enemies/formations/striker formations/striker5.tscn::79badb861649091c5ddd7700419cb067::1783431431::res://.godot/exported/133200997/export-6f6bf00028bf1089ed2b03b8d4fe5d70-striker5.scn
+res://scenes/enemies/formations/striker formations/striker6.tscn::d34576fb5b4cf4ab09c795c95b2f35ea::1783431472::res://.godot/exported/133200997/export-ba3c76cb7d8601efe1bf446185e481c2-striker6.scn
+res://scenes/enemies/formations/avatar_1_formation1.tscn::52ef2b90ff57c26d12c2405cc8c89df4::1783526111::res://.godot/exported/133200997/export-5787aff354a7c11684961d7dc99985ea-avatar_1_formation1.scn
+res://scenes/enemies/formations/avatar_1_formation2.tscn::0bac141d10e42f7b4265ef301e10080e::1783526101::res://.godot/exported/133200997/export-eea91e4e8c8a5e789d348b2d7f3375dc-avatar_1_formation2.scn
+res://scenes/enemies/formations/avatar_1_formation3.tscn::78fd933fe645ab4b59b699c6be9063bf::1783512338::res://.godot/exported/133200997/export-8e48f113a6b952d9255713c7b6757cf4-avatar_1_formation3.scn
+res://scenes/enemies/formations/begining.tscn::4b2a3d10ef57fc7e545febe558401c6a::1783526173::res://.godot/exported/133200997/export-162f2c7507a8b0e27d7a1dd81cfd2206-begining.scn
+res://scenes/enemies/formations/boss_devastator.tscn::d780ce9205e28d2fd385b7b36307d4ff::1783431437::res://.godot/exported/133200997/export-978b45ce0fa96a0b8381eebbcda894e6-boss_devastator.scn
+res://scenes/enemies/formations/hank_strike.tscn::32272d4cd3a65609bd31c85ff0c18d32::1783505013::res://.godot/exported/133200997/export-1706f75fcd9fd5c116cfa4b350ac7dca-hank_strike.scn
+res://scenes/enemies/formations/protector_strike.tscn::713d51b450e620c16394f3fda27abcee::1783526131::res://.godot/exported/133200997/export-12223c104cb7a048476a3ffa03cf60a9-protector_strike.scn
+res://scenes/enemies/formations/rocketer_strike.tscn::63920bf840c4e5e9d0eac7f0e3fd9586::1783514500::res://.godot/exported/133200997/export-21b43c5def46e337b8e45b0f601ec130-rocketer_strike.scn
+res://scenes/enemies/types/arrow.tscn::25a79ca2d813b4977baeba4106fccdbf::1783428686::res://.godot/exported/133200997/export-1fe06d2b1c7e501870bdfcc9c1e2706e-arrow.scn
+res://scenes/enemies/types/avatar2.tscn::89bde03aa2f9251b3dc230e696dbc662::1783448685::res://.godot/exported/133200997/export-93fa1f1b2ac03f5242dce646015f6668-avatar2.scn
+res://scenes/enemies/types/avatar_1.tscn::f272958884b4ffa1aab682d06c0e39b0::1783516406::res://.godot/exported/133200997/export-66a28307da7fe67a63c949fc432f7699-avatar_1.scn
+res://scenes/enemies/types/bulldog.tscn::3354a6ae119ce240fc0813992d2388ef::1783503526::res://.godot/exported/133200997/export-9a22ddb064ec4d35152a6e219df37cc1-bulldog.scn
+res://scenes/enemies/types/devastator.tscn::6b4b4f3758db3b681ec0cc27e8da304c::1783431692::res://.godot/exported/133200997/export-c21b8c01e7902c564d81780741a46598-devastator.scn
+res://scenes/enemies/types/hank.tscn::5d49e752635b3308bb260440fa0ba083::1783505163::res://.godot/exported/133200997/export-85e87d9232930530fc3c6a03d83975ed-hank.scn
+res://scenes/enemies/types/hawk.tscn::d505429ba0cf600197f91ef1cb316d6f::1783504664::res://.godot/exported/133200997/export-2d8c5d7afcc9675df7bb76313f0a04ab-hawk.scn
+res://scenes/enemies/types/protector.tscn::148ee9836ea9ac7c7f7548a0d271ffdd::1783504089::res://.godot/exported/133200997/export-53b7df9773f017c6df19ace8896e4932-protector.scn
+res://scenes/enemies/types/rocketer.tscn::1b5b722ecd68f40fe87617a1c9eac078::1783514487::res://.godot/exported/133200997/export-0d1979f40b3d060c3df3a3694cecd594-rocketer.scn
+res://scenes/enemies/types/simle_cannon.tscn::49cf05d707a14c63af4fe10d1336ec52::1783520926::res://.godot/exported/133200997/export-fc560d2549bb3a5ab848cca06ae4cc4d-simle_cannon.scn
+res://scenes/enemies/types/striker.tscn::7d0cbf2d8b68581a83e536119cbdc365::1783505145::res://.godot/exported/133200997/export-bbd657821f67dfebd16440bc606d12de-striker.scn
+res://scenes/enemies/types/twinblade.tscn::e8a8c994e07bd1f5432796a5fb0745d9::1783503622::res://.godot/exported/133200997/export-3b4381a0d18da66e83b9498cbf38521d-twinblade.scn
+res://scenes/player/Golden_core.tscn::2f087ce5caead0b37fbc2dd007090d12::1783095318::res://.godot/exported/133200997/export-623d556afa1c08120f827eba68d15e17-Golden_core.scn
+res://scenes/player/Green_core.tscn::1bcafdd5c1e55f097a462b59654cf600::1783178510::res://.godot/exported/133200997/export-7b386f0f3f9cfb8b10e4d740fc5ca5ee-Green_core.scn
+res://scenes/projectile/projectile_2.tscn::1963e8b5f26675af604b7b402768b060::1782997116::res://.godot/exported/133200997/export-d9c1f8692756fa2769aa9e07c10b95b2-projectile_2.scn
+res://scenes/projectile/projectile_3.tscn::f3c319526d23bcb4cb3dcd88b3cb3949::1783348697::res://.godot/exported/133200997/export-7fea12669a481ab54ccee0ada2c0c445-projectile_3.scn
+res://scenes/projectile/projectile_4.tscn::fa40de8dd98ede49edbd0d61115f462d::1782996332::res://.godot/exported/133200997/export-b94ad6f207c8ed2b157c80c2b034808a-projectile_4.scn
+res://scenes/projectile/projectile_5.tscn::42c04d900fb2ce2aec799ddba5ddd227::1783422758::res://.godot/exported/133200997/export-7b1789c7b911ff48db6148db60210977-projectile_5.scn
+res://scenes/stations/dreadnought.tscn::4d406d343966e960d1210c9ee66735fa::1783434085::res://.godot/exported/133200997/export-17f34aa77fed0d169e158e621f59c1d9-dreadnought.scn
+res://scenes/stations/fighter752.tscn::5e3b60973d465c62bb51a96aa79c1534::1783504528::res://.godot/exported/133200997/export-e56894325dc536f2d740730e7b656c25-fighter752.scn
+res://scenes/stations/station_0X.tscn::a93f40ae67ffd39a0d6e32bca9fd5168::1783343771::res://.godot/exported/133200997/export-3ca44d2103cac6df3a4c67d1cfbd2da8-station_0X.scn
+res://scenes/stations/station_01.tscn::7afd6c08470e9db4658e02c7db9554ed::1783447687::res://.godot/exported/133200997/export-9fa5b12ff2c81e959d5af3ae5bd7c300-station_01.scn
+res://scenes/stations/station_02.tscn::bd9faa417f9b85c6a31e004140a8783f::1783272923::res://.godot/exported/133200997/export-5db0b611549fcc7c6f9b04043e53b73a-station_02.scn
+res://scenes/stations/station_05.tscn::f8392d04028740e1858eecec74fbb37d::1783343168::res://.godot/exported/133200997/export-baaeafc80715905d5526674f5ed77483-station_05.scn
+res://blaze2_model.tscn::78a183c09077699a0b92e62bc49c697b::1783450725::res://.godot/exported/133200997/export-a327dff3e083c0b87c7c6d4bae9c9433-blaze2_model.scn
+res://test.tscn::70777788386e3b3c36f3fb506afba2f8::1783511810::res://.godot/exported/133200997/export-f0a4ea32b72b64218d23e48a955cbc61-test.scn
