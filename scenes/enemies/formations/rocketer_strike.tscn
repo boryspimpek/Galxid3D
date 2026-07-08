@@ -6,8 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bn34u3k8ydghw" path="res://scenes/enemies/types/rocketer.tscn" id="3_pialv"]
 [ext_resource type="PackedScene" uid="uid://ccivqisb7t18b" path="res://scenes/enemies/formations/striker formations/striker1.tscn" id="6_dq0jp"]
 [ext_resource type="Script" uid="uid://cr2knbmonx42w" path="res://scenes/enemies/base/facing/FacePlayer.gd" id="6_swp0o"]
-[ext_resource type="PackedScene" uid="uid://bncfbdv7kbrhj" path="res://scenes/enemies/formations/striker formations/striker2.tscn" id="7_lya6x"]
-[ext_resource type="PackedScene" uid="uid://cv5c6y16vv5yk" path="res://scenes/enemies/formations/striker formations/striker4.tscn" id="8_ci44q"]
 [ext_resource type="PackedScene" uid="uid://b5j3jumdkod3r" path="res://scenes/enemies/formations/arrow formations/formation7.tscn" id="9_swp0o"]
 [ext_resource type="PackedScene" uid="uid://c2vk2d14w4myt" path="res://scenes/enemies/formations/arrow formations/formation8.tscn" id="10_4tu4k"]
 
@@ -105,16 +103,7 @@ script = ExtResource("3_0wl48")
 script = ExtResource("6_swp0o")
 
 [node name="striker formation" parent="." unique_id=1730415998 instance=ExtResource("6_dq0jp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.73667717, 0, -17.493965)
-
-[node name="striker formation2" parent="." unique_id=1566199295 instance=ExtResource("7_lya6x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.010702, 0, -31.598238)
-
-[node name="striker formation5" parent="." unique_id=229534025 instance=ExtResource("6_dq0jp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.73667717, 0, -75.47821)
-
-[node name="striker formation3" parent="." unique_id=1276021288 instance=ExtResource("8_ci44q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.782237, 0, -55.64985)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.73667717, 0, -31.452602)
 
 [node name="Formation" parent="." unique_id=2117132364 instance=ExtResource("9_swp0o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005701065, 0, -41.452538)

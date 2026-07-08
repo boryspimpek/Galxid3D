@@ -1,3 +1,4 @@
+res://scenes/enemies/formations/
 res://scenes/enemies/types/
 res://assets/shaders/
 res://scenes/projectile/
@@ -10,7 +11,6 @@ res://assets/stations/station06/
 res://assets/stations/station03/
 res://assets/stations/station02/
 res://assets/stations/station05/
-res://scenes/enemies/formations/
 res://assets/enemies/avatar2/
 res://assets/enemies/avatar1/
 res://assets/enemies/vanguard/

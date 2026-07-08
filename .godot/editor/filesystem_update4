@@ -20,3 +20,12 @@ res://assets/canon/simple_canon_model.tscn
 res://assets/cannon/simple canon/simple_canon_model.tscn
 res://scenes/enemies/types/simle_cannon.tscn
 res://test.tscn
+res://scenes/enemies/base/Enemy.gd
+res://data/play_area/default.tres
+res://scenes/enemies/formations/avatar_1_strike.tscn
+res://scenes/enemies/formations/avatar_1_formation.tscn
+res://scenes/world/LevelScroll3D.gd
+res://scenes/enemies/formations/avatar_1_formation2.tscn
+res://scenes/enemies/formations/avatar_1_formation1.tscn
+res://scenes/enemies/formations/avatar_1_formation3.tscn
+res://scenes/enemies/formations/rocketer_strike.tscn

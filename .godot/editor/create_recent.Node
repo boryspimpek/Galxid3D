@@ -1,8 +1,8 @@
+Node3D
 EnemyPathFollow
 EnemyPath3D
 EnemyFacing
 MeshInstance3D
-Node3D
 VisibleOnScreenNotifier3D
 CollisionShape3D
 Sprite3D

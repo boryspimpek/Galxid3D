@@ -3,8 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_lra8b"]
 [ext_resource type="PackedScene" uid="uid://k63s3le8v6qy" path="res://assets/enemies/avatar1/avatar1_model.tscn" id="2_6yl2w"]
 [ext_resource type="Script" uid="uid://62asvta6vqik" path="res://scripts/resources/enemies/weapons/SpreadEnemyWeaponData.gd" id="2_u85bc"]
-[ext_resource type="Script" uid="uid://dtprhja8af0to" path="res://scripts/resources/enemies/movement/LinearMoveData.gd" id="3_u85bc"]
-[ext_resource type="PackedScene" uid="uid://c1wct2h0tua1o" path="res://scenes/enemies/types/simle_cannon.tscn" id="5_g3mqj"]
 
 [sub_resource type="Resource" id="Resource_g3mqj"]
 script = ExtResource("2_u85bc")
@@ -17,16 +15,10 @@ initial_fire_delay = 1.5
 sound = 5
 metadata/_custom_type_script = "uid://62asvta6vqik"
 
-[sub_resource type="Resource" id="Resource_ik470"]
-script = ExtResource("3_u85bc")
-zmove = -1.0
-metadata/_custom_type_script = "uid://dtprhja8af0to"
-
 [node name="avatar1" unique_id=1897743314 instance=ExtResource("1_lra8b")]
-transform = Transform3D(-2, 0, -1.7484555e-07, 0, 2, 0, 1.7484555e-07, 0, -2, 0, 0, 0)
-armor = 50
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+armor = 80
 weapon_data = SubResource("Resource_g3mqj")
-movement_data = SubResource("Resource_ik470")
 value = 5
 
 [node name="Meshy_AI_Lime_Green_Toy_Helico_0705085950_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=130721169 instance=ExtResource("2_6yl2w")]
@@ -39,6 +31,3 @@ visible = false
 
 [node name="Muzzle" parent="." index="3" unique_id=1704985833]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.23117718, 0.8627649)
-
-[node name="simple_cannon" parent="." index="4" unique_id=1354048163 instance=ExtResource("5_g3mqj")]
-transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0.32148534, -0.081366986)

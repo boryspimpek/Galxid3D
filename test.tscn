@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="2_adp8l"]
 [ext_resource type="PackedScene" uid="uid://di8tdeuy0i86i" path="res://scenes/enemies/formations/protector_strike.tscn" id="5_g14j6"]
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="6_21gct"]
-[ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="6_vbegm"]
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="37_k13tm"]
 
 [sub_resource type="Environment" id="Environment_2y1ty"]
@@ -67,7 +66,7 @@ shadow_blur = 4.507
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 15, 0)
 
 [node name="Player" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1811810025 instance=ExtResource("2_adp8l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.271)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 ship_id = 4
 gamepad_move_speed = 15.0
 gamepad_l2_move_speed = 30.0
@@ -75,14 +74,11 @@ gamepad_acceleration = 500.0
 gamepad_deceleration = 500.0
 dodge_duration = 0.7
 
-[node name="PlayAreaFrame" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=784318850 instance=ExtResource("6_vbegm")]
-
-[node name="LevelScroll3D" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=322751963]
+[node name="LevelScroll" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1038034075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5895576)
 script = ExtResource("6_21gct")
-scroll_speed = 6.0
-metadata/_custom_type_script = "uid://ci6qjvw4jlabt"
 
-[node name="protector_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll3D" unique_id=1693192339 instance=ExtResource("5_g14j6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.951893, 0, 5.151515)
+[node name="protector_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1693192339 instance=ExtResource("5_g14j6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -10.561139)
 
 [node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("37_k13tm")]

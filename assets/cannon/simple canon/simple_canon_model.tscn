@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://8xmn3leb1kl2" path="res://assets/cannon/simple canon/Meshy_AI_Chromatic_Nozzle_0708100700_texture.glb" id="1_s1fh4"]
 
-[node name="Meshy_AI_Chromatic_Nozzle_0708100700_texture" unique_id=1195645888 instance=ExtResource("1_s1fh4")]
+[node name="Meshy_AI_Chromatic_Nozzle_0708100700_texture" unique_id=1821865535 instance=ExtResource("1_s1fh4")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 layers = 16
 
-[node name="Mesh" parent="." index="0" unique_id=261901799]
+[node name="Mesh" parent="." index="0" unique_id=1701317818]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 layers = 16

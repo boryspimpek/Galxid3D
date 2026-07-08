@@ -34,9 +34,9 @@ var _facing: EnemyFacing
 @export_group("Activation")
 @export var activate_on_scroll_line: bool = true
 @export var despawn_off_screen: bool = true
+@export var scroll_activation_z: float = -14.0
 
 var _screen_notifier: VisibleOnScreenNotifier3D
-var _scroll_activation_z: float
 var _scroll_activation_ready: bool = false
 
 signal combat_activated
@@ -50,7 +50,9 @@ func _ready() -> void:
 	if play_area == null:
 		push_error("%s: brak PlayAreaConfig — aktywacja po scrollu wyłączona." % name)
 	else:
-		_scroll_activation_z = play_area.scroll_activation_z
+		# Użyj wartości z config tylko jeśli użytkownik nie zmienił domyślnej wartości
+		if scroll_activation_z == -14.0:
+			scroll_activation_z = play_area.scroll_activation_z
 		_scroll_activation_ready = true
 
 	add_to_group("enemies")
@@ -110,7 +112,7 @@ func activate_combat() -> void:
 func get_scroll_distance_remaining() -> float:
 	if not _scroll_activation_ready:
 		return 0.0
-	return _scroll_activation_z - global_position.z
+	return scroll_activation_z - global_position.z
 
 
 func take_damage(amount: int, hit_world_position: Variant = null, is_special: bool = false) -> void:
@@ -239,7 +241,7 @@ func _find_facing() -> EnemyFacing:
 func _refresh_activation() -> void:
 	if not _scroll_activation_ready:
 		return
-	if global_position.z >= _scroll_activation_z:
+	if global_position.z >= scroll_activation_z:
 		_activate()
 	else:
 		_deactivate()

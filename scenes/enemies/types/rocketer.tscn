@@ -25,7 +25,7 @@ seamless = true
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ng3hx"]
 render_priority = 0
 shader = ExtResource("5_s4afp")
-shader_parameter/model_height = 1.9649999999999999
+shader_parameter/model_height = 1.965
 shader_parameter/dissolve_start = 0.001
 shader_parameter/dissolve_length = 0.610000028975
 shader_parameter/gradient_bias = 0.5220000215351199
@@ -51,7 +51,7 @@ cap_bottom = false
 
 [node name="rocketer" unique_id=1897743314 instance=ExtResource("1_8ngvd")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-armor = 75
+armor = 90
 weapon_data = SubResource("Resource_s4afp")
 value = 5
 hit_effect_scene = ExtResource("3_u3yas")
