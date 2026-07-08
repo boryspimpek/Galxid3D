@@ -9,7 +9,7 @@
 script = ExtResource("2_2mb42")
 burst_count = 10
 fire_rate = 1.5
-initial_fire_delay = 3.0
+fire_on_activate = true
 projectile_velocity = Vector3(0, 0, 10)
 aim = 10
 metadata/_custom_type_script = "uid://bs5humyuxa5j2"

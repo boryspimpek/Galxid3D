@@ -25,7 +25,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.037935, 0, 20.247963)
 curve = SubResource("Curve3D_lu1cq")
 script = ExtResource("1_ssp6l")
 activation_mode = 0
-speed = 2.0
+speed = 1.0
 speed_curve = SubResource("Curve_b6o5a")
 bank_lookahead = 3.0
 

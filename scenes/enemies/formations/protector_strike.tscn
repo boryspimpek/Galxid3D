@@ -53,7 +53,7 @@ transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 6.1546335, 0, -60.93588
 movement_data = SubResource("Resource_lrdry")
 
 [node name="hawk4" parent="." unique_id=1755697315 instance=ExtResource("3_kpwlq")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 27.069334, 0, -100.540886)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 14.644957, 0, -100.540886)
 movement_data = SubResource("Resource_lrdry")
 
 [node name="Path3D" type="Path3D" parent="." unique_id=966650770]
@@ -89,16 +89,16 @@ script = ExtResource("6_jyjfp")
 [node name="protector" parent="Path3D2/PathFollow3D" unique_id=97888846 instance=ExtResource("7_lfkyf")]
 
 [node name="striker formation5" parent="." unique_id=1476844903 instance=ExtResource("10_cai3x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8627396, 0, -105.53165)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8627396, 0, -124.56401)
 
 [node name="striker formation6" parent="." unique_id=97827646 instance=ExtResource("11_jyjfp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8252754, 0, -115.31385)
 
 [node name="avatar_1_formation1" parent="." unique_id=892321208 instance=ExtResource("13_jyjfp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0838757, 0, -220.97739)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0838757, 0, -196.49149)
 
 [node name="Formation" parent="." unique_id=1782404031 instance=ExtResource("14_03ua2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3477345, 0, -133.08434)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3477345, 0, -137.39279)
 
 [node name="protector" type="Node3D" parent="." unique_id=261957712]
 

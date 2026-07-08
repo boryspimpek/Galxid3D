@@ -132,6 +132,7 @@ speed = 2.0
 
 [node name="LevelScroll" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=2113647570]
 script = ExtResource("7_xuqvo")
+start_offset_z = 350.0
 
 [node name="LevelScrollRuler" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=552135128 instance=ExtResource("8_qsp4k")]
 z_min = -1000.0
@@ -261,7 +262,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.190403, 0, -717.88354)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -698.85394)
 
 [node name="rocketer_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=83218953 instance=ExtResource("41_0cp0l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.272804, 0, -556.90814)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.272804, 0, -512.90924)
 
 [node name="protector_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1693192339 instance=ExtResource("40_4lmeg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.963444, 0, -273.85587)

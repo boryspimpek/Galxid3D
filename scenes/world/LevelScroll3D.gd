@@ -14,7 +14,18 @@ func _ready() -> void:
 	physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_OFF
 	if start_offset_z != 0.0:
 		position.z = start_offset_z
+		_cull_enemies_behind_screen()
 	reset_physics_interpolation()
+
+
+## Po starcie z offsetem wrogowie, którzy wylądowali za dolną krawędzią kadru,
+## nigdy nie wejdą na ekran (scroll idzie w +Z) — usuwamy ich, żeby nie strzelali.
+func _cull_enemies_behind_screen() -> void:
+	var play_area := DataManager.get_play_area_config()
+	var cull_z: float = play_area.frame_half_z if play_area else 15.0
+	for enemy in get_tree().get_nodes_in_group("enemies"):
+		if enemy is Node3D and is_ancestor_of(enemy) and enemy.global_position.z > cull_z:
+			enemy.queue_free()
 
 
 func _process(delta: float) -> void:
