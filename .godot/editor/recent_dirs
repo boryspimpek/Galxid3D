@@ -1,7 +1,12 @@
+res://scenes/enemies/types/
+res://assets/enemies/orbiter/
+res://assets/enemies/ring/
+res://assets/enemies/
+res://assets/enemies/viper/
+res://assets/enemies/kiwi/
 C:/Users/borys/Desktop/game/
 C:/Users/borys/Desktop/
 res://scenes/enemies/formations/
-res://scenes/enemies/types/
 res://assets/shaders/
 res://scenes/projectile/
 res://
@@ -17,8 +22,4 @@ res://assets/enemies/avatar2/
 res://assets/enemies/avatar1/
 res://assets/enemies/vanguard/
 res://assets/enemies/twinblade/
-res://assets/enemies/toy/
-res://assets/enemies/striker/
-res://assets/enemies/rocketer/
-res://assets/enemies/protector/
 C:/Program Files/Java/jdk-26.0.1/bin/

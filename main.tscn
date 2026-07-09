@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cl1yt87544mrn" path="res://scenes/enemies/formations/finisher.tscn" id="8_074og"]
 [ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="8_qsp4k"]
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="22_d2t1y"]
-[ext_resource type="PackedScene" uid="uid://hwxv5k1qnj8p" path="res://scenes/enemies/formations/bridge.tscn" id="27_a6jrf"]
 [ext_resource type="PackedScene" uid="uid://dl18q8lfjoe2t" path="res://scenes/stations/dreadnought.tscn" id="29_htxhm"]
 [ext_resource type="PackedScene" uid="uid://bfylem1kva7em" path="res://scenes/stations/fighter752.tscn" id="32_htxhm"]
 [ext_resource type="PackedScene" uid="uid://di8tdeuy0i86i" path="res://scenes/enemies/formations/protector_strike.tscn" id="40_4lmeg"]
@@ -109,6 +108,7 @@ speed = 2.0
 
 [node name="LevelScroll" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=2113647570]
 script = ExtResource("7_xuqvo")
+start_offset_z = 800.0
 
 [node name="LevelScrollRuler" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=552135128 instance=ExtResource("8_qsp4k")]
 z_min = -1000.0
@@ -118,12 +118,9 @@ major_tick_every = 1
 scroll_speed = 6.0
 
 [node name="finisher" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1951948358 instance=ExtResource("8_074og")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.954102, 0, -968.4033)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.954102, 0, -899.2601)
 
-[node name="bridge" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=575463398 instance=ExtResource("27_a6jrf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.34735, 0, -926.76807)
-
-[node name="hank_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=834211707 instance=ExtResource("43_d2t1y")]
+[node name="hank_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1434653841 instance=ExtResource("43_d2t1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.190403, 0, -752.3632)
 
 [node name="boss devastator" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1971914927 instance=ExtResource("43_gngh3")]

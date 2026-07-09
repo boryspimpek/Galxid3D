@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_wt7by"]
 [ext_resource type="Script" uid="uid://62asvta6vqik" path="res://scripts/resources/enemies/weapons/SpreadEnemyWeaponData.gd" id="2_04xar"]
-[ext_resource type="PackedScene" uid="uid://coe2iryjehfxm" path="res://assets/enemies/bulldog/bulldog_model.tscn" id="2_qoyld"]
 [ext_resource type="Script" uid="uid://dtprhja8af0to" path="res://scripts/resources/enemies/movement/LinearMoveData.gd" id="3_t12dc"]
 [ext_resource type="PackedScene" uid="uid://dp6fn641cy82u" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/impact/vfx_impact_01.tscn" id="4_wfpjj"]
 [ext_resource type="Shader" uid="uid://luwc3n46o4pd" path="res://assets/shaders/jet_engine.gdshader" id="6_t12dc"]
+[ext_resource type="PackedScene" uid="uid://dr5x0cpon7y7g" path="res://assets/enemies/viper/viper_model.tscn" id="6_wfpjj"]
 
 [sub_resource type="Resource" id="Resource_t12dc"]
 script = ExtResource("2_04xar")
@@ -61,7 +61,7 @@ movement_data = SubResource("Resource_iiwra")
 value = 1
 hit_effect_scene = ExtResource("4_wfpjj")
 
-[node name="Meshy_AI_Rainbow_Starfighter_0703084727_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1524853600 instance=ExtResource("2_qoyld")]
+[node name="Meshy_AI_Rainbow_Starfighter_0709064621_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=445686874 instance=ExtResource("6_wfpjj")]
 
 [node name="CollisionShape3D" parent="." index="1" unique_id=324662688]
 transform = Transform3D(1.9106855e-15, 4.3711402e-08, 1.0000002, 1.0000002, -4.3711402e-08, 0, 4.3711402e-08, 1.0000002, -4.3711402e-08, 2.9827472e-09, -2.9827472e-09, 0.06823729)

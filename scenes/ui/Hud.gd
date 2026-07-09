@@ -16,7 +16,8 @@ const POWER_BAR_MAX_INDEX := 10
 @onready var _score_label: Label = %ScoreValue
 @onready var _game_over: Control = %GameOver
 @onready var _start_game: Control = %StartGame
-@onready var _pause_screen: Control = %StartGame2
+@onready var _pause_screen: Control = %PauseScreen
+@onready var _final_score_label: Label = %FinalScore
 @onready var _combo_label: Label = %ComboLabel
 
 var _health_textures: Array[Texture2D] = []
@@ -44,6 +45,7 @@ func _ready() -> void:
 	_combo_label.scale = Vector2.ONE
 	_update_combo_label(HitComboManager.combo)
 	call_deferred("_bind_player")
+	_start_pulse_hints()
 	_start_game.visible = true
 	get_tree().paused = true
 
@@ -86,8 +88,18 @@ func _bind_player() -> void:
 
 
 func show_game_over() -> void:
+	if _player != null and _final_score_label != null:
+		_final_score_label.text = str(_player.score)
 	_game_over.visible = true
 	get_tree().paused = true
+
+
+func _start_pulse_hints() -> void:
+	for hint in get_tree().get_nodes_in_group("pulse_hint"):
+		var tween := create_tween()
+		tween.set_loops()
+		tween.tween_property(hint, "modulate:a", 0.35, 0.75).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+		tween.tween_property(hint, "modulate:a", 1.0, 0.75).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
 
 func _start_run() -> void:

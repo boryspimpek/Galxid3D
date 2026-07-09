@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bi8mx1rfm6q6t"]
+
+[ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_18blr"]
+[ext_resource type="Script" uid="uid://c7cpjam6npoyw" path="res://scripts/resources/enemies/weapons/CircleEnemyWeaponData.gd" id="2_0yapt"]
+[ext_resource type="PackedScene" uid="uid://shoqx3wrbp2v" path="res://assets/enemies/orbiter/orbiter_model.tscn" id="2_vuksu"]
+
+[sub_resource type="Resource" id="Resource_g71d3"]
+script = ExtResource("2_0yapt")
+fire_rate = 1.0
+initial_fire_delay = 0.5
+metadata/_custom_type_script = "uid://c7cpjam6npoyw"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0yapt"]
+size = Vector3(1, 1.9057007, 1.9308777)
+
+[node name="orbiter" unique_id=1897743314 instance=ExtResource("1_18blr")]
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0, 0, 0)
+armor = 50
+weapon_data = SubResource("Resource_g71d3")
+scroll_activation_z = -15.0
+
+[node name="Meshy_AI_Quadro_Orbiter_0709062027_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=382931168 instance=ExtResource("2_vuksu")]
+
+[node name="CollisionShape3D" parent="." index="1" unique_id=324662688]
+shape = SubResource("BoxShape3D_0yapt")
+
+[node name="VisibleOnScreenNotifier3D" parent="." index="2" unique_id=1484925388]
+aabb = AABB(-1, -0.49539363, -1, 2, 0.99078727, 2)

@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1")
 player_half_x = 20.0
-player_half_z = 11.5
+player_half_z = 10.5
 frame_half_x = 20.0
 frame_half_z = 11.5
 ruler_half_x = 18.0

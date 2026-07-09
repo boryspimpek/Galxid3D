@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://shoqx3wrbp2v"]
+
+[ext_resource type="PackedScene" uid="uid://dr2bolaj4yukg" path="res://assets/enemies/orbiter/Meshy_AI_Quadro_Orbiter_0709062027_texture.glb" id="1_bxxs0"]
+[ext_resource type="Texture2D" uid="uid://cd0ild46skgxt" path="res://assets/enemies/orbiter/Meshy_AI_Quadro_Orbiter_0709062027_texture_0.jpg" id="2_glbq0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bxxs0"]
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+albedo_texture = ExtResource("2_glbq0")
+metallic = 0.32
+metallic_specular = 1.0
+roughness = 0.12
+clearcoat_enabled = true
+clearcoat_roughness = 1.0
+
+[node name="Meshy_AI_Quadro_Orbiter_0709062027_texture" unique_id=382931168 instance=ExtResource("1_bxxs0")]
+layers = 16
+
+[node name="Mesh" parent="." index="0" unique_id=381615501]
+layers = 16
+surface_material_override/0 = SubResource("StandardMaterial3D_bxxs0")

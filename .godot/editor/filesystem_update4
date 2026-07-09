@@ -1,6 +1,6 @@
-res://scenes/ui/Hud.tscn
+res://scenes/enemies/formations/finisher.tscn
 res://assets/shaders/jet_engine.gdshader
-res://scenes/enemies/base/Enemy.gd
-res://scenes/player/Player.gd
-res://scenes/player/DamageSystem.gd
-res://scenes/ui/Hud.gd
+res://scenes/enemies/formations/arrow formations/formation6.tscn
+res://scenes/enemies/formations/arrow formations/formation16.tscn
+res://scenes/player/Player.tscn
+res://data/play_area/default.tres

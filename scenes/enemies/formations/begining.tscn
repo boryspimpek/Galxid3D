@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c2vk2d14w4myt" path="res://scenes/enemies/formations/arrow formations/formation8.tscn" id="10_treoh"]
 [ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemies/base/EnemyPath3D.gd" id="11_rcaes"]
 [ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemies/base/EnemyPathFollow.gd" id="12_yuv4d"]
-[ext_resource type="PackedScene" uid="uid://cwjxwa7cwovks" path="res://scenes/enemies/types/hank.tscn" id="13_k2es2"]
+[ext_resource type="PackedScene" uid="uid://cwjxwa7cwovks" path="res://scenes/enemies/types/kiwi.tscn" id="13_k2es2"]
 [ext_resource type="PackedScene" uid="uid://dv65p1uld6w72" path="res://scenes/enemies/types/bulldog.tscn" id="14_k2es2"]
 [ext_resource type="Script" uid="uid://bs5humyuxa5j2" path="res://scripts/resources/enemies/weapons/BurstEnemyWeaponData.gd" id="14_yuv4d"]
 [ext_resource type="PackedScene" uid="uid://b76al3ql71a6h" path="res://scenes/enemies/types/avatar2.tscn" id="15_k2es2"]

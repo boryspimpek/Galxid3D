@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://h4tfxlaeefcu" path="res://scenes/world/GameShell.gd" id="1_2h37t"]
 [ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="2_adp8l"]
-[ext_resource type="PackedScene" uid="uid://0gvcpa8yx6vi" path="res://scenes/enemies/formations/rocketer_strike.tscn" id="4_ykrsh"]
+[ext_resource type="PackedScene" uid="uid://bi8mx1rfm6q6t" path="res://scenes/enemies/types/orbiter.tscn" id="4_vbegm"]
+[ext_resource type="PackedScene" uid="uid://bph2t4hxn0f07" path="res://scenes/enemies/types/ring.tscn" id="5_ehkex"]
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="6_21gct"]
+[ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="6_xersf"]
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="37_k13tm"]
 
 [sub_resource type="Environment" id="Environment_2y1ty"]
@@ -78,7 +80,12 @@ dodge_duration = 0.7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5895576)
 script = ExtResource("6_21gct")
 
-[node name="rocketer_strike" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=83218953 instance=ExtResource("4_ykrsh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.053055, 0, 0)
+[node name="orbiter" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1897743314 instance=ExtResource("4_vbegm")]
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, -11.144554, 0, -21.136528)
+
+[node name="ring" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1685739146 instance=ExtResource("5_ehkex")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 8.341324, 0, -21.410519)
+
+[node name="LevelScrollRuler" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1422874938 instance=ExtResource("6_xersf")]
 
 [node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("37_k13tm")]
