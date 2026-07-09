@@ -179,6 +179,6 @@ text = "Zagraj od nowa"
 
 [node name="Hint" type="Label" parent="Root/GameOver/Center/Panel/VBox" unique_id=604441094]
 layout_mode = 2
-text = "lub kliknij / dotknij ekran"
+text = "ORESS X"
 label_settings = SubResource("LabelSettings_value")
 horizontal_alignment = 1
