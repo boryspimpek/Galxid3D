@@ -53,7 +53,7 @@ cap_bottom = false
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 armor = 90
 weapon_data = SubResource("Resource_s4afp")
-value = 5
+value = 10
 hit_effect_scene = ExtResource("3_u3yas")
 
 [node name="Meshy_AI_Rainbow_Rocket_Ship_0703084711_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=317114264 instance=ExtResource("2_n0ky6")]

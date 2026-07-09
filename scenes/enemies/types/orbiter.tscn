@@ -17,6 +17,7 @@ size = Vector3(1, 1.9057007, 1.9308777)
 transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0, 0, 0)
 armor = 50
 weapon_data = SubResource("Resource_g71d3")
+value = 10
 scroll_activation_z = -15.0
 
 [node name="Meshy_AI_Quadro_Orbiter_0709062027_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=382931168 instance=ExtResource("2_vuksu")]

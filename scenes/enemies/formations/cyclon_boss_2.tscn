@@ -7,46 +7,214 @@
 [ext_resource type="Script" uid="uid://bk8covuxr0uq1" path="res://scenes/enemies/base/Boss.gd" id="5_5dygc"]
 [ext_resource type="Script" uid="uid://cyu6r2yllmynr" path="res://scripts/resources/enemies/weapons/BossWeaponPhase.gd" id="6_hbw16"]
 [ext_resource type="Script" uid="uid://0lspj842eewa" path="res://scripts/resources/enemies/weapons/HomingEnemyWeaponData.gd" id="7_vtw1i"]
+[ext_resource type="Script" uid="uid://cr2knbmonx42w" path="res://scenes/enemies/base/facing/FacePlayer.gd" id="8_hbw16"]
+[ext_resource type="Script" uid="uid://bs5humyuxa5j2" path="res://scripts/resources/enemies/weapons/BurstEnemyWeaponData.gd" id="8_vtw1i"]
+[ext_resource type="Script" uid="uid://62asvta6vqik" path="res://scripts/resources/enemies/weapons/SpreadEnemyWeaponData.gd" id="9_7ost7"]
+[ext_resource type="Script" uid="uid://c7cpjam6npoyw" path="res://scripts/resources/enemies/weapons/CircleEnemyWeaponData.gd" id="10_pg00h"]
+[ext_resource type="PackedScene" uid="uid://bduyu05rjjsau" path="res://scenes/enemies/formations/striker formations/striker6.tscn" id="12_w5c06"]
+[ext_resource type="PackedScene" uid="uid://cl5gx7hjwmyoi" path="res://scenes/enemies/formations/striker formations/striker5.tscn" id="13_svhfw"]
+[ext_resource type="PackedScene" uid="uid://cv5c6y16vv5yk" path="res://scenes/enemies/formations/striker formations/striker4.tscn" id="14_pm3t5"]
+[ext_resource type="PackedScene" uid="uid://ber2ljlg4ph4w" path="res://scenes/enemies/formations/striker formations/striker3.tscn" id="15_svhfw"]
+[ext_resource type="PackedScene" uid="uid://ccivqisb7t18b" path="res://scenes/enemies/formations/striker formations/striker1.tscn" id="16_pm3t5"]
+[ext_resource type="PackedScene" uid="uid://bncfbdv7kbrhj" path="res://scenes/enemies/formations/striker formations/striker2.tscn" id="17_i20jn"]
+[ext_resource type="PackedScene" uid="uid://cdxl62tlyuy08" path="res://scenes/enemies/formations/arrow formations/formation5.tscn" id="18_xatxs"]
+[ext_resource type="PackedScene" uid="uid://c2vk2d14w4myt" path="res://scenes/enemies/formations/arrow formations/formation8.tscn" id="19_70ojq"]
+[ext_resource type="PackedScene" uid="uid://dohxvkx4dbxqp" path="res://scenes/enemies/formations/arrow formations/formation9.tscn" id="20_2a53x"]
 
 [sub_resource type="Curve3D" id="Curve3D_hbw16"]
+closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.010086536, 0, 0.02644825, 0.009691238, 0, -5.706683, -0.009691238, 0, 5.706683, -14.958761, 0, 4.754657, -5.639715, 0, -0.049041748, 5.639715, 0, 0.049041748, 0.10843468, 0, 13.459612, 0.049041748, 0, 9.268747, -0.049041748, 0, -9.268747, 16.19388, 0, -1.1055636, 0, 0, 0, 0, 0, 0, 0.10843468, 0, -10.276228, 0, 0, 0, 0, 0, 0, -14.064415, 0, -19.29977, 0, 0, 0, 0, 0, 0, -0.237077, 0, -28.307293, 0, 0, 0, 0, 0, 0, 13.151116, 0, -28.258251, 0, 0, 0, 0, 0, 0, -0.39507318, 0, -42.175488),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.010086536, 0, 0.02644825, 0, 0, -3.1831284, 0, 0, 3.1831284, -14.429415, 0, 3.2654743, -3.1213207, 0, -0.03090477, 3.1213207, 0, 0.03090477, 0.09554076, 0, 6.3249855, -0.12361908, 0, 3.214034, 0.12361908, 0, -3.214034, 15.454912, 0, 3.2963781, 0, 0, 0, 0, 0, 0, 0.6199093, 0, 0.12289715, -0.0927124, 0, -2.317813, 0.0927124, 0, 2.317813, 16.844597, 0, 3.1824083, 4.172064, 0, 0.061808586, -4.172064, 0, -0.061808586, 0.15634729, 0, 7.72532, 0, 0, 3.553979, 0, 0, -3.553979, -15.172119, 0, 3.1515045, 0, 0, 0, 0, 0, 0, -0.6162567, 0, -0.5878992),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 9
 
-[sub_resource type="Resource" id="Resource_7ost7"]
+[sub_resource type="Resource" id="Resource_pg00h"]
 script = ExtResource("7_vtw1i")
-homing_duration = 2.0
+homing_turn_speed = 10.0
+homing_duration = 3.0
 fire_rate = 0.5
 aim = 10
 sound = 5
 metadata/_custom_type_script = "uid://0lspj842eewa"
 
-[sub_resource type="Resource" id="Resource_pg00h"]
+[sub_resource type="Resource" id="Resource_ppf1e"]
 script = ExtResource("6_hbw16")
-weapon = SubResource("Resource_7ost7")
-cooldown_after = 1.5
+weapon = SubResource("Resource_pg00h")
+cooldown_after = 2.0
+muzzle_indices = Array[int]([0])
+metadata/_custom_type_script = "uid://cyu6r2yllmynr"
+
+[sub_resource type="Resource" id="Resource_urdnl"]
+script = ExtResource("8_vtw1i")
+burst_count = 8
+fire_rate = 0.5
+projectile_velocity = Vector3(0, 0, 10)
+aim = 10
+metadata/_custom_type_script = "uid://bs5humyuxa5j2"
+
+[sub_resource type="Resource" id="Resource_70ojq"]
+script = ExtResource("6_hbw16")
+weapon = SubResource("Resource_urdnl")
+cooldown_after = 2.0
+muzzle_indices = Array[int]([1, 2])
+metadata/_custom_type_script = "uid://cyu6r2yllmynr"
+
+[sub_resource type="Resource" id="Resource_2a53x"]
+script = ExtResource("7_vtw1i")
+homing_turn_speed = 10.0
+homing_duration = 3.0
+fire_rate = 0.5
+aim = 10
+sound = 5
+metadata/_custom_type_script = "uid://0lspj842eewa"
+
+[sub_resource type="Resource" id="Resource_ms530"]
+script = ExtResource("6_hbw16")
+weapon = SubResource("Resource_2a53x")
+cooldown_after = 2.0
+muzzle_indices = Array[int]([0])
+metadata/_custom_type_script = "uid://cyu6r2yllmynr"
+
+[sub_resource type="Resource" id="Resource_24s71"]
+script = ExtResource("8_vtw1i")
+burst_count = 8
+fire_rate = 0.5
+projectile_velocity = Vector3(0, 0, 10)
+aim = 10
+metadata/_custom_type_script = "uid://bs5humyuxa5j2"
+
+[sub_resource type="Resource" id="Resource_s0kol"]
+script = ExtResource("6_hbw16")
+weapon = SubResource("Resource_24s71")
+cooldown_after = 2.0
+muzzle_indices = Array[int]([1, 2])
+metadata/_custom_type_script = "uid://cyu6r2yllmynr"
+
+[sub_resource type="Resource" id="Resource_w5c06"]
+script = ExtResource("9_7ost7")
+spread_angle_deg = 50.0
+spawn_from_center = false
+fire_rate = 0.2
+aim = 10
+metadata/_custom_type_script = "uid://62asvta6vqik"
+
+[sub_resource type="Resource" id="Resource_svhfw"]
+script = ExtResource("6_hbw16")
+weapon = SubResource("Resource_w5c06")
+duration = 2.0
+muzzle_indices = Array[int]([0])
+metadata/_custom_type_script = "uid://cyu6r2yllmynr"
+
+[sub_resource type="Resource" id="Resource_pm3t5"]
+script = ExtResource("10_pg00h")
+circle_speed = 10.0
+rotate_per_salvo_deg = 0.0
+fire_rate = 0.2
+metadata/_custom_type_script = "uid://c7cpjam6npoyw"
+
+[sub_resource type="Resource" id="Resource_i20jn"]
+script = ExtResource("6_hbw16")
+weapon = SubResource("Resource_pm3t5")
+duration = 2.0
+muzzle_indices = Array[int]([0])
+metadata/_custom_type_script = "uid://cyu6r2yllmynr"
+
+[sub_resource type="Resource" id="Resource_jaguf"]
+script = ExtResource("9_7ost7")
+bullet_count = 5
+spread_speed = 16.0
+spread_angle_deg = 20.0
+fire_rate = 1.0
+aim = 10
+metadata/_custom_type_script = "uid://62asvta6vqik"
+
+[sub_resource type="Resource" id="Resource_xatxs"]
+script = ExtResource("6_hbw16")
+weapon = SubResource("Resource_jaguf")
+duration = 7.0
+muzzle_indices = Array[int]([3])
+metadata/_custom_type_script = "uid://cyu6r2yllmynr"
+
+[sub_resource type="Resource" id="Resource_nlk48"]
+script = ExtResource("7_vtw1i")
+homing_turn_speed = 10.0
+homing_duration = 3.0
+fire_rate = 0.5
+aim = 10
+sound = 5
+metadata/_custom_type_script = "uid://0lspj842eewa"
+
+[sub_resource type="Resource" id="Resource_ug3wm"]
+script = ExtResource("6_hbw16")
+weapon = SubResource("Resource_nlk48")
+cooldown_after = 2.0
 muzzle_indices = Array[int]([0])
 metadata/_custom_type_script = "uid://cyu6r2yllmynr"
 
 [node name="cyclon boss 2" type="Node3D" unique_id=598173431]
 
 [node name="LevelScrollRuler" parent="." unique_id=1253269102 instance=ExtResource("1_1r0oi")]
+visible = false
+z_min = -350.0
 
 [node name="EnemyPath3D" type="Path3D" parent="." unique_id=8132215]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042043686, 0, -7.3578296)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12613678, 0, -8.745307)
 curve = SubResource("Curve3D_hbw16")
 script = ExtResource("2_bjb73")
+speed = 3.0
+bank_enabled = true
+bank_max_degrees = 15.0
+bank_strength = 3.0
+bank_lookahead = 5.0
 metadata/_custom_type_script = "uid://braxpml2y0f6o"
 
 [node name="EnemyPathFollow" type="PathFollow3D" parent="EnemyPath3D" unique_id=677548269]
-transform = Transform3D(0.065357216, 0, 0.99784815, 0, 1, 0, -0.99784815, 0, 0.065357216, -0.010086536, 0, 0.02644825)
+transform = Transform3D(-0.0038765606, 0, 0.99995136, 0, 1, 0, -0.99995136, 0, -0.0038765606, -0.010086536, 0, 0.02644825)
 script = ExtResource("3_gq6pe")
 metadata/_custom_type_script = "uid://de0wqltyclsk0"
 
 [node name="cyclon" parent="EnemyPath3D/EnemyPathFollow" unique_id=1897743314 instance=ExtResource("4_5dygc")]
 script = ExtResource("5_5dygc")
-weapon_phases = Array[ExtResource("6_hbw16")]([SubResource("Resource_pg00h")])
+weapon_phases = Array[ExtResource("6_hbw16")]([SubResource("Resource_ppf1e"), SubResource("Resource_70ojq"), SubResource("Resource_ms530"), SubResource("Resource_s0kol"), SubResource("Resource_svhfw"), SubResource("Resource_i20jn"), SubResource("Resource_xatxs"), SubResource("Resource_ug3wm")])
 explosion_scene = null
 hit_effect_scene = null
+
+[node name="Facing" type="Node3D" parent="EnemyPath3D/EnemyPathFollow/cyclon" unique_id=2015423846]
+script = ExtResource("8_hbw16")
+
+[node name="striker formation" parent="." unique_id=1730415998 instance=ExtResource("12_w5c06")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2818165, 0, -20.2346)
+
+[node name="striker formation2" parent="." unique_id=2097493399 instance=ExtResource("13_svhfw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.749792, 0, -153.29172)
+
+[node name="striker formation3" parent="." unique_id=928940119 instance=ExtResource("14_pm3t5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.515917, 0, -75.65358)
+
+[node name="striker formation4" parent="." unique_id=747860158 instance=ExtResource("15_svhfw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.309258, 0, -106.43507)
+
+[node name="striker formation5" parent="." unique_id=114045693 instance=ExtResource("16_pm3t5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.210333, 0, -52.001846)
+
+[node name="striker formation6" parent="." unique_id=1068517564 instance=ExtResource("17_i20jn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.896984, 0, -122.86749)
+
+[node name="striker formation9" parent="." unique_id=694183997 instance=ExtResource("14_pm3t5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.593546, 0, -223.56071)
+
+[node name="striker formation10" parent="." unique_id=806733703 instance=ExtResource("15_svhfw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.309258, 0, -268.79123)
+
+[node name="striker formation12" parent="." unique_id=169459132 instance=ExtResource("17_i20jn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.896984, 0, -285.22366)
+
+[node name="Formation3" parent="." unique_id=635082088 instance=ExtResource("18_xatxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.11905, 0, -312.93567)
+
+[node name="Formation2" parent="." unique_id=8110254 instance=ExtResource("19_70ojq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.536438, 0, -177.84361)
+
+[node name="Formation" parent="." unique_id=932237900 instance=ExtResource("20_2a53x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.082996, 0, -193.7202)

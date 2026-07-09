@@ -4,3 +4,6 @@ res://main.tscn
 res://assets/enemies/cyclon/cyclon_model.tscn
 res://scenes/enemies/formations/cyclon_boss_2.tscn
 res://scenes/enemies/types/cyclon.tscn
+res://scenes/enemies/types/orbiter.tscn
+res://scenes/enemies/types/ring.tscn
+res://scenes/enemies/types/rocketer.tscn
