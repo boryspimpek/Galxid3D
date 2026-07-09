@@ -153,6 +153,8 @@ func die() -> void:
 	var player := get_tree().get_first_node_in_group("player")
 	if player and player.has_method("add_power_from_kill"):
 		player.add_power_from_kill()
+	if player and player.has_method("add_score"):
+		player.add_score(value)
 	SoundManager.play_sound(explosion_sound)
 	if explosion_scene:
 		var death_pos := global_position
@@ -294,5 +296,5 @@ func _on_screen_exited() -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		body.take_damage(armor)
+		body.take_damage(1)
 		die()

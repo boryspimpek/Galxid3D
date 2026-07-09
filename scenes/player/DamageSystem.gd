@@ -4,7 +4,7 @@ extends Node
 # DAMAGE SYSTEM - Obsługa obrażeń i kolizji
 # ============================================================================
 
-const FLASH_COLOR := Color(1.0, 0.0, 0.0, 0.25)
+const FLASH_COLOR := Color(1.0, 0.0, 0.0, 0.55)
 const FLASH_FADE_TIME := 0.35
 
 var player: CharacterBody3D
@@ -45,7 +45,7 @@ func take_damage(amount: int):
 	if player.armor > 0:
 		var hit_sound: int = player.ship_data.hit_sound if player.ship_data else 19
 		SoundManager.play_hit_sound(hit_sound)
-		CameraShakeManager.shake(0.4, 0.25)
+		CameraShakeManager.shake(1.0, 0.25)
 		_flash_screen()
 	if player.armor <= 0:
 		player.armor = 0

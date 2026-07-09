@@ -1,2 +1,5 @@
 res://scenes/ui/Hud.tscn
 res://assets/shaders/jet_engine.gdshader
+res://scenes/enemies/base/Enemy.gd
+res://scenes/player/Player.gd
+res://scenes/player/DamageSystem.gd

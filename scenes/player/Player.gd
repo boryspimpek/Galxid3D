@@ -130,6 +130,11 @@ func notify_score_changed() -> void:
 	score_changed.emit(score)
 
 
+func add_score(amount: int) -> void:
+	score += amount
+	notify_score_changed()
+
+
 func notify_armor_changed() -> void:
 	armor_changed.emit(armor, max_armor)
 
@@ -364,9 +369,8 @@ func take_damage(amount: int) -> void:
 	push_warning("Player: Brak DamageSystem — obrażenia pominięte")
 
 ## Zbieranie lootu wyrzuconego przez wrogów.
-func collect_pickup(amount: int) -> void:
-	score += amount
-	notify_score_changed()
+func collect_pickup(_amount: int) -> void:
+	pass
 
 func die() -> void:
 	queue_free()
