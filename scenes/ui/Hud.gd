@@ -15,6 +15,8 @@ const POWER_BAR_MAX_INDEX := 10
 @onready var _power_bar: TextureRect = %PowerBar
 @onready var _score_label: Label = %ScoreValue
 @onready var _game_over: Control = %GameOver
+@onready var _start_game: Control = %StartGame
+@onready var _pause_screen: Control = %StartGame2
 @onready var _combo_label: Label = %ComboLabel
 
 var _health_textures: Array[Texture2D] = []
@@ -42,6 +44,8 @@ func _ready() -> void:
 	_combo_label.scale = Vector2.ONE
 	_update_combo_label(HitComboManager.combo)
 	call_deferred("_bind_player")
+	_start_game.visible = true
+	get_tree().paused = true
 
 
 func _process(_delta: float) -> void:
@@ -86,23 +90,62 @@ func show_game_over() -> void:
 	get_tree().paused = true
 
 
+func _start_run() -> void:
+	_start_game.visible = false
+	get_tree().paused = false
+
+
+func _toggle_pause() -> void:
+	var will_pause := not get_tree().paused
+	get_tree().paused = will_pause
+	_pause_screen.visible = will_pause
+
+
 func _restart_run() -> void:
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not _game_over.visible:
+	if event is InputEventJoypadButton and event.pressed:
+		print("[HUD DEBUG] Joypad button pressed: index=", event.button_index)
+	if event.is_action_pressed("pause"):
+		print("[HUD DEBUG] pause action triggered")
+
+	if _start_game.visible:
+		if (
+			event.is_action_pressed("fire")
+			or (event is InputEventMouseButton and event.pressed)
+			or (event is InputEventScreenTouch and event.pressed)
+			or (event is InputEventKey and event.pressed)
+			or (event is InputEventJoypadButton and event.pressed)
+		):
+			_start_run()
 		return
 
-	if event is InputEventMouseButton and event.pressed:
-		_restart_run()
-	elif event is InputEventScreenTouch and event.pressed:
-		_restart_run()
-	elif event is InputEventKey and event.pressed:
-		_restart_run()
-	elif event is InputEventJoypadButton and event.pressed:
-		_restart_run()
+	if _game_over.visible:
+		if event.is_action_pressed("pause"):
+			_restart_run()
+			return
+		if (
+			(event is InputEventMouseButton and event.pressed)
+			or (event is InputEventScreenTouch and event.pressed)
+			or (event is InputEventKey and event.pressed)
+			or (event is InputEventJoypadButton and event.pressed)
+		):
+			_restart_run()
+		return
+
+	if _pause_screen.visible:
+		if event.is_action_pressed("fire"):
+			_restart_run()
+			return
+		if event.is_action_pressed("pause"):
+			_toggle_pause()
+		return
+
+	if event.is_action_pressed("pause"):
+		_toggle_pause()
 
 
 func _on_score_changed(score: int) -> void:
