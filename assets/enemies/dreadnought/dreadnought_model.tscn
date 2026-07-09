@@ -9,8 +9,8 @@ render_priority = 0
 shader = ExtResource("2_otqm7")
 shader_parameter/albedo_texture = ExtResource("3_s2rbh")
 shader_parameter/red_threshold = 0.1
-shader_parameter/glow_strength = 8.0
-shader_parameter/dim_strength = 0.050000002375
+shader_parameter/glow_strength = 6.0
+shader_parameter/dim_strength = 0.50000002375
 
 [sub_resource type="SphereMesh" id="SphereMesh_otqm7"]
 radius = 0.01

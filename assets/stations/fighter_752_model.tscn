@@ -7,7 +7,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4c3c"]
 disable_ambient_light = true
-albedo_color = Color(0.5370987, 0.5370987, 0.5370987, 1)
+albedo_color = Color(0.76240367, 0.7624037, 0.7624035, 1)
 albedo_texture = ExtResource("2_ijnuo")
 metallic_specular = 0.0
 metallic_texture = ExtResource("3_ds78v")
@@ -31,7 +31,7 @@ albedo_color = Color(1.353256, 0, 0, 1)
 [node name="Fighter752" unique_id=848774295 instance=ExtResource("1_yoggb")]
 layers = 32
 
-[node name="Fighter75" parent="." index="0" unique_id=1029040925]
+[node name="Fighter75" parent="." index="0" unique_id=1891723957]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -0.5702159, 0)
 layers = 32
 surface_material_override/0 = SubResource("StandardMaterial3D_c4c3c")

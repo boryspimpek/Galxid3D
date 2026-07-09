@@ -7,3 +7,8 @@ res://scenes/enemies/types/cyclon.tscn
 res://scenes/enemies/types/orbiter.tscn
 res://scenes/enemies/types/ring.tscn
 res://scenes/enemies/types/rocketer.tscn
+res://assets/enemies/dreadnought/dreadnought_model.tscn
+res://scenes/stations/dreadnought.tscn
+res://scenes/enemies/formations/begining.tscn
+res://assets/enemies/dreadnought/dreadnought_model.gdshader
+res://assets/stations/fighter_752_model.tscn

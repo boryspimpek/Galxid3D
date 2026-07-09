@@ -10,5 +10,4 @@ speed_z = -8.0
 [node name="Meshy_AI_Grey_Vanguard_Dreadno_0706101812_texture" parent="." unique_id=1019044186 instance=ExtResource("2_k634d")]
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=941531217]
-visible = false
 aabb = AABB(-0.3016839, -0.34809682, -1, 0.6033678, 0.69619364, 2)

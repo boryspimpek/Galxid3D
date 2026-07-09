@@ -396,19 +396,19 @@ script = ExtResource("16_1edqy")
 metadata/_custom_type_script = "uid://bkmgjk3jummqx"
 
 [node name="Path3D3" type="Path3D" parent="bulldog" unique_id=1742995519]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.858534, 0, -77.16028)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.040657, 0, -83.272606)
 curve = SubResource("Curve3D_0ker1")
 script = ExtResource("11_rcaes")
 speed_curve = SubResource("Curve_g4q31")
 bank_enabled = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="bulldog/Path3D3" unique_id=1491432205]
-transform = Transform3D(-0.9999421, 0, 0.0057648425, 0, 1, 0, -0.0057648425, 0, -0.9999421, -0.0026378632, 0, 0.0018386841)
+transform = Transform3D(-0.9999421, 0, 0.0057648425, 0, 1, 0, -0.0057648425, 0, -0.9999421, 0, 0, 0)
 loop = false
 script = ExtResource("12_yuv4d")
 
 [node name="bulldog" parent="bulldog/Path3D3/PathFollow3D" unique_id=1385327463 instance=ExtResource("14_k2es2")]
-transform = Transform3D(1.7, 0, 9.313226e-10, 0, 1.7, 0, -9.313226e-10, 0, 1.7, 0.027820587, 0, 4.8256454)
+transform = Transform3D(1.7, 0, 9.313226e-10, 0, 1.7, 0, -9.313226e-10, 0, 1.7, 0, 0, 0)
 
 [node name="DelayedFacePlayer" type="Node" parent="bulldog/Path3D3/PathFollow3D/bulldog" unique_id=1374231811]
 script = ExtResource("16_1edqy")

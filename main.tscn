@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" uid="uid://h4tfxlaeefcu" path="res://scenes/world/GameShell.gd" id="1_ryguw"]
 [ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="2_d13ii"]
-[ext_resource type="PackedScene" uid="uid://bpnoq5bivk33d" path="res://scenes/planets/sun.tscn" id="3_1u8w0"]
-[ext_resource type="PackedScene" uid="uid://c1pq466qvcqtm" path="res://scenes/planets/earth.tscn" id="4_0odxb"]
 [ext_resource type="PackedScene" uid="uid://c6q6woux5lj8n" path="res://scenes/stations/station_01.tscn" id="6_0cp0l"]
 [ext_resource type="PackedScene" uid="uid://dfwjsha1cxfrv" path="res://scenes/stations/station_05.tscn" id="7_d2t1y"]
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="7_xuqvo"]
@@ -23,6 +21,7 @@
 background_mode = 2
 background_energy_multiplier = 0.8
 sky_rotation = Vector3(3.843215, -2.3387413, -2.630211)
+tonemap_mode = 4
 glow_enabled = true
 adjustment_enabled = true
 adjustment_brightness = 1.12
@@ -61,16 +60,6 @@ render_target_update_mode = 4
 [node name="WorldEnvironment" type="WorldEnvironment" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=2090551855]
 environment = SubResource("Environment_2y1ty")
 
-[node name="Light ring" type="DirectionalLight3D" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=1961031784]
-transform = Transform3D(1, 0, 0, 0, -0.6427876, -0.7660444, 0, 0.7660444, -0.6427876, 0, 0, 0)
-light_cull_mask = 8
-shadow_enabled = true
-
-[node name="Light earth" type="DirectionalLight3D" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=801004506]
-transform = Transform3D(0.39440814, 0.098476686, -0.91364354, -0.03463931, -0.9919415, -0.12186935, -0.91828215, 0.07971425, -0.3878187, 0, 15, 0)
-light_cull_mask = 4
-shadow_enabled = true
-
 [node name="Light action" type="DirectionalLight3D" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=1129389940]
 transform = Transform3D(-4.371139e-08, 0.7071067, -0.7071067, 0, 0.7071067, 0.7071067, 1, 3.0908616e-08, -3.0908616e-08, 0, 15, 0)
 light_cull_mask = 16
@@ -91,27 +80,17 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1
 
 [node name="Player" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1811810025 instance=ExtResource("2_d13ii")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.093774796, 0, 1.1087775)
-generator_id = 3
+ship_id = 4
 gamepad_move_speed = 15.0
 gamepad_l2_move_speed = 30.0
 gamepad_acceleration = 500.0
 gamepad_deceleration = 500.0
 
-[node name="Background" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=240733446]
-
-[node name="Sun" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=145217065 instance=ExtResource("3_1u8w0")]
-transform = Transform3D(0.15, 0, 0, 0, -0.12057852, 0.08922344, 0, -0.08922344, -0.12057852, -45.875, -52.06, -26.895)
-
-[node name="earth" parent="GameViewportContainer/GameViewport/GameWorld/Background" unique_id=1975713936 instance=ExtResource("4_0odxb")]
-transform = Transform3D(0.305, 0, 0, 0, 0.17537662, 0.24953564, 0, -0.24953566, 0.1753766, 21.065, -26.265, -133.81366)
-visible = false
-speed = 2.0
-
 [node name="LevelScroll" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=2113647570]
 script = ExtResource("7_xuqvo")
+start_offset_z = 900.0
 
 [node name="LevelScrollRuler" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=552135128 instance=ExtResource("8_qsp4k")]
-visible = false
 z_min = -1500.0
 z_max = 0.0
 tick_spacing = 6.0
@@ -119,7 +98,7 @@ major_tick_every = 1
 scroll_speed = 6.0
 
 [node name="cyclon boss 2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=598173431 instance=ExtResource("18_074og")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8261032, 0, -1195.0679)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8261032, 0, -1209.8783)
 
 [node name="finisher" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1951948358 instance=ExtResource("8_074og")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.954102, 0, -899.2601)
@@ -155,7 +134,11 @@ activate_on_scroll_line = true
 scroll_activation_z = -120.0
 
 [node name="station01" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/background" unique_id=1920943153 instance=ExtResource("6_0cp0l")]
-transform = Transform3D(3.200625, -0.56435657, 0, 0.48874706, 2.7718227, 1.625, -0.28217828, -1.6003126, 2.8145826, -9.9689865, -17.925303, -23.407104)
+transform = Transform3D(3.200625, -0.56435657, 0, 0.48874706, 2.7718227, 1.625, -0.28217828, -1.6003126, 2.8145826, -9.9689865, -17.925303, -1112.3087)
+speed_z = -2.0
+
+[node name="station02" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/background" unique_id=1039112788 instance=ExtResource("6_0cp0l")]
+transform = Transform3D(3.200625, -0.56435657, 0, 0.48874706, 2.7718227, 1.625, -0.28217828, -1.6003126, 2.8145826, -9.9689865, -17.925303, -32.08777)
 speed_z = -2.0
 
 [node name="station05" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/background" unique_id=1232938646 instance=ExtResource("7_d2t1y")]
@@ -165,15 +148,29 @@ speed_x = 3.0
 activate_on_scroll_line = true
 scroll_activation_z = 0.0
 
+[node name="station06" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/background" unique_id=731634273 instance=ExtResource("7_d2t1y")]
+transform = Transform3D(0.62251467, 0, -0.78260815, 0, 1, 0, 0.78260815, 0, 0.62251467, 47.434105, -9.363728, -1385.8712)
+speed_z = -6.0
+speed_x = -3.0
+activate_on_scroll_line = true
+scroll_activation_z = 0.0
+
 [node name="fighter752" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/background" unique_id=246527723 instance=ExtResource("32_htxhm")]
-transform = Transform3D(-3.7094352, 0, 5.936336, 0, 7, 0, -5.936336, 0, -3.7094352, -49.688816, -10, -382.56873)
+transform = Transform3D(-3.7094352, 0, 5.936336, 0, 7, 0, -5.936336, 0, -3.7094352, -49.688816, -10, -360.0658)
 speed_z = -7.0
 speed_x = 3.0
 activate_on_scroll_line = true
 scroll_activation_z = 17.0
 
+[node name="fighter754" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/background" unique_id=1275668737 instance=ExtResource("32_htxhm")]
+transform = Transform3D(-3.2124648, -1.8547176, 5.936336, -3.4999998, 6.0621777, 0, -5.141018, -2.968168, -3.709435, -49.688816, -10, -1285.2081)
+speed_z = -10.0
+speed_x = 10.0
+activate_on_scroll_line = true
+scroll_activation_z = 17.0
+
 [node name="fighter753" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/background" unique_id=1875678727 instance=ExtResource("32_htxhm")]
-transform = Transform3D(-3.7094352, 0, -5.936336, 0, 7, 0, 5.936336, 0, -3.7094352, 53.22056, -10, -611.6288)
+transform = Transform3D(-3.7094352, 0, -5.936336, 0, 7, 0, 5.936336, 0, -3.7094352, 53.22056, -10, -545.3091)
 speed_z = -7.0
 speed_x = -3.0
 activate_on_scroll_line = true
