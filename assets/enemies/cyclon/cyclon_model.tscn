@@ -1,9 +1,21 @@
 [gd_scene format=3 uid="uid://dlyy41r5qfdjn"]
 
 [ext_resource type="PackedScene" uid="uid://75wt6lao8ob0" path="res://assets/enemies/cyclon/Meshy_AI_Golden_Cyclone_Interc_0703084642_texture.glb" id="1_s5lo6"]
+[ext_resource type="Texture2D" uid="uid://b1o3h0rxcjett" path="res://assets/enemies/cyclon/Meshy_AI_Golden_Cyclone_Interc_0703084642_texture_0.jpg" id="2_ogx7l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbm5s"]
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+albedo_texture = ExtResource("2_ogx7l")
+metallic = 0.44
+roughness = 0.07
+clearcoat_enabled = true
+clearcoat_roughness = 1.0
 
 [node name="Meshy_AI_Golden_Cyclone_Interc_0703084642_texture" unique_id=208588012 instance=ExtResource("1_s5lo6")]
 layers = 16
 
 [node name="Mesh" parent="." index="0" unique_id=999268129]
 layers = 16
+surface_material_override/0 = SubResource("StandardMaterial3D_vbm5s")

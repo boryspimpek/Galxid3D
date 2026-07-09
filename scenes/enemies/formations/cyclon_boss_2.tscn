@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bkkprwsfeseit"]
+
+[ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="1_1r0oi"]
+[ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemies/base/EnemyPath3D.gd" id="2_bjb73"]
+[ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemies/base/EnemyPathFollow.gd" id="3_gq6pe"]
+[ext_resource type="PackedScene" uid="uid://3bdth0nlydir" path="res://scenes/enemies/types/cyclon.tscn" id="4_5dygc"]
+[ext_resource type="Script" uid="uid://bk8covuxr0uq1" path="res://scenes/enemies/base/Boss.gd" id="5_5dygc"]
+[ext_resource type="Script" uid="uid://cyu6r2yllmynr" path="res://scripts/resources/enemies/weapons/BossWeaponPhase.gd" id="6_hbw16"]
+[ext_resource type="Script" uid="uid://0lspj842eewa" path="res://scripts/resources/enemies/weapons/HomingEnemyWeaponData.gd" id="7_vtw1i"]
+
+[sub_resource type="Curve3D" id="Curve3D_hbw16"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.010086536, 0, 0.02644825, 0.009691238, 0, -5.706683, -0.009691238, 0, 5.706683, -14.958761, 0, 4.754657, -5.639715, 0, -0.049041748, 5.639715, 0, 0.049041748, 0.10843468, 0, 13.459612, 0.049041748, 0, 9.268747, -0.049041748, 0, -9.268747, 16.19388, 0, -1.1055636, 0, 0, 0, 0, 0, 0, 0.10843468, 0, -10.276228, 0, 0, 0, 0, 0, 0, -14.064415, 0, -19.29977, 0, 0, 0, 0, 0, 0, -0.237077, 0, -28.307293, 0, 0, 0, 0, 0, 0, 13.151116, 0, -28.258251, 0, 0, 0, 0, 0, 0, -0.39507318, 0, -42.175488),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 9
+
+[sub_resource type="Resource" id="Resource_7ost7"]
+script = ExtResource("7_vtw1i")
+homing_duration = 2.0
+fire_rate = 0.5
+aim = 10
+sound = 5
+metadata/_custom_type_script = "uid://0lspj842eewa"
+
+[sub_resource type="Resource" id="Resource_pg00h"]
+script = ExtResource("6_hbw16")
+weapon = SubResource("Resource_7ost7")
+cooldown_after = 1.5
+muzzle_indices = Array[int]([0])
+metadata/_custom_type_script = "uid://cyu6r2yllmynr"
+
+[node name="cyclon boss 2" type="Node3D" unique_id=598173431]
+
+[node name="LevelScrollRuler" parent="." unique_id=1253269102 instance=ExtResource("1_1r0oi")]
+
+[node name="EnemyPath3D" type="Path3D" parent="." unique_id=8132215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042043686, 0, -7.3578296)
+curve = SubResource("Curve3D_hbw16")
+script = ExtResource("2_bjb73")
+metadata/_custom_type_script = "uid://braxpml2y0f6o"
+
+[node name="EnemyPathFollow" type="PathFollow3D" parent="EnemyPath3D" unique_id=677548269]
+transform = Transform3D(0.065357216, 0, 0.99784815, 0, 1, 0, -0.99784815, 0, 0.065357216, -0.010086536, 0, 0.02644825)
+script = ExtResource("3_gq6pe")
+metadata/_custom_type_script = "uid://de0wqltyclsk0"
+
+[node name="cyclon" parent="EnemyPath3D/EnemyPathFollow" unique_id=1897743314 instance=ExtResource("4_5dygc")]
+script = ExtResource("5_5dygc")
+weapon_phases = Array[ExtResource("6_hbw16")]([SubResource("Resource_pg00h")])
+explosion_scene = null
+hit_effect_scene = null

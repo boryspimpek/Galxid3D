@@ -68,7 +68,7 @@ point_count = 3
 
 [sub_resource type="Curve3D" id="Curve3D_0ker1"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.12625313, 0, 0.14987183, 0, 0, 0, 0, 0, 0, -0.04177475, 0, 6.79047),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.0026378632, 0, 0.0018386841, 0, 0, 0, 0, 0, 0, -0.04177475, 0, 6.79047),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -163,7 +163,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.974182, 0, -117.78153)
 [node name="avatar2" type="Node3D" parent="." unique_id=1436510646]
 
 [node name="Enemy" parent="avatar2" unique_id=1330233692 instance=ExtResource("15_k2es2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.08489, 0, -79.22293)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.744905, 0, -79.22293)
 
 [node name="Enemy9" parent="avatar2" unique_id=1897743314 instance=ExtResource("15_k2es2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.553217, 0, -42.770298)
@@ -403,12 +403,12 @@ speed_curve = SubResource("Curve_g4q31")
 bank_enabled = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="bulldog/Path3D3" unique_id=1491432205]
-transform = Transform3D(-0.99988097, 0, -0.012719908, 0, 1, 0, 0.012719908, 0, -0.99988097, -0.12625313, 0, 0.14987183)
+transform = Transform3D(-0.9999421, 0, 0.0057648425, 0, 1, 0, -0.0057648425, 0, -0.9999421, -0.0026378632, 0, 0.0018386841)
 loop = false
 script = ExtResource("12_yuv4d")
 
 [node name="bulldog" parent="bulldog/Path3D3/PathFollow3D" unique_id=1385327463 instance=ExtResource("14_k2es2")]
-transform = Transform3D(1.7000002, 0, 0, 0, 1.7, 0, 0, 0, 1.7000002, 0.02922821, 0, -2.2976837)
+transform = Transform3D(1.7, 0, 9.313226e-10, 0, 1.7, 0, -9.313226e-10, 0, 1.7, 0.027820587, 0, 4.8256454)
 
 [node name="DelayedFacePlayer" type="Node" parent="bulldog/Path3D3/PathFollow3D/bulldog" unique_id=1374231811]
 script = ExtResource("16_1edqy")

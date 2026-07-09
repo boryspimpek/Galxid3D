@@ -35,6 +35,7 @@ loop = false
 script = ExtResource("2_lojll")
 
 [node name="avatar1" parent="Path2/PathFollow3D" unique_id=1897743314 instance=ExtResource("3_i6po5")]
+die_with = NodePath("../../PathFollow3D2/simple_cannon")
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Path2" unique_id=103957804]
 transform = Transform3D(-0.018213702, 9.8436416e-05, 0.9997971, 3.6378526e-12, 0.999991, -9.844999e-05, -0.9997993, -1.7932479e-06, -0.018213661, -0.0050640106, -0.000546813, 0.007091522)

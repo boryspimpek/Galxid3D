@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://3bdth0nlydir"]
+
+[ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_ru3rw"]
+[ext_resource type="PackedScene" uid="uid://dlyy41r5qfdjn" path="res://assets/enemies/cyclon/cyclon_model.tscn" id="2_1t1t4"]
+
+[node name="cyclon" unique_id=1897743314 instance=ExtResource("1_ru3rw")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+armor = 1000
+
+[node name="Meshy_AI_Golden_Cyclone_Interc_0703084642_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=208588012 instance=ExtResource("2_1t1t4")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Muzzle" parent="." index="3" unique_id=1704985833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.4771526)
+
+[node name="Muzzle2" type="Marker3D" parent="." index="4" unique_id=1703068695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6250696, 0, 0.60121214)
+
+[node name="Muzzle3" type="Marker3D" parent="." index="5" unique_id=17024426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62507, 0, 0.6107551)
+
+[node name="Muzzle4" type="Marker3D" parent="." index="6" unique_id=850048378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014315009, 0, 0.94476193)

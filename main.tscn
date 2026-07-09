@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="7_xuqvo"]
 [ext_resource type="PackedScene" uid="uid://cl1yt87544mrn" path="res://scenes/enemies/formations/finisher.tscn" id="8_074og"]
 [ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="8_qsp4k"]
+[ext_resource type="PackedScene" uid="uid://bkkprwsfeseit" path="res://scenes/enemies/formations/cyclon_boss_2.tscn" id="18_074og"]
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="22_d2t1y"]
 [ext_resource type="PackedScene" uid="uid://dl18q8lfjoe2t" path="res://scenes/stations/dreadnought.tscn" id="29_htxhm"]
 [ext_resource type="PackedScene" uid="uid://bfylem1kva7em" path="res://scenes/stations/fighter752.tscn" id="32_htxhm"]
@@ -90,7 +91,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1
 
 [node name="Player" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1811810025 instance=ExtResource("2_d13ii")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.093774796, 0, 1.1087775)
-generator_id = 3
+ship_id = 4
 gamepad_move_speed = 15.0
 gamepad_l2_move_speed = 30.0
 gamepad_acceleration = 500.0
@@ -108,10 +109,10 @@ speed = 2.0
 
 [node name="LevelScroll" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=2113647570]
 script = ExtResource("7_xuqvo")
-start_offset_z = 800.0
+start_offset_z = 1180.0
 
 [node name="LevelScrollRuler" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=552135128 instance=ExtResource("8_qsp4k")]
-z_min = -1000.0
+z_min = -1500.0
 z_max = 0.0
 tick_spacing = 6.0
 major_tick_every = 1
@@ -174,3 +175,6 @@ speed_z = -7.0
 speed_x = -3.0
 activate_on_scroll_line = true
 scroll_activation_z = 17.0
+
+[node name="cyclon boss 2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=598173431 instance=ExtResource("18_074og")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8261032, 0, -1195.0679)

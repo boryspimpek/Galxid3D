@@ -1,6 +1,6 @@
 res://scenes/enemies/formations/finisher.tscn
 res://assets/shaders/jet_engine.gdshader
-res://scenes/enemies/formations/arrow formations/formation6.tscn
-res://scenes/enemies/formations/arrow formations/formation16.tscn
-res://scenes/player/Player.tscn
-res://data/play_area/default.tres
+res://main.tscn
+res://assets/enemies/cyclon/cyclon_model.tscn
+res://scenes/enemies/formations/cyclon_boss_2.tscn
+res://scenes/enemies/types/cyclon.tscn
