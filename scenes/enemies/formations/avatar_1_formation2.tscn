@@ -72,3 +72,4 @@ weapon_data = SubResource("Resource_e4gie")
 
 [node name="PlayAreaFrame" parent="." unique_id=616916982 instance=ExtResource("5_aa7dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.084358, 0, 11.418688)
+visible = false
