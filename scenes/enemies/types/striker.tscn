@@ -39,7 +39,7 @@ cap_bottom = false
 
 [node name="striker" unique_id=1897743314 instance=ExtResource("1_aypmb")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
-value = 0
+value = 1
 
 [node name="Meshy_AI_Blue_Orange_Toy_Space_0703084701_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=394875078 instance=ExtResource("2_2vxm4")]
 

@@ -1,3 +1,4 @@
+AnimationPlayer
 AudioStreamPlayer
 Node3D
 EnemyFacing
@@ -11,5 +12,3 @@ CollisionShape3D
 Sprite3D
 Area3D
 LevelScroll3D
-FacePlayer
-DelayedFacePlayer

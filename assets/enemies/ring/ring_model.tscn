@@ -16,6 +16,6 @@ clearcoat_roughness = 1.0
 [node name="Meshy_AI_Blue_Ring_Station_0709062015_texture" unique_id=514267123 instance=ExtResource("1_os06g")]
 layers = 16
 
-[node name="Mesh" parent="." index="0" unique_id=188402047]
+[node name="Mesh" parent="." index="0" unique_id=1933739655]
 layers = 16
 surface_material_override/0 = SubResource("StandardMaterial3D_hffkg")

@@ -26,112 +26,6 @@ font_color = Color(1, 0.55, 0.15, 1)
 outline_size = 20
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_value"]
-font_size = 18
-font_color = Color(0.9, 0.95, 1, 1)
-outline_size = 3
-outline_color = Color(0, 0, 0, 0.8)
-
-[sub_resource type="LabelSettings" id="LabelSettings_menu_title_start"]
-font = ExtResource("2_7v63g")
-font_size = 76
-font_color = Color(0.4, 0.85, 1, 1)
-outline_size = 16
-outline_color = Color(0.01, 0.05, 0.12, 1)
-shadow_size = 10
-shadow_color = Color(0.2, 0.6, 1, 0.4)
-shadow_offset = Vector2(0, 4)
-
-[sub_resource type="LabelSettings" id="LabelSettings_menu_title_pause"]
-font = ExtResource("2_7v63g")
-font_size = 68
-font_color = Color(1, 0.8, 0.3, 1)
-outline_size = 16
-outline_color = Color(0.12, 0.06, 0, 1)
-shadow_size = 10
-shadow_color = Color(1, 0.7, 0.2, 0.35)
-shadow_offset = Vector2(0, 4)
-
-[sub_resource type="LabelSettings" id="LabelSettings_menu_title_over"]
-font = ExtResource("2_7v63g")
-font_size = 72
-font_color = Color(1, 0.32, 0.32, 1)
-outline_size = 16
-outline_color = Color(0.12, 0, 0.02, 1)
-shadow_size = 10
-shadow_color = Color(1, 0.2, 0.2, 0.4)
-shadow_offset = Vector2(0, 4)
-
-[sub_resource type="LabelSettings" id="LabelSettings_subtitle"]
-font = ExtResource("2_7v63g")
-font_size = 24
-font_color = Color(0.72, 0.8, 0.95, 0.9)
-outline_size = 6
-outline_color = Color(0, 0, 0, 0.9)
-
-[sub_resource type="LabelSettings" id="LabelSettings_ctrl_action"]
-font_size = 17
-font_color = Color(0.58, 0.66, 0.82, 1)
-outline_size = 3
-outline_color = Color(0, 0, 0, 0.7)
-
-[sub_resource type="LabelSettings" id="LabelSettings_ctrl_key"]
-font = ExtResource("2_7v63g")
-font_size = 22
-font_color = Color(0.95, 0.98, 1, 1)
-outline_size = 5
-outline_color = Color(0, 0, 0, 0.9)
-
-[sub_resource type="LabelSettings" id="LabelSettings_hint_pulse"]
-font = ExtResource("2_7v63g")
-font_size = 26
-font_color = Color(1, 0.84, 0.2, 1)
-outline_size = 8
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_final_score"]
-font = ExtResource("2_7v63g")
-font_size = 52
-font_color = Color(1, 0.84, 0.2, 1)
-outline_size = 10
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="PanelStyle_start"]
-content_margin_left = 56.0
-content_margin_top = 40.0
-content_margin_right = 56.0
-content_margin_bottom = 40.0
-bg_color = Color(0.03, 0.05, 0.1, 0.93)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.35, 0.8, 1, 0.75)
-corner_radius_top_left = 18
-corner_radius_top_right = 18
-corner_radius_bottom_right = 18
-corner_radius_bottom_left = 18
-shadow_color = Color(0.2, 0.6, 1, 0.2)
-shadow_size = 28
-
-[sub_resource type="StyleBoxFlat" id="PanelStyle_pause"]
-content_margin_left = 56.0
-content_margin_top = 40.0
-content_margin_right = 56.0
-content_margin_bottom = 40.0
-bg_color = Color(0.06, 0.05, 0.03, 0.93)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 0.78, 0.25, 0.75)
-corner_radius_top_left = 18
-corner_radius_top_right = 18
-corner_radius_bottom_right = 18
-corner_radius_bottom_left = 18
-shadow_color = Color(1, 0.7, 0.2, 0.18)
-shadow_size = 28
-
 [sub_resource type="StyleBoxFlat" id="PanelStyle_over"]
 content_margin_left = 56.0
 content_margin_top = 40.0
@@ -150,6 +44,36 @@ corner_radius_bottom_left = 18
 shadow_color = Color(1, 0.2, 0.2, 0.2)
 shadow_size = 28
 
+[sub_resource type="LabelSettings" id="LabelSettings_menu_title_over"]
+font = ExtResource("2_7v63g")
+font_size = 72
+font_color = Color(1, 0.32, 0.32, 1)
+outline_size = 16
+outline_color = Color(0.12, 0, 0.02, 1)
+shadow_size = 10
+shadow_color = Color(1, 0.2, 0.2, 0.4)
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="LabelSettings" id="LabelSettings_subtitle"]
+font = ExtResource("2_7v63g")
+font_size = 24
+font_color = Color(0.72, 0.8, 0.95, 0.9)
+outline_size = 6
+outline_color = Color(0, 0, 0, 0.9)
+
+[sub_resource type="StyleBoxLine" id="SeparatorLine"]
+color = Color(0.5, 0.6, 0.8, 0.3)
+grow_begin = -60.0
+grow_end = -60.0
+thickness = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_final_score"]
+font = ExtResource("2_7v63g")
+font_size = 52
+font_color = Color(1, 0.84, 0.2, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="BtnStyle_normal"]
 content_margin_left = 32.0
 content_margin_top = 12.0
@@ -161,6 +85,22 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.35, 0.8, 1, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="BtnStyle_pressed"]
+content_margin_left = 32.0
+content_margin_top = 12.0
+content_margin_right = 32.0
+content_margin_bottom = 12.0
+bg_color = Color(0.05, 0.08, 0.14, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.35, 0.8, 1, 0.4)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -184,29 +124,89 @@ corner_radius_bottom_left = 10
 shadow_color = Color(0.35, 0.8, 1, 0.25)
 shadow_size = 10
 
-[sub_resource type="StyleBoxFlat" id="BtnStyle_pressed"]
-content_margin_left = 32.0
-content_margin_top = 12.0
-content_margin_right = 32.0
-content_margin_bottom = 12.0
-bg_color = Color(0.05, 0.08, 0.14, 1)
+[sub_resource type="StyleBoxEmpty" id="BtnStyle_focus"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hint_pulse"]
+font = ExtResource("2_7v63g")
+font_size = 26
+font_color = Color(1, 0.84, 0.2, 1)
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="PanelStyle_start"]
+content_margin_left = 56.0
+content_margin_top = 40.0
+content_margin_right = 56.0
+content_margin_bottom = 40.0
+bg_color = Color(0.03, 0.05, 0.1, 0.93)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.35, 0.8, 1, 0.4)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+border_color = Color(0.35, 0.8, 1, 0.75)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0.2, 0.6, 1, 0.2)
+shadow_size = 28
 
-[sub_resource type="StyleBoxEmpty" id="BtnStyle_focus"]
+[sub_resource type="LabelSettings" id="LabelSettings_menu_title_start"]
+font = ExtResource("2_7v63g")
+font_size = 76
+font_color = Color(0.4, 0.85, 1, 1)
+outline_size = 16
+outline_color = Color(0.01, 0.05, 0.12, 1)
+shadow_size = 10
+shadow_color = Color(0.2, 0.6, 1, 0.4)
+shadow_offset = Vector2(0, 4)
 
-[sub_resource type="StyleBoxLine" id="SeparatorLine"]
-color = Color(0.5, 0.6, 0.8, 0.3)
-grow_begin = -60.0
-grow_end = -60.0
-thickness = 2
+[sub_resource type="LabelSettings" id="LabelSettings_ctrl_action"]
+font_size = 17
+font_color = Color(0.58, 0.66, 0.82, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 0.7)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ctrl_key"]
+font = ExtResource("2_7v63g")
+font_size = 22
+font_color = Color(0.95, 0.98, 1, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 0.9)
+
+[sub_resource type="StyleBoxFlat" id="PanelStyle_pause"]
+content_margin_left = 56.0
+content_margin_top = 40.0
+content_margin_right = 56.0
+content_margin_bottom = 40.0
+bg_color = Color(0.06, 0.05, 0.03, 0.93)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.78, 0.25, 0.75)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(1, 0.7, 0.2, 0.18)
+shadow_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_menu_title_pause"]
+font = ExtResource("2_7v63g")
+font_size = 68
+font_color = Color(1, 0.8, 0.3, 1)
+outline_size = 16
+outline_color = Color(0.12, 0.06, 0, 1)
+shadow_size = 10
+shadow_color = Color(1, 0.7, 0.2, 0.35)
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="LabelSettings" id="LabelSettings_value"]
+font_size = 18
+font_color = Color(0.9, 0.95, 1, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 0.8)
 
 [node name="Hud" type="CanvasLayer" unique_id=1368757147]
 layer = 10
@@ -347,30 +347,30 @@ text = "GAME OVER"
 label_settings = SubResource("LabelSettings_menu_title_over")
 horizontal_alignment = 1
 
-[node name="Subtitle" type="Label" parent="Root/GameOver/Center/Panel/VBox"]
+[node name="Subtitle" type="Label" parent="Root/GameOver/Center/Panel/VBox" unique_id=1258320048]
 layout_mode = 2
 text = "YOUR SHIP WAS DESTROYED"
 label_settings = SubResource("LabelSettings_subtitle")
 horizontal_alignment = 1
 
-[node name="Sep" type="HSeparator" parent="Root/GameOver/Center/Panel/VBox"]
+[node name="Sep" type="HSeparator" parent="Root/GameOver/Center/Panel/VBox" unique_id=2056241427]
 layout_mode = 2
 theme_override_styles/separator = SubResource("SeparatorLine")
 
-[node name="ScoreCaption" type="Label" parent="Root/GameOver/Center/Panel/VBox"]
+[node name="ScoreCaption" type="Label" parent="Root/GameOver/Center/Panel/VBox" unique_id=1238325017]
 layout_mode = 2
 text = "FINAL SCORE"
 label_settings = SubResource("LabelSettings_subtitle")
 horizontal_alignment = 1
 
-[node name="FinalScore" type="Label" parent="Root/GameOver/Center/Panel/VBox"]
+[node name="FinalScore" type="Label" parent="Root/GameOver/Center/Panel/VBox" unique_id=694709658]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_final_score")
 horizontal_alignment = 1
 
-[node name="Sep2" type="HSeparator" parent="Root/GameOver/Center/Panel/VBox"]
+[node name="Sep2" type="HSeparator" parent="Root/GameOver/Center/Panel/VBox" unique_id=801226018]
 layout_mode = 2
 theme_override_styles/separator = SubResource("SeparatorLine")
 
@@ -379,14 +379,14 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9, 0.96, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.7, 0.85, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_7v63g")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("BtnStyle_focus")
-theme_override_styles/hover = SubResource("BtnStyle_hover")
-theme_override_styles/pressed = SubResource("BtnStyle_pressed")
 theme_override_styles/normal = SubResource("BtnStyle_normal")
+theme_override_styles/pressed = SubResource("BtnStyle_pressed")
+theme_override_styles/hover = SubResource("BtnStyle_hover")
+theme_override_styles/focus = SubResource("BtnStyle_focus")
 text = "PLAY AGAIN"
 
 [node name="Hint" type="Label" parent="Root/GameOver/Center/Panel/VBox" unique_id=604441094 groups=["pulse_hint"]]
@@ -442,13 +442,13 @@ text = "GALAXID"
 label_settings = SubResource("LabelSettings_menu_title_start")
 horizontal_alignment = 1
 
-[node name="Subtitle" type="Label" parent="Root/StartGame/Center/Panel/VBox"]
+[node name="Subtitle" type="Label" parent="Root/StartGame/Center/Panel/VBox" unique_id=2109365158]
 layout_mode = 2
 text = "PILOT, THE GALAXY NEEDS YOU"
 label_settings = SubResource("LabelSettings_subtitle")
 horizontal_alignment = 1
 
-[node name="Sep" type="HSeparator" parent="Root/StartGame/Center/Panel/VBox"]
+[node name="Sep" type="HSeparator" parent="Root/StartGame/Center/Panel/VBox" unique_id=1633265538]
 layout_mode = 2
 theme_override_styles/separator = SubResource("SeparatorLine")
 
@@ -459,85 +459,98 @@ theme_override_constants/h_separation = 40
 theme_override_constants/v_separation = 6
 columns = 2
 
-[node name="MoveAction" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid"]
+[node name="MoveAction" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid" unique_id=546673053]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "MOVE"
 label_settings = SubResource("LabelSettings_ctrl_action")
 horizontal_alignment = 2
 
-[node name="MoveKey" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid"]
+[node name="MoveKey" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid" unique_id=908783897]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "LEFT STICK"
+text = "LEFT STICK / MOUSE"
 label_settings = SubResource("LabelSettings_ctrl_key")
 
-[node name="FireAction" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid"]
+[node name="FireAction" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid" unique_id=1099325471]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "PRIMARY WEAPON"
 label_settings = SubResource("LabelSettings_ctrl_action")
 horizontal_alignment = 2
 
-[node name="FireKey" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid"]
+[node name="FireKey" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid" unique_id=698564667]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "X"
+text = "X / LMB"
 label_settings = SubResource("LabelSettings_ctrl_key")
 
-[node name="Power1Action" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid"]
+[node name="Power1Action" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid" unique_id=101968645]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "POWER SHOT I"
 label_settings = SubResource("LabelSettings_ctrl_action")
 horizontal_alignment = 2
 
-[node name="Power1Key" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid"]
+[node name="Power1Key" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid" unique_id=958096067]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "SQUARE"
+text = "SQUARE / Q"
 label_settings = SubResource("LabelSettings_ctrl_key")
 
-[node name="Power2Action" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid"]
+[node name="Power2Action" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid" unique_id=1545877171]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "POWER SHOT II"
 label_settings = SubResource("LabelSettings_ctrl_action")
 horizontal_alignment = 2
 
-[node name="Power2Key" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid"]
+[node name="Power2Key" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid" unique_id=1048511182]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "TRIANGLE"
+text = "TRIANGLE / W"
 label_settings = SubResource("LabelSettings_ctrl_key")
 
-[node name="BoostAction" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid"]
+[node name="BoostAction" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid" unique_id=995348250]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "BOOST"
+text = "SPEED BOOST"
 label_settings = SubResource("LabelSettings_ctrl_action")
 horizontal_alignment = 2
 
-[node name="BoostKey" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid"]
+[node name="BoostKey" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid" unique_id=1894414167]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "R1"
+text = "L2 / -"
 label_settings = SubResource("LabelSettings_ctrl_key")
 
-[node name="DodgeAction" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid"]
+[node name="DodgeAction" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid" unique_id=21712374]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "DODGE"
 label_settings = SubResource("LabelSettings_ctrl_action")
 horizontal_alignment = 2
 
-[node name="DodgeKey" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid"]
+[node name="DodgeKey" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid" unique_id=257859659]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "R2"
+text = "R2 / RMB"
 label_settings = SubResource("LabelSettings_ctrl_key")
 
-[node name="Sep2" type="HSeparator" parent="Root/StartGame/Center/Panel/VBox"]
+[node name="PauseAction" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid" unique_id=389116126]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "PAUSE"
+label_settings = SubResource("LabelSettings_ctrl_action")
+horizontal_alignment = 2
+
+[node name="PauseKey" type="Label" parent="Root/StartGame/Center/Panel/VBox/ControlsGrid" unique_id=1698783773]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "START / ESCAPE"
+label_settings = SubResource("LabelSettings_ctrl_key")
+
+[node name="Sep2" type="HSeparator" parent="Root/StartGame/Center/Panel/VBox" unique_id=1292181937]
 layout_mode = 2
 theme_override_styles/separator = SubResource("SeparatorLine")
 
@@ -594,13 +607,13 @@ text = "PAUSED"
 label_settings = SubResource("LabelSettings_menu_title_pause")
 horizontal_alignment = 1
 
-[node name="Subtitle" type="Label" parent="Root/PauseScreen/Center/Panel/VBox"]
+[node name="Subtitle" type="Label" parent="Root/PauseScreen/Center/Panel/VBox" unique_id=242716974]
 layout_mode = 2
 text = "MISSION ON HOLD"
 label_settings = SubResource("LabelSettings_subtitle")
 horizontal_alignment = 1
 
-[node name="Sep" type="HSeparator" parent="Root/PauseScreen/Center/Panel/VBox"]
+[node name="Sep" type="HSeparator" parent="Root/PauseScreen/Center/Panel/VBox" unique_id=2111949284]
 layout_mode = 2
 theme_override_styles/separator = SubResource("SeparatorLine")
 
@@ -611,85 +624,98 @@ theme_override_constants/h_separation = 40
 theme_override_constants/v_separation = 6
 columns = 2
 
-[node name="MoveAction" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid"]
+[node name="MoveAction" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid" unique_id=1312765040]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "MOVE"
 label_settings = SubResource("LabelSettings_ctrl_action")
 horizontal_alignment = 2
 
-[node name="MoveKey" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid"]
+[node name="MoveKey" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid" unique_id=1863512160]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "LEFT STICK"
+text = "LEFT STICK / MOUSE"
 label_settings = SubResource("LabelSettings_ctrl_key")
 
-[node name="FireAction" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid"]
+[node name="FireAction" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid" unique_id=737940165]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "PRIMARY WEAPON"
 label_settings = SubResource("LabelSettings_ctrl_action")
 horizontal_alignment = 2
 
-[node name="FireKey" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid"]
+[node name="FireKey" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid" unique_id=48562483]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "X"
+text = "X / LMB"
 label_settings = SubResource("LabelSettings_ctrl_key")
 
-[node name="Power1Action" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid"]
+[node name="Power1Action" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid" unique_id=339066010]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "POWER SHOT I"
 label_settings = SubResource("LabelSettings_ctrl_action")
 horizontal_alignment = 2
 
-[node name="Power1Key" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid"]
+[node name="Power1Key" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid" unique_id=1896434191]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "SQUARE"
+text = "SQUARE / Q"
 label_settings = SubResource("LabelSettings_ctrl_key")
 
-[node name="Power2Action" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid"]
+[node name="Power2Action" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid" unique_id=2103228654]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "POWER SHOT II"
+text = "POWER SHOT / Q"
 label_settings = SubResource("LabelSettings_ctrl_action")
 horizontal_alignment = 2
 
-[node name="Power2Key" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid"]
+[node name="Power2Key" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid" unique_id=1485992969]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "TRIANGLE"
+text = "TRIANGLE / W"
 label_settings = SubResource("LabelSettings_ctrl_key")
 
-[node name="BoostAction" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid"]
+[node name="BoostAction" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid" unique_id=1934196940]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "BOOST"
+text = "SPEED BOOST"
 label_settings = SubResource("LabelSettings_ctrl_action")
 horizontal_alignment = 2
 
-[node name="BoostKey" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid"]
+[node name="BoostKey" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid" unique_id=1868946592]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "R1"
+text = "L2 / -"
 label_settings = SubResource("LabelSettings_ctrl_key")
 
-[node name="DodgeAction" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid"]
+[node name="DodgeAction" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid" unique_id=1791101292]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "DODGE"
 label_settings = SubResource("LabelSettings_ctrl_action")
 horizontal_alignment = 2
 
-[node name="DodgeKey" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid"]
+[node name="DodgeKey" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid" unique_id=2098746445]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "R2"
+text = "R2 / RMB"
 label_settings = SubResource("LabelSettings_ctrl_key")
 
-[node name="Sep2" type="HSeparator" parent="Root/PauseScreen/Center/Panel/VBox"]
+[node name="PauseAction" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid" unique_id=317161957]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "PAUSE"
+label_settings = SubResource("LabelSettings_ctrl_action")
+horizontal_alignment = 2
+
+[node name="PauseKey" type="Label" parent="Root/PauseScreen/Center/Panel/VBox/ControlsGrid" unique_id=1454704059]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "START / ESCAPE"
+label_settings = SubResource("LabelSettings_ctrl_key")
+
+[node name="Sep2" type="HSeparator" parent="Root/PauseScreen/Center/Panel/VBox" unique_id=610171986]
 layout_mode = 2
 theme_override_styles/separator = SubResource("SeparatorLine")
 
@@ -699,7 +725,7 @@ text = "PRESS START TO RESUME"
 label_settings = SubResource("LabelSettings_hint_pulse")
 horizontal_alignment = 1
 
-[node name="Hint2" type="Label" parent="Root/PauseScreen/Center/Panel/VBox"]
+[node name="Hint2" type="Label" parent="Root/PauseScreen/Center/Panel/VBox" unique_id=909304445]
 layout_mode = 2
 text = "X - RESTART MISSION"
 label_settings = SubResource("LabelSettings_value")
