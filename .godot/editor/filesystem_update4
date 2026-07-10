@@ -1,0 +1,6 @@
+res://main.tscn
+res://assets/shaders/jet_engine.gdshader
+res://assets/enemies/dreadnought/dreadnought_model.gdshader
+res://scenes/enemies/formations/avatar_1_formation2.tscn
+res://scenes/enemies/formations/protector_strike.tscn
+res://scenes/enemies/types/simle_cannon.tscn

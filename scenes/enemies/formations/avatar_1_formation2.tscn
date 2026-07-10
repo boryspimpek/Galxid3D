@@ -4,47 +4,71 @@
 [ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemies/base/EnemyPathFollow.gd" id="2_lojll"]
 [ext_resource type="PackedScene" uid="uid://bhuckx38w4bp2" path="res://scenes/enemies/types/avatar_1.tscn" id="3_i6po5"]
 [ext_resource type="PackedScene" uid="uid://c1wct2h0tua1o" path="res://scenes/enemies/types/simle_cannon.tscn" id="4_6lsv4"]
+[ext_resource type="Script" uid="uid://62asvta6vqik" path="res://scripts/resources/enemies/weapons/SpreadEnemyWeaponData.gd" id="4_i6po5"]
 [ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="5_aa7dy"]
+[ext_resource type="Script" uid="uid://bs5humyuxa5j2" path="res://scripts/resources/enemies/weapons/BurstEnemyWeaponData.gd" id="6_6lsv4"]
 
 [sub_resource type="Curve3D" id="Curve3D_cas67"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.0050640106, -0.000546813, 0.007091522, 0, 0, 0, 0, 0, 0, -8.037498, 0.00024414063, 0.1534214, 3.6836529, 0.00024414063, 2.9598007, -3.6836529, -0.00024414063, -2.9598007, -20.430021, 0.00048828125, -3.3176517, 0, 0, 0, 0, 0, 0, -36.698242, 0.00012207031, -19.851814),
-"tilts": PackedFloat32Array(0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.0050640106, -0.000546813, 0.007091522, -5.2955666, 0, 0.2407074, 5.2955666, 0, -0.2407074, 18.661238, -0.07336426, -7.5400715, -3.5143318, 1.4105225, 2.21451, 3.5143318, -1.4105225, -2.21451, 30.744755, -10.073364, -4.7960052, 0, 0, 0, 0, 0, 0, 33.151833, -11.961426, -14.665016, 1.8770027, 0, 0.710186, -1.8770027, 0, -0.710186, 31.195946, -11.961426, -16.665737, 0, 0, 0, 0, 0, 0, 24.678926, -11.961426, -17.264658, 0, 0, 0, 0, 0, 0, -7.130411, -11.961426, -17.104395),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 4
+point_count = 7
 
-[sub_resource type="Curve" id="Curve_b6o5a"]
-_limits = [0.0, 30.0, 0.0, 1.0]
-_data = [Vector2(0.2084592, 30), 0.0, 0.0, 0, 0, Vector2(0.5015106, 1.2585812), 0.0, 0.0, 0, 0]
-point_count = 2
+[sub_resource type="Curve" id="Curve_cas67"]
+_limits = [1.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 3), 0.0, 0.0, 0, 0, Vector2(0.43596062, 3), 0.0, 0.0, 0, 0, Vector2(0.44088674, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Resource" id="Resource_aa7dy"]
+script = ExtResource("4_i6po5")
+spread_speed = 5.0
+base_angle_deg = 90.0
+spread_angle_deg = 60.0
+spawn_from_center = false
+fire_rate = 1.5
+initial_fire_delay = 6.0
+sound = 5
+metadata/_custom_type_script = "uid://62asvta6vqik"
+
+[sub_resource type="Resource" id="Resource_e4gie"]
+script = ExtResource("6_6lsv4")
+burst_count = 8
+burst_interval = 0.17
+fire_rate = 1.5
+initial_fire_delay = 6.0
+projectile_velocity = Vector3(0, 0, 10)
+aim = 10
+metadata/_custom_type_script = "uid://bs5humyuxa5j2"
 
 [node name="avatar_1" type="Node3D" unique_id=1730415998]
 
 [node name="Path2" type="Path3D" parent="." unique_id=1465622316]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.472237, 0, 15.927704)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7999916, 12, 21.51567)
 curve = SubResource("Curve3D_cas67")
 script = ExtResource("1_cas67")
 activation_mode = 0
-speed = 2.0
-speed_curve = SubResource("Curve_b6o5a")
+speed = 3.0
+speed_curve = SubResource("Curve_cas67")
 bank_lookahead = 3.0
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path2" unique_id=504134169]
-transform = Transform3D(-0.018213702, 9.8436416e-05, 0.9997971, 3.6378526e-12, 0.999991, -9.844999e-05, -0.9997993, -1.7932479e-06, -0.018213661, -0.0050640106, -0.000546813, 0.007091522)
+transform = Transform3D(0.47947073, 0.0041930145, -0.87741274, -2.3280372e-10, 0.9998265, 0.0047784178, 0.8774262, -0.0022912784, 0.47946334, -0.0050640106, -0.000546813, 0.007091522)
 loop = false
 script = ExtResource("2_lojll")
 
 [node name="avatar1" parent="Path2/PathFollow3D" unique_id=1897743314 instance=ExtResource("3_i6po5")]
+weapon_data = SubResource("Resource_aa7dy")
 die_with = NodePath("../../PathFollow3D2/simple_cannon")
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Path2" unique_id=103957804]
-transform = Transform3D(-0.018213702, 9.8436416e-05, 0.9997971, 3.6378526e-12, 0.999991, -9.844999e-05, -0.9997993, -1.7932479e-06, -0.018213661, -0.0050640106, -0.000546813, 0.007091522)
+transform = Transform3D(0.47947073, 0.0041930145, -0.87741274, -2.3280372e-10, 0.9998265, 0.0047784178, 0.8774262, -0.0022912784, 0.47946334, -0.0050640106, -0.000546813, 0.007091522)
 loop = false
 script = ExtResource("2_lojll")
 
 [node name="simple_cannon" parent="Path2/PathFollow3D2" unique_id=476931051 instance=ExtResource("4_6lsv4")]
 transform = Transform3D(1, -6.943261e-23, -3.233759e-11, 0, 1, -2.1471176e-12, 3.233759e-11, 2.1471176e-12, 1, 0, 0.49420607, -1.9550323e-05)
+weapon_data = SubResource("Resource_e4gie")
 
 [node name="PlayAreaFrame" parent="." unique_id=616916982 instance=ExtResource("5_aa7dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.084358, 0, 11.418688)
-visible = false
