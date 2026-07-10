@@ -84,7 +84,7 @@ script = ExtResource("6_jyjfp")
 [node name="protector" parent="Path3D2/PathFollow3D" unique_id=97888846 instance=ExtResource("7_lfkyf")]
 
 [node name="avatar_1" parent="." unique_id=892321208 instance=ExtResource("13_jyjfp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0838757, 0, -143.54877)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0838757, 0, -129.73703)
 
 [node name="avatar_12" parent="." unique_id=1782404031 instance=ExtResource("14_03ua2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3477345, 0, -65.799225)
@@ -237,4 +237,4 @@ script = ExtResource("6_jyjfp")
 transform = Transform3D(1.5, 0, 0, 0, 1.4488888, 0.38822857, 0, -0.38822857, 1.4488888, 6.7155914, 0, 0.1434381)
 
 [node name="Formation3" parent="." unique_id=1616195707 instance=ExtResource("13_lfkyf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.473465, 0, -158.6257)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.473465, 0, -140.21008)

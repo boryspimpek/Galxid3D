@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://o7vsl5ns4wxb" path="res://scenes/enemies/types/devastator.tscn" id="1_5yylu"]
 [ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="3_q64u0"]
+[ext_resource type="PackedScene" uid="uid://dp6fn641cy82u" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/impact/vfx_impact_01.tscn" id="3_txbhp"]
 [ext_resource type="PackedScene" uid="uid://bncfbdv7kbrhj" path="res://scenes/enemies/formations/striker formations/striker2.tscn" id="4_8urob"]
 [ext_resource type="PackedScene" uid="uid://cl5gx7hjwmyoi" path="res://scenes/enemies/formations/striker formations/striker5.tscn" id="5_t5x2e"]
 [ext_resource type="PackedScene" uid="uid://bduyu05rjjsau" path="res://scenes/enemies/formations/striker formations/striker6.tscn" id="6_uxn6m"]
@@ -17,6 +18,7 @@ z_max = 0.0
 
 [node name="devastator" parent="." unique_id=1897743314 instance=ExtResource("1_5yylu")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 18.596464, 0, 19.07875)
+hit_effect_scene = ExtResource("3_txbhp")
 
 [node name="striker formation" parent="." unique_id=1730415998 instance=ExtResource("9_cqgpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.344532, 0, 9.058765)

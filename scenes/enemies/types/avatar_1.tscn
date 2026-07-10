@@ -17,7 +17,7 @@ metadata/_custom_type_script = "uid://62asvta6vqik"
 
 [node name="avatar1" unique_id=1897743314 instance=ExtResource("1_lra8b")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
-armor = 100
+armor = 150
 weapon_data = SubResource("Resource_g3mqj")
 value = 5
 

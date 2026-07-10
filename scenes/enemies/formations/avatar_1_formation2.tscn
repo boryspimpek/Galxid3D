@@ -27,7 +27,7 @@ base_angle_deg = 90.0
 spread_angle_deg = 60.0
 spawn_from_center = false
 fire_rate = 1.5
-initial_fire_delay = 6.0
+initial_fire_delay = 4.5
 sound = 5
 metadata/_custom_type_script = "uid://62asvta6vqik"
 
@@ -36,7 +36,7 @@ script = ExtResource("6_6lsv4")
 burst_count = 8
 burst_interval = 0.17
 fire_rate = 1.5
-initial_fire_delay = 6.0
+initial_fire_delay = 3.0
 projectile_velocity = Vector3(0, 0, 10)
 aim = 10
 metadata/_custom_type_script = "uid://bs5humyuxa5j2"
@@ -69,6 +69,7 @@ script = ExtResource("2_lojll")
 [node name="simple_cannon" parent="Path2/PathFollow3D2" unique_id=476931051 instance=ExtResource("4_6lsv4")]
 transform = Transform3D(1, -6.943261e-23, -3.233759e-11, 0, 1, -2.1471176e-12, 3.233759e-11, 2.1471176e-12, 1, 0, 0.49420607, -1.9550323e-05)
 weapon_data = SubResource("Resource_e4gie")
+die_with = NodePath("../../PathFollow3D/avatar1")
 
 [node name="PlayAreaFrame" parent="." unique_id=616916982 instance=ExtResource("5_aa7dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.084358, 0, 11.418688)

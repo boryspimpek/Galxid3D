@@ -11,3 +11,7 @@ res://scenes/enemies/types/ring.tscn
 res://assets/enemies/ring/ring_model.tscn
 res://scenes/enemies/types/orbiter.tscn
 res://scenes/enemies/types/avatar_1.tscn
+res://scenes/enemies/formations/avatar_1_formation1.tscn
+res://scenes/enemies/formations/boss_devastator.tscn
+res://scenes/enemies/formations/cyclon_boss_2.tscn
+res://scenes/enemies/types/cyclon.tscn

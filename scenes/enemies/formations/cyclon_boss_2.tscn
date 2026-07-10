@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://bs5humyuxa5j2" path="res://scripts/resources/enemies/weapons/BurstEnemyWeaponData.gd" id="8_vtw1i"]
 [ext_resource type="Script" uid="uid://62asvta6vqik" path="res://scripts/resources/enemies/weapons/SpreadEnemyWeaponData.gd" id="9_7ost7"]
 [ext_resource type="Script" uid="uid://c7cpjam6npoyw" path="res://scripts/resources/enemies/weapons/CircleEnemyWeaponData.gd" id="10_pg00h"]
+[ext_resource type="PackedScene" uid="uid://dp6fn641cy82u" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/impact/vfx_impact_01.tscn" id="11_2a53x"]
 [ext_resource type="PackedScene" uid="uid://bduyu05rjjsau" path="res://scenes/enemies/formations/striker formations/striker6.tscn" id="12_w5c06"]
 [ext_resource type="PackedScene" uid="uid://cl5gx7hjwmyoi" path="res://scenes/enemies/formations/striker formations/striker5.tscn" id="13_svhfw"]
 [ext_resource type="PackedScene" uid="uid://cv5c6y16vv5yk" path="res://scenes/enemies/formations/striker formations/striker4.tscn" id="14_pm3t5"]
@@ -177,8 +178,7 @@ metadata/_custom_type_script = "uid://de0wqltyclsk0"
 [node name="cyclon" parent="EnemyPath3D/EnemyPathFollow" unique_id=1897743314 instance=ExtResource("4_5dygc")]
 script = ExtResource("5_5dygc")
 weapon_phases = Array[ExtResource("6_hbw16")]([SubResource("Resource_ppf1e"), SubResource("Resource_70ojq"), SubResource("Resource_ms530"), SubResource("Resource_s0kol"), SubResource("Resource_svhfw"), SubResource("Resource_i20jn"), SubResource("Resource_xatxs"), SubResource("Resource_ug3wm")])
-explosion_scene = null
-hit_effect_scene = null
+hit_effect_scene = ExtResource("11_2a53x")
 
 [node name="Facing" type="Node3D" parent="EnemyPath3D/EnemyPathFollow/cyclon" unique_id=2015423846]
 script = ExtResource("8_hbw16")
