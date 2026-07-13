@@ -86,19 +86,29 @@ text = "125 400 CR"
 
 [node name="SelectedShip" type="PanelContainer" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent" unique_id=1444510467]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="ShipMargin" type="MarginContainer" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedShip" unique_id=326518480]
 layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
 
 [node name="ShipContent" type="VBoxContainer" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedShip/ShipMargin" unique_id=1713666463]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="SectionTitle" type="Label" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedShip/ShipMargin/ShipContent" unique_id=1055678839]
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedShip/ShipMargin/ShipContent" unique_id=1927120834]
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
+size_flags_vertical = 3
 texture = ExtResource("1_q48xg")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="ShipName" type="Label" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedShip/ShipMargin/ShipContent" unique_id=346222965]
 layout_mode = 2
@@ -137,19 +147,29 @@ label_settings = SubResource("LabelSettings_do4p5")
 
 [node name="SelectedGenerator" type="PanelContainer" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent" unique_id=536632784]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="GeneratorMargin" type="MarginContainer" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator" unique_id=37854900]
 layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
 
 [node name="GeneratorContent" type="VBoxContainer" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator/GeneratorMargin" unique_id=2076529995]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="SectionTitle" type="Label" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator/GeneratorMargin/GeneratorContent" unique_id=146350751]
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator/GeneratorMargin/GeneratorContent" unique_id=406497866]
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
+size_flags_vertical = 3
 texture = ExtResource("3_mefml")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="GeneratorName" type="Label" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator/GeneratorMargin/GeneratorContent" unique_id=750919409]
 layout_mode = 2
