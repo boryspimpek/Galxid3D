@@ -15,25 +15,32 @@ font = ExtResource("1_bj2ai")
 [sub_resource type="LabelSettings" id="LabelSettings_n4vr4"]
 font = ExtResource("1_bj2ai")
 
-[node name="ShipCard" type="PanelContainer" unique_id=159686141]
+[node name="Control" type="Control" unique_id=1148451465]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 86.0
+offset_bottom = 238.0
+
+[node name="ShipCard" type="PanelContainer" parent="." unique_id=159686141]
 custom_minimum_size = Vector2(0, 160)
+layout_mode = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="CardMargin" type="MarginContainer" parent="." unique_id=710964668]
+[node name="CardMargin" type="MarginContainer" parent="ShipCard" unique_id=710964668]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CardContrnt" type="VBoxContainer" parent="CardMargin" unique_id=1976166897]
+[node name="CardContrnt" type="VBoxContainer" parent="ShipCard/CardMargin" unique_id=1976166897]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ShipIndex" type="Label" parent="CardMargin/CardContrnt" unique_id=197638774]
+[node name="ShipIndex" type="Label" parent="ShipCard/CardMargin/CardContrnt" unique_id=197638774]
 layout_mode = 2
 text = "01"
 label_settings = SubResource("LabelSettings_nlklj")
 
-[node name="TextureRect" type="TextureRect" parent="CardMargin/CardContrnt" unique_id=1764689913]
+[node name="TextureRect" type="TextureRect" parent="ShipCard/CardMargin/CardContrnt" unique_id=1764689913]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_vertical = 3
@@ -41,40 +48,40 @@ texture = ExtResource("2_s71ba")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="ShipName" type="Label" parent="CardMargin/CardContrnt" unique_id=554626753]
+[node name="ShipName" type="Label" parent="ShipCard/CardMargin/CardContrnt" unique_id=554626753]
 layout_mode = 2
 text = "ARCTIC STORM"
 label_settings = SubResource("LabelSettings_56qow")
 horizontal_alignment = 1
 
-[node name="Armor" type="HBoxContainer" parent="CardMargin/CardContrnt" unique_id=1140881075]
+[node name="Armor" type="HBoxContainer" parent="ShipCard/CardMargin/CardContrnt" unique_id=1140881075]
 layout_mode = 2
 
-[node name="NameLabel" type="Label" parent="CardMargin/CardContrnt/Armor" unique_id=1645808904]
+[node name="NameLabel" type="Label" parent="ShipCard/CardMargin/CardContrnt/Armor" unique_id=1645808904]
 layout_mode = 2
 text = "Armor"
 label_settings = SubResource("LabelSettings_s0osx")
 
-[node name="VSeparator" type="VSeparator" parent="CardMargin/CardContrnt/Armor" unique_id=1554213130]
+[node name="VSeparator" type="VSeparator" parent="ShipCard/CardMargin/CardContrnt/Armor" unique_id=1554213130]
 layout_mode = 2
 
-[node name="Armor" type="Label" parent="CardMargin/CardContrnt/Armor" unique_id=1930172817]
+[node name="Armor" type="Label" parent="ShipCard/CardMargin/CardContrnt/Armor" unique_id=1930172817]
 layout_mode = 2
 text = "100"
 label_settings = SubResource("LabelSettings_s0osx")
 
-[node name="Cost" type="HBoxContainer" parent="CardMargin/CardContrnt" unique_id=1549338689]
+[node name="Cost" type="HBoxContainer" parent="ShipCard/CardMargin/CardContrnt" unique_id=1549338689]
 layout_mode = 2
 
-[node name="NameLabel" type="Label" parent="CardMargin/CardContrnt/Cost" unique_id=181297687]
+[node name="NameLabel" type="Label" parent="ShipCard/CardMargin/CardContrnt/Cost" unique_id=181297687]
 layout_mode = 2
 text = "Price"
 label_settings = SubResource("LabelSettings_n4vr4")
 
-[node name="VSeparator" type="VSeparator" parent="CardMargin/CardContrnt/Cost" unique_id=114661974]
+[node name="VSeparator" type="VSeparator" parent="ShipCard/CardMargin/CardContrnt/Cost" unique_id=114661974]
 layout_mode = 2
 
-[node name="Cost" type="Label" parent="CardMargin/CardContrnt/Cost" unique_id=312494236]
+[node name="Cost" type="Label" parent="ShipCard/CardMargin/CardContrnt/Cost" unique_id=312494236]
 layout_mode = 2
 text = "1200 CR"
 label_settings = SubResource("LabelSettings_n4vr4")

@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="GeneratorData" format=3 uid="uid://bgoxgp5c581bu"]
 
 [ext_resource type="Script" uid="uid://b5qnqtg671g0" path="res://scripts/resources/GeneratorData.gd" id="1_exvlg"]
+[ext_resource type="Texture2D" uid="uid://davdsr1ok1blt" path="res://assets/hangar/ChatGPT Image 11 lip 2026, 11_40_07.png" id="1_u02a4"]
 
 [resource]
 script = ExtResource("1_exvlg")
@@ -8,4 +9,5 @@ generator_index = 5
 generator_name = "Starlite Unit"
 power = 700.0
 power_per_kill = 30.0
+graphics = ExtResource("1_u02a4")
 cost = 20000

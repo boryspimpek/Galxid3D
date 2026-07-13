@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="GeneratorData" format=3 uid="uid://cuu1vrwt24fuq"]
 
+[ext_resource type="Texture2D" uid="uid://pw0ykqglf2m0" path="res://assets/hangar/ChatGPT Image 11 lip 2026, 11_38_28.png" id="1_cj1gr"]
 [ext_resource type="Script" uid="uid://b5qnqtg671g0" path="res://scripts/resources/GeneratorData.gd" id="1_gp8xn"]
 
 [resource]
@@ -9,4 +10,5 @@ generator_name = "Sol Prime"
 power = 700.0
 regeneration = 500.0
 power_per_kill = 100.0
+graphics = ExtResource("1_cj1gr")
 cost = 100000

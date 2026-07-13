@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="GeneratorData" format=3 uid="uid://emuy2h84wbl5"]
 
 [ext_resource type="Script" uid="uid://b5qnqtg671g0" path="res://scripts/resources/GeneratorData.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cvmy2hvv10ua5" path="res://assets/hangar/ChatGPT Image 11 lip 2026, 11_45_20.png" id="1_4yavx"]
 
 [resource]
 script = ExtResource("1")
@@ -8,4 +9,5 @@ generator_index = 2
 generator_name = "Vortex Drive"
 power = 300.0
 power_per_kill = 20.0
+graphics = ExtResource("1_4yavx")
 cost = 2000

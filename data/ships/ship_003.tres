@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="ShipData" format=3 uid="uid://bup68bno2qm01"]
 
 [ext_resource type="Script" uid="uid://b67wo33ojrncw" path="res://scripts/resources/ShipData.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dq2tpd8ojcp" path="res://assets/hangar/Gemini_Generated_Image_l5g6wul5g6wul5g6-removebg-preview.png" id="1_751ky"]
 
 [resource]
 script = ExtResource("1")
@@ -8,3 +9,4 @@ ship_index = 3
 ship_name = "Crimson Hawk"
 armor = 6
 cost = 15000
+graphics = ExtResource("1_751ky")

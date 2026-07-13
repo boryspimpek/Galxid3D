@@ -1,10 +1,10 @@
+Control
 VSeparator
 Button
 Label
 VBoxContainer
 MarginContainer
 PanelContainer
-Control
 TextureRect
 GridContainer
 HBoxContainer

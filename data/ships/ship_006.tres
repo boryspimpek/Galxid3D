@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="ShipData" format=3 uid="uid://byit0h5cysb5u"]
 
+[ext_resource type="Texture2D" uid="uid://ct0q0eimv8m18" path="res://assets/hangar/94e35312-ca95-4431-9ff9-9e17afc63a43-removebg-preview.png" id="1_6gsmw"]
 [ext_resource type="Script" uid="uid://b67wo33ojrncw" path="res://scripts/resources/ShipData.gd" id="1_16o1k"]
 
 [resource]
@@ -8,3 +9,4 @@ ship_index = 6
 ship_name = "Solar Flare"
 armor = 10000
 cost = 100000
+graphics = ExtResource("1_6gsmw")
