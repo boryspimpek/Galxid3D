@@ -1,1 +1,7 @@
 res://scenes/player/Player.gd
+res://scripts/managers/GameState.gd
+res://scenes/hangar/hangar_scene.gd
+res://scenes/hangar/hangar_scene.tscn
+res://assets/shaders/jet_engine.gdshader
+res://assets/enemies/dreadnought/dreadnought_model.gdshader
+res://scenes/ui/ui_theme.tres

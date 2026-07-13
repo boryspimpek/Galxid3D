@@ -25,12 +25,14 @@ const GeneratorCardType = preload("res://scenes/hangar/generator_card.gd")
 @onready var selected_generator_energy: Label = $MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator/GeneratorMargin/GeneratorContent/Energy/Energy
 @onready var selected_generator_price: Label = $MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator/GeneratorMargin/GeneratorContent/Price/Price
 @onready var total_value: Label = $MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/TotalCostSection/MarginContainer/VBoxContainer/TotalValue
+@onready var buy_button: Button = $MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/Button
 
 var selected_ship_data: ShipData
 var selected_generator_data: GeneratorData
 
 func _ready() -> void:
     cash_value.text = "%d CR" % GameState.credits
+    buy_button.pressed.connect(_on_buy_button_pressed)
     load_cards()
 
 func load_cards() -> void:
@@ -83,7 +85,6 @@ func load_resources(folder: String) -> Array:
 
 func _on_ship_selected(ship: ShipData) -> void:
     selected_ship_data = ship
-    GameState.ship_id = ship.ship_index
     selected_ship_title.text = "Selected Ship"
     selected_ship_name.text = ship.ship_name
     selected_ship_armor.text = str(ship.armor)
@@ -93,7 +94,6 @@ func _on_ship_selected(ship: ShipData) -> void:
 
 func _on_generator_selected(generator: GeneratorData) -> void:
     selected_generator_data = generator
-    GameState.generator_id = generator.generator_index
     selected_generator_title.text = "Selected Generator"
     selected_generator_name.text = generator.generator_name
     selected_generator_energy.text = str(generator.power)
@@ -116,3 +116,10 @@ func _restore_selection() -> void:
     var generator := DataManager.get_generator_by_id(GameState.generator_id)
     if generator:
         _on_generator_selected(generator)
+
+func _on_buy_button_pressed() -> void:
+    if selected_ship_data:
+        GameState.ship_id = selected_ship_data.ship_index
+    if selected_generator_data:
+        GameState.generator_id = selected_generator_data.generator_index
+    print("Hangar: bought ship ", GameState.ship_id, ", generator ", GameState.generator_id)
