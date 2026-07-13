@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="GeneratorData" format=3 uid="uid://cuu1vrwt24fuq"]
+
+[ext_resource type="Script" uid="uid://b5qnqtg671g0" path="res://scripts/resources/GeneratorData.gd" id="1_gp8xn"]
+
+[resource]
+script = ExtResource("1_gp8xn")
+generator_index = 4
+generator_name = "Sol Prime"
+power = 700
+regeneration = 500.0
+power_per_kill = 20.0
+cost = 10000

@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1")
 ship_index = 2
-ship_name = "USP Talon Light Fighter"
+ship_name = "Jungle Viper"
 armor = 4
 cost = 65000

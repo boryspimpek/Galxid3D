@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1")
 ship_index = 4
-ship_name = "Gencore Maelstrom"
+ship_name = "Void Phantom"
 armor = 10000
 cost = 15000

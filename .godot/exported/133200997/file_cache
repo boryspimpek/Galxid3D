@@ -224,7 +224,7 @@ res://scenes/projectile/power_2.tscn::f7eac6d51d78db8929465b2dc77d23a3::17817072
 res://scenes/projectile/power_3.tscn::f7e94015d3edd263f6f50f6da0458cab::1782997029::res://.godot/exported/133200997/export-95b8251c43465705f6525d08544f7d4a-power_3.scn
 res://scenes/projectile/power_4.tscn::741f0f035bcff91c8bddbc5a3ae4a2a8::1781714282::res://.godot/exported/133200997/export-80728e7687ff875805c95b84afc1c338-power_4.scn
 res://scenes/projectile/projectile_1.tscn::0d92acdeb175627b633f69af9c656112::1782995571::res://.godot/exported/133200997/export-625e2de1f8264b5a2f6f17d3d1aca145-projectile_1.scn
-res://main.tscn::3d48b20d7e95f299fed383b0ac09c450::1783680171::res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn
+res://main.tscn::c19515231049229d6682e94b8038bc4c::1783681538::res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn
 res://data/data_catalog.tres::b730a26895546322e33430860e99c682::1783427689::res://.godot/exported/133200997/export-10ec6142f0b190ab30d3818359789bc4-data_catalog.res
 res://assets/cannon/simple canon/simple_canon_model.tscn::a67ebf2f876b63a7027cd96eecd85439::1783509362::res://.godot/exported/133200997/export-7535cd7c7a3257e123accbc7c158874b-simple_canon_model.scn
 res://assets/enemies/arrow/arrow_model.tscn::6c895cc8ac925b9d67a0872e4dbc6232::1783451064::res://.godot/exported/133200997/export-aee955adb2b434f3a7718a28d7ef98fe-arrow_model.scn

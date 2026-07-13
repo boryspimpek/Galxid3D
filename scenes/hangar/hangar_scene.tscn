@@ -1,0 +1,290 @@
+[gd_scene format=3 uid="uid://bpdkmel0jrxe5"]
+
+[ext_resource type="FontFile" uid="uid://dqyf02xb4hxr" path="res://assets/fonts/Bangers-Regular.ttf" id="1_edtpo"]
+[ext_resource type="Texture2D" uid="uid://dq2tpd8ojcp" path="res://assets/hangar/Gemini_Generated_Image_l5g6wul5g6wul5g6-removebg-preview.png" id="1_q48xg"]
+[ext_resource type="PackedScene" uid="uid://ur25t4asbblr" path="res://scenes/hangar/ship_card.tscn" id="2_do4p5"]
+[ext_resource type="Texture2D" uid="uid://j3w8ne1jlu2g" path="res://assets/hangar/ChatGPT Image 11 lip 2026, 11_43_23.png" id="3_mefml"]
+[ext_resource type="PackedScene" uid="uid://nsujyyy2tpst" path="res://scenes/hangar/generator_card.tscn" id="3_q48xg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_edtpo"]
+font = ExtResource("1_edtpo")
+
+[sub_resource type="LabelSettings" id="LabelSettings_do4p5"]
+font = ExtResource("1_edtpo")
+
+[sub_resource type="LabelSettings" id="LabelSettings_mefml"]
+font = ExtResource("1_edtpo")
+
+[sub_resource type="LabelSettings" id="LabelSettings_gg4fh"]
+font = ExtResource("1_edtpo")
+
+[node name="HangarScene" type="Control" unique_id=1370445457]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=1482642832]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MainMargin" type="MarginContainer" parent="." unique_id=1065591926]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="MainLayout" type="HBoxContainer" parent="MainMargin" unique_id=349782025]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="LeftPanel" type="PanelContainer" parent="MainMargin/MainLayout" unique_id=326954363]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LeftMargin" type="MarginContainer" parent="MainMargin/MainLayout/LeftPanel" unique_id=430984605]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="LeftContent" type="VBoxContainer" parent="MainMargin/MainLayout/LeftPanel/LeftMargin" unique_id=1482320213]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent" unique_id=837723068]
+layout_mode = 2
+text = "HANGAR"
+
+[node name="Cash" type="VBoxContainer" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent" unique_id=493698660]
+layout_mode = 2
+
+[node name="CashLabel" type="Label" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/Cash" unique_id=2064233874]
+layout_mode = 2
+text = "Cash"
+
+[node name="CashValue" type="Label" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/Cash" unique_id=219045354]
+layout_mode = 2
+text = "125 400 CR"
+
+[node name="SelectedShip" type="PanelContainer" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent" unique_id=1444510467]
+layout_mode = 2
+
+[node name="ShipMargin" type="MarginContainer" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedShip" unique_id=326518480]
+layout_mode = 2
+
+[node name="ShipContent" type="VBoxContainer" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedShip/ShipMargin" unique_id=1713666463]
+layout_mode = 2
+
+[node name="SectionTitle" type="Label" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedShip/ShipMargin/ShipContent" unique_id=1055678839]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedShip/ShipMargin/ShipContent" unique_id=1927120834]
+layout_mode = 2
+texture = ExtResource("1_q48xg")
+
+[node name="ShipName" type="Label" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedShip/ShipMargin/ShipContent" unique_id=346222965]
+layout_mode = 2
+
+[node name="Armor" type="HBoxContainer" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedShip/ShipMargin/ShipContent" unique_id=1753332535]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedShip/ShipMargin/ShipContent/Armor" unique_id=121024912]
+layout_mode = 2
+text = "Armor"
+label_settings = SubResource("LabelSettings_edtpo")
+
+[node name="VSeparator" type="VSeparator" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedShip/ShipMargin/ShipContent/Armor" unique_id=1738441125]
+layout_mode = 2
+
+[node name="Armor" type="Label" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedShip/ShipMargin/ShipContent/Armor" unique_id=603094739]
+layout_mode = 2
+text = "100"
+label_settings = SubResource("LabelSettings_edtpo")
+
+[node name="Price" type="HBoxContainer" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedShip/ShipMargin/ShipContent" unique_id=1703576646]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedShip/ShipMargin/ShipContent/Price" unique_id=1045117522]
+layout_mode = 2
+text = "Price"
+label_settings = SubResource("LabelSettings_do4p5")
+
+[node name="VSeparator" type="VSeparator" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedShip/ShipMargin/ShipContent/Price" unique_id=1971677696]
+layout_mode = 2
+
+[node name="Price" type="Label" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedShip/ShipMargin/ShipContent/Price" unique_id=46446633]
+layout_mode = 2
+text = "1200 CR"
+label_settings = SubResource("LabelSettings_do4p5")
+
+[node name="SelectedGenerator" type="PanelContainer" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent" unique_id=536632784]
+layout_mode = 2
+
+[node name="GeneratorMargin" type="MarginContainer" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator" unique_id=37854900]
+layout_mode = 2
+
+[node name="GeneratorContent" type="VBoxContainer" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator/GeneratorMargin" unique_id=2076529995]
+layout_mode = 2
+
+[node name="SectionTitle" type="Label" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator/GeneratorMargin/GeneratorContent" unique_id=146350751]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator/GeneratorMargin/GeneratorContent" unique_id=406497866]
+layout_mode = 2
+texture = ExtResource("3_mefml")
+
+[node name="GeneratorName" type="Label" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator/GeneratorMargin/GeneratorContent" unique_id=750919409]
+layout_mode = 2
+
+[node name="Energy" type="HBoxContainer" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator/GeneratorMargin/GeneratorContent" unique_id=904439702]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator/GeneratorMargin/GeneratorContent/Energy" unique_id=526548968]
+layout_mode = 2
+text = "Energy"
+label_settings = SubResource("LabelSettings_edtpo")
+
+[node name="VSeparator" type="VSeparator" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator/GeneratorMargin/GeneratorContent/Energy" unique_id=1998913559]
+layout_mode = 2
+
+[node name="Energy" type="Label" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator/GeneratorMargin/GeneratorContent/Energy" unique_id=1879224743]
+layout_mode = 2
+text = "700"
+label_settings = SubResource("LabelSettings_edtpo")
+
+[node name="Price" type="HBoxContainer" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator/GeneratorMargin/GeneratorContent" unique_id=693455965]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator/GeneratorMargin/GeneratorContent/Price" unique_id=1417706144]
+layout_mode = 2
+text = "Price"
+label_settings = SubResource("LabelSettings_do4p5")
+
+[node name="VSeparator" type="VSeparator" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator/GeneratorMargin/GeneratorContent/Price" unique_id=1148414606]
+layout_mode = 2
+
+[node name="Price" type="Label" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator/GeneratorMargin/GeneratorContent/Price" unique_id=2031281633]
+layout_mode = 2
+text = "800 CR"
+label_settings = SubResource("LabelSettings_do4p5")
+
+[node name="Spacer" type="Control" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent" unique_id=2003229880]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TotalCostSection" type="PanelContainer" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent" unique_id=496413260]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/TotalCostSection" unique_id=2031781112]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/TotalCostSection/MarginContainer" unique_id=2072164293]
+layout_mode = 2
+
+[node name="TotalLabel" type="Label" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/TotalCostSection/MarginContainer/VBoxContainer" unique_id=1774818139]
+layout_mode = 2
+text = "Total cost"
+
+[node name="TotalValue" type="Label" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/TotalCostSection/MarginContainer/VBoxContainer" unique_id=352048784]
+layout_mode = 2
+text = "1 000 000 CR"
+
+[node name="Button" type="Button" parent="MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent" unique_id=2029523206]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "BUY"
+
+[node name="RightPanel" type="PanelContainer" parent="MainMargin/MainLayout" unique_id=1635475503]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RightMargin" type="MarginContainer" parent="MainMargin/MainLayout/RightPanel" unique_id=297333743]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="RightContent" type="VBoxContainer" parent="MainMargin/MainLayout/RightPanel/RightMargin" unique_id=2015804491]
+layout_mode = 2
+
+[node name="ShipSection" type="VBoxContainer" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent" unique_id=694030747]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Title" type="Label" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/ShipSection" unique_id=124838668]
+layout_mode = 2
+text = "Chose Ship"
+label_settings = SubResource("LabelSettings_mefml")
+
+[node name="ShipGrid" type="GridContainer" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/ShipSection" unique_id=1798090870]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 3
+
+[node name="ShipCard" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/ShipSection/ShipGrid" unique_id=159686141 instance=ExtResource("2_do4p5")]
+layout_mode = 2
+
+[node name="ShipCard2" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/ShipSection/ShipGrid" unique_id=493325074 instance=ExtResource("2_do4p5")]
+layout_mode = 2
+
+[node name="ShipCard3" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/ShipSection/ShipGrid" unique_id=1488340854 instance=ExtResource("2_do4p5")]
+layout_mode = 2
+
+[node name="ShipCard4" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/ShipSection/ShipGrid" unique_id=370633773 instance=ExtResource("2_do4p5")]
+layout_mode = 2
+
+[node name="ShipCard5" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/ShipSection/ShipGrid" unique_id=1184859070 instance=ExtResource("2_do4p5")]
+layout_mode = 2
+
+[node name="ShipCard6" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/ShipSection/ShipGrid" unique_id=1281455197 instance=ExtResource("2_do4p5")]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent" unique_id=752504598]
+layout_mode = 2
+
+[node name="GeneratorSection" type="VBoxContainer" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent" unique_id=183882297]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/GeneratorSection" unique_id=41484794]
+layout_mode = 2
+text = "Chose Generator"
+label_settings = SubResource("LabelSettings_gg4fh")
+
+[node name="GeneratorGrid" type="GridContainer" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/GeneratorSection" unique_id=1764098189]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 6
+
+[node name="GeneratorCard" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/GeneratorSection/GeneratorGrid" unique_id=45192516 instance=ExtResource("3_q48xg")]
+
+[node name="GeneratorCard2" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/GeneratorSection/GeneratorGrid" unique_id=1070940787 instance=ExtResource("3_q48xg")]
+
+[node name="GeneratorCard3" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/GeneratorSection/GeneratorGrid" unique_id=2069158716 instance=ExtResource("3_q48xg")]
+
+[node name="GeneratorCard4" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/GeneratorSection/GeneratorGrid" unique_id=767257783 instance=ExtResource("3_q48xg")]
+
+[node name="GeneratorCard5" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/GeneratorSection/GeneratorGrid" unique_id=486786694 instance=ExtResource("3_q48xg")]
+
+[node name="GeneratorCard6" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/GeneratorSection/GeneratorGrid" unique_id=1602522911 instance=ExtResource("3_q48xg")]

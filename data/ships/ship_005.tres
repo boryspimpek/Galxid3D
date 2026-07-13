@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ShipData" format=3 uid="uid://bcqxcib5xeet6"]
+
+[ext_resource type="Script" uid="uid://b67wo33ojrncw" path="res://scripts/resources/ShipData.gd" id="1_gj4js"]
+
+[resource]
+script = ExtResource("1_gj4js")
+ship_index = 5
+ship_name = "Celestal Guard"
+armor = 10000
+cost = 15000

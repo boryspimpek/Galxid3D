@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ShipData" format=3 uid="uid://byit0h5cysb5u"]
+
+[ext_resource type="Script" uid="uid://b67wo33ojrncw" path="res://scripts/resources/ShipData.gd" id="1_16o1k"]
+
+[resource]
+script = ExtResource("1_16o1k")
+ship_index = 6
+ship_name = "Solar Flare"
+armor = 10000
+cost = 15000
