@@ -1,5 +1,5 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1783939899
+::res://::1783943260
 default_bus_layout.tres::AudioBusLayout::2099548917964122130::1780403827::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile::-1::1783681859::0::1::::<><><>0<>0<><>::
 main.tscn::PackedScene::4604124130799878763::1783704090::0::1::::<><><>0<>0<><>::uid://h4tfxlaeefcu::::res://scenes/world/GameShell.gd<>uid://bte7ofi7pgn5b::::res://scenes/player/Player.tscn<>uid://c6q6woux5lj8n::::res://scenes/stations/station_01.tscn<>uid://dfwjsha1cxfrv::::res://scenes/stations/station_05.tscn<>uid://ci6qjvw4jlabt::::res://scenes/world/LevelScroll3D.gd<>uid://cl1yt87544mrn::::res://scenes/enemies/formations/finisher.tscn<>uid://bdvg80h7a4nm8::::res://scenes/debug/LevelScrollRuler.tscn<>uid://burxon56o3cum::::res://assets/mp3/galaxid.mp3<>uid://bkkprwsfeseit::::res://scenes/enemies/formations/cyclon_boss_2.tscn<>uid://pv4lucn5p30f::::res://scenes/ui/Hud.tscn<>uid://dl18q8lfjoe2t::::res://scenes/stations/dreadnought.tscn<>uid://bfylem1kva7em::::res://scenes/stations/fighter752.tscn<>uid://di8tdeuy0i86i::::res://scenes/enemies/formations/protector_strike.tscn<>uid://0gvcpa8yx6vi::::res://scenes/enemies/formations/rocketer_strike.tscn<>uid://clbkkfabpgdpv::::res://scenes/enemies/formations/begining.tscn<>uid://18f6vqmvxr50::::res://scenes/enemies/formations/hank_strike.tscn<>uid://b53d3bd1fnprc::::res://scenes/enemies/formations/boss_devastator.tscn
@@ -917,11 +917,11 @@ voyager.tscn::PackedScene::7262926442861361264::1783150949::0::1::::<><><>0<>0<>
 EnemyProjectile.gd::GDScript::8392561708853174740::1783096644::0::1::::<>Area3D<><>0<>0<><>::
 EnemyProjectile.gdshader::Shader::6290722636671745208::1783500644::0::1::::<><><>0<>0<><>::
 EnemyProjectile.tscn::PackedScene::394493233188443304::1783450272::0::1::::<><><>0<>0<><>::uid://drtojasqrdy7m::::res://scenes/enemy_projectile/EnemyProjectile.gd<>uid://dtt1ufgeoqsd::::res://assets/projectiles/ChatGPT Image 19 cze 2026, 12_45_16.png<>uid://cvvjju32romua::::res://scenes/enemy_projectile/EnemyProjectile.gdshader
-::res://scenes/hangar/::1783942316
+::res://scenes/hangar/::1783942780
 generator_card.gd::GDScript::8483520360268642450::1783938106::0::1::::GeneratorCard<>Control<><>0<>0<><>::
 generator_card.tscn::PackedScene::950845477630975739::1783940052::0::1::::<><><>0<>0<><>::uid://dqyf02xb4hxr::::res://assets/fonts/Bangers-Regular.ttf<>uid://davdsr1ok1blt::::res://assets/hangar/ChatGPT Image 11 lip 2026, 11_40_07.png<>uid://ds4qlub1t70hq::::res://scenes/hangar/generator_card.gd<>uid://buhk1e0v6x6ff::::res://scenes/ui/ui_theme.tres
-hangar_scene.gd::GDScript::7878686075378893835::1783941884::0::1::::HangarScene<>Control<><>0<>0<><>::
-hangar_scene.tscn::PackedScene::3446075299215146234::1783942316::0::1::::<><><>0<>0<><>::uid://dqyf02xb4hxr::::res://assets/fonts/Bangers-Regular.ttf<>uid://dq2tpd8ojcp::::res://assets/hangar/Gemini_Generated_Image_l5g6wul5g6wul5g6-removebg-preview.png<>uid://j3w8ne1jlu2g::::res://assets/hangar/ChatGPT Image 11 lip 2026, 11_43_23.png<>uid://dkiq2qycuo66b::::res://scenes/hangar/hangar_scene.gd<>uid://cchsaucc3aii8::::res://scenes/ui/ui_theme.tres
+hangar_scene.gd::GDScript::7878686075378893835::1783943176::0::1::::HangarScene<>Control<><>0<>0<><>::
+hangar_scene.tscn::PackedScene::3446075299215146234::1783942780::0::1::::<><><>0<>0<><>::uid://dqyf02xb4hxr::::res://assets/fonts/Bangers-Regular.ttf<>uid://j3w8ne1jlu2g::::res://assets/hangar/ChatGPT Image 11 lip 2026, 11_43_23.png<>uid://dkiq2qycuo66b::::res://scenes/hangar/hangar_scene.gd<>uid://du03vx7hawbac::::res://assets/hangar/ChatGPT Image 13 lip 2026, 13_34_40.png<>uid://cchsaucc3aii8::::res://scenes/ui/ui_theme.tres
 ship_card.gd::GDScript::2805224292470161803::1783938105::0::1::::ShipCard<>Control<><>0<>0<><>::
 ship_card.tscn::PackedScene::1440565269968580979::1783940048::0::1::::<><><>0<>0<><>::uid://dqyf02xb4hxr::::res://assets/fonts/Bangers-Regular.ttf<>uid://bm26ujucfwqql::::res://assets/hangar/Gemini_Generated_Image_405x0z405x0z405x-removebg-preview.png<>uid://c4i7k0x3r1q2l::::res://scenes/hangar/ship_card.gd<>uid://buhk1e0v6x6ff::::res://scenes/ui/ui_theme.tres
 ::res://scenes/pickup/::1783273727
@@ -937,7 +937,7 @@ blaze2_model.tscn::PackedScene::7275491010661824412::1783450725::0::1::::<><><>0
 DamageSystem.gd::GDScript::2289176751178949268::1783588110::0::1::::<>Node<><>0<>0<><>::
 Golden_core.tscn::PackedScene::8964841190835855211::1783095318::0::1::::<><><>0<>0<><>::uid://bxbui8n1m07qy::::res://scenes/player/Sidekick.gd<>uid://dtidgxekckfij::::res://assets/sidekicks/golden core/golden_core_model.tscn
 Green_core.tscn::PackedScene::4756725338716444870::1783178510::0::1::::<><><>0<>0<><>::uid://bxbui8n1m07qy::::res://scenes/player/Sidekick.gd<>uid://bq5wylaj6hgr1::::res://assets/sidekicks/golden core/green_core_model.tscn
-Player.gd::GDScript::8437104023902913178::1783941866::0::1::::<>CharacterBody3D<><>0<>0<><>::
+Player.gd::GDScript::8437104023902913178::1783943157::0::1::::<>CharacterBody3D<><>0<>0<><>::
 Player.tscn::PackedScene::3730234445164567377::1783934780::0::1::::<><><>0<>0<><>::uid://dsg84un7uak4y::::res://scenes/player/Player.gd<>uid://7u5n3csl0xpc::::res://scenes/player/DamageSystem.gd<>uid://dbwkjkyvor653::::res://scenes/player/blaze2_model.tscn<>uid://b00wb11f44ov::::res://scenes/player/WeaponSystem.gd<>uid://luwc3n46o4pd::::res://assets/shaders/jet_engine.gdshader
 Sidekick.gd::GDScript::4004058845879863488::1782995394::0::1::::<>CharacterBody3D<><>0<>0<><>::
 WeaponSystem.gd::GDScript::123355593652037597::1783427612::0::1::::<>Node<><>0<>0<><>::
@@ -979,7 +979,7 @@ GameViewportHelper.gd::GDScript::5208497074893984072::1781724196::0::1::::GameVi
 ::res://scripts/managers/::1783941525
 CameraShakeManager.gd::GDScript::3247547114202995884::1783158479::0::1::::<>Node<><>0<>0<><>::
 DataManager.gd::GDScript::1970122233642260559::1782994018::0::1::::<>Node<><>0<>0<><>::
-GameState.gd::GDScript::4720076162106304444::1783941668::0::1::::<>Node<><>0<>0<><>::
+GameState.gd::GDScript::4720076162106304444::1783943129::0::1::::<>Node<><>0<>0<><>::
 HitComboManager.gd::GDScript::2952296680288543847::1781777459::0::1::::<>Node<><>0<>0<><>::
 SceneRegistry.gd::GDScript::8986126702042359166::1782994040::0::1::::<>Node<><>0<>0<><>::
 SoundManager.gd::GDScript::5357820178277045046::1783177169::0::1::::<>Node<><>0<>0<><>::

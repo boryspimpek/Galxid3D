@@ -59,6 +59,8 @@ func load_cards() -> void:
         card.selected.connect(_on_generator_selected)
         print("Added generator card: ", generator.generator_name)
 
+    _restore_selection()
+
 func load_resources(folder: String) -> Array:
     var resources: Array = []
     var dir := DirAccess.open(folder)
@@ -81,7 +83,7 @@ func load_resources(folder: String) -> Array:
 
 func _on_ship_selected(ship: ShipData) -> void:
     selected_ship_data = ship
-    GameState.selected_ship_id = ship.ship_index
+    GameState.ship_id = ship.ship_index
     selected_ship_title.text = "Selected Ship"
     selected_ship_name.text = ship.ship_name
     selected_ship_armor.text = str(ship.armor)
@@ -91,7 +93,7 @@ func _on_ship_selected(ship: ShipData) -> void:
 
 func _on_generator_selected(generator: GeneratorData) -> void:
     selected_generator_data = generator
-    GameState.selected_generator_id = generator.generator_index
+    GameState.generator_id = generator.generator_index
     selected_generator_title.text = "Selected Generator"
     selected_generator_name.text = generator.generator_name
     selected_generator_energy.text = str(generator.power)
@@ -106,3 +108,11 @@ func _update_total_cost() -> void:
     if selected_generator_data:
         total += selected_generator_data.cost
     total_value.text = "%d CR" % total
+
+func _restore_selection() -> void:
+    var ship := DataManager.get_ship_by_id(GameState.ship_id)
+    if ship:
+        _on_ship_selected(ship)
+    var generator := DataManager.get_generator_by_id(GameState.generator_id)
+    if generator:
+        _on_generator_selected(generator)

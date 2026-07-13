@@ -6,8 +6,8 @@ extends Node
 var credits: int = 10000
 
 # Wybrane ID, które hangar zapisuje, a gra później przekazuje Playerowi.
-var selected_ship_id: int = 1
-var selected_generator_id: int = 1
+var ship_id: int = 1
+var generator_id: int = 1
 
 # Przykład rozszerzenia w przyszłości:
 # var front_weapon_index: int = 1

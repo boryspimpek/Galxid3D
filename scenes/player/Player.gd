@@ -1,14 +1,12 @@
 extends CharacterBody3D
 
 @export_group("Loadout")
-@export var ship_id: int = 1
 @export var front_weapon_index: int = 1
 @export var front_power_level: int = 1
 @export var middle_weapon_index: int = 0
 @export var middle_power_level: int = 1
 @export var rear_weapon_index: int = 1
 @export var rear_power_level: int = 1
-@export var generator_id: int = 1
 @export var left_sidekick_id: int = 0
 @export var right_sidekick_id: int = 0
 @export var sidekick_level: int = 1
@@ -97,7 +95,7 @@ func _spawn_sidekicks() -> void:
 
 
 func load_ship_data():
-	var s_id = ship_id
+	var s_id = GameState.ship_id
 	ship_data = DataManager.get_ship_by_id(s_id)
 	if ship_data:
 		print("Player: Statek załadowany: ", ship_data.ship_name, " Armor: ", ship_data.armor)
@@ -110,9 +108,9 @@ func apply_ship_stats():
 	notify_armor_changed()
 
 func init_power_regeneration():
-	regen = DataManager.get_generator_regeneration(generator_id)
-	max_power = DataManager.get_generator_power(generator_id)
-	_power_per_kill = DataManager.get_generator_power_per_kill(generator_id)
+	regen = DataManager.get_generator_regeneration(GameState.generator_id)
+	max_power = DataManager.get_generator_power(GameState.generator_id)
+	_power_per_kill = DataManager.get_generator_power_per_kill(GameState.generator_id)
 	power = 0.0
 	notify_power_changed()
 
@@ -377,6 +375,6 @@ func die() -> void:
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_home"):
 		print("Player: --- DEBUG GRACZA ---")
-		print("Player: Statek ID: ", ship_id)
+		print("Player: Statek ID: ", GameState.ship_id)
 		print("Player: Pozycja 3D: ", global_position)
 		print("Player: Pancerz: ", armor, "/", max_armor)

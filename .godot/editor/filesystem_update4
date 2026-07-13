@@ -1,11 +1,1 @@
-res://scenes/hangar/generator_card.tscn
-res://scenes/hangar/ship_card.tscn
-res://scenes/ui/Hud.tscn
-res://assets/shaders/jet_engine.gdshader
-res://assets/enemies/dreadnought/dreadnought_model.gdshader
-res://scenes/ui/ui_theme.tres
-res://scenes/hangar/hangar_scene.tscn
-res://data/generators/generator_006.tres
-res://scenes/hangar/hangar_scene.gd
-res://scripts/managers/GameState.gd
 res://scenes/player/Player.gd
