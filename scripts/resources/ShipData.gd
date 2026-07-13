@@ -3,8 +3,8 @@ extends Resource
 
 @export var ship_index: int = 0
 @export var ship_name: String = ""
-@export var speed: int = 300
-@export var armor: int = 2
+@export var speed: int = 0
+@export var armor: int = 0
 @export var cost: int = 0
 
 @export_group("Audio")

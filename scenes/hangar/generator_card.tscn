@@ -17,7 +17,6 @@ font = ExtResource("1_8guua")
 
 [node name="GeneratorCard" type="PanelContainer" unique_id=159686141]
 custom_minimum_size = Vector2(0, 130)
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -27,7 +26,7 @@ layout_mode = 2
 [node name="CardContrnt" type="VBoxContainer" parent="CardMargin" unique_id=1976166897]
 layout_mode = 2
 
-[node name="NumberLabel" type="Label" parent="CardMargin/CardContrnt" unique_id=197638774]
+[node name="GeneratorIndex" type="Label" parent="CardMargin/CardContrnt" unique_id=197638774]
 layout_mode = 2
 text = "01"
 label_settings = SubResource("LabelSettings_nlklj")
@@ -39,34 +38,40 @@ texture = ExtResource("2_8guua")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="NameLabel" type="Label" parent="CardMargin/CardContrnt" unique_id=554626753]
+[node name="GeneratorName" type="Label" parent="CardMargin/CardContrnt" unique_id=554626753]
 layout_mode = 2
 text = "AURORA CORE"
 label_settings = SubResource("LabelSettings_56qow")
 horizontal_alignment = 1
 
-[node name="Armor" type="HBoxContainer" parent="CardMargin/CardContrnt" unique_id=1140881075]
+[node name="Energy" type="HBoxContainer" parent="CardMargin/CardContrnt" unique_id=1140881075]
 layout_mode = 2
 
-[node name="NameLabel" type="Label" parent="CardMargin/CardContrnt/Armor" unique_id=1645808904]
+[node name="NameLabel" type="Label" parent="CardMargin/CardContrnt/Energy" unique_id=1645808904]
 layout_mode = 2
 text = "ENERGY"
 label_settings = SubResource("LabelSettings_s0osx")
 
-[node name="Armor" type="Label" parent="CardMargin/CardContrnt/Armor" unique_id=1930172817]
+[node name="VSeparator" type="VSeparator" parent="CardMargin/CardContrnt/Energy" unique_id=1611661954]
+layout_mode = 2
+
+[node name="Energy" type="Label" parent="CardMargin/CardContrnt/Energy" unique_id=1930172817]
 layout_mode = 2
 text = "100"
 label_settings = SubResource("LabelSettings_s0osx")
 
-[node name="Price" type="HBoxContainer" parent="CardMargin/CardContrnt" unique_id=1549338689]
+[node name="Cost" type="HBoxContainer" parent="CardMargin/CardContrnt" unique_id=1549338689]
 layout_mode = 2
 
-[node name="NameLabel" type="Label" parent="CardMargin/CardContrnt/Price" unique_id=181297687]
+[node name="NameLabel" type="Label" parent="CardMargin/CardContrnt/Cost" unique_id=181297687]
 layout_mode = 2
 text = "Price"
 label_settings = SubResource("LabelSettings_n4vr4")
 
-[node name="Price" type="Label" parent="CardMargin/CardContrnt/Price" unique_id=312494236]
+[node name="VSeparator" type="VSeparator" parent="CardMargin/CardContrnt/Cost" unique_id=767784430]
+layout_mode = 2
+
+[node name="Cost" type="Label" parent="CardMargin/CardContrnt/Cost" unique_id=312494236]
 layout_mode = 2
 text = "1200 CR"
 label_settings = SubResource("LabelSettings_n4vr4")

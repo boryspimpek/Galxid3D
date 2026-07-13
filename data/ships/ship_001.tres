@@ -6,4 +6,5 @@
 script = ExtResource("1")
 ship_index = 1
 ship_name = "Arctic Storm"
-cost = 6000
+armor = 2
+cost = 5000

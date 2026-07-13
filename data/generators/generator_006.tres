@@ -6,7 +6,7 @@
 script = ExtResource("1_gp8xn")
 generator_index = 4
 generator_name = "Sol Prime"
-power = 700
+power = 700.0
 regeneration = 500.0
-power_per_kill = 20.0
-cost = 10000
+power_per_kill = 100.0
+cost = 100000

@@ -1,6 +1,5 @@
 72322a848ab928aa5c89f0cb78209805
 ::res://::1783928040
-blaze2_model.tscn::PackedScene::7275491010661824412::1783450725::0::1::::<><><>0<>0<><>::uid://dcs6thoancqxa::::res://assets/enemies/blaze/blaze2/Meshy_AI_Emerald_Void_Intercep_0707094557_texture.glb<>uid://b5n1qdf7wji7b::::res://assets/enemies/blaze/blaze2/Meshy_AI_Emerald_Void_Intercep_0707094557_texture_0.jpg
 default_bus_layout.tres::AudioBusLayout::2099548917964122130::1780403827::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile::-1::1783681859::0::1::::<><><>0<>0<><>::
 main.tscn::PackedScene::4604124130799878763::1783704090::0::1::::<><><>0<>0<><>::uid://h4tfxlaeefcu::::res://scenes/world/GameShell.gd<>uid://bte7ofi7pgn5b::::res://scenes/player/Player.tscn<>uid://c6q6woux5lj8n::::res://scenes/stations/station_01.tscn<>uid://dfwjsha1cxfrv::::res://scenes/stations/station_05.tscn<>uid://ci6qjvw4jlabt::::res://scenes/world/LevelScroll3D.gd<>uid://cl1yt87544mrn::::res://scenes/enemies/formations/finisher.tscn<>uid://bdvg80h7a4nm8::::res://scenes/debug/LevelScrollRuler.tscn<>uid://burxon56o3cum::::res://assets/mp3/galaxid.mp3<>uid://bkkprwsfeseit::::res://scenes/enemies/formations/cyclon_boss_2.tscn<>uid://pv4lucn5p30f::::res://scenes/ui/Hud.tscn<>uid://dl18q8lfjoe2t::::res://scenes/stations/dreadnought.tscn<>uid://bfylem1kva7em::::res://scenes/stations/fighter752.tscn<>uid://di8tdeuy0i86i::::res://scenes/enemies/formations/protector_strike.tscn<>uid://0gvcpa8yx6vi::::res://scenes/enemies/formations/rocketer_strike.tscn<>uid://clbkkfabpgdpv::::res://scenes/enemies/formations/begining.tscn<>uid://18f6vqmvxr50::::res://scenes/enemies/formations/hank_strike.tscn<>uid://b53d3bd1fnprc::::res://scenes/enemies/formations/boss_devastator.tscn
@@ -779,8 +778,8 @@ station_05_model.tscn::PackedScene::5906409010749518899::1783432887::0::1::::<><
 ::res://assets/stations/station06/::1783324873
 station06.glb::PackedScene::2895716608660870669::1783263645::1783324873::1::::<><><>0<>0<>c1af5232dd569125bd56734b897c0cdd<>res://.godot/imported/station06.glb-a565bd6a7ffb6e45b7fcaef6e910f399.scn::
 station_06_model.tscn::PackedScene::8096334960916672861::1783263918::0::1::::<><><>0<>0<><>::uid://bhiybacqyc8hl::::res://assets/stations/station06/station06.glb
-::res://data/::1783425392
-data_catalog.tres::Resource/DataCatalog::3758132200031292828::1783427689::0::1::::<><><>0<>0<><>::uid://d5612qw5tu06::::res://scripts/resources/DataCatalog.gd<>uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd<>uid://ml3ennlcxw0v::::res://scripts/resources/WeaponData.gd<>uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd<>uid://b0fsmdlqcrg8n::::res://data/ships/ship_001.tres<>uid://bkervyyqf7x73::::res://data/ships/ship_002.tres<>uid://bup68bno2qm01::::res://data/ships/ship_003.tres<>uid://c3faog5dynnog::::res://data/ships/ship_004.tres<>uid://b4jqk5h3n8kxy::::res://data/weapons/front_1.tres<>uid://cxgk2yhabxq1x::::res://data/weapons/rear_1.tres<>uid://cpnm4vsppml3x::::res://data/weapons/sidekick_left.tres<>uid://cdobf0a3elmxd::::res://data/weapons/sidekick_right.tres<>uid://1ykk86kri22i::::res://data/generators/generator_001.tres<>uid://emuy2h84wbl5::::res://data/generators/generator_002.tres<>uid://bgct6c3fvmygs::::res://data/generators/generator_003.tres<>uid://c8h5m648mrxgn::::res://scripts/resources/SidekickData.gd<>uid://cp1iksh8nocm0::::res://data/generators/generator_004.tres<>uid://2p4saucmu60k::::res://data/sidekicks/golden_core.tres<>uid://b8ng0e6mmlxry::::res://data/sidekicks/green_core.tres
+::res://data/::1783934482
+data_catalog.tres::Resource/DataCatalog::3758132200031292828::1783934482::0::1::::<><><>0<>0<><>::uid://d5612qw5tu06::::res://scripts/resources/DataCatalog.gd<>uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd<>uid://ml3ennlcxw0v::::res://scripts/resources/WeaponData.gd<>uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd<>uid://b0fsmdlqcrg8n::::res://data/ships/ship_001.tres<>uid://bkervyyqf7x73::::res://data/ships/ship_002.tres<>uid://bgoxgp5c581bu::::res://data/generators/generator_005.tres<>uid://cuu1vrwt24fuq::::res://data/generators/generator_006.tres<>uid://bup68bno2qm01::::res://data/ships/ship_003.tres<>uid://c3faog5dynnog::::res://data/ships/ship_004.tres<>uid://b4jqk5h3n8kxy::::res://data/weapons/front_1.tres<>uid://cxgk2yhabxq1x::::res://data/weapons/rear_1.tres<>uid://cpnm4vsppml3x::::res://data/weapons/sidekick_left.tres<>uid://cdobf0a3elmxd::::res://data/weapons/sidekick_right.tres<>uid://cnrm6odldgtf4::::res://data/weapons/middle_1.tres<>uid://1ykk86kri22i::::res://data/generators/generator_001.tres<>uid://emuy2h84wbl5::::res://data/generators/generator_002.tres<>uid://bgct6c3fvmygs::::res://data/generators/generator_003.tres<>uid://c8h5m648mrxgn::::res://scripts/resources/SidekickData.gd<>uid://bcqxcib5xeet6::::res://data/ships/ship_005.tres<>uid://cp1iksh8nocm0::::res://data/generators/generator_004.tres<>uid://2p4saucmu60k::::res://data/sidekicks/golden_core.tres<>uid://byit0h5cysb5u::::res://data/ships/ship_006.tres<>uid://b8ng0e6mmlxry::::res://data/sidekicks/green_core.tres
 ::res://data/extracted_sounds/::1779790787
 001_S_WEAPON_1.wav::AudioStreamWAV::1464604969403254042::1779131092::1779131092::1::::<><><>0<>0<>0dc89f0e6cf7d2f0a2eb8ea2d0943097<>res://.godot/imported/001_S_WEAPON_1.wav-e7e7f7204cfef8b5805abb8f1b2cac71.sample::
 002_S_WEAPON_2.wav::AudioStreamWAV::1811858804411813721::1779131092::1779131092::1::::<><><>0<>0<>1d8c8c9a78bd58b7b257b7777a8dcb7d<>res://.godot/imported/002_S_WEAPON_2.wav-cc40dd5122672bd12485f2ce9df0184a.sample::
@@ -812,19 +811,23 @@ data_catalog.tres::Resource/DataCatalog::3758132200031292828::1783427689::0::1::
 028_S_CURSOR.wav::AudioStreamWAV::7874685278175063360::1779131092::1779131092::1::::<><><>0<>0<>85a943a6206eeed6cfa2d6e580cb9b92<>res://.godot/imported/028_S_CURSOR.wav-e20043669c899a0bd752a3d967b98f11.sample::
 029_S_POWERUP.wav::AudioStreamWAV::8353538144441551701::1779131092::1779131092::1::::<><><>0<>0<>1e9a030746de44693b5c193e2c3a0571<>res://.godot/imported/029_S_POWERUP.wav-18fc918bf336d7f2034a0a6a06449d0a.sample::
 sound_index.txt::TextFile::-1::1779131092::0::1::::<><><>0<>0<><>::
-::res://data/generators/::1783093606
-generator_001.tres::Resource/GeneratorData::1875081810189900378::1781772998::0::1::::<><><>0<>0<><>::uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd
-generator_002.tres::Resource/GeneratorData::306786536992967416::1781772379::0::1::::<><><>0<>0<><>::uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd
-generator_003.tres::Resource/GeneratorData::2812891632059993230::1783093606::0::1::::<><><>0<>0<><>::uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd
-generator_004.tres::Resource/GeneratorData::5879852395194650585::1783091227::0::1::::<><><>0<>0<><>::uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd
+::res://data/generators/::1783933509
+generator_001.tres::Resource/GeneratorData::1875081810189900378::1783931215::0::1::::<><><>0<>0<><>::uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd
+generator_002.tres::Resource/GeneratorData::306786536992967416::1783931215::0::1::::<><><>0<>0<><>::uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd
+generator_003.tres::Resource/GeneratorData::2812891632059993230::1783931215::0::1::::<><><>0<>0<><>::uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd
+generator_004.tres::Resource/GeneratorData::5879852395194650585::1783931215::0::1::::<><><>0<>0<><>::uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd
+generator_005.tres::Resource/GeneratorData::2837863074001862982::1783931215::0::1::::<><><>0<>0<><>::uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd
+generator_006.tres::Resource/GeneratorData::6219522866495126212::1783933509::0::1::::<><><>0<>0<><>::uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd
 ::res://data/play_area/::1783585106
 default.tres::Resource/PlayAreaConfig::6814198421504936737::1783585106::0::1::::<><><>0<>0<><>::uid://ilwaljmmp6vs::::res://scripts/resources/PlayAreaConfig.gd
 ::res://data/shields/::1781773441
-::res://data/ships/::1783011196
-ship_001.tres::Resource/ShipData::4152578174104079343::1781772948::0::1::::<><><>0<>0<><>::uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd
-ship_002.tres::Resource/ShipData::3097637620009340040::1781772998::0::1::::<><><>0<>0<><>::uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd
-ship_003.tres::Resource/ShipData::3823104454017895500::1782999753::0::1::::<><><>0<>0<><>::uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd
-ship_004.tres::Resource/ShipData::6748476240789214430::1783011196::0::1::::<><><>0<>0<><>::uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd
+::res://data/ships/::1783931215
+ship_006.tres::Resource/ShipData::4088666634879777764::1783931215::0::1::::<><><>0<>0<><>::uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd
+ship_005.tres::Resource/ShipData::2561228900581127237::1783931215::0::1::::<><><>0<>0<><>::uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd
+ship_001.tres::Resource/ShipData::4152578174104079343::1783931215::0::1::::<><><>0<>0<><>::uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd
+ship_002.tres::Resource/ShipData::3097637620009340040::1783931215::0::1::::<><><>0<>0<><>::uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd
+ship_003.tres::Resource/ShipData::3823104454017895500::1783931215::0::1::::<><><>0<>0<><>::uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd
+ship_004.tres::Resource/ShipData::6748476240789214430::1783931215::0::1::::<><><>0<>0<><>::uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd
 ::res://data/sidekicks/::1782994300
 golden_core.tres::Resource/SidekickData::1927857412622104568::1782994209::0::1::::<><><>0<>0<><>::uid://c8h5m648mrxgn::::res://scripts/resources/SidekickData.gd
 green_core.tres::Resource/SidekickData::4729898639899226126::1782994300::0::1::::<><><>0<>0<><>::uid://c8h5m648mrxgn::::res://scripts/resources/SidekickData.gd
@@ -913,8 +916,10 @@ voyager.tscn::PackedScene::7262926442861361264::1783150949::0::1::::<><><>0<>0<>
 EnemyProjectile.gd::GDScript::8392561708853174740::1783096644::0::1::::<>Area3D<><>0<>0<><>::
 EnemyProjectile.gdshader::Shader::6290722636671745208::1783500644::0::1::::<><><>0<>0<><>::
 EnemyProjectile.tscn::PackedScene::394493233188443304::1783450272::0::1::::<><><>0<>0<><>::uid://drtojasqrdy7m::::res://scenes/enemy_projectile/EnemyProjectile.gd<>uid://dtt1ufgeoqsd::::res://assets/projectiles/ChatGPT Image 19 cze 2026, 12_45_16.png<>uid://cvvjju32romua::::res://scenes/enemy_projectile/EnemyProjectile.gdshader
-::res://scenes/hangar/::1783929022
-ship_card.tscn::PackedScene::1440565269968580979::1783929022::0::1::::<><><>0<>0<><>::
+::res://scenes/hangar/::1783934245
+generator_card.tscn::PackedScene::950845477630975739::1783932630::0::1::::<><><>0<>0<><>::uid://dqyf02xb4hxr::::res://assets/fonts/Bangers-Regular.ttf<>uid://davdsr1ok1blt::::res://assets/hangar/ChatGPT Image 11 lip 2026, 11_40_07.png
+hangar_scene.tscn::PackedScene::3446075299215146234::1783934368::0::1::::<><><>0<>0<><>::uid://dqyf02xb4hxr::::res://assets/fonts/Bangers-Regular.ttf<>uid://dq2tpd8ojcp::::res://assets/hangar/Gemini_Generated_Image_l5g6wul5g6wul5g6-removebg-preview.png<>uid://ur25t4asbblr::::res://scenes/hangar/ship_card.tscn<>uid://j3w8ne1jlu2g::::res://assets/hangar/ChatGPT Image 11 lip 2026, 11_43_23.png<>uid://nsujyyy2tpst::::res://scenes/hangar/generator_card.tscn
+ship_card.tscn::PackedScene::1440565269968580979::1783933435::0::1::::<><><>0<>0<><>::uid://dqyf02xb4hxr::::res://assets/fonts/Bangers-Regular.ttf<>uid://bm26ujucfwqql::::res://assets/hangar/Gemini_Generated_Image_405x0z405x0z405x-removebg-preview.png
 ::res://scenes/pickup/::1783273727
 Pickup.gd::GDScript::4734261907121622875::1781869871::0::1::::<>Area3D<><>0<>0<><>::
 Pickup.tscn::PackedScene::7120682590823160623::1783273727::0::1::::<><><>0<>0<><>::uid://b8pkup3dl00t0::::res://scenes/pickup/Pickup.gd<>uid://tqgl0kuaeve6::::res://assets/particle pack/PNG (Transparent)/star_07.png
@@ -929,6 +934,7 @@ Golden_core.tscn::PackedScene::8964841190835855211::1783095318::0::1::::<><><>0<
 Green_core.tscn::PackedScene::4756725338716444870::1783178510::0::1::::<><><>0<>0<><>::uid://bxbui8n1m07qy::::res://scenes/player/Sidekick.gd<>uid://bq5wylaj6hgr1::::res://assets/sidekicks/golden core/green_core_model.tscn
 Player.gd::GDScript::8437104023902913178::1783575645::0::1::::<>CharacterBody3D<><>0<>0<><>::
 Player.tscn::PackedScene::3730234445164567377::1783585030::0::1::::<><><>0<>0<><>::uid://dsg84un7uak4y::::res://scenes/player/Player.gd<>uid://7u5n3csl0xpc::::res://scenes/player/DamageSystem.gd<>uid://dbwkjkyvor653::::res://blaze2_model.tscn<>uid://b00wb11f44ov::::res://scenes/player/WeaponSystem.gd<>uid://luwc3n46o4pd::::res://assets/shaders/jet_engine.gdshader
+blaze2_model.tscn::PackedScene::7275491010661824412::1783450725::0::1::::<><><>0<>0<><>::uid://dcs6thoancqxa::::res://assets/enemies/blaze/blaze2/Meshy_AI_Emerald_Void_Intercep_0707094557_texture.glb<>uid://b5n1qdf7wji7b::::res://assets/enemies/blaze/blaze2/Meshy_AI_Emerald_Void_Intercep_0707094557_texture_0.jpg
 Sidekick.gd::GDScript::4004058845879863488::1782995394::0::1::::<>CharacterBody3D<><>0<>0<><>::
 WeaponSystem.gd::GDScript::123355593652037597::1783427612::0::1::::<>Node<><>0<>0<><>::
 ::res://scenes/projectile/::1783422758

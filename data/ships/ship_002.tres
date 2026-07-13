@@ -7,4 +7,4 @@ script = ExtResource("1")
 ship_index = 2
 ship_name = "Jungle Viper"
 armor = 4
-cost = 65000
+cost = 10000

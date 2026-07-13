@@ -7,4 +7,4 @@ script = ExtResource("1_16o1k")
 ship_index = 6
 ship_name = "Solar Flare"
 armor = 10000
-cost = 15000
+cost = 100000

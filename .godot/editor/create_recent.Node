@@ -1,10 +1,10 @@
+VSeparator
 Button
 Label
 VBoxContainer
 MarginContainer
 PanelContainer
 Control
-VSeparator
 TextureRect
 GridContainer
 HBoxContainer
@@ -12,4 +12,3 @@ AnimationPlayer
 AudioStreamPlayer
 Node3D
 EnemyFacing
-EnemyPathFollow

@@ -28,7 +28,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="NumberLabel" type="Label" parent="CardMargin/CardContrnt" unique_id=197638774]
+[node name="ShipIndex" type="Label" parent="CardMargin/CardContrnt" unique_id=197638774]
 layout_mode = 2
 text = "01"
 label_settings = SubResource("LabelSettings_nlklj")
@@ -41,7 +41,7 @@ texture = ExtResource("2_s71ba")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="NameLabel" type="Label" parent="CardMargin/CardContrnt" unique_id=554626753]
+[node name="ShipName" type="Label" parent="CardMargin/CardContrnt" unique_id=554626753]
 layout_mode = 2
 text = "ARCTIC STORM"
 label_settings = SubResource("LabelSettings_56qow")
@@ -63,18 +63,18 @@ layout_mode = 2
 text = "100"
 label_settings = SubResource("LabelSettings_s0osx")
 
-[node name="Price" type="HBoxContainer" parent="CardMargin/CardContrnt" unique_id=1549338689]
+[node name="Cost" type="HBoxContainer" parent="CardMargin/CardContrnt" unique_id=1549338689]
 layout_mode = 2
 
-[node name="NameLabel" type="Label" parent="CardMargin/CardContrnt/Price" unique_id=181297687]
+[node name="NameLabel" type="Label" parent="CardMargin/CardContrnt/Cost" unique_id=181297687]
 layout_mode = 2
 text = "Price"
 label_settings = SubResource("LabelSettings_n4vr4")
 
-[node name="VSeparator" type="VSeparator" parent="CardMargin/CardContrnt/Price" unique_id=114661974]
+[node name="VSeparator" type="VSeparator" parent="CardMargin/CardContrnt/Cost" unique_id=114661974]
 layout_mode = 2
 
-[node name="Price" type="Label" parent="CardMargin/CardContrnt/Price" unique_id=312494236]
+[node name="Cost" type="Label" parent="CardMargin/CardContrnt/Cost" unique_id=312494236]
 layout_mode = 2
 text = "1200 CR"
 label_settings = SubResource("LabelSettings_n4vr4")

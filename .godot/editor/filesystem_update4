@@ -16,3 +16,10 @@ res://data/ships/ship_005.tres
 res://data/ships/ship_006.tres
 res://scenes/hangar/hangar_scene.tscn
 res://data/data_catalog.tres
+res://scripts/resources/ShipData.gd
+res://data/weapons/front_1.tres
+res://data/weapons/rear_1.tres
+res://data/weapons/sidekick_left.tres
+res://data/weapons/sidekick_right.tres
+res://data/weapons/middle_1.tres
+res://scripts/resources/GeneratorData.gd

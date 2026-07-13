@@ -6,7 +6,6 @@
 script = ExtResource("1")
 generator_index = 4
 generator_name = "Shadow Matrix"
-power = 700
-regeneration = 500.0
-power_per_kill = 20.0
+power = 500.0
+power_per_kill = 25.0
 cost = 10000
