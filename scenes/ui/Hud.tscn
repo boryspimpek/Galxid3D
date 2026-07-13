@@ -26,61 +26,6 @@ font_color = Color(1, 0.55, 0.15, 1)
 outline_size = 20
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="PanelStyle_over"]
-content_margin_left = 56.0
-content_margin_top = 40.0
-content_margin_right = 56.0
-content_margin_bottom = 40.0
-bg_color = Color(0.08, 0.02, 0.04, 0.93)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 0.3, 0.32, 0.75)
-corner_radius_top_left = 18
-corner_radius_top_right = 18
-corner_radius_bottom_right = 18
-corner_radius_bottom_left = 18
-shadow_color = Color(1, 0.2, 0.2, 0.2)
-shadow_size = 28
-
-[sub_resource type="LabelSettings" id="LabelSettings_menu_title_over"]
-font = ExtResource("2_7v63g")
-font_size = 72
-font_color = Color(1, 0.32, 0.32, 1)
-outline_size = 16
-outline_color = Color(0.12, 0, 0.02, 1)
-shadow_size = 10
-shadow_color = Color(1, 0.2, 0.2, 0.4)
-shadow_offset = Vector2(0, 4)
-
-[sub_resource type="LabelSettings" id="LabelSettings_subtitle"]
-font = ExtResource("2_7v63g")
-font_size = 24
-font_color = Color(0.72, 0.8, 0.95, 0.9)
-outline_size = 6
-outline_color = Color(0, 0, 0, 0.9)
-
-[sub_resource type="StyleBoxLine" id="SeparatorLine"]
-color = Color(0.5, 0.6, 0.8, 0.3)
-grow_begin = -60.0
-grow_end = -60.0
-thickness = 2
-
-[sub_resource type="LabelSettings" id="LabelSettings_final_score"]
-font = ExtResource("2_7v63g")
-font_size = 52
-font_color = Color(1, 0.84, 0.2, 1)
-outline_size = 10
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_hint_pulse"]
-font = ExtResource("2_7v63g")
-font_size = 26
-font_color = Color(1, 0.84, 0.2, 1)
-outline_size = 8
-outline_color = Color(0, 0, 0, 1)
-
 [sub_resource type="StyleBoxFlat" id="PanelStyle_start"]
 content_margin_left = 56.0
 content_margin_top = 40.0
@@ -108,6 +53,19 @@ outline_color = Color(0.01, 0.05, 0.12, 1)
 shadow_size = 10
 shadow_color = Color(0.2, 0.6, 1, 0.4)
 shadow_offset = Vector2(0, 4)
+
+[sub_resource type="LabelSettings" id="LabelSettings_subtitle"]
+font = ExtResource("2_7v63g")
+font_size = 24
+font_color = Color(0.72, 0.8, 0.95, 0.9)
+outline_size = 6
+outline_color = Color(0, 0, 0, 0.9)
+
+[sub_resource type="StyleBoxLine" id="SeparatorLine"]
+color = Color(0.5, 0.6, 0.8, 0.3)
+grow_begin = -60.0
+grow_end = -60.0
+thickness = 2
 
 [sub_resource type="StyleBoxFlat" id="BtnStyle_normal"]
 content_margin_left = 32.0
@@ -160,6 +118,48 @@ shadow_color = Color(0.35, 0.8, 1, 0.25)
 shadow_size = 10
 
 [sub_resource type="StyleBoxEmpty" id="BtnStyle_focus"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hint_pulse"]
+font = ExtResource("2_7v63g")
+font_size = 26
+font_color = Color(1, 0.84, 0.2, 1)
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="PanelStyle_over"]
+content_margin_left = 56.0
+content_margin_top = 40.0
+content_margin_right = 56.0
+content_margin_bottom = 40.0
+bg_color = Color(0.08, 0.02, 0.04, 0.93)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.3, 0.32, 0.75)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(1, 0.2, 0.2, 0.2)
+shadow_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_menu_title_over"]
+font = ExtResource("2_7v63g")
+font_size = 72
+font_color = Color(1, 0.32, 0.32, 1)
+outline_size = 16
+outline_color = Color(0.12, 0, 0.02, 1)
+shadow_size = 10
+shadow_color = Color(1, 0.2, 0.2, 0.4)
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="LabelSettings" id="LabelSettings_final_score"]
+font = ExtResource("2_7v63g")
+font_size = 52
+font_color = Color(1, 0.84, 0.2, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="PanelStyle_pause"]
 content_margin_left = 56.0
@@ -300,89 +300,8 @@ text = "HIT x 2"
 label_settings = SubResource("LabelSettings_combo")
 horizontal_alignment = 1
 
-[node name="GameOver" type="Control" parent="Root" unique_id=421354343]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-
-[node name="Dim" type="ColorRect" parent="Root/GameOver" unique_id=1520361048]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.06, 0, 0.02, 0.78)
-
-[node name="Center" type="CenterContainer" parent="Root/GameOver" unique_id=155429737]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Panel" type="PanelContainer" parent="Root/GameOver/Center" unique_id=1217034783]
-custom_minimum_size = Vector2(640, 0)
-layout_mode = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("PanelStyle_over")
-
-[node name="VBox" type="VBoxContainer" parent="Root/GameOver/Center/Panel" unique_id=1296888760]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/separation = 12
-
-[node name="Title" type="Label" parent="Root/GameOver/Center/Panel/VBox" unique_id=1697699714]
-layout_mode = 2
-text = "GAME OVER"
-label_settings = SubResource("LabelSettings_menu_title_over")
-horizontal_alignment = 1
-
-[node name="Subtitle" type="Label" parent="Root/GameOver/Center/Panel/VBox" unique_id=1258320048]
-layout_mode = 2
-text = "YOUR SHIP WAS DESTROYED"
-label_settings = SubResource("LabelSettings_subtitle")
-horizontal_alignment = 1
-
-[node name="Sep" type="HSeparator" parent="Root/GameOver/Center/Panel/VBox" unique_id=2056241427]
-layout_mode = 2
-theme_override_styles/separator = SubResource("SeparatorLine")
-
-[node name="ScoreCaption" type="Label" parent="Root/GameOver/Center/Panel/VBox" unique_id=1238325017]
-layout_mode = 2
-text = "FINAL SCORE"
-label_settings = SubResource("LabelSettings_subtitle")
-horizontal_alignment = 1
-
-[node name="FinalScore" type="Label" parent="Root/GameOver/Center/Panel/VBox" unique_id=694709658]
-unique_name_in_owner = true
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_final_score")
-horizontal_alignment = 1
-
-[node name="Sep2" type="HSeparator" parent="Root/GameOver/Center/Panel/VBox" unique_id=801226018]
-layout_mode = 2
-theme_override_styles/separator = SubResource("SeparatorLine")
-
-[node name="Hint" type="Label" parent="Root/GameOver/Center/Panel/VBox" unique_id=604441094 groups=["pulse_hint"]]
-layout_mode = 2
-text = "PRESS ANY BUTTON TO FLY AGAIN"
-label_settings = SubResource("LabelSettings_hint_pulse")
-horizontal_alignment = 1
-
 [node name="StartGame" type="Control" parent="Root" unique_id=31344408]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -500,6 +419,86 @@ theme_override_styles/separator = SubResource("SeparatorLine")
 [node name="Hint" type="Label" parent="Root/StartGame/Center/Panel/VBox" unique_id=1426950781 groups=["pulse_hint"]]
 layout_mode = 2
 text = "PRESS X TO CONFIRM YOUR CHOISE"
+label_settings = SubResource("LabelSettings_hint_pulse")
+horizontal_alignment = 1
+
+[node name="GameOver" type="Control" parent="Root" unique_id=421354343]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Dim" type="ColorRect" parent="Root/GameOver" unique_id=1520361048]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.06, 0, 0.02, 0.78)
+
+[node name="Center" type="CenterContainer" parent="Root/GameOver" unique_id=155429737]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Root/GameOver/Center" unique_id=1217034783]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("PanelStyle_over")
+
+[node name="VBox" type="VBoxContainer" parent="Root/GameOver/Center/Panel" unique_id=1296888760]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Root/GameOver/Center/Panel/VBox" unique_id=1697699714]
+layout_mode = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_menu_title_over")
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Root/GameOver/Center/Panel/VBox" unique_id=1258320048]
+layout_mode = 2
+text = "YOUR SHIP WAS DESTROYED"
+label_settings = SubResource("LabelSettings_subtitle")
+horizontal_alignment = 1
+
+[node name="Sep" type="HSeparator" parent="Root/GameOver/Center/Panel/VBox" unique_id=2056241427]
+layout_mode = 2
+theme_override_styles/separator = SubResource("SeparatorLine")
+
+[node name="ScoreCaption" type="Label" parent="Root/GameOver/Center/Panel/VBox" unique_id=1238325017]
+layout_mode = 2
+text = "FINAL SCORE"
+label_settings = SubResource("LabelSettings_subtitle")
+horizontal_alignment = 1
+
+[node name="FinalScore" type="Label" parent="Root/GameOver/Center/Panel/VBox" unique_id=694709658]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_final_score")
+horizontal_alignment = 1
+
+[node name="Sep2" type="HSeparator" parent="Root/GameOver/Center/Panel/VBox" unique_id=801226018]
+layout_mode = 2
+theme_override_styles/separator = SubResource("SeparatorLine")
+
+[node name="Hint" type="Label" parent="Root/GameOver/Center/Panel/VBox" unique_id=604441094 groups=["pulse_hint"]]
+layout_mode = 2
+text = "PRESS ANY BUTTON TO FLY AGAIN"
 label_settings = SubResource("LabelSettings_hint_pulse")
 horizontal_alignment = 1
 

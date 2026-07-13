@@ -20,6 +20,14 @@ const POWER_BAR_MAX_INDEX := 10
 @onready var _final_score_label: Label = %FinalScore
 @onready var _combo_label: Label = %ComboLabel
 
+@onready var _options_screen: Control = %OptionsScreen
+@onready var _controls_screen: Control = %ControlsScreen
+
+@onready var _play_button: Button = %StartGame/Center/Panel/VBox/PlayButton
+@onready var _hangar_button: Button = %StartGame/Center/Panel/VBox/HangarButton
+@onready var _options_button: Button = %StartGame/Center/Panel/VBox/OptionsButton
+@onready var _controls_button: Button = %StartGame/Center/Panel/VBox/ControlsButton
+
 var _health_textures: Array[Texture2D] = []
 var _power_textures: Array[Texture2D] = []
 var _player: CharacterBody3D
@@ -47,6 +55,11 @@ func _ready() -> void:
 	_start_pulse_hints()
 	_start_game.visible = true
 	get_tree().paused = true
+
+	_play_button.pressed.connect(_on_play_pressed)
+	_hangar_button.pressed.connect(_on_hangar_pressed)
+	_options_button.pressed.connect(_on_options_pressed)
+	_controls_button.pressed.connect(_on_controls_pressed)
 
 
 func _process(_delta: float) -> void:
@@ -112,6 +125,30 @@ func _toggle_pause() -> void:
 	_pause_screen.visible = will_pause
 
 
+func _on_play_pressed() -> void:
+	_start_run()
+
+
+func _on_hangar_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/hangar/hangar_scene.tscn")
+
+
+func _on_options_pressed() -> void:
+	_start_game.visible = false
+	_options_screen.visible = true
+
+
+func _on_controls_pressed() -> void:
+	_start_game.visible = false
+	_controls_screen.visible = true
+
+
+func _return_to_start_menu() -> void:
+	_options_screen.visible = false
+	_controls_screen.visible = false
+	_start_game.visible = true
+
+
 func _restart_run() -> void:
 	get_tree().paused = false
 	get_tree().reload_current_scene()
@@ -123,15 +160,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		print("[HUD DEBUG] pause action triggered")
 
-	if _start_game.visible:
-		if (
-			event.is_action_pressed("fire")
-			or (event is InputEventMouseButton and event.pressed)
-			or (event is InputEventScreenTouch and event.pressed)
-			or (event is InputEventKey and event.pressed)
-			or (event is InputEventJoypadButton and event.pressed)
-		):
-			_start_run()
+	if _options_screen.visible or _controls_screen.visible:
+		if event.is_action_pressed("back"):
+			_return_to_start_menu()
 		return
 
 	if _game_over.visible:

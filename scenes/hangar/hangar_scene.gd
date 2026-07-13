@@ -31,6 +31,7 @@ var selected_ship_data: ShipData
 var selected_generator_data: GeneratorData
 
 func _ready() -> void:
+    process_mode = Node.PROCESS_MODE_ALWAYS
     cash_value.text = "%d CR" % GameState.credits
     buy_button.pressed.connect(_on_buy_button_pressed)
     load_cards()
@@ -123,3 +124,13 @@ func _on_buy_button_pressed() -> void:
     if selected_generator_data:
         GameState.generator_id = selected_generator_data.generator_index
     print("Hangar: bought ship ", GameState.ship_id, ", generator ", GameState.generator_id)
+    _return_to_main_menu()
+
+
+func _unhandled_input(event: InputEvent) -> void:
+    if event.is_action_pressed("back"):
+        _return_to_main_menu()
+
+
+func _return_to_main_menu() -> void:
+    get_tree().change_scene_to_file("res://main.tscn")
