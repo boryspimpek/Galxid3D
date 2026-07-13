@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ur25t4asbblr" path="res://scenes/hangar/ship_card.tscn" id="2_do4p5"]
 [ext_resource type="Texture2D" uid="uid://j3w8ne1jlu2g" path="res://assets/hangar/ChatGPT Image 11 lip 2026, 11_43_23.png" id="3_mefml"]
 [ext_resource type="PackedScene" uid="uid://nsujyyy2tpst" path="res://scenes/hangar/generator_card.tscn" id="3_q48xg"]
+[ext_resource type="Script" uid="uid://e5k1m7n4p2o8b" path="res://scenes/hangar/hangar_scene.gd" id="4_edtpo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_edtpo"]
 font = ExtResource("1_edtpo")
@@ -25,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("4_edtpo")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1482642832]
 layout_mode = 1
@@ -260,31 +262,15 @@ label_settings = SubResource("LabelSettings_mefml")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 12
 columns = 3
-
-[node name="ShipCard" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/ShipSection/ShipGrid" unique_id=159686141 instance=ExtResource("2_do4p5")]
-layout_mode = 2
-
-[node name="ShipCard2" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/ShipSection/ShipGrid" unique_id=493325074 instance=ExtResource("2_do4p5")]
-layout_mode = 2
-
-[node name="ShipCard3" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/ShipSection/ShipGrid" unique_id=1488340854 instance=ExtResource("2_do4p5")]
-layout_mode = 2
-
-[node name="ShipCard4" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/ShipSection/ShipGrid" unique_id=370633773 instance=ExtResource("2_do4p5")]
-layout_mode = 2
-
-[node name="ShipCard5" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/ShipSection/ShipGrid" unique_id=1184859070 instance=ExtResource("2_do4p5")]
-layout_mode = 2
-
-[node name="ShipCard6" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/ShipSection/ShipGrid" unique_id=1281455197 instance=ExtResource("2_do4p5")]
-layout_mode = 2
 
 [node name="VSeparator" type="VSeparator" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent" unique_id=752504598]
 layout_mode = 2
 
 [node name="GeneratorSection" type="VBoxContainer" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent" unique_id=183882297]
 layout_mode = 2
+size_flags_vertical = 0
 
 [node name="Title" type="Label" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/GeneratorSection" unique_id=41484794]
 layout_mode = 2
@@ -295,16 +281,6 @@ label_settings = SubResource("LabelSettings_gg4fh")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_minimum_size = Vector2(0, 150)
+theme_override_constants/separation = 12
 columns = 6
-
-[node name="GeneratorCard" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/GeneratorSection/GeneratorGrid" unique_id=45192516 instance=ExtResource("3_q48xg")]
-
-[node name="GeneratorCard2" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/GeneratorSection/GeneratorGrid" unique_id=1070940787 instance=ExtResource("3_q48xg")]
-
-[node name="GeneratorCard3" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/GeneratorSection/GeneratorGrid" unique_id=2069158716 instance=ExtResource("3_q48xg")]
-
-[node name="GeneratorCard4" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/GeneratorSection/GeneratorGrid" unique_id=767257783 instance=ExtResource("3_q48xg")]
-
-[node name="GeneratorCard5" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/GeneratorSection/GeneratorGrid" unique_id=486786694 instance=ExtResource("3_q48xg")]
-
-[node name="GeneratorCard6" parent="MainMargin/MainLayout/RightPanel/RightMargin/RightContent/GeneratorSection/GeneratorGrid" unique_id=1602522911 instance=ExtResource("3_q48xg")]

@@ -1,5 +1,5 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1783934780
+::res://::1783938203
 default_bus_layout.tres::AudioBusLayout::2099548917964122130::1780403827::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile::-1::1783681859::0::1::::<><><>0<>0<><>::
 main.tscn::PackedScene::4604124130799878763::1783704090::0::1::::<><><>0<>0<><>::uid://h4tfxlaeefcu::::res://scenes/world/GameShell.gd<>uid://bte7ofi7pgn5b::::res://scenes/player/Player.tscn<>uid://c6q6woux5lj8n::::res://scenes/stations/station_01.tscn<>uid://dfwjsha1cxfrv::::res://scenes/stations/station_05.tscn<>uid://ci6qjvw4jlabt::::res://scenes/world/LevelScroll3D.gd<>uid://cl1yt87544mrn::::res://scenes/enemies/formations/finisher.tscn<>uid://bdvg80h7a4nm8::::res://scenes/debug/LevelScrollRuler.tscn<>uid://burxon56o3cum::::res://assets/mp3/galaxid.mp3<>uid://bkkprwsfeseit::::res://scenes/enemies/formations/cyclon_boss_2.tscn<>uid://pv4lucn5p30f::::res://scenes/ui/Hud.tscn<>uid://dl18q8lfjoe2t::::res://scenes/stations/dreadnought.tscn<>uid://bfylem1kva7em::::res://scenes/stations/fighter752.tscn<>uid://di8tdeuy0i86i::::res://scenes/enemies/formations/protector_strike.tscn<>uid://0gvcpa8yx6vi::::res://scenes/enemies/formations/rocketer_strike.tscn<>uid://clbkkfabpgdpv::::res://scenes/enemies/formations/begining.tscn<>uid://18f6vqmvxr50::::res://scenes/enemies/formations/hank_strike.tscn<>uid://b53d3bd1fnprc::::res://scenes/enemies/formations/boss_devastator.tscn
@@ -811,24 +811,23 @@ data_catalog.tres::Resource/DataCatalog::3758132200031292828::1783934969::0::1::
 028_S_CURSOR.wav::AudioStreamWAV::7874685278175063360::1779131092::1779131092::1::::<><><>0<>0<>85a943a6206eeed6cfa2d6e580cb9b92<>res://.godot/imported/028_S_CURSOR.wav-e20043669c899a0bd752a3d967b98f11.sample::
 029_S_POWERUP.wav::AudioStreamWAV::8353538144441551701::1779131092::1779131092::1::::<><><>0<>0<>1e9a030746de44693b5c193e2c3a0571<>res://.godot/imported/029_S_POWERUP.wav-18fc918bf336d7f2034a0a6a06449d0a.sample::
 sound_index.txt::TextFile::-1::1779131092::0::1::::<><><>0<>0<><>::
-::res://data/generators/::1783935843
-ChatGPT Image 11 lip 2026, 11_47_41.png::CompressedTexture2D::1059174312930253920::1783935843::1783935844::1::::<><><>0<>0<>ce892a71edbe63ad92d48f3af184765d<>res://.godot/imported/ChatGPT Image 11 lip 2026, 11_47_41.png-fff76583a798bda59f6e2e907329d671.ctex::
-generator_001.tres::Resource/GeneratorData::1875081810189900378::1783935429::0::1::::<><><>0<>0<><>::uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd
-generator_002.tres::Resource/GeneratorData::306786536992967416::1783935431::0::1::::<><><>0<>0<><>::uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd
-generator_003.tres::Resource/GeneratorData::2812891632059993230::1783935434::0::1::::<><><>0<>0<><>::uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd
-generator_004.tres::Resource/GeneratorData::5879852395194650585::1783935437::0::1::::<><><>0<>0<><>::uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd
-generator_005.tres::Resource/GeneratorData::2837863074001862982::1783935441::0::1::::<><><>0<>0<><>::uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd
-generator_006.tres::Resource/GeneratorData::6219522866495126212::1783935445::0::1::::<><><>0<>0<><>::uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd
+::res://data/generators/::1783935991
+generator_001.tres::Resource/GeneratorData::1875081810189900378::1783935890::0::1::::<><><>0<>0<><>::uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd<>uid://cp42htgrdsyxr::::res://assets/hangar/ChatGPT Image 11 lip 2026, 11_47_41.png
+generator_002.tres::Resource/GeneratorData::306786536992967416::1783935933::0::1::::<><><>0<>0<><>::uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd<>uid://cvmy2hvv10ua5::::res://assets/hangar/ChatGPT Image 11 lip 2026, 11_45_20.png
+generator_003.tres::Resource/GeneratorData::2812891632059993230::1783935942::0::1::::<><><>0<>0<><>::uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd<>uid://j3w8ne1jlu2g::::res://assets/hangar/ChatGPT Image 11 lip 2026, 11_43_23.png
+generator_004.tres::Resource/GeneratorData::5879852395194650585::1783935954::0::1::::<><><>0<>0<><>::uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd<>uid://b02xnf158viy1::::res://assets/hangar/ChatGPT Image 11 lip 2026, 11_41_40.png
+generator_005.tres::Resource/GeneratorData::2837863074001862982::1783935978::0::1::::<><><>0<>0<><>::uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd<>uid://davdsr1ok1blt::::res://assets/hangar/ChatGPT Image 11 lip 2026, 11_40_07.png
+generator_006.tres::Resource/GeneratorData::6219522866495126212::1783935991::0::1::::<><><>0<>0<><>::uid://pw0ykqglf2m0::::res://assets/hangar/ChatGPT Image 11 lip 2026, 11_38_28.png<>uid://b5qnqtg671g0::::res://scripts/resources/GeneratorData.gd
 ::res://data/play_area/::1783585106
 default.tres::Resource/PlayAreaConfig::6814198421504936737::1783585106::0::1::::<><><>0<>0<><>::uid://ilwaljmmp6vs::::res://scripts/resources/PlayAreaConfig.gd
 ::res://data/shields/::1781773441
-::res://data/ships/::1783935559
-ship_001.tres::Resource/ShipData::4152578174104079343::1783935543::0::1::::<><><>0<>0<><>::uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd
-ship_002.tres::Resource/ShipData::3097637620009340040::1783935546::0::1::::<><><>0<>0<><>::uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd
-ship_003.tres::Resource/ShipData::3823104454017895500::1783935549::0::1::::<><><>0<>0<><>::uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd
-ship_004.tres::Resource/ShipData::6748476240789214430::1783935553::0::1::::<><><>0<>0<><>::uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd
-ship_005.tres::Resource/ShipData::2561228900581127237::1783935556::0::1::::<><><>0<>0<><>::uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd
-ship_006.tres::Resource/ShipData::4088666634879777764::1783935559::0::1::::<><><>0<>0<><>::uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd
+::res://data/ships/::1783936053
+ship_001.tres::Resource/ShipData::4152578174104079343::1783936005::0::1::::<><><>0<>0<><>::uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd<>uid://bm26ujucfwqql::::res://assets/hangar/Gemini_Generated_Image_405x0z405x0z405x-removebg-preview.png
+ship_002.tres::Resource/ShipData::3097637620009340040::1783936017::0::1::::<><><>0<>0<><>::uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd<>uid://ccy1ksmxbe76r::::res://assets/hangar/Gemini_Generated_Image_cbgo4ncbgo4ncbgo-removebg-preview.png
+ship_003.tres::Resource/ShipData::3823104454017895500::1783936025::0::1::::<><><>0<>0<><>::uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd<>uid://dq2tpd8ojcp::::res://assets/hangar/Gemini_Generated_Image_l5g6wul5g6wul5g6-removebg-preview.png
+ship_004.tres::Resource/ShipData::6748476240789214430::1783936034::0::1::::<><><>0<>0<><>::uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd<>uid://dnkvfn4b4e8um::::res://assets/hangar/Gemini_Generated_Image_ly8hg6ly8hg6ly8h-removebg-preview.png
+ship_005.tres::Resource/ShipData::2561228900581127237::1783936044::0::1::::<><><>0<>0<><>::uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd<>uid://bnuj1mdd6h574::::res://assets/hangar/Gemini_Generated_Image_t6cgwet6cgwet6cg-removebg-preview.png
+ship_006.tres::Resource/ShipData::4088666634879777764::1783936053::0::1::::<><><>0<>0<><>::uid://ct0q0eimv8m18::::res://assets/hangar/94e35312-ca95-4431-9ff9-9e17afc63a43-removebg-preview.png<>uid://b67wo33ojrncw::::res://scripts/resources/ShipData.gd
 ::res://data/sidekicks/::1782994300
 golden_core.tres::Resource/SidekickData::1927857412622104568::1782994209::0::1::::<><><>0<>0<><>::uid://c8h5m648mrxgn::::res://scripts/resources/SidekickData.gd
 green_core.tres::Resource/SidekickData::4729898639899226126::1782994300::0::1::::<><><>0<>0<><>::uid://c8h5m648mrxgn::::res://scripts/resources/SidekickData.gd
@@ -917,10 +916,13 @@ voyager.tscn::PackedScene::7262926442861361264::1783150949::0::1::::<><><>0<>0<>
 EnemyProjectile.gd::GDScript::8392561708853174740::1783096644::0::1::::<>Area3D<><>0<>0<><>::
 EnemyProjectile.gdshader::Shader::6290722636671745208::1783500644::0::1::::<><><>0<>0<><>::
 EnemyProjectile.tscn::PackedScene::394493233188443304::1783450272::0::1::::<><><>0<>0<><>::uid://drtojasqrdy7m::::res://scenes/enemy_projectile/EnemyProjectile.gd<>uid://dtt1ufgeoqsd::::res://assets/projectiles/ChatGPT Image 19 cze 2026, 12_45_16.png<>uid://cvvjju32romua::::res://scenes/enemy_projectile/EnemyProjectile.gdshader
-::res://scenes/hangar/::1783935672
-generator_card.tscn::PackedScene::950845477630975739::1783935636::0::1::::<><><>0<>0<><>::uid://dqyf02xb4hxr::::res://assets/fonts/Bangers-Regular.ttf<>uid://davdsr1ok1blt::::res://assets/hangar/ChatGPT Image 11 lip 2026, 11_40_07.png
-hangar_scene.tscn::PackedScene::3446075299215146234::1783934368::0::1::::<><><>0<>0<><>::uid://dqyf02xb4hxr::::res://assets/fonts/Bangers-Regular.ttf<>uid://dq2tpd8ojcp::::res://assets/hangar/Gemini_Generated_Image_l5g6wul5g6wul5g6-removebg-preview.png<>uid://ur25t4asbblr::::res://scenes/hangar/ship_card.tscn<>uid://j3w8ne1jlu2g::::res://assets/hangar/ChatGPT Image 11 lip 2026, 11_43_23.png<>uid://nsujyyy2tpst::::res://scenes/hangar/generator_card.tscn
-ship_card.tscn::PackedScene::1440565269968580979::1783935672::0::1::::<><><>0<>0<><>::uid://dqyf02xb4hxr::::res://assets/fonts/Bangers-Regular.ttf<>uid://bm26ujucfwqql::::res://assets/hangar/Gemini_Generated_Image_405x0z405x0z405x-removebg-preview.png
+::res://scenes/hangar/::1783937737
+generator_card.gd::GDScript::8483520360268642450::1783938106::0::1::::GeneratorCard<>Control<><>0<>0<><>::
+generator_card.tscn::PackedScene::950845477630975739::1783938077::0::1::::<><><>0<>0<><>::uid://dqyf02xb4hxr::::res://assets/fonts/Bangers-Regular.ttf<>uid://davdsr1ok1blt::::res://assets/hangar/ChatGPT Image 11 lip 2026, 11_40_07.png<>uid://ds4qlub1t70hq::::res://scenes/hangar/generator_card.gd
+hangar_scene.gd::GDScript::7878686075378893835::1783937708::0::1::::HangarScene<>Control<><>0<>0<><>::
+hangar_scene.tscn::PackedScene::3446075299215146234::1783937878::0::1::::<><><>0<>0<><>::uid://dqyf02xb4hxr::::res://assets/fonts/Bangers-Regular.ttf<>uid://dq2tpd8ojcp::::res://assets/hangar/Gemini_Generated_Image_l5g6wul5g6wul5g6-removebg-preview.png<>uid://ur25t4asbblr::::res://scenes/hangar/ship_card.tscn<>uid://j3w8ne1jlu2g::::res://assets/hangar/ChatGPT Image 11 lip 2026, 11_43_23.png<>uid://nsujyyy2tpst::::res://scenes/hangar/generator_card.tscn<>uid://ba5515qu5uthj::::res://scenes/hangar/hangar_scene.gd
+ship_card.gd::GDScript::2805224292470161803::1783938105::0::1::::ShipCard<>Control<><>0<>0<><>::
+ship_card.tscn::PackedScene::1440565269968580979::1783938067::0::1::::<><><>0<>0<><>::uid://dqyf02xb4hxr::::res://assets/fonts/Bangers-Regular.ttf<>uid://bm26ujucfwqql::::res://assets/hangar/Gemini_Generated_Image_405x0z405x0z405x-removebg-preview.png<>uid://c4i7k0x3r1q2l::::res://scenes/hangar/ship_card.gd
 ::res://scenes/pickup/::1783273727
 Pickup.gd::GDScript::4734261907121622875::1781869871::0::1::::<>Area3D<><>0<>0<><>::
 Pickup.tscn::PackedScene::7120682590823160623::1783273727::0::1::::<><><>0<>0<><>::uid://b8pkup3dl00t0::::res://scenes/pickup/Pickup.gd<>uid://tqgl0kuaeve6::::res://assets/particle pack/PNG (Transparent)/star_07.png
@@ -980,7 +982,7 @@ SceneRegistry.gd::GDScript::8986126702042359166::1782994040::0::1::::<>Node<><>0
 SoundManager.gd::GDScript::5357820178277045046::1783177169::0::1::::<>Node<><>0<>0<><>::
 ::res://scripts/resources/::1783425603
 DataCatalog.gd::GDScript::274427964840942841::1782994006::0::1::::DataCatalog<>Resource<><>0<>0<><>::
-GeneratorData.gd::GDScript::133115733505065917::1783935821::0::1::::GeneratorData<>Resource<><>0<>0<><>::
+GeneratorData.gd::GDScript::133115733505065917::1783936349::0::1::::GeneratorData<>Resource<><>0<>0<><>::
 PlayAreaConfig.gd::GDScript::585555270461757392::1781623809::0::1::::PlayAreaConfig<>Resource<><>0<>0<><>::
 ShipData.gd::GDScript::4629697214114682470::1783935786::0::1::::ShipData<>Resource<><>0<>0<><>::
 SidekickData.gd::GDScript::7105368465568824413::1782993992::0::1::::SidekickData<>Resource<><>0<>0<><>::
