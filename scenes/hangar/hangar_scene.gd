@@ -12,6 +12,7 @@ const GeneratorCardType = preload("res://scenes/hangar/generator_card.gd")
 @onready var ship_grid: GridContainer = $MainMargin/MainLayout/RightPanel/RightMargin/RightContent/ShipSection/ShipGrid
 @onready var generator_grid: GridContainer = $MainMargin/MainLayout/RightPanel/RightMargin/RightContent/GeneratorSection/GeneratorGrid
 
+@onready var cash_value: Label = $MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/Cash/CashValue
 @onready var selected_ship_title: Label = $MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedShip/ShipMargin/ShipContent/SectionTitle
 @onready var selected_ship_texture: TextureRect = $MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedShip/ShipMargin/ShipContent/TextureRect
 @onready var selected_ship_name: Label = $MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedShip/ShipMargin/ShipContent/ShipName
@@ -28,6 +29,7 @@ var selected_ship_data: ShipData
 var selected_generator_data: GeneratorData
 
 func _ready() -> void:
+    cash_value.text = "%d CR" % GameState.credits
     load_cards()
 
 func load_cards() -> void:
@@ -78,6 +80,7 @@ func load_resources(folder: String) -> Array:
 
 func _on_ship_selected(ship: ShipData) -> void:
     selected_ship_data = ship
+    GameState.selected_ship_id = ship.ship_index
     selected_ship_title.text = "Selected Ship"
     selected_ship_name.text = ship.ship_name
     selected_ship_armor.text = str(ship.armor)
@@ -86,6 +89,7 @@ func _on_ship_selected(ship: ShipData) -> void:
 
 func _on_generator_selected(generator: GeneratorData) -> void:
     selected_generator_data = generator
+    GameState.selected_generator_id = generator.generator_index
     selected_generator_title.text = "Selected Generator"
     selected_generator_name.text = generator.generator_name
     selected_generator_energy.text = str(generator.power)

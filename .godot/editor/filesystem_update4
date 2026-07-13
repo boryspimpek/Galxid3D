@@ -6,3 +6,5 @@ res://assets/enemies/dreadnought/dreadnought_model.gdshader
 res://scenes/ui/ui_theme.tres
 res://scenes/hangar/hangar_scene.tscn
 res://data/generators/generator_006.tres
+res://scenes/hangar/hangar_scene.gd
+res://scripts/managers/GameState.gd
