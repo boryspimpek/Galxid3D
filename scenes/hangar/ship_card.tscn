@@ -3,18 +3,47 @@
 [ext_resource type="FontFile" uid="uid://dqyf02xb4hxr" path="res://assets/fonts/Bangers-Regular.ttf" id="1_bj2ai"]
 [ext_resource type="Texture2D" uid="uid://bm26ujucfwqql" path="res://assets/hangar/Gemini_Generated_Image_405x0z405x0z405x-removebg-preview.png" id="2_s71ba"]
 [ext_resource type="Script" uid="uid://c4i7k0x3r1q2l" path="res://scenes/hangar/ship_card.gd" id="3_s71ba"]
+[ext_resource type="Theme" uid="uid://buhk1e0v6x6ff" path="res://scenes/ui/ui_theme.tres" id="4_s71ba"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nlklj"]
 font = ExtResource("1_bj2ai")
+font_size = 18
+font_color = Color(1, 1, 1, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.5)
+shadow_offset = Vector2(0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_56qow"]
 font = ExtResource("1_bj2ai")
+font_size = 24
+font_color = Color(0.72, 0.8, 0.95, 0.9)
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.5)
+shadow_offset = Vector2(0, 2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_s0osx"]
 font = ExtResource("1_bj2ai")
+font_size = 22
+font_color = Color(1, 1, 1, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.5)
+shadow_offset = Vector2(0, 2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_n4vr4"]
 font = ExtResource("1_bj2ai")
+font_size = 22
+font_color = Color(1, 0.84, 0.2, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.5)
+shadow_offset = Vector2(0, 2)
 
 [node name="ShipCard" type="PanelContainer" unique_id=159686141]
 custom_minimum_size = Vector2(0, 160)
@@ -22,6 +51,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("3_s71ba")
+theme = ExtResource("4_s71ba")
 
 [node name="CardMargin" type="MarginContainer" parent="." unique_id=710964668]
 layout_mode = 2
