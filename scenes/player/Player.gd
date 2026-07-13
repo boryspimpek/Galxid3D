@@ -12,7 +12,6 @@ extends CharacterBody3D
 @export var left_sidekick_id: int = 0
 @export var right_sidekick_id: int = 0
 @export var sidekick_level: int = 1
-@export var credits: int = 1000
 @export var score: int = 0
 
 var armor: int = 0

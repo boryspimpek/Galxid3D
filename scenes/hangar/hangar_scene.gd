@@ -24,6 +24,7 @@ const GeneratorCardType = preload("res://scenes/hangar/generator_card.gd")
 @onready var selected_generator_name: Label = $MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator/GeneratorMargin/GeneratorContent/GeneratorName
 @onready var selected_generator_energy: Label = $MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator/GeneratorMargin/GeneratorContent/Energy/Energy
 @onready var selected_generator_price: Label = $MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/SelectedGenerator/GeneratorMargin/GeneratorContent/Price/Price
+@onready var total_value: Label = $MainMargin/MainLayout/LeftPanel/LeftMargin/LeftContent/TotalCostSection/MarginContainer/VBoxContainer/TotalValue
 
 var selected_ship_data: ShipData
 var selected_generator_data: GeneratorData
@@ -86,6 +87,7 @@ func _on_ship_selected(ship: ShipData) -> void:
     selected_ship_armor.text = str(ship.armor)
     selected_ship_price.text = "%d CR" % ship.cost
     selected_ship_texture.texture = ship.graphics
+    _update_total_cost()
 
 func _on_generator_selected(generator: GeneratorData) -> void:
     selected_generator_data = generator
@@ -95,3 +97,12 @@ func _on_generator_selected(generator: GeneratorData) -> void:
     selected_generator_energy.text = str(generator.power)
     selected_generator_price.text = "%d CR" % generator.cost
     selected_generator_texture.texture = generator.graphics
+    _update_total_cost()
+
+func _update_total_cost() -> void:
+    var total := 0
+    if selected_ship_data:
+        total += selected_ship_data.cost
+    if selected_generator_data:
+        total += selected_generator_data.cost
+    total_value.text = "%d CR" % total

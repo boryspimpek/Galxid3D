@@ -8,3 +8,4 @@ res://scenes/hangar/hangar_scene.tscn
 res://data/generators/generator_006.tres
 res://scenes/hangar/hangar_scene.gd
 res://scripts/managers/GameState.gd
+res://scenes/player/Player.gd
