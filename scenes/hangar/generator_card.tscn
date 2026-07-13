@@ -27,7 +27,7 @@ shadow_offset = Vector2(0, 2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_s0osx"]
 font = ExtResource("1_8guua")
-font_size = 22
+font_size = 20
 font_color = Color(1, 1, 1, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
@@ -37,7 +37,7 @@ shadow_offset = Vector2(0, 2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_n4vr4"]
 font = ExtResource("1_8guua")
-font_size = 22
+font_size = 20
 font_color = Color(1, 0.84, 0.2, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
@@ -46,7 +46,7 @@ shadow_color = Color(0, 0, 0, 0.5)
 shadow_offset = Vector2(0, 2)
 
 [node name="GeneratorCard" type="PanelContainer" unique_id=159686141]
-custom_minimum_size = Vector2(0, 130)
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

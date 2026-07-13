@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_gp8xn")
-generator_index = 4
+generator_index = 6
 generator_name = "Sol Prime"
 power = 700.0
 regeneration = 500.0
