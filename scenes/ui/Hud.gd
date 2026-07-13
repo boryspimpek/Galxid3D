@@ -33,7 +33,6 @@ func _ready() -> void:
 	add_to_group("hud")
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	_load_status_bar_textures()
-	%GameOverRestartButton.pressed.connect(_restart_run)
 	HitComboManager.combo_changed.connect(_on_combo_changed)
 	if _combo_label.label_settings:
 		_combo_label_settings = _combo_label.label_settings.duplicate()
