@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://h4tfxlaeefcu" path="res://scenes/world/GameShell.gd" id="1_2h37t"]
 [ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="2_adp8l"]
-[ext_resource type="PackedScene" uid="uid://bi8mx1rfm6q6t" path="res://scenes/enemies/types/orbiter.tscn" id="4_vbegm"]
-[ext_resource type="PackedScene" uid="uid://bph2t4hxn0f07" path="res://scenes/enemies/types/ring.tscn" id="5_ehkex"]
+[ext_resource type="PackedScene" uid="uid://81vbgctp2ql6" path="res://scenes/enemies/types/heli.tscn" id="5_g14j6"]
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="6_21gct"]
+[ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemies/base/EnemyPath3D.gd" id="6_ehkex"]
 [ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="6_xersf"]
+[ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemies/base/EnemyPathFollow.gd" id="7_xersf"]
+[ext_resource type="Script" uid="uid://cr2knbmonx42w" path="res://scenes/enemies/base/facing/FacePlayer.gd" id="8_xersf"]
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="37_k13tm"]
 
 [sub_resource type="Environment" id="Environment_2y1ty"]
@@ -16,6 +18,13 @@ adjustment_enabled = true
 adjustment_brightness = 1.12
 adjustment_contrast = 1.065
 adjustment_saturation = 1.5
+
+[sub_resource type="Curve3D" id="Curve3D_00tp4"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.01632309, 0, -0.013153076, 0, 0, 0, 0, 0, 0, 6.038254, 0, 3.2175908, 0, 0, 0, 0, 0, 0, -1.89575, 0, 8.382384, 0, 0, 0, 0, 0, 0, 16.104107, 0, 6.9538245),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
 
 [node name="GameShell" type="Control" unique_id=616589222]
 layout_mode = 3
@@ -68,8 +77,7 @@ shadow_blur = 4.507
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 15, 0)
 
 [node name="Player" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1811810025 instance=ExtResource("2_adp8l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-ship_id = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20925522, 0, 3.103972)
 gamepad_move_speed = 15.0
 gamepad_l2_move_speed = 30.0
 gamepad_acceleration = 500.0
@@ -80,12 +88,22 @@ dodge_duration = 0.7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5895576)
 script = ExtResource("6_21gct")
 
-[node name="orbiter" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1897743314 instance=ExtResource("4_vbegm")]
-transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, -11.144554, 0, -21.136528)
-
-[node name="ring" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1685739146 instance=ExtResource("5_ehkex")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 8.341324, 0, -21.410519)
-
 [node name="LevelScrollRuler" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1422874938 instance=ExtResource("6_xersf")]
+
+[node name="EnemyPath3D" type="Path3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=190721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.857089, 0, -5.164794)
+curve = SubResource("Curve3D_00tp4")
+script = ExtResource("6_ehkex")
+metadata/_custom_type_script = "uid://braxpml2y0f6o"
+
+[node name="EnemyPathFollow" type="PathFollow3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/EnemyPath3D" unique_id=796808719]
+transform = Transform3D(-0.4727567, 0, -0.881193, 0, 1, 0, 0.881193, 0, -0.4727567, 0.01632309, 0, -0.013153076)
+script = ExtResource("7_xersf")
+metadata/_custom_type_script = "uid://de0wqltyclsk0"
+
+[node name="heli" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/EnemyPath3D/EnemyPathFollow" unique_id=923095987 instance=ExtResource("5_g14j6")]
+
+[node name="Node3D" type="Node3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/EnemyPath3D/EnemyPathFollow/heli" unique_id=938339913]
+script = ExtResource("8_xersf")
 
 [node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("37_k13tm")]

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bcgta2e03awvb"]
+
+[ext_resource type="PackedScene" uid="uid://buwuobfm6wxuq" path="res://assets/enemies/heli/Meshy_AI_Four_Blade_Rotor_0714083143_texture.glb" id="1_4a8ar"]
+[ext_resource type="Texture2D" uid="uid://cqrwocfacuv10" path="res://assets/enemies/heli/Meshy_AI_Four_Blade_Rotor_0714083143_texture_0.jpg" id="2_50d4p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ua6wm"]
+albedo_texture = ExtResource("2_50d4p")
+clearcoat_enabled = true
+clearcoat_roughness = 1.0
+
+[node name="Meshy_AI_Four_Blade_Rotor_0714083143_texture" unique_id=939169876 instance=ExtResource("1_4a8ar")]
+layers = 16
+
+[node name="Mesh" parent="." index="0" unique_id=1503952156]
+layers = 16
+surface_material_override/0 = SubResource("StandardMaterial3D_ua6wm")

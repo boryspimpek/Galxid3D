@@ -1,3 +1,8 @@
+Node3D
+EnemyPathFollow
+EnemyPath3D
+AnimationPlayer
+MeshInstance3D
 HSlider
 Control
 VSeparator
@@ -8,8 +13,3 @@ MarginContainer
 PanelContainer
 TextureRect
 GridContainer
-HBoxContainer
-AnimationPlayer
-AudioStreamPlayer
-Node3D
-EnemyFacing

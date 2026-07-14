@@ -8,3 +8,8 @@ res://scenes/ui/Hud.tscn
 res://assets/shaders/jet_engine.gdshader
 res://assets/enemies/dreadnought/dreadnought_model.gdshader
 res://main.tscn
+res://assets/enemies/heli/heli_model.tscn
+res://scenes/enemies/types/heli.tscn
+res://test.tscn
+res://assets/enemies/heli/main_rotor_model.tscn
+res://assets/enemies/heli/minor_rotor_model.tscn
