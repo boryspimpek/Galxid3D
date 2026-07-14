@@ -35,7 +35,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_seoix"]
 resource_name = "spin"
-length = 10.0
+length = 20.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -44,10 +44,10 @@ tracks/0/path = NodePath("EnemyModel/Meshy_AI_Four_Blade_Rotor_0714083143_textur
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 10),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 10, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0), Vector3(0, 12.566371, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -69,7 +69,7 @@ _data = {
 }
 
 [node name="heli" unique_id=1897743314 instance=ExtResource("1_nytjk")]
-transform = Transform3D(2, 0, 0, 0, 1.8793852, 0.68404025, 0, -0.68404025, 1.8793852, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 1.8793851, 0.6840402, 0, -0.6840402, 1.8793851, 0, 0, 0)
 armor = 100
 
 [node name="Meshy_AI_Azure_and_Gold_Starfi_0714083111_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1941285157 instance=ExtResource("2_aufqe")]
@@ -78,15 +78,20 @@ armor = 100
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0.31590587, 0.26123)
 
 [node name="Meshy_AI_Three_Blade_Propeller_0714083137_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="2" unique_id=1655562474 instance=ExtResource("4_f2ltq")]
-transform = Transform3D(-2.9505188e-08, 0, 0.675, 0, 0.675, 0, -0.675, 0, -2.9505188e-08, 0.12345648, 0.20021385, -0.7580477)
+transform = Transform3D(-2.9505214e-08, 0, 0.675, 0, 0.6750006, 0, -0.6750006, 0, -2.9505188e-08, 0.108148545, 0.13879746, -0.79888135)
 
 [node name="CollisionShape3D" parent="." index="1" unique_id=324662688]
 transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 2.1877034e-10, -2.1877034e-10, 0.005004883)
+visible = false
 
 [node name="VisibleOnScreenNotifier3D" parent="." index="2" unique_id=1484925388]
+visible = false
 aabb = AABB(-0.8734493, -1, -1.1178583, 1.7468987, 2, 2.2357166)
+
+[node name="Muzzle" parent="." index="3" unique_id=1704985833]
+transform = Transform3D(1, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, -0.03641869, 0.8167548)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4" unique_id=1837837773]
 libraries/ = SubResource("AnimationLibrary_6v2mi")
 autoplay = &"spin"
-speed_scale = 4.0
+speed_scale = 2.0

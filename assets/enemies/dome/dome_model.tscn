@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dg5313nhhpas4"]
+
+[ext_resource type="PackedScene" uid="uid://bu0j84bxepqu" path="res://assets/enemies/dome/Meshy_AI_Blue_Dome_Capsule_0714152008_texture.glb" id="1_xlek1"]
+
+[node name="Meshy_AI_Blue_Dome_Capsule_0714152008_texture" unique_id=1284798880 instance=ExtResource("1_xlek1")]
+layers = 16
+
+[node name="Mesh" parent="." index="0" unique_id=474399352]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+layers = 16

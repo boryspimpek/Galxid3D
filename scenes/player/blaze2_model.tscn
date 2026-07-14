@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dbwkjkyvor653"]
 
 [ext_resource type="PackedScene" uid="uid://dcs6thoancqxa" path="res://assets/enemies/blaze/blaze2/Meshy_AI_Emerald_Void_Intercep_0707094557_texture.glb" id="1_cx0k2"]
-[ext_resource type="Texture2D" uid="uid://b5n1qdf7wji7b" path="res://assets/enemies/blaze/blaze2/Meshy_AI_Emerald_Void_Intercep_0707094557_texture_0.jpg" id="2_14g1t"]
+[ext_resource type="Texture2D" uid="uid://b6afjxal8fj20" path="res://assets/enemies/blaze/blaze1/Meshy_AI_Emerald_Void_Intercep_0714144242_texture_base_color.jpg" id="2_lokw3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_14g1t"]
 cull_mode = 1
@@ -14,7 +14,7 @@ next_pass = SubResource("StandardMaterial3D_14g1t")
 diffuse_mode = 3
 specular_mode = 1
 disable_ambient_light = true
-albedo_texture = ExtResource("2_14g1t")
+albedo_texture = ExtResource("2_lokw3")
 metallic = 0.46
 roughness = 0.4
 normal_enabled = true

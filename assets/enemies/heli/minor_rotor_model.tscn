@@ -13,5 +13,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0
 layers = 16
 
 [node name="Mesh" parent="." index="0" unique_id=395150575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09135604, 0)
 layers = 16
 surface_material_override/0 = SubResource("StandardMaterial3D_1lekh")

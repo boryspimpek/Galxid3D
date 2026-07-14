@@ -1,5 +1,6 @@
-res://assets/enemies/
 res://scenes/enemies/types/
+res://assets/enemies/dome/
+res://assets/enemies/
 res://assets/enemies/heli/
 res://scenes/hangar/
 C:/Users/borys/Desktop/game/
@@ -21,5 +22,4 @@ res://assets/stations/station03/
 res://assets/stations/station02/
 res://assets/stations/station05/
 res://assets/enemies/avatar2/
-res://assets/enemies/avatar1/
 C:/Program Files/Java/jdk-26.0.1/bin/
