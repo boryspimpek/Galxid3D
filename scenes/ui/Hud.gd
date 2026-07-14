@@ -55,6 +55,7 @@ func _ready() -> void:
 	_start_pulse_hints()
 	_start_game.visible = true
 	get_tree().paused = true
+	_play_button.grab_focus()
 
 	_play_button.pressed.connect(_on_play_pressed)
 	_hangar_button.pressed.connect(_on_hangar_pressed)
@@ -147,6 +148,7 @@ func _return_to_start_menu() -> void:
 	_options_screen.visible = false
 	_controls_screen.visible = false
 	_start_game.visible = true
+	_play_button.grab_focus()
 
 
 func _restart_run() -> void:
@@ -161,7 +163,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		print("[HUD DEBUG] pause action triggered")
 
 	if _options_screen.visible or _controls_screen.visible:
-		if event.is_action_pressed("back"):
+		if event.is_action_pressed("back") or event.is_action_pressed("ui_cancel"):
 			_return_to_start_menu()
 		return
 
