@@ -1,6 +1,17 @@
 [gd_scene format=3 uid="uid://cxtnvg3xdlb2c"]
 
 [ext_resource type="PackedScene" uid="uid://by7ey8tqcenhp" path="res://assets/enemies/dome/Meshy_AI_Modular_Telecentric_L_0714152024_texture.glb" id="1_0hcn5"]
+[ext_resource type="Texture2D" uid="uid://b4ojvsycrfrui" path="res://assets/enemies/dome/Meshy_AI_Modular_Telecentric_L_0714152024_texture_0.jpg" id="2_utruw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g0llb"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("2_utruw")
+metallic = 0.36
+metallic_specular = 0.36
+roughness = 0.21
+clearcoat_enabled = true
+clearcoat_roughness = 1.0
 
 [node name="Meshy_AI_Modular_Telecentric_L_0714152024_texture" unique_id=1610751535 instance=ExtResource("1_0hcn5")]
 layers = 16
@@ -8,3 +19,4 @@ layers = 16
 [node name="Mesh" parent="." index="0" unique_id=2121439801]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 layers = 16
+surface_material_override/0 = SubResource("StandardMaterial3D_g0llb")

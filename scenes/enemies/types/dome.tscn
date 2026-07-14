@@ -5,22 +5,86 @@
 [ext_resource type="PackedScene" uid="uid://x0mr2af0gkgm" path="res://assets/enemies/dome/engine_model.tscn" id="3_tvjie"]
 [ext_resource type="PackedScene" uid="uid://cxtnvg3xdlb2c" path="res://assets/enemies/dome/dome_cannon_model.tscn" id="4_b7xp7"]
 [ext_resource type="Script" uid="uid://crjllr6p5un2q" path="res://scenes/enemies/base/facing/FacePlayerPart.gd" id="5_jxx4d"]
+[ext_resource type="Shader" uid="uid://luwc3n46o4pd" path="res://assets/shaders/jet_engine.gdshader" id="6_tvjie"]
 
-[node name="Dome" unique_id=1897743314 instance=ExtResource("1_ntmvb")]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_b7xp7"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ppu3t"]
+noise = SubResource("FastNoiseLite_b7xp7")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3th23"]
+render_priority = 0
+shader = ExtResource("6_tvjie")
+shader_parameter/model_height = 3.0
+shader_parameter/dissolve_start = 0.2830000134425
+shader_parameter/dissolve_length = 0.4970000236075
+shader_parameter/gradient_bias = 0.5220000215351199
+shader_parameter/noise_speed = 1.0
+shader_parameter/noise_strength = -0.435
+shader_parameter/stretch_factor = 0.6
+shader_parameter/noise_direction = Vector2(0, -1)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ppu3t")
+shader_parameter/color = Color(1, 1, 0, 1)
+shader_parameter/power_factor = 2.0
+shader_parameter/fresnel_factor = 2.0
+shader_parameter/fresnel_amplification = 1.0
+shader_parameter/fresnel_power = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4ofbv"]
+material = SubResource("ShaderMaterial_3th23")
+top_radius = 0.0
+bottom_radius = 0.83
+height = 5.0
+rings = 0
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pvj62"]
+shading_mode = 0
+albedo_color = Color(3, 3, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_2wdqo"]
+material = SubResource("StandardMaterial3D_pvj62")
+
+[node name="dome" unique_id=1897743314 instance=ExtResource("1_ntmvb")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+armor = 100
 
 [node name="Meshy_AI_Blue_Dome_Capsule_0714152008_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1284798880 instance=ExtResource("2_jxx4d")]
 transform = Transform3D(1.9, 0, 0, 0, 1.9, 0, 0, 0, 1.9, 0, 0, 0)
 
 [node name="Meshy_AI_Banded_Capsule_0714152015_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="1" unique_id=253929785 instance=ExtResource("3_tvjie")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.81, 0, -0.06)
+transform = Transform3D(1, 0, 0, 0, 0.90630776, 0.42261827, 0, -0.42261827, 0.90630776, 0.81, 0, -0.06)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="EnemyModel/Meshy_AI_Banded_Capsule_0714152015_texture" index="1" unique_id=1210409758]
+transform = Transform3D(0.37500003, 0, 0, 0, -1.6391771e-08, 0.37500003, 0, -0.37500003, -1.6391771e-08, -0.0022676587, 0.0010522567, -0.7197301)
+mesh = SubResource("CylinderMesh_4ofbv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="EnemyModel/Meshy_AI_Banded_Capsule_0714152015_texture" index="2" unique_id=1453217553]
+transform = Transform3D(0.335, 0, 0, 0, 0.335, 0, 0, 0, 0.335, 0.00443089, 0, 0.30003154)
+mesh = SubResource("SphereMesh_2wdqo")
 
 [node name="Meshy_AI_Banded_Capsule_0714152015_texture2" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="2" unique_id=1829293378 instance=ExtResource("3_tvjie")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81, 0, -0.06)
+transform = Transform3D(1, 0, 0, 0, 0.90630776, 0.42261827, 0, -0.42261827, 0.90630776, -0.81, 0, -0.06)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="EnemyModel/Meshy_AI_Banded_Capsule_0714152015_texture2" index="1" unique_id=1443903848]
+transform = Transform3D(0.37500003, 0, 0, 0, -1.6391771e-08, 0.37500003, 0, -0.37500003, -1.6391771e-08, -0.00724262, 0.0010522567, -0.7197301)
+mesh = SubResource("CylinderMesh_4ofbv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="EnemyModel/Meshy_AI_Banded_Capsule_0714152015_texture2" index="2" unique_id=789306439]
+transform = Transform3D(0.335, 0, 0, 0, 0.335, 0, 0, 0, 0.335, -0.0054409504, 0, 0.30003154)
+mesh = SubResource("SphereMesh_2wdqo")
 
 [node name="Meshy_AI_Modular_Telecentric_L_0714152024_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="3" unique_id=1610751535 instance=ExtResource("4_b7xp7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4747519, -0.2526461)
 
-[node name="Facing" type="Node3D" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="4" unique_id=1441047383]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4747519, -0.2526461)
+[node name="CollisionShape3D" parent="." index="1" unique_id=324662688]
+visible = false
+
+[node name="VisibleOnScreenNotifier3D" parent="." index="2" unique_id=1484925388]
+visible = false
+
+[node name="Facing" type="Node3D" parent="." index="4" unique_id=1441047383]
 script = ExtResource("5_jxx4d")
-target_node = NodePath("../Meshy_AI_Modular_Telecentric_L_0714152024_texture")
+target_node = NodePath("EnemyModel/Meshy_AI_Modular_Telecentric_L_0714152024_texture")

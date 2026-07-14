@@ -1,6 +1,17 @@
 [gd_scene format=3 uid="uid://x0mr2af0gkgm"]
 
 [ext_resource type="PackedScene" uid="uid://cgng8yigrvhdb" path="res://assets/enemies/dome/Meshy_AI_Banded_Capsule_0714152015_texture.glb" id="1_k0ekp"]
+[ext_resource type="Texture2D" uid="uid://bpcy82ae8li8c" path="res://assets/enemies/dome/Meshy_AI_Banded_Capsule_0714152015_texture_0.jpg" id="2_clhu3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_venaq"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("2_clhu3")
+metallic = 0.67
+metallic_specular = 1.0
+roughness = 0.0
+clearcoat_enabled = true
+clearcoat_roughness = 1.0
 
 [node name="Meshy_AI_Banded_Capsule_0714152015_texture" unique_id=253929785 instance=ExtResource("1_k0ekp")]
 layers = 16
@@ -8,3 +19,4 @@ layers = 16
 [node name="Mesh" parent="." index="0" unique_id=1760207419]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 layers = 16
+surface_material_override/0 = SubResource("StandardMaterial3D_venaq")

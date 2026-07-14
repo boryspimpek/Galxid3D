@@ -1,6 +1,17 @@
 [gd_scene format=3 uid="uid://dg5313nhhpas4"]
 
 [ext_resource type="PackedScene" uid="uid://bu0j84bxepqu" path="res://assets/enemies/dome/Meshy_AI_Blue_Dome_Capsule_0714152008_texture.glb" id="1_xlek1"]
+[ext_resource type="Texture2D" uid="uid://c3uouvxc1e7rt" path="res://assets/enemies/dome/Meshy_AI_Blue_Dome_Capsule_0714152008_texture_0.jpg" id="2_jvyhg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ihjsv"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("2_jvyhg")
+metallic = 0.63
+metallic_specular = 0.48
+roughness = 0.0
+clearcoat_enabled = true
+clearcoat_roughness = 1.0
 
 [node name="Meshy_AI_Blue_Dome_Capsule_0714152008_texture" unique_id=1284798880 instance=ExtResource("1_xlek1")]
 layers = 16
@@ -8,3 +19,4 @@ layers = 16
 [node name="Mesh" parent="." index="0" unique_id=474399352]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 layers = 16
+surface_material_override/0 = SubResource("StandardMaterial3D_ihjsv")

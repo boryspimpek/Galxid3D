@@ -49,9 +49,8 @@ environment = SubResource("Environment_2y1ty")
 
 [node name="Light action" type="DirectionalLight3D" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=1129389940]
 transform = Transform3D(-4.371139e-08, 0.08715573, -0.9961946, 0, 0.9961946, 0.08715573, 1, 3.809698e-09, -4.354505e-08, 0, 15, 0)
-light_energy = 2.0
 light_angular_distance = 15.0
-light_specular = 4.0
+light_specular = 3.0
 light_cull_mask = 16
 shadow_enabled = true
 
@@ -79,6 +78,12 @@ transform = Transform3D(2, 0, 0, 0, 1.8793843, 0.6840399, 0, -0.6840399, 1.87938
 visible = false
 
 [node name="Dome" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1897743314 instance=ExtResource("6_vbegm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67474365, 0, 1.1846504)
+transform = Transform3D(2, 0, 0, 0, 1.8793851, 0.6840402, 0, -0.6840402, 1.8793851, 0.675, 0, -3.515)
+
+[node name="Dome2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=313624659 instance=ExtResource("6_vbegm")]
+transform = Transform3D(2, 0, 0, 0, 1.8793852, 0.68404025, 0, -0.68404025, 1.8793852, 6.5638227, 0, -3.5150003)
+
+[node name="Dome3" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1014982335 instance=ExtResource("6_vbegm")]
+transform = Transform3D(2, 0, 0, 0, 1.8793852, 0.68404025, 0, -0.68404025, 1.8793852, -5.487233, 0, -3.5150003)
 
 [node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("37_k13tm")]
