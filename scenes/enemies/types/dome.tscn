@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cxtnvg3xdlb2c" path="res://assets/enemies/dome/dome_cannon_model.tscn" id="4_b7xp7"]
 [ext_resource type="Script" uid="uid://crjllr6p5un2q" path="res://scenes/enemies/base/facing/FacePlayerPart.gd" id="5_jxx4d"]
 [ext_resource type="Shader" uid="uid://luwc3n46o4pd" path="res://assets/shaders/jet_engine.gdshader" id="6_tvjie"]
+[ext_resource type="Script" uid="uid://cyuq1wp6htjoc" path="res://scenes/enemies/base/parts/EngineTiltByVelocity.gd" id="7_htjoc"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_b7xp7"]
 
@@ -54,25 +55,25 @@ armor = 100
 [node name="Meshy_AI_Blue_Dome_Capsule_0714152008_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1284798880 instance=ExtResource("2_jxx4d")]
 transform = Transform3D(1.9, 0, 0, 0, 1.9, 0, 0, 0, 1.9, 0, 0, 0)
 
-[node name="Meshy_AI_Banded_Capsule_0714152015_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="1" unique_id=253929785 instance=ExtResource("3_tvjie")]
-transform = Transform3D(1, 0, 0, 0, 0.90630776, 0.42261827, 0, -0.42261827, 0.90630776, 0.81, 0, -0.06)
+[node name="ThrusterA" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="1" unique_id=253929785 instance=ExtResource("3_tvjie")]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.81, 0, -0.06)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="EnemyModel/Meshy_AI_Banded_Capsule_0714152015_texture" index="1" unique_id=1210409758]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="EnemyModel/ThrusterA" index="1" unique_id=1210409758]
 transform = Transform3D(0.37500003, 0, 0, 0, -1.6391771e-08, 0.37500003, 0, -0.37500003, -1.6391771e-08, -0.0022676587, 0.0010522567, -0.7197301)
 mesh = SubResource("CylinderMesh_4ofbv")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="EnemyModel/Meshy_AI_Banded_Capsule_0714152015_texture" index="2" unique_id=1453217553]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="EnemyModel/ThrusterA" index="2" unique_id=1453217553]
 transform = Transform3D(0.335, 0, 0, 0, 0.335, 0, 0, 0, 0.335, 0.00443089, 0, 0.30003154)
 mesh = SubResource("SphereMesh_2wdqo")
 
-[node name="Meshy_AI_Banded_Capsule_0714152015_texture2" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="2" unique_id=1829293378 instance=ExtResource("3_tvjie")]
-transform = Transform3D(1, 0, 0, 0, 0.90630776, 0.42261827, 0, -0.42261827, 0.90630776, -0.81, 0, -0.06)
+[node name="ThrusterB" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="2" unique_id=1829293378 instance=ExtResource("3_tvjie")]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.81, 0, -0.06)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="EnemyModel/Meshy_AI_Banded_Capsule_0714152015_texture2" index="1" unique_id=1443903848]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="EnemyModel/ThrusterB" index="1" unique_id=1443903848]
 transform = Transform3D(0.37500003, 0, 0, 0, -1.6391771e-08, 0.37500003, 0, -0.37500003, -1.6391771e-08, -0.00724262, 0.0010522567, -0.7197301)
 mesh = SubResource("CylinderMesh_4ofbv")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="EnemyModel/Meshy_AI_Banded_Capsule_0714152015_texture2" index="2" unique_id=789306439]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="EnemyModel/ThrusterB" index="2" unique_id=789306439]
 transform = Transform3D(0.335, 0, 0, 0, 0.335, 0, 0, 0, 0.335, -0.0054409504, 0, 0.30003154)
 mesh = SubResource("SphereMesh_2wdqo")
 
@@ -85,6 +86,15 @@ visible = false
 [node name="VisibleOnScreenNotifier3D" parent="." index="2" unique_id=1484925388]
 visible = false
 
+[node name="Muzzle" parent="." index="3" unique_id=1704985833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0042309165, 0.9245963)
+
 [node name="Facing" type="Node3D" parent="." index="4" unique_id=1441047383]
 script = ExtResource("5_jxx4d")
 target_node = NodePath("EnemyModel/Meshy_AI_Modular_Telecentric_L_0714152024_texture")
+
+[node name="EngineTilt" type="Node" parent="." index="5" unique_id=1286608618]
+script = ExtResource("7_htjoc")
+target_nodes = Array[NodePath]([NodePath("EnemyModel/ThrusterA"), NodePath("EnemyModel/ThrusterB")])
+min_angle_degrees = -75.0
+max_angle_degrees = 0.0

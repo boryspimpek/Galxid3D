@@ -1,8 +1,8 @@
+EnemyPathFollow
+EnemyPath3D
 MeshInstance3D
 Node3D
 AnimationPlayer
-EnemyPathFollow
-EnemyPath3D
 HSlider
 Control
 VSeparator
