@@ -12,3 +12,5 @@ res://scenes/enemies/base/EnemyPathFollow.gd
 res://scenes/enemies/base/facing/EnemyFacing.gd
 res://scenes/enemy_projectile/EnemyProjectile.tscn
 res://scenes/enemy_projectile/EnemyProjectile.gdshader
+res://scenes/enemies/base/Enemy.gd
+res://scenes/enemies/types/dome_compy.tscn

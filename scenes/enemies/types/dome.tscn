@@ -79,6 +79,9 @@ mesh = SubResource("SphereMesh_2wdqo")
 [node name="Meshy_AI_Modular_Telecentric_L_0714152024_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="3" unique_id=1610751535 instance=ExtResource("4_b7xp7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4747519, -0.2526461)
 
+[node name="Muzzle2" type="Marker3D" parent="EnemyModel/Meshy_AI_Modular_Telecentric_L_0714152024_texture" index="1" unique_id=2090553572]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.028055727, 0.51872885)
+
 [node name="CollisionShape3D" parent="." index="1" unique_id=324662688]
 visible = false
 
@@ -86,7 +89,7 @@ visible = false
 visible = false
 
 [node name="Muzzle" parent="." index="3" unique_id=1704985833]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54457515, -0.24393287)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13000488, 0.93707275)
 
 [node name="Facing" type="Node3D" parent="." index="4" unique_id=1441047383]
 script = ExtResource("5_jxx4d")

@@ -239,7 +239,8 @@ func _collect_muzzles() -> void:
 	var index := 1
 	while true:
 		var node_name := "Muzzle" if index == 1 else "Muzzle%d" % index
-		var muzzle := get_node_or_null(node_name) as Marker3D
+		# Pozwalamy umieścić Muzzle głębiej w hierarchii (np. na końcu lufy modelu).
+		var muzzle := find_child(node_name, true, false) as Marker3D
 		if muzzle == null:
 			break
 		_muzzles.append(muzzle)

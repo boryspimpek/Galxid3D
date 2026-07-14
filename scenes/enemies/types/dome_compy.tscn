@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://cxadk4t6d5mc"]
+
+[ext_resource type="Script" uid="uid://b6u5jc5l8dstd" path="res://scenes/enemies/base/Enemy.gd" id="1_67tdj"]
+[ext_resource type="PackedScene" uid="uid://6okj4uhag0tm" path="res://assets/BinbunVFX_Vol2/ExplosionFX/effects/air/vfx_air_explosion_01.tscn" id="2_c8swj"]
+[ext_resource type="PackedScene" uid="uid://dg5313nhhpas4" path="res://assets/enemies/dome/dome_model.tscn" id="2_ie4n0"]
+[ext_resource type="PackedScene" uid="uid://x0mr2af0gkgm" path="res://assets/enemies/dome/engine_model.tscn" id="3_67tdj"]
+[ext_resource type="PackedScene" uid="uid://dpntm33m1fs4l" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/big_impact/vfx_big_impact_01.tscn" id="3_rl4f5"]
+[ext_resource type="Shader" uid="uid://luwc3n46o4pd" path="res://assets/shaders/jet_engine.gdshader" id="4_c8swj"]
+[ext_resource type="PackedScene" uid="uid://cxtnvg3xdlb2c" path="res://assets/enemies/dome/dome_cannon_model.tscn" id="5_rl4f5"]
+[ext_resource type="Script" uid="uid://crjllr6p5un2q" path="res://scenes/enemies/base/facing/FacePlayerPart.gd" id="6_dmphg"]
+[ext_resource type="Script" uid="uid://cyuq1wp6htjoc" path="res://scenes/enemies/base/parts/EngineTiltByVelocity.gd" id="7_fww36"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_b7xp7"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ppu3t"]
+noise = SubResource("FastNoiseLite_b7xp7")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3th23"]
+render_priority = 0
+shader = ExtResource("4_c8swj")
+shader_parameter/model_height = 3.0
+shader_parameter/dissolve_start = 0.2830000134425
+shader_parameter/dissolve_length = 0.4970000236075
+shader_parameter/gradient_bias = 0.5220000215351199
+shader_parameter/noise_speed = 1.0
+shader_parameter/noise_strength = -0.435
+shader_parameter/stretch_factor = 0.6
+shader_parameter/noise_direction = Vector2(0, -1)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ppu3t")
+shader_parameter/color = Color(1, 1, 0, 1)
+shader_parameter/power_factor = 2.0
+shader_parameter/fresnel_factor = 2.0
+shader_parameter/fresnel_amplification = 1.0
+shader_parameter/fresnel_power = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4ofbv"]
+material = SubResource("ShaderMaterial_3th23")
+top_radius = 0.0
+bottom_radius = 0.83
+height = 5.0
+rings = 0
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pvj62"]
+shading_mode = 0
+
+[sub_resource type="SphereMesh" id="SphereMesh_2wdqo"]
+material = SubResource("StandardMaterial3D_pvj62")
+
+[node name="dome" type="Area3D" unique_id=1897743314]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_67tdj")
+armor = 100
+explosion_scene = ExtResource("2_c8swj")
+hit_effect_scene = ExtResource("3_rl4f5")
+
+[node name="EnemyModel" type="Node3D" parent="." unique_id=634598779]
+
+[node name="Meshy_AI_Blue_Dome_Capsule_0714152008_texture" parent="EnemyModel" unique_id=1284798880 instance=ExtResource("2_ie4n0")]
+transform = Transform3D(1.9, 0, 0, 0, 1.9, 0, 0, 0, 1.9, 0, 0, 0)
+
+[node name="ThrusterA" parent="EnemyModel" unique_id=253929785 instance=ExtResource("3_67tdj")]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.81, 0, -0.06)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="EnemyModel/ThrusterA" unique_id=1210409758]
+transform = Transform3D(0.37500003, 0, 0, 0, -1.6391771e-08, 0.37500003, 0, -0.37500003, -1.6391771e-08, -0.0022676587, 0.0010522567, -0.7197301)
+mesh = SubResource("CylinderMesh_4ofbv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="EnemyModel/ThrusterA" unique_id=1453217553]
+transform = Transform3D(0.335, 0, 0, 0, 0.335, 0, 0, 0, 0.335, 0.00443089, 0, 0.30003154)
+mesh = SubResource("SphereMesh_2wdqo")
+
+[node name="ThrusterB" parent="EnemyModel" unique_id=1829293378 instance=ExtResource("3_67tdj")]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.81, 0, -0.06)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="EnemyModel/ThrusterB" unique_id=1443903848]
+transform = Transform3D(0.37500003, 0, 0, 0, -1.6391771e-08, 0.37500003, 0, -0.37500003, -1.6391771e-08, -0.00724262, 0.0010522567, -0.7197301)
+mesh = SubResource("CylinderMesh_4ofbv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="EnemyModel/ThrusterB" unique_id=789306439]
+transform = Transform3D(0.335, 0, 0, 0, 0.335, 0, 0, 0, 0.335, -0.0054409504, 0, 0.30003154)
+mesh = SubResource("SphereMesh_2wdqo")
+
+[node name="Meshy_AI_Modular_Telecentric_L_0714152024_texture" parent="EnemyModel" unique_id=1610751535 instance=ExtResource("5_rl4f5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4747519, -0.2526461)
+
+[node name="Muzzle" type="Marker3D" parent="EnemyModel/Meshy_AI_Modular_Telecentric_L_0714152024_texture" unique_id=2090553572]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.028055727, 0.51872885)
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1484925388]
+visible = false
+
+[node name="Facing" type="Node3D" parent="." unique_id=1441047383]
+script = ExtResource("6_dmphg")
+target_node = NodePath("EnemyModel/Meshy_AI_Modular_Telecentric_L_0714152024_texture")
+
+[node name="EngineTilt" type="Node" parent="." unique_id=1286608618]
+script = ExtResource("7_fww36")
+target_nodes = Array[NodePath]([NodePath("EnemyModel/ThrusterA"), NodePath("EnemyModel/ThrusterB")])
+speed_threshold = 12.0
+min_angle_degrees = -75.0
+max_angle_degrees = 0.0
+smooth = 2.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

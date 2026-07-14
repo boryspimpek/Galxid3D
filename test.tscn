@@ -5,9 +5,8 @@
 [ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemies/base/EnemyPath3D.gd" id="5_xersf"]
 [ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemies/base/EnemyPathFollow.gd" id="6_00tp4"]
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="6_21gct"]
-[ext_resource type="PackedScene" uid="uid://b6suvtcapnif2" path="res://scenes/enemies/types/dome.tscn" id="6_vbegm"]
 [ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="6_xersf"]
-[ext_resource type="Script" uid="uid://eo6qejm2h6hl" path="res://scripts/resources/enemies/weapons/EnemyWeaponData.gd" id="8_xersf"]
+[ext_resource type="PackedScene" uid="uid://cxadk4t6d5mc" path="res://scenes/enemies/types/dome_compy.tscn" id="7_ehkex"]
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="37_k13tm"]
 
 [sub_resource type="Environment" id="Environment_2y1ty"]
@@ -21,21 +20,15 @@ adjustment_saturation = 1.5
 
 [sub_resource type="Curve3D" id="Curve3D_77dp3"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.17829037, 0, -0.024598122, -5.026111, 0, -0.081394196, 5.026111, 0, 0.081394196, 4.9854903, 0, -5.659314, 0, 0, 0, 0, 0, 0, 10.070116, 0, -0.5370228, 0, 0, 0, 0, 0, 0, 10.145445, 0, 4.6229315),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.17829037, 0, -0.024598122, -5.0452857, 0, 0.018080711, 5.0452857, 0, -0.018080711, 7.586111, 0, 0.051023006, 0, 0, 0, 0, 0, 0, 11.914089, 0, 3.6460638, 0, 0, 0, 0, 0, 0, 11.915789, 0, 9.420242),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
 
 [sub_resource type="Curve" id="Curve_ehkex"]
-_limits = [0.0, 2.0, 0.0, 1.0]
-_data = [Vector2(0, 2), 0.0, 0.0, 0, 0, Vector2(0.17482519, 2), 0.0, 0.0, 0, 0, Vector2(0.5, 0.17050052), 0.7274033, 0.0, 0, 0, Vector2(0.59090906, 2), 0.0, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="Resource" id="Resource_xersf"]
-script = ExtResource("8_xersf")
-fire_rate = 1.0
-aim = 10
-metadata/_custom_type_script = "uid://eo6qejm2h6hl"
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 3), 0.0, 0.0, 0, 0, Vector2(0.17548747, 0.26615548), 0.7274033, 0.0, 0, 0, Vector2(0.35097495, 3), 0.0, 0.0, 0, 0, Vector2(0.60167134, 3), 0.0, 0.0, 0, 0, Vector2(0.75, 0.17977548), 0.0, 0.0, 0, 0, Vector2(0.9136491, 3), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 7
 
 [node name="GameShell" type="Control" unique_id=616589222]
 layout_mode = 3
@@ -68,11 +61,12 @@ render_target_update_mode = 4
 environment = SubResource("Environment_2y1ty")
 
 [node name="Light action" type="DirectionalLight3D" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=1129389940]
-transform = Transform3D(-0.9999939, -0.0015028137, -0.003150714, 0, -0.90258515, 0.43051106, -0.0034907667, 0.43050843, 0.90257967, 0, 15, 0)
-light_angular_distance = 15.0
-light_specular = 3.0
+transform = Transform3D(0.4617486, 0.62721133, -0.62721133, 0, 0.7071067, 0.7071067, 0.8870109, -0.32650554, 0.32650554, 0, 15, 0)
+light_angular_distance = 22.26
+light_specular = 2.032
 light_cull_mask = 16
 shadow_enabled = true
+shadow_bias = 4.882
 
 [node name="Camera3D" type="Camera3D" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=1430056658]
 transform = Transform3D(1, 0, 0, 0, 0.89879405, 0.43837115, 0, -0.43837115, 0.89879405, 0, 5.513, 15.98)
@@ -90,9 +84,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5895576)
 script = ExtResource("6_21gct")
 
 [node name="LevelScrollRuler" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1422874938 instance=ExtResource("6_xersf")]
+visible = false
 
 [node name="EnemyPath3D" type="Path3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1946694431]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.350713, 0, 6.0181656)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.365608, 0, -0.06163025)
 curve = SubResource("Curve3D_77dp3")
 script = ExtResource("5_xersf")
 speed_curve = SubResource("Curve_ehkex")
@@ -103,14 +98,13 @@ bank_lookahead = 5.0
 metadata/_custom_type_script = "uid://braxpml2y0f6o"
 
 [node name="EnemyPathFollow" type="PathFollow3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/EnemyPath3D" unique_id=1802251933]
-transform = Transform3D(-0.99923736, 0, -0.038268022, 0, 1, 0, 0.038268022, 0, -0.99923736, 0.17829037, 0, -0.024598122)
+transform = Transform3D(0.03962906, 0, 0.9991765, 0, 1, 0, -0.9991765, 0, 0.03962906, 0.17829037, 0, -0.024598122)
 use_model_front = true
 loop = false
 script = ExtResource("6_00tp4")
 enemy_yaw_offset_degrees = 0.0
 metadata/_custom_type_script = "uid://de0wqltyclsk0"
 
-[node name="dome" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/EnemyPath3D/EnemyPathFollow" unique_id=1897743314 instance=ExtResource("6_vbegm")]
-weapon_data = SubResource("Resource_xersf")
+[node name="dome" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/EnemyPath3D/EnemyPathFollow" unique_id=1897743314 instance=ExtResource("7_ehkex")]
 
 [node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("37_k13tm")]
