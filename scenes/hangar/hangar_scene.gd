@@ -35,6 +35,7 @@ func _ready() -> void:
     cash_value.text = "%d CR" % GameState.credits
     buy_button.pressed.connect(_on_buy_button_pressed)
     load_cards()
+    _focus_first_ship_card()
 
 func load_cards() -> void:
     for child in ship_grid.get_children():
@@ -63,6 +64,7 @@ func load_cards() -> void:
         print("Added generator card: ", generator.generator_name)
 
     _restore_selection()
+    _setup_focus_navigation()
 
 func load_resources(folder: String) -> Array:
     var resources: Array = []
@@ -128,8 +130,29 @@ func _on_buy_button_pressed() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-    if event.is_action_pressed("back"):
+    if event.is_action_pressed("back") or event.is_action_pressed("ui_cancel"):
         _return_to_main_menu()
+
+
+func _focus_first_ship_card() -> void:
+    if ship_grid.get_child_count() == 0:
+        return
+    var first_card := ship_grid.get_child(0) as Control
+    if first_card:
+        first_card.grab_focus()
+
+
+func _setup_focus_navigation() -> void:
+    var generator_count := generator_grid.get_child_count()
+    if generator_count > 0 and buy_button != null:
+        var buy_path := buy_button.get_path()
+        var columns := generator_grid.columns
+        var bottom_row_start := maxi(0, generator_count - columns)
+        for i in range(bottom_row_start, generator_count):
+            var card := generator_grid.get_child(i) as Control
+            if card:
+                card.focus_neighbor_bottom = buy_path
+        buy_button.focus_neighbor_top = generator_grid.get_child(generator_count - 1).get_path()
 
 
 func _return_to_main_menu() -> void:

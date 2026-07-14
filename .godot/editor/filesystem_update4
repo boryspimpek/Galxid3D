@@ -1,1 +1,5 @@
 res://scenes/ui/Hud.gd
+res://scenes/hangar/generator_card.gd
+res://scenes/hangar/hangar_scene.gd
+res://scenes/hangar/ship_card.gd
+res://scenes/ui/ui_theme.tres
