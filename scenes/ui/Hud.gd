@@ -28,6 +28,11 @@ const POWER_BAR_MAX_INDEX := 10
 @onready var _options_button: Button = %StartGame/Center/Panel/VBox/OptionsButton
 @onready var _controls_button: Button = %StartGame/Center/Panel/VBox/ControlsButton
 
+@onready var _pause_music_slider: HSlider = $Root/PauseScreen/Center/Panel/VBox/Music
+@onready var _pause_sfx_slider: HSlider = $Root/PauseScreen/Center/Panel/VBox/SFX
+@onready var _options_music_slider: HSlider = $Root/OptionsScreen/Center/Panel/VBox/Music
+@onready var _options_sfx_slider: HSlider = $Root/OptionsScreen/Center/Panel/VBox/SFX
+
 var _health_textures: Array[Texture2D] = []
 var _power_textures: Array[Texture2D] = []
 var _player: CharacterBody3D
@@ -56,6 +61,7 @@ func _ready() -> void:
 	_start_game.visible = true
 	get_tree().paused = true
 	_play_button.grab_focus()
+	_setup_volume_sliders()
 
 	_play_button.pressed.connect(_on_play_pressed)
 	_hangar_button.pressed.connect(_on_hangar_pressed)
@@ -334,3 +340,42 @@ func _apply_combo_label_color(combo: int) -> void:
 		return
 	_combo_label_settings.font_color = _combo_tier_color(combo)
 	_combo_label.label_settings = _combo_label_settings
+
+
+func _setup_volume_sliders() -> void:
+	var music_bus := AudioServer.get_bus_index("Music")
+	var sfx_bus := AudioServer.get_bus_index("SFX")
+	var music_volume := db_to_linear(AudioServer.get_bus_volume_db(music_bus))
+	var sfx_volume := db_to_linear(AudioServer.get_bus_volume_db(sfx_bus))
+
+	for slider in [_pause_music_slider, _pause_sfx_slider, _options_music_slider, _options_sfx_slider]:
+		slider.min_value = 0.0
+		slider.max_value = 1.0
+		slider.step = 0.01
+
+	_pause_music_slider.value = music_volume
+	_options_music_slider.value = music_volume
+	_pause_sfx_slider.value = sfx_volume
+	_options_sfx_slider.value = sfx_volume
+
+	_pause_music_slider.value_changed.connect(_on_music_volume_changed)
+	_options_music_slider.value_changed.connect(_on_music_volume_changed)
+	_pause_sfx_slider.value_changed.connect(_on_sfx_volume_changed)
+	_options_sfx_slider.value_changed.connect(_on_sfx_volume_changed)
+
+
+func _on_music_volume_changed(value: float) -> void:
+	var bus := AudioServer.get_bus_index("Music")
+	AudioServer.set_bus_volume_db(bus, linear_to_db(value))
+	_sync_slider(_pause_music_slider, _options_music_slider, value)
+
+
+func _on_sfx_volume_changed(value: float) -> void:
+	var bus := AudioServer.get_bus_index("SFX")
+	AudioServer.set_bus_volume_db(bus, linear_to_db(value))
+	_sync_slider(_pause_sfx_slider, _options_sfx_slider, value)
+
+
+func _sync_slider(source: Slider, target: Slider, value: float) -> void:
+	if source != target and not is_equal_approx(target.value, value):
+		target.set_value_no_signal(value)

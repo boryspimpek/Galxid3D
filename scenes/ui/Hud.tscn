@@ -302,6 +302,7 @@ horizontal_alignment = 1
 
 [node name="StartGame" type="Control" parent="Root" unique_id=31344408]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -559,6 +560,32 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_styles/separator = SubResource("SeparatorLine")
 
+[node name="MusicLabel" type="Label" parent="Root/PauseScreen/Center/Panel/VBox" unique_id=1260336299]
+layout_mode = 2
+text = "Music"
+label_settings = SubResource("LabelSettings_subtitle")
+
+[node name="Music" type="HSlider" parent="Root/PauseScreen/Center/Panel/VBox" unique_id=1797597887]
+layout_mode = 2
+tick_count = 20
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="SfxLabel" type="Label" parent="Root/PauseScreen/Center/Panel/VBox" unique_id=1723216370]
+layout_mode = 2
+text = "SFX"
+label_settings = SubResource("LabelSettings_subtitle")
+
+[node name="SFX" type="HSlider" parent="Root/PauseScreen/Center/Panel/VBox" unique_id=2046293299]
+layout_mode = 2
+tick_count = 20
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="Sep2" type="HSeparator" parent="Root/PauseScreen/Center/Panel/VBox" unique_id=1641643086]
+layout_mode = 2
+theme_override_styles/separator = SubResource("SeparatorLine")
+
 [node name="Hint" type="Label" parent="Root/PauseScreen/Center/Panel/VBox" unique_id=1253995372 groups=["pulse_hint"]]
 layout_mode = 2
 text = "PRESS START TO RESUME"
@@ -803,6 +830,32 @@ label_settings = SubResource("LabelSettings_subtitle")
 horizontal_alignment = 1
 
 [node name="Sep" type="HSeparator" parent="Root/OptionsScreen/Center/Panel/VBox" unique_id=1280975668]
+layout_mode = 2
+theme_override_styles/separator = SubResource("SeparatorLine")
+
+[node name="MusicLabel" type="Label" parent="Root/OptionsScreen/Center/Panel/VBox" unique_id=770477388]
+layout_mode = 2
+text = "Music"
+label_settings = SubResource("LabelSettings_subtitle")
+
+[node name="Music" type="HSlider" parent="Root/OptionsScreen/Center/Panel/VBox" unique_id=1907431562]
+layout_mode = 2
+tick_count = 20
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="SfxLabel" type="Label" parent="Root/OptionsScreen/Center/Panel/VBox" unique_id=1095111118]
+layout_mode = 2
+text = "SFX"
+label_settings = SubResource("LabelSettings_subtitle")
+
+[node name="SFX" type="HSlider" parent="Root/OptionsScreen/Center/Panel/VBox" unique_id=1062971168]
+layout_mode = 2
+tick_count = 20
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="Sep2" type="HSeparator" parent="Root/OptionsScreen/Center/Panel/VBox" unique_id=664234621]
 layout_mode = 2
 theme_override_styles/separator = SubResource("SeparatorLine")
 
