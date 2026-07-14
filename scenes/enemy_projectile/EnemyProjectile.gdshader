@@ -12,6 +12,14 @@ uniform float pulse_strength = 0.05;
 uniform float rotation_speed = 3.0;
 
 void vertex() {
+	MODELVIEW_MATRIX = VIEW_MATRIX * mat4(
+		INV_VIEW_MATRIX[0],
+		INV_VIEW_MATRIX[1],
+		INV_VIEW_MATRIX[2],
+		MODEL_MATRIX[3]
+	);
+	MODELVIEW_NORMAL_MATRIX = mat3(MODELVIEW_MATRIX);
+
 	// Pulsowanie
 	float pulse = sin(TIME * pulse_speed) * pulse_strength;
 	VERTEX.xz *= 1.0 + pulse;

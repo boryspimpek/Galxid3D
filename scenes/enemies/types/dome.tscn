@@ -43,7 +43,6 @@ cap_bottom = false
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pvj62"]
 shading_mode = 0
-albedo_color = Color(3, 3, 0, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_2wdqo"]
 material = SubResource("StandardMaterial3D_pvj62")
@@ -87,7 +86,7 @@ visible = false
 visible = false
 
 [node name="Muzzle" parent="." index="3" unique_id=1704985833]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54457515, 0.19812536)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54457515, -0.24393287)
 
 [node name="Facing" type="Node3D" parent="." index="4" unique_id=1441047383]
 script = ExtResource("5_jxx4d")

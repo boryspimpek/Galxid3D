@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="6_21gct"]
 [ext_resource type="PackedScene" uid="uid://b6suvtcapnif2" path="res://scenes/enemies/types/dome.tscn" id="6_vbegm"]
 [ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="6_xersf"]
+[ext_resource type="Script" uid="uid://eo6qejm2h6hl" path="res://scripts/resources/enemies/weapons/EnemyWeaponData.gd" id="8_xersf"]
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="37_k13tm"]
 
 [sub_resource type="Environment" id="Environment_2y1ty"]
@@ -29,6 +30,12 @@ point_count = 4
 _limits = [0.0, 2.0, 0.0, 1.0]
 _data = [Vector2(0, 2), 0.0, 0.0, 0, 0, Vector2(0.17482519, 2), 0.0, 0.0, 0, 0, Vector2(0.5, 0.17050052), 0.7274033, 0.0, 0, 0, Vector2(0.59090906, 2), 0.0, 0.0, 0, 0]
 point_count = 4
+
+[sub_resource type="Resource" id="Resource_xersf"]
+script = ExtResource("8_xersf")
+fire_rate = 1.0
+aim = 10
+metadata/_custom_type_script = "uid://eo6qejm2h6hl"
 
 [node name="GameShell" type="Control" unique_id=616589222]
 layout_mode = 3
@@ -96,7 +103,7 @@ bank_lookahead = 5.0
 metadata/_custom_type_script = "uid://braxpml2y0f6o"
 
 [node name="EnemyPathFollow" type="PathFollow3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/EnemyPath3D" unique_id=1802251933]
-transform = Transform3D(-0.9992375, 0, -0.038268026, 0, 1, 0, 0.038268026, 0, -0.9992375, 0.17829037, 0, -0.024598122)
+transform = Transform3D(-0.99923736, 0, -0.038268022, 0, 1, 0, 0.038268022, 0, -0.99923736, 0.17829037, 0, -0.024598122)
 use_model_front = true
 loop = false
 script = ExtResource("6_00tp4")
@@ -104,5 +111,6 @@ enemy_yaw_offset_degrees = 0.0
 metadata/_custom_type_script = "uid://de0wqltyclsk0"
 
 [node name="dome" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/EnemyPath3D/EnemyPathFollow" unique_id=1897743314 instance=ExtResource("6_vbegm")]
+weapon_data = SubResource("Resource_xersf")
 
 [node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("37_k13tm")]
