@@ -8,3 +8,6 @@ res://assets/enemies/dome/dome_model.tscn
 res://assets/enemies/dome/dome_cannon_model.tscn
 res://assets/enemies/dome/engine_model.tscn
 res://scenes/enemies/base/parts/EngineTiltByVelocity.gd
+res://scenes/enemies/base/EnemyPathFollow.gd
+res://scenes/enemies/base/facing/EnemyFacing.gd
+res://scenes/enemy_projectile/EnemyProjectile.tscn

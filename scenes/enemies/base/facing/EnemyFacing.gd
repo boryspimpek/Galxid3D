@@ -14,6 +14,10 @@ class_name EnemyFacing
 
 var _enemy: Node3D
 
+## Jeśli true, komponent obraca całe ciało wroga.
+## PathFollow używa tej flagi, by wiedzieć czy sam ma obracać wroga wzdłuż ścieżki.
+@export var rotates_body: bool = true
+
 
 func _ready() -> void:
 	var parent := get_parent()

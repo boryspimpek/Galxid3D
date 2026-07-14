@@ -75,12 +75,18 @@ func _apply_enemy_yaw_offset() -> void:
 func _enemy_has_facing_component() -> bool:
 	for child in get_children():
 		if child is EnemyFacing:
-			return _is_facing_active(child as EnemyFacing)
+			return _is_body_rotating_facing(child as EnemyFacing)
 		if child.is_in_group("enemies"):
 			for sub in child.get_children():
 				if sub is EnemyFacing:
-					return _is_facing_active(sub as EnemyFacing)
+					return _is_body_rotating_facing(sub as EnemyFacing)
 	return false
+
+
+func _is_body_rotating_facing(facing: EnemyFacing) -> bool:
+	if not _is_facing_active(facing):
+		return false
+	return facing.rotates_body
 
 
 func _is_facing_active(facing: EnemyFacing) -> bool:

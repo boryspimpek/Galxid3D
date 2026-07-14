@@ -13,6 +13,8 @@ var _target: Node3D
 
 func _ready() -> void:
 	super._ready()
+	# Obracamy tylko wskazaną część, nie cały statek — pozwalamy PathFollow ustawić yaw.
+	rotates_body = false
 	if _enemy == null:
 		return
 	_target = _enemy.get_node_or_null(target_node) as Node3D

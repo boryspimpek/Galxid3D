@@ -87,7 +87,7 @@ visible = false
 visible = false
 
 [node name="Muzzle" parent="." index="3" unique_id=1704985833]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0042309165, 0.9245963)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54457515, 0.19812536)
 
 [node name="Facing" type="Node3D" parent="." index="4" unique_id=1441047383]
 script = ExtResource("5_jxx4d")
@@ -96,5 +96,7 @@ target_node = NodePath("EnemyModel/Meshy_AI_Modular_Telecentric_L_0714152024_tex
 [node name="EngineTilt" type="Node" parent="." index="5" unique_id=1286608618]
 script = ExtResource("7_htjoc")
 target_nodes = Array[NodePath]([NodePath("EnemyModel/ThrusterA"), NodePath("EnemyModel/ThrusterB")])
+speed_threshold = 12.0
 min_angle_degrees = -75.0
 max_angle_degrees = 0.0
+smooth = 2.0

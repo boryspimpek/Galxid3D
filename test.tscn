@@ -20,10 +20,15 @@ adjustment_saturation = 1.5
 
 [sub_resource type="Curve3D" id="Curve3D_77dp3"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.17829037, 0, -0.024598122, -7.4675074, 0, -0.26480675, 7.4675074, 0, 0.26480675, 11.088267, 0, 8.978781, 0.26480484, 0, 8.156003, -0.26480484, 0, -8.156003, 26.8177, 0, -0.9778967, 4.078001, 0, -1.6947536, -4.078001, 0, 1.6947536, 10.876422, 0, -9.18686, 0, 0, 0, 0, 0, 0, 11.776761, 0, -0.92493534),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.17829037, 0, -0.024598122, -5.026111, 0, -0.081394196, 5.026111, 0, 0.081394196, 4.9854903, 0, -5.659314, 0, 0, 0, 0, 0, 0, 10.070116, 0, -0.5370228, 0, 0, 0, 0, 0, 0, 10.145445, 0, 4.6229315),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
 }
-point_count = 5
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_ehkex"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 2), 0.0, 0.0, 0, 0, Vector2(0.17482519, 2), 0.0, 0.0, 0, 0, Vector2(0.5, 0.17050052), 0.7274033, 0.0, 0, 0, Vector2(0.59090906, 2), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [node name="GameShell" type="Control" unique_id=616589222]
 layout_mode = 3
@@ -63,7 +68,7 @@ light_cull_mask = 16
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=1430056658]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 17.068, -2.585)
+transform = Transform3D(1, 0, 0, 0, 0.89879405, 0.43837115, 0, -0.43837115, 0.89879405, 0, 5.513, 15.98)
 
 [node name="Player" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1811810025 instance=ExtResource("2_adp8l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20925522, 0, 3.103972)
@@ -80,14 +85,18 @@ script = ExtResource("6_21gct")
 [node name="LevelScrollRuler" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1422874938 instance=ExtResource("6_xersf")]
 
 [node name="EnemyPath3D" type="Path3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1946694431]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.336563, 0, -0.76003265)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.350713, 0, 6.0181656)
 curve = SubResource("Curve3D_77dp3")
 script = ExtResource("5_xersf")
+speed_curve = SubResource("Curve_ehkex")
 bank_enabled = true
+bank_max_degrees = 45.0
+bank_strength = 0.53
+bank_lookahead = 5.0
 metadata/_custom_type_script = "uid://braxpml2y0f6o"
 
 [node name="EnemyPathFollow" type="PathFollow3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/EnemyPath3D" unique_id=1802251933]
-transform = Transform3D(0.93040717, 0, 0.36652422, 0, 1, 0, -0.36652422, 0, 0.93040717, 0.17829037, 0, -0.024598122)
+transform = Transform3D(-0.9992375, 0, -0.038268026, 0, 1, 0, 0.038268026, 0, -0.9992375, 0.17829037, 0, -0.024598122)
 use_model_front = true
 loop = false
 script = ExtResource("6_00tp4")
