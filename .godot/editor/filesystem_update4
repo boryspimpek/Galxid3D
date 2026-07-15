@@ -10,3 +10,5 @@ res://scenes/player/Player.tscn
 res://scenes/enemies/types/blasteroid.tscn
 res://scenes/enemies/types/orbiter.tscn
 res://scenes/enemies/types/satellite.tscn
+res://assets/ElectricDischargeVFX/electric_discharge_3d.tscn
+res://assets/enemies/satellite/satellite_model.tscn

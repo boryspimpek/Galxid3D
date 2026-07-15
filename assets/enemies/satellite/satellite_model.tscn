@@ -1,10 +1,22 @@
 [gd_scene format=3 uid="uid://cdplw1dhq6i5i"]
 
 [ext_resource type="PackedScene" uid="uid://0rln1el3hxiv" path="res://assets/enemies/satellite/Meshy_AI_Blue_Solar_Satellite_0702164042_texture.glb" id="1_po8f8"]
+[ext_resource type="Texture2D" uid="uid://dsl40glgmgtah" path="res://assets/enemies/satellite/Meshy_AI_Blue_Solar_Satellite_0702164042_texture_0.jpg" id="2_r7dtw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjckr"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("2_r7dtw")
+metallic = 0.34
+metallic_specular = 1.0
+roughness = 0.0
+clearcoat_enabled = true
+clearcoat_roughness = 1.0
 
 [node name="Meshy_AI_Blue_Solar_Satellite_0702164042_texture" unique_id=1689330155 instance=ExtResource("1_po8f8")]
 layers = 16
 
-[node name="Mesh" parent="." index="0" unique_id=110034449]
+[node name="Mesh" parent="." index="0" unique_id=442150706]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 layers = 16
+surface_material_override/0 = SubResource("StandardMaterial3D_vjckr")
