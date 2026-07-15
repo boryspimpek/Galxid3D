@@ -150,7 +150,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5895576)
 script = ExtResource("6_21gct")
 
 [node name="LevelScrollRuler" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1422874938 instance=ExtResource("6_xersf")]
-visible = false
 
 [node name="Satellite" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1897743314 instance=ExtResource("6_g14j6")]
 transform = Transform3D(2.6840403, 1.8793854, 2.2943058, -2.2943058, 3.2766082, 0, -1.8793854, -1.3159598, 3.2766082, -5.396, 1.0904883, -1.48452)
