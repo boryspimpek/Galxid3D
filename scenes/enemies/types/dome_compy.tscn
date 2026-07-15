@@ -101,8 +101,8 @@ target_node = NodePath("EnemyModel/Meshy_AI_Modular_Telecentric_L_0714152024_tex
 [node name="EngineTilt" type="Node" parent="." unique_id=1286608618]
 script = ExtResource("7_fww36")
 target_nodes = Array[NodePath]([NodePath("EnemyModel/ThrusterA"), NodePath("EnemyModel/ThrusterB")])
-speed_threshold = 12.0
-min_angle_degrees = -75.0
+speed_threshold = 3.0
+min_angle_degrees = -90.0
 max_angle_degrees = 0.0
 smooth = 2.0
 

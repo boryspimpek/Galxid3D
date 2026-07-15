@@ -1,4 +1,5 @@
 res://scenes/enemies/types/
+res://
 res://assets/enemies/dome/
 res://assets/enemies/
 res://assets/enemies/heli/
@@ -12,7 +13,6 @@ res://assets/enemies/kiwi/
 C:/Users/borys/Desktop/
 res://assets/shaders/
 res://scenes/projectile/
-res://
 res://assets/stations/
 res://scenes/
 res://assets/enemies/dreadnought/

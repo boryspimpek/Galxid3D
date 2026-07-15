@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ccfrxvavuaso5"]
+
+[ext_resource type="PackedScene" uid="uid://d3jf0a5vsk3fb" path="res://assets/enemies/blasteroid/Meshy_AI_Geode_Cannon_0715061855_texture.glb" id="1_6dkyb"]
+[ext_resource type="Texture2D" uid="uid://c8riluaxwi5gn" path="res://assets/enemies/blasteroid/Meshy_AI_Geode_Cannon_0715061855_texture_0.jpg" id="2_235mc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7e4rk"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("2_235mc")
+metallic = 0.46
+roughness = 0.0
+clearcoat_enabled = true
+clearcoat_roughness = 0.75
+
+[node name="Meshy_AI_Geode_Cannon_0715061855_texture" unique_id=469024797 instance=ExtResource("1_6dkyb")]
+layers = 16
+
+[node name="Mesh" parent="." index="0" unique_id=793296115]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+layers = 16
+surface_material_override/0 = SubResource("StandardMaterial3D_7e4rk")

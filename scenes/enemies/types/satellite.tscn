@@ -18,4 +18,4 @@ value = 100
 [node name="Meshy_AI_Blue_Solar_Satellite_0702164042_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1689330155 instance=ExtResource("2_nwlww")]
 
 [node name="Muzzle" parent="." index="3" unique_id=1704985833]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.26066974)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.559575, 0.26066974)

@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" uid="uid://h4tfxlaeefcu" path="res://scenes/world/GameShell.gd" id="1_2h37t"]
 [ext_resource type="PackedScene" uid="uid://bte7ofi7pgn5b" path="res://scenes/player/Player.tscn" id="2_adp8l"]
-[ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemies/base/EnemyPath3D.gd" id="5_xersf"]
-[ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemies/base/EnemyPathFollow.gd" id="6_00tp4"]
 [ext_resource type="Script" uid="uid://ci6qjvw4jlabt" path="res://scenes/world/LevelScroll3D.gd" id="6_21gct"]
+[ext_resource type="PackedScene" uid="uid://ls2pig7p4d3o" path="res://scenes/enemies/types/satellite.tscn" id="6_g14j6"]
 [ext_resource type="PackedScene" uid="uid://bdvg80h7a4nm8" path="res://scenes/debug/LevelScrollRuler.tscn" id="6_xersf"]
-[ext_resource type="PackedScene" uid="uid://cxadk4t6d5mc" path="res://scenes/enemies/types/dome_compy.tscn" id="7_ehkex"]
+[ext_resource type="PackedScene" uid="uid://ryp1is7xr46v" path="res://assets/ElectricDischargeVFX/electric_discharge_3d.tscn" id="7_vbegm"]
 [ext_resource type="PackedScene" uid="uid://pv4lucn5p30f" path="res://scenes/ui/Hud.tscn" id="37_k13tm"]
 
 [sub_resource type="Environment" id="Environment_2y1ty"]
@@ -18,18 +17,6 @@ adjustment_brightness = 1.12
 adjustment_contrast = 1.065
 adjustment_saturation = 1.5
 
-[sub_resource type="Curve3D" id="Curve3D_77dp3"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.17829037, 0, -0.024598122, -5.0452857, 0, 0.018080711, 5.0452857, 0, -0.018080711, 7.586111, 0, 0.051023006, 0, 0, 0, 0, 0, 0, 11.914089, 0, 3.6460638, 0, 0, 0, 0, 0, 0, 11.915789, 0, 9.420242),
-"tilts": PackedFloat32Array(0, 0, 0, 0)
-}
-point_count = 4
-
-[sub_resource type="Curve" id="Curve_ehkex"]
-_limits = [0.0, 3.0, 0.0, 1.0]
-_data = [Vector2(0, 3), 0.0, 0.0, 0, 0, Vector2(0.17548747, 0.26615548), 0.7274033, 0.0, 0, 0, Vector2(0.35097495, 3), 0.0, 0.0, 0, 0, Vector2(0.60167134, 3), 0.0, 0.0, 0, 0, Vector2(0.75, 0.17977548), 0.0, 0.0, 0, 0, Vector2(0.9136491, 3), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 7
-
 [node name="GameShell" type="Control" unique_id=616589222]
 layout_mode = 3
 anchors_preset = 15
@@ -38,6 +25,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2h37t")
+
+[node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("37_k13tm")]
 
 [node name="GameViewportContainer" type="SubViewportContainer" parent="." unique_id=616589223]
 layout_mode = 1
@@ -61,18 +50,19 @@ render_target_update_mode = 4
 environment = SubResource("Environment_2y1ty")
 
 [node name="Light action" type="DirectionalLight3D" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=1129389940]
-transform = Transform3D(0.4617486, 0.62721133, -0.62721133, 0, 0.7071067, 0.7071067, 0.8870109, -0.32650554, 0.32650554, 0, 15, 0)
-light_angular_distance = 22.26
-light_specular = 2.032
+transform = Transform3D(0.70710677, 0.49999994, -0.49999994, 0, 0.7071067, 0.7071067, 0.70710677, -0.49999994, 0.49999994, 0, 15, 0)
+light_energy = 1.344
+light_angular_distance = 45.48
+light_specular = 6.591
 light_cull_mask = 16
-shadow_enabled = true
 shadow_bias = 4.882
 
 [node name="Camera3D" type="Camera3D" parent="GameViewportContainer/GameViewport/GameWorld/World" unique_id=1430056658]
 transform = Transform3D(1, 0, 0, 0, 0.89879405, 0.43837115, 0, -0.43837115, 0.89879405, 0, 5.513, 15.98)
 
 [node name="Player" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=1811810025 instance=ExtResource("2_adp8l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20925522, 0, 3.103972)
+transform = Transform3D(0.14, 0, 0, 0, 0.14, 0, 0, 0, 0.14, 0.20925522, 0, 3.103972)
+visible = false
 gamepad_move_speed = 15.0
 gamepad_l2_move_speed = 30.0
 gamepad_acceleration = 500.0
@@ -84,27 +74,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5895576)
 script = ExtResource("6_21gct")
 
 [node name="LevelScrollRuler" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1422874938 instance=ExtResource("6_xersf")]
-visible = false
 
-[node name="EnemyPath3D" type="Path3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1946694431]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.365608, 0, -0.06163025)
-curve = SubResource("Curve3D_77dp3")
-script = ExtResource("5_xersf")
-speed_curve = SubResource("Curve_ehkex")
-bank_enabled = true
-bank_max_degrees = 45.0
-bank_strength = 0.53
-bank_lookahead = 5.0
-metadata/_custom_type_script = "uid://braxpml2y0f6o"
+[node name="Satellite" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1897743314 instance=ExtResource("6_g14j6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6.550911, 0, 2.537689)
+movement_data = null
 
-[node name="EnemyPathFollow" type="PathFollow3D" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/EnemyPath3D" unique_id=1802251933]
-transform = Transform3D(0.03962906, 0, 0.9991765, 0, 1, 0, -0.9991765, 0, 0.03962906, 0.17829037, 0, -0.024598122)
-use_model_front = true
-loop = false
-script = ExtResource("6_00tp4")
-enemy_yaw_offset_degrees = 0.0
-metadata/_custom_type_script = "uid://de0wqltyclsk0"
+[node name="Satellite2" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=181691569 instance=ExtResource("6_g14j6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 8.156885, 0, 2.537689)
+movement_data = null
 
-[node name="dome" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll/EnemyPath3D/EnemyPathFollow" unique_id=1897743314 instance=ExtResource("7_ehkex")]
-
-[node name="Hud" parent="." unique_id=1368757147 instance=ExtResource("37_k13tm")]
+[node name="ElectricDischarge" parent="GameViewportContainer/GameViewport/GameWorld/LevelScroll" unique_id=1340476580 node_paths=PackedStringArray("start_target", "end_target") instance=ExtResource("7_vbegm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15027446, 0, 2.8422887)
+start_target = NodePath("../Satellite")
+end_target = NodePath("../Satellite2")

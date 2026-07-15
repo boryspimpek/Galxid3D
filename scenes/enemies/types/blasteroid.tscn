@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bcbkyw3gyvqur"]
+
+[ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_jpuw2"]
+[ext_resource type="PackedScene" uid="uid://ccfrxvavuaso5" path="res://assets/enemies/blasteroid/blasteroid_model.tscn" id="2_k7bk6"]
+[ext_resource type="Script" uid="uid://cr2knbmonx42w" path="res://scenes/enemies/base/facing/FacePlayer.gd" id="3_k7bk6"]
+
+[node name="blasteroid" unique_id=1897743314 instance=ExtResource("1_jpuw2")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Meshy_AI_Geode_Cannon_0715061855_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=469024797 instance=ExtResource("2_k7bk6")]
+
+[node name="VisibleOnScreenNotifier3D" parent="." index="2" unique_id=1484925388]
+aabb = AABB(-0.5209483, -0.5275243, -0.49788293, 1.0418966, 1.0550486, 0.99576586)
+
+[node name="Muzzle" parent="." index="3" unique_id=1704985833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32990786, 0.4255371)
+
+[node name="Node3D" type="Node3D" parent="." index="4" unique_id=171343465]
+script = ExtResource("3_k7bk6")
