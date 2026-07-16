@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://b00wb11f44ov" path="res://scenes/player/WeaponSystem.gd" id="3_tpg5x"]
 [ext_resource type="Shader" uid="uid://luwc3n46o4pd" path="res://assets/shaders/jet_engine.gdshader" id="5_tpg5x"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tpg5x"]
+
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_tpg5x"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_c3xxp"]
@@ -58,6 +60,7 @@ transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1950378145]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.1)
+shape = SubResource("CapsuleShape3D_tpg5x")
 
 [node name="DamageSystem" type="Node" parent="." unique_id=404747008]
 script = ExtResource("2_524rm")

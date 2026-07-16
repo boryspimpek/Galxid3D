@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ShipData" format=3 uid="uid://b0fsmdlqcrg8n"]
 
 [ext_resource type="Script" uid="uid://b67wo33ojrncw" path="res://scripts/resources/ShipData.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://bm26ujucfwqql" path="res://assets/hangar/Gemini_Generated_Image_405x0z405x0z405x-removebg-preview.png" id="1_4tfgm"]
+[ext_resource type="Texture2D" uid="uid://dsf01v4qvu46k" path="res://assets/hangar/Gemini_Generated_Image_4hguq74hguq74hgu-removebg-preview.png" id="1_4tfgm"]
 
 [resource]
 script = ExtResource("1")

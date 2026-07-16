@@ -178,6 +178,5 @@ scroll_activation_z = 17.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="GameViewportContainer/GameViewport/GameWorld" unique_id=796571490]
 stream = ExtResource("17_yaehf")
-autoplay = true
 bus = &"Music"
 parameters/looping = true

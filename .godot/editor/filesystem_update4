@@ -1,14 +1,12 @@
-res://test.tscn
+res://main.tscn
 res://scenes/enemy_projectile/EnemyProjectile.gdshader
 res://assets/shaders/jet_engine.gdshader
 res://assets/enemies/dreadnought/dreadnought_model.gdshader
-res://scenes/ui/ui_theme.tres
-res://scenes/enemies/types/dome_compy.tscn
-res://assets/enemies/geode cannon/geode_cannon_model.tscn
-res://scenes/enemies/types/geode_cannon.tscn
+res://data/ships/ship_006.tres
+res://data/ships/ship_005.tres
+res://data/ships/ship_004.tres
+res://data/ships/ship_003.tres
+res://data/ships/ship_002.tres
+res://data/ships/ship_001.tres
 res://scenes/player/Player.tscn
-res://scenes/enemies/types/blasteroid.tscn
-res://scenes/enemies/types/orbiter.tscn
-res://scenes/enemies/types/satellite.tscn
-res://assets/ElectricDischargeVFX/electric_discharge_3d.tscn
-res://assets/enemies/satellite/satellite_model.tscn
+res://data/generators/generator_005.tres

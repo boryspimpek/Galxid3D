@@ -8,6 +8,7 @@ script = ExtResource("1_exvlg")
 generator_index = 5
 generator_name = "Starlite Unit"
 power = 700.0
+regeneration = 15.0
 power_per_kill = 30.0
 graphics = ExtResource("1_u02a4")
 cost = 20000

@@ -1,77 +1,84 @@
 # Galaxid3D (GALAXID FREE)
 
-Projekt gry 3D w **Godot 4.6** (renderer: **Forward+**). Repo zawiera sceny, skrypty GDScript i assety potrzebne do uruchomienia prototypu/gry typu space‑shooter.
+Prototyp trójwymiarowej gry typu space-shooter z widokiem z góry, przygotowany w **Godot 4.6** z rendererem **Forward+**. Projekt zawiera kompletną pętlę rozgrywki: menu startowe, hangar, przewijany poziom, formacje przeciwników, walkę, wynik, combosy, loot i ekran końca gry.
 
 ## Uruchomienie
 
-- Otwórz projekt w **Godot 4.6**.
-- Uruchom (`Play`) — główna scena jest ustawiona w `project.godot` jako `3dworld.tscn` (UID: `uid://c0rjf6bfsduht`).
+- Otwórz katalog projektu w **Godot 4.6**.
+- Uruchom projekt przyciskiem `Play` (`F6`/`F5` w zależności od kontekstu edytora).
+- Sceną startową jest `res://main.tscn`. Zawiera ona pełnoekranowy `SubViewport` z `GameWorld`, HUD oraz główne menu.
 
 ## Konfiguracja projektu (skrót)
 
 Źródło: `project.godot`.
 
 - **Nazwa aplikacji**: `GALAXID FREE`
-- **Main scene**: `res://3dworld.tscn` (UID `uid://c0rjf6bfsduht`)
-- **FPS cap**: 60
-- **Okno / orientacja**:
-  - viewport: 1080×1920
-  - override: 600×800
-  - tryb stretch: `canvas_items`
-  - emulacja dotyku z myszy: włączona
-- **Fizyka 3D**: `Jolt Physics`
-- **Windows renderer driver**: `d3d12`
+- **Scena startowa**: `res://main.tscn`
+- **Renderer**: Forward+; sterownik Windows `d3d12`
+- **Rozdzielczość wewnętrzna gry**: `1920×1080`; okno ma override `1300×730`
+- **Skalowanie interfejsu**: `canvas_items`
+- **Orientacja urządzeń mobilnych**: pozioma
+- **Sterowanie dotykowe z myszy**: włączone
+- **Fizyka 3D**: Jolt Physics z interpolacją fizyki
+
+## Sterowanie
+
+- **Mysz / dotyk**: ruch statku po obszarze gry; lewy przycisk myszy lub przytrzymanie dotyku uruchamia ogień podstawowy.
+- **Pad**: lewy drążek lub D-pad porusza statkiem, `A` strzela, `R2` wykonuje unik, a `L2` zmienia prędkość ruchu.
+- **Broń specjalna**: `W` lub przycisk `X` uruchamia pierwszy slot, `Q` lub przycisk `Y` trzeci slot; pozostałe sloty są przypisane do przycisków pada.
+- **Pauza / powrót**: `Esc` lub przyciski pada otwierają pauzę albo wracają z ekranów opcji i sterowania.
 
 ## Autoloady (singletons)
 
 Źródło: sekcja `[autoload]` w `project.godot`.
 
-- `DataManager`: `res://scripts/managers/DataManager.gd`
-- `SceneRegistry`: `res://scripts/managers/SceneRegistry.gd`
-- `SoundManager`: `res://scripts/managers/SoundManager.gd`
+- `DataManager`: ładuje katalog statków, broni, generatorów, sidekicków i konfigurację obszaru gry.
+- `SceneRegistry`: udostępnia i buforuje sceny pocisków, sidekicków oraz pickupów.
+- `SoundManager`: odtwarza efekty dźwiękowe na niezależnych kanałach broni, eksplozji i trafień.
+- `HitComboManager`: liczy serię eliminacji i resetuje ją po zmianie sceny.
+- `CameraShakeManager`: realizuje ekranowe drgania kamery po trafieniach.
+- `GameState`: przechowuje wybór statku, generatora i kredyty podczas sesji.
 
-## Struktura (najczęściej używane)
+## Struktura projektu
 
-- `3dworld.tscn`: główna scena gry (`Node3D` o nazwie `Game`) z m.in.:
-  - `Player` (`res://scenes/player/Player.tscn`)
-  - `PlanetSpawner` (`res://scenes/planets/PlanetSpawner.gd`)
-  - `Path3D` ze skryptem `EnemyPath3D.gd` (ustawienia fali) + `PathFollow3D*` ze skryptem `EnemyPathFollow.gd` (ruch wroga)
-  - instancje przeciwników `res://scenes/enemies/types/starfighter.tscn`
-  - `PlayAreaFrame` (`res://scenes/debug/PlayAreaFrame.tscn`)
-  - `LevelScrollRuler` (`res://scenes/debug/LevelScrollRuler.tscn`) — podziałka Z + czas scrolla pod `LevelScroll`
-- `scenes/enemies/`: wrogowie — `base/` (logika), `types/` (prefaby), `formations/` (fale)
-- `scripts/`: logika współdzielona / singletons (`core/`, `managers/`, `resources/`)
-- `scripts/resources/`: dane gracza (`WeaponData`, `ShipData`, …) i wrogów (`enemies/movement/`, `enemies/weapons/`)
-- `assets/`: grafika, audio, ikony, importy
+- `main.tscn`: scena wejściowa z `GameShell`, `SubViewport`, HUD-em, graczem, przewijanym poziomem, formacjami i muzyką.
+- `scenes/player/`: statek gracza, system obrażeń, uzbrojenie i sceny pomocników.
+- `scenes/enemies/`: wspólna logika przeciwników (`base/`), typy jednostek (`types/`) oraz gotowe formacje i bossowie (`formations/`).
+- `scenes/ui/`: HUD, menu startowe, pauza, opcje, ekran sterowania i ekran końca gry.
+- `scenes/hangar/`: wybór statku i generatora przed rozgrywką.
+- `scripts/managers/`: singletony i współdzielone systemy gry.
+- `scripts/resources/` oraz `data/`: definicje i katalogi danych statków, broni, generatorów, sidekicków oraz konfiguracji planszy.
+- `assets/`: modele, materiały, efekty VFX, grafika interfejsu i audio.
 
-## Przykład logiki przeciwnika
+## Rozgrywka
 
-Plik: `scenes/enemies/base/Enemy.gd`.
+- **Statek i wyposażenie**: gracz wybiera w hangarze statek oraz generator energii. Dane są ładowane z katalogu danych, a wybrane identyfikatory są przekazywane przez `GameState`.
+- **Broń**: system posiada trzy niezależne sloty uzbrojenia podstawowego (przedni, środkowy i tylny) oraz do czterech strzałów specjalnych. Specjale mogą tworzyć pociski albo aktywować wiązkę; zużywają energię generatora.
+- **Sidekicki**: opcjonalni pomocnicy są instancjonowani po bokach statku i strzelają razem z ogniem podstawowym.
+- **Unik**: czasowo wyłącza warstwę kolizji gracza, zatrzymuje ogień i wykonuje animację obrotu z cooldownem.
+- **Żywotność i energia**: HUD aktualizuje pancerz, energię i wynik na podstawie sygnałów gracza. Trafienie wywołuje dźwięk, błysk ekranu oraz drganie kamery; wyczerpanie pancerza otwiera ekran końca gry.
+- **Punktacja i combo**: zabici przeciwnicy zwiększają wynik, energię za eliminację i licznik serii. Od serii pięciu trafień HUD pokazuje animowany wskaźnik `HIT x…` ze zmiennym kolorem.
+- **Loot**: przeciwnicy pozostawiają pickupy; po wyrzuceniu dryfują, a w zasięgu przyciągania lecą do gracza.
 
-- Przeciwnik rozszerza `Area3D`, dodaje się do grupy `enemies`.
-- Strzelanie w pętli `_process` oparte o `fire_rate` i timer.
-- Pociski tworzone przez `SceneRegistry.enemy_projectile_scene`.
-- Dźwięki przez `SoundManager` (trafienie/wybuch/broń).
-- Kolizja z graczem:
-  - gracz jest w grupie `player`
-  - na wejściu w ciało przeciwnik zadaje obrażenia (`body.take_damage(armor)`) i ginie.
+## Przeciwnicy, fale i przewijanie poziomu
 
-## Przewijanie poziomu i aktywacja wrogów
+- `LevelScroll3D` przesuwa zawartość poziomu wzdłuż osi `+Z`. Pod nim znajdują się formacje, bossowie i elementy tła; kamera oraz gracz pozostają poza przewijanym węzłem.
+- Przeciwnik `Enemy` jest `Area3D` należącym do grupy `enemies`. Po przekroczeniu linii aktywacji rozpoczyna ruch i ostrzał, a po opuszczeniu ekranu może zostać usunięty.
+- Formacje osadzone na ścieżkach mogą aktywować wrogów wspólnie; po aktywacji aktywne jednostki są odpinane od `LevelScroll`, aby kontynuować własny ruch.
+- Obsługiwane są typy odporne na broń podstawową, połączenia śmierci jednostek, efekty trafień i eksplozji, pociski przeciwników, punktacja oraz drop pickupów.
+- Aktualna scena poziomu zawiera kolejne formacje uderzeniowe i bossów, m.in. `begining`, `protector_strike`, `rocketer_strike`, `boss_devastator`, `hank_strike`, `finisher` i `cyclon_boss_2`.
 
-- **`LevelScroll`** (`scenes/world/LevelScroll3D.gd`): przesuwa dzieci wzdłuż **+Z** (`scroll_speed`). Pod nim trzymaj Path3D, planety, tło — gracz i kamera zostają na root sceny.
-- **Wszyscy wrogowie**: aktywacja gdy `global_position.z >= scroll_activation_z` (górna krawędź kadru). Pozycja startowa: `z = scroll_activation_z - odległość`. Czas do startu ≈ `odległość / scroll_speed`.
-- **`EnemySpawner`** (`scenes/enemies/EnemySpawner.gd`): losowy spawn wrogów nad linią aktywacji — umieść pod `LevelScroll`. Pola jak w `PlanetSpawner`: `spawn_interval`, `preprocess_time`, lista `enemy_scenes` (pusta = domyślna pula wszystkich typów).
-- **`EnemyPathFollow.gd`**: start ścieżki po `combat_activated` wroga lub po `wave_activated` z `EnemyPath3D` (tryb `SCENE_SCROLL_LINE` — jak `animation.gd` / formation).
+## Interfejs i audio
 
-## Notatki dla pracy z AI (żeby szybciej startować rozmowy)
+- HUD uruchamia rozgrywkę z menu startowego i udostępnia przejście do hangaru, opcji oraz ekranu sterowania.
+- Pauza zatrzymuje drzewo scen; ekran game over pokazuje końcowy wynik i pozwala rozpocząć rundę od nowa.
+- Opcje pozwalają osobno regulować głośność muzyki i efektów dźwiękowych.
+- Układ audio zawiera magistrale `Music`, `SFX`, `Weapons`, `Explosions` i `Impacts`; muzyka poziomu jest zapętlona.
 
-Jeśli prosisz asystenta o zmiany, podaj:
+## Rozwój projektu
 
-- **Godot wersja**: 4.6
-- **Scena startowa**: `3dworld.tscn`
-- **Singletony**: `DataManager`, `SceneRegistry`, `SoundManager`
-- **Miejsca w projekcie**:
-  - logika przeciwników: `scenes/enemies/base/`
-  - logika pocisków: `scenes/projectile/`
-  - rejestr scen / spawn pocisków: `scripts/managers/SceneRegistry.gd`
+- Edytuj parametry projektu przez interfejs Godot, szczególnie wpisy w `project.godot` dotyczące inputu, autoloadów i eksportu.
+- Dane balansu są rozdzielone od logiki: dodawaj statki, generatory, broń i sidekicki przez zasoby w `data/` oraz ich katalog.
+- Przy dodawaniu pocisku gracza zachowaj nazewnictwo `projectile_<id>.tscn` lub `power_<id>.tscn`, aby `SceneRegistry` mógł odnaleźć go automatycznie.
+- Nowe fale i elementy scenografii należy umieszczać pod `LevelScroll` w `main.tscn`; gracz i kamera nie powinny być jego dziećmi.
 
