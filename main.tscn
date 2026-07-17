@@ -19,7 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://b53d3bd1fnprc" path="res://scenes/enemies/formations/boss_devastator.tscn" id="43_gngh3"]
 
 [sub_resource type="Environment" id="Environment_2y1ty"]
-background_mode = 2
+background_mode = 1
+background_color = Color(0, 0, 0, 1)
 background_energy_multiplier = 0.8
 sky_rotation = Vector3(3.843215, -2.3387413, -2.630211)
 tonemap_mode = 4
