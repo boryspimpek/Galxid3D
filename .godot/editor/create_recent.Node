@@ -1,6 +1,6 @@
-AnimationPlayer
 EnemyPathFollow
 EnemyPath3D
+AnimationPlayer
 Node3D
 MeshInstance3D
 HSlider

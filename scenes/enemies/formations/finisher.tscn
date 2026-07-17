@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://c8keoramkser6" path="res://scenes/enemies/formations/arrow formations/formation4.tscn" id="4_kv1u6"]
 [ext_resource type="PackedScene" uid="uid://cdxl62tlyuy08" path="res://scenes/enemies/formations/arrow formations/formation5.tscn" id="5_vo1vm"]
 [ext_resource type="PackedScene" uid="uid://bq1ohabm84y61" path="res://scenes/enemies/formations/arrow formations/formation15.tscn" id="7_ji6au"]
-[ext_resource type="PackedScene" uid="uid://cv5pl4svkf8ft" path="res://scenes/enemies/types/hawk.tscn" id="8_8e2c2"]
 [ext_resource type="PackedScene" uid="uid://ls2pig7p4d3o" path="res://scenes/enemies/types/satellite.tscn" id="10_7xym7"]
 [ext_resource type="PackedScene" uid="uid://bi8mx1rfm6q6t" path="res://scenes/enemies/types/orbiter.tscn" id="11_83o4x"]
 [ext_resource type="PackedScene" uid="uid://bph2t4hxn0f07" path="res://scenes/enemies/types/ring.tscn" id="12_kv1u6"]
@@ -15,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dv65p1uld6w72" path="res://scenes/enemies/types/bulldog.tscn" id="16_eerwt"]
 [ext_resource type="PackedScene" uid="uid://bvpvcuphhgleu" path="res://scenes/enemies/formations/arrow formations/formation17.tscn" id="17_8e2c2"]
 [ext_resource type="Script" uid="uid://bkmgjk3jummqx" path="res://scenes/enemies/base/facing/DelayedFacePlayer.gd" id="17_dnp2c"]
+[ext_resource type="PackedScene" uid="uid://b6suvtcapnif2" path="res://scenes/enemies/types/dome.tscn" id="17_ygaea"]
 [ext_resource type="PackedScene" uid="uid://ccenxiyn1fsi3" path="res://scenes/enemies/formations/arrow formations/formation16.tscn" id="18_ygaea"]
 [ext_resource type="PackedScene" uid="uid://bncfbdv7kbrhj" path="res://scenes/enemies/formations/striker formations/striker2.tscn" id="18_yhx3q"]
 
@@ -49,6 +49,17 @@ _limits = [0.0, 4.0, 0.0, 1.0]
 _data = [Vector2(0, 4), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="Curve3D" id="Curve3D_7xym7"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.08491516, 0, -0.07236481, 0, 0, 0, 0, 0, 0, -0.08369541, 0, 34.425537),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_mecje"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.10863509, 0.14509404), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="finisher" type="Node3D" unique_id=1951948358]
 
 [node name="LevelScrollRuler" parent="." unique_id=1217585692 instance=ExtResource("1_h6vv8")]
@@ -65,9 +76,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7734318, 0, -254.6079)
 
 [node name="Formation19" parent="." unique_id=630135422 instance=ExtResource("7_ji6au")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18196297, 0, -228.13158)
-
-[node name="hawk5" parent="." unique_id=1897743314 instance=ExtResource("8_8e2c2")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 13.092747, 0, -132.80406)
 
 [node name="Satellite" parent="." unique_id=1244885341 instance=ExtResource("10_7xym7")]
 transform = Transform3D(-0.31190842, -0.79715174, 1.3517625, 0.83415025, 1.0831661, 0.83123064, -1.3292502, 0.8667755, 0.20443483, 5.0434475, 0, -103.8076)
@@ -164,7 +172,7 @@ speed_curve = SubResource("Curve_8ng77")
 metadata/_custom_type_script = "uid://braxpml2y0f6o"
 
 [node name="EnemyPathFollow" type="PathFollow3D" parent="EnemyPath3D" unique_id=2044926302]
-transform = Transform3D(-0.9999874, 0, 0.004222993, 0, 1, 0, -0.004222993, 0, -0.9999874, -0.00012207031, 0, 0.008208275)
+transform = Transform3D(-0.9999873, 0, 0.0042229923, 0, 1, 0, -0.0042229923, 0, -0.9999873, -0.00012207031, 0, 0.008208275)
 script = ExtResource("15_kdds3")
 metadata/_custom_type_script = "uid://de0wqltyclsk0"
 
@@ -178,7 +186,7 @@ speed_curve = SubResource("Curve_8ng77")
 metadata/_custom_type_script = "uid://braxpml2y0f6o"
 
 [node name="EnemyPathFollow" type="PathFollow3D" parent="EnemyPath3D3" unique_id=2113906952]
-transform = Transform3D(-0.99998736, 0, 0.0042229923, 0, 1, 0, -0.0042229923, 0, -0.99998736, -0.00012207031, 0, 0.008208275)
+transform = Transform3D(-0.99998724, 0, 0.004222992, 0, 1, 0, -0.004222992, 0, -0.99998724, -0.00012207031, 0, 0.008208275)
 script = ExtResource("15_kdds3")
 metadata/_custom_type_script = "uid://de0wqltyclsk0"
 
@@ -192,7 +200,7 @@ speed_curve = SubResource("Curve_8ng77")
 metadata/_custom_type_script = "uid://braxpml2y0f6o"
 
 [node name="EnemyPathFollow" type="PathFollow3D" parent="EnemyPath3D2" unique_id=616531921]
-transform = Transform3D(-0.99998736, 0, 0.0042229923, 0, 1, 0, -0.0042229923, 0, -0.99998736, -0.00012207031, 0, 0.008208275)
+transform = Transform3D(-0.99998724, 0, 0.004222992, 0, 1, 0, -0.004222992, 0, -0.99998724, -0.00012207031, 0, 0.008208275)
 script = ExtResource("15_kdds3")
 metadata/_custom_type_script = "uid://de0wqltyclsk0"
 
@@ -207,7 +215,7 @@ speed_curve = SubResource("Curve_8ng77")
 metadata/_custom_type_script = "uid://braxpml2y0f6o"
 
 [node name="EnemyPathFollow" type="PathFollow3D" parent="EnemyPath3D4" unique_id=2013495869]
-transform = Transform3D(-0.9999873, 0, 0.0042229923, 0, 1, 0, -0.0042229923, 0, -0.9999873, -0.00012207031, 0, 0.008208275)
+transform = Transform3D(-0.9999872, 0, 0.004222992, 0, 1, 0, -0.004222992, 0, -0.9999872, -0.00012207031, 0, 0.008208275)
 script = ExtResource("15_kdds3")
 metadata/_custom_type_script = "uid://de0wqltyclsk0"
 
@@ -221,7 +229,7 @@ speed_curve = SubResource("Curve_8ng77")
 metadata/_custom_type_script = "uid://braxpml2y0f6o"
 
 [node name="EnemyPathFollow" type="PathFollow3D" parent="EnemyPath3D5" unique_id=503689115]
-transform = Transform3D(-0.99998724, 0, 0.004222992, 0, 1, 0, -0.004222992, 0, -0.99998724, -0.00012207031, 0, 0.008208275)
+transform = Transform3D(-0.9999871, 0, 0.0042229914, 0, 1, 0, -0.0042229914, 0, -0.9999871, -0.00012207031, 0, 0.008208275)
 script = ExtResource("15_kdds3")
 metadata/_custom_type_script = "uid://de0wqltyclsk0"
 
@@ -235,7 +243,7 @@ speed_curve = SubResource("Curve_8ng77")
 metadata/_custom_type_script = "uid://braxpml2y0f6o"
 
 [node name="EnemyPathFollow" type="PathFollow3D" parent="EnemyPath3D6" unique_id=1717143420]
-transform = Transform3D(-0.9999872, 0, 0.004222992, 0, 1, 0, -0.004222992, 0, -0.9999872, -0.00012207031, 0, 0.008208275)
+transform = Transform3D(-0.99998707, 0, 0.0042229914, 0, 1, 0, -0.0042229914, 0, -0.99998707, -0.00012207031, 0, 0.008208275)
 script = ExtResource("15_kdds3")
 metadata/_custom_type_script = "uid://de0wqltyclsk0"
 
@@ -252,3 +260,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1058769, 0, -150.04288)
 
 [node name="Formation2" parent="." unique_id=1730415998 instance=ExtResource("17_8e2c2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9427903, 0, -83.778145)
+
+[node name="EnemyPath3D7" type="Path3D" parent="." unique_id=933872779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.99322, 0, -133.03822)
+curve = SubResource("Curve3D_7xym7")
+script = ExtResource("14_mecje")
+speed_curve = SubResource("Curve_mecje")
+metadata/_custom_type_script = "uid://braxpml2y0f6o"
+
+[node name="EnemyPathFollow" type="PathFollow3D" parent="EnemyPath3D7" unique_id=839863926]
+transform = Transform3D(0.99998784, 0, -0.0048874724, 0, 1, 0, 0.0048874724, 0, 0.99998784, 0.08491516, 0, -0.07236481)
+use_model_front = true
+script = ExtResource("15_kdds3")
+enemy_yaw_offset_degrees = 0.0
+metadata/_custom_type_script = "uid://de0wqltyclsk0"
+
+[node name="dome" parent="EnemyPath3D7/EnemyPathFollow" unique_id=1897743314 instance=ExtResource("17_ygaea")]

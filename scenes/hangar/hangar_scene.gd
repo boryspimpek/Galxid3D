@@ -43,7 +43,7 @@ func load_cards() -> void:
     for child in generator_grid.get_children():
         child.queue_free()
 
-    var ships := load_resources(ships_folder)
+    var ships := DataManager.ships_cache.duplicate()
     print("Loaded ships: ", ships.size())
     ships.sort_custom(func(a, b): return a.ship_index < b.ship_index)
     for ship in ships:
@@ -53,7 +53,7 @@ func load_cards() -> void:
         card.selected.connect(_on_ship_selected)
         print("Added ship card: ", ship.ship_name)
 
-    var generators := load_resources(generators_folder)
+    var generators := DataManager.generators_cache.duplicate()
     print("Loaded generators: ", generators.size())
     generators.sort_custom(func(a, b): return a.generator_index < b.generator_index)
     for generator in generators:

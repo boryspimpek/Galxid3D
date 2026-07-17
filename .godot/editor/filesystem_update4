@@ -17,3 +17,4 @@ res://scenes/enemies/formations/cyclon_boss_2.tscn
 res://scenes/enemies/types/satellite.tscn
 res://scenes/enemies/formations/finisher.tscn
 res://scripts/managers/GameState.gd
+res://scenes/hangar/hangar_scene.gd
