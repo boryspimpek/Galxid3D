@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemies/base/EnemyPath3D.gd" id="1_omon1"]
 [ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemies/base/EnemyPathFollow.gd" id="2_upwbq"]
-[ext_resource type="PackedScene" uid="uid://5qq7y15vdal6" path="res://scenes/enemies/types/arrow.tscn" id="3_47r3t"]
+[ext_resource type="PackedScene" uid="uid://81vbgctp2ql6" path="res://scenes/enemies/types/heli.tscn" id="3_4axg4"]
 [ext_resource type="PackedScene" uid="uid://bv4qai58b1rya" path="res://scenes/debug/PlayAreaFrame.tscn" id="7_t1vmn"]
 
 [sub_resource type="Curve3D" id="Curve3D_lu1cq"]
@@ -21,54 +21,67 @@ script = ExtResource("1_omon1")
 activation_mode = 0
 speed = 10.0
 bank_enabled = true
+bank_max_degrees = 20.0
 bank_lookahead = 10.0
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path" unique_id=310916544]
-transform = Transform3D(-0.99988264, 1.1861927e-08, 0.004281672, -1.3321234e-15, 0.99999183, -2.7698193e-06, -0.004281672, -2.770071e-06, -0.99988264, -0.0050640106, -0.000546813, 0.007091522)
+transform = Transform3D(0.99988264, 1.1861927e-08, -0.004281672, 1.3321234e-15, 0.99999183, 2.7698193e-06, 0.004281672, -2.770071e-06, 0.99988264, -0.0050640106, -0.000546813, 0.007091522)
+use_model_front = true
 loop = false
 script = ExtResource("2_upwbq")
+enemy_yaw_offset_degrees = 0.0
 
-[node name="arrow" parent="Path/PathFollow3D" unique_id=1897743314 instance=ExtResource("3_47r3t")]
+[node name="heli" parent="Path/PathFollow3D" unique_id=1897743314 instance=ExtResource("3_4axg4")]
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Path" unique_id=2110210760]
-transform = Transform3D(-0.99988264, 1.2032995e-08, 0.004281672, 1.7108105e-10, 0.99998933, -2.7698195e-06, -0.004281672, -2.7700635e-06, -0.99988264, -0.02222314, -0.0005357131, 4.0140867)
+transform = Transform3D(0.99988264, 1.2032995e-08, -0.004281672, -1.7108105e-10, 0.99998933, 2.7698195e-06, 0.004281672, -2.7700635e-06, 0.99988264, -0.02222314, -0.0005357131, 4.0140867)
 progress = 4.0
+use_model_front = true
 loop = false
 script = ExtResource("2_upwbq")
+enemy_yaw_offset_degrees = 0.0
 
-[node name="arrow" parent="Path/PathFollow3D2" unique_id=1985715586 instance=ExtResource("3_47r3t")]
+[node name="heli" parent="Path/PathFollow3D2" unique_id=1034445225 instance=ExtResource("3_4axg4")]
 
 [node name="PathFollow3D3" type="PathFollow3D" parent="Path" unique_id=956187911]
-transform = Transform3D(-0.99988264, 1.20330075e-08, 0.004281672, 1.7108016e-10, 0.9999902, -2.76982e-06, -0.004281672, -2.7700664e-06, -0.99988264, -0.039321996, -0.00052465213, 8.007008)
+transform = Transform3D(0.99988264, 1.20330075e-08, -0.004281672, -1.7108016e-10, 0.9999902, 2.76982e-06, 0.004281672, -2.7700664e-06, 0.99988264, -0.039321996, -0.00052465213, 8.007008)
 progress = 8.0
+use_model_front = true
 loop = false
 script = ExtResource("2_upwbq")
+enemy_yaw_offset_degrees = 0.0
 
-[node name="arrow" parent="Path/PathFollow3D3" unique_id=1714961556 instance=ExtResource("3_47r3t")]
+[node name="heli" parent="Path/PathFollow3D3" unique_id=162277909 instance=ExtResource("3_4axg4")]
 
 [node name="PathFollow3D4" type="PathFollow3D" parent="Path" unique_id=914193793]
-transform = Transform3D(-0.99988264, 1.2033037e-08, 0.004281672, 1.7108016e-10, 0.99999285, -2.7698195e-06, -0.004281672, -2.7700733e-06, -0.99988264, -0.05645119, -0.0005135715, 12.00701)
+transform = Transform3D(0.99988264, 1.2033037e-08, -0.004281672, -1.7108016e-10, 0.99999285, 2.7698195e-06, 0.004281672, -2.7700733e-06, 0.99988264, -0.05645119, -0.0005135715, 12.00701)
 progress = 12.0
+use_model_front = true
 loop = false
 script = ExtResource("2_upwbq")
+enemy_yaw_offset_degrees = 0.0
 
-[node name="arrow" parent="Path/PathFollow3D4" unique_id=1176518187 instance=ExtResource("3_47r3t")]
+[node name="heli" parent="Path/PathFollow3D4" unique_id=73702427 instance=ExtResource("3_4axg4")]
 
 [node name="PathFollow3D5" type="PathFollow3D" parent="Path" unique_id=1922970098]
-transform = Transform3D(-0.99988264, 1.20329995e-08, 0.004281672, 1.7108105e-10, 0.99998957, -2.7698197e-06, -0.004281672, -2.7700644e-06, -0.99988264, -0.0735803, -0.00050249096, 16.006998)
+transform = Transform3D(0.99988264, 1.20329995e-08, -0.004281672, -1.7108105e-10, 0.99998957, 2.7698197e-06, 0.004281672, -2.7700644e-06, 0.99988264, -0.0735803, -0.00050249096, 16.006998)
 progress = 16.0
+use_model_front = true
 loop = false
 script = ExtResource("2_upwbq")
+enemy_yaw_offset_degrees = 0.0
 
-[node name="arrow" parent="Path/PathFollow3D5" unique_id=1869608451 instance=ExtResource("3_47r3t")]
+[node name="heli" parent="Path/PathFollow3D5" unique_id=1684091296 instance=ExtResource("3_4axg4")]
 
 [node name="PathFollow3D6" type="PathFollow3D" parent="Path" unique_id=828054985]
-transform = Transform3D(-0.99988264, 1.2033e-08, 0.004281672, 1.7107972e-10, 0.99998957, -2.7698202e-06, -0.004281672, -2.7700648e-06, -0.99988264, -0.090709716, -0.0004914102, 20.007055)
+transform = Transform3D(0.99988264, 1.2033e-08, -0.004281672, -1.7107972e-10, 0.99998957, 2.7698202e-06, 0.004281672, -2.7700648e-06, 0.99988264, -0.090709716, -0.0004914102, 20.007055)
 progress = 20.0
+use_model_front = true
 loop = false
 script = ExtResource("2_upwbq")
+enemy_yaw_offset_degrees = 0.0
 
-[node name="arrow" parent="Path/PathFollow3D6" unique_id=1216288679 instance=ExtResource("3_47r3t")]
+[node name="heli" parent="Path/PathFollow3D6" unique_id=1968855221 instance=ExtResource("3_4axg4")]
 
 [node name="PlayAreaFrame" parent="." unique_id=616916982 instance=ExtResource("7_t1vmn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.995712, 0, 11.382399)

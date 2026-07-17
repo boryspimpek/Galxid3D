@@ -1,12 +1,28 @@
 [gd_scene format=3 uid="uid://b6suvtcapnif2"]
 
 [ext_resource type="PackedScene" uid="uid://c3de3aei70kw1" path="res://scenes/enemies/base/Enemy.tscn" id="1_ntmvb"]
+[ext_resource type="Script" uid="uid://eo6qejm2h6hl" path="res://scripts/resources/enemies/weapons/EnemyWeaponData.gd" id="2_4ofbv"]
 [ext_resource type="PackedScene" uid="uid://dg5313nhhpas4" path="res://assets/enemies/dome/dome_model.tscn" id="2_jxx4d"]
+[ext_resource type="Script" uid="uid://dtprhja8af0to" path="res://scripts/resources/enemies/movement/LinearMoveData.gd" id="3_pvj62"]
 [ext_resource type="PackedScene" uid="uid://x0mr2af0gkgm" path="res://assets/enemies/dome/engine_model.tscn" id="3_tvjie"]
+[ext_resource type="PackedScene" uid="uid://s6dwn56csbw1" path="res://assets/BinbunVFX_Vol2/ExplosionFX/effects/nuke/vfx_nuke_explosion_01.tscn" id="4_2wdqo"]
 [ext_resource type="PackedScene" uid="uid://cxtnvg3xdlb2c" path="res://assets/enemies/dome/dome_cannon_model.tscn" id="4_b7xp7"]
 [ext_resource type="Script" uid="uid://crjllr6p5un2q" path="res://scenes/enemies/base/facing/FacePlayerPart.gd" id="5_jxx4d"]
 [ext_resource type="Shader" uid="uid://luwc3n46o4pd" path="res://assets/shaders/jet_engine.gdshader" id="6_tvjie"]
 [ext_resource type="Script" uid="uid://cyuq1wp6htjoc" path="res://scenes/enemies/base/parts/EngineTiltByVelocity.gd" id="7_htjoc"]
+
+[sub_resource type="Resource" id="Resource_j3hj5"]
+script = ExtResource("2_4ofbv")
+damage = 2
+fire_rate = 1.5
+aim = 10
+sound = 5
+metadata/_custom_type_script = "uid://eo6qejm2h6hl"
+
+[sub_resource type="Resource" id="Resource_hbom1"]
+script = ExtResource("3_pvj62")
+zmove = 1.5
+metadata/_custom_type_script = "uid://dtprhja8af0to"
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_b7xp7"]
 
@@ -49,7 +65,11 @@ material = SubResource("StandardMaterial3D_pvj62")
 
 [node name="dome" unique_id=1897743314 instance=ExtResource("1_ntmvb")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-armor = 100
+armor = 30
+weapon_data = SubResource("Resource_j3hj5")
+movement_data = SubResource("Resource_hbom1")
+value = 5
+explosion_scene = ExtResource("4_2wdqo")
 
 [node name="Meshy_AI_Blue_Dome_Capsule_0714152008_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1284798880 instance=ExtResource("2_jxx4d")]
 transform = Transform3D(1.9, 0, 0, 0, 1.9, 0, 0, 0, 1.9, 0, 0, 0)

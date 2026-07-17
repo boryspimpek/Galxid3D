@@ -1,12 +1,19 @@
-res://main.tscn
+res://scenes/enemies/types/dome.tscn
 res://scenes/enemy_projectile/EnemyProjectile.gdshader
 res://assets/shaders/jet_engine.gdshader
 res://assets/enemies/dreadnought/dreadnought_model.gdshader
-res://data/ships/ship_006.tres
-res://data/ships/ship_005.tres
-res://data/ships/ship_004.tres
-res://data/ships/ship_003.tres
-res://data/ships/ship_002.tres
-res://data/ships/ship_001.tres
-res://scenes/player/Player.tscn
-res://data/generators/generator_005.tres
+res://main.tscn
+res://scenes/enemies/formations/hank_strike.tscn
+res://scenes/enemies/formations/striker formations/striker1.tscn
+res://scenes/enemies/types/heli.tscn
+res://scenes/ui/ui_theme.tres
+res://scenes/enemies/formations/striker formations/striker2.tscn
+res://scenes/enemies/formations/arrow formations/formation9.tscn
+res://scenes/enemies/formations/arrow formations/formation2.tscn
+res://scenes/enemies/formations/protector_strike.tscn
+res://scenes/enemies/types/blasteroid.tscn
+res://scenes/enemies/formations/rocketer_strike.tscn
+res://scenes/enemies/formations/cyclon_boss_2.tscn
+res://scenes/enemies/types/satellite.tscn
+res://scenes/enemies/formations/finisher.tscn
+res://scripts/managers/GameState.gd

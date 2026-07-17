@@ -69,8 +69,8 @@ _data = {
 }
 
 [node name="heli" unique_id=1897743314 instance=ExtResource("1_nytjk")]
-transform = Transform3D(2, 0, 0, 0, 1.8793851, 0.6840402, 0, -0.6840402, 1.8793851, 0, 0, 0)
-armor = 100
+transform = Transform3D(1.5, 0, 0, 0, 1.409539, 0.5130302, 0, -0.5130302, 1.409539, 0, 0, 0)
+armor = 4
 
 [node name="Meshy_AI_Azure_and_Gold_Starfi_0714083111_texture" parent="EnemyModel" parent_id_path=PackedInt32Array(634598779) index="0" unique_id=1941285157 instance=ExtResource("2_aufqe")]
 
@@ -82,7 +82,6 @@ transform = Transform3D(-2.9505214e-08, 0, 0.675, 0, 0.6750006, 0, -0.6750006, 0
 
 [node name="CollisionShape3D" parent="." index="1" unique_id=324662688]
 transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 2.1877034e-10, -2.1877034e-10, 0.005004883)
-visible = false
 
 [node name="VisibleOnScreenNotifier3D" parent="." index="2" unique_id=1484925388]
 visible = false
@@ -94,4 +93,4 @@ transform = Transform3D(1, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, -0.0364186
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4" unique_id=1837837773]
 libraries/ = SubResource("AnimationLibrary_6v2mi")
 autoplay = &"spin"
-speed_scale = 2.0
+speed_scale = 8.0

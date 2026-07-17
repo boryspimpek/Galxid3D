@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://braxpml2y0f6o" path="res://scenes/enemies/base/EnemyPath3D.gd" id="2_7fd5b"]
 [ext_resource type="PackedScene" uid="uid://cwjxwa7cwovks" path="res://scenes/enemies/types/kiwi.tscn" id="2_yrdlw"]
 [ext_resource type="Script" uid="uid://de0wqltyclsk0" path="res://scenes/enemies/base/EnemyPathFollow.gd" id="3_83kqy"]
-[ext_resource type="PackedScene" uid="uid://cv5pl4svkf8ft" path="res://scenes/enemies/types/hawk.tscn" id="5_83kqy"]
 [ext_resource type="PackedScene" uid="uid://c2vk2d14w4myt" path="res://scenes/enemies/formations/arrow formations/formation8.tscn" id="6_amssh"]
 [ext_resource type="PackedScene" uid="uid://dbshlgj36klhl" path="res://scenes/enemies/formations/arrow formations/formation11.tscn" id="6_gkbve"]
+[ext_resource type="PackedScene" uid="uid://b6suvtcapnif2" path="res://scenes/enemies/types/dome.tscn" id="7_gkbve"]
 
 [sub_resource type="Curve3D" id="Curve3D_7sc5t"]
 _data = {
@@ -207,20 +207,20 @@ script = ExtResource("3_83kqy")
 
 [node name="hank" parent="Path3D16/PathFollow3D" unique_id=674853913 instance=ExtResource("2_yrdlw")]
 
-[node name="hawk" parent="." unique_id=1067629342 instance=ExtResource("5_83kqy")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 10.926342, 0, -121.09899)
-
-[node name="hawk3" parent="." unique_id=488716572 instance=ExtResource("5_83kqy")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 16.14559, 0, -136.34845)
-
-[node name="hawk4" parent="." unique_id=986860766 instance=ExtResource("5_83kqy")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 27.9819, 0, -142.71674)
-
-[node name="hawk2" parent="." unique_id=1396232869 instance=ExtResource("5_83kqy")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 31.957432, 0, -131.36096)
-
 [node name="Formation" parent="." unique_id=1730415998 instance=ExtResource("6_amssh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11539459, 0, -97.05165)
 
 [node name="Formation11" parent="." unique_id=741650643 instance=ExtResource("6_gkbve")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -142.07596)
+
+[node name="dome" parent="." unique_id=1803565046 instance=ExtResource("7_gkbve")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 10.649927, 0, -121.23029)
+
+[node name="dome2" parent="." unique_id=866513220 instance=ExtResource("7_gkbve")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.627287, 0, -136.44165)
+
+[node name="dome3" parent="." unique_id=194542995 instance=ExtResource("7_gkbve")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 28.45834, 0, -142.87247)
+
+[node name="dome4" parent="." unique_id=1557881509 instance=ExtResource("7_gkbve")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 32.127205, 0, -131.45366)

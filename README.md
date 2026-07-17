@@ -2,6 +2,16 @@
 
 Prototyp trójwymiarowej gry typu space-shooter z widokiem z góry, przygotowany w **Godot 4.6** z rendererem **Forward+**. Projekt zawiera kompletną pętlę rozgrywki: menu startowe, hangar, przewijany poziom, formacje przeciwników, walkę, wynik, combosy, loot i ekran końca gry.
 
+## O grze
+
+**GALAXID FREE** to dynamiczna gra akcji osadzona w kosmosie. Sterujesz małym myśliwcem oglądanym z góry, który przemierza futurystyczne pole bitwy pełne wrogich statków, formacji bojowych, ogromnych jednostek i bossów.
+
+Twoim celem jest przetrwać jak najdłużej, niszczyć nadlatujących przeciwników i zdobywać jak najwyższy wynik. Poziom nieustannie przesuwa się do przodu: z głębi kosmosu wyłaniają się kolejne fale wrogów, elementy wielkiej stacji kosmicznej i coraz trudniejsze starcia.
+
+Przed rozpoczęciem lotu możesz odwiedzić hangar, wybrać statek oraz generator energii. W trakcie walki korzystasz z ognia podstawowego, broni specjalnych i uniku pozwalającego uniknąć zagrożeń. Zestrzeliwanie przeciwników zwiększa wynik, buduje serię trafień i może doładować energię potrzebną do mocniejszych ataków.
+
+Gra jest przeznaczona do szybkiej, zręcznościowej rozgrywki. Statek prowadzi się myszą, dotykiem lub padem, a interfejs na bieżąco pokazuje pancerz, zapas energii, wynik i aktualne combo. Gdy pancerz spadnie do zera, runda się kończy — możesz wtedy natychmiast spróbować ponownie i pobić swój rezultat.
+
 ## Uruchomienie
 
 - Otwórz katalog projektu w **Godot 4.6**.
