@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="ShipData" format=3 uid="uid://bcqxcib5xeet6"]
 
+[ext_resource type="Texture2D" uid="uid://b5n1qdf7wji7b" path="res://assets/enemies/blaze/blaze2/Meshy_AI_Emerald_Void_Intercep_0707094557_texture_0.jpg" id="1_2jihg"]
 [ext_resource type="Script" uid="uid://b67wo33ojrncw" path="res://scripts/resources/ShipData.gd" id="1_gj4js"]
 [ext_resource type="Texture2D" uid="uid://bnuj1mdd6h574" path="res://assets/hangar/Gemini_Generated_Image_t6cgwet6cgwet6cg-removebg-preview.png" id="1_ygp32"]
 
@@ -10,3 +11,4 @@ ship_name = "Celestal Guard"
 armor = 10
 cost = 30000
 graphics = ExtResource("1_ygp32")
+albedo_texture = ExtResource("1_2jihg")

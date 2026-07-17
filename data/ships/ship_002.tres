@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b67wo33ojrncw" path="res://scripts/resources/ShipData.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://dhydh7pgocu4w" path="res://assets/hangar/Gemini_Generated_Image_18877k18877k1887-removebg-preview.png" id="1_b0m7n"]
+[ext_resource type="Texture2D" uid="uid://b6afjxal8fj20" path="res://assets/enemies/blaze/blaze1/Meshy_AI_Emerald_Void_Intercep_0714144242_texture_base_color.jpg" id="1_ep34v"]
 
 [resource]
 script = ExtResource("1")
@@ -10,3 +11,4 @@ ship_name = "Jungle Viper"
 armor = 4
 cost = 10000
 graphics = ExtResource("1_b0m7n")
+albedo_texture = ExtResource("1_ep34v")

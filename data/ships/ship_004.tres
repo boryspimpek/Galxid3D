@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="ShipData" format=3 uid="uid://c3faog5dynnog"]
 
 [ext_resource type="Script" uid="uid://b67wo33ojrncw" path="res://scripts/resources/ShipData.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cv741x13lt68e" path="res://assets/enemies/blaze/blaze1/Meshy_AI_Emerald_Void_Intercep_0714135840_texture_0.jpg" id="1_0slki"]
 [ext_resource type="Texture2D" uid="uid://dnkvfn4b4e8um" path="res://assets/hangar/Gemini_Generated_Image_ly8hg6ly8hg6ly8h-removebg-preview.png" id="1_ra2vw"]
 
 [resource]
@@ -10,3 +11,4 @@ ship_name = "Void Phantom"
 armor = 8
 cost = 20000
 graphics = ExtResource("1_ra2vw")
+albedo_texture = ExtResource("1_0slki")

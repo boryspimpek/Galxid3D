@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b67wo33ojrncw" path="res://scripts/resources/ShipData.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://dsf01v4qvu46k" path="res://assets/hangar/Gemini_Generated_Image_4hguq74hguq74hgu-removebg-preview.png" id="1_4tfgm"]
+[ext_resource type="Texture2D" uid="uid://dfdx0ohxjisxu" path="res://assets/enemies/blaze/blaze1/Meshy_AI_Emerald_Void_Intercep_0714144153_texture_base_color.jpg" id="1_wbe6p"]
 
 [resource]
 script = ExtResource("1")
@@ -10,3 +11,4 @@ ship_name = "Arctic Storm"
 armor = 2
 cost = 5000
 graphics = ExtResource("1_4tfgm")
+albedo_texture = ExtResource("1_wbe6p")

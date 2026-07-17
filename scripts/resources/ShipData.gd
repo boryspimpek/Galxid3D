@@ -7,6 +7,7 @@ extends Resource
 @export var armor: int = 0
 @export var cost: int = 0
 @export var graphics: Texture2D = null
+@export var albedo_texture: Texture2D = null
 
 @export_group("Audio")
 ## ID dźwięku przy trafieniu w pancerz (SoundManager, bus Impacts). 0 = cisza.

@@ -18,3 +18,13 @@ res://scenes/enemies/types/satellite.tscn
 res://scenes/enemies/formations/finisher.tscn
 res://scripts/managers/GameState.gd
 res://scenes/hangar/hangar_scene.gd
+res://scenes/player/Player.gd
+res://scripts/resources/ShipData.gd
+res://data/ships/ship_001.tres
+res://data/ships/ship_002.tres
+res://data/ships/ship_003.tres
+res://data/ships/ship_004.tres
+res://data/ships/ship_005.tres
+res://data/ships/ship_006.tres
+res://scenes/player/blaze2_model.tscn
+res://scenes/enemies/types/avatar2.tscn

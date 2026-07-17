@@ -47,6 +47,7 @@ var is_dodging := false
 @onready var weapon_system: Node = $WeaponSystem
 @onready var damage_system: Node = $DamageSystem
 @onready var ship_model: Node3D = $Blaze
+@onready var ship_mesh: MeshInstance3D = $Blaze/Mesh
 
 var _sidekicks: Array[Node] = []
 
@@ -71,6 +72,7 @@ func _ready():
 	Input.joy_connection_changed.connect(_on_joy_connection_changed)
 	await get_tree().process_frame
 	load_ship_data()
+	apply_ship_albedo_texture()
 	apply_ship_stats()
 	init_power_regeneration()
 	_log_connected_joypads()
@@ -101,6 +103,18 @@ func load_ship_data():
 		print("Player: Statek załadowany: ", ship_data.ship_name, " Armor: ", ship_data.armor)
 	else:
 		push_error("Player: BŁĄD: Nie znaleziono danych dla statku o ID: " + str(s_id))
+
+func apply_ship_albedo_texture() -> void:
+	if ship_data == null or ship_data.albedo_texture == null:
+		return
+	var material := ship_mesh.get_surface_override_material(0) as StandardMaterial3D
+	if material == null:
+		push_error("Player: Brak StandardMaterial3D na modelu statku")
+		return
+	var player_material := material.duplicate() as StandardMaterial3D
+	player_material.albedo_texture = ship_data.albedo_texture
+	ship_mesh.set_surface_override_material(0, player_material)
+
 
 func apply_ship_stats():
 	armor = ship_data.armor if ship_data else 10

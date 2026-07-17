@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="ShipData" format=3 uid="uid://byit0h5cysb5u"]
 
 [ext_resource type="Texture2D" uid="uid://dw8wj0nqhnwm8" path="res://assets/hangar/Gemini_Generated_Image_xe1j75xe1j75xe1j-removebg-preview.png" id="1_6gsmw"]
+[ext_resource type="Texture2D" uid="uid://cehkm5c8vtiak" path="res://assets/enemies/blaze/blaze1/Meshy_AI_Emerald_Void_Intercep_0714144202_texture_base_color.jpg" id="1_8on52"]
 [ext_resource type="Script" uid="uid://b67wo33ojrncw" path="res://scripts/resources/ShipData.gd" id="1_16o1k"]
 
 [resource]
@@ -10,3 +11,4 @@ ship_name = "Solar Flare"
 armor = 10000
 cost = 100000
 graphics = ExtResource("1_6gsmw")
+albedo_texture = ExtResource("1_8on52")
